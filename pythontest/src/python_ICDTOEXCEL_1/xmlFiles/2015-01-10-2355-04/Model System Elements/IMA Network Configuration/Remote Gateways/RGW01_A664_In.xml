@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW01_A664_In" Guid="af5875003-8232-4511-b1b4-94e807b08872a" XsdVersion="7.9" Hardware="RDIU_01">
+  <AnalogPort Name="40012_B03_HF_TCP_3" Guid="a89F0FBA1-2E47-43ff-BAB6-EC8510B756DBa" Direction="Source" Physical="RDIU_01.40012_B03" RefreshPeriod="40" RIUTemplate="40012" UDC="Command inversion=1">
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ1_I_HFQ3_O_A664Port" SrcGuid="aCE307088-25F3-4edc-96B5-2C88EA9971A3a" LatencyCritical="False" Validated="-1" />
+    <Gw_Cmd_Ref SrcName="RGW02_I_40009_A01.A825_Q_msg_3.A825_RCP_L_PilotInputs.RCP_825A_EMER_COMM_ON" SrcGuid="a0b88f76c-ca21-428c-bd72-e69663e037ffa" CommandLabel="a" Validated="-1" />
+  </AnalogPort>
+  <CANPort Name="DCP_R_pi825_DMI_1_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="aedadfb54-3eb0-482a-b567-7b8f9107d3d1a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A11F5" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_1_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="ad6fe8980-ddca-4958-95ce-67c784953f3da" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMIPilotDCPTerrainIlluminate" Guid="a08094b10-acbc-49a6-be87-d85a2a43ddd8a" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPTerrainIlluminate" SrcGuid="a12ccabd4-b899-44d5-97f5-c496ae395004a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_1_DCP_Lamp_Terrain" DestGuid="ade2469d2-6b65-4981-be31-79dad0093a03a" />
+      </DP>
+      <DP Name="DMIPilotDCPWxRIlluminate" Guid="a5f582455-e7f1-452c-b81d-59b5e606de40a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPWxRIlluminate" SrcGuid="af603cc7a-8d62-4607-b12d-03fe2a0b7fd6a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_1_DCP_Lamp_WXR" DestGuid="a7c760c69-9aaf-4c67-b529-91a3cb2136f8a" />
+      </DP>
+      <DP Name="DMIPilotTrafficButtonBarIlluminate" Guid="a734420d0-030a-48f6-9b75-76b2f1042531a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotTrafficButtonBarIlluminate" SrcGuid="ad71dfe80-2612-474f-8c1d-1dad242488e3a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_1_DCP_Lamp_Traffic" DestGuid="add844ded-c49e-4a48-96ab-23895a4d2c9ca" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateLeft" Guid="a7d3ac4f5-39ba-40bc-b039-86f105bd444ea" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateLeft" SrcGuid="aeea69964-746c-4ab5-9bef-3b65796b2b69a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_1_DCP_Lamp_Left" DestGuid="af3c2b139-ef83-42f7-b81a-d664d7a6fbffa" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateRight" Guid="ac7fe9c99-c734-421a-90bb-1c62025bfcc6a" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateRight" SrcGuid="a47cc17ad-78d3-453b-b149-8fb9421bce6aa" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_1_DCP_Lamp_Right" DestGuid="a2c1af58b-8e69-4313-a20e-b9cec95bf0d4a" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS1_I_HF_DCP1" SrcGuid="a66a5338a-8ed7-40cb-a225-0df21a2ef464a" />
+  </CANPort>
+  <HFQueuingPort Name="HFQ1_I_HFQ3_O_A664Port" Guid="aCE307088-25F3-4edc-96B5-2C88EA9971A3a" ActivityTimeout="120" Direction="Destination" MessageSize="32" Networks="Both" PathName="VLPath14" QueueLength="2" SamplePeriod="40">
+    <Dataflow_Ref SrcName="RGW02_I_40009_A01.HFQ3_O_A664Port" SrcGuid="a21592a1f-7243-4d0e-ac1b-e5cea214de3aa" />
+  </HFQueuingPort>
+  <FeedbackData Name="Feeback1" Guid="a61941434-0855-4819-8219-F04B7B064F26a">
+    <DP Name="Fail" Guid="aAFF47739-D95C-4907-A32E-3914B6FC13B7a" DataFormatType="DIS" ParameterSize="1" RIULabel="d" />
+    <DP Name="Status" Guid="a511EF8BB-68CE-4938-9C69-E91BA714CBD9a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+    <DP Name="Trip" Guid="aE1CFCD71-BA5A-4179-A620-492B164B9EE3a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+    <Gw_Fb_Ref SrcName="RGW01_A664_In.poDISC_AIRSPEED_EMPC_1" SrcGuid="a59A9EE49-F35E-4eb9-9F21-3B624B5C8B02a" Validated="-1" />
+  </FeedbackData>
+  <HFQueuingPort Name="HFQ_IN_01_Port_ADA20" Guid="aD6A63B5C-7D77-4d99-837A-C265C136A2E1a" ActivityTimeout="150" Direction="Destination" MessageSize="284" Networks="Both" PathName="VLPath20" QueueLength="2" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_FCM_1.HFQ_OUT_01_Port_ADA20" SrcGuid="a2d23b3da-9fa9-4041-ab7e-4e885f8056aca" />
+  </HFQueuingPort>
+  <AnalogPort Name="poDISC_AIRSPEED_EMPC_1" Guid="a59A9EE49-F35E-4eb9-9F21-3B624B5C8B02a" Direction="Source" Physical="RDIU_01.40014_A01" RefreshPeriod="40" RIUTemplate="40014" TemplateInstanceProposed="40014_A01" UDC="Command inversion=2">
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ_IN_01_Port_ADA20" SrcGuid="aD6A63B5C-7D77-4d99-837A-C265C136A2E1a" LatencyCritical="False" Validated="-1" />
+    <Gw_Cmd_Ref SrcName="EF_EMPC1.AIRSPEED_EMPC_1" SrcGuid="af2d1ba45-77cd-428d-bf53-5c3ad5ea2759a" CommandLabel="a" Validated="-1" />
+  </AnalogPort>
+  <FeedbackData Name="Part1" Guid="a35DA3A86-0787-48af-9892-71BF67B3FB7Ba">
+    <DP Name="Disagree" Guid="a259D1995-17C3-4e73-8F18-36AB932FEA92a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+    <DP Name="Status" Guid="a6192B193-0AB7-4666-AECD-566490A72957a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+    <Gw_Fb_Ref SrcName="RGW01_A664_In.poDISC_CA_RTS_HF_RTSSIGNFWD" SrcGuid="a42b3cb5d-3b52-4fd4-8863-70046410d1d3a" Validated="-1" />
+  </FeedbackData>
+  <FeedbackData Name="Part2" Guid="a0E056E81-4280-4bb4-A3BB-33E1B0DFAB33a">
+    <DP Name="Disagree" Guid="aC1129835-FE50-4f45-8154-BBFCAA31F74Da" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+    <DP Name="Status" Guid="a4FFF7734-5864-4684-9CBF-224AF61A8932a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+    <Gw_Fb_Ref SrcName="RGW01_A664_In.poDISC_DATALOAD_ENABLE_SPECIFIC_HF_TCP_3" SrcGuid="a3a41ffdb-1fda-4bde-a2a8-b1c25dafd283a" Validated="-1" />
+  </FeedbackData>
+  <FeedbackData Name="Part3" Guid="a270A3138-626C-4987-BAC4-50F5F094BDC9a">
+    <DP Name="Disagree" Guid="aA4304927-68A2-4067-A498-F39E934A934Ca" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+    <DP Name="Status" Guid="aA79FCD18-590E-492b-B059-61777BBB804Aa" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+    <Gw_Fb_Ref SrcName="RGW01_A664_In.poDISC_WOW_HF_TCP_3" SrcGuid="a157fc3e4-91c2-404e-8cd7-e6081fdd6b65a" Validated="-1" />
+  </FeedbackData>
+  <FeedbackData Name="Part4" Guid="a7598EFB9-4A77-489f-ADAC-DBA96EDE9BDBa">
+    <DP Name="Disagree" Guid="a67CA2D52-1CD2-4aa1-B6DB-1BFC948C0E75a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+    <DP Name="Status" Guid="aCA844846-92F7-4a4b-9339-3EE0F75EE490a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+    <Gw_Fb_Ref SrcName="RGW01_A664_In.40012_B03_HF_TCP_3" SrcGuid="a89F0FBA1-2E47-43ff-BAB6-EC8510B756DBa" Validated="-1" />
+  </FeedbackData>
+  <CANPort Name="DCP_R_pi825_DMI_2_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="a5959d672-9f70-42d3-a5b0-0d9c6ece617ea" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A1205" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_2_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="a0f04508f-3265-452e-8a4a-d7493561e27ba" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMIPilotDCPTerrainIlluminate" Guid="aba172426-ba85-4f50-bfa1-e80bee4d450aa" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPTerrainIlluminate" SrcGuid="aaaac2278-53d8-456e-ac01-a51d75cc6c66a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_2_DCP_Lamp_Terrain" DestGuid="ab87dc3ea-d7f0-4437-bf27-eeb461b5dc8ba" />
+      </DP>
+      <DP Name="DMIPilotDCPWxRIlluminate" Guid="a95a4fea7-44c3-42fc-bcf6-a83a6730ff98a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPWxRIlluminate" SrcGuid="a009d2241-852e-4df0-9545-256c3feeab1fa" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_2_DCP_Lamp_WXR" DestGuid="a358f9e7a-5d00-4c7a-973c-179cf6a14f2fa" />
+      </DP>
+      <DP Name="DMIPilotTrafficButtonBarIlluminate" Guid="ab6238863-4772-4adc-ad8e-ec6272bb2bdba" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotTrafficButtonBarIlluminate" SrcGuid="a977bd0e2-3ac6-45b8-9768-163978dc7025a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_2_DCP_Lamp_Traffic" DestGuid="a8c67fce5-fecd-4645-bf64-4775f5221c29a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateLeft" Guid="ac367056a-a3d1-46ba-8edc-713a7e0b376fa" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateLeft" SrcGuid="a7490fc2b-7ed5-4ffc-9df0-55dfe129a04ea" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_2_DCP_Lamp_Left" DestGuid="a2f6b0649-6fdf-41c3-ae90-5205e0ec13d7a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateRight" Guid="a3e5e1165-ff8f-43a1-b1bc-e4aef5477d4aa" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateRight" SrcGuid="aae25d8c6-5706-4d42-a602-ba2966eca3cca" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_2_DCP_Lamp_Right" DestGuid="a880dc5b7-d338-4a50-b31a-7dd6237974c0a" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS2_I_HF_DCP1" SrcGuid="a9b29db5b-f60e-46e0-ab21-066470a0494ca" />
+  </CANPort>
+  <CANPort Name="DCP_R_pi825_DMI_3_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="aa423cddd-4d86-44b6-a393-d6375865b255a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A1215" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_3_DCP_Lamps_HF_DCP1_HFS_160ms" Guid="ad88082ad-3cd8-4a42-9b47-45fde6f3e543a" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMIPilotDCPTerrainIlluminate" Guid="a08b2ed50-55bb-4331-81f3-dea965c3f2a9a" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPTerrainIlluminate" SrcGuid="aa4fd68fd-caa2-4ce4-b046-01d5252ee4cea" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_3_DCP_Lamp_Terrain" DestGuid="a60418363-f053-4fb3-bc7d-dc7e007991b5a" />
+      </DP>
+      <DP Name="DMIPilotDCPWxRIlluminate" Guid="a59bb5a56-3af2-4e8a-a37f-2004a2882b0aa" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPWxRIlluminate" SrcGuid="a59e66d42-8f33-4146-b858-2fbca192145aa" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_3_DCP_Lamp_WXR" DestGuid="ae33e2d2c-1cb8-45ad-900d-97bf7a9ff171a" />
+      </DP>
+      <DP Name="DMIPilotTrafficButtonBarIlluminate" Guid="a618ad74d-cea2-46cd-b0f2-ecebff99d78da" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotTrafficButtonBarIlluminate" SrcGuid="a23fff725-cbb2-4aa5-9aab-da95300581b4a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_3_DCP_Lamp_Traffic" DestGuid="aa5ef726c-885c-445e-b75d-41eed956e51da" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateLeft" Guid="aa97fcd18-fde1-4ff5-8a3d-364998d623e8a" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateLeft" SrcGuid="a888b1741-7641-4390-9e95-21854c8ef040a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_3_DCP_Lamp_Left" DestGuid="aa09f367c-6858-43ec-8482-b4f20b2fef73a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateRight" Guid="a5f01f9d0-62eb-4e91-8886-a987b1f00f4ea" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateRight" SrcGuid="a4a35e86d-e3d3-4062-aba5-015cd1e8fdd9a" />
+        <Gw_Pub_Ref DestName="HF_DCP1.DCP_R_DMI_3_DCP_Lamp_Right" DestGuid="a27959898-a314-4941-88c2-c863bbb623dba" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS3_I_HF_DCP1" SrcGuid="a58a9a1a2-326f-4428-9a38-ef1a9b11d2aaa" />
+  </CANPort>
+  <CANPort Name="DCP_R_pi825_DMI_1_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="a46bae0c9-e05a-4a7c-8470-86274981bc6aa" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A11F5" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_1_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="add0534cc-9cbd-4822-ad8b-d1f34615dfc7a" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMICopilotDCPTerrainIlluminate" Guid="ac8a1db2f-c4c9-4bf5-95e4-0999b2256dcfa" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMICopilotDCPTerrainIlluminate" SrcGuid="af1c4281c-d5bb-487c-9b36-0e9f868000a1a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_1_DCP_Lamp_Terrain" DestGuid="ae31240c3-8a5e-49db-9c8d-18d563b06262a" />
+      </DP>
+      <DP Name="DMICopilotDCPWxRIlluminate" Guid="ad781331a-575b-4c54-841f-4e144fa6d7e4a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMICopilotDCPWxRIlluminate" SrcGuid="a7ab6c6cf-24bd-49ae-a655-f6a3a5c34604a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_1_DCP_Lamp_WXR" DestGuid="a6d2bc61e-56fa-49c3-8db7-1990718b30c0a" />
+      </DP>
+      <DP Name="DMICopilotTrafficButtonBarIlluminate" Guid="a95ab78dd-32c4-460d-bc27-86fd9a68bc28a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMICopilotTrafficButtonBarIlluminate" SrcGuid="a4295df6b-d4fa-412a-9e62-8f85b7217f03a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_1_DCP_Lamp_Traffic" DestGuid="afb10e115-1d74-488f-bd1f-2ac7e2774e50a" />
+      </DP>
+      <DP Name="DMICopilotMFWIlluminateLeft" Guid="a3e456b31-cdce-4c63-8e71-8636a93d6a8ba" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMICopilotMFWIlluminateLeft" SrcGuid="a99423ae6-ff3c-462a-bde5-022f2a46d6b5a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_1_DCP_Lamp_Left" DestGuid="a7b76e4cf-753b-4dcc-8596-974dd52a2bd2a" />
+      </DP>
+      <DP Name="DMICopilotMFWIlluminateRight" Guid="ac3173e5f-24d6-4351-a1e2-f38712252d53a" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMICopilotMFWIlluminateRight" SrcGuid="aa9948793-d4b2-4639-b2e1-cb4a941fae51a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_1_DCP_Lamp_Right" DestGuid="a484f4af1-ce0d-46f8-9f9b-d77ad90a07cda" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS1_I_HF_DCP1" SrcGuid="a66a5338a-8ed7-40cb-a225-0df21a2ef464a" />
+  </CANPort>
+  <CANPort Name="DCP_R_pi825_DMI_2_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="a4476637e-f06f-4de3-b5fe-7b0b73ac6fb9a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A1205" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_2_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="a5167a72c-d8e6-4894-bd65-a56c6c4c8dd5a" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMIPilotDCPTerrainIlluminate" Guid="a99d88e6e-aafa-48fa-8c6a-9b35c21fc34fa" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPTerrainIlluminate" SrcGuid="aaaac2278-53d8-456e-ac01-a51d75cc6c66a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_2_DCP_Lamp_Terrain" DestGuid="a0456c91e-3ba7-485c-926b-895a78b1fd10a" />
+      </DP>
+      <DP Name="DMIPilotDCPWxRIlluminate" Guid="ac10d7822-606d-4fd2-8904-c62d87d1dd82a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPWxRIlluminate" SrcGuid="a009d2241-852e-4df0-9545-256c3feeab1fa" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_2_DCP_Lamp_WXR" DestGuid="a72494e9a-95f2-4167-b32f-135cf769343ba" />
+      </DP>
+      <DP Name="DMIPilotTrafficButtonBarIlluminate" Guid="afe458345-202f-42e5-a833-bb756021b486a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotTrafficButtonBarIlluminate" SrcGuid="a977bd0e2-3ac6-45b8-9768-163978dc7025a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_2_DCP_Lamp_Traffic" DestGuid="a4871126d-7bbc-4411-9f31-d98725691cdaa" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateLeft" Guid="a8ff3da76-94e6-45d9-9349-6c4186f343e9a" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateLeft" SrcGuid="a7490fc2b-7ed5-4ffc-9df0-55dfe129a04ea" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_2_DCP_Lamp_Left" DestGuid="a3923d4ef-1e9c-4d7f-bba2-9f5c84a5ce94a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateRight" Guid="a13162dc4-6048-4ddf-9895-daada6f66bd2a" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateRight" SrcGuid="aae25d8c6-5706-4d42-a602-ba2966eca3cca" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_2_DCP_Lamp_Right" DestGuid="afe5b521d-5510-46dc-ab78-7a9e1dfe47b0a" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS2_I_HF_DCP1" SrcGuid="a9b29db5b-f60e-46e0-ab21-066470a0494ca" />
+  </CANPort>
+  <CANPort Name="DCP_R_pi825_DMI_3_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="a6a5ee0e6-3803-4d00-a11f-8e379f95d0c1a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A1215" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="DCP_R_A825_DMI_3_DCP_Lamps_HF_DCP2_HFS_160ms" Guid="a2927f298-e51f-4ce5-bcf6-bda1f3b65d15a" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMIPilotDCPTerrainIlluminate" Guid="a12db526f-fc1d-4427-b37a-aae8726605dda" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPTerrainIlluminate" SrcGuid="aa4fd68fd-caa2-4ce4-b046-01d5252ee4cea" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_3_DCP_Lamp_Terrain" DestGuid="ab59e8b13-b1a6-4272-aae5-84d84d9a3355a" />
+      </DP>
+      <DP Name="DMIPilotDCPWxRIlluminate" Guid="a6daa8269-d913-4785-8a77-0b69596c438ca" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotDCPWxRIlluminate" SrcGuid="a59e66d42-8f33-4146-b858-2fbca192145aa" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_3_DCP_Lamp_WXR" DestGuid="a30e2f23a-35d1-449f-95f6-21a8f8b14e32a" />
+      </DP>
+      <DP Name="DMIPilotTrafficButtonBarIlluminate" Guid="abd1ce489-6335-432e-839c-97a9018b2f73a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotTrafficButtonBarIlluminate" SrcGuid="a23fff725-cbb2-4aa5-9aab-da95300581b4a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_3_DCP_Lamp_Traffic" DestGuid="a756ee023-74aa-4ebc-ab03-dba176f1b833a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateLeft" Guid="aeee80dd0-067e-4bf5-889a-4556c7400895a" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateLeft" SrcGuid="a888b1741-7641-4390-9e95-21854c8ef040a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_3_DCP_Lamp_Left" DestGuid="ae26c8d54-87ae-4fd1-b2c1-4fda0abe9de0a" />
+      </DP>
+      <DP Name="DMIPilotMFWIlluminateRight" Guid="a8466836b-b03c-420c-8d1f-ff71a2d28c4aa" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_DCP.DS_DMI_DCP_BUTTON_ILLUMINATE.DMIPilotMFWIlluminateRight" SrcGuid="a4a35e86d-e3d3-4062-aba5-015cd1e8fdd9a" />
+        <Gw_Pub_Ref DestName="HF_DCP2.DCP_R_DMI_3_DCP_Lamp_Right" DestGuid="a1c0ace1e-b0bb-4af5-818f-0c0ac28f1d30a" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS3_I_HF_DCP1" SrcGuid="a58a9a1a2-326f-4428-9a38-ef1a9b11d2aaa" />
+  </CANPort>
+  <CANPort Name="po825_DMI_1_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="aa34c864b-0dd9-41b2-aa56-1efc42eea3a3a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A21F5" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="A825_DMI_1_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="a95a582f5-a62a-4ab7-a9b0-61f1bb13f12ba" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMI_RCP_Lamp_EMER_COMM_ON" Guid="a9b9a42ef-db1b-4843-a457-47ffb16b5f9ca" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_EMER_COMM_ON" SrcGuid="a73fbaf59-48b2-4902-a3ba-78e042110cdea" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_1_RCP_R_Lamp_EMER_COMM_ON" DestGuid="a2600c9de-44f2-4f30-a688-ffbd6700e15fa" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_L_INHIB" Guid="a9d8aeccb-d0bc-4563-9764-d074b05b9873a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_L_INHIB" SrcGuid="a583209ef-ac18-4ef4-9359-cb03d7f617cda" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_1_RCP_R_Lamp_CURSOR_L_INHIB" DestGuid="a69136700-7a32-41bf-8781-92284cc3bd35a" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_R_INHIB" Guid="ab79c8337-b371-4cfe-b29a-06fc13030628a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_R_INHIB" SrcGuid="a8425d4ee-3fe2-464f-92f7-d0fac923076aa" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_1_RCP_R_Lamp_CURSOR_R_INHIB" DestGuid="aa34a9857-4580-4ccb-8173-bd9110dee466a" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_G_S_CNCL" Guid="a1cf3ccb9-c77b-4bb0-81af-f3dc8bfd5f1ea" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_G_S_CNCL" SrcGuid="abd2e1388-dbe6-4d11-8004-f024353a5ebca" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_1_RCP_R_Lamp_G_S_CNCL" DestGuid="a523aab5b-9520-4a40-8343-174ec0ceb572a" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS4_I_HF_RCP" SrcGuid="a977cc04c-e8c8-466d-879d-862bb0ffead7a" />
+  </CANPort>
+  <CANPort Name="po825_DMI_2_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="a19b60d46-e1a6-49e2-9659-60487b248811a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A2205" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="A825_DMI_2_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="ad3a1e9b6-a24a-4dcf-917e-b51cce3ecdbda" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMI_RCP_Lamp_EMER_COMM_ON" Guid="a838066fb-d18b-4d7f-a4ae-b3baa50efbaca" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_EMER_COMM_ON" SrcGuid="afda95dcc-75b0-4e21-a1f6-25586b3f0c90a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_2_RCP_R_Lamp_EMER_COMM_ON" DestGuid="abfba847f-00ff-4d73-8aa8-02ee083a53ffa" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_L_INHIB" Guid="ad82301a3-1f8a-47a1-b623-c333379013aaa" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_L_INHIB" SrcGuid="a51dc7db8-d528-49fe-ac51-deb322207bdca" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_2_RCP_R_Lamp_CURSOR_L_INHIB" DestGuid="a6569504b-d965-473f-af32-d0cdf30c1e38a" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_R_INHIB" Guid="a0c8bcced-80c8-4bd8-b6dd-670eeae72b11a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_R_INHIB" SrcGuid="a6b1c7d78-d41e-493c-b358-0438703f9359a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_2_RCP_R_Lamp_CURSOR_R_INHIB" DestGuid="a2a51aed6-f7ec-4341-8fb3-57ca3c26595ba" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_G_S_CNCL" Guid="a04a075b4-3088-4593-83ef-9fb6ab82b3dea" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_R4.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_G_S_CNCL" SrcGuid="a63f09e4c-99bf-4d3b-b760-eaaed3dafff3a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_2_RCP_R_Lamp_G_S_CNCL" DestGuid="addb0798e-3cc2-4e5d-838a-d64eed106a2ca" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS5_I_HF_RCP" SrcGuid="aa75bc746-7a93-42df-9463-0ec6c4c14bcba" />
+  </CANPort>
+  <CANPort Name="po825_DMI_3_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="a504456fe-a7c9-4a30-87b0-5f83be774651a" CANMessageProtocolType="Parametric" Direction="Source" MessageID="84A2215" Physical="RDIU_01.40009_A01" RefreshPeriod="160">
+    <CANMessage Name="A825_DMI_3_RCP_R_Lamps_HF_RCP_HFS_160ms" Guid="a3eb46568-9af0-42d1-9282-b75e468c065aa" MessageSize="1" TransmissionIntervalMinimum="25">
+      <DP Name="DMI_RCP_Lamp_EMER_COMM_ON" Guid="a79282026-a89a-4b19-8c7c-69b28e1b3887a" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_EMER_COMM_ON" SrcGuid="a5ee9d399-94de-44ba-8eb5-26a004467aa9a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_3_RCP_R_Lamp_EMER_COMM_ON" DestGuid="a7eaff8ea-c9a0-4f5a-8eff-13cada30875ba" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_L_INHIB" Guid="a3f3393f2-0d09-4a39-8e9a-55935fb548fda" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_L_INHIB" SrcGuid="a17d2610e-8e21-4f61-a055-5a6f60ed0360a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_3_RCP_R_Lamp_CURSOR_L_INHIB" DestGuid="a9e47ce52-335d-47ee-b58c-cabf1305a59ea" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_CURSOR_R_INHIB" Guid="a05012e92-9f6d-44fb-bdda-ffea43d42615a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_CURSOR_R_INHIB" SrcGuid="a3800555d-8a88-42fa-ab86-ccbb48331ac5a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_3_RCP_R_Lamp_CURSOR_R_INHIB" DestGuid="ada1e7bac-041a-43ec-9590-8b0d99fbc94da" />
+      </DP>
+      <DP Name="DMI_RCP_Lamp_G_S_CNCL" Guid="af96dc520-41f0-4008-9e3a-fe05ddfab55da" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="25">
+        <Copy_Ref SrcName="IMA_DM_L5.MSG_DMI_RCP.DS_DMI_RCP_BUTTON_ILLUMINATE.DMI_RCP_Lamp_G_S_CNCL" SrcGuid="a570fc248-39e5-4031-8e75-16db16409086a" />
+        <Gw_Pub_Ref DestName="HF_RCP.DMI_3_RCP_R_Lamp_G_S_CNCL" DestGuid="ae949a8bd-fb33-467f-bec0-4601cbbc628aa" />
+      </DP>
+    </CANMessage>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS6_I_HF_RCP" SrcGuid="ac1d03c16-e617-4b16-93fa-0d994f713c40a" />
+  </CANPort>
+  <A429Port Name="po429_RX11_CONC_R_CMF_ISS_CAS_1_HF_TCP_3_HFQ_20ms" Guid="a00f2cc2e-d974-41f5-923d-2c2480bf63a1a" Direction="Source" Physical="RDIU_01.40006_A03" RefreshPeriod="20">
+    <A429Channel Name="A429_RX11_CONC_R_CMF_ISS_CAS_1_HF_TCP_3_HFQ_20ms" Guid="a3b92dca1-d87e-447d-9cb3-03bd6caf5fd2a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="DCP_PDCM_429_RGW04_I_40009_A01" Guid="af256dc94-5542-4c19-8e43-88f5fddabd9fa">
+        <DP Name="Label" Guid="a52642a24-b913-4b0f-80d7-b7f1bf5b7297a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="7" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="af1247137-7602-4da8-975a-d7557a4a142ba" BitOffsetWithinDS="8" CodedSet="0=Message Transmitted by Both CAN1 and CAN2;1=Message Transmitted by CAN1;2=Message Transmitted by CAN2" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_PED_DIM" Guid="a284b23a7-9a52-4573-a98c-70d8aa9d9ba8a" BitOffsetWithinDS="10" DataFormatType="UBNR" LsbRes="1" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L007_Brightness_Command" DestGuid="adc16dcb2-5167-4af3-8a60-0be962fc293ca" />
+        </DP>
+        <DP Name="A429Payload_TSW9" Guid="ad279a1e2-1ae1-40a4-a2e3-2217ed64739ea" BitOffsetWithinDS="18" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SPARE2" Guid="a042c4ebe-ba38-4e30-bb16-28b3d2643215a" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="ae6416c91-311b-47b0-8586-180b867bce84a" BitOffsetWithinDS="29" CodedSet="0=NO;1=NCD;2=FT;3=FW" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a8d33b502-62c2-42aa-9f77-0c60da1a89cea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="RGW04_I_40009_A01.A825_Q_msg_2.DCP_PDCM_429.DCP_PDCM_429" SrcGuid="ab1843c9e-3645-45d0-91f8-701d185187d0a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ1_RGW04_I_40009_A01" SrcGuid="a88436400-6811-4c49-982a-7aca930fec74a" />
+  </A429Port>
+  <A429Port Name="po429_RX11_CONC_R_CMF_ISS_CAS_1_272_HF_TCP_3_HFQ_80ms" Guid="afe63fc22-9887-4349-aae8-f680bb60c972a" Direction="Source" Physical="RDIU_01.40006_A03" RefreshPeriod="80">
+    <A429Channel Name="A429_RX11_CONC_R_CMF_ISS_CAS_1_272_HF_TCP_3_HFQ_80ms" Guid="a0c63c01e-0e41-47ac-b3aa-c61ac4bbaca3a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L272_WXR_CONTROL_WORD_FO_HF_ISSPROCESSINGUNIT_R" Guid="a3500f85d-94e6-4255-80dc-49ac8ea61d61a">
+        <DP Name="Label" Guid="abc086f8b-0b16-4804-a195-99d5c9b66bafa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="SDI" Guid="a43420444-cfa6-4e94-867e-afcb7e52833da" BitOffsetWithinDS="8" CodedSet="1=FO" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="Pad" Guid="a5ddfaedd-f42a-40cb-ab6c-e1f25466f928a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="TILT" Guid="ad5abd7d5-7dca-4ec7-8e2f-71e70a655594a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="16" FullScaleRngMin="-16" FuncRngMax="16" FuncRngMin="-16" LsbRes=".25" ParameterSize="7" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L272_Tilt" DestGuid="af400463b-cb0f-4f60-a85d-6ad82e6663f1a" />
+        </DP>
+        <DP Name="Pad_1" Guid="afff04f46-eb31-4c32-8d7c-721618cce931a" BitOffsetWithinDS="23" DataFormatType="PAD" ParameterSize="6" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="SSM" Guid="abd2dccb4-cbaf-4217-87ae-2c1b4673364fa" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="PARITY" Guid="a1842228d-c0f6-4b61-b0f2-db724f40af13a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_R.MS75.DS1.L272_WXR_CONTROL_WORD_FO" SrcGuid="a67acf4da-927f-4ff1-b907-f1f3d1000838a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ2_I_HF_TCP_3" SrcGuid="a5f651a54-c82e-4e62-a6de-dcc7759d8340a" />
+  </A429Port>
+  <A429Port Name="po429_RX11_CONC_R_CMF_ISS_CAS_1_277_HF_TCP_3_HFQ_80ms" Guid="a7ceb0126-257d-4ae9-9c27-7580d77d70c8a" Direction="Source" Physical="RDIU_01.40006_A03" RefreshPeriod="80">
+    <A429Channel Name="A429_RX11_CONC_R_CMF_ISS_CAS_1_277_HF_TCP_3_HFQ_80ms" Guid="a39312b88-aa09-4504-a289-6a6cfeb6555da" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L277_SURVEILLANCE_FUNCTION_STATUS_HF_ISSPROCESSINGUNIT_R" Guid="a9a0b9d28-4341-46a3-98ea-7317277d3a16a">
+        <DP Name="Label" Guid="a5320e7a9-313a-4671-bea1-1c7cde99d521a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="277" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a6ab17215-0c19-4d7f-a48b-326e4aed18cba" BitOffsetWithinDS="8" CodedSet="1=Left ISS-2150;2=Right ISS-2100" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Pad" Guid="a723df815-baa0-47e3-b758-dbfaa0d63381a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="5" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="TAWS_SELECTION_STATUS" Guid="a7f322571-ecbf-4238-87ec-fb7302bfe6b9a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="TAWS Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="TAWS Not selected" />
+        <DP Name="TAWS_OPERATIONAL_STATUS" Guid="a14c4bbab-e610-4d3d-89d4-858b7dd439d0a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="TAWS Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="TAWS Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_GPWS_Fail" DestGuid="ad6f13e6d-67da-48b3-9d13-dc75bcbccf89a" />
+        </DP>
+        <DP Name="XPDR_ACAS_SELECTION_STATUS" Guid="a06b255eb-519e-4cb5-a9b7-671b8d4738dda" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="XPDR/ACAS Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="XPDR/ACAS Not selected" />
+        <DP Name="XPDR_ACAS_OPERATIONAL_STATUS" Guid="a040efa68-a1ff-4f53-bb0f-15f33a204beba" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="XPDR/ACAS Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="XPDR/ACAS Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_XPDR_Fail" DestGuid="a2dea4cb0-be33-47f3-9818-067919aeec34a" />
+        </DP>
+        <DP Name="WXR_SELECTION_STATUS" Guid="a9212e6ea-e8f6-492e-b919-49acfc32c1cea" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="WXR Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="WXR Not selected" />
+        <DP Name="WXR_OPERATIONAL_STATUS" Guid="a07f4e0a5-2777-4113-9049-c9e8546ebda6a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="WXR Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="WXR Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_WXR_Fail" DestGuid="a132fb329-630d-4254-a142-e0de0fb25f38a" />
+        </DP>
+        <DP Name="Left_TAWS_Pwr_ON_OFF" Guid="a1056a780-8101-46bf-81e5-bdebcba98480a" BitOffsetWithinDS="21" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Right_TAWS_Pwr_ON_OFF" Guid="af816e40b-1f9b-4f52-977a-3e88d69975c1a" BitOffsetWithinDS="22" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_GPWS_Active" DestGuid="a17ad82fb-0ac6-4ab2-b857-e990773c8687a" />
+        </DP>
+        <DP Name="Left_XPDR_Pwr_ON_OFF" Guid="a67e4b100-c88f-4ebb-898b-f38605f78bf3a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Right_XPDR_Pwr_ON_OFF" Guid="afe15e8ff-38f3-4da5-a659-ebcae0369463a" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_XPDR_Active" DestGuid="a6c52f614-ab90-43ca-ac56-bf09f2838a19a" />
+        </DP>
+        <DP Name="Left_WXR_Pwr_ON_OFF" Guid="a537529ab-5fb4-4b96-9244-397743a17b56a" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Right_WXR_Pwr_ON_OFF" Guid="aa7ce0538-8767-4ab5-9c45-517ccba367b0a" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_WXR_Active" DestGuid="aee0cd8c6-f64a-4cb3-a501-0b64d205a864a" />
+        </DP>
+        <DP Name="PAD_1" Guid="a5762df4e-d690-4c2a-a6d9-268d696c733aa" BitOffsetWithinDS="27" DataFormatType="PAD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="a34bdd6f8-2738-4670-98e0-438fbbc2afd5a" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="ac73243d2-93ed-4d60-bec5-0dc1c542e314a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_R.MS75.DS1.L277_SURVEILLANCE_FUNCTION_STATUS" SrcGuid="a7f88fc9b-c75b-4e70-a228-e5dd0979e402a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ2_I_HF_TCP_3" SrcGuid="a5f651a54-c82e-4e62-a6de-dcc7759d8340a" />
+  </A429Port>
+  <A429Port Name="po429_RX11_CONC_R_CMF_ISS_CAS_1_351_HF_TCP_3_HFQ_160ms" Guid="a7ca3a53d-8793-46c6-9e4d-6a3a7d25b36ba" Direction="Source" Physical="RDIU_01.40006_A03" RefreshPeriod="160">
+    <A429Channel Name="A429_RX11_CONC_R_CMF_ISS_CAS_1_351_HF_TCP_3_HFQ_160ms" Guid="a22127ce5-6024-40fa-a54a-1e6d4be96c94a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="200">
+      <A429Word Name="L351_TAWS_COCKPIT_SWITCH_STATUS_DISCRETES_HF_ISSPROCESSINGUNIT_R" Guid="ae33d4eab-54cd-4fa1-b414-8fe966382ac5a">
+        <DP Name="Label" Guid="a9400a0d5-ef09-4159-bbbc-c0dc123deceea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="a43207bd4-2b13-4e7a-b01c-d7a4cccdfd05a" BitOffsetWithinDS="8" CodedSet="1=Left ISS-2150;2=Right ISS-2100" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD" Guid="a6684b2ba-41a5-4ffc-973f-b53b05506a59a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="5" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="TAWS_GEAR_OVERRIDE" Guid="a347b73df-a093-486c-abaf-4bf694c289c6a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="Gear override discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_Gear_Override" DestGuid="ab0899e3b-f652-454b-8c84-d6521ceac611a" />
+        </DP>
+        <DP Name="TAWS_GLIDESLOPE_CANCEL" Guid="a86c83a37-f477-42d8-854a-28b6d89d363ea" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="Glideslope cancel discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_Glide_Slope_Inhibit" DestGuid="a36d5e8b2-7374-482c-86d3-1f1cd803a1cca" />
+        </DP>
+        <DP Name="TAWS_FLAP_OVERRIDE" Guid="ab167d8b6-1e3c-4602-a467-f21a788244d4a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="Flap override discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_Flap_Override" DestGuid="a81062062-2d5a-4132-aea0-24801945aeaaa" />
+        </DP>
+        <DP Name="TAWS_TERRAIN_OVERRIDE" Guid="aa8775096-a15a-4b61-9276-b8264080ca12a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="True if GPW Inhibit is active" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_Terrain_Override" DestGuid="aa5594c96-3dc2-4856-a6f5-3df36bf8f11aa" />
+        </DP>
+        <DP Name="TAWS_GLIDESLOPE_CAUTION" Guid="a6d2f48ea-0f81-4138-b2f4-aec1005566c6a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="Caution" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200" ZeroState="No_Caution" />
+        <DP Name="PAD_1" Guid="abdc89509-d6e0-4230-9efd-c522f772a1efa" BitOffsetWithinDS="20" DataFormatType="PAD" ParameterSize="9" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a8b75f3ef-f74e-43ee-b2db-8c5086290219a" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a7dec3819-5159-419f-9240-c7887df813b6a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_R.MS75.DS1.L351_TAWS_COCKPIT_SWITCH_STATUS_DISCRETES" SrcGuid="a13e2c1eb-bd83-4080-befc-5950dcdc3787a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ2_I_HF_TCP_3" SrcGuid="a5f651a54-c82e-4e62-a6de-dcc7759d8340a" />
+  </A429Port>
+  <A429Port Name="po429_RX12_CONC_L_CMF_ISS_CAS_2_HF_TCP_3_HFQ_20ms" Guid="a55c68ef0-7cc3-4427-bebe-b8dca8f52d25a" Direction="Source" Physical="RDIU_01.40006_A04" RefreshPeriod="20">
+    <A429Channel Name="A429_RX12_CONC_L_CMF_ISS_CAS_2_HF_TCP_3_HFQ_20ms" Guid="a72ca0e33-3c84-4c80-9a32-17205bcf8c2ea" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="DCP_PDCM_429_RGW04_I_40009_A01" Guid="af1ee3590-237e-40dd-8c9b-668a9697f756a">
+        <DP Name="Label" Guid="afcd74d46-1133-490e-a850-1cc32a4a3986a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="7" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a8b5b871c-69ce-47d8-8bea-9772357ff99ea" BitOffsetWithinDS="8" CodedSet="0=Message Transmitted by Both CAN1 and CAN2;1=Message Transmitted by CAN1;2=Message Transmitted by CAN2" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_PED_DIM" Guid="a96fd9d7f-c03d-4d7a-abe2-6632b40b3fafa" BitOffsetWithinDS="10" DataFormatType="UBNR" LsbRes="1" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L007_Brightness_Cmd" DestGuid="a2b66bc22-79f3-484d-8f51-60ae9cc314c9a" />
+        </DP>
+        <DP Name="A429Payload_TSW9" Guid="afb6e992b-dc2d-4466-b1e6-a69079af7886a" BitOffsetWithinDS="18" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SPARE2" Guid="af6562cbf-42a2-485e-8aee-c35268aca0fca" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="ad2f9dfa8-b022-48b1-9073-b0b6c16ca60ca" BitOffsetWithinDS="29" CodedSet="0=NO;1=NCD;2=FT;3=FW" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a2bdb5484-0b10-41a3-9d0d-906e3c1fe800a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="RGW04_I_40009_A01.A825_Q_msg_2.DCP_PDCM_429.DCP_PDCM_429" SrcGuid="ab1843c9e-3645-45d0-91f8-701d185187d0a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ1_RGW04_I_40009_A01" SrcGuid="a88436400-6811-4c49-982a-7aca930fec74a" />
+  </A429Port>
+  <A429Port Name="po429_RX12_CONC_L_CMF_ISS_CAS_2_272_HF_TCP_3_HFQ_80ms" Guid="a1aefaaa6-aaaa-4bc3-ae35-4ca5b0d6e08ba" Direction="Source" Physical="RDIU_01.40006_A04" RefreshPeriod="80">
+    <A429Channel Name="A429_RX12_CONC_L_CMF_ISS_CAS_2_272_HF_TCP_3_HFQ_80ms" Guid="a37449255-4ae6-4d53-a41a-76678a892eb7a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L272_WXR_CONTROL_WORD_CAPT_HF_ISSPROCESSINGUNIT_R" Guid="a5e7f0b25-f05a-4c79-ab1b-448e9a60a779a">
+        <DP Name="Label" Guid="ac434627f-b255-4b4c-9820-ab83a07151a7a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="SDI" Guid="a0e9af36b-f83f-4344-a9d9-8e16008a2c06a" BitOffsetWithinDS="8" CodedSet="2=CAPT" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="Pad" Guid="a6426e258-1afe-4d0e-87d7-cb50e150afc1a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="TILT" Guid="a0e2bb303-083a-439c-81f8-25f6d1013a95a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="16" FullScaleRngMin="-16" FuncRngMax="16" FuncRngMin="-16" LsbRes=".25" ParameterSize="7" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L272_WXR_Tilt" DestGuid="a735d6fdd-812c-4efd-9805-54877cfaca61a" />
+        </DP>
+        <DP Name="Pad_1" Guid="a8dfde1bd-b499-431a-b25f-7ab40e6b1fe8a" BitOffsetWithinDS="23" DataFormatType="PAD" ParameterSize="6" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="SSM" Guid="a68e80682-786a-491d-ac13-f73c0a633f44a" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="PARITY" Guid="a430639f5-0e45-4217-bc9d-4ae5071b0957a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="221" TransmissionIntervalMinimum="100" Units="degrees" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_R.MS75.DS1.L272_WXR_CONTROL_WORD_CAPT" SrcGuid="ae32eef16-051c-473b-8b06-9c20cebccfe9a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ2_I_HF_TCP_3" SrcGuid="a5f651a54-c82e-4e62-a6de-dcc7759d8340a" />
+  </A429Port>
+  <A429Port Name="po429_RX12_CONC_L_CMF_ISS_CAS_2_277_HF_TCP_3_HFQ_80ms" Guid="ab19096ab-24de-4144-9b4a-364ad92bf61fa" Direction="Source" Physical="RDIU_01.40006_A04" RefreshPeriod="80">
+    <A429Channel Name="A429_RX12_CONC_L_CMF_ISS_CAS_2_277_HF_TCP_3_HFQ_80ms" Guid="aa790f923-3deb-474d-849f-c858656768b5a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L277_SURVEILLANCE_FUNCTION_STATUS_HF_ISSPROCESSINGUNIT_L" Guid="a64a0e865-ffba-43ed-80b4-ca4233631d68a">
+        <DP Name="Label" Guid="a33c32fa2-94a8-45e2-91fb-e02fd3f19199a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="277" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a75348f3d-4ee0-4a75-a1da-3b69bd992c10a" BitOffsetWithinDS="8" CodedSet="1=Left ISS-2150;2=Right ISS-2100" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Pad" Guid="ad4f53c9e-26f4-4d7b-b114-e02cefbecd9ba" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="5" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="TAWS_SELECTION_STATUS" Guid="a8139a564-ab1f-4c0a-b08a-c98e3e11c919a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="TAWS Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="TAWS Not selected" />
+        <DP Name="TAWS_OPERATIONAL_STATUS" Guid="a6cd06d12-ef46-42eb-b986-bb9253435ec1a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="TAWS Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="TAWS Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_GPWS_Fail" DestGuid="ad4ff52da-4508-4459-9ed0-2273f0a8ac3fa" />
+        </DP>
+        <DP Name="XPDR_ACAS_SELECTION_STATUS" Guid="aaf474f90-e4c6-474e-8766-0afbf538708aa" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="XPDR/ACAS Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="XPDR/ACAS Not selected" />
+        <DP Name="XPDR_ACAS_OPERATIONAL_STATUS" Guid="a4eae6bef-cee9-4415-8242-b186b8d5e0aca" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="XPDR/ACAS Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="XPDR/ACAS Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_XPDR_Fail" DestGuid="ab51ef1d1-4821-45ff-86c0-55aa7b227029a" />
+        </DP>
+        <DP Name="WXR_SELECTION_STATUS" Guid="a2cffff18-26f7-4fa0-99c0-951c51574d00a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="WXR Selected" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="WXR Not selected" />
+        <DP Name="WXR_OPERATIONAL_STATUS" Guid="a4c6b010f-5a1c-4c3f-95c8-78c5c7084063a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="WXR Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" ZeroState="WXR Normal Operation">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_WXR_Fail" DestGuid="aeb6d7280-a315-4bed-bbf9-3d046d4781bfa" />
+        </DP>
+        <DP Name="Left_TAWS_Pwr_ON_OFF" Guid="ad9b91321-0787-49e0-8517-fa0a560ef11fa" BitOffsetWithinDS="21" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_GPWS_Active" DestGuid="a5199790f-a72b-4414-8d87-5a160222a1a8a" />
+        </DP>
+        <DP Name="Right_TAWS_Pwr_ON_OFF" Guid="a2945ef51-af0a-46d3-8ade-174a7a521505a" BitOffsetWithinDS="22" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Left_XPDR_Pwr_ON_OFF" Guid="a7fa4d7dd-9b7d-4fd6-990d-43bb8a79ef53a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_XPDR_Active" DestGuid="a7e8c6e2a-b9cb-40c2-929b-1088e97166e6a" />
+        </DP>
+        <DP Name="Right_XPDR_Pwr_ON_OFF" Guid="a0e2f20ab-d747-4472-8abc-582f7dd64570a" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="Left_WXR_Pwr_ON_OFF" Guid="a25f9a2f6-acc5-4a9e-8162-246c36eb04b4a" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L277_ISS_Status_WXR_Active" DestGuid="a18df86ce-f8f3-42d7-9a08-801cfd05f41aa" />
+        </DP>
+        <DP Name="Right_WXR_Pwr_ON_OFF" Guid="a453ba44f-cca6-487b-8799-ceac17730fa7a" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="PAD_1" Guid="a339b024c-9fbc-47ba-bfb6-f2db2fc577d6a" BitOffsetWithinDS="27" DataFormatType="PAD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="ad6a898a6-e550-47a8-8474-04496c55f5baa" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="afd46c19f-a014-4d7e-b605-f72d9f20d65fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_L.MS75.DS1.L277_SURVEILLANCE_FUNCTION_STATUS" SrcGuid="ac220d4ba-596a-439c-8b1b-c70e3beae354a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ3_I_HF_TCP_3" SrcGuid="a01d50f20-c02d-449f-9674-2777df1342a6a" />
+  </A429Port>
+  <A429Port Name="po429_RX12_CONC_L_CMF_ISS_CAS_2_351_HF_TCP_3_HFQ_160ms" Guid="ac7227e81-8863-4286-aa26-ea8fab08859ba" Direction="Source" Physical="RDIU_01.40006_A04" RefreshPeriod="160">
+    <A429Channel Name="A429_RX12_CONC_L_CMF_ISS_CAS_2_351_HF_TCP_3_HFQ_160ms" Guid="a1fd4fc08-5bda-4159-915b-e7c704af3fb8a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="200">
+      <A429Word Name="L351_TAWS_COCKPIT_SWITCH_STATUS_DISCRETES_HF_ISSPROCESSINGUNIT_L" Guid="afb86c545-135e-4f66-bd3d-4554dfba8c25a">
+        <DP Name="Label" Guid="a12cf4362-5e2d-43c6-9a41-647faee9289ba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="ab28f73d6-b4be-4041-9c11-58bb77441229a" BitOffsetWithinDS="8" CodedSet="1=Left ISS-2150;2=Right ISS-2100" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD" Guid="a7d67e77b-b8c1-4d88-b4d6-5a60b9e3cec1a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="5" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="TAWS_GEAR_OVERRIDE" Guid="a3953a317-a77d-4c36-9bf3-b5d469ab2883a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="Gear override discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_GPWS_Gear_Override" DestGuid="a91472d72-260e-42fc-acf9-69774395165fa" />
+        </DP>
+        <DP Name="TAWS_GLIDESLOPE_CANCEL" Guid="a2d49c2fd-ea9f-40f0-8aef-cfcdfcff15cfa" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="Glideslope cancel discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_GPWS_Glide_slope_inhibit" DestGuid="ae02320aa-4476-4c2c-b286-954cc170db91a" />
+        </DP>
+        <DP Name="TAWS_FLAP_OVERRIDE" Guid="aae1653de-c353-4d5f-a81a-282368e663c8a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="Flap override discrete echo" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_GPWS_Flap_Override" DestGuid="abc1ce91e-92ee-4f9d-8720-d9e18f3d5259a" />
+        </DP>
+        <DP Name="TAWS_TERRAIN_OVERRIDE" Guid="a7a2309b4-850e-4e89-b4f2-80552d1258eda" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="True if GPW Inhibit is active" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200">
+          <Gw_Pub_Ref DestName="HF_TCP_3.L351_GPWS_Terrain_Override" DestGuid="a8bcdf906-8404-487d-964e-5ded299c7b8ca" />
+        </DP>
+        <DP Name="TAWS_GLIDESLOPE_CAUTION" Guid="aa0ba912d-56ee-4f9c-99e0-5636b858edb8a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="Caution" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200" ZeroState="No_Caution" />
+        <DP Name="PAD_1" Guid="a1f8e421d-c6b9-4e28-81fe-8906f92dfff7a" BitOffsetWithinDS="20" DataFormatType="PAD" ParameterSize="9" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a786ce43f-6d20-42cf-ae16-195e16fd3beea" BitOffsetWithinDS="29" CodedSet="0=Normal Operation;1=Not Used;2=Not Used;3=Failure Warning" DataFormatType="COD" ParameterSize="2" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a6d138881-2789-42c4-bbfb-f36c268ea4f7a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="241" TransmissionIntervalMinimum="200" />
+        <Copy_Ref SrcName="HF_ISSPROCESSINGUNIT_L.MS75.DS1.L351_TAWS_COCKPIT_SWITCH_STATUS_DISCRETES" SrcGuid="adf021d42-673b-45f6-9e79-e3b4deaf8c6aa" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW01_A664_In.HFQ3_I_HF_TCP_3" SrcGuid="a01d50f20-c02d-449f-9674-2777df1342a6a" />
+  </A429Port>
+  <AnalogPort Name="poDISC_WOW_HF_TCP_3" Guid="a157fc3e4-91c2-404e-8cd7-e6081fdd6b65a" Direction="Source" Physical="RDIU_01.40012_B01" RefreshPeriod="40" RIUTemplate="40012" UDC="Command inversion=1">
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS7_I_HF_LGCU1" SrcGuid="a87dfe953-4847-4e93-846a-5837232bd653a" LatencyCritical="False" Validated="-1" />
+    <Gw_Cmd_Ref SrcName="RGW08_I_40005_HF_LGCU1.po429_LGCU_ConCh_Tx1_Ch_S_6.L275_Consolidated_WOW_Data.L275_Consolidated_WOW_Data.All_Gear_WOW" SrcGuid="ad42cbcde-4831-41eb-ac94-a56e483af8e0a" CommandLabel="a" Validated="-1" />
+  </AnalogPort>
+  <AnalogPort Name="poDISC_DATALOAD_ENABLE_SPECIFIC_HF_TCP_3" Guid="a3a41ffdb-1fda-4bde-a2a8-b1c25dafd283a" Direction="Source" Physical="RDIU_01.40012_B02" RefreshPeriod="40" RIUTemplate="40012" UDC="Command inversion=1">
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS8_I_HF_AHMUInstance" SrcGuid="ad728a60e-dd93-4dcc-8219-d8e9607ab5aba" LatencyCritical="False" Validated="-1" />
+    <Gw_Cmd_Ref SrcName="HF_AHMUInstance.AHMU_A429_DL_Discrete_Message.DS_1.TCP_3_DL_Discrete" SrcGuid="a5111abc4-ddf4-4ec0-bd33-b2d542ca4a04a" CommandLabel="a" Validated="-1" />
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CA_RTS_HF_RTSSIGNFWD" Guid="a42b3cb5d-3b52-4fd4-8863-70046410d1d3a" Direction="Source" Physical="RDIU_01.40012_A03" RefreshPeriod="80" RIUTemplate="40012" UDC="Command inversion=1">
+    <Gateway_Ref SrcName="RGW01_A664_In.HFS9_I_HF_IASC1" SrcGuid="af7404819-56d2-4c9d-8f9c-8edafbab44bfa" LatencyCritical="False" Validated="-1" />
+    <Gw_Cmd_Ref SrcName="EF_LavatoryRTSSignRelayStatus_FWD.CA_DISC_RTS_FWD" SrcGuid="a5802460d-020d-442b-a1da-567bf03737c6a" CommandLabel="a" Validated="-1" />
+  </AnalogPort>
+  <HFQueuingPort Name="HFQ1_RGW04_I_40009_A01" Guid="a88436400-6811-4c49-982a-7aca930fec74a" ActivityTimeout="100" Direction="Destination" MessageSize="176" Networks="Both" PathName="VLPath17" QueueLength="2" SamplePeriod="20">
+    <Dataflow_Ref SrcName="RGW04_I_40009_A01.HFQ2_O_A664Port" SrcGuid="a25efdf23-e45b-4ee6-b60a-d2445e618492a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HFQ2_I_HF_TCP_3" Guid="a5f651a54-c82e-4e62-a6de-dcc7759d8340a" ActivityTimeout="400" Direction="Destination" MessageSize="28" Networks="Both" PathName="VLPath12" QueueLength="2" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_ISSPROCESSINGUNIT_R.HFQ_O_Tx_Port_109_STATUS_DISCRETES_SV1" SrcGuid="afec0fd5c-1423-4854-b231-930895f310b6a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HFQ3_I_HF_TCP_3" Guid="a01d50f20-c02d-449f-9674-2777df1342a6a" ActivityTimeout="400" Direction="Destination" MessageSize="36" Networks="Both" PathName="VLPath19" QueueLength="2" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_ISSPROCESSINGUNIT_L.HFQ_O_Tx_Port_136_STATUS_DISCRETES_SV1" SrcGuid="ae1aab45e-ca13-4151-a71e-9ce2698e89a9a" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS1_I_HF_DCP1" Guid="a66a5338a-8ed7-40cb-a225-0df21a2ef464a" ActivityTimeout="800" Direction="Destination" MessageSize="12" Networks="Both" PathName="VLPath14" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_L4.OP_SP_DCP" SrcGuid="ae91670e7-d678-4e20-9f09-e6f3c608f39ca" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_I_HF_DCP1" Guid="a9b29db5b-f60e-46e0-ab21-066470a0494ca" ActivityTimeout="800" Direction="Destination" MessageSize="12" Networks="Both" PathName="VLPath0" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_R4.OP_SP_DCP" SrcGuid="a44f3deb7-807b-4c95-809d-abcb861006b5a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS3_I_HF_DCP1" Guid="a58a9a1a2-326f-4428-9a38-ef1a9b11d2aaa" ActivityTimeout="800" Direction="Destination" MessageSize="12" Networks="Both" PathName="VLPath7" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_L5.OP_SP_DCP" SrcGuid="a2ceb2488-254f-4b50-b9cf-1510155acc38a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS4_I_HF_RCP" Guid="a977cc04c-e8c8-466d-879d-862bb0ffead7a" ActivityTimeout="800" Direction="Destination" MessageSize="16" Networks="Both" PathName="VLPath14" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_L4.OP_SP_RCP" SrcGuid="a1f8242bb-67dc-46bb-a092-6b1ae9098fc5a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS5_I_HF_RCP" Guid="aa75bc746-7a93-42df-9463-0ec6c4c14bcba" ActivityTimeout="800" Direction="Destination" MessageSize="16" Networks="Both" PathName="VLPath0" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_R4.OP_SP_RCP" SrcGuid="a8d55b763-2f90-47fa-a71b-4685755bf00ea" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS6_I_HF_RCP" Guid="ac1d03c16-e617-4b16-93fa-0d994f713c40a" ActivityTimeout="800" Direction="Destination" MessageSize="16" Networks="Both" PathName="VLPath7" SamplePeriod="20">
+    <Dataflow_Ref SrcName="IMA_DM_L5.OP_SP_RCP" SrcGuid="a2ccddbbc-d579-410a-8a45-97a2fc771c71a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS7_I_HF_LGCU1" Guid="a87dfe953-4847-4e93-846a-5837232bd653a" ActivityTimeout="200" Direction="Destination" MessageSize="56" Networks="Both" PathName="VLPath43" SamplePeriod="40">
+    <Dataflow_Ref SrcName="RGW08_I_40005_HF_LGCU1.HFS6_O_A664_po429_LGCU_ConCh_Tx1_Ch" SrcGuid="a044e1c7d-e705-41ab-8e5c-c92b67f14c91a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS8_I_HF_AHMUInstance" Guid="ad728a60e-dd93-4dcc-8219-d8e9607ab5aba" ActivityTimeout="200" Direction="Destination" MessageSize="12" Networks="Both" PathName="VLPath24" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poHFS_AHMU_A429_DL_Discrete_Message" SrcGuid="a23bb9cd0-47a8-4587-b07b-2af1aaea39cda" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS9_I_HF_IASC1" Guid="af7404819-56d2-4c9d-8f9c-8edafbab44bfa" ActivityTimeout="400" Direction="Destination" MessageSize="100" Networks="Both" PathName="VLPath34" SamplePeriod="80">
+    <Dataflow_Ref SrcName="RGW07_I_40005_HF_IASC1.HFS2_O_A664_po429_OA_Msg" SrcGuid="aeea1beb1-7642-46f2-a781-371fc952ddffa" />
+  </HFSamplingPort>
+</RemoteGateway>

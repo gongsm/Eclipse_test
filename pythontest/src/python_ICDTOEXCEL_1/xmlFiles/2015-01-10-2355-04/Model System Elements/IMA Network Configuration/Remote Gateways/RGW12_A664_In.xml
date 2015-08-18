@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW12_A664_In" Guid="a2a897817-0fe6-44eb-b586-fe090c041281a" XsdVersion="7.9" Hardware="RDIU_12">
+  <A429Port Name="po429_RxB_127_HF_IHDC_HFS_640ms" Guid="a069ae35f-226b-432d-b5e2-8d5ba417ac37a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_127_HF_IHDC_HFS_640ms" Guid="aa09dd06f-35cf-4d1f-8c23-2cff61aafa3ea" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="10000">
+      <A429Word Name="L127_OMS_Flight_Phase_HF_AHMUInstance" Guid="a40b27517-4e2d-4c33-93f8-683a5fc5afe9a">
+        <DP Name="Label" Guid="a8e4fcd42-8ce8-4a62-a872-caf50667dabba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="127" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="SDI" Guid="af6d73622-a2cb-48fd-9b84-ca3da9e8fec7a" BitOffsetWithinDS="8" CodedSet="0=AHMUInstance" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="Pad" Guid="abc82431b-9ec7-436c-8e64-5e82ae9a7cdfa" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="11" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="OMS_Flight_Phase" Guid="a9bf8cbf2-1cf6-4f8b-b2a5-a28a42a70b5fa" BitOffsetWithinDS="21" CodedSet="0=Unused;1=Power_on;2=Engine Start;3=Taxi Out;4=Takeoff Roll;5=Initial Climb;6=Climb;7=Cruise;8=Descent;9=Approach;10=Go Around;11=Flare;12=Rollout;13=Taxi In;14=Engine Shutdown;15=Maintenance" DataFormatType="COD" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE">
+          <Gw_Pub_Ref DestName="HF_IHDC.L127_FLIGHT_PHASE_B" DestGuid="a195ea375-a33c-4fbd-9858-30c12ece123ea" />
+        </DP>
+        <DP Name="SSM" Guid="a400dfc15-0c9f-4d4f-b08a-23fb9a3b0fe6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE" />
+        <DP Name="PARITY" Guid="ab7213167-affd-4183-8176-c0fc0443557da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <Copy_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_6.L127_OMS_Flight_Phase" SrcGuid="ae8e304bc-85f9-4ea9-a98a-b230c7b45863a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS1_I_HF_IHDC" SrcGuid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_260_HF_IHDC_HFS_640ms" Guid="a34bc89d4-777c-4a2a-a905-f2853ff4e7e9a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_260_HF_IHDC_HFS_640ms" Guid="a98fa5649-3b25-4b0d-aa65-409d6c4d29b7a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="10000">
+      <A429Word Name="L260_UTC_Date_HF_AHMUInstance" Guid="a4259be14-d9be-4ea1-b668-32f40ca794a7a">
+        <DP Name="Label" Guid="a6075e0a4-4947-4e3e-9058-68067ab575f0a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="260" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="SDI" Guid="ab9b4eb98-99c8-4e01-959f-5e9c8d791deda" BitOffsetWithinDS="8" CodedSet="0=AHMUInstance" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="Units_of_Years" Guid="aa585abb7-9b3c-4137-810e-5cc9ebf96594a" BitOffsetWithinDS="10" DataFormatType="BCD" Multiplier="1" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="years">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_UNITS_OF_YEARS_B" DestGuid="a6cb7a19f-e348-4779-bbc4-12e9304159a8a" />
+        </DP>
+        <DP Name="Tens_of_Years" Guid="ade9510c6-763a-48e0-8327-836877a6b298a" BitOffsetWithinDS="14" DataFormatType="BCD" Multiplier="10" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="years">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_TENS_OF_YEARS_B" DestGuid="adf7a7ad5-f930-4ad2-a7fb-e853f2041f89a" />
+        </DP>
+        <DP Name="Units_of_Months" Guid="ab6450ad8-0d56-4c15-bb5f-ffc774bef395a" BitOffsetWithinDS="18" DataFormatType="BCD" Multiplier="1" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="months">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_UNITS_OF_MONTHS_B" DestGuid="a3a05615c-a95a-458d-adcb-e010fa0b91d2a" />
+        </DP>
+        <DP Name="Tens_of_Months" Guid="ab25f660e-f4c9-48bf-9ad3-1cde16c8dad0a" BitOffsetWithinDS="22" DataFormatType="BCD" Multiplier="10" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="months">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_TENS_OF_MONTHS_B" DestGuid="a69681075-81b7-4942-b58e-2558b89ff7a6a" />
+        </DP>
+        <DP Name="Units_of_Days" Guid="ac233bac7-0d25-4201-a4f1-5a9ac8fb08d0a" BitOffsetWithinDS="23" DataFormatType="BCD" Multiplier="1" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="days">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_UNITS_OF_DAYS_B" DestGuid="acc0f9f78-80d9-4747-8773-d421633564d5a" />
+        </DP>
+        <DP Name="Tens_of_Days" Guid="a2bb71886-4246-42e2-85e5-8b6f26927d8aa" BitOffsetWithinDS="27" DataFormatType="BCD" Multiplier="10" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="days">
+          <Gw_Pub_Ref DestName="HF_IHDC.L260_UTC_DATE_TENS_OF_DAYS_B" DestGuid="a8ab967b9-eecd-415d-92b6-e2f30e16cf55a" />
+        </DP>
+        <DP Name="SSM" Guid="a1c2ef998-6c00-4f8a-987a-0cd0224a8475a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE" />
+        <DP Name="PARITY" Guid="a4eccb0c8-7347-43d1-8877-2a8ce7c193caa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <Copy_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date" SrcGuid="a14e6d3ea-e968-4093-93ad-0ce5da9627a8a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS1_I_HF_IHDC" SrcGuid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_261_HF_IHDC_BLK_640ms" Guid="aaa478637-05c4-4fde-a245-2709e7649398a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_261_HF_IHDC_BLK_640ms" Guid="a53e349ce-fac3-4840-a181-642825406333a" A429ProtocolType="Block-Oriented" TransmissionIntervalMinimum="640">
+      <Copy_Ref SrcName="HF_AHMUInstance.AHMU_IHDC_DL_Message.DS_1" SrcGuid="a0011b6dc-2b12-4c1a-a4fa-dd0140de2565a" />
+      <Gw_Pub_Ref DestName="HF_IHDC.L261_Request_To_Send_B" DestGuid="aa074599a-05d6-4b97-8941-db4e6e6922c2a" />
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFQ1_I_HF_IHDC" SrcGuid="a1eb71e71-f85b-4a0b-8f51-002a4d695098a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_271_HF_IHDC_HFS_640ms" Guid="a699eaaf1-2490-45c3-85ac-c81df05f242ea" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_271_HF_IHDC_HFS_640ms" Guid="a30b4ba08-8ff2-4493-9506-a64df963d83ea" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L271_Word_From_HF_ENGINEAPU_FIRECNTRLPANEL_To_HF_IHDC_Through_pi429_RxB_271" Guid="a20f10344-0867-4e3f-bca1-8c6773763133a">
+        <DP Name="LABEL" Guid="aff15af8b-c32f-4270-9423-e7a765f63e83a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="a87483cad-fc18-4540-b976-f2f5d54cddf1a" BitOffsetWithinDS="8" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Status" Guid="a2eb6e667-7710-4233-9179-98f9d16032d9a" BitOffsetWithinDS="10" DataFormatType="DIS" Label="271" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="640">
+          <Copy_Ref SrcName="RGW04_Analog_In_ATA27FCS.A664_O1_40022_ATA26FPS_Msg.DISC_PIT_ACTIVE_CH_B_HF_ENGINEAPU_FIRECNTRLPANEL.Status" SrcGuid="ab4d90f83-2189-41dd-988b-9a41d079fad4a" />
+          <Gw_Pub_Ref DestName="HF_IHDC.L271_PIT_ACTIVE_B" DestGuid="a9ca5e2f3-6b9f-4428-bba7-0ca73053665fa" />
+        </DP>
+        <DP Name="SSM" Guid="aab1d4a1e-798e-4f81-a4f9-193d3421218ba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="adc233687-976c-41a6-8271-f4a7940e9a05a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS2_RGW04_Analog_In_ATA26FPS" SrcGuid="a7e861326-79c2-44e4-8d69-96a533b35b39a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_272_HF_IHDC_HFS_640ms" Guid="aaa6a3bd4-6f5b-4aff-b842-ab8e070b5181a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_272_HF_IHDC_HFS_640ms" Guid="ac0b6a451-124a-4f06-acd0-e7f28723b003a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L272_Word_From_HF_CARGO_FIRECNTRLPANEL_To_HF_IHDC_Through_pi429_RxB_272" Guid="af0e3258d-0b07-405d-90b8-70d6633220c3a">
+        <DP Name="LABEL" Guid="ab8f8ada7-860c-48f5-8ebd-9c1ee5ea4d90a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="aab681209-18b1-404a-96b0-b167afcfbd87a" BitOffsetWithinDS="8" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Status" Guid="aab59eaeb-5c36-44ee-9a9f-83479c543b72a" BitOffsetWithinDS="11" DataFormatType="DIS" Label="272" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="640">
+          <Copy_Ref SrcName="RGW04_Analog_In_ATA27FCS.A664_O1_40022_ATA26FPS_Msg.DISC_AFT_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL.Status" SrcGuid="a2a91cedc-743e-44ab-9069-10982ad8ca12a" />
+          <Gw_Pub_Ref DestName="HF_IHDC.L272_AFT_CARGO_FIRE_EXT_SYS_ARMED_B" DestGuid="a50c97d88-b85b-4a83-b33c-6a2190a1243ea" />
+        </DP>
+        <DP Name="SSM" Guid="a68920d8b-f6a5-4681-81e6-44f638406c91a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="a551f6da5-8b73-45fa-9d0a-ff9430e4cfb2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS2_RGW04_Analog_In_ATA26FPS" SrcGuid="a7e861326-79c2-44e4-8d69-96a533b35b39a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_275_HF_IHDC_HFS_80ms" Guid="a53f64bf6-3352-4290-b44a-da280ceeddc9a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="80">
+    <A429Channel Name="A429_RxB_275_HF_IHDC_HFS_80ms" Guid="a9bc1c874-3cbf-401b-956e-b7d54d7944dba" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L275_Consolidated_WOW_Data_RGW03_I_40005_B01_HF_LGCU2" Guid="a6d0148d7-3b21-4550-9e6f-162bf5e623caa">
+        <DP Name="LABEL" Guid="aa9772c28-b854-4544-8a2f-54933cff1880a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="adb37f567-6123-4db4-b9ac-6bd08891c0aea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="Spare1" Guid="af0553b69-3c62-4b86-877a-40930a7810bfa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="All_Gear_WOW" Guid="ad8da80d7-0957-4e9e-88b6-c4aa4fc62be7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW">
+          <Gw_Pub_Ref DestName="HF_IHDC.L275_All_Gear_WOW_B" DestGuid="ac1900b25-5280-4edb-8cf3-bce7ea558596a" />
+        </DP>
+        <DP Name="MLG_WOW_LH_RH" Guid="a3e88dfae-be5b-4425-9f4f-bf1a41a7952da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW" />
+        <DP Name="GR_WOFFW" Guid="a54f7a997-49f0-4409-a455-3ab26c3229caa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;" />
+        <DP Name="Spare2" Guid="a1e988c79-d7a8-483d-ba56-fbe9fcc07a29a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="NLG_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a0ac1e324-bec1-42e5-a6ae-526ac5003e78a" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_RH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="a64df1e20-4224-4838-a01a-27ad70d6f90ca" Notes="LGCU2 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_LH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="a734d7617-1505-4fae-bdf4-e46a7c82bf7ba" Notes="LGCU2 Only" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="NLG_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a90d6f63e-7289-438e-99f1-8bff2d407b2aa" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_RH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a3569126f-c77a-40b0-a406-297d7d403fc4a" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_LH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a70553b34-2465-4f63-aa28-9bb94a9228b8a" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="Spare4" Guid="a73378c78-1bfb-4d0e-898f-53b54df6fc0fa" Notes="LGCU1 Only" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="DI_MON_AES_GND_DISC" Guid="ad8ef6294-fcc5-433f-9341-3662040cc516a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=GND disconnected;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = GND connected;" />
+        <DP Name="DI_AES_28V_EN_LGCU2_Only" Guid="a2bade7f8-b557-4b52-947f-c78222dfc820a" Notes="LGCU2 Only" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=28V enabled;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = 28V not enabled;" />
+        <DP Name="Spare3" Guid="ab52b4632-42b3-49c0-87cc-38f24be6af38a" Notes="LGCU2 Only" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="ab4b60691-b6d5-4fe3-8083-55afa9bafa36a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a79b67458-db76-4027-a14a-0a1e2978257ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="RGW03_I_40005_HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_S_4.L275_Consolidated_WOW_Data.L275_Consolidated_WOW_Data" SrcGuid="afe697690-e068-43e0-94c4-bfc42a90e8e6a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS3_RGW03_I_40005_B01_HF_LGCU2" SrcGuid="a22e16f3d-9bee-4b29-bf6b-062f04ccab9ea" />
+  </A429Port>
+  <A429Port Name="po429_RxB_301_HF_IHDC_HFS_640ms" Guid="a71bf6bdd-aed4-44c5-99cd-5a20cda4da07a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_301_HF_IHDC_HFS_640ms" Guid="a637f3057-6b76-44c7-9345-a3dc606bfd84a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="10000">
+      <A429Word Name="L301_Aircraft_Reg_Number_C1_C2_C3_HF_AHMUInstance" Guid="a409223d7-4993-4831-88df-ff3e86b7c4cea">
+        <DP Name="Label" Guid="a6a5e5b43-4c1d-4526-80b0-0abefe3697b3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="301" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="Aircraft_Reg_Number_Char_1" Guid="a029441a9-c32a-40e7-bdfb-0cb454478009a" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L301_AC_REGISTRATION_NUM_1_B" DestGuid="a2a347303-caa4-4b60-9b96-f732318e48b0a" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_2" Guid="a1b81edac-0efd-453b-b4c7-80fbe70ea304a" BitOffsetWithinDS="15" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L301_AC_REGISTRATION_NUM_2_B" DestGuid="a93dfd1de-06eb-4f03-baa6-0ef85e83aa78a" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_3" Guid="a38e65407-b2d7-4a86-9728-7e51e94c8deea" BitOffsetWithinDS="22" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L301_AC_REGISTRATION_NUM_3_B" DestGuid="ab8cf977f-1802-4a80-9796-bbf959f9f79ca" />
+        </DP>
+        <DP Name="SSM" Guid="a2eebf80f-e046-4a19-96c5-7d0c5d5bcfcda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE" />
+        <DP Name="PARITY" Guid="a27df87e9-5ed6-4802-a8d0-a226e669d27aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <Copy_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3" SrcGuid="ad94e390d-573d-48ce-a0a4-bd314f275efba" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS1_I_HF_IHDC" SrcGuid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_302_HF_IHDC_HFS_640ms" Guid="a1aa88377-a983-4cfa-b9c8-84fffc1efefda" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_302_HF_IHDC_HFS_640ms" Guid="a8f1a69cf-58b8-4ad0-9989-fd47365529f6a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="10000">
+      <A429Word Name="L302_Aircraft_Reg_Number_C4_C5_C6_HF_AHMUInstance" Guid="abd739bc0-ab14-416f-a9de-a8b958964315a">
+        <DP Name="Label" Guid="ace70f6ba-686b-4511-b75b-c7cdd906332ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="302" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="Aircraft_Reg_Number_Char_4" Guid="acacf5361-aab5-4d67-8dca-8fce5c9b797ea" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L302_AC_REGISTRATION_NUM_4_B" DestGuid="adb104231-09ab-4f64-8754-de74462449e7a" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_5" Guid="aa2268dc8-0393-4efb-8f52-72dd835c287ea" BitOffsetWithinDS="15" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L302_AC_REGISTRATION_NUM_5_B" DestGuid="a451243c9-0ae0-401f-9c6f-9b79fa6280b1a" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_6" Guid="a475330a3-a0cf-40ae-b064-33e35fbb810da" BitOffsetWithinDS="22" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L302_AC_REGISTRATION_NUM_6_B" DestGuid="a40abcbd1-270a-4488-8d8d-318a148f7623a" />
+        </DP>
+        <DP Name="SSM" Guid="a8a0dbbcd-f7e0-437e-b38a-d0401ea78449a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE" />
+        <DP Name="PARITY" Guid="a625ef42a-9204-428f-b8be-fdf3c3c207d9a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <Copy_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6" SrcGuid="af57a08cd-94d9-4a4a-8265-ff3f5e840011a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS1_I_HF_IHDC" SrcGuid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_303_HF_IHDC_HFS_640ms" Guid="a3a736155-9d91-4e09-b3ff-762c4795f821a" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_303_HF_IHDC_HFS_640ms" Guid="a36383685-54af-4187-aabb-d72c4e6962f8a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="10000">
+      <A429Word Name="L303_Aircraft_Reg_Number_C7_C8_C9_HF_AHMUInstance" Guid="a0ffc15ef-a2cb-42f7-9c1c-842122b28691a">
+        <DP Name="Label" Guid="a321d2c79-f997-4090-b6c8-595b2871af2ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="303" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <DP Name="Aircraft_Reg_Number_Char_7" Guid="acb699653-b39a-4fe0-9642-606990470a29a" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L303_AC_REGISTRATION_NUM_7_B" DestGuid="ad5a3d01f-84ab-444f-8167-6cd0a4f3adbba" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_8" Guid="ac5670d2a-9d7b-431e-af75-b9546989da18a" BitOffsetWithinDS="15" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L303_AC_REGISTRATION_NUM_8_B" DestGuid="ad42e6598-82e4-405f-a8e3-2919c68ab93aa" />
+        </DP>
+        <DP Name="Aircraft_Reg_Number_Char_9" Guid="a9687a434-9e7c-46cf-9da1-e07d3297a42da" BitOffsetWithinDS="22" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="0" TransmissionIntervalMinimum="10000">
+          <Gw_Pub_Ref DestName="HF_IHDC.L303_AC_REGISTRATION_NUM_9_B" DestGuid="ac1532e09-8104-46fd-bbde-a016cb257721a" />
+        </DP>
+        <DP Name="SSM" Guid="a0f3c79e2-5d4a-4273-b4df-07c11ecb57dea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="10000" Units="NOT APPLICABLE" />
+        <DP Name="PARITY" Guid="abb449b65-f9fe-4c90-8bff-c8d809f2bfeba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+        <Copy_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9" SrcGuid="a558e79fe-b3c7-4037-9c22-0a76c5225782a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS1_I_HF_IHDC" SrcGuid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_351_HF_IHDC_HFS_640ms" Guid="abd967739-79df-4b00-a564-627647e7401ea" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_351_HF_IHDC_HFS_640ms" Guid="a6aad9c47-d242-4b88-aa52-7cc7d0dede0da" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L351_EICAS_Message_2_RGW07_I_40005_C02_HF_BCMU" Guid="aa8094275-9f75-4999-9eab-4487f42343c9a">
+        <DP Name="LABEL" Guid="a12d4e87b-4124-466a-9b1a-eea681c66199a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="25" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="ad452123d-068a-4cbc-b662-fc6a352a19d4a" BitOffsetWithinDS="8" CodedSet="1=BCMU;2=ABCU" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="25" TransmissionIntervalMinimum="100" />
+        <DP Name="BRK_NML_NO_DISPATCH" Guid="a8c8c3e8b-f546-4b69-bef7-1f90e5be5e68a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="BRK_EMER_FAIL" Guid="ac3680067-3f25-4287-8e55-6a164b9667ada" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="BRK_LH_FAIL" Guid="a26154bee-3c85-4ba4-a7b8-b594019f3a5ea" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="BRK_RH_FAIL" Guid="ad3f5b338-b383-4e3c-8a83-73573bac468fa" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="AUTO_BRK_RTO" Guid="a59076cbf-93bb-4c31-8f95-f06341ea4329a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="AUTO_BRK_HI" Guid="ac9a85d34-d7a0-44aa-aaeb-b5ab4ccbf998a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="AUTO_BRK_MED" Guid="acd9c8aaf-8283-460c-9291-66d040608aa1a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="AUTO_BRK_LO" Guid="ae4aed387-a8bd-4c6f-b7ed-49520e9b21aca" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="BRK_TEMP_FAIL" Guid="ada9b94e8-f501-4b78-9260-91fdf8c5ab49a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="BRK_TEMP_HOT" Guid="a11fd3291-18ba-49ca-839a-4db98f8e7d08a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="TIRE_PR_FAIL" Guid="a7b1390af-bb2f-429a-b50f-597338ffeaa0a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="TIRE_PR_ADVY" Guid="a39925450-46a4-4c54-8c72-32081f8c80e6a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="PARK_BRK_ON" Guid="adf7c127b-6580-48e5-8286-98d1565197a8a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False">
+          <Gw_Pub_Ref DestName="HF_IHDC.L351_PARKING_BRAKE_ON_B" DestGuid="ab660bd4d-0a23-4b06-b46b-3fd6d1c13de3a" />
+        </DP>
+        <DP Name="BRK_ACC_PR_LOW" Guid="a12931d1a-bec0-4215-9629-11e515169fb9a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" ZeroState="0=False" />
+        <DP Name="SSM" Guid="a10cefdcd-bfba-428d-a691-626947e21385a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="25" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a7f415503-2ec8-4dd7-8b9f-3c08cdab0567a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="25" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="RGW07_I_40005_HF_ABCU.po429_Tx2_Msg_S_3.L351_EICAS_Message_2.L351_EICAS_Message_2" SrcGuid="a040b04a1-b4ea-41d8-9d27-6e8b88551201a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS4_RGW07_I_40005_C02_HF_BCMU" SrcGuid="a881b07e0-31ba-458e-895f-2f8facaa5e76a" />
+  </A429Port>
+  <A429Port Name="po429_RxB_272_s1_HF_IHDC_HFS_640ms" Guid="a6d2d7e2a-167d-4f76-856b-a06f25a209eca" Direction="Source" Physical="RDIU_12.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_RxB_272_s1_HF_IHDC_HFS_640ms" Guid="ae003020f-3398-43ef-9b0d-b94959c505d1a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L272_Word_From_HF_CARGO_FIRECNTRLPANEL_To_HF_IHDC_Through_pi429_RxB_272_s1" Guid="aa5adcca3-a13d-44e7-8a83-f9775aa53357a">
+        <DP Name="LABEL" Guid="ad30b544c-0d35-41ed-8f54-010dc96ceaa6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="ac35da198-0682-4784-9135-1f73870b549fa" BitOffsetWithinDS="8" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Status" Guid="aaf2633b6-518d-401e-b477-9b2f842597f8a" BitOffsetWithinDS="10" DataFormatType="DIS" Label="272" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="640">
+          <Copy_Ref SrcName="RGW06_Analog_In_ATA27FCS.A664_O1_40022_ATA26FPS_Msg.DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL.Status" SrcGuid="a17b39e98-bb22-4eb1-a169-fa96e8e7f8a5a" />
+          <Gw_Pub_Ref DestName="HF_IHDC.L272_FWD_CARGO_FIRE_EXT_SYS_ARMED_B" DestGuid="aa7d24c85-b620-48a7-844d-2c8bf4dc591ea" />
+        </DP>
+        <DP Name="SSM" Guid="a95be8203-32a2-4df2-bc98-843f8172266ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="a41bf6d8b-1051-4bd9-b07e-caea6e9bb105a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW12_A664_In.HFS5_RGW06_Analog_In_ATA26FPS" SrcGuid="a798d73a6-1eca-4441-b2a9-682f635e8a9aa" />
+  </A429Port>
+  <HFQueuingPort Name="HFQ1_I_HF_IHDC" Guid="a1eb71e71-f85b-4a0b-8f51-002a4d695098a" ActivityTimeout="3200" Direction="Destination" MessageSize="524" Networks="Both" PathName="VLPath31" QueueLength="2" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poHFQ_AHMU_IHDC_A429_Dataload" SrcGuid="af4b00d50-4067-495e-9367-7360550c3355a" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS1_I_HF_IHDC" Guid="a3194cedc-2b10-4e3f-99c6-f1427ebe1f64a" ActivityTimeout="3200" Direction="Destination" MessageSize="84" Networks="Both" PathName="VLPath31" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poAIRCRAFT_STATUS_A429" SrcGuid="a19423c1c-0289-4098-b090-7a125b1feffba" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_RGW04_Analog_In_ATA26FPS" Guid="a7e861326-79c2-44e4-8d69-96a533b35b39a" ActivityTimeout="3200" Direction="Destination" MessageSize="36" Networks="Both" PathName="VLPath18" SamplePeriod="640">
+    <Dataflow_Ref SrcName="RGW04_Analog_In_ATA27FCS.HFS1_O_40022_ATA26FPS" SrcGuid="ad050fbe3-3930-423b-8fad-eb293e224171a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS3_RGW03_I_40005_B01_HF_LGCU2" Guid="a22e16f3d-9bee-4b29-bf6b-062f04ccab9ea" ActivityTimeout="400" Direction="Destination" MessageSize="56" Networks="Both" PathName="VLPath51" SamplePeriod="80">
+    <Dataflow_Ref SrcName="RGW03_I_40005_HF_LGCU2.HFS4_O_A664_po429_LGCU_ConCh_Tx1_Ch" SrcGuid="a5b1b7351-b895-45c4-b432-fe0abbb8ef6fa" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS4_RGW07_I_40005_C02_HF_BCMU" Guid="a881b07e0-31ba-458e-895f-2f8facaa5e76a" ActivityTimeout="3200" Direction="Destination" MessageSize="112" Networks="Both" PathName="VLPath35" SamplePeriod="640">
+    <Dataflow_Ref SrcName="RGW07_I_40005_HF_ABCU.HFS3_O_A664_po429_Tx2_Msg" SrcGuid="aa46538aa-e7e3-4a9b-82af-a53a59435a2ea" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS5_RGW06_Analog_In_ATA26FPS" Guid="a798d73a6-1eca-4441-b2a9-682f635e8a9aa" ActivityTimeout="3200" Direction="Destination" MessageSize="52" Networks="Both" PathName="VLPath16" SamplePeriod="640">
+    <Dataflow_Ref SrcName="RGW06_Analog_In_ATA27FCS.HFS1_O_40022_ATA26FPS" SrcGuid="aa57cb6a9-01a8-4e2e-834c-af00e86e90c1a" />
+  </HFSamplingPort>
+</RemoteGateway>

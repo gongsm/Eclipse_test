@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW07_I_40005_HF_IASC2" Guid="afe491220-2e24-46b0-a35c-815c2c8f550ca" XsdVersion="7.9" Hardware="RDIU_07">
+  <A429Port Name="pi429_OS_200_HF_IASC2" Guid="a5d87c94a-a6f2-4eb8-8134-16e659ef78aea" ActivityTimeout="800" Direction="Destination" Physical="RDIU_07.40005_A04" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OS_200" SrcGuid="afb4459fb-6923-4c3b-8792-3bc96ca60eb9a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS2_O_A664_po429_OS_Msg_200" Guid="a621df7cc-d34f-47fc-a425-bb97ca0b91cfa" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_OS_Msg_200_S_2" Guid="aa39f9f33-6fc4-4eb9-9967-2d469ed29b21a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="200" VLID="33333">
+      <DS Name="FSS1" Guid="a2097fc1b-c8ae-4842-9967-4c28b0a3296aa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a5a189aa0-78eb-4373-8220-6a766f326a17a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a4d2415eb-c4dd-4d18-9079-89bba41d77d1a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a4c37c909-a637-44b4-affa-fded5bce4c92a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L267_SFY_Safety_Alarms" Guid="a0bc1bacb-9f6a-4049-81ee-c016ef2b39bfa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L267_SFY_Safety_Alarms" Guid="a2419fbca-a77f-445a-9706-30fc77d2d4faa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a9a392dcd-7337-4716-8c93-c1d0b26df8b9a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="267" ParameterSize="8" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a02642b9e-937f-40b5-9e26-c614b6ff1982a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=IASC1S;2=IASC2S;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="ASS_WAIS_LOW_HEAT" Guid="a233c3598-68fe-40bf-8445-855b66267e75a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Low Heat" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" ZeroState="0=Not Low Heat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_ASS_WAIS_LOW_HEAT_2" DestGuid="a1375a51c-1f9e-4d8d-b637-660a3687ef2aa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_ASS_WAIS_LOW_HEAT_2" DestGuid="a3af4510e-6ef2-45ac-90cb-271566980415a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_ASS_WAIS_LOW_HEAT_2" DestGuid="aff0eba1b-c7a5-4711-b5ea-791ed030daa3a" />
+          </DP>
+          <DP Name="OPP_WAIS_LOW_HEAT" Guid="a4b334039-cbf9-47c6-83bd-8cfb40c6d297a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Low Heat" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" ZeroState="0=Not Low Heat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_OPP_WAIS_LOW_HEAT_2" DestGuid="afff6f253-566a-48ee-978d-c06fe10048bba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_OPP_WAIS_LOW_HEAT_2" DestGuid="a34e7230e-b859-4251-9aec-b7423725dbc8a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_OPP_WAIS_LOW_HEAT_2" DestGuid="aa72d634c-afa5-4d45-beeb-210d8c94aaf6a" />
+          </DP>
+          <DP Name="ALT_LIM_ENGAGED" Guid="a2b8d6639-3f4e-46be-b747-e0358160ddb6a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Limitation engaged" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" ZeroState="0=No limitation " />
+          <DP Name="CAB_ALT_HIGH" Guid="a15df0b30-bb18-4c4e-ba9e-73b17ff42d72a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Cabin Altitude warning " ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" ZeroState="0=No Cabin Altitude warning ">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CAB_ALT_HIGH_2" DestGuid="a60a6d4c3-2a08-41c5-a40d-6875e2eaa457a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CAB_ALT_HIGH_2" DestGuid="a9d9d5dd1-cf24-4f65-8791-aba2fa2bae3ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CAB_ALT_HIGH_2" DestGuid="a8f92349c-7120-4cb7-9b45-3e75d50f309aa" />
+          </DP>
+          <DP Name="SSM" Guid="a63a64a64-baa1-4952-b5b1-b5afe76bea77a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="acdf6d5f3-a2f4-4521-8a6a-7d5c4ee6ea79a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OS_Msg_200.L267_SFY_Safety_Alarms" SrcGuid="a61183919-a97e-4e16-82ce-77fb55fc65e4a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L267_SFY_Safety_Alarms_IASC2_OS_2" DestGuid="aa45d20ef-59f1-40a2-9efb-80a01810c0c2a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L267_SFY_Safety_Alarms_IASC2_OS_2" DestGuid="a55d5375c-48b1-4d5a-bc55-78db5f25409ca" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L267_SFY_Safety_Alarms_IASC2_OS_2" DestGuid="ac277b3ab-f353-40e6-88f5-69eba82fca18a" />
+        </A429Word>
+      </DS>
+      <DS Name="L246_SFY_Cabin_Pressure" Guid="aabf60a25-10fd-44a3-a864-19196f5c163fa" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L246_SFY_Cabin_Pressure" Guid="a5afe2641-fad6-4c66-9f60-b1d9b03665e4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6402dc2a-3d21-4ea2-8982-692367ef4e61a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="246" ParameterSize="8" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aef64a39d-d1c6-48e0-b2de-b5155c11119aa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=IASC1S;2=IASC2S;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SFY_Cabin_Altitude" Guid="a1732958f-04aa-4a5e-bc27-6c26f3a04dbba" BitOffsetWithinDS="12" DataFormatType="BNR" FullScaleRngMax="131070" FullScaleRngMin="-131072" FuncRngMax="41000" FuncRngMin="-15000" LsbRes="2" ParameterSize="17" PublishedLatency="400" TransmissionIntervalMinimum="200" Units="ft" />
+          <DP Name="SSM" Guid="a6abffe33-a7f4-4b01-9ce2-2662ef4155e6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a36950b0c-fd80-4e51-9bb8-88dae43ab4d2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OS_Msg_200.L246_SFY_Cabin_Pressure" SrcGuid="a439962b0-2cae-465c-a8e3-2284c36eed0ba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_IASC2_GIPC_L246_SFY_Cabin_Pressure" DestGuid="a31bf08e4-ace6-435d-aa5d-d0dbc6799aaea" />
+        </A429Word>
+      </DS>
+      <DS Name="L247_SFY_Cabin_Altitude_Rate_of_Change" Guid="a5e41e664-a10b-4a3e-afbc-aecdc9c4e943a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L247_SFY_Cabin_Altitude_Rate_of_Change" Guid="a83753563-3647-409d-8684-e83fd1caf765a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af839325d-64fd-4dc1-9dd4-b8714bdaf2e9a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="247" ParameterSize="8" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a34ec189d-2adf-4a7f-8df0-bd840ad7a4ffa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=IASC1S;2=IASC2S;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SFY_Cabin_Pressure_Rate_of_Change" Guid="ac4987c80-5edb-4cba-88d1-d4d36d3b5444a" Notes="Units is mB/min" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="255.875" FullScaleRngMin="-256" FuncRngMax="200" FuncRngMin="-200" LsbRes="0.125" ParameterSize="12" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a8839177a-d651-4cd3-bda7-c6fd4446f530a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a41b84028-c2ab-447d-a04b-fe0ce29335cfa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="400" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OS_Msg_200.L247_SFY_Cabin_Altitude_Rate_of_Change" SrcGuid="a05462b6c-6a1d-4228-b9bc-67dbed2dea31a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_IASC2_GIPC_L247_SFY_Cabin_Altitude_Rate_of_Change" DestGuid="a895dd832-8bbc-4011-9030-8143ea296c09a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW07_I_40005_HF_IASC2.pi429_OS_200_HF_IASC2" SrcGuid="a5d87c94a-a6f2-4eb8-8134-16e659ef78aea" />
+  </HFSamplingPort>
+</RemoteGateway>

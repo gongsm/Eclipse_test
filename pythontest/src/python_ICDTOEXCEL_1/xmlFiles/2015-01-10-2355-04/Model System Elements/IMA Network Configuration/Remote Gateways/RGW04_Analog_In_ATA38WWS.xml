@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW04_Analog_In_ATA38WWS" Guid="a73d48369-4b24-4402-a447-6481e0cc1275a" XsdVersion="7.9" Hardware="RDIU_04">
+  <AnalogPort Name="piANA_TempTD5A_HF_HTDHOSETEMPSENSOR_FWD_GAL" Guid="a5775c25b-8edc-4a31-960f-a497f15f6b23a" Direction="Destination" Physical="RDIU_04.40062_A01" RIUTemplate="40062" SamplePeriod="160" UDC="Cable resistance=0">
+    <Dataflow_Ref SrcName="HF_HTDHOSETEMPSENSOR_FWD_GAL.poANA_Temp_Sensor" SrcGuid="a070a94b4-cb4d-4556-8f0a-ff8146c70274a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40062_ATA38WWS" Guid="a04531eca-531d-418f-812d-bc8e666eaf4aa" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="160">
+    <A664Message Name="A664_O1_40062_ATA38WWS_Msg" Guid="a4939ad77-adf4-411c-9541-cef5f5c8c7dba" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33354">
+      <DS Name="FSS1" Guid="addacea39-4f2c-4eeb-91f3-291fe667967fa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a1a5972ce-77b6-48ae-9edb-32b4eb339c7da" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_HTDHOSETEMPSENSOR_FWD_GAL" Guid="a1251c32d-839b-4c0c-9bcf-3ecdacfea155a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="acbdd453f-6990-43ae-87f1-f1d5267dfea5a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_HTDHOSETEMPSENSOR_FWD_GAL.Temp_Sensor_Signal.Resistance" SrcGuid="a4895629a-99f1-4c2e-919a-8d4000eec5e6a" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_Hose_FWD_GAL_Resistance" DestGuid="a6889b249-f3ef-4ad9-965d-06de3d0dd1e3a" />
+        </DP>
+        <DP Name="Temperature" Guid="a49bd493c-79e7-4a2d-a8a6-c2662915ba0aa" BitOffsetWithinDS="16" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_HTDHOSETEMPSENSOR_FWD_GAL.Temp_Sensor_Signal.Temperature" SrcGuid="a5313e88c-6aa0-4411-b850-829143a7ae40a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Heater_Temp_Hose_FWD_GAL_RH" DestGuid="a0a130df3-9add-4e1c-adf1-c7277b16c535a" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_Hose_FWD_GAL" DestGuid="ab73a60d2-3257-449f-aa09-532088427fa5a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW04_Analog_In_ATA38WWS.piANA_TempTD5A_HF_HTDHOSETEMPSENSOR_FWD_GAL" SrcGuid="a5775c25b-8edc-4a31-960f-a497f15f6b23a" />
+  </HFSamplingPort>
+</RemoteGateway>

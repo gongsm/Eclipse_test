@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW06_Analog_In_ATA30IDS" Guid="ad2816309-ade6-4093-9367-775c798e8c37a" XsdVersion="7.9" Hardware="RDIU_06">
+  <AnalogPort Name="piDISC_ID_ICE_HF_R_ID" Guid="a981eaef8-b8e9-449d-a62c-d6b1df38f112a" Direction="Destination" Physical="RDIU_06.40022_A07" RIUTemplate="40022" SamplePeriod="80" UDC="Confirmation period=2;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_R_ID.poDISC_ID_ICE" SrcGuid="a3d722674-80c3-4735-857a-3c88cd3af26ba" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_ID_STATUS_HF_R_ID" Guid="a9dd931f7-7c6f-45ff-8d53-755b4a532d07a" Direction="Destination" Physical="RDIU_06.40022_A08" RIUTemplate="40022" SamplePeriod="80" UDC="Confirmation period=2;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_R_ID.poDISC_ID_STATUS" SrcGuid="a8b685e64-6a08-4fa0-af6b-2b5f344e9647a" />
+  </AnalogPort>
+  <A429Port Name="po429_L055_DISC_ID_ICE_Status_HF_R_ID" Guid="a670a379f-8194-42c0-bffe-3517d891b1a8a" Direction="Source" Physical="RDIU_06.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_L055_DISC_ID_ICE_Status_HF_R_ID" Guid="a4ff01a97-9e6e-4cf6-a994-fa8725669431a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L055_DISC_ID_ICE_Status_HF_R_ID" Guid="aa4f83174-f14d-47b7-bc98-828b28a1e0efa">
+        <DP Name="LABEL" Guid="a18ed715c-3a42-486f-a451-e6609619e6e5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="55" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="a2475c296-0d9a-43b8-9841-388aca98c7aaa" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Status" Guid="a9a39f06e-7f90-485c-895a-e57d8bbc840da" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="180" RIULabel="a" TransmissionIntervalMinimum="640" ZeroState="0=False">
+          <Copy_Ref SrcName="HF_R_ID.DISC_ID_ICE.Status" SrcGuid="a14222fec-6dd5-4143-9ffa-44fb3e10a411a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L55_2_A1_ICE_DETECTED_ID2_A" DestGuid="aa064407c-4496-40c4-b0a9-fb75cd17d842a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L55_2_A1_ICE_DETECTED_ID2_B" DestGuid="ac9a05b16-afab-4102-bcc8-3f9f1cd69478a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L55_2_B1_ICE_DETECTED_ID2_A" DestGuid="ac1f827c3-6a8d-4c0c-b21c-bf294fb877c1a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L55_2_B1_ICE_DETECTED_ID2_B" DestGuid="a6934a97b-327e-408c-b136-6a116056fa2ca" />
+        </DP>
+        <DP Name="SSM" Guid="a356c131a-22af-4f33-926d-9cdec966e7b9a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="a243e5e0d-2e51-4837-bf5d-af081f714d6fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA30IDS.piDISC_ID_ICE_HF_R_ID" SrcGuid="a981eaef8-b8e9-449d-a62c-d6b1df38f112a" />
+  </A429Port>
+  <A429Port Name="po429_L055_DISC_ID_STATUS_Status_HF_R_ID" Guid="ae0771cfd-e14d-4942-8707-52a4769fdff3a" Direction="Source" Physical="RDIU_06.40006_A01" RefreshPeriod="640">
+    <A429Channel Name="A429_L055_DISC_ID_STATUS_Status_HF_R_ID" Guid="ada1a5209-c303-4638-b197-ecf9ecae65bba" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L055_DISC_ID_STATUS_Status_HF_R_ID" Guid="a04d10259-51bf-44f6-b2f8-78513932043fa">
+        <DP Name="LABEL" Guid="a27f5eb60-05b9-4006-a4ef-1ee00a4dca63a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="55" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="a05f516f9-787a-4d6d-a467-0b1d8d40c662a" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Status" Guid="aca19a367-ab23-468f-89e3-328fc8cd5317a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="180" RIULabel="a" TransmissionIntervalMinimum="640" ZeroState="0=False">
+          <Copy_Ref SrcName="HF_R_ID.DISC_ID_STATUS.Status" SrcGuid="a951c9758-846d-46db-b966-529d5195f358a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L56_2_A1_ICE_DETECTOR_FAULT_ID2_A" DestGuid="a5b82b316-5fda-43fb-a038-5939e827f9aaa" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L56_2_A1_ICE_DETECTOR_FAULT_ID2_B" DestGuid="a6f5d0ec7-36c6-40af-8c4e-143312d79dc1a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L56_2_B1_ICE_DETECTOR_FAULT_ID2_A" DestGuid="a5459aaf1-1270-4974-a798-8ed5a5839f4aa" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L56_2_B1_ICE_DETECTOR_FAULT_ID2_B" DestGuid="a3c2f9cd4-47ea-41d3-9113-ff7dc85613e7a" />
+        </DP>
+        <DP Name="SSM" Guid="a24345b28-7704-4ad8-bd94-a3033d8882cea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="af799d501-73ac-4fe4-800c-5f8cc3fe79a3a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA30IDS.piDISC_ID_STATUS_HF_R_ID" SrcGuid="a9dd931f7-7c6f-45ff-8d53-755b4a532d07a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_40022_ATA30IDS" Guid="a3da8fd43-4cbe-4cf2-b1da-e76246002a04a" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA30IDS_Msg" Guid="a82f1a6b0-6421-47c1-aeb2-b10dad53e6fea" EdeEnable="True" MessageOverhead="32" MessagePad="62" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="100" VLID="33412">
+      <DS Name="FSS1" Guid="a8e24b44a-cdb4-47a1-8bec-939782efb44da" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aa719cf09-d85d-43ac-98bc-af56cea8dd30a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="adaa0e350-1552-4a63-b5cc-149f8588845ea" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_ID_ICE_HF_R_ID" Guid="a299fb302-fe97-40e7-8342-26e721994ef0a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a55a9b57e-44ea-4793-bda1-af67928d80e4a" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="180" RIULabel="a" TransmissionIntervalMinimum="100" ZeroState="0=False">
+          <Copy_Ref SrcName="HF_R_ID.DISC_ID_ICE.Status" SrcGuid="a14222fec-6dd5-4143-9ffa-44fb3e10a411a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_Ice_Detector_Ice_B_Status" DestGuid="a2f65dcd2-f756-44bb-8214-0acd4ee6fe64a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_Ice_Detector_Ice_B_Status" DestGuid="ab549952c-6d94-4f23-be02-4423f51153c7a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_Ice_Detector_Ice_B_Status" DestGuid="af71c5d39-05f5-4118-b758-dabb07f6d7b6a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_Ice_Detector_Ice_B_Status" DestGuid="a276793da-0523-4d41-98a0-a64f8bf057a8a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.Ice_Detected_4R" DestGuid="ada8e5efb-4abf-4e4e-a6f8-b6a9b4e3b31ca" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.Ice_Detected_4R" DestGuid="a7a6186ab-3201-412d-a5a9-3682e0a75f73a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.Ice_Detected_4R" DestGuid="aaca17331-aa84-4704-8d44-1c38fda57d19a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH1.R_ID_ICE_B" DestGuid="a8b7946d0-75b1-41e7-bb80-f897edeae5eba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.R_ID_ICE_B" DestGuid="affe25776-c5ce-4fb2-8688-9ced5bcb7294a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_ID_STATUS_HF_R_ID" Guid="a180e4ef1-79df-4936-8b7a-e861e4568eaba" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a07423aa4-dfe6-4df0-908a-27df919fe512a" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="180" RIULabel="a" TransmissionIntervalMinimum="100" ZeroState="0=False">
+          <Copy_Ref SrcName="HF_R_ID.DISC_ID_STATUS.Status" SrcGuid="a951c9758-846d-46db-b966-529d5195f358a" />
+          <Gw_Pub_Ref DestName="HF_AFTEAFR.R_ID_ICE_B_IDS" DestGuid="aac1765a5-7ffc-4129-b9f9-be05ab3670cda" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_Ice_Detector_Status_B_Status" DestGuid="a38818f1a-38d4-4b18-b8b2-d9a0537e12c5a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_Ice_Detector_Status_B_Status" DestGuid="ab1c8e58b-9cfd-4c08-826c-6b3de4e9d998a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_Ice_Detector_Status_B_Status" DestGuid="acf168aab-15ae-402d-a8ca-f2928f5cec46a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_Ice_Detector_Status_B_Status" DestGuid="a8f19941f-04e8-4713-bb12-4989186a92efa" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.Ice_Detector_Status_4R" DestGuid="a973af7d3-5192-4ac8-85f2-bc377afe417ea" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.Ice_Detector_Status_4R" DestGuid="a40d23bc9-41ea-40b3-b423-816d478a4291a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.Ice_Detector_Status_4R" DestGuid="a05704326-500e-4bed-9bb0-3db476d165d9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH1.R_ID_STATUS_B" DestGuid="a215b124e-5620-4355-a1c4-827b1bb5bb84a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.R_ID_STATUS_B" DestGuid="aa8745661-8400-4643-ab0b-60a146a3acc3a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA30IDS.piDISC_ID_ICE_HF_R_ID" SrcGuid="a981eaef8-b8e9-449d-a62c-d6b1df38f112a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA30IDS.piDISC_ID_STATUS_HF_R_ID" SrcGuid="a9dd931f7-7c6f-45ff-8d53-755b4a532d07a" />
+  </HFSamplingPort>
+</RemoteGateway>

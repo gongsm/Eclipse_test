@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW11_I_40009_A01" Guid="acefa47e6-a213-451f-bea3-cbf8a61d0b6ea" XsdVersion="7.9" Hardware="RDIU_11">
+  <CANPort Name="pi825_FAN_STATUS2_HF_RFAN2" Guid="a9d77f268-a52d-4b2c-848d-0d3a24688f6ca" ActivityTimeout="6400" CANMessageProtocolType="Parametric" Direction="Destination" MessageID="1521FDBC" Physical="RDIU_11.40009_A01" SamplePeriod="1280">
+    <Dataflow_Ref SrcName="HF_RFAN2.po825_FAN_STATUS2" SrcGuid="a0ecc5a30-0620-4634-85d1-026a61d2eef3a" />
+  </CANPort>
+  <CANPort Name="pi825_FAN_STATUS1_HF_RFAN2" Guid="a125bf0bb-24a1-4ad9-8a84-845c133b5af4a" ActivityTimeout="3200" CANMessageProtocolType="Parametric" Direction="Destination" MessageID="1521FDBC" Physical="RDIU_11.40009_A01" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_RFAN2.po825_FAN_STATUS1" SrcGuid="a860492c2-9cf7-46ae-be7a-c7b5242b8f16a" />
+  </CANPort>
+  <HFQueuingPort Name="HFQ1_O_A664Port" Guid="a19590ff1-1000-4751-951a-6ab02032f68aa" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="1280">
+    <A664Message Name="A825_Q_msg_1" Guid="abf1b9375-e7d6-41c3-8321-c694fbf8a413a" EdeEnable="True" MessageOverhead="32" MessagePad="8" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="NA" TransmissionIntervalMinimum="2000">
+      <DS Name="FSS1" Guid="af28dbbeb-020a-43ae-8e12-23b953349816a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a75981e1d-533e-4229-9e3d-35c556a498c8a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="STAT2_FRAME_PAYLOAD" Guid="a73025dbb-d30b-4ae0-9b90-9ee58efe35ffa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="INVERTER_TEMP_PROTECTION" Guid="a46a4a887-9572-4457-b7df-4662db212692a" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=Protection" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=No protection">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_INVERTER_TEMP_PROTECTION_RFAN2_FRAME_PAYLOAD" DestGuid="a10695526-ad48-48a7-b57e-f68dfe898dfda" />
+        </DP>
+        <DP Name="INVERTER_TEMP_LIMITATION" Guid="ac3c8ecc2-bb6c-487d-a811-f1df8e73773ea" BitOffsetWithinDS="1" DataFormatType="DIS" OneState="1=Limitation" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=No limitation">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_INVERTER_TEMP_LIMITATION_RFAN2_FRAME_PAYLOAD" DestGuid="a40427cf0-718f-44a9-9da2-f55d3c9824c9a" />
+        </DP>
+        <DP Name="DSx_2_FEEDBACK" Guid="a0775263d-9a38-414d-93f4-45930e62efeea" BitOffsetWithinDS="2" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSx_2_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="a99434b28-2a73-4218-8667-cf98f2733c60a" />
+        </DP>
+        <DP Name="DSx_1_FEEDBACK" Guid="aec1260cc-e516-40a2-a9b6-f61be434f902a" BitOffsetWithinDS="3" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSx_1_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="ab924204f-cac9-4467-b532-703411f2633aa" />
+        </DP>
+        <DP Name="DSI_4_FEEDBACK" Guid="af776b60e-0fe5-476d-8f9e-d3c26501d0e5a" BitOffsetWithinDS="4" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSI_4_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="a5a6a37cc-2516-4c5c-b9ad-2542db976699a" />
+        </DP>
+        <DP Name="DSI_3_FEEDBACK" Guid="a430b0671-0cd1-40ca-a539-3508e4ee27e9a" BitOffsetWithinDS="5" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSI_3_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="aa3898882-3c93-49f3-b704-ff64a5b53beea" />
+        </DP>
+        <DP Name="DSI_2_FEEDBACK" Guid="ad9857220-1c93-4600-b637-66ff4d2440c2a" BitOffsetWithinDS="6" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSI_2_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="a4b4bc160-3ca5-4850-8de1-4d010dbc5955a" />
+        </DP>
+        <DP Name="DSI_1_FEEDBACK" Guid="a638c21fb-dbbd-4aa9-b584-28cf09c59b7ca" BitOffsetWithinDS="7" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="4000" TransmissionIntervalMinimum="2000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DSI_1_FEEDBACK_RFAN2_FRAME_PAYLOAD" DestGuid="ac8fbe4e3-a967-443f-9c22-36d948289adea" />
+        </DP>
+        <DP Name="DC_VOLTAGE" Guid="a44ed818c-1b0b-4730-9c22-da5a6111bbb2a" BitOffsetWithinDS="8" DataFormatType="SINT" FullScaleRngMax="1016" FullScaleRngMin="-1024" FuncRngMax="1016" FuncRngMin="-1024" ParameterSize="8" PublishedLatency="4000" TransmissionIntervalMinimum="2000">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DC_VOLTAGE_RFAN2_FRAME_PAYLOAD" DestGuid="afa7a5f1a-e266-4aa1-b83c-7d6caa386a25a" />
+        </DP>
+        <DP Name="INVERTER_TEMP" Guid="a11672cb0-c26d-450e-a58b-470b1d9e7ef4a" BitOffsetWithinDS="16" DataFormatType="SINT" FullScaleRngMax="254" FullScaleRngMin="-256" FuncRngMax="254" FuncRngMin="-256" ParameterSize="8" PublishedLatency="4000" TransmissionIntervalMinimum="2000">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_INVERTER_TEMP_RFAN2_FRAME_PAYLOAD" DestGuid="a064b0790-c9a5-4d6c-97e8-88017ac52a87a" />
+        </DP>
+        <Copy_Ref SrcName="HF_RFAN2.STAT2_FRAME_PAYLOAD" SrcGuid="a9fa6adc1-39ea-4b39-ad49-e5db9ba12666a" />
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW11_I_40009_A01.pi825_FAN_STATUS2_HF_RFAN2" SrcGuid="a9d77f268-a52d-4b2c-848d-0d3a24688f6ca" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HFQ2_O_A664Port" Guid="a5d6befdc-f1a4-48ba-b578-2f30209cbc34a" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="640">
+    <A664Message Name="A825_Q_msg_2" Guid="a2c6ed5c6-41c1-47ee-81ee-ac17526f77eba" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1000" VLID="33403">
+      <DS Name="FSS1" Guid="ab56e8d2f-3185-4e76-9620-7eb58b0534cfa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a3fc99085-efc0-4e08-bb8c-42666cac5a38a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="po825_FAN_STATUS_MSG" Guid="af86b9124-5b92-4cfa-81f9-8689416dda3ba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="UNDERSPEED" Guid="abebac3d8-1912-4a2c-91db-c8fed18e485ea" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=Underspeed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No underspeed">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_UNDERSPEED_RFAN2_FAN_STATUS_MSG" DestGuid="af082bc66-5da2-4993-a637-01f94c384e9aa" />
+        </DP>
+        <DP Name="OVERHEAT_FAULT" Guid="a4080a53f-57ce-4714-ac44-0d29b78be274a" BitOffsetWithinDS="1" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No overheat">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_OVERHEAT_FAULT_RFAN2_FAN_STATUS_MSG" DestGuid="a748742e2-ab39-446d-971a-270268c01a5ba" />
+        </DP>
+        <DP Name="RESTART_POSSIBLE" Guid="a3d493d2a-8e25-4422-b46d-d4336f548fdfa" BitOffsetWithinDS="2" DataFormatType="DIS" OneState="1=Restart possible" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Restart not possible">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_RESTART_POSSIBLE_RFAN2_FAN_STATUS_MSG" DestGuid="afdd514c5-6b12-4d57-b7bc-905d2f6a9fb8a" />
+        </DP>
+        <DP Name="TEMPORARY_INOP" Guid="a1983aa6b-8b04-4564-bf7e-d859c6646776a" BitOffsetWithinDS="3" DataFormatType="DIS" OneState="1=Temporary inoperational" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Operational">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_TEMPORARY_INOP_RFAN2_FAN_STATUS_MSG" DestGuid="a2e10d64a-a609-4744-9ad5-6a01dfd191bca" />
+        </DP>
+        <DP Name="PERMANENT_INOP" Guid="a5be4923f-cd65-411f-915e-57425867824ea" BitOffsetWithinDS="4" DataFormatType="DIS" OneState="1=Permanently inoperational" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Operational">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_PERMANENT_INOP_RFAN2_FAN_STATUS_MSG" DestGuid="ae6219147-3c4c-4411-aae5-cbf6becf0d89a" />
+        </DP>
+        <DP Name="FAN_ON_OR_OFF" Guid="a25521ab0-35f2-4ab4-8964-3931e47abd5ca" BitOffsetWithinDS="5" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_FAN_ONOFF_RFAN2_FAN_STATUS_MSG" DestGuid="a6c8e786f-8a6b-4ef3-9656-45a11db1c8f0a" />
+        </DP>
+        <DP Name="CURRENT_LIMITATION" Guid="a2b0ddf3b-a22c-408a-afd3-c8443bea2060a" BitOffsetWithinDS="6" DataFormatType="DIS" OneState="1=Limitation" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No limitation">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_CURRENT_LIMITATION_RFAN2_FAN_STATUS_MSG" DestGuid="a77a8a655-2d9b-41d4-8c13-542efb82349ea" />
+        </DP>
+        <DP Name="DEFAULT_MODE" Guid="a16a69a66-016a-4ad1-93d4-49b4d0d33909a" BitOffsetWithinDS="7" DataFormatType="DIS" OneState="1=Default" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_DEFAULT_MODE_RFAN2_FAN_STATUS_MSG" DestGuid="ae9157655-377e-43a7-bea5-00c63b534e4da" />
+        </DP>
+        <DP Name="CURRENT" Guid="aa2d2720f-dd64-4453-89a3-b54f183bf590a" BitOffsetWithinDS="8" DataFormatType="SINT" FullScaleRngMax="31.75" FullScaleRngMin="-32" FuncRngMax="31.75" FuncRngMin="-32" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_CURRENT_RFAN2_FAN_STATUS_MSG" DestGuid="a73d8c367-73e1-4fb4-ba58-69df8271cd14a" />
+        </DP>
+        <DP Name="SPEED" Guid="a499098fc-331a-4598-9fed-7223b5d3c76ea" BitOffsetWithinDS="16" DataFormatType="SINT" FullScaleRngMax="32767" FullScaleRngMin="-32768" FuncRngMax="32767" FuncRngMin="-32768" ParameterSize="16" PublishedLatency="2000" TransmissionIntervalMinimum="1000">
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_SPEED_RFAN2_FAN_STATUS_MSG" DestGuid="a8e81f475-9479-437e-950a-4dc84beafbafa" />
+        </DP>
+        <Copy_Ref SrcName="HF_RFAN2.po825_FAN_STATUS_MSG" SrcGuid="a011f97f7-934b-4259-8b48-a800dcef72c9a" />
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW11_I_40009_A01.pi825_FAN_STATUS1_HF_RFAN2" SrcGuid="a125bf0bb-24a1-4ad9-8a84-845c133b5af4a" />
+  </HFQueuingPort>
+</RemoteGateway>

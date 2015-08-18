@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_FWD_GHEAT_CMD_EPS_A" Guid="a2416505f-f02d-4fe9-9c19-e5f5c7e3d48aa" XsdVersion="7.9" ChangeAuthority="UnknownOwner" DiagramFile="C:\Program Files (x86)\GE Aviation\Embedded Function Editor Toolset - Obfuscated\ApplicationResource\Layout Files\a2416505f-f02d-4fe9-9c19-e5f5c7e3d48aa.efl" DiagramMD5="MUIxM0ExMDdGNEM1RDQ5QzY0MUM1QUE1OTI5QTM3Mzk=" UpdatePeriod="160">
+  <DesignConstant Name="DIS1_ONE_NO" Guid="ac5882836-9459-48f9-b836-26512b79fd4ca" DataFormatType="DIS" ParameterSize="1" />
+  <DesignConstant Name="BYTE8_ZERO_ND" Guid="ac40d6fc0-3675-4d26-b0c8-fcb28a906241a" DataFormatType="OPAQUE" ParameterSize="8" />
+  <DataInPort Name="GHEAT_CMD_IASC1A" Guid="ab9e62f18-c6c8-49fa-97d1-49927f146fd3a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L310_RPDU_Command_Word.GHEAT_CMD" SrcGuid="aa4154a6f-6092-4964-9108-3763cbc5e958a" />
+  </DataInPort>
+  <DataInPort Name="GHEAT_CMD_IASC1B" Guid="a72c408f7-515f-4016-a827-6584f016a11fa" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L310_RPDU_Command_Word.GHEAT_CMD" SrcGuid="a306e87d2-208b-443a-a795-fee71e5583dea" />
+  </DataInPort>
+  <DataOutPort Name="FWD_GHEAT_CMD_EPS_1A" Guid="abb759f4b-de75-46fa-8e66-5542bac121b8a" DataFormatType="COD" ParameterSize="8">
+    <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_17.Output" SrcGuid="a0ad5ff13-51b4-42e8-9d57-0351f9e4f38ba" />
+  </DataOutPort>
+  <TransFcn Name="INSTANCE_1" Guid="a7348764e-c60e-4b98-856d-c9e4229c4a8da" RIUTemplate="41065" SequenceNumber="1" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="a85bbd0b6-6b0f-425f-896f-aa885b7fd3cfa" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.GHEAT_CMD_IASC1A" SrcGuid="ab9e62f18-c6c8-49fa-97d1-49927f146fd3a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="aa50e4960-f058-427b-9a2f-9a7827363a58a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.GHEAT_CMD_IASC1B" SrcGuid="a72c408f7-515f-4016-a827-6584f016a11fa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ac42262d8-396e-438c-99d7-5c541a02c85ba" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_2" Guid="a5a381b38-6709-4965-aad2-bc0db3f1952da" RIUTemplate="41065" SequenceNumber="2" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="aa2e9ecae-a938-485e-97d5-9fbddb3bb9f7a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.GHEAT_CMD_IASC1A" SrcGuid="ab9e62f18-c6c8-49fa-97d1-49927f146fd3a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="ab32d6c05-bf48-4469-88ab-15bdfe02e80ea" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.GHEAT_CMD_IASC1B" SrcGuid="a72c408f7-515f-4016-a827-6584f016a11fa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a60ceedb2-48f8-4b3e-879f-4cb091754e2da" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_3" Guid="a38f0b17c-29ec-445f-8c9a-a212ea1cb49aa" RIUTemplate="41039" SequenceNumber="3" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a4560c662-8bd3-41aa-b387-0d419dca70b3a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_1.Output" SrcGuid="ac42262d8-396e-438c-99d7-5c541a02c85ba" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="ae6af493f-8e95-4634-8e33-7131cba05f71a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_4" Guid="afbb1d874-d60a-4499-945e-e1294d480aa4a" RIUTemplate="41039" SequenceNumber="4" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="af13e88ba-ef95-4a9d-aa4d-caa1122191eda" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_2.Output" SrcGuid="a60ceedb2-48f8-4b3e-879f-4cb091754e2da" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="a886638cf-da3d-4acf-8119-e494fe178d6da" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_5" Guid="a0e59f9c8-9104-40b3-ac06-f42d33ef9227a" RIUTemplate="41000" SequenceNumber="5" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xF888h;">
+    <DataInPort Name="Input_1" Guid="ae042c23b-192f-431c-88b0-715fc55a2e88a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="ae6af493f-8e95-4634-8e33-7131cba05f71a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="ab7274bb8-de2b-4225-8532-8ead72b4c843a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_1.Output" SrcGuid="ac42262d8-396e-438c-99d7-5c541a02c85ba" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a74894279-e94a-46fe-b951-0d466f2e9087a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="a886638cf-da3d-4acf-8119-e494fe178d6da" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="ab0c19dd6-30fc-40d9-98f5-07c699294eb6a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_2.Output" SrcGuid="a60ceedb2-48f8-4b3e-879f-4cb091754e2da" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a84f5f43b-177b-4279-b0f3-29fc854e0c84a" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_6" Guid="a850632f4-9ea2-4969-840f-a756bcefee8fa" RIUTemplate="41000" SequenceNumber="6" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xABA8h;">
+    <DataInPort Name="Input_1" Guid="a2a40864d-f802-4b19-9bb7-b94d81a48e9aa" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_5.Output" SrcGuid="a84f5f43b-177b-4279-b0f3-29fc854e0c84a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a66f2d9bb-e7ad-46e1-85f3-1f6370413294a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="ae6af493f-8e95-4634-8e33-7131cba05f71a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a53ce2bf6-365a-43a2-b7de-1c4506eb8198a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="a886638cf-da3d-4acf-8119-e494fe178d6da" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a74273c6d-38d1-49ea-a8f9-e756b796ac22a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a9def53ee-1c8d-47cf-9e21-d0352d4e7fa3a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ab751d237-7c7c-425b-bfab-9b50d82dfc72a" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_7" Guid="a12e0cd48-9023-4be2-a710-5073d40eb057a" RIUTemplate="41043" SequenceNumber="7" TemplateInstance="41043_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Data" Guid="a896cd788-12e0-4cdf-8579-71505141f254a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_6.Output" SrcGuid="ab751d237-7c7c-425b-bfab-9b50d82dfc72a" />
+    </DataInPort>
+    <DataInPort Name="Validity Parameter" Guid="af4509c91-3d6b-4d76-9332-95b18447c737a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.DIS1_ONE_NO" SrcGuid="ac5882836-9459-48f9-b836-26512b79fd4ca" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a9def53ee-1c8d-47cf-9e21-d0352d4e7fa3a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_8" Guid="a78ba6fb0-fbab-4b92-865b-51aa5e3ffcbfa" RIUTemplate="41035" SequenceNumber="8" TemplateInstance="41035_T01" UDC="Constant=10;">
+    <DataOutPort Name="Output" Guid="a78ad56f1-4b60-4938-b267-1e669cc2624da" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_9" Guid="a18ac78b4-a178-4aec-809c-e8eef79e711ea" RIUTemplate="41061" SequenceNumber="9" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="ae2d522c6-562c-439a-b037-44cb49772cf0a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_8.Output" SrcGuid="a78ad56f1-4b60-4938-b267-1e669cc2624da" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a060a744f-eeff-4e63-917c-4662f47fe52ea" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_10" Guid="a7e618c14-b702-444d-ae7a-cb1b260723faa" RIUTemplate="41055" SequenceNumber="10" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a1d8eb432-8434-4205-8b93-955707ff8a07a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_9.Output" SrcGuid="a060a744f-eeff-4e63-917c-4662f47fe52ea" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a1a0de342-c70b-4bff-b935-a249473ebe64a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_11" Guid="a66e6414f-7c84-4b71-aa9d-0369feff41ffa" RIUTemplate="41035" SequenceNumber="11" TemplateInstance="41035_T01" UDC="Constant=5;">
+    <DataOutPort Name="Output" Guid="a2e525e87-ad23-4613-aae6-981cc4dcdf8aa" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_12" Guid="a47309199-d5a9-4e8a-a47f-77181f8b18c4a" RIUTemplate="41061" SequenceNumber="12" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="abf3dea19-d2a5-4ccd-a395-66f630714119a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_11.Output" SrcGuid="a2e525e87-ad23-4613-aae6-981cc4dcdf8aa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ac5d7a9e3-873d-4ab2-8559-4e17e4d65afda" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_13" Guid="ab7236be3-54a9-4e4a-9b16-4479fb3c47e4a" RIUTemplate="41055" SequenceNumber="13" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a50607ec1-9308-41b6-883a-8eeb0ee4c8aaa" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_12.Output" SrcGuid="ac5d7a9e3-873d-4ab2-8559-4e17e4d65afda" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="afbb13d25-d6a3-4b9b-acde-0c18f2a36f75a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_14" Guid="acd67eee6-1855-4493-ba42-d5ac16154ecea" RIUTemplate="41044" SequenceNumber="14" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="af7d3f431-12f7-4f01-96cb-dc14bcaf5842a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a9def53ee-1c8d-47cf-9e21-d0352d4e7fa3a" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="a1283719b-c053-4060-92df-49c3729e0872a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_10.Output" SrcGuid="a1a0de342-c70b-4bff-b935-a249473ebe64a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="aa8e33f20-347c-48c5-89ad-4199cdc4895ea" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_15" Guid="a49373949-cc83-4995-9d8f-c8579113684ba" RIUTemplate="41004" SequenceNumber="15" TemplateInstance="41004_T01" UDC="Output Inversion=2;">
+    <DataInPort Name="Input" Guid="a9534b6f7-1070-4651-8555-cda13198e7d7a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a9def53ee-1c8d-47cf-9e21-d0352d4e7fa3a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="adbbd17f5-7426-4ccd-8765-8a4e179ae845a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_16" Guid="a391ac1f7-45e4-4860-91dd-5d3d9427d387a" RIUTemplate="41044" SequenceNumber="16" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="ad05b6347-0ed1-48c6-ad48-3e348b49f28aa" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_15.Output" SrcGuid="adbbd17f5-7426-4ccd-8765-8a4e179ae845a" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="aec44aca2-052e-471a-96de-97cb615dfa63a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_13.Output" SrcGuid="afbb13d25-d6a3-4b9b-acde-0c18f2a36f75a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a0eb43c6b-4412-46d0-9bff-a10342760eafa" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_17" Guid="afd52daa5-5d15-4168-afff-a0b403229c6aa" RIUTemplate="41075" SequenceNumber="17" TemplateInstance="41075_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="a515bf5f0-1451-49c6-89ec-f1678fcd97f4a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_14.Output" SrcGuid="aa8e33f20-347c-48c5-89ad-4199cdc4895ea" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a63b7655d-0675-442b-92f3-0b1f0ee73d63a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.INSTANCE_16.Output" SrcGuid="a0eb43c6b-4412-46d0-9bff-a10342760eafa" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a2d044cfb-be8b-45f2-9cd3-0427f08cfb43a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.BYTE8_ZERO_ND" SrcGuid="ac40d6fc0-3675-4d26-b0c8-fcb28a906241a" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="ac9342b18-88ab-466d-be39-6e4dbd175959a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="d">
+      <Trans_Ref SrcName="EF_FWD_GHEAT_CMD_EPS_A.BYTE8_ZERO_ND" SrcGuid="ac40d6fc0-3675-4d26-b0c8-fcb28a906241a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a0ad5ff13-51b4-42e8-9d57-0351f9e4f38ba" DataFormatType="COD" ParameterSize="8" RIULabel="e" />
+  </TransFcn>
+</EmbFcn>

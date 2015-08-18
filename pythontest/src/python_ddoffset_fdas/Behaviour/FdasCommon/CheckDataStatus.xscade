@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" kind="function" name="CheckDataStatus">
+	<inputs>
+		<Variable name="InputVariableStatus">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/290/785A/13D4/5463230e49ae"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="StatusValidFlag">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28f/785A/13D4/5463230e7a08"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L3">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28c/785A/13D4/5463230e3167"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28d/785A/13D4/5463230e1346"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L4">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28e/785A/13D4/5463230e1a71"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = InputVariableStatus; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="InputVariableStatus"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/287/785A/13D4/5463230e5e29"/>
+			</pragmas>
+		</Equation>
+		<!-- StatusValidFlag = _L3; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="StatusValidFlag"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L3"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/288/785A/13D4/5463230e5e72"/>
+			</pragmas>
+		</Equation>
+		<!-- _L3 = _L1 = _L4; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L3"/>
+			</lefts>
+			<right>
+				<!-- _L1 = _L4 -->
+				<BinaryOp name="1" operator="=">
+					<operands>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L4"/>
+							</path>
+						</IdExpression>
+					</operands>
+				</BinaryOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/289/785A/13D4/5463230e6028"/>
+			</pragmas>
+		</Equation>
+		<!-- _L4 = DATA_STATUS_NORMAL_OPERATION; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L4"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/28a/785A/13D4/5463230e2084"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/286/785A/13D4/5463230e558c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<NetDiagram name="diagram_CheckDataStatus" landscape="true" format="A4 (210 297)" oid="!ed/28b/785A/13D4/5463230e676d">
+					<presentationElements>
+						<EquationGE presentable="!ed/287/785A/13D4/5463230e5e29">
+							<position>
+								<Point x="8281" y="5239"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/288/785A/13D4/5463230e5e72">
+							<position>
+								<Point x="15505" y="5980"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/289/785A/13D4/5463230e6028">
+							<position>
+								<Point x="11210" y="5548"/>
+							</position>
+							<size>
+								<Size width="2609" height="1392"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/28a/785A/13D4/5463230e2084">
+							<position>
+								<Point x="8509" y="6964"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/287/785A/13D4/5463230e5e29" dstEquation="!ed/289/785A/13D4/5463230e6028">
+							<positions>
+								<Point x="8551" y="5503"/>
+								<Point x="9864" y="5503"/>
+								<Point x="9864" y="6011"/>
+								<Point x="11218" y="6011"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/28a/785A/13D4/5463230e2084" dstEquation="!ed/289/785A/13D4/5463230e6028">
+							<positions>
+								<Point x="8678" y="7112"/>
+								<Point x="9948" y="7112"/>
+								<Point x="9948" y="6477"/>
+								<Point x="11218" y="6477"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/289/785A/13D4/5463230e6028" dstEquation="!ed/288/785A/13D4/5463230e5e72">
+							<positions>
+								<Point x="13822" y="6244"/>
+								<Point x="15261" y="6244"/>
+								<Point x="15261" y="6244"/>
+								<Point x="15558" y="6244"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

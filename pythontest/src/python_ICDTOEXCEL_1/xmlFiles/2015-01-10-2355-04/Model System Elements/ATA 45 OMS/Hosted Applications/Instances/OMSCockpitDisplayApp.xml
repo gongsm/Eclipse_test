@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponent Name="OMSCockpitDisplayApp" Guid="a1ca6c917-083e-47de-b5a4-3bf50c588dbca" NameDef="OMSCockpitDisplayAppClass" GuidDef="a0D2E8E0D-2F58-42c3-B9A6-2B92DEF57616a" XsdVersion="7.9" Hardware="CCR_LEFT.GPM_L6" IpAddress="10.42.45.83" TotalTime="5">
+  <A653QueuingPort Name="A653QUE_O10" Guid="add49a815-4a2c-40e0-9bff-f61df8fd99fda" NameDef="OMSCockpitDisplayAppClass.A653QUE_O10" GuidDef="a5b0c0dfa-bfe3-4df7-995c-bbdb99db637ba">
+    <A664Message Name="CDA_AHMU" Guid="a4d115370-e0fb-48fc-960e-a8ba62be2347a" NameDef="OMSCockpitDisplayAppClass.CDA_AHMU" GuidDef="ab9caa73f-1a0b-4dc3-a0aa-765332297b6aa" SubVLID="0" VLID="1034">
+      <DS Name="DS_1" Guid="af2a9b205-0dc8-485e-897e-65da32e212bea" NameDef="OMSCockpitDisplayAppClass.CDA_AHMU.DS_1" GuidDef="aac30cd09-9483-4521-aeb7-e6393de3e077a">
+        <DP Name="CDA_YV3086_Request" Guid="a78a460c2-2727-4b7f-ae10-72e28b54530ca" NameDef="OMSCockpitDisplayAppClass.CDA_AHMU.DS_1.CDA_YV3086_Request" GuidDef="a99005151-72c6-4f54-b8be-88646028801fa" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653QUE_I15" Guid="a44c53381-2884-483d-9bdd-7ef72c44c935a" NameDef="OMSCockpitDisplayAppClass.A653QUE_I15" GuidDef="a1a2ef0f7-5954-4cc0-87ff-1bed07e7348ca" PathName="VLPath48">
+    <RP Name="Rx_AHMU_YV3086_RESPONSE" Guid="a37a1edcb-d571-4154-bc56-c2642c3d2a8da" NameDef="OMSCockpitDisplayAppClass.Rx_AHMU_YV3086_RESPONSE" GuidDef="a52697c4f-4746-409a-b385-a3cd63ee0a48a">
+      <Pub_Ref SrcName="HF_AHMUInstance.AHMU_YV3086_RESPONSE.DS1.AHMU_YV3086_RESPONSE" SrcGuid="ab7880252-147c-4492-88e5-695c0e2987f0a" Validated="-1" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poHFQ_AHMU_CDA_YV3086_Response" SrcGuid="a83185373-d4fc-4a5e-b9a7-a0154d2ee8cea" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_OMS_A661_BLOCK" Guid="aad240ff7-0c91-4dc1-9590-a0df9e49edcba" NameDef="OMSCockpitDisplayAppClass.IP_QP_OMS_A661_BLOCK" GuidDef="afd6fc609-8694-42d9-acc2-baf0e8c14324a" PathName="VLPath7">
+    <RP Name="OMS_A661_BLOCK" Guid="adfea4536-0cdd-41d1-be06-24dfc693e187a" NameDef="OMSCockpitDisplayAppClass.OMS_A661_BLOCK" GuidDef="a2f19391f-67cd-40f1-a01d-696fc1a01e08a">
+      <Pub_Ref SrcName="HF_IDUCENTER.MSG_HDD_OMS_A661_BLOCK.DS1.OMS_A661_BLOCK" SrcGuid="ae30bd9cd-4542-49d3-a750-39c12a3068e7a" Validated="-1" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDUCENTER.OP_QP_OMS_A661_BLOCK" SrcGuid="a67ddf7a1-d44c-406b-9f70-61549c4f048ea" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_OMS_A661_BLOCK" Guid="a08cb95f7-ce80-4d06-beff-d3edbde0feb5a" NameDef="OMSCockpitDisplayAppClass.OP_QP_OMS_A661_BLOCK" GuidDef="ace229605-5fbb-483c-b060-2d55a2e70f47a">
+    <A664Message Name="MSG_HDD_DU5_A661_BLOCK" Guid="a3b1e397d-f886-4429-aa98-d847255c1577a" NameDef="OMSCockpitDisplayAppClass.MSG_HDD_DU5_A661_BLOCK" GuidDef="a65f5ff26-1307-4b50-ae9b-a2d6247f6608a" SubVLID="0" VLID="1034">
+      <DS Name="DS1" Guid="ad0127de1-7244-4b7c-9b6f-7fe0e667b46aa" NameDef="OMSCockpitDisplayAppClass.MSG_HDD_DU5_A661_BLOCK.DS1" GuidDef="a7c1a375a-9568-44d5-9801-47bc00cb446da">
+        <DP Name="MSG_OMS_HDD_DU5_A661_BLOCK" Guid="a45bb0cc7-60ee-453f-829e-05085170d531a" NameDef="OMSCockpitDisplayAppClass.MSG_HDD_DU5_A661_BLOCK.DS1.MSG_OMS_HDD_DU5_A661_BLOCK" GuidDef="a2da43c5c-0a21-41c7-aa62-64c285fc3b1aa" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+</A653ApplicationComponent>

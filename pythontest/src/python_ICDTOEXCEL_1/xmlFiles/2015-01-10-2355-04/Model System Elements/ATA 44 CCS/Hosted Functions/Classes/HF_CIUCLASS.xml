@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_CIUCLASS" Guid="a8d33f09e-cba0-4d2d-b4d2-47fda7c3988da" XsdVersion="7.9" ATA="44xxxx">
+  <A429Port Name="po429_CA_DB1_TX" Guid="a2db6dd1e-46cf-4ac6-bc77-8adb61ec6fc0a" ActivityTimeout="200" Direction="Source" RefreshPeriod="100">
+    <A429Channel Name="po429_CA_DB1_TX_Msg" Guid="afa7776bf-37de-4097-acec-ffb5285c788da" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L132_IAMS_control_word" Guid="acb563f93-4985-4235-959b-d744ce66f1bda">
+        <DP Name="LABEL" Guid="a8a8b0aac-53ab-43a6-a913-4f8b1e145265a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="132" ParameterSize="8" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a4aa8ee9a-0509-472e-9d37-45465f853787a" BitOffsetWithinDS="8" CodedSet="0=Unused;1=CIUA;2=CIUB;3=Unused" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="FWD_CAB_TEMP_TRIM_SELECTION" Guid="ab0167781-5edb-475e-b0d5-13f13acbd1a1a" BitOffsetWithinDS="21" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="AFT_CAB_TEMP_TRIM_SELECTION" Guid="aebe7744a-f002-4923-96c2-9a9a55f6b2bea" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="FWD_GAL_HTR_SELECTED_ON" Guid="a41c26461-0f5a-4298-8df6-04e60ba2dfc4a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF" />
+        <DP Name="AFT_GAL_HTR_SELECTED_ON" Guid="af80372d7-b653-40d1-8511-e2ef5891fd53a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF" />
+        <DP Name="SSM" Guid="ac172ab73-72ea-47df-88c5-f9a35b7ff0e8a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a359e53af-2704-4f21-8367-a11a1bfbff74a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+      </A429Word>
+      <A429Word Name="L264_WWS_preselection" Guid="ab837b92d-9232-4b41-8eef-e231b1a0d4a4a">
+        <DP Name="LABEL" Guid="ae929b659-e12f-4f4b-b1d7-39c693fd99cba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="264" ParameterSize="8" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a19720546-e9e4-454f-b276-571a3a02f447a" BitOffsetWithinDS="8" CodedSet="0=Unused;1=CIUA;2=CIUB;3=Unused" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="CCS_WTR_LVL" Guid="aa3d5e7c0-e70d-4a72-ac6d-78ea2c42131da" BitOffsetWithinDS="10" DataFormatType="OPAQUE" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="CCS_WTR_LVL_VALID" Guid="a21a6a806-2106-441f-8834-a1dad880ad23a" BitOffsetWithinDS="12" DataFormatType="OPAQUE" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="Space" Guid="a8a39f634-973e-4f74-a8ad-cb4b7955b3eda" BitOffsetWithinDS="13" DataFormatType="OPAQUE" ParameterSize="16" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="ab898429b-eee0-4c6e-83b7-d6eb8f8b6c9aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="ad5c8d531-acf8-4f91-84b5-e956ea6dd8bfa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_CA_DB2_TX" Guid="a0d68a741-2683-463f-a539-1cde70cd1e0ca" ActivityTimeout="200" Direction="Source" RefreshPeriod="100">
+    <A429Channel Name="po429_CA_DB2_TX_Msg" Guid="abb1ef9a9-2b53-48f2-bed6-dd3a66c07847a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L132_IAMS_control_word" Guid="a86c9c710-46ad-4f03-803a-e4397f00ac4ba">
+        <DP Name="LABEL" Guid="af2db3869-c1e4-4f6a-b4ce-ff88b696d542a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="132" ParameterSize="8" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a6b841f21-d1f5-4b7d-ab58-1891472b14dba" BitOffsetWithinDS="8" CodedSet="0=Unused;1=CIUA;2=CIUB;3=Unused" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="FWD_CAB_TEMP_TRIM_SELECTION" Guid="a0e48ee56-0357-4f29-b976-7dc57b3eded3a" BitOffsetWithinDS="21" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="AFT_CAB_TEMP_TRIM_SELECTION" Guid="a721accc8-9f5b-49db-b79f-bbb157d81ebca" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees" />
+        <DP Name="FWD_GAL_HTR_SELECTED_ON" Guid="aff3fa2d6-dfcb-4fe5-ba69-777ec01a742ea" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF" />
+        <DP Name="AFT_GAL_HTR_SELECTED_ON" Guid="a2076413e-151b-4cff-8c42-535b793fc2afa" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF" />
+        <DP Name="SSM" Guid="a3d837f78-b04b-4b90-8eec-de6f00067eada" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a527c1754-4019-4e25-b612-1f4131381d7da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+      </A429Word>
+      <A429Word Name="L264_WWS_preselection" Guid="aafcd3d3e-b9eb-442d-80b9-cf3d425e08baa">
+        <DP Name="LABEL" Guid="ac2cf2296-1cdb-4ced-b5ba-280aa1e1a13fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="264" ParameterSize="8" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a58e09384-89f8-4578-a71a-cc6c4816c57ea" BitOffsetWithinDS="8" CodedSet="0=Unused;1=CIUA;2=CIUB;3=Unused" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="CCS_WTR_LVL" Guid="af3168c3b-1f03-4220-9f4d-3707642125b2a" BitOffsetWithinDS="10" DataFormatType="OPAQUE" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="CCS_WTR_LVL_VALID" Guid="ac53add7e-49ba-435b-bdcc-5d748d6968fda" BitOffsetWithinDS="12" DataFormatType="OPAQUE" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="Space" Guid="a56d20844-ec21-433a-8371-75f2b26b8a6ea" BitOffsetWithinDS="13" DataFormatType="OPAQUE" ParameterSize="16" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="a2a835fd3-b75c-4f7c-87af-63cf4c3292b3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a222e8cf0-0c3c-4b1e-afc7-35cfc57e3ee5a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_061" Guid="aaacd7190-8bc4-4c76-9841-194852e11063a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L061_1_Origin_Char_1" Guid="a855b0a32-ee77-4a6b-aff8-b19c6cacfa33a" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L061_1_Origin_Char_2" Guid="a149a6562-46a2-48ff-85e5-88f7a319135da" BitOffsetWithinMsg="15" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L061_1_Origin_Char_3" Guid="ae654adce-078d-41b4-87b8-3a14925c18dda" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_062" Guid="a6293104f-96a5-4469-9c23-b6675cc32643a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L062_1_Origin_Char_4" Guid="a1bbe2b0a-36c2-4503-9377-b27b71e4a566a" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="62" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L062_1_Destination_Char_1" Guid="a6b9ad1d5-d344-4413-840d-044c5bea2d4fa" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="62" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_063" Guid="a0ed47ea2-87c6-4629-82f8-4b5cf5a5c43ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L063_1_Destination_Char_2" Guid="a7ed5f6f9-6e90-457e-a081-b8a4900ce1e2a" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L063_1_Destination_Char_3" Guid="a71ec84f6-19bf-4f4e-a963-6b9403ede44ba" BitOffsetWithinMsg="15" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L063_1_Destination_Char_4" Guid="ab1b60aed-f068-483a-9ffc-feffd74b05d2a" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_125" Guid="a01073a9b-8e09-4ab8-bcbf-1f12bee71439a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L125_1_UTC_Hours_x_1" Guid="a460ff658-51b5-4f50-bcc6-65afb3613567a" BitOffsetWithinMsg="22" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_1_UTC_Hours_x_10" Guid="a3ebe86e1-799b-413c-b49f-344241dbae7ca" BitOffsetWithinMsg="26" DataFormatType="UINT" Label="125" LsbRes="-1" Multiplier="10" ParameterSize="3" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_1_UTC_Minutes_x_01" Guid="a030007da-04ad-4ed7-91a2-e242383e657fa" BitOffsetWithinMsg="10" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier=".1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_1_UTC_Minutes_x_1" Guid="a89764fcf-2879-42e8-b722-2e5e98b5e709a" BitOffsetWithinMsg="14" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_1_UTC_Minutes_x_10" Guid="a14aff767-0e59-4fd0-9a88-f841a869c976a" BitOffsetWithinMsg="18" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="10" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_260" Guid="a6e257bc4-97fe-435a-b826-1cc06602d480a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L260_1_Date_Day_x_1" Guid="a8c06cebd-6528-44d3-826b-636da2cbcb08a" BitOffsetWithinMsg="23" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_1_Date_Day_x_10" Guid="a1ae2a5c0-cbf6-43c0-88ba-57348cc87ef8a" BitOffsetWithinMsg="27" DataFormatType="UINT" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_1_Date_Month_x_1" Guid="a74762d8b-5c91-4d09-af49-dd3ef00747c3a" BitOffsetWithinMsg="18" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_1_Date_Month_x_10" Guid="aa5ae7e7c-7c46-4a31-bba3-744cfcacd642a" BitOffsetWithinMsg="22" DataFormatType="UINT" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_1_Date_Year_x_1" Guid="a2e2eee38-5db5-40e2-99cb-14e8c128e42ba" BitOffsetWithinMsg="10" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_1_Date_Year_x_10" Guid="a6f432bd8-c1f6-4560-9667-6077c76210e3a" BitOffsetWithinMsg="14" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_061" Guid="adca56f16-e878-4aa4-9c7c-bb5af8c2eb65a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L061_2_Origin_Char_1" Guid="ab84b585a-4613-442b-8472-55f0837e6b9ea" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L061_2_Origin_Char_2" Guid="ac5dd53fa-b3ea-488f-b03c-529a88eb81efa" BitOffsetWithinMsg="15" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L061_2_Origin_Char_3" Guid="ae2ae5962-947d-4094-bfc4-7473dbce5421a" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="61" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_062" Guid="a58987065-f953-45d1-8f66-f98abe42217ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L062_2_Origin_Char_4" Guid="a5eba26ad-597b-4161-9625-4f63049e1e7ea" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="62" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L062_2_Destination_Char_1" Guid="aadbeb9b2-e881-4735-8176-273f5901f4f9a" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="62" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_063" Guid="a9e627900-46b6-4a27-8b01-da96af424197a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L063_2_Destination_Char_2" Guid="af08f9245-098f-4f4e-8153-9c48528eddc8a" BitOffsetWithinMsg="8" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L063_2_Destination_Char_3" Guid="a8aa1d6cf-8ba2-48ca-ae9d-895213b96152a" BitOffsetWithinMsg="15" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L063_2_Destination_Char_4" Guid="a4b70f40a-dfea-4652-814a-2f5fa9e65164a" BitOffsetWithinMsg="22" DataFormatType="ISO-5" Label="63" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_125" Guid="a6dbf9cdb-09af-4dac-a6bc-815d762b642da" Direction="Destination" SamplePeriod="0">
+    <RP Name="L125_2_UTC_Hours_x_1" Guid="a91d6f5cc-a112-4317-b9b2-99495b521209a" BitOffsetWithinMsg="22" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_2_UTC_Hours_x_10" Guid="a05a8f6ec-0a09-4a53-8c92-81f2641d01c8a" BitOffsetWithinMsg="26" DataFormatType="UINT" Label="125" LsbRes="-1" Multiplier="10" ParameterSize="3" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_2_UTC_Minutes_x_01" Guid="a49d0f5c1-ef31-4b6c-833a-eb7af07c795fa" BitOffsetWithinMsg="10" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier=".1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_2_UTC_Minutes_x_1" Guid="abba87cb0-c070-4ad1-9990-eacb08aa7f3aa" BitOffsetWithinMsg="14" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L125_2_UTC_Minutes_x_10" Guid="a7681f28f-805c-4653-a213-6ad96cb476e4a" BitOffsetWithinMsg="18" DataFormatType="BCD" Label="125" LsbRes="-1" Multiplier="10" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_260" Guid="a6a879411-e43f-4dfd-b51e-99440427dc66a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L260_2_Date_Day_x_1" Guid="a69a0f56f-b492-4ab0-bea3-895f276a0815a" BitOffsetWithinMsg="23" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_2_Date_Day_x_10" Guid="ae4637a7b-0436-4cf5-9489-a512b8f59be2a" BitOffsetWithinMsg="27" DataFormatType="UINT" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_2_Date_Month_x_10" Guid="a93d33dd7-b376-43e9-be3e-48188e056f92a" BitOffsetWithinMsg="22" DataFormatType="UINT" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_2_Date_Year_x_1" Guid="aa3090767-bec6-4470-ae91-94f81b693057a" BitOffsetWithinMsg="10" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_2_Date_Year_x_10" Guid="a6f61fe9f-fac4-491e-8129-fbda6f58d791a" BitOffsetWithinMsg="14" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="10" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L260_2_Month_x_1" Guid="a84249152-0c02-4d4d-9481-3d4a05837d93a" BitOffsetWithinMsg="18" DataFormatType="BCD" Label="260" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <AnalogPort Name="piDISC_AIRGROUND" Guid="a7390eb3f-3a7f-49d9-a399-e64bba08ea39a" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_AIRGROUND" Guid="a084cc0ee-748c-45d3-9ea9-7e042f9d2d61a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="750" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_O2DEPLOY" Guid="a9d55b935-4148-4714-948a-253be2ae32cca" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_O2DEPLOY" Guid="a0e8e21fb-cd11-4655-9c8a-409a6a48dadfa" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_ENGINEON_L" Guid="aecfaaabe-c561-4583-9ddd-efb2b0cb7be1a" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_ENGINEON_L" Guid="abe3e0f8c-343f-4398-99e8-6c304ce11ac3a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_ENGINEON_R" Guid="ac6afba2e-7d0d-45f7-83ea-918f0a5bcb12a" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_ENGINEON_R" Guid="a76f7242b-ce57-4f85-9e4e-9bb65cd0019fa" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_FSB" Guid="a3361213b-0ebb-4587-a79d-71102c11a24aa" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_FSB" Guid="a1b02518b-b106-47a6-99b6-66355acd1480a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="500" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_LDGGEAR" Guid="a5bc69bac-9834-41ad-8b21-7040916e197ea" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_LDGGEAR" Guid="af1290b68-733d-4ed4-9d42-eae0f5522f5da" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="750" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_NS" Guid="ac4625290-b6b3-4837-99f2-28658c5736b9a" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="DISC_NS" Guid="a85a2d4f9-6870-4549-b0a3-34616089d97da" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="500" />
+  </AnalogPort>
+  <A429Port Name="pi429_CA_DB1_RX_146" Guid="a7fc0196a-03f0-4de1-908a-30976a9ebd0ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L146_1_Emer1LDr_Syn" Guid="a9b15ee7b-a6d2-4e97-9193-8a456c045c52a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Emer1RDr_Syn" Guid="a4e4406fc-5754-489f-91fd-2160d29f0cbca" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Emer2LDr_Syn" Guid="a7c589ea1-9c74-456e-b077-5bffb94eae20a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Emer2RDr_Syn" Guid="add71bef8-76ba-4fef-a7ba-f540c1720779a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Pax1LDr_Syn" Guid="a8280062e-5293-40f2-99c7-cef093e301a7a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Pax1RDr_Syn" Guid="a40aa81b8-a3d4-43d2-bab2-0dd3afc1f544a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Pax2LDr_Syn" Guid="aabb37d53-70d3-4f20-85a1-d854edfc11c2a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_1_Pax2RDr_Syn" Guid="a3190822a-b177-45d3-b72d-eddf9faad430a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_147" Guid="a8541b467-6edc-426f-84f9-e1abfd13fddda" Direction="Destination" SamplePeriod="0">
+    <RP Name="L147_1_SlideRsvrL_Syn" Guid="aeae6c39b-627f-4f03-840c-bed79a9d0826a" DataFormatType="COD" Label="147" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L147_1_SlideRsvrR_Syn" Guid="a96adb118-f68f-4ba0-b8e4-5280d7ce791aa" DataFormatType="COD" Label="147" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_150" Guid="af024bf66-35d5-457d-8989-a672018fd261a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L150_1_Emer1LSA_Syn" Guid="a1519781e-a1fe-4164-80fd-07cb71943099a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Emer1RSA_Syn" Guid="ae6e1bef6-44d7-479e-929b-3484c579ed77a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Emer2LSA_Syn" Guid="a95b67ba9-7362-4fdd-a9b0-a335461163c3a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Emer2RSA_Syn" Guid="a9f6126d0-e426-4e3e-a5b4-e00fe88b15dea" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Pax1LSA_Syn" Guid="a035b212d-d10e-45b8-8977-1f66ca0b6896a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Pax1RSA_Syn" Guid="ae0343c38-1ae2-48b6-bc49-6cc2dd14188ba" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Pax2LSA_Syn" Guid="a21aab627-9e2e-436a-ae17-7e3916dc7901a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_1_Pax2RSA_Syn" Guid="a04e5ac12-9300-4606-9cd9-8eaab3fcdcbaa" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_151" Guid="af0b3ed04-a3eb-4372-8458-84d204a55745a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L151_1_Emer1LFL_Syn" Guid="a60cf9aee-4022-471e-9876-da9d95fd0448a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Emer1RFL_Syn" Guid="a92179a8e-48ca-4589-9d62-27f76ca940a6a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Emer2LFL_Syn" Guid="a775469f1-f9ca-44ff-a288-89c44a81c8f0a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Emer2RFL_Syn" Guid="ae3be73c4-d452-4a11-9c25-90629b8562f3a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Pax1LFL_Syn" Guid="ad3a7c05a-818f-4439-925f-14cef11f8a32a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Pax1RFL_Syn" Guid="a90dc67b1-872e-4ba4-9580-0efa1ab08f04a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Pax2LFL_Syn" Guid="a6fcf25d8-6d96-4b5b-8344-b3327b80f7d0a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_1_Pax2RFL_Syn" Guid="ab74727be-95e8-4493-b694-2616545724efa" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_203" Guid="af7fa59fa-36b9-4cda-b946-7203aabf5671a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L203_1_Voted_Pressure_Altitude" Guid="ac624f294-8de9-4cf4-baa1-42c115b11b02a" DataFormatType="BNR" Label="203" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_204" Guid="ae3017fa1-c5c2-4cc1-ba61-9d289dbbde04a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L204_1_Voted_Baro_Corrected_Altitude_Baro_Set_1" Guid="aefae4f02-893e-4008-b422-eaf22c10ee37a" DataFormatType="BNR" Label="204" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_214" Guid="aa609bc02-19e1-4ad7-abc3-6adc80592c95a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L214_1_IASC1A_ADJ_ZONE_SELECTED_TEMP" Guid="ac12fdbb3-5981-4e95-803f-69a85f195a33a" DataFormatType="BNR" Label="214" LsbRes="-1" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_217" Guid="aa48cb732-c136-4262-b555-cff71f11440fa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L217_1_IASC1A_ADJ_ZONE_ACTUAL_TEMP" Guid="adfe07bf8-7fc3-4ff7-88ad-926486b9a621a" DataFormatType="BNR" Label="217" LsbRes="-1" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_233" Guid="a1d9b66c4-93b9-42b2-a042-255f0926e08ca" Direction="Destination" SamplePeriod="0">
+    <RP Name="L233_1_Flight_Number_1_Character_Position_1" Guid="a809f5a93-9a78-4de6-91a4-61c29c4acad2a" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="233" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L233_1_Flight_Number_1_Character_Position_2" Guid="a3ecc6c73-3c60-4b08-9120-f7201a7b8c64a" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="233" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_234" Guid="a18c52296-3328-41f2-b15a-65beacd4395fa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L234_1_Flight_Number_2_Character_Position_3" Guid="ae3e3f926-3543-42c0-b39c-2bbe0b057625a" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="234" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L234_1_Flight_Number_2_Character_Position_4" Guid="a4ee4450d-9a7a-45be-aa9e-f5c09015fd6fa" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="234" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_235" Guid="ad145de22-d5dc-4426-adb0-606683500e73a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L235_1_Flight_Number_3_Character_Position_5" Guid="a4b1f47a4-e1aa-49a7-b18b-86f366ee874fa" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="235" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L235_1_Flight_Number_3_Character_Position_6" Guid="aaf39ea17-85d7-4c38-b686-f78234046e7fa" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="235" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_236" Guid="a0f36c0c3-e30f-4ec1-b14e-29e01c2f31f6a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L236_1_Flight_Number_4_Character_Position_7" Guid="a2870575b-448a-40e9-91fb-09a0eb1d296ea" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="236" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L236_1_Flight_Number_4_Character_Position_8" Guid="abe71db42-69d0-442c-8d6e-8cfbbe8bcdc5a" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="236" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_254" Guid="a12216a59-4dc4-42fc-a36d-90dada14873da" Direction="Destination" SamplePeriod="0">
+    <RP Name="L254_1_Hyb_Position_Latitude" Guid="a85341ac2-f75f-4e6d-8fc7-5f28691c9f65a" DataFormatType="BNR" Label="254" LsbRes="-1" ParameterSize="21" SDIExpected="-1" SysLatencyWCLimit="410" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_255" Guid="a9a17447e-3a27-4beb-8e7d-fda48f84c96ca" Direction="Destination" SamplePeriod="0">
+    <RP Name="L255_1_Hyb_Position_Longitude" Guid="a861450e5-f984-4952-a6a2-0c45000b78bea" DataFormatType="BNR" Label="255" LsbRes="-1" ParameterSize="21" SDIExpected="-1" SysLatencyWCLimit="410" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_273" Guid="acb6a11ec-e079-4e82-97bf-e14e2f6f9566a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L273_1_All_Gear_Dnlocked" Guid="ae2fdfd52-5337-4e1a-8c55-344433c32e91a" DataFormatType="DIS" Label="273" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="800" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_275" Guid="ae2bf2e39-8540-4047-8f97-cec2a5751880a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L275_1_LANDINGGEAR_COMPRESSED" Guid="a8d7bfef6-f95f-4213-bd4c-e75f3714d2dfa" DataFormatType="DIS" Label="275" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="800" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_354" Guid="a98b07868-f01e-4af5-b4c8-4871df003ee4a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L354_1_Slats_in_Motion" Guid="a0b73a211-a507-4dbc-b704-34360c5e0946a" BitOffsetWithinMsg="11" DataFormatType="DIS" Label="354" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="500" />
+    <RP Name="L354_1_Flaps_in_Motion" Guid="a3ccd1f58-05f9-45bd-a6f5-0486ed2fc632a" BitOffsetWithinMsg="10" DataFormatType="DIS" Label="354" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="500" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_371" Guid="a4d3ed8e6-f56f-441f-808a-f9f302d2b61fa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L371_1_Equipment_ID" Guid="af4279e98-0adb-4d1d-88a7-53546b60f712a" BitOffsetWithinMsg="10" DataFormatType="UBNR" Label="371" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_146" Guid="ab70356ca-24a0-49ef-8625-ea7041a949ffa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L146_2_Emer1LDr_Syn" Guid="ad91c6bbf-9131-453c-92a2-8fb20c741dfea" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Emer1RDr_Syn" Guid="abcec452d-4363-47f4-b65c-b408592666c1a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Emer2LDr_Syn" Guid="a9a5c15d5-5dd5-496f-b3be-d5a7b05b3169a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Emer2RDr_Syn" Guid="ab1625d71-511e-4a47-a825-af609dbcf61ea" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Pax1LDr_Syn" Guid="a7959a413-ad07-4953-bef1-13685b76d160a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Pax1RDr_Syn" Guid="a24e5ae2f-5f47-4a11-a655-472a902cf504a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Pax2LDr_Syn" Guid="aa4394176-32c9-44ff-ab7b-93a3566e56eba" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L146_2_Pax2RDr_Syn" Guid="a164f6b23-fb9a-46ff-9e1f-639b7d1b6554a" DataFormatType="COD" Label="146" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_147" Guid="aad8d58a3-82b8-4a9e-a700-db612be564daa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L147_2_SlideRsvrL_Syn" Guid="a1719d10b-ccff-4fca-a97a-7b1a1195a243a" DataFormatType="COD" Label="147" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L147_2_SlideRsvrR_Syn" Guid="aad0e3bb1-7600-49e7-8a30-3e77d3ec4ee6a" DataFormatType="COD" Label="147" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_150" Guid="a16abfc11-8fca-4172-85e5-7492adbe8ce0a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L150_2_Emer1LSA_Syn" Guid="a5fc51a7d-b96c-4a82-979d-fa80e425925ca" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Emer1RSA_Syn" Guid="abec5dce2-147d-4d45-8e63-0795a2b04a15a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Emer2LSA_Syn" Guid="a76f61560-5e68-44a6-8e29-a6d1700348e7a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Emer2RSA_Syn" Guid="a34e1f5b5-153f-4904-b377-75474fb62c0ba" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Pax1LSA_Syn" Guid="a46803bde-d675-4182-919f-4f595b93208aa" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Pax1RSA_Syn" Guid="a56790082-d4e8-45b0-a43e-130ff03768a1a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Pax2LSA_Syn" Guid="a17204213-e15e-463e-a1a4-dc9776f186e9a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L150_2_Pax2RSA_Syn" Guid="a9339cd37-76b2-4327-bd56-dd0f9cda11b9a" DataFormatType="COD" Label="150" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_151" Guid="a73873147-5015-411a-bc3b-d348d82196eca" Direction="Destination" SamplePeriod="0">
+    <RP Name="L151_2_Emer1LFL_Syn" Guid="a6c68e7d4-d1a7-471c-a2ae-d89272198830a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Emer1RFL_Syn" Guid="a23bb6830-9c5f-45fb-8ff2-67e0056b5345a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Emer2LFL_Syn" Guid="aa2ea68d9-a022-4e9b-a530-87d800696fdca" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Emer2RFL_Syn" Guid="ac6f6f1ba-a2c8-4549-a221-7eece63cd812a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Pax1LFL_Syn" Guid="ab73209e0-d754-44a9-97f2-a63d9490242ba" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Pax1RFL_Syn" Guid="ad2925aca-5e57-4436-993a-9780e01540b3a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Pax2LFL_Syn" Guid="a426dc462-e2b4-42bf-889d-eb3fe5aa91bba" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+    <RP Name="L151_2_Pax2RFL_Syn" Guid="a931e97db-95e2-4ef2-8287-61a8c5ce8701a" DataFormatType="COD" Label="151" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="1450" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_203" Guid="ad678dc51-d88a-43a5-b5d8-d0549c334632a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L203_2_Voted_Pressure_Altitude" Guid="af10a7339-6cf1-449b-b19e-1fa722c8019da" DataFormatType="BNR" Label="203" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_204" Guid="a8ad7770c-0a15-4480-a4f8-55a834378ca3a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L204_2_Voted_Baro_Corrected_Altitude_Baro_Set_1" Guid="a680487ad-2154-49b5-a177-6b3290158ebfa" DataFormatType="BNR" Label="204" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_214" Guid="aee49077f-f9f3-4909-9be7-1fb2add01a57a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L214_2_IASC1B_ADJ_ZONE_SELECTED_TEMP" Guid="a169a1f73-46e7-40cd-bc94-8c35be58f0c0a" DataFormatType="BNR" Label="214" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_217" Guid="a0839e253-2f72-4dd7-9c7a-14c6e6322d64a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L217_2_IASC1B_ADJ_ZONE_ACTUAL_TEMP" Guid="a0b2134d6-a675-4138-b671-117382e05b05a" DataFormatType="BNR" Label="217" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_233" Guid="a3ac94a22-71da-44d6-ac5c-2e6cf8b883b5a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L233_2_Flight_Number_1_Character_Position_1" Guid="aa1dfc486-7017-4fd1-ba05-a30bcef8c16ba" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="233" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L233_2_Flight_Number_1_Character_Position_2" Guid="a0d8975e7-7da9-44df-ae95-670086a3ab2ba" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="233" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_234" Guid="a200e48b5-eeaa-4bc5-9e7f-8df7efa5e3fba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L234_2_Flight_Number_2_Character_Position_3" Guid="a799e35ab-c5ae-4278-8080-e88a2ab4375ca" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="234" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L234_2_Flight_Number_2_Character_Position_4" Guid="ac641fb70-5616-4a3d-9c3d-045820c66b3aa" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="234" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_235" Guid="a496e620f-417a-47d0-82d3-2e69baa50d84a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L235_2_Flight_Number_3_Character_Position_5" Guid="a94544740-199d-485d-be69-c6f39daebdfca" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="235" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L235_2_Flight_Number_3_Character_Position_6" Guid="a26742647-f0df-4b2e-9e54-12051f71f9e0a" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="235" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_236" Guid="a54d110d3-4239-402b-9900-0668e1ca24aca" Direction="Destination" SamplePeriod="0">
+    <RP Name="L236_2_Flight_Number_4_Character_Position_7" Guid="a101f84da-e96f-4135-a3ca-a627270214f4a" BitOffsetWithinMsg="10" DataFormatType="ISO-5" Label="236" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+    <RP Name="L236_2_Flight_Number_4_Character_Position_8" Guid="a202b6124-f71b-4e55-896a-4ec267ca5967a" BitOffsetWithinMsg="17" DataFormatType="ISO-5" Label="236" LsbRes="-1" Multiplier="1" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="300" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_254" Guid="a0bec49c0-97c4-47e5-a0e6-2d1d48d1fe73a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L254_2_Hyb_Position_Latitude" Guid="a1519e184-cdb7-4101-8e05-95b54f9e5efaa" DataFormatType="BNR" Label="254" LsbRes="-1" ParameterSize="21" SDIExpected="-1" SysLatencyWCLimit="410" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_255" Guid="a6a9e43d1-ebb7-440b-b35f-29ecf97c7263a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L255_2_Hyb_Position_Longitude" Guid="ad6111e64-fae2-4afe-9a9b-79ba38b6665ca" DataFormatType="BNR" Label="255" LsbRes="-1" ParameterSize="21" SDIExpected="-1" SysLatencyWCLimit="410" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_273" Guid="abd42c564-37bc-4289-9d54-65e0d2ba6958a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L273_2_All_Gear_Dnlocked" Guid="ab84a51db-6ebb-4e7f-a3a2-23cbc48cc0d2a" DataFormatType="DIS" Label="273" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="800" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_275" Guid="a15625341-1406-4b27-97b6-c3c08361da4fa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L275_2_LANDINGGEAR_COMPRESSED" Guid="acef94dfc-877f-47f2-8610-9a1c1685249aa" DataFormatType="DIS" Label="275" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="800" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_354" Guid="a126ce0f8-2cd6-4c46-949f-8c65d9a95e1ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L354_2_Slats_in_Motion" Guid="adf0d555e-8585-4425-9363-50fa22eed98aa" DataFormatType="DIS" Label="354" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="500" />
+    <RP Name="L354_2_Flaps_in_Motion" Guid="ab2499a75-7d87-46c9-9133-acacdd9e00e5a" DataFormatType="DIS" Label="354" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="500" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_371" Guid="a13546a91-28d2-4059-938c-9a1997af9b23a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L371_2_Equipment_ID" Guid="ad225a0c8-9bd3-4db5-9fe1-ec20f359f5c8a" DataFormatType="UBNR" Label="371" LsbRes="-1" ParameterSize="19" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_167" Guid="a4d4cd50f-7c5a-452a-87e3-dbff7ca68b27a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L167_1_Airframe_Type_Parameter_1" Guid="a5de5ead3-a8b0-450b-8727-04aeb358d642a" BitOffsetWithinMsg="10" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_1_Airframe_Type_Parameter_2" Guid="a152d4b52-e26e-4660-97ad-c62fc99f3201a" BitOffsetWithinMsg="14" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_1_Airframe_Type_Parameter_3" Guid="acc11c952-7f92-413e-975a-3035f939b400a" BitOffsetWithinMsg="18" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_1_Airframe_Type_Parameter_4" Guid="a82457325-c82a-4f5e-8c3e-084558037581a" BitOffsetWithinMsg="22" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_210" Guid="ab74fa893-31d8-4e6d-869c-0a84c12c2c3ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="L210_1_IASC2A_ASS_ZONE_SELECTED_TEMP" Guid="aba189e54-06d2-45c0-bf3f-032ddfd31ca7a" BitOffsetWithinMsg="16" DataFormatType="BNR" Label="210" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_213" Guid="abd2a0244-2fce-48f5-9ab5-b77ad6e36dd3a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L213_1_IASC2A_ASS_ZONE_ACTUAL_TEMP" Guid="a2e1503ba-c903-49d9-8dbe-74e2ef3b00fca" BitOffsetWithinMsg="16" DataFormatType="BNR" Label="213" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_226" Guid="a5ee0853c-b2cc-462c-bcb5-14b261e8a5dea" Direction="Destination" SamplePeriod="0">
+    <RP Name="L226_1_Serial_Number_Parameter_1" Guid="a03bc1efc-0e19-433d-8e7e-bc516d0cc3a5a" BitOffsetWithinMsg="10" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_1_Serial_Number_Parameter_2" Guid="a0b3e6e31-a2f8-4dba-a124-9db1f795f465a" BitOffsetWithinMsg="14" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_1_Serial_Number_Parameter_3" Guid="ac926f140-2a3c-4bcd-bc92-0eb8053065f1a" BitOffsetWithinMsg="18" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_1_Serial_Number_Parameter_4" Guid="a4578630b-fa64-434d-a8df-10075e953f50a" BitOffsetWithinMsg="22" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_261" Guid="a469ed283-71fb-4494-b6e1-41e5d62e853ea" Direction="Destination" SamplePeriod="0">
+    <RP Name="L261_1_WWS_WTR_LVL_PER_VALID" Guid="ae6a138b9-c4d4-436c-92b3-0bea7d7ae2caa" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_1_WWS_WTR_LVL_PERCENT" Guid="ada22c42d-68ce-4dcd-ba85-58234edbd5a4a" DataFormatType="OPAQUE" Label="261" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_1_WWS_WTR_LVL_QUANT" Guid="ae1604fb2-5eea-4140-a72d-252885038066a" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="8" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_1_WWS_WTR_LVL_QUANT_VALID" Guid="a78620121-6a7c-413b-9f90-dd07b681013da" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_262" Guid="a287aad4b-cd7c-40eb-9a24-fbe927479daea" Direction="Destination" SamplePeriod="0">
+    <RP Name="L262_1_WWS_TA_AFT_LH_LAV_FLT" Guid="a98169cfc-40e1-4e3c-b72b-6df9d4c5f18da" BitOffsetWithinMsg="17" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_TA_AFT_RH_LAV_FLT" Guid="a4b2706fb-b7f1-4256-b631-f15a960f5513a" BitOffsetWithinMsg="18" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_TA_FWD_LAV_FLT" Guid="a82ad6561-9c21-4911-a999-1b8a99f6021ba" BitOffsetWithinMsg="16" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_SYS_IN_SVC" Guid="a3ce7d752-eb91-47d4-b4cb-c35520858508a" BitOffsetWithinMsg="10" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_SYS_PAR_INOP" Guid="a9b2c4d11-19bc-442e-9bdf-6fb7d2d8ab52a" BitOffsetWithinMsg="12" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_SYS_TOT_INOP" Guid="aa1eb4440-8ffa-46e8-a9c8-6419061028c9a" BitOffsetWithinMsg="13" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_TANK_75_FULL" Guid="afad2fd57-c45b-4a10-8f0f-d33c444ff51ea" BitOffsetWithinMsg="19" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_TANK_100_FULL" Guid="a09b52a8e-a730-4156-b6cb-b201c5a58c32a" BitOffsetWithinMsg="20" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_TANK_75_FULL_VALID" Guid="a7031ea49-c919-4baa-a646-323abdc6b553a" BitOffsetWithinMsg="21" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WST_TANK_100_FULL_VALID" Guid="a1c74d140-610e-46a2-8a65-b14a7c3766bda" BitOffsetWithinMsg="22" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WTR_SYS_IN_SVC" Guid="a3ec33f7a-c024-4fb5-8b64-ab0e365b29e7a" BitOffsetWithinMsg="11" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WTR_SYS_PAR_INOP" Guid="a6a146d6f-7eba-458b-9174-6904f7b52593a" BitOffsetWithinMsg="14" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_1_WWS_WTR_SYS_TOT_INOP" Guid="ae1472526-10c7-46a6-b30f-fc8e7dc6735ba" BitOffsetWithinMsg="15" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_263" Guid="ac3ba0756-e30c-4e66-a7dc-3bb31765484aa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L263_1_WWS_WTR_LVL_DEC" Guid="a9b822145-d8b9-4c05-b083-2e18ad20ba8aa" BitOffsetWithinMsg="10" DataFormatType="OPAQUE" Label="263" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_1_WWS_WTR_LVL_DEC_VALID" Guid="a40dfe217-ceb4-4e82-8a59-4acf977ab62ea" BitOffsetWithinMsg="12" DataFormatType="OPAQUE" Label="263" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_1_WWS_WTR_LVL_MAX" Guid="a5ebd0e04-72c5-449f-94d2-47f54062deaaa" BitOffsetWithinMsg="13" DataFormatType="OPAQUE" Label="263" ParameterSize="8" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_1_WWS_WTR_LVL_MAX_VALID" Guid="ab4e405e7-c5a5-4e37-adc6-e9df18180c6da" BitOffsetWithinMsg="21" DataFormatType="OPAQUE" Label="263" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_274" Guid="a62dd82ea-8214-4854-9377-3151929afa98a" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_1_Engine_Running_L_A" Guid="a1c61e72d-a8fe-44c0-aee4-bcf17c66e1b8a" BitOffsetWithinMsg="10" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_304" Guid="af10414f1-1e1d-4428-a7c7-20e2fb6a252aa" Direction="Destination" SamplePeriod="0">
+    <RP Name="L304_1_IASC1A_GHEAT_ON" Guid="adda89d51-8d8c-4841-9487-8e28ca5c7ecda" BitOffsetWithinMsg="14" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+    <RP Name="L304_1_IASC1A_GHEAT_UNAVAILABLE" Guid="a933ec87d-15f3-4ecf-bb41-2c86f17e070fa" BitOffsetWithinMsg="15" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_167" Guid="a96af2c0c-60a5-4e0a-ab49-67e30bea6d5ea" Direction="Destination" SamplePeriod="0">
+    <RP Name="L167_2_Airframe_Type_Parameter_1" Guid="aaac81b0e-63ff-46dc-8139-1b5a0c884affa" BitOffsetWithinMsg="10" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_2_Airframe_Type_Parameter_2" Guid="aa9f6838c-51d8-40f8-a3df-0b75bff88b91a" BitOffsetWithinMsg="14" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_2_Airframe_Type_Parameter_3" Guid="a62b56f2a-91cf-45e2-ac83-955e9e51e87ca" BitOffsetWithinMsg="18" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L167_2_Airframe_Type_Parameter_4" Guid="a76db0946-d6e2-4c9e-8f86-475fa4a36df3a" BitOffsetWithinMsg="22" DataFormatType="COD" Label="167" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_210" Guid="a0c352cc0-85c1-44c9-b5b2-88562dbf8226a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L210_2_IASC2B_ASS_ZONE_SELECTED_TEMP" Guid="ab62289f9-15c4-420c-b6dd-95b0611e788ba" BitOffsetWithinMsg="16" DataFormatType="BNR" Label="210" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_213" Guid="a193323dd-eea6-4d6a-8f5a-14402c18c6a7a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L213_2_IASC2B_ASS_ZONE_ACTUAL_TEMP" Guid="a9f7168e8-a0d5-4ce4-8829-5dee5448e486a" BitOffsetWithinMsg="16" DataFormatType="BNR" Label="213" ParameterSize="13" SDIExpected="-1" SysLatencyWCLimit="350" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_226" Guid="a20be434f-b560-48f9-8be3-fea76a08ba03a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L226_2_Serial_Number_Parameter_1" Guid="aac82e575-4e0d-4690-ab0a-0ede434b1bd1a" BitOffsetWithinMsg="10" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_2_Serial_Number_Parameter_2" Guid="a99f14a36-58d1-421d-9739-2b0388cdd69ca" BitOffsetWithinMsg="14" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_2_Serial_Number_Parameter_3" Guid="a16803ba0-9ff9-4855-bd44-9139ebb6d78ca" BitOffsetWithinMsg="18" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+    <RP Name="L226_2_Serial_Number_Parameter_4" Guid="a6ca263da-ca16-40f0-bc11-47c06a589daca" BitOffsetWithinMsg="22" DataFormatType="COD" Label="226" LsbRes="-1" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_261" Guid="a493265b9-0fd4-4162-94b1-d988ac2da818a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L261_2_WWS_WTR_LVL_PER_VALID" Guid="a19b98531-49d5-4d42-b342-8f5581363e21a" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_2_WWS_WTR_LVL_PERCENT" Guid="a621606fa-e2f9-4361-b82f-dbdb8f468b84a" DataFormatType="OPAQUE" Label="261" ParameterSize="7" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_2_WWS_WTR_LVL_QUANT" Guid="ab4ba5ee8-9832-48e2-a581-df8da67cd22ba" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="8" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L261_2_WWS_WTR_LVL_QUANT_VALID" Guid="a39539002-b5df-4777-af67-bf74f5216690a" DataFormatType="OPAQUE" Label="261" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_262" Guid="ac655c4e3-db70-4321-9771-64b8a087816da" Direction="Destination" SamplePeriod="0">
+    <RP Name="L262_2_WWS_TA_AFT_LH_LAV_FLT" Guid="a06fdc302-79e9-4e97-a725-6bc4c09e6722a" BitOffsetWithinMsg="17" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_TA_AFT_RH_LAV_FLT" Guid="a083e42ff-41a9-4f65-8f3b-7318bbee7ff9a" BitOffsetWithinMsg="18" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_TA_FWD_LAV_FLT" Guid="a336570fe-0ef2-4bd6-b3bd-27b46f3bf4b0a" BitOffsetWithinMsg="16" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_SYS_IN_SVC" Guid="a0629f9b7-478f-464a-b6bb-660ae3ab722ea" BitOffsetWithinMsg="10" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_SYS_PAR_INOP" Guid="aa6f7406b-98a4-4874-ba25-8dce26eab56aa" BitOffsetWithinMsg="12" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_SYS_TOT_INOP" Guid="ae4b77198-b224-41e2-9b25-406a228cadd8a" BitOffsetWithinMsg="13" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_TANK_75_FULL" Guid="a32b4eff4-4729-40bc-9106-1787fa40dc34a" BitOffsetWithinMsg="19" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_TANK_100_FULL" Guid="afedf088c-d50f-499a-b349-287afc41f833a" BitOffsetWithinMsg="20" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_TANK_75_FULL_VALID" Guid="a9950a5bb-ff7f-4bf0-867e-985c1b4bd1aba" BitOffsetWithinMsg="21" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_TANK_100_FULL_VALID" Guid="a2d48b500-f40c-4f72-9f57-79db4418689ca" BitOffsetWithinMsg="22" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WST_TANK_FULL" Guid="a82d1e97d-c169-429a-aa96-66d1ee80f20ea" DataFormatType="OPAQUE" Label="262" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WTR_SYS_IN_SVC" Guid="a75c4cc24-dc1e-4dae-a92d-353f9343ac97a" BitOffsetWithinMsg="11" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WTR_SYS_PAR_INOP" Guid="aedb05911-2df4-4be1-ab62-7e937a8001cfa" BitOffsetWithinMsg="14" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L262_2_WWS_WTR_SYS_TOT_INOP" Guid="a8f1036b4-929d-4513-83f7-8103f323af80a" BitOffsetWithinMsg="15" DataFormatType="OPAQUE" Label="262" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_263" Guid="a12bedff6-62cd-4115-ade3-a6e1a2bf25dea" Direction="Destination" SamplePeriod="0">
+    <RP Name="L263_2_WWS_WTR_LVL_DEC" Guid="a669ff8a5-d993-4225-8167-dd4ca35c3bdea" BitOffsetWithinMsg="10" DataFormatType="OPAQUE" Label="263" ParameterSize="2" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_2_WWS_WTR_LVL_DEC_VALID" Guid="a57a55f61-b71a-4dbb-8e20-2d81580af717a" BitOffsetWithinMsg="12" DataFormatType="OPAQUE" Label="263" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_2_WWS_WTR_LVL_MAX" Guid="a8a9d4988-96f9-4508-bad6-80dd1c397ad2a" BitOffsetWithinMsg="13" DataFormatType="OPAQUE" Label="263" ParameterSize="8" SDIExpected="-1" SysLatencyWCLimit="250" />
+    <RP Name="L263_2_WWS_WTR_LVL_MAX_VALID" Guid="ae26dee04-cef2-485d-a973-5d583fd87564a" BitOffsetWithinMsg="21" DataFormatType="OPAQUE" Label="263" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_274" Guid="a798d052a-dba5-49bf-bda7-fed5feec582ba" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_2_Engine_Running_L_A" Guid="a0fdb80d8-502c-4854-aeea-62f86fba637aa" BitOffsetWithinMsg="10" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_304" Guid="aa316fb6c-cdbc-4ed1-94c0-882b07f863a6a" Direction="Destination" SamplePeriod="0">
+    <RP Name="L304_2_IASC1B_GHEAT_ON" Guid="a1ac3a05e-6748-4e3e-85b5-47c0e05bf37aa" BitOffsetWithinMsg="14" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+    <RP Name="L304_2_IASC1B_GHEAT_UNAVAILABLE" Guid="a71abf4be-624b-4b93-9e7a-476f2dbccd6fa" BitOffsetWithinMsg="15" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_274_ss1" Guid="a501eedf6-4076-477a-96d7-dccd7d09278fa" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_1_Engine_Running_L_B" Guid="af2df58c2-47f6-49ee-a5ee-923c50130745a" BitOffsetWithinMsg="11" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_274_ss2" Guid="a29d55875-712d-4864-9f56-9489cf004edba" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_1_Engine_Running_R_A" Guid="a20b6202f-4080-4603-8a95-6ea830341383a" BitOffsetWithinMsg="12" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_274_ss3" Guid="a345dc40d-e9f0-4eb5-904d-2b90aabf01ffa" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_1_Engine_Running_R_B" Guid="af8118292-2d29-44f7-981d-9bc5df1fa817a" BitOffsetWithinMsg="13" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB1_RX_304_ss1" Guid="a1bb7f5ca-6e67-47e7-9c2b-eb45db03d8fda" Direction="Destination" SamplePeriod="0">
+    <RP Name="L304_1_IASC2A_GHEAT_ON" Guid="aaa4a32c8-0c71-44f1-9ac1-46f37b51b421a" BitOffsetWithinMsg="14" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+    <RP Name="L304_1_IASC2A_GHEAT_UNAVAILABLE" Guid="aad40f29c-704b-400c-acfe-901a7b8927d1a" BitOffsetWithinMsg="15" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_274_ss1" Guid="a1fde43ae-3743-4d01-93d9-dfec7d1e9ec9a" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_2_Engine_Running_L_B" Guid="aa3f1fab4-d0bc-408c-bad4-d462e9d06d27a" BitOffsetWithinMsg="11" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_274_ss2" Guid="acd712f32-cd87-4f5f-b5a1-c0a26ddb1f33a" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_2_Engine_Running_R_A" Guid="a3b158f04-ca78-4de9-a994-05b7071515bba" BitOffsetWithinMsg="12" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_274_ss3" Guid="ac148afdf-8a65-43a3-9bd1-b2cdb6d5092ca" Direction="Destination" SamplePeriod="0">
+    <RP Name="Label274_2_Engine_Running_R_B" Guid="abfa07eda-e7f3-4096-8094-a92299c38287a" BitOffsetWithinMsg="13" DataFormatType="DIS" Label="274" Multiplier="1" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="200" />
+  </A429Port>
+  <A429Port Name="pi429_CA_DB2_RX_304_ss1" Guid="a9103d11b-4989-480f-a2a9-7a5a53abed7ca" Direction="Destination" SamplePeriod="0">
+    <RP Name="L304_2_IASC2B_GHEAT_ON" Guid="a5f5f0b35-08c9-4172-8d85-4d6e4c1be700a" BitOffsetWithinMsg="14" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+    <RP Name="L304_2_IASC2B_GHEAT_UNAVAILABLE" Guid="a4bb6bbbb-c389-4c6b-95b0-ac9b3b0f7924a" BitOffsetWithinMsg="15" DataFormatType="DIS" Label="304" ParameterSize="1" SDIExpected="-1" SysLatencyWCLimit="1250" />
+  </A429Port>
+</HostedFunctionClass>

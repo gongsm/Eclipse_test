@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW06_Analog_In_ATA27FCS" Guid="a4a4584d5-509e-4601-87a9-deaaaf1d456aa" XsdVersion="7.9" Hardware="RDIU_06">
+  <AnalogPort Name="piANA_TATSensor_2_HF_TATSENSOR_R" Guid="ac3295e0d-58bb-4651-a435-ea89cd1c5126a" Direction="Destination" Physical="RDIU_06.40060_A01" RIUTemplate="40060" SamplePeriod="160" UDC="Cable resistance=2">
+    <Dataflow_Ref SrcName="HF_TATSENSOR_R.poANA_TATSensor_2" SrcGuid="adce80dee-645f-48c2-a32c-553c2fa68e26a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL" Guid="a9132f7e6-a743-4577-804f-89520833f35fa" Direction="Destination" Physical="RDIU_06.40022_C01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.poDISC_FWD_CARGO_FIRE_EXT_SYS_ARMED" SrcGuid="a772a7f21-80d1-4032-a954-b46dd925b038a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_NAI_Switch2_OFF_HF_R_NAISWITCH" Guid="a17143eb3-41c3-46f8-9aea-09d8389ac841a" Direction="Destination" Physical="RDIU_06.40022_B02" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_R_NAISWITCH.poDISC_NAI_Switch2_OFF" SrcGuid="a720c0aaa-3772-4415-8449-9b631931f50fa" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40060_ATA27FCS" Guid="a38ac76a3-eeb3-463a-a423-0f71ce391437a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="160">
+    <A664Message Name="A664_O1_40060_ATA27FCS_Msg" Guid="a1171f93b-e517-4ea8-89fc-0fdc314bce2fa" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="1280" VLID="33409">
+      <DS Name="FSS1" Guid="afc836f3d-4b94-4fb0-86ff-15a0e053613ea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a764e3f22-1f3c-4f65-913d-da54fc362096a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="TATSensorSignal_2_HF_TATSENSOR_R" Guid="af2f4df3f-f4f9-4004-84c0-39b78e2c7f13a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="adf89f041-ed5a-4d64-88ac-123f5d5e5d11a" BitOffsetWithinDS="0" DataFormatType="SINT" FuncRngMax="250" FuncRngMin="700" ParameterSize="16" PublishedLatency="150" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_TATSENSOR_R.TATSensorSignal_2.Resistance" SrcGuid="a8a453d54-a117-4cbc-a059-e94dacf02a01a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.Resistance_Right2" DestGuid="a7199f0e8-bf36-4eea-bf2f-eba66518b4e4a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.Resistance_Right2" DestGuid="a1dba6661-c89f-4735-abb7-8e82f08e744da" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.Resistance_Right2" DestGuid="a6d1b8711-ec0d-48cc-8f6c-6f09c82ca8ada" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Resistance_R_TATSensor_2" DestGuid="aa61a8bdc-a6ba-4ec1-8380-4ffc09f2315da" />
+        </DP>
+        <DP Name="Temperature" Guid="a95770462-94c2-4ce1-a67c-07e390351756a" BitOffsetWithinDS="16" DataFormatType="SINT" FuncRngMax="150" FuncRngMin="-100" ParameterSize="16" PublishedLatency="150" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_TATSENSOR_R.TATSensorSignal_2.Temperature" SrcGuid="a9bae8527-db79-4124-ba71-9209fe29149ca" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Temperature_R_TATSensor_2" DestGuid="a98411065-cfe6-4990-afec-3daa86b13639a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piANA_TATSensor_2_HF_TATSENSOR_R" SrcGuid="ac3295e0d-58bb-4651-a435-ea89cd1c5126a" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" Guid="a33cccf08-3dac-4293-9bec-80f1a5493ba5a" Direction="Destination" Physical="RDIU_06.40022_C02" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.poDISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A" SrcGuid="a008b5429-87c6-47a3-868a-b7b94e3576cba" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_NAI_Switch2_ON_HF_R_NAISWITCH" Guid="a01e4f978-7633-43a4-a938-6f1b1f5ca95fa" Direction="Destination" Physical="RDIU_06.40022_B03" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_R_NAISWITCH.poDISC_NAI_Switch2_ON" SrcGuid="acbf668ad-446e-474d-9ef4-b2c9071d5b80a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" Guid="abf87ac6a-dbca-4365-a1d4-922f674c1018a" Direction="Destination" Physical="RDIU_06.40022_C03" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.poDISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A" SrcGuid="a22fe99b2-e22c-4892-a7fe-5b0136cbcb84a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_NAI_Switch2_AUTO_HF_R_NAISWITCH" Guid="a25751079-bf43-4d9b-8e4b-f53469c6629ba" Direction="Destination" Physical="RDIU_06.40022_B04" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_R_NAISWITCH.poDISC_NAI_Switch2_AUTO" SrcGuid="a7ad8b211-b376-4aa2-8644-dd33fe285cdba" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA30NAI" Guid="af3f0f145-eb07-4ec8-a5a3-e0057b382a00a" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA30NAI_Msg" Guid="aa8b47126-4e1a-4974-88cd-e85fc806dcb1a" EdeEnable="True" MessageOverhead="32" MessagePad="93" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="100" VLID="33409">
+      <DS Name="FSS1" Guid="a44f43ac5-5ba0-4e65-8a9d-90e7e4715721a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a763d80d9-928d-497c-ba09-7e19770ae818a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ac73efcd5-87a9-4dda-a812-b89d4898acd2a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a2baad302-9e9f-4aa7-973f-e5578f2cb971a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="ENG_ANTI_ICE_RDIU2_OFF_HF_R_NAISWITCH" Guid="ac4a0536b-d193-497f-851d-9f1f8680a5c3a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a0ce5d8a5-de62-4e08-a0cd-c3ac7323c6bfa" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=Not Selected" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="100" ZeroState="0=Selected">
+          <Copy_Ref SrcName="HF_R_NAISWITCH.ENG_ANTI_ICE_RDIU2_OFF.Status" SrcGuid="a0eb007a1-738f-4f93-becc-9974a4486d9aa" />
+          <Gw_Pub_Ref DestName="FDAS_L1.R_NAI_ENG_ANTI_ICE_RDIU2_OFF" DestGuid="a0dee1d73-f210-4e7d-8cdc-ab5e3441713ca" />
+          <Gw_Pub_Ref DestName="FDAS_L3.R_NAI_ENG_ANTI_ICE_RDIU2_OFF" DestGuid="aea61aa1f-2319-44eb-8c91-dc5d362443e7a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.R_NAI_ENG_ANTI_ICE_RDIU2_OFF" DestGuid="a0e4fac12-cad5-46a4-bf4b-afcb84e99c00a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_NAI_Switch2_OFF_Status" DestGuid="af7c9e1c9-3729-4cda-8f03-fd6e4d69c0bba" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_NAI_Switch2_OFF_Status" DestGuid="a12c4cf74-8f45-4b65-97dd-bf9392a68f5da" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_NAI_Switch2_OFF_Status" DestGuid="ae2ec95c7-4ef2-4f3c-9d9a-03df2cee997ca" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_NAI_Switch2_OFF_Status" DestGuid="a933e94d3-ba00-4038-a144-c9e6c1c38a7ea" />
+        </DP>
+      </DS>
+      <DS Name="ENG_ANTI_ICE_RDIU2_ON_HF_R_NAISWITCH" Guid="a6fddd201-1bd9-4645-b382-4970a4490307a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ad1ebc51b-4478-464d-a5ce-e7aa149210c0a" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=Not Selected" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="100" ZeroState="0=Selected">
+          <Copy_Ref SrcName="HF_R_NAISWITCH.ENG_ANTI_ICE_RDIU2_ON.Status" SrcGuid="a3fe10d49-707e-4a8e-93fc-2cebdc4f0f24a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.R_NAI_ENG_ANTI_ICE_RDIU2_ON" DestGuid="a4ae35548-101e-4699-8b51-bc349a6ef711a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.R_NAI_ENG_ANTI_ICE_RDIU2_ON" DestGuid="a6bf48ce2-de6d-4cd1-a27c-4125bb8aadfaa" />
+          <Gw_Pub_Ref DestName="FDAS_R3.R_NAI_ENG_ANTI_ICE_RDIU2_ON" DestGuid="a8d94e9db-db9a-441e-82f3-839d6ab7e706a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_NAI_Switch2_ON_Status" DestGuid="ac7634f8a-915c-46b0-8295-fd3774b40d12a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_NAI_Switch2_ON_Status" DestGuid="acdc64d32-7682-45ff-a811-71789103376ba" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_NAI_Switch2_ON_Status" DestGuid="a537b4875-1761-48ca-9a49-d1f82118bdaaa" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_NAI_Switch2_ON_Status" DestGuid="a7737f84e-d4e3-4e17-8db1-058106c74c62a" />
+        </DP>
+      </DS>
+      <DS Name="ENG_ANTI_ICE_RDIU2_AUTO_HF_R_NAISWITCH" Guid="a1452334c-44c0-4b35-9db8-62c8b630dba8a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ac04c0ad4-f42a-4d02-a3c9-d88501a634b7a" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=Not Selected" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="100" ZeroState="0=Selected">
+          <Copy_Ref SrcName="HF_R_NAISWITCH.ENG_ANTI_ICE_RDIU2_AUTO.Status" SrcGuid="a4e1c4717-3bdd-4958-aa22-cd6a843a55e0a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_NAI_Switch2_Auto_Status" DestGuid="aa1d82a73-4332-4156-88da-9cd594bc1a06a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_NAI_Switch2_Auto_Status" DestGuid="a993fa470-d15a-4eaf-bd26-35a3482703ffa" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_NAI_Switch2_Auto_Status" DestGuid="a0e3830ce-7a3e-4890-866e-27ed8d10596da" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_NAI_Switch2_Auto_Status" DestGuid="a7e70f814-420f-4fc2-8dcd-420377eec457a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_NAI_Switch2_AUTO_HF_R_NAISWITCH" SrcGuid="a25751079-bf43-4d9b-8e4b-f53469c6629ba" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_NAI_Switch2_OFF_HF_R_NAISWITCH" SrcGuid="a17143eb3-41c3-46f8-9aea-09d8389ac841a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_NAI_Switch2_ON_HF_R_NAISWITCH" SrcGuid="a01e4f978-7633-43a4-a938-6f1b1f5ca95fa" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a2c6a7938-651b-493d-aa24-00da535f35dea" Direction="Destination" Physical="RDIU_06.40022_C04" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.poDISC_LEFT_ENG_FIRE_EXT_SYS_ARMED" SrcGuid="a472ff4af-f7de-45d4-810d-7d316848c6a4a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_PIT_ACTIVE_CH_A_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="ad7c44898-c135-489c-bbe6-8b60186b4ccca" Direction="Destination" Physical="RDIU_06.40022_C05" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.poDISC_PIT_ACTIVE_CH_A" SrcGuid="adaaa8a31-c031-4cc6-8051-e52753b4475fa" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_APU_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a5f031509-74f3-4b65-a8de-3171f6f1d376a" Direction="Destination" Physical="RDIU_06.40022_C06" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.poDISC_APU_FIRE_EXT_SYS_ARMED" SrcGuid="ae4c098d8-267b-444c-a61e-dee744ac5036a" />
+    <Dataflow_Ref SrcName="HF_GROUNDAPU_FIRECNTRLPANEL.poDISC_APU_FIRE_EXT_SYS_ARMED" SrcGuid="a35284064-def5-4dae-99f9-7501c059eaf2a" />
+  </AnalogPort>
+  <A429Port Name="po429_L271_DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_Status_HF_CARGO_FIRECNTRLPANEL" Guid="a530cbf45-2caa-4fb6-8e1d-2e6d8544e131a" Direction="Source" Physical="RDIU_06.40006_A01" RefreshPeriod="80">
+    <A429Channel Name="A429_L271_DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_Status_HF_CARGO_FIRECNTRLPANEL" Guid="a7bc8a1b1-ab5e-4c53-aaa5-dcf66b7bda37a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="80">
+      <A429Word Name="L271_DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_Status_HF_CARGO_FIRECNTRLPANEL" Guid="a6673df98-2e36-4cb3-8807-8a86aa5fb765a">
+        <DP Name="LABEL" Guid="a16f7883e-601f-4958-8749-8d029a90417fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" TransmissionIntervalMinimum="80" />
+        <DP Name="SDI" Guid="a2a924f7c-10a9-47fe-8286-89a1caa65647a" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="80" />
+        <DP Name="Status" Guid="a74596e06-7dc6-4a96-ada3-886b43b644d8a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="80">
+          <Copy_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED.Status" SrcGuid="aeaef3929-4668-4214-ab45-3e2df16489fba" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L271_1_A1_FWD_CARGO_FIRE_EXT_SYS_ARMED" DestGuid="a3ab0e63e-9a88-4613-8a47-5204da9bb9bba" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L271_1_B1_FWD_CARGO_FIRE_EXT_SYS_ARMED" DestGuid="a5e5ced5a-80c8-4247-8496-050e7303dd31a" />
+        </DP>
+        <DP Name="SSM" Guid="a9e8948c3-537f-4e4c-83e2-c9f0c6966e72a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="80" />
+        <DP Name="PARITY" Guid="a1c646eae-780c-4811-89d0-7741700d09eba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="80" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL" SrcGuid="a9132f7e6-a743-4577-804f-89520833f35fa" />
+  </A429Port>
+  <A429Port Name="po429_L272_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_Status_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a9be95e34-2372-4bc7-8cc9-798e6d78cdcaa" Direction="Source" Physical="RDIU_06.40006_A01" RefreshPeriod="80">
+    <A429Channel Name="A429_L272_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_Status_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="ab5886c82-e747-43e9-926d-4330145ea8a9a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="80">
+      <A429Word Name="L272_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_Status_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="aff6ad4dd-1fc4-4f81-95aa-ef31168750f1a">
+        <DP Name="LABEL" Guid="a96af1094-33a3-4053-9345-b89fad496784a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" TransmissionIntervalMinimum="80" />
+        <DP Name="SDI" Guid="a0feaec8e-5779-4f96-870e-aa92bb892703a" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="80" />
+        <DP Name="Status" Guid="aaaa6b8f0-1270-41c7-ac4a-ebaae736f495a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="80">
+          <Copy_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED.Status" SrcGuid="a070eed4d-8a0d-4b66-a5f7-1aedc0713567a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L272_1_A1_L_ENG_FIRE_EXT_SYS_ARMED" DestGuid="a6fda53c8-5ff1-444b-bdbb-71d369605d4ea" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L272_1_B1_L_ENG_FIRE_EXT_SYS_ARMED" DestGuid="a96c81aff-2438-4193-bcbc-cd95f4385a17a" />
+        </DP>
+        <DP Name="SSM" Guid="a2c1a4aa1-7fd9-406b-895b-aacabb660964a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="80" />
+        <DP Name="PARITY" Guid="aeae79238-9588-48ad-a829-23fedb9eeb27a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="80" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" SrcGuid="a2c6a7938-651b-493d-aa24-00da535f35dea" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_40022_ATA26FPS" Guid="aa57cb6a9-01a8-4e2e-834c-af00e86e90c1a" Direction="Source" MessageSize="52" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA26FPS_Msg" Guid="a43263565-aab6-45b5-87b8-a819b188c6c9a" EdeEnable="True" MessageOverhead="32" MessagePad="258" MessageSize="52" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1280" VLID="33409">
+      <DS Name="FSS1" Guid="a0d76c942-0e64-4dd5-9c39-361721685065a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a2a0230ad-dd44-463b-931d-fdbd6ecf9618a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a2993f6a0-e6dd-4c82-ae38-f28799bf961ba" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="ac8923d64-6de8-4f10-b89a-1b81f9166547a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a750ecc0f-1b8c-4433-87cf-b5247ff02749a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL" Guid="a8051a9c9-4743-4e76-b6f6-058f535784cfa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a17b39e98-bb22-4eb1-a169-fa96e8e7f8a5a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.DISC_FWD_CARGO_FIRE_EXT_SYS_ARMED.Status" SrcGuid="aeaef3929-4668-4214-ab45-3e2df16489fba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_Status" DestGuid="a1188cb8a-88bf-4a47-8247-07f1f786c26ea" />
+        </DP>
+      </DS>
+      <DS Name="DISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" Guid="aeca2c504-a6d1-4847-a7fc-5f4cefaf5848a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ab4295bc5-2f35-4ab8-b8cc-3b34cedf118ca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.DISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A.Status" SrcGuid="abf93dd0d-f101-4880-b7e6-eb51659b749ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A_Status" DestGuid="a265156ea-da19-40d4-be1e-0ebc051d95fda" />
+        </DP>
+      </DS>
+      <DS Name="DISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" Guid="a49d68a4e-1bb6-4259-bd40-5fe878a27b20a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ac15b86c2-0ba5-488c-948e-cfa24ef49a67a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_CARGO_FIRECNTRLPANEL.DISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A.Status" SrcGuid="ab0a25bde-448a-4d68-b175-1c21e510c0f7a" Validated="-1" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A_Status" DestGuid="ae2bcb3fe-11db-4fd1-a65d-27bc8a944d03a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a9435202a-641d-41bc-ae38-9143dd718076a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a2811036f-1aab-401b-ac92-47bcbeeff58ea" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED.Status" SrcGuid="a070eed4d-8a0d-4b66-a5f7-1aedc0713567a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.ENGINEAPU_FIRECNTRLPANEL_L_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED" DestGuid="a4ed77d6a-62f8-476d-9406-3de3ad715ccaa" />
+          <Gw_Pub_Ref DestName="FDAS_L3.ENGINEAPU_FIRECNTRLPANEL_L_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED" DestGuid="a29871460-c75c-4555-8b08-cef564a52053a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.ENGINEAPU_FIRECNTRLPANEL_L_DISC_LEFT_ENG_FIRE_EXT_SYS_ARMED" DestGuid="aee15fcc3-4921-4e10-987a-1a3b34924bd6a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.L_ENG_FIRE_EXT_SYS_ARMED_Status" DestGuid="a99948e60-3793-41fa-b81e-22275d47c1a4a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.L_ENG_FIRE_EXT_SYS_ARMED_Status" DestGuid="a46fa1c31-4311-43a5-92d6-6500c2350dd1a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.L_ENG_FIRE_EXT_SYS_ARMED_Status" DestGuid="aae957c9c-f231-4e8a-a336-34f45273e6f2a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.L_ENG_FIRE_EXT_SYS_ARMED_Status" DestGuid="a19f873ec-4ff5-48c3-9eaa-6649dee2e436a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_Status" DestGuid="aec33e49d-0a62-4dfe-80a1-4146d79a13dea" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.EAFCP_LEngFireExtSysArmed" DestGuid="ad81c447d-59ba-45a6-8f45-6af0da7bbd0fa" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.EAFCP_LEngFireExtSysArmed" DestGuid="afc872541-7931-4301-bd80-487c05276e1da" />
+        </DP>
+      </DS>
+      <DS Name="FSS2" Guid="a9fd1a421-d31f-483b-988a-dd2d553936ffa" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a7cd73bda-ee3a-45d9-bf8b-c43c39c1209fa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="a153c9faf-9cff-4cbc-9917-151bfb5fcd87a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="aC9A0F4B2-0A59-4c4c-91E2-D3AC2C42F697a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="a17099E4C-25F9-4285-85D1-CEA9FDF9A3FFa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_PIT_ACTIVE_CH_A_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a81466984-4bdf-4b92-92bb-de5de2cac3aaa" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a0232ffc2-1b4d-4b28-8f62-f397bcf9be20a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.DISC_PIT_ACTIVE_CH_A.Status" SrcGuid="a664b66bc-8c7a-492e-a2d7-805910cdc17fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_PIT_ACTIVE_CH_A_Status" DestGuid="ad9a44499-7d6d-4a10-8faa-a296e0371e41a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_APU_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" Guid="a11954208-0848-4057-8671-8bbb7e46827ea" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a5cc8c26e-6181-43e8-a934-0b9c5b66d07ba" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.DISC_APU_FIRE_EXT_SYS_ARMED.Status" SrcGuid="a509ac521-f42e-4ab7-bd30-b61901698d3ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_APU_FIRE_EXT_SYS_ARMED_DISC_APU_FIRE_Status" DestGuid="af3c0c759-d759-4dfc-8729-88bfb9fdbc96a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.IHDC_A_P2_APUFireExtSysAmd" DestGuid="a1b0fcc21-a8dc-41e5-a990-e89720f61b93a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.IHDC_A_P2_APUFireExtSysAmd" DestGuid="a881031fc-1f25-4a18-9d50-dc5051a75e3ea" />
+        </DP>
+      </DS>
+      <DS Name="DISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL_1" Guid="a1848ECE3-B183-4de5-A68A-EFA445FD8DACa" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a3D2F9585-0EBD-473f-AAEB-3970F3466594a" BitOffsetWithinDS="0" DataFormatType="COD" ParameterSize="8" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="EF_FWD_INITIATE_A.RX_INITIATE_FWD_CARGO_FIRE_EXT_CH_A" SrcGuid="af8fd8966-0d61-4d18-b87c-59d48fb01bdea" Validated="-1" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_INITIATE_FWD_CARGO_FIRE_EXT_CH_A" DestGuid="a9bef96e7-55b8-4841-a9ec-1882b86575b6a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL_1" Guid="aF6403204-BEA5-4d1d-9A02-D599F0C047DFa" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a4CD24897-FD12-433c-ADF1-C5B214DC0114a" BitOffsetWithinDS="0" DataFormatType="COD" ParameterSize="8" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="EF_AFT_INITIATE_A.RX_INITIATE_AFT_CARGO_FIRE_EXT_CH_A" SrcGuid="aa8531d37-78f6-4ca3-95d8-6fc4f4658ff2a" Validated="-1" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_INITIATE_AFT_CARGO_FIRE_EXT_CH_A" DestGuid="aa4e4d318-9254-4963-b968-54ac6fde7a78a" />
+        </DP>
+      </DS>
+      <DS Name="FSS3" Guid="a0790D26C-788E-4cbd-8978-C29E83EB0B25a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="aF38694D4-F2CF-42e3-A52C-D55A5251DD4Ea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_APU_FIRE_EXT_SYS_ARMED" Guid="aFA87F351-15E5-40c2-B4D7-31FB46743EB4a" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="aF2D85A4B-9742-40ad-9625-C8FF206888DDa" BitOffsetWithinDS="0" DataFormatType="COD" ParameterSize="8" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ENGINEAPU_FIRECNTRLPANEL.DISC_APU_FIRE_EXT_SYS_ARMED.Status" SrcGuid="a509ac521-f42e-4ab7-bd30-b61901698d3ca" Validated="-1" />
+          <Copy_Ref SrcName="HF_GROUNDAPU_FIRECNTRLPANEL.DISC_APU_FIRE_EXT_SYS_ARMED.Status" SrcGuid="a55ae7140-48b6-437f-8d25-1ca5dd20a9fda" Validated="-1" />
+          <Gw_Pub_Ref DestName="FDAS_L1.GROUNDAPU_FIRECNTRLPANEL_APU_DISC_APU_FIRE_EXT_SYS_ARMED" DestGuid="afd94d4bd-cbbc-4c5e-9e39-1e377ab43889a" Validated="-1" />
+          <Gw_Pub_Ref DestName="FDAS_L3.GROUNDAPU_FIRECNTRLPANEL_APU_DISC_APU_FIRE_EXT_SYS_ARMED" DestGuid="a5d6704c6-4f11-4ab5-a837-437338f4ea10a" Validated="-1" />
+          <Gw_Pub_Ref DestName="FDAS_R3.GROUNDAPU_FIRECNTRLPANEL_APU_DISC_APU_FIRE_EXT_SYS_ARMED" DestGuid="a0d4ecbf9-dd87-4329-a784-b0bce79e9455a" Validated="-1" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_APU_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" SrcGuid="a5f031509-74f3-4b65-a8de-3171f6f1d376a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_FWD_CARGO_FIRE_EXT_SYS_ARMED_HF_CARGO_FIRECNTRLPANEL" SrcGuid="a9132f7e6-a743-4577-804f-89520833f35fa" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_INITIATE_AFT_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" SrcGuid="abf87ac6a-dbca-4365-a1d4-922f674c1018a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_INITIATE_FWD_CARGO_FIRE_EXT_CH_A_HF_CARGO_FIRECNTRLPANEL" SrcGuid="a33cccf08-3dac-4293-9bec-80f1a5493ba5a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_LEFT_ENG_FIRE_EXT_SYS_ARMED_HF_ENGINEAPU_FIRECNTRLPANEL" SrcGuid="a2c6a7938-651b-493d-aa24-00da535f35dea" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA27FCS.piDISC_PIT_ACTIVE_CH_A_HF_ENGINEAPU_FIRECNTRLPANEL" SrcGuid="ad7c44898-c135-489c-bbe6-8b60186b4ccca" />
+  </HFSamplingPort>
+</RemoteGateway>

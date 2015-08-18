@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW06_Analog_In_ATA24RAT" Guid="ae6643947-3393-4ef2-ae6d-c6bbe30a3024a" XsdVersion="7.9" Hardware="RDIU_06">
+  <AnalogPort Name="piDISC_ACTUATOR_PRESSURE_SWITCH_HF_RATACTUATOR" Guid="a0f032b77-3b81-4570-bc58-b7db1d54eddea" Direction="Destination" Physical="RDIU_06.40022_A03" RIUTemplate="40022" SamplePeriod="1280" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_RATACTUATOR.poDISC_ACTUATOR_PRESSURE_SWITCH" SrcGuid="a25BA2AC5-BEA6-403c-9C3B-CC55FECFF636a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_RAT_GCU_BIT_STS_HF_RATGCU" Guid="a1863ffba-3ab8-4ae1-9a93-95dce28a58faa" Direction="Destination" Physical="RDIU_06.40022_A04" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RATGCU.poDISC_RAT_GCU_BIT_STATUS" SrcGuid="a930A1508-557E-4063-B4E5-CAD42D6DE837a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_RAT_HEATER_BIT_STATUS_HF_RATGCU" Guid="ac10acfd3-7e0b-403d-8f66-9e9cd9d144a8a" Direction="Destination" Physical="RDIU_06.40022_A05" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RATGCU.poDISC_RAT_HEATER_BIT_STATUS" SrcGuid="a6DF802B4-9377-4df0-84B1-5416BDF89C9Ea" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_RAT_TEST_START_HF_RATGCU" Guid="a0f6a9090-19a2-4c12-8c9e-faf3f4fbb5f7a" Direction="Destination" Physical="RDIU_06.40021_A01" RIUTemplate="40021" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RATGCU.poDISC_RAT_TEST_START" SrcGuid="aae5bb788-091a-4162-b7dd-4a5962065f4aa" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_PROXIMITY_SENSOR_HF_RATGENERATOR" Guid="abe7b5a2d-9040-4117-bbf6-33f68dd779e9a" Direction="Destination" Physical="RDIU_06.40022_A06" RIUTemplate="40022" SamplePeriod="1280" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_RATGENERATOR.poDISC_PROXIMITY_SENSOR" SrcGuid="a53FBA5E5-D725-4cf4-B026-9CB4BE0FB7DBa" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA24RAT" Guid="a60b4b17c-57e8-4693-9a14-37e837ff6d6ea" Direction="Source" MessageSize="32" Networks="Both" RefreshPeriod="1280">
+    <A664Message Name="A664_O1_40022_ATA24RAT_Msg" Guid="ab58ddffe-76e3-44a8-b46c-6c6a6ab5a73ea" EdeEnable="True" MessageOverhead="32" MessagePad="155" MessageSize="32" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33381">
+      <DS Name="FSS1" Guid="aeea87d68-dca7-4c97-9a36-fd9454007ff2a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a06badca8-9776-4196-89ab-ebf51daf7fd2a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a7bf202c6-3946-42c7-8d64-be2af6c71673a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="aed46a928-5945-4bc3-93ab-2d31ccd1c919a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a980dbb1f-724f-4678-ac3d-6cb38e33fc10a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="ACTUATOR_PRESSURE_SWITCH_HF_RATACTUATOR" Guid="af1a1f8a7-b5e8-45c0-921a-949187fad312a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="aac710425-afeb-4c3b-bc4c-84b3b7eae98ca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATACTUATOR.ACTUATOR_PRESSURE_SWITCH.Status" SrcGuid="aA4151503-F940-442a-9FC1-DEE7739CAF06a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_ACTUATOR_PRESSURE_SWITCH_Status" DestGuid="ab1fccba1-211d-44ed-852a-4451d55d7f53a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_ACTUATOR_PRESSURE_SWITCH" DestGuid="a99d1ab7c-2069-4dc7-860f-68888da7021aa" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_ACTUATOR_PRESSURE_SWITCH" DestGuid="a1e37f953-617d-4fbd-8824-2990dfb0e8cba" />
+        </DP>
+      </DS>
+      <DS Name="RAT_GCU_BIT_STATUS_HF_RATGCU" Guid="a4965cc26-b387-40ea-9350-6d716d1595cda" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a72df1918-21ac-42fd-ad0a-09c59c8d43b0a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATGCU.RAT_GCU_BIT_STATUS.Status" SrcGuid="a3F977DF2-C5AA-45f3-A4EE-78ECE0E0BC96a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_RAT_GCU_BIT_STATUS_Status" DestGuid="a80b18a59-0ff2-47f8-b89d-d90e342bc1f7a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_RAT_GCU_BIT_STATUS" DestGuid="ac3fe5c15-6920-4a59-b95e-a06dac3066b7a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_RAT_GCU_BIT_STATUS" DestGuid="a0a84c584-0cfd-4410-a096-5ebf88510b4fa" />
+        </DP>
+      </DS>
+      <DS Name="RAT_HEATER_BIT_STATUS_HF_RATGCU" Guid="a28873969-0efa-4ae3-9593-ff23c1dfd0bfa" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a85193703-0af7-4498-925c-21175a5cbc69a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATGCU.RAT_HEATER_BIT_STATUS.Status" SrcGuid="aE9118AC8-8DD5-44f8-B9FE-65AEF9A781C0a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_RAT_HEATER_BIT_STATUS_Status" DestGuid="a8443d915-9259-4dd1-ba9c-8bb2094c4e16a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_RAT_HEATER_BIT_STATUS" DestGuid="a20fef1df-202a-4b92-b463-7fcbb259119ba" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_RAT_HEATER_BIT_STATUS" DestGuid="a716f452c-c067-46a9-99a4-01cb0118ca29a" />
+        </DP>
+      </DS>
+      <DS Name="RAT_TEST_START_HF_RATGCU" Guid="a700cad2f-ac7d-4bab-a1bb-2c16b1d3a92ca" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a080c8838-c94c-43e2-aced-78cfbf8abef8a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATGCU.RAT_TEST_START.Status" SrcGuid="aa4cb5d93-bc72-46d3-b218-c8dbccd4a7eaa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_RAT_TEST_START_Status" DestGuid="a113b66f2-1a22-4b7d-a47f-b7cbbcfc7922a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_RAT_TSET_START" DestGuid="a365e0be9-2a20-4a4c-ab68-587c1daacba5a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_RAT_TSET_START" DestGuid="a95440d2c-65e1-4178-92a3-c996ab5298c0a" />
+        </DP>
+      </DS>
+      <DS Name="FSS2" Guid="a046507bc-3ad1-40bf-825d-7b521753516da" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a982a9d38-f8b7-4a9b-9ede-dff9243a16eca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="PROXIMITY_SENSOR_HF_RATGENERATOR" Guid="a529e8d78-4fb5-4d06-89d0-fd559bbe9732a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a4ba3b302-2f09-4f3e-bbc2-f3196919da13a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATGENERATOR.PROXIMITY_SENSOR.Status" SrcGuid="aF06FDF8F-967E-4b2e-B276-64D3E435D323a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_PPROXIMITY_SENSOR_Status" DestGuid="a0b11d7a2-7a03-45a5-96f9-8cc1d2175f03a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_PROXIMITY_SENSOR" DestGuid="a1ae50d89-19bf-40ac-9941-b99650305dfea" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_PROXIMITY_SENSOR" DestGuid="a0dfb6d83-10ff-47a5-b269-7927fd044754a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA24RAT.piDISC_ACTUATOR_PRESSURE_SWITCH_HF_RATACTUATOR" SrcGuid="a0f032b77-3b81-4570-bc58-b7db1d54eddea" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA24RAT.piDISC_PROXIMITY_SENSOR_HF_RATGENERATOR" SrcGuid="abe7b5a2d-9040-4117-bbf6-33f68dd779e9a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA24RAT.piDISC_RAT_GCU_BIT_STS_HF_RATGCU" SrcGuid="a1863ffba-3ab8-4ae1-9a93-95dce28a58faa" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA24RAT.piDISC_RAT_HEATER_BIT_STATUS_HF_RATGCU" SrcGuid="ac10acfd3-7e0b-403d-8f66-9e9cd9d144a8a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA24RAT.piDISC_RAT_TEST_START_HF_RATGCU" SrcGuid="a0f6a9090-19a2-4c12-8c9e-faf3f4fbb5f7a" />
+  </HFSamplingPort>
+</RemoteGateway>

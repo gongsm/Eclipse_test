@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SwitchApplicationClass Name="SWITCH_APP_B_NETWORK_CLASS" Guid="a2dc98eb0-7a66-46f7-9c00-339354ac75c6a" XsdVersion="7.9" IDAL="A" PartitionId="0">
+  <HFQueuingPort Name="HM_1_COMMAND_REQUEST_RX" Guid="a3b8e0114-e760-47f5-99d1-847797572f51a" Direction="Destination" MessageSize="64" Networks="B" QueueLength="1" SamplePeriod="1000" WKSMessageSize="64" WKSPort="True" WKSPortNumber="1023">
+    <RP Name="IMA_Platform_1_LRU_Command_Action" Guid="aac1cab0d-04ad-4f40-9df4-711d28f55ed2a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="512" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HM_2_COMMAND_REQUEST_RX" Guid="a3748d7ea-7215-4d19-9af9-898622e6868fa" Direction="Destination" MessageSize="64" Networks="B" QueueLength="1" SamplePeriod="1000" WKSMessageSize="64" WKSPort="True" WKSPortNumber="1023">
+    <RP Name="IMA_Platform_2_LRU_Command_Action" Guid="a8a1760e2-013c-4e19-8efa-6aa4d65535e2a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="512" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_HM_COMMAND_RESPONSE_TX" Guid="a57be2239-22d1-4b4c-9a03-6dc699026dd0a" Direction="Source" MessageSize="64" Networks="B" QueueLength="1" RefreshPeriod="1000" WKSPort="False">
+    <A664Message Name="Switch_Aperiodic_Command_Response_Message" Guid="a9732c596-b577-4097-a390-8d1fdae97d99a" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="64" MsgDataProtocolType="ARINC 624 Unicast" TransmissionIntervalMinimum="1000">
+      <DS Name="Switch_Aperiodic_Command_Response_Dataset" Guid="aafe5c2fc-0237-4cbe-878f-6044f11b5bc5a" ByteOffsetWithinMsg="0" DataSetSize="64" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Aperiodic_Command_Response_PAR" Guid="a8893182c-30b5-4b4a-aed4-dd0db8f46b58a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="512" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="SWITCH_MONITOR_TX" Guid="aa0833018-91cb-40d9-aa90-06aa5bab7945a" Direction="Source" MessageSize="36" Networks="B" RefreshPeriod="1000">
+    <A664Message Name="Switch_Periodic_Monitor_Report" Guid="a6208915a-38a0-42fa-952d-18e85f350fdea" EdeEnable="False" MessageOverhead="32" MessagePad="37" MessageSize="36" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="1000">
+      <DS Name="FSS" Guid="ae05ad85a-442e-4737-9404-b7100d438668a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a4409b175-fba4-4ae1-b76a-170be9958dc0a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="FSB2" Guid="a8f3e02e9-5746-4b25-bba7-173c2f27a47fa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="FSB3" Guid="ae9dc40b9-7acd-465f-aa08-1094c6a62be9a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="FSB4" Guid="a8ff70518-0151-4226-83a0-486ee51c7277a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="Switch_Core_Monitors_Dataset" Guid="a659d26bc-6cf4-42e1-af3b-e0d0b898610da" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="8" DsDataProtocolType="Parametric data">
+        <DP Name="DS1_Reserved_Hardware_Faults" Guid="af9e7bac2-10aa-4fdd-b15f-d83bf95135cba" BitOffsetWithinDS="0" DataFormatType="RESV" ParameterSize="12" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Input_2_Unavailable" Guid="aa68c2782-695e-4b14-9667-4e6c36c02147a" BitOffsetWithinDS="12" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Input_1_Unavailable" Guid="a43ca1bb0-17b4-4bed-a2ac-d6ce75ce18c0a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_High_Temperature_Fault" Guid="a8a0ba36c-5b69-48e0-93b2-7cc81128280ca" BitOffsetWithinDS="14" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Temp_Sensor_Fault" Guid="a79f17188-8d4a-41e7-a946-cf59ec9083f5a" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="DS1_Reserved_Latched_Hardware_Faults" Guid="af51bca70-b400-494a-b99b-96739ef305c1a" BitOffsetWithinDS="16" DataFormatType="RESV" ParameterSize="6" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Position_Discretes_Fault" Guid="abd75f597-769f-4428-8459-1321235473c1a" BitOffsetWithinDS="22" CodedSet="0=Inactive; 1=Active; 3=Latched" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Hold_Up_Fault" Guid="a67992d26-17d3-4c8b-afd3-5e29413325b2a" BitOffsetWithinDS="24" CodedSet="0=Inactive; 1=Active; 3=Latched" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Supply_2_Fault" Guid="a28b85f26-4a2e-4eeb-bb3c-e009ad12dea5a" BitOffsetWithinDS="26" CodedSet="0=Inactive; 1=Active; 3=Latched" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Supply_1_Fault" Guid="a9964d1e0-4419-49ff-9fee-9c9432cb5d71a" BitOffsetWithinDS="28" CodedSet="0=Inactive; 1=Active; 3=Latched" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Core_Fault" Guid="ab27a29a9-2e18-4ade-96ef-a1a23e99e30ca" BitOffsetWithinDS="30" CodedSet="0=Inactive; 1=Active; 3=Latched" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="DS1_Reserved_Software_Faults" Guid="a8a7cfef7-4d53-41ce-81c3-d0a48e930013a" BitOffsetWithinDS="32" DataFormatType="RESV" ParameterSize="29" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Configuration_Fault" Guid="a12d4855b-289f-4794-b293-5b4943fe058ba" BitOffsetWithinDS="61" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Manifest_Unavailable_Fault" Guid="a7e1f8cf3-8ee2-4de3-b7ec-a68aa76c4620a" BitOffsetWithinDS="62" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Software_Compatibility_Fault" Guid="a94457500-2e11-41db-af03-758c23a80164a" BitOffsetWithinDS="63" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="ADN_Port_Monitors_Dataset" Guid="a022af5b5-4942-4912-9c79-a9548fbc8b66a" ByteOffsetFSF="5" ByteOffsetWithinMsg="16" DataSetSize="8" DsDataProtocolType="Parametric data">
+        <DP Name="MACPortStatus15" Guid="a74951fc9-00ae-4ff6-ba3f-6476807d71a9a" BitOffsetWithinDS="0" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus14" Guid="ae680ea29-3dd6-4e6b-bdb8-e054a0737808a" BitOffsetWithinDS="2" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus13" Guid="a58d3d6c9-3031-4083-98e8-45f6de7280fca" BitOffsetWithinDS="4" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus12" Guid="a0c26dbed-d3e2-471a-b4cd-ab5b6a7c816ba" BitOffsetWithinDS="6" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus11" Guid="a5f04f3e7-e3ec-4026-b450-008bf81b2827a" BitOffsetWithinDS="8" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus10" Guid="ab49b5aec-f4a4-4601-b429-bbe3ea53b1f3a" BitOffsetWithinDS="10" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus09" Guid="a29ea61ed-2981-43e0-8182-96e103607cfea" BitOffsetWithinDS="12" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus08" Guid="a3a10dbf5-f596-4448-bb2c-dd38193ff14ca" BitOffsetWithinDS="14" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus07" Guid="af2bb93dc-26e1-4019-91c3-90fb2c5c2069a" BitOffsetWithinDS="16" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus06" Guid="a6dab85d0-89ea-482e-bd0f-10fe30fc9d72a" BitOffsetWithinDS="18" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus05" Guid="a10cf80d8-9c06-45e1-b990-6a764fd23c89a" BitOffsetWithinDS="20" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus04" Guid="a3fc5bc38-5cde-424a-a592-3542a6897f81a" BitOffsetWithinDS="22" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus03" Guid="ac528c8c3-7d0d-4c60-acf2-211c96b26e00a" BitOffsetWithinDS="24" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus02" Guid="add266d8f-9452-402f-be98-2d09307b56d3a" BitOffsetWithinDS="26" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus01" Guid="a206bbf44-ea70-4a5d-ace7-99303169d2c1a" BitOffsetWithinDS="28" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus00" Guid="aef0cd693-eb69-45c2-a363-301dce43262ea" BitOffsetWithinDS="30" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Pad" Guid="a833fd109-92f3-4d73-8558-264520a52e2da" BitOffsetWithinDS="32" DataFormatType="PAD" ParameterSize="14" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus24" Guid="a8bc73d0c-44f2-483f-9734-e6179e4e6f61a" BitOffsetWithinDS="46" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus23" Guid="afadbd234-7f51-4fa9-a184-f988adb3cc7fa" BitOffsetWithinDS="48" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus22" Guid="af07f26d7-5e61-441e-ba66-f02977265ddba" BitOffsetWithinDS="50" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus21" Guid="abe47fce6-c6ec-4d00-bafb-24f7c3194caca" BitOffsetWithinDS="52" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus20" Guid="aab0bab9b-e3bd-4473-8bc3-d2ffe9785c83a" BitOffsetWithinDS="54" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus19" Guid="ab01d5f60-d9a2-4be7-9f73-facc2a431753a" BitOffsetWithinDS="56" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus18" Guid="ad9ba9cbd-4e0f-4931-bfb3-bd6ea95466ffa" BitOffsetWithinDS="58" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus17" Guid="a4c728aac-271f-4f47-a0b1-2358603f6891a" BitOffsetWithinDS="60" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="MACPortStatus16" Guid="a577444a8-5398-429c-a527-364f22993733a" BitOffsetWithinDS="62" CodedSet="0=Disabled; 1=Healthy; 2=Hardware Fault; 3=No Link Activity" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="Switch_State_Variable_Dataset" Guid="a22ae47d2-726b-4c0a-a82d-b60bce490e0fa" ByteOffsetFSF="6" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Pad" Guid="a85f587be-710a-4d34-a19f-c45f864de667a" BitOffsetWithinDS="0" DataFormatType="PAD" ParameterSize="23" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Init_Test_Test_Complete" Guid="af675ea0f-1648-4861-bcc3-7635f94c3744a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Dataload_Rejected" Guid="a41b5da50-3680-427a-822c-a2fb3b68fa3ea" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Dataload_Transfer_In_Progress" Guid="a73a7032d-9e66-4beb-8a87-d66dba54336aa" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_DL_PA_State" Guid="a41060ec8-da9f-40d2-b356-d97bff548172a" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Current_RU_State" Guid="ac45c6eda-4ee3-48a0-89eb-b96c95b86ec8a" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Internal_State" Guid="a1be109e3-a3d1-413b-9996-3a173d269f2ea" BitOffsetWithinDS="28" CodedSet="1=Safe Mode; 2=Nomal Mode; 3=On-Aircraft Sata Load Mode" DataFormatType="COD" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="Time_Cycle_Dataset" Guid="a99239725-5f48-44ee-8ddd-68a1d8f5eadea" ByteOffsetFSF="7" ByteOffsetWithinMsg="28" DataSetSize="8" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Elapsed_Time" Guid="a703bd790-d527-40a8-96de-e1f7189adcd0a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="32" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+        <DP Name="Switch_Power_Cycles" Guid="a43be6a2f-5304-42ff-996c-22c79fbf3a74a" BitOffsetWithinDS="32" DataFormatType="UINT" ParameterSize="32" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+    </A664Message>
+  </HFSamplingPort>
+  <HFQueuingPort Name="SW_LOOPBACK_TX" Guid="aab058445-6ac3-4132-bed4-47dfb9ea194ba" Direction="Source" MessageSize="13" Networks="B" QueueLength="1" RefreshPeriod="1000" WKSPort="False">
+    <A664Message Name="Switch_Loopback_Msg" Guid="ace77e8f9-1afd-41c9-b035-096385a4001aa" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="13" MsgDataProtocolType="Loopback Unicast" TransmissionIntervalMinimum="1000">
+      <DS Name="Switch_Loopback_DS" Guid="ab7922dae-2e48-4aae-8242-e8138ca3d94ca" ByteOffsetWithinMsg="0" DataSetSize="13" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Loopback_Par" Guid="a8cc93908-87b1-4ae1-b93f-4e98888a7a40a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="104" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFQueuingPort Name="SW_LOOPBACK_RX" Guid="a75ab585f-491b-438a-98ef-76d46a9cdc5da" Direction="Destination" MessageSize="13" Networks="B" QueueLength="2" SamplePeriod="1000" WKSPort="False">
+    <RP Name="Switch_Loopback_Par" Guid="a4c61e690-4ffe-4679-94e2-c43a4b513a34a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="104" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SW_CONFIG_RPT_TX" Guid="ab6123a9c-c26b-4ee6-b752-2aeb2a671c18a" Direction="Source" MessageSize="154" Networks="B" QueueLength="1" RefreshPeriod="4000" WKSPort="False">
+    <A664Message Name="Switch_Config_Report_Message" Guid="a14b8f570-59e9-4662-9a16-46beff2b33a8a" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="154" MsgDataProtocolType="ARINC 624 Multicast" TransmissionIntervalMinimum="4000">
+      <DS Name="Switch_Config_Report_Dataset" Guid="ab1e7a70b-2e34-4ee7-a77a-649adcb6813ca" ByteOffsetWithinMsg="0" DataSetSize="154" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Config_Report" Guid="a70b5aeaa-17fc-4ad5-97c0-987bad671fada" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="1232" PublishedLatency="0" TransmissionIntervalMinimum="4000" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_1_RX" Guid="ab44b693b-fcbb-48b1-9d47-36b99ac9edb5a" Direction="Destination" MessageSize="444" Networks="B" RefreshPeriod="1200" SamplePeriod="500">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_1" Guid="ac8a0250a-ea3a-4f97-b5d1-f0196506c12da" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="3008" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_Load_Type_IDs_1" Guid="a7f2b3c05-0666-4049-862c-018a1c9953b8a" BitOffsetWithinMsg="3008" DataFormatType="BLK" ParameterSize="416" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_1" Guid="aad6ae002-ea4e-4744-a068-f63f3fe97eaea" BitOffsetWithinMsg="3424" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Header_1" Guid="a5d268d58-5b16-4d60-9f71-747676c9d93ba" BitOffsetWithinMsg="3456" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_2_RX" Guid="ab3e7cf37-8a62-41ff-8db7-8d37c2390403a" Direction="Destination" MessageSize="444" Networks="B" RefreshPeriod="1200" SamplePeriod="500">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_2" Guid="aeafca1c0-bdf2-441c-b76b-05980182e9e5a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="3008" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_Load_Type_IDs_2" Guid="aea07bb89-77ea-4775-9b20-ce9b4de4b697a" BitOffsetWithinMsg="3008" DataFormatType="BLK" ParameterSize="416" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_2" Guid="a18e40ebf-b9cb-4adb-a84f-307505b60f6fa" BitOffsetWithinMsg="3424" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Header_2" Guid="a9f175f61-4d6d-4a0e-b32a-67e4b1e8fb3ba" BitOffsetWithinMsg="3456" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_3_RX" Guid="a69ee50de-7121-49d2-a7ed-57b856f84e6ea" Direction="Destination" MessageSize="444" Networks="B" RefreshPeriod="1200" SamplePeriod="500">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_3" Guid="aa94134fd-c7c3-45ed-bb7d-f29734eff1a8a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="3008" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_Load_Type_IDs_3" Guid="a832e649b-9b0b-4d98-a65f-3271f5acc2e6a" BitOffsetWithinMsg="3008" DataFormatType="BLK" ParameterSize="416" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_3" Guid="abb07bd18-4d23-46e3-a095-ca8f749f20eaa" BitOffsetWithinMsg="3424" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Header_3" Guid="ac7249224-70f3-4d6e-af98-e7c0680a8d72a" BitOffsetWithinMsg="3456" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_4_RX" Guid="a4727a42a-cb4c-43d3-8594-5a9f7894e84aa" Direction="Destination" MessageSize="444" Networks="B" RefreshPeriod="1200" SamplePeriod="500">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_4" Guid="a4515dcf7-e2e4-4b1d-88a3-35a66e4d0565a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="3008" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_Load_Type_IDs_4" Guid="ae36d7012-d1a2-49c9-b06a-1bfe0ba1b816a" BitOffsetWithinMsg="3008" DataFormatType="BLK" ParameterSize="416" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_4" Guid="ae61a2895-5582-4301-8bef-f12a4b9ffeb9a" BitOffsetWithinMsg="3424" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+    <RP Name="Dist_IMA_Platform_Manifest_Header_4" Guid="adb6e331a-ac0d-48e8-b96c-6e1f91dbe33ca" BitOffsetWithinMsg="3456" DataFormatType="BLK" ParameterSize="32" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="SWITCH_DL_SW_TX" Guid="ae5665eb0-e215-4f0a-868a-f37fb48110f1a" Direction="Source" MessageSize="264" Networks="B" QueueLength="1" RefreshPeriod="32" WKSPort="False">
+    <A664Message Name="Switch_Data_Load_SW_Tx1_Message" Guid="a71422977-45b2-4bb9-888b-ec5b81c72c75a" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="264" MsgDataProtocolType="ARINC 615A" TransmissionIntervalMinimum="32">
+      <DS Name="Switch_Data_Load_SW_Tx1_Dataset" Guid="aadabf05e-9395-4481-9dd8-c8c8bcd2de67a" ByteOffsetWithinMsg="0" DataSetSize="264" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Data_Load_SW_Tx1" Guid="a879c31e4-d377-4a5a-a880-dd591967bb43a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2112" PublishedLatency="0" TransmissionIntervalMinimum="32" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_DL_STAT_TX" Guid="af4e58aa7-4ce3-4819-9cc2-c3d8f8e4f694a" Direction="Source" MessageSize="1455" Networks="B" QueueLength="1" RefreshPeriod="250" WKSPort="False">
+    <A664Message Name="Switch_Data_Load_STAT_Tx2_Message" Guid="ac2bbee9c-a85f-4505-a120-4f0bccceef3da" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="1455" MsgDataProtocolType="ARINC 615A" TransmissionIntervalMinimum="250">
+      <DS Name="Switch_Data_Load_STAT_Tx2_Dataset" Guid="afad96dba-2bce-4ca1-a215-551ec594bc28a" ByteOffsetWithinMsg="0" DataSetSize="1455" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_Data_Load_STAT_Tx2_Parameter" Guid="abe179078-531b-42e6-8744-d2ebe5c1ef51a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="11640" PublishedLatency="0" TransmissionIntervalMinimum="250" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="IMA_STATE_L1_RX" Guid="ad70b3e74-9999-493e-96ed-552ae946c80ba" Direction="Destination" MessageSize="12" Networks="B" RefreshPeriod="970" SamplePeriod="500">
+    <RP Name="IMA_Platform_L1_Current_RU_State" Guid="af34bad99-c193-40c0-8950-05bf3323908ca" BitOffsetWithinMsg="0" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_L1_DL_PA_State" Guid="a8063110f-c69c-4d30-aaf8-d96e92b5d00da" BitOffsetWithinMsg="1" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_L1_Current_DN_State" Guid="a01dab7d0-aed0-4c6e-8403-3f34e0ac223da" BitOffsetWithinMsg="2" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="Reserved_L1" Guid="a6521b42b-bf4f-4ee0-bdaa-975fab894eefa" BitOffsetWithinMsg="3" DataFormatType="RESV" ParameterSize="29" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_L2_RX" Guid="ad7fe1cab-dfdc-4420-82e6-87b748945171a" Direction="Destination" MessageSize="12" Networks="B" RefreshPeriod="970" SamplePeriod="500">
+    <RP Name="IMA_Platform_L2_Current_RU_State" Guid="aaff69d24-99c4-4cff-a51f-24e84534d0b5a" BitOffsetWithinMsg="0" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_L2_DL_PA_State" Guid="a99d97432-9ba3-4659-bfba-2eb2456188c9a" BitOffsetWithinMsg="1" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_L2_Current_DN_State" Guid="adab283bb-92d3-474f-b7b5-4875aa8d78dba" BitOffsetWithinMsg="2" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="Reserved_L2" Guid="a85b4f849-2165-495e-9b8d-118a0174c70da" BitOffsetWithinMsg="3" DataFormatType="RESV" ParameterSize="29" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_R1_RX" Guid="adb3cf880-5906-4160-882f-b6619ac20471a" Direction="Destination" MessageSize="12" Networks="B" RefreshPeriod="970" SamplePeriod="500">
+    <RP Name="IMA_Platform_R1_Current_RU_State" Guid="a99898460-d77a-4557-84b9-771e52ea238ca" BitOffsetWithinMsg="0" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_R1_DL_PA_State" Guid="a3c938780-6fef-4812-9682-c46713fcc16ba" BitOffsetWithinMsg="1" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_R1_Current_DN_State" Guid="a3e4ae6f5-60b0-4123-89e3-c80870a6e6dda" BitOffsetWithinMsg="2" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="Reserved_R1" Guid="af1c16254-4fd6-4cd1-b3ed-e2229af0b383a" BitOffsetWithinMsg="3" DataFormatType="RESV" ParameterSize="29" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_R2_RX" Guid="ac1c14edb-c85f-4d6d-b5d7-b0b9a0accd1aa" Direction="Destination" MessageSize="12" Networks="B" RefreshPeriod="970" SamplePeriod="500">
+    <RP Name="IMA_Platform_R2_Current_RU_State" Guid="aac136840-aeb0-4916-b9b4-bd56de36f76ba" BitOffsetWithinMsg="0" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_R2_DL_PA_State" Guid="a51dc588a-60d3-4b1c-b984-4d48767d7bdca" BitOffsetWithinMsg="1" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="IMA_Platform_R2_Current_DN_State" Guid="a61dec949-e3c1-4cb8-8e12-473486570064a" BitOffsetWithinMsg="2" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="2560" />
+    <RP Name="Reserved_R2" Guid="a97bf750a-8c7c-4b6d-976e-dde98694e28fa" BitOffsetWithinMsg="3" DataFormatType="RESV" ParameterSize="29" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="ICMP_ECHO_REQUEST_RX" Guid="ac09b9061-a476-4f01-8359-01ca4309af9ca" Direction="Destination" MessageSize="72" Networks="B" QueueLength="1" SamplePeriod="200" WKSPort="False">
+    <RP Name="ICMP_Echo_Request_PAR" Guid="abdd1b059-1f0a-4993-abde-b377352ec59ba" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="576" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ICMP_ECHO_RESPONSE_TX" Guid="a8d273319-3612-4c19-a294-dfc14988cc21a" Direction="Source" MessageSize="72" Networks="B" QueueLength="1" RefreshPeriod="1000" WKSPort="False">
+    <A664Message Name="Switch_Echo_Response_Message" Guid="a8fd99bcb-97b4-4c95-9d7e-7b4287e8743ba" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="72" MsgDataProtocolType="ICMP" TransmissionIntervalMinimum="10000">
+      <DS Name="Echo_Response_DS" Guid="a66e4fbb5-8333-45ae-bacb-e2f60e545d16a" ByteOffsetWithinMsg="0" DataSetSize="72" DsDataProtocolType="Parametric data">
+        <DP Name="ICMP_Echo_Response_Parameter" Guid="a406edbf2-e641-44b7-9103-08e472aeb0dea" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="576" PublishedLatency="0" TransmissionIntervalMinimum="10000" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="OMS_AIRCRAFT_STATUS_RX" Guid="a6cd42573-1a79-4784-bb31-74c1b82c64d2a" Direction="Destination" MessageSize="68" Networks="B" RefreshPeriod="2000" SamplePeriod="1000">
+    <RP Name="FSB4" Guid="a071d9b6e-d93b-401f-b353-e5ef8e8f9efca" BitOffsetWithinMsg="32" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB3" Guid="a5bbc3d59-c53c-42cc-ba78-90b253d92c21a" BitOffsetWithinMsg="40" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB2" Guid="a200783cf-36a9-4087-b198-f29fc0e068eda" BitOffsetWithinMsg="48" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB1" Guid="a3b5bd86f-b669-40d4-9605-35d3f1300a67a" BitOffsetWithinMsg="56" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="OMS_Flight_Leg" Guid="a4d5722b6-3343-45c8-8e99-db9ed3cb3eb6a" BitOffsetWithinMsg="64" DataFormatType="SINT" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_1" Guid="a507e498d-3e44-47a3-b9ba-2a860aa9d74fa" BitOffsetWithinMsg="80" DataFormatType="PAD" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="OMS_Flight_Phase" Guid="ac02d531b-fefa-4ad8-9d62-8d22270b2b9da" BitOffsetWithinMsg="96" DataFormatType="COD" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_2" Guid="a70e3e0a4-296c-41d7-b0a5-fcba4fc7d3afa" BitOffsetWithinMsg="112" DataFormatType="PAD" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Days" Guid="afc5ffcc9-c38d-420e-a6ac-f8944f889280a" BitOffsetWithinMsg="128" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Months" Guid="ad00db520-ea24-455f-9dc1-7cc18940c033a" BitOffsetWithinMsg="136" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Years" Guid="a974bfefc-e25f-4587-9616-4757d1245745a" BitOffsetWithinMsg="144" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_PAD_1" Guid="ad4ed397f-fac1-4be2-9fe3-3a56efbfdbb5a" BitOffsetWithinMsg="152" DataFormatType="PAD" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Seconds" Guid="ae68b87b0-e0a6-46db-8406-0958518a39e1a" BitOffsetWithinMsg="160" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Minutes" Guid="a61ec880e-09fe-4519-b4c1-17f36b283f6ba" BitOffsetWithinMsg="168" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_UTC_Hours" Guid="a287af369-0a95-4a06-baaf-da01b83877c9a" BitOffsetWithinMsg="176" DataFormatType="UBNR" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="DS3_PAD_2" Guid="ad1c99863-eac1-4fe0-a851-16b3a3073cf8a" BitOffsetWithinMsg="184" DataFormatType="PAD" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="ICAO_Code" Guid="ad1dbcf79-e5dd-4d8a-98a0-ae36092af42aa" BitOffsetWithinMsg="192" DataFormatType="COD" ParameterSize="24" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_4" Guid="a4732ef53-2eaf-4a2a-818c-cd8e6b884d39a" BitOffsetWithinMsg="216" DataFormatType="PAD" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB8" Guid="a62831365-3988-4c8d-b6c4-c525dd7e000da" BitOffsetWithinMsg="224" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB7" Guid="a3e814c3f-26c6-4a74-b4f1-2d6f061e33cda" BitOffsetWithinMsg="232" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB6" Guid="a912ac3cc-7040-4921-b2b0-0ad68a5b9e3fa" BitOffsetWithinMsg="240" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="FSB5" Guid="a076c60c2-9fe1-4d38-b5a8-026325a73e4ea" BitOffsetWithinMsg="248" DataFormatType="A664_FSB" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_2" Guid="a8fced7b2-060b-4f5f-8b32-e9ef212d9a5ea" BitOffsetWithinMsg="256" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_1" Guid="a686f83f3-4e74-4aac-9a5d-06a6d9ea79fca" BitOffsetWithinMsg="264" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="String_Length_1" Guid="a6184ed73-98c6-4dee-b767-c74f43929388a" BitOffsetWithinMsg="272" DataFormatType="UINT" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_6" Guid="a8ee26628-8d3e-4f42-aa93-e1362766b50ea" BitOffsetWithinMsg="288" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_5" Guid="ab4dec80d-0a76-4c8e-b302-3e0e16ec31daa" BitOffsetWithinMsg="296" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_4" Guid="a9b60cfa5-6e0b-4f5c-9e9d-defc79a012d2a" BitOffsetWithinMsg="304" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_3" Guid="a4b84619b-a6a3-4a1f-ba0c-51733ddb08c5a" BitOffsetWithinMsg="312" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_5" Guid="afb76eb06-0bc1-4ef7-ad56-d0a0bc14715fa" BitOffsetWithinMsg="320" DataFormatType="PAD" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_9" Guid="aa95c7ff8-a557-48f8-8d02-62cb22d88783a" BitOffsetWithinMsg="328" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_8" Guid="a6bf57b63-25b4-40a2-b2e3-621d794f4ee1a" BitOffsetWithinMsg="336" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Reg_Number_Char_7" Guid="a37174676-4427-4c64-8994-43ec59ae7d87a" BitOffsetWithinMsg="344" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_2" Guid="a2151f9e9-ad77-4afb-be15-f56c13a10664a" BitOffsetWithinMsg="352" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_1" Guid="aeef4646c-e614-47b5-9500-dd554fee927da" BitOffsetWithinMsg="360" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="String_Length_2" Guid="a11da251c-3208-49b9-96f2-9de79242decfa" BitOffsetWithinMsg="368" DataFormatType="UINT" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_6" Guid="a63ac87b8-ae57-49c7-acc1-c2d43173d5cba" BitOffsetWithinMsg="384" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_5" Guid="a252e42be-1bd1-4e45-afee-d079d7806948a" BitOffsetWithinMsg="392" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_4" Guid="af979c7ac-9d47-4aa5-867f-fadc42bfb732a" BitOffsetWithinMsg="400" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_3" Guid="afb7c42cd-2314-4788-85ae-e22c05a5f72aa" BitOffsetWithinMsg="408" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Destination_Airport_Char_2" Guid="ab08a7eb1-28fe-484c-9390-07592c18a355a" BitOffsetWithinMsg="416" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Destination_Airport_Char_1" Guid="abf449567-644b-4709-88d1-adc36d98df3ea" BitOffsetWithinMsg="424" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_8" Guid="a37e47ba5-dcf5-43c5-aba7-b439d2ce5796a" BitOffsetWithinMsg="432" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Flight_Number_Char_7" Guid="a0c0f5521-0e8f-48f5-b47a-36806524c275a" BitOffsetWithinMsg="440" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Departure_Airport_Char_2" Guid="a8ec77388-2a7c-4003-ad58-5e9e766eb19ea" BitOffsetWithinMsg="448" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Departure_Airport_Char_1" Guid="ae4beb578-a065-4106-86b5-a10864f3f67ca" BitOffsetWithinMsg="456" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Destination_Airport_Char_4" Guid="a8273c501-36db-4d71-aeec-14683f1df973a" BitOffsetWithinMsg="464" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Destination_Airport_Char_3" Guid="ab1aa0565-929d-4548-bbdf-60568534181fa" BitOffsetWithinMsg="472" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_6" Guid="a427f9e1c-2d2c-49b1-b13c-463c5bdf510aa" BitOffsetWithinMsg="480" DataFormatType="PAD" ParameterSize="16" SysLatencyWCLimit="2560" />
+    <RP Name="Departure_Airport_Char_4" Guid="a14dc551b-c47a-4e52-bd87-92eaa3a89fb5a" BitOffsetWithinMsg="496" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Departure_Airport_Char_3" Guid="a30297dfa-f394-4220-a47b-7d1c4bffbf8aa" BitOffsetWithinMsg="504" DataFormatType="ISO-5" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="OMS_Global_Abort_flag" Guid="a798b6313-bf83-4de7-bc57-66820881f2c1a" BitOffsetWithinMsg="512" DataFormatType="BOOL" ParameterSize="8" SysLatencyWCLimit="2560" />
+    <RP Name="Pad_7" Guid="add77f7c0-e06b-4fad-83e7-357aa3d8c353a" BitOffsetWithinMsg="520" DataFormatType="PAD" ParameterSize="24" SysLatencyWCLimit="2560" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="ODLF_STATUS_RX" Guid="ad40e117a-021b-424a-aa0c-0bb38b6366f6a" Direction="Destination" MessageSize="150" Networks="B" QueueLength="1" SamplePeriod="100" WKSPort="False">
+    <RP Name="ODLF_DATA_LOAD_Status" Guid="af6e6fe24-5dce-476a-b704-3185acd1c4b9a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="1200" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_DL_WKS_RX" Guid="ad2d7c769-7ed7-43e7-8668-d073a306e9fba" Direction="Destination" MessageSize="256" Networks="B" QueueLength="1" SamplePeriod="34" WKSMessageSize="256" WKSPort="True" WKSPortNumber="59">
+    <RP Name="ODLF_DATA_LOAD_Init" Guid="af6ff1ad4-070d-4e7b-bf1e-8d2323e0b027a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2048" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ODLF_SW_RX" Guid="a4e340c0e-95a3-49ee-99df-744866e62222a" Direction="Destination" MessageSize="8180" Networks="B" QueueLength="1" SamplePeriod="34" WKSPort="False">
+    <RP Name="ODLF_DATA_LOAD_SESSION" Guid="abf14230e-5f54-49e5-a54a-f0fd10738ab4a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="65440" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ATE_MIB_REQUEST_RX" Guid="a98dca604-cf46-4a43-922e-7fef489a6501a" Direction="Destination" MessageSize="188" Networks="B" QueueLength="2" SamplePeriod="1000" WKSMessageSize="188" WKSPort="True" WKSPortNumber="161">
+    <RP Name="ATE_MIB_Request_Par" Guid="adb111de2-f6e8-484c-b431-741265f6fbe1a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="1504" SysLatencyWCLimit="2560" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ATE_MIB_RESPONSE_TX" Guid="add35ba95-2635-429b-b195-daabab7bcee3a" Direction="Source" MessageSize="188" Networks="B" QueueLength="1" RefreshPeriod="1000" WKSPort="False">
+    <A664Message Name="Switch_MIB_Response_Msg" Guid="ac9c5d324-d734-472a-8010-8ca29e57b39aa" EdeEnable="False" MessageOverhead="0" MessagePad="0" MessageSize="188" MsgDataProtocolType="SNMP Agent" TransmissionIntervalMinimum="1000">
+      <DS Name="Switch_MIB_Response_DS" Guid="adec44192-cc29-4208-b4e7-e3b7ad361097a" ByteOffsetWithinMsg="0" DataSetSize="188" DsDataProtocolType="Parametric data">
+        <DP Name="Switch_MIB_Response_Par" Guid="a259589a4-1c37-4136-967d-5296fa5b5b9fa" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="1504" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+</SwitchApplicationClass>

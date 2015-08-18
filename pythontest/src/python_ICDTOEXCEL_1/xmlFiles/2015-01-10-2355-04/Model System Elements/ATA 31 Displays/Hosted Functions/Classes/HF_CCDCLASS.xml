@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_CCDCLASS" Guid="aee6e542d-9775-483b-b190-7fe96bcfb9baa" XsdVersion="7.9" ATA="310000">
+  <CANPort Name="po825_CCD_L_PilotInputs" Guid="a02b53a39-d461-4b90-ba7b-9dc31b690654a" ActivityTimeout="500" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="8">
+    <CANMessage Name="A825_CCD_L_PilotInputs" Guid="ad926f3fb-e478-43cd-96a4-eaf8ea17baf8a" MessageSize="5" TransmissionIntervalMinimum="8">
+      <DP Name="CCD_L_A825_Controls_Upper" Guid="a7fcc2fa5-b73c-4174-bea6-a8b1bcabfe73a" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_Controls_Lower" Guid="a27e59ec3-3d40-46f7-b732-6bdc7ce34faea" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_Controls_Menu" Guid="a698d7362-5efe-485f-994b-59ab1e48e060a" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_Controls_Enter_Left" Guid="a3dac9e03-5428-48fb-a72e-dc95f6f1c036a" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_Controls_Enter_Right" Guid="a0f1534d4-1340-4c01-9393-21c7bad1442da" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_Controls_Pan" Guid="a77c8bc56-1510-4f05-af85-7d25fdfcf9faa" BitOffsetWithinDS="5" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_QuickAccess_ND" Guid="ab2416aa5-ccac-4815-8ad9-129438abbbc6a" BitOffsetWithinDS="6" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_QuickAccess_FMS" Guid="ab1a6d6da-6ec4-41d1-a62c-87bc7f744290a" BitOffsetWithinDS="7" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_QuickAccess_SYS" Guid="a88084236-ac2c-4a2b-86e1-570e31ad8f23a" BitOffsetWithinDS="8" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_QuickAccess_CHKL" Guid="a4702fce0-ef69-48e3-b76f-5769bcc8bfb9a" BitOffsetWithinDS="9" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_QuickAccess_COM" Guid="abcd8a8cc-028d-4df5-ba3a-7cb796cc73dda" BitOffsetWithinDS="10" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="Reserved" Guid="a8554ed9c-51c6-4fef-8da9-fd2a5d080361a" BitOffsetWithinDS="11" DataFormatType="RESV" ParameterSize="5" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_ScrollWheelCounter" Guid="aca6bbf1b-75b4-4eff-8d63-bdcee9069135a" BitOffsetWithinDS="16" DataFormatType="CHAR" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_TrackballXCounter" Guid="aab2c9353-ee2a-423f-ae15-713a318b846aa" BitOffsetWithinDS="24" DataFormatType="CHAR" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_L_A825_TrackballYCounter" Guid="a500f41eb-53bd-4e4b-a592-9ed33edb5838a" BitOffsetWithinDS="32" DataFormatType="CHAR" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_L_Status" Guid="a521ad42e-e1c4-4b36-ad34-98922f9701c5a" ActivityTimeout="1500" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="500">
+    <CANMessage Name="A825_CCD_L_Status" Guid="a1b287839-df24-4e6a-8218-a59c866896ada" MessageSize="5" TransmissionIntervalMinimum="500">
+      <DP Name="OP_Mode" Guid="aa7357a30-b2fd-49b4-abc0-f9fa516fd642a" BitOffsetWithinDS="0" CodedSet="0=Invalid;1=Power-Up Mode;2=Normal Mode;3=IBIT Mode" DataFormatType="COD" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="LRU_Type" Guid="a5aec81d0-0d13-48ee-aa58-5000ee8b45d5a" BitOffsetWithinDS="4" CodedSet="3=Valid" DataFormatType="COD" ParameterSize="3" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="LRU_Pos" Guid="acae63af3-6c02-4cfb-99c9-a5ec8c6bcf87a" BitOffsetWithinDS="7" CodedSet="0=Left;1=Right" DataFormatType="COD" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Fault_Code" Guid="a106a1b77-6ff4-4922-b5ab-93b8c6ecfe2ca" BitOffsetWithinDS="8" DataFormatType="CHAR" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Fault_Supp" Guid="aef76a055-ef76-46d1-b312-d9692250770da" BitOffsetWithinDS="16" DataFormatType="UNDEFINED" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Reserved" Guid="a85e7723f-5df1-4708-9e42-405b59f53610a" BitOffsetWithinDS="32" DataFormatType="RESV" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_L_PHSM" Guid="aa2ed15fd-d3ad-4afd-b842-5a56c9c88b18a" ActivityTimeout="3000" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="1000">
+    <CANMessage Name="A825_CCD_L_PHSM" Guid="abad109b1-9dca-455d-9e15-6ce3b4ae1f15a" MessageSize="8" TransmissionIntervalMinimum="1000">
+      <DP Name="NB_ERR_RX" Guid="a4566d850-3db7-446a-964d-16aa192fb1dfa" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="NB_ERR_TX" Guid="adcd1c6e3-a5cf-4b86-a065-6b1f0a7e7cf5a" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="NB_RST" Guid="aee6aa1bc-9f2a-4921-9b8e-675c5713f1a8a" BitOffsetWithinDS="32" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="REC" Guid="a5df4d40e-d23c-458d-bb8c-8f1bc6d4e278a" BitOffsetWithinDS="48" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="TEC" Guid="abce76ce7-2d2c-41a2-806f-d668e8a37a8fa" BitOffsetWithinDS="56" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_L_ConfigText" Guid="a250a53a4-410a-4828-84ce-47d31a6cd4aca" ActivityTimeout="3000" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="1000">
+    <CANMessage Name="A825_CCD_L_ConfigText" Guid="a161068e6-4251-44ed-b837-6c2c3ba97034a" MessageSize="8" TransmissionIntervalMinimum="1000">
+      <DP Name="Config_Info_Type" Guid="af2981810-3adf-4771-9822-ad22b7cfe368a" BitOffsetWithinDS="0" CodedSet="1=Message contains Member System ID;2=Message contains ATA Reference;3=Message contains Hardware part number;4=Message contains Hardware serial number;5=Message contains Hardware modification Status;6=Message contains Loadable software part number;7=Message contains Loadable software type ID;8=Message contains Member system specific data;0=Message is a delimiter" DataFormatType="COD" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Msg_Count" Guid="ae3eccf1d-5d63-4c8a-ae67-16d462b6f58ba" BitOffsetWithinDS="4" CodedSet="0=UNDEFINED" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Msg_Sequence" Guid="a33675a53-63ad-4c6f-8b4e-25c5c000e00fa" BitOffsetWithinDS="6" CodedSet="0=UNDEFINED" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Config_Info" Guid="a6bb4e47e-94ec-480c-9dda-36ec36cb74c2a" BitOffsetWithinDS="8" DataFormatType="CHAR STRING" ParameterSize="56" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="pi825_CCD_L_Brightness" Guid="a5de9f894-b007-497b-92fb-ea3b6fb41cd1a" CANMessageProtocolType="Parametric" Direction="Destination" PartitionId="0" SamplePeriod="50">
+    <RP Name="L_Panel_BRT" Guid="a73e61f5a-c0de-4729-b406-dfde0d820799a" DataFormatType="UINT" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="L_Lamp_Mode" Guid="abc7b6086-e863-4750-93de-ff2389a1782aa" DataFormatType="COD" ParameterSize="4" SysLatencyWCLimit="200" />
+  </CANPort>
+  <CANPort Name="po825_CCD_R_PilotInputs" Guid="a581413ca-241f-43e2-89d5-84cd9f4e3398a" ActivityTimeout="500" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="8">
+    <CANMessage Name="A825_CCD_R_PilotInputs" Guid="ab014c4d8-7d39-481a-bd75-d4d6aa784342a" MessageSize="5" TransmissionIntervalMinimum="8">
+      <DP Name="CCD_R_A825_Controls_Upper" Guid="a3962438f-0836-42ee-b987-a7205edffdbca" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_Controls_Lower" Guid="abbf1603b-8f68-442c-bbac-453a05807e15a" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_Controls_Menu" Guid="a45ea536d-fc19-49a2-bb71-0dc1088eae2aa" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_Controls_Enter_Left" Guid="a0d58c37c-1e7f-481f-a0a9-d5c36fb60f1aa" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_Controls_Enter_Right" Guid="a487a2d86-8602-4824-a448-1b3900d2273ca" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_Controls_Pan" Guid="abf7054fc-edaa-4937-9f5f-547e8548280ca" BitOffsetWithinDS="5" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_QuickAccess_ND" Guid="ad7cd3b45-2f7c-4d6c-a1bf-0f1bf7428a61a" BitOffsetWithinDS="6" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_QuickAccess_FMS" Guid="a58af7c4b-b89b-4c31-8e28-f84ebdeec8eda" BitOffsetWithinDS="7" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_QuickAccess_SYS" Guid="ad5ec66a6-9404-48c6-a5f6-d01ce56b4425a" BitOffsetWithinDS="8" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_QuickAccess_CHKL" Guid="a553dd508-a5b3-4e5c-a7a7-96f2801a59dea" BitOffsetWithinDS="9" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_QuickAccess_COM" Guid="aea4c9595-1dff-4968-9fa8-f3052bf465f5a" BitOffsetWithinDS="10" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="Reserved" Guid="adea029fa-532f-4cab-9d3b-71f3e07afc92a" BitOffsetWithinDS="11" DataFormatType="RESV" ParameterSize="5" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_ScrollWheelCounter" Guid="a236e143f-446d-41fb-8e3f-e4d49ac5a1ada" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_TrackballXCounter" Guid="ac5e90581-d126-4be8-90fd-634755eec613a" BitOffsetWithinDS="24" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+      <DP Name="CCD_R_A825_TrackballYCounter" Guid="a779e2105-4d9a-4722-a0f3-e8d63aeb6a49a" BitOffsetWithinDS="32" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="8" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_R_Status" Guid="a3f12b5d0-2a5a-44c1-83f2-78c05d373e7ea" ActivityTimeout="1500" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="500">
+    <CANMessage Name="A825_CCD_R_Status" Guid="a5f9a56d0-15b7-48dd-9ee4-26ba87c618baa" MessageSize="5" TransmissionIntervalMinimum="500">
+      <DP Name="OP_Mode" Guid="a34c7f747-299c-40a0-b9a8-dc601470cdc5a" BitOffsetWithinDS="0" CodedSet="0=Invalid;1=Power-Up Mode;2=Normal Mode;3=IBIT Mode" DataFormatType="COD" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="LRU_Type" Guid="a7767f283-ad22-4c04-a320-9ac8db0b230da" BitOffsetWithinDS="4" CodedSet="3=Valid" DataFormatType="COD" ParameterSize="3" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="LRU_Pos" Guid="a487961bd-7d31-49e5-90e9-70a524d70904a" BitOffsetWithinDS="7" CodedSet="0=Left;1=Right" DataFormatType="COD" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Fault_Code" Guid="a4aa31645-5f16-4492-86be-f1801bd01b5da" BitOffsetWithinDS="8" DataFormatType="CHAR" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Fault_Supp" Guid="adb1f7fab-279b-4eb9-897f-50e590bac6d6a" BitOffsetWithinDS="16" DataFormatType="UNDEFINED" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      <DP Name="Reserved" Guid="ab6221872-0234-4b1f-8f16-1f98f8e222d4a" BitOffsetWithinDS="32" DataFormatType="RESV" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_R_PHSM" Guid="a62350248-c5ce-4a43-8660-393dda108351a" ActivityTimeout="3000" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="1000">
+    <CANMessage Name="A825_CCD_R_PHSM" Guid="a7d4a9eef-5a97-45c0-9d1b-0c8657350e90a" MessageSize="8" TransmissionIntervalMinimum="1000">
+      <DP Name="NB_ERR_RX" Guid="af47c1633-3f36-49be-8c67-9c0be7ff8085a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="NB_ERR_TX" Guid="a244b0bce-d6a2-4a1c-bcda-c001fd1bf64ea" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="NB_RST" Guid="a2fd8eb2e-40ba-4ce3-805b-419ae86e1628a" BitOffsetWithinDS="32" DataFormatType="UINT" ParameterSize="16" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="REC" Guid="a42917f1c-bd17-47ae-b6d2-429ba6ea6f4ba" BitOffsetWithinDS="48" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="TEC" Guid="a074178ed-51ad-4446-8291-4ee3fae0a669a" BitOffsetWithinDS="56" DataFormatType="UINT" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_CCD_R_ConfigText" Guid="aef9c6671-389d-47aa-8dc9-e70a3d265789a" ActivityTimeout="3000" CANMessageProtocolType="Parametric" Direction="Source" PartitionId="0" RefreshPeriod="1000">
+    <CANMessage Name="A825_CCD_R_ConfigText" Guid="a06ffb156-06ec-456e-b0de-4e1a668774b6a" MessageSize="8" TransmissionIntervalMinimum="1000">
+      <DP Name="Config_Info_Type" Guid="a191ecac3-642d-4c89-abd7-8dacf1fecd47a" BitOffsetWithinDS="0" CodedSet="1=Message contains Member System ID;2=Message contains ATA Reference;3=Message contains Hardware part number;4=Message contains Hardware serial number;5=Message contains Hardware modification Status;6=Message contains Loadable software part number;7=Message contains Loadable software type ID;8=Message contains Member system specific data;0=Message is a delimiter" DataFormatType="COD" ParameterSize="4" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Msg_Count" Guid="a1b527af8-3ac0-4711-88d9-61934953b19aa" BitOffsetWithinDS="4" CodedSet="0=UNDEFINED" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Msg_Sequence" Guid="a9c1d95cc-3866-4bf1-9f6d-446282e744b3a" BitOffsetWithinDS="6" CodedSet="0=UNDEFINED" DataFormatType="COD" ParameterSize="2" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      <DP Name="Config_Info" Guid="a7cc3d322-ce29-4134-b0a5-6952c6807d01a" BitOffsetWithinDS="8" DataFormatType="CHAR STRING" ParameterSize="56" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="pi825_CCD_R_Brightness" Guid="a5444796b-a116-4ba3-9732-43391625e5c4a" CANMessageProtocolType="Parametric" Direction="Destination" PartitionId="0" SamplePeriod="50">
+    <RP Name="R_Panel_BRT" Guid="a6B97E502-A4E1-430a-BAFB-FE9CFF50A92Aa" DataFormatType="UINT" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="R_Lamp_Mode" Guid="a202B8702-F77E-459a-A1CA-C4E80C025266a" DataFormatType="COD" ParameterSize="4" SysLatencyWCLimit="200" />
+  </CANPort>
+  <AnalogPort Name="poDISC_CCD_MenuButton" Guid="a09e5b371-8a1c-4e13-8232-ad5373754a33a" Direction="Source" RefreshPeriod="1000" RIUTemplate="40012" UDC="Command inversion=1">
+    <AnalogDiscreteParameter Name="DISC_CCD_MenuButton" Guid="ab71d8501-a5d1-4079-9a3b-3a78eb5998d2a" PublishedLatency="0">
+      <DP Name="STATUS" Guid="a89cef2b2-a657-42f1-a0c1-aee9c44de7a8a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1000" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunctionClass>

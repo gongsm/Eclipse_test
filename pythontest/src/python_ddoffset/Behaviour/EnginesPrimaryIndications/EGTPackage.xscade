@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" visibility="private" name="EGT">
+	<declarations>
+		<Type name="popEGTPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="popEGTThreshold">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popEGTValueAndState_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/972f/50DE/214/535f2cd9197d"/>
+							</pragmas>
+						</Field>
+						<Field name="popEGTState">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popEGTThreshold_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/140c7/15F2/15F4/5378400ab4"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/972e/50DE/214/535f2cca3d0a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<comment>popEGTPlugs_t is a structure contains parameters used for Display as inputs.</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popEGTThreshold_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="EGTCautionMarkValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/140bd/15F2/15F4/53783feb1cac"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTCautionMarkValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c19a/4720/FC0/54644abd64eb"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTCautionMarkVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e4bd/15F2/15F4/53784c70464"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTCautionMarkVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c1a0/4720/FC0/54644abe7f22"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningMarkValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e4b7/15F2/15F4/53784c691768"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningMarkValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c1a6/4720/FC0/54644ac014c4"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningMarkVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e4c3/15F2/15F4/53784c7e7ecb"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningMarkVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c1ac/4720/FC0/54644ac120ba"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/140ba/15F2/15F4/53783fb55fc"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popEGTValueAndState_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="EGTValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/140bc/15F2/15F4/53783fe75ce"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e3a6/15F2/15F4/537849705df7"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e3ac/15F2/15F4/537849ba1e71"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e3ba/15F2/15F4/537849d12fc"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningArcVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a05c/1ABD/B18/537c287c5451"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTWarningArcVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a062/1ABD/B18/537c287d7e13"/>
+							</pragmas>
+						</Field>
+						<Field name="LeftEGTActiveState">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c25d/4720/FC0/54644d241c49"/>
+							</pragmas>
+						</Field>
+						<Field name="RightEGTActiveState">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/c25e/4720/FC0/54644d2660b3"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/140bb/15F2/15F4/53783fcd44a"/>
+			</pragmas>
+		</Type>
+		<Operator name="PrimaryIndication_EGT" href="PrimaryIndication_EGT.xscade"/>
+		<Operator name="PrimaryIndication_EGT_StateRangeCaculation" href="PrimaryIndication_EGT_StateRangeCaculation.xscade"/>
+		<Operator name="PrimaryIndication_EGT_State" href="PrimaryIndication_EGT_State.xscade"/>
+		<Operator name="PrimaryIndication_EGT_Threshold" href="PrimaryIndication_EGT_Threshold.xscade"/>
+	</declarations>
+	<pragmas>
+		<ed:Package oid="!ed/9729/50DE/214/535f2c8f530" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/972a/50DE/214/535f2c8f5ac" blockKind="constants"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/972b/50DE/214/535f2c8f3b36" blockKind="types" columnsSize="0, 698, 150, 300"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/972c/50DE/214/535f2c8f2c4e" blockKind="sensors"/>
+			</diagrams>
+		</ed:Package>
+	</pragmas>
+</Package>

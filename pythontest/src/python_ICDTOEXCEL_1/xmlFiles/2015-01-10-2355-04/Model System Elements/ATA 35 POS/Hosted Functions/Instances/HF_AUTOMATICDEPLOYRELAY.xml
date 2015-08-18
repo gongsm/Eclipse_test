@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunction Name="HF_AUTOMATICDEPLOYRELAY" Guid="a305CEAF4-E747-47f7-BC8A-0E204623E95Ba" NameDef="HF_OXYGENRELAYCLASS" GuidDef="a25d08dec-618e-491f-8891-2098b922d03aa" XsdVersion="7.9" Hardware="AUTOMATICDEPLOYRELAY">
+  <AnalogPort Name="poDISC_Status" Guid="a73AD79DD-F337-4553-BC44-041A81616338a" NameDef="HF_OXYGENRELAYCLASS.poDISC_Status" GuidDef="acb330d21-e8bf-44f5-aaae-07bd044d6541a" Physical="AUTOMATICDEPLOYRELAY.poDISC_Status">
+    <AnalogDiscreteParameter Name="OxyMaskDeploy" Guid="a39E42FC9-802F-498e-B22B-776621DEACECa" NameDef="HF_OXYGENRELAYCLASS.OxyMaskDeploy" GuidDef="a31f042dc-7f0a-4719-9677-eac70976eb82a">
+      <DP Name="Status" Guid="a63FEE1FC-3377-4cea-A1B0-405B8A6A7ABCa" NameDef="HF_OXYGENRELAYCLASS.OxyMaskDeploy.Status" GuidDef="ae3eaad9e-1dd0-453d-8304-1c04daee2be8a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_Status1" Guid="ac9f424eb-ee08-4d8b-8a5d-1d3c1c733770a" NameDef="HF_OXYGENRELAYCLASS.poDISC_Status1" GuidDef="a824c6d06-15fb-4262-8870-866e26bd75d0a" Physical="AUTOMATICDEPLOYRELAY.poDISC_Status1">
+    <AnalogDiscreteParameter Name="Relay_On" Guid="ab38b962f-151c-4b44-b664-f5635bd10352a" NameDef="HF_OXYGENRELAYCLASS.Relay_On" GuidDef="ae6da6027-9df4-4ce0-8d34-b2212bbe014ea">
+      <DP Name="Status" Guid="ad76c7508-55f1-4540-ae47-b09f3bfc7004a" NameDef="HF_OXYGENRELAYCLASS.Relay_On.Status" GuidDef="a99a18793-5120-4eca-837d-1aeb28273b55a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Command" Guid="a88BDB95B-09C5-40c8-BEEB-36B85A9097E1a" NameDef="HF_OXYGENRELAYCLASS.piDISC_Command" GuidDef="aca52bc16-7610-4307-a308-81e9eb878c3ea" Physical="AUTOMATICDEPLOYRELAY.piDISC_Command">
+    <RP Name="Command" Guid="a791F7443-D7B6-41f6-A482-45DEE513FDEDa" NameDef="HF_OXYGENRELAYCLASS.Command" GuidDef="a000ab413-7455-4b85-bbcf-ec1c3da22ad7a">
+      <Pub_Ref SrcName="HF_APS1.AltitudePressure14500.Status" SrcGuid="a8E9B3C47-A72E-44db-8247-62E388891300a" />
+      <Pub_Ref SrcName="HF_APS1.AltitudePressure16500.Status" SrcGuid="a1584E509-1EC4-4be3-8B0B-EFB785B7818Da" />
+      <Pub_Ref SrcName="HF_APS2.AltitudePressure14500.Status" SrcGuid="a1472AB91-9A14-4d1d-BF5C-6936C621011Da" />
+      <Emb_Ref SrcName="EF_2_001_True.GEA_POS_2_001" SrcGuid="a98405020-020a-474e-8bf7-f148234ca157a" Validated="-1" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_A664_In.40012_B02_HF_AUTOMATICDEPLOYRELAY" SrcGuid="a2D38D9B1-1F46-4e1f-BD73-DA58B8F0A75Ea" />
+  </AnalogPort>
+</HostedFunction>

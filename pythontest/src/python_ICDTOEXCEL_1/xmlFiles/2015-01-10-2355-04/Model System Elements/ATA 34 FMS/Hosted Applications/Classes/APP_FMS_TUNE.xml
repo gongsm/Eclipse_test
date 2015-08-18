@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponentClass Name="APP_FMS_TUNE" Guid="a303d3595-f9de-4b06-9f0f-998d77ccf182a" XsdVersion="7.9" ATA="34XXXX" ComputeTime="7" Criticality="B" MemoryBssSize="13238272" MemoryDataSize="135168" MemoryPersistentBssSize="16384" MemoryPersistentDataSize="0" MemoryRoDataSize="86016" MemoryTextSize="13238272" PartitionId="105" PartitionType="APP_PARTITION" Period="50" RequiredMemorySize="28344320" SchedulePriority="0">
+  <A653SamplingPort Name="A653_IN_ADF_1" Guid="aD6AEB83A-7836-49e4-9C7A-A43B11A54F0Ba" Direction="Destination" MessageSize="52" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L032_ADF_Frequency_VOR1" Guid="a8b588118-8a5c-4124-b00a-44dc17a46a28a" DataFormatType="A429OCTLBL" Label="32" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ADF_2" Guid="aDF237249-F0FC-4a2a-9095-49E30AC2B7EFa" Direction="Destination" MessageSize="52" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L032_ADF_Frequency_VOR2" Guid="acedd7010-ed52-488d-968f-7227864ae0f7a" DataFormatType="A429OCTLBL" Label="32" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_CCR_REDUNDANCY_RPT" Guid="a92819964-b591-4a2b-a265-1d159a703baba" Direction="Destination" MessageSize="52" Networks="Both" RefreshPeriod="1200" SamplePeriod="1000">
+    <RP Name="CCR_Power_Warning_CCR" Guid="a85e08ffc-ea84-405d-bde2-f654f89cca6aa" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="150" />
+    <RP Name="GPM_Cabinet_Position_CCR" Guid="ab3d8fa7f-b3e5-4e74-a087-d959193b58f7a" DataFormatType="COD" ParameterSize="8" SysLatencyWCLimit="150" />
+    <RP Name="GPM_Module_Position_CCR" Guid="a49df89cf-8c25-41a5-bf5f-a8f322339c00a" DataFormatType="COD" ParameterSize="8" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_1_B" Guid="a927FF8DF-0E0D-4c62-8D0A-A171DC125DB6a" Direction="Destination" MessageSize="44" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L222_VOR_Omnibearing_VOR1" Guid="a8cf5a66b-6dfc-43b5-9399-4f941fede4dfa" DataFormatType="A429OCTLBL" Label="222" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_2_B" Guid="a663B97BE-BB3C-47be-8068-862D1E220B89a" Direction="Destination" MessageSize="44" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L222_VOR_Omnibearing_VOR2" Guid="a41c79c36-99bb-4a78-8121-05ea8a7530bca" DataFormatType="A429OCTLBL" Label="222" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_FMS_STATUS" Guid="ae2a58668-5a9a-4b16-a468-4d5998d95738a" Direction="Destination" MessageSize="332" Networks="Both" RefreshPeriod="120" SamplePeriod="100">
+    <RP Name="FMS_Status" Guid="abd90ffc8-7534-49d0-9181-e311fafbfca2a" BitOffsetWithinMsg="0" DataFormatType="OPAQUE" ParameterSize="2400" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_DME_1_A" Guid="a3ea90cb6-fe17-4149-81cc-96e33ede44e2a" Direction="Destination" MessageSize="52" Networks="Both" QueueLength="5" SamplePeriod="200">
+    <RP Name="L035_DME_Frequency_DME1" Guid="a458a34e1-7347-41ab-9d87-0ed7e4b6204da" DataFormatType="A429OCTLBL" Label="35" ParameterSize="32" SysLatencyWCLimit="150" />
+    <RP Name="L202_DME_Distance_DME1" Guid="a78c872b3-806e-41f8-a4f0-e7eabdf3a62da" DataFormatType="A429OCTLBL" Label="202" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_1_B" Guid="a2222ed38-61c5-4e17-945e-4768b0e94876a" Direction="Destination" MessageSize="68" Networks="Both" QueueLength="5" SamplePeriod="200">
+    <RP Name="L300_DME_Ident_Wd_1_DME1" Guid="a3a8021cc-b291-4651-9917-cf0a3626ee6ea" DataFormatType="A429OCTLBL" Label="300" ParameterSize="32" SysLatencyWCLimit="150" />
+    <RP Name="L300_DME_Ident_Wd_2_DME1" Guid="a5ef1fad3-be1d-4205-8cca-5c72b3f06f1ca" DataFormatType="A429OCTLBL" Label="300" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_2_A" Guid="a16f76bff-9530-41b8-8fc6-72c6ece420f8a" Direction="Destination" MessageSize="52" Networks="Both" QueueLength="5" SamplePeriod="200">
+    <RP Name="L035_DME_Frequency_DME2" Guid="ac1736a1e-35ae-4fb1-9447-1686500cfc8ca" DataFormatType="A429OCTLBL" Label="35" ParameterSize="32" SysLatencyWCLimit="150" />
+    <RP Name="L202_DME_Distance_DME2" Guid="a79bbf9b8-34c2-404e-9937-fd0190f62907a" DataFormatType="A429OCTLBL" Label="202" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_2_B" Guid="a5dccdcf2-18f2-45a7-bd85-c570b15b7296a" Direction="Destination" MessageSize="68" Networks="Both" QueueLength="5" SamplePeriod="200">
+    <RP Name="L300_DME_Ident_Wd_1_DME2" Guid="a5f1b632d-76a0-42a0-ada2-d69f23c3f62ba" DataFormatType="A429OCTLBL" Label="300" ParameterSize="32" SysLatencyWCLimit="150" />
+    <RP Name="L300_DME_Ident_Wd_2_DME2" Guid="ad39c235e-6186-40bd-ae58-75693c1ecb7fa" DataFormatType="A429OCTLBL" Label="300" ParameterSize="32" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_VOR_1_A" Guid="a68dc4cc0-0037-44bb-a2a5-f515e6780e27a" Direction="Destination" MessageSize="52" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L034_VOR_Freq_VOR1" Guid="a11c7bd8a-271b-4042-aa46-d4468ec7da45a" DataFormatType="A429OCTLBL" Label="34" ParameterSize="32" SysLatencyWCLimit="116.7" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_2_A" Guid="a1312e363-d6ca-425c-ba65-1d5627daaf5ea" Direction="Destination" MessageSize="52" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="L034_VOR_Freq_VOR2" Guid="ac8c9e47b-c801-4756-9c08-b4bee1e5d577a" DataFormatType="A429OCTLBL" Label="34" ParameterSize="32" SysLatencyWCLimit="116.7" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ILS_GLS_1" Guid="a8aa10bad-5dbb-4677-bd1d-69be35733cd8a" Direction="Destination" MessageSize="68" Networks="Both" RefreshPeriod="120" SamplePeriod="100">
+    <RP Name="L173_Localizer_Deviation_ILS1" Guid="acebbbe24-9590-43bf-9c3d-d4c95926500fa" DataFormatType="A429OCTLBL" Label="173" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="L033_ILS_Frequency_ILS1" Guid="a763a26f0-a0fa-4867-84d1-b3ddb0db0bc7a" DataFormatType="A429OCTLBL" Label="33" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L105_Selected_Runway_Heading_ILS1" Guid="a8174fe10-7e09-4cba-91a6-12d8e3ae2a8da" DataFormatType="A429OCTLBL" Label="105" ParameterSize="32" SysLatencyWCLimit="250" />
+    <RP Name="L017_Selected_Runway_Heading_BCD_ILS1" Guid="aa4be7053-6248-487f-8355-92bcf30324c4a" DataFormatType="A429OCTLBL" Label="17" ParameterSize="32" SysLatencyWCLimit="250" />
+    <RP Name="L263_ILS_Ground_Station_ID_1_ILS1" Guid="a8892c722-219c-474e-897c-1edb22dbbfaca" DataFormatType="A429OCTLBL" Label="263" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L264_ILS_Ground_Station_ID_2_ILS1" Guid="a69661932-a21f-4e71-8143-21805994925aa" DataFormatType="A429OCTLBL" Label="264" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L232_GLS_Airport_ID_ILS1" Guid="a74ad557c-e419-4281-8167-83fe8053ac88a" DataFormatType="A429OCTLBL" Label="232" ParameterSize="32" SysLatencyWCLimit="100" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ILS_GLS_2" Guid="a33d5477d-1a32-4c01-95e9-9d75fb7f4fbea" Direction="Destination" MessageSize="68" Networks="Both" RefreshPeriod="120" SamplePeriod="100">
+    <RP Name="L173_Localizer_Deviation_ILS2" Guid="a5c69dda9-4057-4498-ae31-96f7c143185da" DataFormatType="A429OCTLBL" Label="173" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="L033_ILS_Frequency_ILS2" Guid="a026a0975-149d-4cb3-be8a-eef4172dfcf2a" DataFormatType="A429OCTLBL" Label="33" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L105_Selected_Runway_Heading_ILS2" Guid="ac2c7ea0e-ef5c-4b5c-a0ae-ee32eed67116a" DataFormatType="A429OCTLBL" Label="105" ParameterSize="32" SysLatencyWCLimit="250" />
+    <RP Name="L017_Selected_Runway_Heading_BCD_ILS2" Guid="acc62a0a9-aa07-409a-9d1a-e276771f87b5a" DataFormatType="A429OCTLBL" Label="17" ParameterSize="32" SysLatencyWCLimit="250" />
+    <RP Name="L263_ILS_Ground_Station_ID_1_ILS2" Guid="a664ea9d6-f525-48ab-b20a-b963c1620d1ca" DataFormatType="A429OCTLBL" Label="263" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L264_ILS_Ground_Station_ID_2_ILS2" Guid="af1f18135-0241-4bc4-9ce9-93ca33f1e809a" DataFormatType="A429OCTLBL" Label="264" ParameterSize="32" SysLatencyWCLimit="100" />
+    <RP Name="L232_GLS_Airport_ID_ILS2" Guid="aac6eb62e-d559-4ae4-a904-35cf2f8b0c9aa" DataFormatType="A429OCTLBL" Label="232" ParameterSize="32" SysLatencyWCLimit="100" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU1" Guid="a0de31d02-74da-4c5f-b1ac-8626682408eda" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="4" SamplePeriod="50">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU1" Guid="a3b444805-93e0-4a3e-ae13-7f13cbb39a0da" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2400" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU2" Guid="a5ab7c4d0-f13c-4a82-9e3f-0f5e88eb8028a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="4" SamplePeriod="50">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU2" Guid="a94b5fe1a-0f43-4f7c-bb45-82b472257c5ea" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2400" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU3" Guid="a6fe5cfa9-a315-4c8b-b058-9ab41b9a89c5a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="4" SamplePeriod="50">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU3" Guid="a46e76e2d-353e-47e4-bc8a-fa3d96d44d53a" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2400" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU4" Guid="a1cc6833e-c8d2-4d1d-a09b-72662c750d0fa" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="4" SamplePeriod="50">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU4" Guid="a4d308b3f-5b88-4446-a57a-38a7a1b47e9da" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2400" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU5" Guid="aa7a1880b-601a-423e-96e0-937032a275c4a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="4" SamplePeriod="50">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU5" Guid="a950a06ee-fb12-46fc-a539-71abfc859ecaa" BitOffsetWithinMsg="0" DataFormatType="BLK" ParameterSize="2400" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_CORE_STATE_Onside" Guid="a8f6700c1-efd1-4312-983b-5069d2b10d6aa" Direction="Destination" MessageSize="1056" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="Core_State_Onside" Guid="a2c5fd524-e16d-4165-aea8-fa917f39f366a" DataFormatType="OPAQUE" ParameterSize="8192" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_TUNING_REQUEST_Onside" Guid="a0aee4af1-ce19-4a30-b09a-dbdbf7eec3cba" Direction="Destination" MessageSize="72" Networks="Both" QueueLength="1" SamplePeriod="50">
+    <RP Name="Tuning_Request_Onside" Guid="a06d53d0b-fd2e-4582-8f08-27a6bca78eaba" DataFormatType="BLK" ParameterSize="320" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_TUNING_REQUEST_Xside" Guid="a42cd2d74-1fa3-477c-af65-f58df2b24925a" Direction="Destination" MessageSize="72" Networks="Both" QueueLength="1" SamplePeriod="50">
+    <RP Name="Tuning_Request_Xside" Guid="a855b91ba-0ef3-4da0-8d88-7930e3edd6bca" DataFormatType="BLK" ParameterSize="320" SysLatencyWCLimit="150" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_TUNING_STATE_Xside" Guid="a7dcd804b-7f05-41f5-bc6d-be6e6482bd66a" Direction="Destination" MessageSize="1056" Networks="Both" RefreshPeriod="240" SamplePeriod="200">
+    <RP Name="Tuning_State_Xside" Guid="aa870589d-bab4-46ea-946c-4e46efceed67a" DataFormatType="OPAQUE" ParameterSize="8192" SysLatencyWCLimit="150" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_FMS_MESSAGES_TUNE" Guid="aef7a4d7f-890c-4fde-a49c-8e3b961030f3a" Direction="Source" MessageSize="92" Networks="Both" RefreshPeriod="1000">
+    <A664Message Name="MSG_FMS_Messages_TUNE" Guid="a3a7d8fd9-ff3d-4101-a064-7b59cc4ab1cba" EdeEnable="True" MessageOverhead="32" MessageSize="92" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="1000">
+      <DS Name="FSS1_FMS_Messages_Tune" Guid="a1210f0b8-8979-4afd-ae51-0a2d666eb148a" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1_FMS_Messages_Tune" Guid="aa203b6b5-8dda-4c71-9080-2eb0ea2e028ba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="DS_FMS_Messages_Tune" Guid="ac208ad09-b55b-4666-9778-9d67a997da88a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="84" DsDataProtocolType="Parametric data">
+        <DP Name="IMA_BIT_Rate_Fail" Guid="ae9c2169e-127e-430e-89c3-06c846f1ae75a" UsrId="FMS.ICD.TUNING-524" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Reserved_1" Guid="ab87d77cd-5465-420e-9533-59d5c303717aa" UsrId="FMS.ICD.TUNING-525" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_BIT_FSB_Fail" Guid="a728a9cb9-b26a-4808-9bbf-3d9ecd7a48f6a" UsrId="FMS.ICD.TUNING-526" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Reserved_2" Guid="a6e9d8aa3-9741-4011-baff-f705475a081ca" UsrId="FMS.ICD.TUNING-527" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_BIT_Power_Down_Warn" Guid="aec591b4e-ff6f-4e27-8a1a-76ef98b97425a" UsrId="FMS.ICD.TUNING-528" BitOffsetWithinDS="4" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Reserved_3" Guid="a45e3c5ac-8225-48e4-8f74-4aa2382a48f0a" UsrId="FMS.ICD.TUNING-529" BitOffsetWithinDS="5" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Reserved_4" Guid="a65e221f6-3349-43e4-83a2-6423c6054dffa" UsrId="FMS.ICD.TUNING-530" BitOffsetWithinDS="6" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="IMA_Reserved_5" Guid="a111dfceb-71bf-477b-9339-62ebd9a255d4a" UsrId="FMS.ICD.TUNING-531" BitOffsetWithinDS="7" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_1" Guid="a2cf28a84-57e8-4355-8bc6-5ebe1c1f35b8a" UsrId="FMS.ICD.TUNING-532" BitOffsetWithinDS="8" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_BIT_FSB_Fail" Guid="a05e409af-a930-476c-b82a-898631039392a" UsrId="FMS.ICD.TUNING-533" BitOffsetWithinDS="9" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_2" Guid="ab3dc70f8-41fa-4570-bdea-46938f4cc37fa" UsrId="FMS.ICD.TUNING-534" BitOffsetWithinDS="10" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_3" Guid="a62406f39-8bed-411d-829a-47abe0fd9ec2a" UsrId="FMS.ICD.TUNING-535" BitOffsetWithinDS="11" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_4" Guid="a752a9272-31ec-4bf9-8b7e-80cdebf53790a" UsrId="FMS.ICD.TUNING-536" BitOffsetWithinDS="12" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_5" Guid="ab738c347-b3a0-4cee-b44e-8ddd02b49bf4a" UsrId="FMS.ICD.TUNING-537" BitOffsetWithinDS="13" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_6" Guid="afa547158-1fba-4116-b0f2-76f514c67399a" UsrId="FMS.ICD.TUNING-538" BitOffsetWithinDS="14" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_OnSide_Reserved_7" Guid="a4b067805-ddaf-432f-bf8e-531ad78c0be1a" UsrId="FMS.ICD.TUNING-539" BitOffsetWithinDS="15" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_1" Guid="a8b4a8918-650d-46c2-9d3c-220441035fe4a" UsrId="FMS.ICD.TUNING-540" BitOffsetWithinDS="16" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_BIT_FSB_Fail" Guid="ac296506c-a742-41ab-bf53-bed70f89ce62a" UsrId="FMS.ICD.TUNING-541" BitOffsetWithinDS="17" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_2" Guid="a4267749a-7310-49c9-96bc-44b351547396a" UsrId="FMS.ICD.TUNING-542" BitOffsetWithinDS="18" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_3" Guid="ae1f4ae20-de79-4f93-b3c3-e536236dd5f3a" UsrId="FMS.ICD.TUNING-543" BitOffsetWithinDS="19" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_4" Guid="a005760db-81d6-4912-adf4-999847f18318a" UsrId="FMS.ICD.TUNING-544" BitOffsetWithinDS="20" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_5" Guid="abced8737-7dc9-4bd5-9f30-c95d86476c4ba" UsrId="FMS.ICD.TUNING-545" BitOffsetWithinDS="21" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_6" Guid="ac6323924-46d1-4bb2-8ae2-45035dc02ce9a" UsrId="FMS.ICD.TUNING-546" BitOffsetWithinDS="22" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Core_XSide_Reserved_7" Guid="afaea14b0-0f55-471a-9dc1-e55136a4e5fda" UsrId="FMS.ICD.TUNING-547" BitOffsetWithinDS="23" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_1" Guid="a8dd7a2d2-f3a9-4b98-b849-cb6c2246f1c2a" UsrId="FMS.ICD.TUNING-548" BitOffsetWithinDS="24" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_BIT_FSB_Fail" Guid="ae0234930-958e-499c-ac8d-efdb110c646ea" UsrId="FMS.ICD.TUNING-549" BitOffsetWithinDS="25" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_2" Guid="a0d5634d7-31d5-431a-958d-a7fb84a5c018a" UsrId="FMS.ICD.TUNING-550" BitOffsetWithinDS="26" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_3" Guid="afdd33620-d099-4373-8452-4b87c41cc7aba" UsrId="FMS.ICD.TUNING-551" BitOffsetWithinDS="27" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_4" Guid="adb0a8b1a-c052-4956-ad84-f54e4e6279e7a" UsrId="FMS.ICD.TUNING-552" BitOffsetWithinDS="28" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_5" Guid="abb237fef-14de-4019-897c-cbf6da10f144a" UsrId="FMS.ICD.TUNING-553" BitOffsetWithinDS="29" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_6" Guid="a155f3aec-15bc-4092-a967-d76e1ffbb8eea" UsrId="FMS.ICD.TUNING-554" BitOffsetWithinDS="30" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="FMS_Tune_XSide_Reserved_7" Guid="ac050f793-580f-4b91-96f0-5aad3e90dd79a" UsrId="FMS.ICD.TUNING-555" BitOffsetWithinDS="31" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_BIT_Rate_Fail" Guid="a45281859-98ce-41bb-b08c-7611e92b4155a" UsrId="FMS.ICD.TUNING-556" BitOffsetWithinDS="32" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_BIT_SSM_Fail" Guid="a09c56d32-f3c1-45de-b096-e4c69ddc0847a" UsrId="FMS.ICD.TUNING-557" BitOffsetWithinDS="33" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_BIT_FSB_Fail" Guid="a5e7b55cb-bac0-417d-b35e-b7c47568e2fda" UsrId="FMS.ICD.TUNING-558" BitOffsetWithinDS="34" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_BIT_Reason_Fail" Guid="abd7eba04-b907-4d01-a0b6-20486f5f55e5a" UsrId="FMS.ICD.TUNING-559" BitOffsetWithinDS="35" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_Reserved_1" Guid="a4e518438-f2ca-444c-840f-ec348ac950b9a" UsrId="FMS.ICD.TUNING-560" BitOffsetWithinDS="36" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_Reserved_2" Guid="a7daa26a1-3167-4f89-9c0e-411d25362b24a" UsrId="FMS.ICD.TUNING-561" BitOffsetWithinDS="37" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_Reserved_3" Guid="a40bdc343-0bf8-4a2c-b4e5-25488580e152a" UsrId="FMS.ICD.TUNING-562" BitOffsetWithinDS="38" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_1_Reserved_4" Guid="a355aa599-0889-4b45-a5f5-0b913ba760aba" UsrId="FMS.ICD.TUNING-563" BitOffsetWithinDS="39" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_BIT_Rate_Fail" Guid="a38bff685-1115-4c9e-b9c4-0145f8f77e33a" UsrId="FMS.ICD.TUNING-564" BitOffsetWithinDS="40" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_BIT_SSM_Fail" Guid="a83a871fe-cd7b-4978-a596-2c1a844aea70a" UsrId="FMS.ICD.TUNING-565" BitOffsetWithinDS="41" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_BIT_FSB_Fail" Guid="af01d2617-42b3-4528-95c4-0ee2c86525b6a" UsrId="FMS.ICD.TUNING-566" BitOffsetWithinDS="42" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_BIT_Reason_Fail" Guid="aa94dbbf7-f7a8-4265-a00d-5f2b6ab699f3a" UsrId="FMS.ICD.TUNING-567" BitOffsetWithinDS="43" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_Reserved_1" Guid="aa5be0096-a1f9-4270-aa9e-326352f16e4da" UsrId="FMS.ICD.TUNING-568" BitOffsetWithinDS="44" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_Reserved_2" Guid="ada361adf-c611-4f47-8e28-c3cc287ec413a" UsrId="FMS.ICD.TUNING-569" BitOffsetWithinDS="45" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_Reserved_3" Guid="a14a8b19c-e6f2-4261-8d3f-7e4b5482d856a" UsrId="FMS.ICD.TUNING-570" BitOffsetWithinDS="46" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DME_2_Reserved_4" Guid="a34f08d00-8929-4a8d-9e42-aee2dc239429a" UsrId="FMS.ICD.TUNING-571" BitOffsetWithinDS="47" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_BIT_Rate_Fail" Guid="a1bb0f702-f493-4f5d-b6c8-bc4fbe745eb6a" UsrId="FMS.ICD.TUNING-572" BitOffsetWithinDS="48" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_BIT_SSM_Fail" Guid="a06956730-1ed9-4fd0-bd3f-c652dd630daea" UsrId="FMS.ICD.TUNING-573" BitOffsetWithinDS="49" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_BIT_FSB_Fail" Guid="aeb8575e8-48ff-4db3-bc67-6d3bca6af488a" UsrId="FMS.ICD.TUNING-574" BitOffsetWithinDS="50" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_BIT_Reason_Fail" Guid="a3c49358e-8a25-4fa3-94e3-76027614d3d3a" UsrId="FMS.ICD.TUNING-575" BitOffsetWithinDS="51" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_Reserved_1" Guid="a5d024338-df00-46d1-b075-4cf9cc455bc5a" UsrId="FMS.ICD.TUNING-576" BitOffsetWithinDS="52" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_Reserved_2" Guid="a50e2269b-9792-4303-bdeb-d27112b52ea5a" UsrId="FMS.ICD.TUNING-577" BitOffsetWithinDS="53" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_Reserved_3" Guid="a914be65e-0182-4f98-9fbe-dc86ac2dcf68a" UsrId="FMS.ICD.TUNING-578" BitOffsetWithinDS="54" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_1_Reserved_4" Guid="a01593fa0-8e8f-4a44-acc3-2911162a323da" UsrId="FMS.ICD.TUNING-579" BitOffsetWithinDS="55" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_BIT_Rate_Fail" Guid="aa7daea04-f856-4cb5-bbb4-30501bca3cfca" UsrId="FMS.ICD.TUNING-580" BitOffsetWithinDS="56" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_BIT_SSM_Fail" Guid="a91279745-05f4-4209-9ffd-fe55313cf530a" UsrId="FMS.ICD.TUNING-581" BitOffsetWithinDS="57" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_BIT_FSB_Fail" Guid="a3f2eba3e-f822-40eb-b2a9-44b764a94a10a" UsrId="FMS.ICD.TUNING-582" BitOffsetWithinDS="58" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_BIT_Reason_Fail" Guid="afec1c5a4-9b6e-4ce8-8fd0-bb5a19832a89a" UsrId="FMS.ICD.TUNING-583" BitOffsetWithinDS="59" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_Reserved_1" Guid="a34ea0394-d4a7-4b76-98e9-01a831e10615a" UsrId="FMS.ICD.TUNING-584" BitOffsetWithinDS="60" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_Reserved_2" Guid="a7659b382-9c00-43f1-bddd-70ff5cbcd5caa" UsrId="FMS.ICD.TUNING-585" BitOffsetWithinDS="61" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_Reserved_3" Guid="a7431dcfd-8d4d-4c40-a3f0-8921713c72b3a" UsrId="FMS.ICD.TUNING-586" BitOffsetWithinDS="62" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ADF_VOR_2_Reserved_4" Guid="a7c5eff4f-d7bc-40f0-ae8f-154e39715389a" UsrId="FMS.ICD.TUNING-587" BitOffsetWithinDS="63" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_BIT_Rate_Fail" Guid="aa92cf8c6-794f-46ff-ba3a-1011463499f3a" UsrId="FMS.ICD.TUNING-588" BitOffsetWithinDS="64" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_BIT_SSM_Fail" Guid="a4751ed2f-6a8c-4edf-9499-d909602ad738a" UsrId="FMS.ICD.TUNING-589" BitOffsetWithinDS="65" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_BIT_FSB_Fail" Guid="af9cdf6ce-27fa-454f-b9bb-7fec2332fe62a" UsrId="FMS.ICD.TUNING-590" BitOffsetWithinDS="66" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_BIT_Reason_Fail" Guid="aa3d0779f-f35d-4dc8-98ad-53b73cdb3d50a" UsrId="FMS.ICD.TUNING-591" BitOffsetWithinDS="67" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_Reserved_1" Guid="af0040cd2-89aa-4572-86cb-b4560ce57346a" UsrId="FMS.ICD.TUNING-592" BitOffsetWithinDS="68" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_Reserved_2" Guid="a46b9da4d-13bf-4571-ba51-6a10dd2bb531a" UsrId="FMS.ICD.TUNING-593" BitOffsetWithinDS="69" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_Reserved_3" Guid="a98aafc02-66c0-4137-8e05-f0158cce8939a" UsrId="FMS.ICD.TUNING-594" BitOffsetWithinDS="70" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_1_Reserved_4" Guid="a3ec8de3b-15ff-46f7-b650-299d5aa83c7ba" UsrId="FMS.ICD.TUNING-595" BitOffsetWithinDS="71" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_BIT_Rate_Fail" Guid="a4e812a39-f08a-4187-844a-e14402b1b156a" UsrId="FMS.ICD.TUNING-596" BitOffsetWithinDS="72" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_BIT_SSM_Fail" Guid="afc58ca41-6c3b-4544-8f2e-46d053e81f0ea" UsrId="FMS.ICD.TUNING-597" BitOffsetWithinDS="73" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_BIT_FSB_Fail" Guid="aa52b67b5-9bc8-459b-bf0a-014f90de55b1a" UsrId="FMS.ICD.TUNING-598" BitOffsetWithinDS="74" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_BIT_Reason_Fail" Guid="a9c3d3fa8-a443-4026-9684-43574a316861a" UsrId="FMS.ICD.TUNING-599" BitOffsetWithinDS="75" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_Reserved_1" Guid="a7678587f-1787-47a9-8f7f-9b34f3e04659a" UsrId="FMS.ICD.TUNING-600" BitOffsetWithinDS="76" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_Reserved_2" Guid="a9ffcfb41-bfb3-4fef-8f66-6a49336f10b9a" UsrId="FMS.ICD.TUNING-601" BitOffsetWithinDS="77" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_Reserved_3" Guid="af9808724-2a65-430b-bfa0-05476b4d85f9a" UsrId="FMS.ICD.TUNING-602" BitOffsetWithinDS="78" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="ILS_GLS_2_Reserved_4" Guid="a1cafec46-48dc-4c7e-a2e3-6f4e4fa2597aa" UsrId="FMS.ICD.TUNING-603" BitOffsetWithinDS="79" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_1" Guid="ab83a94f2-4d70-44d5-9c27-3b7747f14248a" UsrId="FMS.ICD.TUNING-604" BitOffsetWithinDS="80" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_2" Guid="aad0c7dcd-9f86-473e-8cce-2fbee44bc5d4a" UsrId="FMS.ICD.TUNING-605" BitOffsetWithinDS="81" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_3" Guid="a0f1590aa-9ae0-40e6-8aa0-7832d352f329a" UsrId="FMS.ICD.TUNING-606" BitOffsetWithinDS="82" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_4" Guid="a827a2356-2677-4bf8-8d72-8d6f14016e0ea" UsrId="FMS.ICD.TUNING-607" BitOffsetWithinDS="83" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_BIT_Fail" Guid="ab133f894-6fc1-4210-b014-d9ce5e6dec2ea" UsrId="FMS.ICD.TUNING-608" BitOffsetWithinDS="84" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_5" Guid="ac2139aee-5522-44b6-b0dc-119cca5c3acda" UsrId="FMS.ICD.TUNING-609" BitOffsetWithinDS="85" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_6" Guid="a1887449e-4294-4a44-aa5b-18eb9c3aaf90a" UsrId="FMS.ICD.TUNING-610" BitOffsetWithinDS="86" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_1_Reserved_7" Guid="ae4cdbce7-f122-4270-963a-1541d7cbab7ea" UsrId="FMS.ICD.TUNING-611" BitOffsetWithinDS="87" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_1" Guid="ab93c5f1f-1e85-4f02-bffd-6bf3f4a788c2a" UsrId="FMS.ICD.TUNING-612" BitOffsetWithinDS="88" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_2" Guid="a46d825ab-b370-46db-af3a-747b73388030a" UsrId="FMS.ICD.TUNING-613" BitOffsetWithinDS="89" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_3" Guid="ab8a6d0a6-4a2a-4e72-a798-ff485878be41a" UsrId="FMS.ICD.TUNING-614" BitOffsetWithinDS="90" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_4" Guid="a4ae9f1e9-dfc9-4804-9ba6-734a30b0c482a" UsrId="FMS.ICD.TUNING-615" BitOffsetWithinDS="91" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_BIT_Fail" Guid="a772d14b7-9a89-4e7d-9f3b-50dd023d7de0a" UsrId="FMS.ICD.TUNING-616" BitOffsetWithinDS="92" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_5" Guid="aea1498e8-e40b-4fb6-a00a-f3fc62cbf9fba" UsrId="FMS.ICD.TUNING-617" BitOffsetWithinDS="93" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_6" Guid="a618a3e62-db17-40f2-8102-1f56285269aba" UsrId="FMS.ICD.TUNING-618" BitOffsetWithinDS="94" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_2_Reserved_7" Guid="a09ad4c75-8e7e-41d3-987a-c0d5d4ed3901a" UsrId="FMS.ICD.TUNING-619" BitOffsetWithinDS="95" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_1" Guid="a89d6abba-fdad-490d-89f0-64996d09d518a" UsrId="FMS.ICD.TUNING-620" BitOffsetWithinDS="96" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_2" Guid="afe34cfc2-b3b4-4bdf-b2a6-9e143e1f5b93a" UsrId="FMS.ICD.TUNING-621" BitOffsetWithinDS="97" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_3" Guid="a9bb9e0f5-93e9-46fa-af19-ce2e5d33a2c7a" UsrId="FMS.ICD.TUNING-622" BitOffsetWithinDS="98" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_4" Guid="a3422d14c-ebdd-4d42-91d0-1ad173dc3e39a" UsrId="FMS.ICD.TUNING-623" BitOffsetWithinDS="99" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_BIT_Fail" Guid="a52dc0c55-9a06-45ae-ab53-f7094665822aa" UsrId="FMS.ICD.TUNING-624" BitOffsetWithinDS="100" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_5" Guid="aa3f7295e-749c-43b4-972f-2a3733fb5a16a" UsrId="FMS.ICD.TUNING-625" BitOffsetWithinDS="101" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_6" Guid="a0e305ea5-15d2-4860-bf0f-d659fa65e286a" UsrId="FMS.ICD.TUNING-626" BitOffsetWithinDS="102" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_3_Reserved_7" Guid="a157e4982-1c6a-4f18-b918-4b291f1d6ad8a" UsrId="FMS.ICD.TUNING-627" BitOffsetWithinDS="103" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_1" Guid="a2221c0f9-2487-4e47-aeba-b0f96dac482fa" UsrId="FMS.ICD.TUNING-628" BitOffsetWithinDS="104" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_2" Guid="a13865845-0c70-4baa-ad7a-5c6a08dd8a0ba" UsrId="FMS.ICD.TUNING-629" BitOffsetWithinDS="105" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_3" Guid="a637c3abb-3caa-46c3-bbc3-90935b5356f5a" UsrId="FMS.ICD.TUNING-630" BitOffsetWithinDS="106" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_4" Guid="a4d17e551-f5a2-4897-b283-b1efa57b819aa" UsrId="FMS.ICD.TUNING-631" BitOffsetWithinDS="107" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_BIT_Fail" Guid="a5e5a4cbb-9284-490e-b21e-862b49ca55bba" UsrId="FMS.ICD.TUNING-632" BitOffsetWithinDS="108" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_5" Guid="a80506cef-1825-41f1-95f0-cf25f16c995da" UsrId="FMS.ICD.TUNING-633" BitOffsetWithinDS="109" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_6" Guid="aa21150b0-be72-4094-a96d-42632e7cd3f7a" UsrId="FMS.ICD.TUNING-634" BitOffsetWithinDS="110" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_4_Reserved_7" Guid="aa1220b5d-0a07-4f22-8e65-89af12f3eba3a" UsrId="FMS.ICD.TUNING-635" BitOffsetWithinDS="111" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_1" Guid="a8d3a66f6-de44-42ed-80e2-2266e6d86d11a" UsrId="FMS.ICD.TUNING-636" BitOffsetWithinDS="112" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_2" Guid="a4aa4f79c-4dec-4a91-8e1d-6a45ae51d193a" UsrId="FMS.ICD.TUNING-637" BitOffsetWithinDS="113" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_3" Guid="a9fd405ee-6fda-44ed-be1c-c41859836870a" UsrId="FMS.ICD.TUNING-638" BitOffsetWithinDS="114" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_4" Guid="ac10c5371-2671-428b-a2e6-19498fb444bba" UsrId="FMS.ICD.TUNING-639" BitOffsetWithinDS="115" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_BIT_Fail" Guid="a444912c5-a744-4a88-bfd6-5d485ddfb70da" UsrId="FMS.ICD.TUNING-640" BitOffsetWithinDS="116" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_5" Guid="a6c754a74-c17e-47d8-8cae-e443b0eb25f9a" UsrId="FMS.ICD.TUNING-641" BitOffsetWithinDS="117" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_6" Guid="af40347c3-e128-460b-bb8a-c1fc58f5f076a" UsrId="FMS.ICD.TUNING-642" BitOffsetWithinDS="118" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="DU_5_Reserved_7" Guid="a3f4016e9-6edc-4640-886a-71b56df98ac7a" UsrId="FMS.ICD.TUNING-643" BitOffsetWithinDS="119" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Unhandled_Exception" Guid="aabd27171-4417-48ba-a875-0b124dc327e4a" UsrId="FMS.ICD.TUNING-644" BitOffsetWithinDS="120" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_1" Guid="abe662b7f-d732-4f8a-8f23-e31e0a527854a" UsrId="FMS.ICD.TUNING-645" BitOffsetWithinDS="121" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_2" Guid="ab6e3af4d-680b-4629-b644-f98373574b63a" UsrId="FMS.ICD.TUNING-646" BitOffsetWithinDS="122" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_3" Guid="a09832163-a79d-470d-83d2-ff3600e95b19a" UsrId="FMS.ICD.TUNING-647" BitOffsetWithinDS="123" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_4" Guid="af0d9f15e-87cc-4bca-8c54-e4f4a1b3fdd1a" UsrId="FMS.ICD.TUNING-648" BitOffsetWithinDS="124" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_5" Guid="a0585816e-ab4a-4759-9dc8-245846e7c1aca" UsrId="FMS.ICD.TUNING-649" BitOffsetWithinDS="125" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_6" Guid="a390a945e-7d8c-4187-b2da-ce9c67cd1adba" UsrId="FMS.ICD.TUNING-650" BitOffsetWithinDS="126" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Internal_Reserved_7" Guid="a80638296-fa8b-43c2-8e51-cd4c38d1a383a" UsrId="FMS.ICD.TUNING-651" BitOffsetWithinDS="127" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_1" Guid="a175900f4-12a0-4659-bce0-980639a97c0da" UsrId="FMS.ICD.TUNING-652" BitOffsetWithinDS="128" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="MagVar_DB_Invalid" Guid="a9a4a7769-8cae-4c8f-9ad7-aae59b6a58b7a" UsrId="FMS.ICD.TUNING-653" BitOffsetWithinDS="129" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_2" Guid="a95422a9c-9b76-4753-9ee4-63fb5655da9ca" UsrId="FMS.ICD.TUNING-654" BitOffsetWithinDS="130" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_3" Guid="a7e5d5b0e-1b67-4667-8fc3-1868229c0589a" UsrId="FMS.ICD.TUNING-655" BitOffsetWithinDS="131" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_4" Guid="a662fe6eb-86e6-4ab8-9034-21675d159667a" UsrId="FMS.ICD.TUNING-656" BitOffsetWithinDS="132" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_5" Guid="a6d91c5f2-c340-4245-943b-6b404d6ee260a" UsrId="FMS.ICD.TUNING-657" BitOffsetWithinDS="133" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_6" Guid="a625bfdbb-7dd7-423b-b80b-4569eccd135ba" UsrId="FMS.ICD.TUNING-658" BitOffsetWithinDS="134" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tune_DB_Reserved_7" Guid="a2f5c715b-5944-492e-9501-dc34aa61df18a" UsrId="FMS.ICD.TUNING-659" BitOffsetWithinDS="135" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Data_Entry_Error_Message_Text" Guid="a092b6e41-e0a1-4968-ac57-3cd3249efba6a" UsrId="FMS.ICD.TUNING-660" BitOffsetWithinDS="136" DataFormatType="CHAR STRING" ParameterSize="512" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Data_Entry_Error_Message_Counter" Guid="a4d324d56-d991-4381-9fe1-3e9a16db2d95a" UsrId="FMS.ICD.TUNING-661" BitOffsetWithinDS="648" DataFormatType="UINT" ParameterSize="16" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Visible_PopUp" Guid="ad0842d14-63a1-4ff9-8157-390c2c6c9968a" UsrId="FMS.ICD.TUNING-662" BitOffsetWithinDS="664" DataFormatType="DIS" OneState="Visible" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="Not Visible" />
+        <DP Name="Tuning_Reserved_1" Guid="abdb217e5-60df-496b-a611-f0e1b7f1e679a" UsrId="FMS.ICD.TUNING-663" BitOffsetWithinDS="665" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_2" Guid="a4b2fe889-ffd8-4e03-a19f-9661f726c4f0a" UsrId="FMS.ICD.TUNING-664" BitOffsetWithinDS="666" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_3" Guid="af5349b40-1348-460f-bf7b-6dcdd72a2f54a" UsrId="FMS.ICD.TUNING-665" BitOffsetWithinDS="667" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_4" Guid="aa635d940-41c4-4de6-85e3-9bab3ade5b04a" UsrId="FMS.ICD.TUNING-666" BitOffsetWithinDS="668" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_5" Guid="accf215f8-b98f-4ae9-a729-2b363ce1bc50a" UsrId="FMS.ICD.TUNING-667" BitOffsetWithinDS="669" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_6" Guid="a6b83111a-e8b4-41dd-82d8-1dc127719d1ca" UsrId="FMS.ICD.TUNING-668" BitOffsetWithinDS="670" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+        <DP Name="Tuning_Reserved_7" Guid="a9e0c58db-8d21-4fca-b955-2506cb0b8480a" UsrId="FMS.ICD.TUNING-669" BitOffsetWithinDS="671" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_STATE" Guid="a8d422936-f118-4a5e-a043-abbcdc375798a" Direction="Source" MessageSize="1024" Networks="Both" RefreshPeriod="200">
+    <A664Message Name="MSG_Tuning_State" Guid="af157e8c3-dcac-4207-96b0-0652f19c6056a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="1024" MsgDataProtocolType="Other" TransmissionIntervalMinimum="200">
+      <DS Name="DS_Tuning_State" Guid="ae2313acf-806a-4372-bd3f-92bf5197238aa" ByteOffsetWithinMsg="4" DataSetSize="1024" DsDataProtocolType="UNDEFINED">
+        <DP Name="Tuning_State" Guid="a6413a0c4-0558-4aa5-ba83-c8e23c67c841a" BitOffsetWithinDS="0" DataFormatType="OPAQUE" ParameterSize="8192" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_OUTPUT_1" Guid="aa6926f89-0895-4aa1-bc2c-75569fb314e5a" Direction="Source" MessageSize="44" Networks="Both" RefreshPeriod="200">
+    <A664Message Name="ARINC429_MIX_MSG_TUNE_1" Guid="a50aa1869-8394-4c01-bdd8-29493d17639ba" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="44" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="200">
+      <DS Name="FSS1_TUNE" Guid="ad6a87cb9-a3d4-4a44-93ba-0591c5876ea3a" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1_TUNE" Guid="a80da4b30-9fe0-4e99-9730-b1a5c23236ffa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+      </DS>
+      <DS Name="DS1_TUNE" Guid="a124629db-5c7f-481a-b5bb-d52b1f631a65a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="36" DsDataProtocolType="Parametric data">
+        <A429Word Name="L032_ADF_Freq" Guid="a70fa43d7-4993-4465-a4bb-c92a352fb732a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af5dad05e-de50-4bb7-a22c-245f23c783dea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="32" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ae52b2f04-d232-4b2e-b712-1794001a2920a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="BFO" Guid="a942c65d9-da2b-48a7-8abe-80d8bc81ce72a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="BFO_ON" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="BFO_OFF" />
+          <DP Name="ANT" Guid="a21219425-657c-4433-9b70-460240a17feea" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="ANT_Mode" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="ADF_Mode" />
+          <DP Name="Pad" Guid="ae6ed5552-c659-4bf3-8bc7-623ec0226618a" BitOffsetWithinDS="12" DataFormatType="PAD" OneState="ANT_Mode" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="ADF_Mode" />
+          <DP Name="HalfOfKHz" Guid="a9aec89b8-a6c4-46b6-9413-4a6c699124bfa" BitOffsetWithinDS="13" DataFormatType="BCD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfKHz" Guid="acbc45aaf-ec26-4965-9774-ac541045479fa" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfKHz" Guid="ae91c8383-bd89-4198-85fc-213ff34acedba" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="HundredsOfKHz" Guid="a2dc7476d-dcb9-475f-8433-c249bcc74b56a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="ThousandsOfKHz" Guid="a3d155857-eeba-4a00-9ddb-c9d0509d9135a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a9ccc0b8a-f0b1-4951-8545-a2d6a8ae1680a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="ab6efc7fe-1da9-469b-81a1-378bdbef2478a" Notes="odd" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L034_VOR_Freq" Guid="a0bcbbc45-7494-413f-b666-fd7a65d393cca" BitOffsetWithinDS="32">
+          <DP Name="LABEL" Guid="a8d454519-2d74-4918-ac70-a94b774bc0bba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="34" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a83de0844-9eb4-49d0-a94d-a31fa8dd3c8aa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="MB_Sensitivity" Guid="a302a47d1-724e-4f5a-a15d-7235bdcfe828a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="High" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="Low" />
+          <DP Name="Tuning_Source" Guid="a8d3fea15-e7d5-435d-b2ef-d40ed5b02b4ca" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="Auto_FMS" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="Manual" />
+          <DP Name="PAD" Guid="aea27ff74-7ab5-4a2e-90a2-1db8354d07b4a" BitOffsetWithinDS="12" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="ILS_VOR" Guid="aec6caf25-7447-4cf7-a99a-a37a65eb1f1ca" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="ILS_Frequencies" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="VOR_Frequencies" />
+          <DP Name="HundredthsOfMHz" Guid="a68a8126c-8642-4544-95e6-ecfead09f75aa" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TenthsOfMHz" Guid="a1f5883ac-eb8b-4de8-9c91-5fac61359b3ba" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfMHz" Guid="a1797e68c-f32b-41a8-9eb4-83b8a4891839a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfMHz" Guid="aecbc9ba0-3636-40d3-be26-404556c4997da" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a4bef596d-0e42-44a4-96ec-35e006df6758a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="ac573af9b-0597-49cb-b7be-b987b9659a3ca" Notes="odd" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L033_Landing_System_ModeFreq" Guid="a5132a387-2aab-4602-a78a-690ec09cd826a" Notes="Operational range is 108.00 MHz through 117.95 MHz per ARINC 710-10 for an ILS, 20000 through 39999 for GLS GBAS and 40000-99999 for GLS SBAS. Label can either be BCD or BNR depending on selected mode. " BitOffsetWithinDS="64">
+          <DP Name="LABEL" Guid="af1d18071-ddfe-4417-a682-13fcf95ffe1ba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="33" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a02e4bbe5-bff4-4367-bfdc-b251a0dc483ea" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Mode" Guid="a8893a22b-0108-40a1-b3a8-d92f3a1af9a3a" Notes="GLS BNR; Bit 11 = 32768; Bit 12 = 65536;" BitOffsetWithinDS="10" CodedSet="0=ILS (Cat not encoded; 1=ILS (CAT I);2=ILS (CAT II);3=ILS (CAT III);4=GLS Mode;5=GLS Mode;6=GLS Mode;7=GLS Mode;8=MLS AutoMode;9=Rsvd;10=Data Broadcast Mode;11=Data Broadcast Mode;12=Data Broadcast Mode;13=Data Broadcast Mode;14=Data Broadcast Mode;15=Data Broadcast Mode" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OneHundrethMHz" Guid="ad74e2a0c-feec-4340-8584-8015de1ab488a" Notes="GLS BNR = 1" BitOffsetWithinDS="14" DataFormatType="BCD" Multiplier=".01" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoHundredthsMHz" Guid="a3cb0c3ff-da00-463b-a589-0ea2b56cb6d8a" Notes="GLS BNR = 2" BitOffsetWithinDS="15" DataFormatType="BCD" Multiplier=".02" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourHundrethsMHz" Guid="ad366ec40-1571-49b7-b983-da76908517eba" Notes="GLS BNR = 4" BitOffsetWithinDS="16" DataFormatType="BCD" Multiplier=".04" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightHundrethsMHz" Guid="ae40dd8ce-97ef-4c41-9edb-75e40b859790a" Notes="GLS BNR = 8" BitOffsetWithinDS="17" DataFormatType="BCD" Multiplier=".08" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="OneTenthMHz" Guid="a0a90e158-30a0-49c8-bade-22271933fa05a" Notes="GLS BNR = 16" BitOffsetWithinDS="18" DataFormatType="BCD" Multiplier=".1" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoTenthsMHz" Guid="a3f11b9f2-8a5c-4240-9a8a-4a22dac1e615a" Notes="GLS BNR = 32" BitOffsetWithinDS="19" DataFormatType="BCD" Multiplier=".2" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourTenthsMHz" Guid="a82e235f2-90a6-45f5-8094-282ea9bc57b9a" Notes="GLS BNR = 64" BitOffsetWithinDS="20" DataFormatType="BCD" Multiplier=".4" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightTenthsMHz" Guid="a75f4e72d-e046-47f9-82f0-bd9c7f70fbf5a" Notes="GLS BNR = 128" BitOffsetWithinDS="21" DataFormatType="BCD" Multiplier=".8" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="OneMHz" Guid="ab66a85f3-0970-4628-b1c7-314822b67e9ea" Notes="GLS BNR = 256" BitOffsetWithinDS="22" DataFormatType="BCD" Multiplier="1" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoMHz" Guid="ade021b7e-9b0b-483c-b554-5ffec1a377bba" Notes="GLS BNR = 512" BitOffsetWithinDS="23" DataFormatType="BCD" Multiplier="2" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourMHz" Guid="a02b22141-f0f9-4cb0-b00b-a08a9ceb8435a" Notes="GLS BNR = 1024" BitOffsetWithinDS="24" DataFormatType="BCD" Multiplier="4" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightMHz" Guid="ac12eb2e1-a4fb-4b5e-b53f-a74b62618d22a" Notes="GLS BNR = 2048" BitOffsetWithinDS="25" DataFormatType="BCD" Multiplier="8" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TenMHz" Guid="a2d7b84a8-3a0a-45d0-a638-116d7e02bbf6a" Notes="GLS BNR = 4096" BitOffsetWithinDS="26" DataFormatType="BCD" Multiplier="10" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwentyMHz" Guid="a88549838-2e0e-4ca0-9cd2-ccc6f426b8cda" Notes="GLS BNR = 8192" BitOffsetWithinDS="27" DataFormatType="BCD" Multiplier="20" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourtyMHz" Guid="a7c578a7a-d648-4ea1-9473-3b63c39a1a13a" Notes="GLS BNR = 16384" BitOffsetWithinDS="28" DataFormatType="BCD" Multiplier="40" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="SSM" Guid="ad64bb519-2d91-4cb6-a581-7ec50ee71937a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a36eddce1-1c13-4984-8678-c920cb8aa1d7a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L035_DME_Frequency" Guid="a4554f62b-dc6d-4ffc-bfcc-bbe6df299242a" BitOffsetWithinDS="96">
+          <DP Name="LABEL" Guid="aab683ef8-a93f-4784-a7e0-472a8b6faceda" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="35" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ab8483c05-3b28-4b7d-916c-f9b26e27c7b9a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="DME_Mode" Guid="af6965d29-2a02-4d88-ba7d-f25cdc790b35a" BitOffsetWithinDS="10" CodedSet="0=STANDBY;1=DIR FREQ 1;2=DIR FREQ 2;3=DIR FREQ 3;4=DIR FREQ 4;5=DIR FREQ 5;6=FREE SCAN;7=SPARE" DataFormatType="COD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Nav_Mode" Guid="a53c02e5d-28f3-4a30-a310-ca197cda2a27a" BitOffsetWithinDS="13" CodedSet="0=VOR/VHF COM Frequency;1=ILS Frequency;2=MLS Frequency;3=Spare" DataFormatType="COD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Display_ON_OFF" Guid="a0cdb0c35-b575-4cf6-849d-562f16597f4da" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Display_On" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0=Display_Off" />
+          <DP Name="Ident_ON_OFF" Guid="a41c305ce-5772-42dd-a29e-f7dafa5f5aa0a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Ident_On" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0=Ident_Off" />
+          <DP Name="FiveHundrethsOfMhz" Guid="a8dc7b26e-3c88-4172-be7c-660af01ad56aa" Notes="Bit no. 18 is only used in VOR/ILS and VHF COM frequencies which are limited to 0.01 MHz and 0.05 MHz in the hundredths of MHz decade." BitOffsetWithinDS="17" DataFormatType="DIS" OneState="0.05MHz " ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0" />
+          <DP Name="TenthsOfMhz" Guid="a0d786d8e-69ed-48ea-aed6-67ff198a8acba" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfMhzMHz" Guid="af9a0d796-c5e8-4fa9-8b0d-773430f9d3b6a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfMHz" Guid="aa1bb8f4d-97ad-4b48-9722-1f4965809cd3a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a72e86eb4-b42a-458b-8ae6-35c6888864eba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="aa28cd33b-01ae-4d4b-a311-61698294d14ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L100_Selected_Course_1" Guid="adb8e8173-5aa2-4991-8a3f-aaa498548020a" Notes="This is the selected course value on the NAV tuning page for VOR-1." BitOffsetWithinDS="128">
+          <DP Name="LABEL" Guid="a31786b66-2837-4a11-8d71-49d17a7ec466a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="100" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a70df70cf-b4fe-4207-8e01-b17ba16a49d3a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a3f23e492-11f2-42a5-a57f-f4a757fdedcda" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Course_1" Guid="a81bf1b14-7d9e-4898-ace8-d58e02098712a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="179.9560547" FullScaleRngMin="-180" FuncRngMax="179.9560547" FuncRngMin="-180" LsbRes="0.043945313" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a1b62fb66-03a8-4e3f-9d07-b096eef9c5c3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ade87a538-2046-48aa-b80e-d0ee8299ce6ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L105_Selected_Runway_Heading_BNR" Guid="a4a4691cb-f62e-40d0-8f69-ce75bbbfd016a" BitOffsetWithinDS="160">
+          <DP Name="LABEL" Guid="a1e20233a-6907-44e7-91b2-e7a6bb8ea89ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="105" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="acd084812-6895-4e44-b762-58129d15733ca" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a896386ef-b501-4e69-a274-284ec85c7503a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Runway_Heading" Guid="a85bc4f48-02d9-4057-951d-2361118b09eaa" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="179.912109" FullScaleRngMin="-180" FuncRngMax="179.912109 " FuncRngMin="-180" LsbRes="0.087890625" ParameterSize="12" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="aa2516c25-3e5a-4e64-bd7c-34dec1c93964a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a8045963d-987d-4177-8676-0fff2d99f712a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L017_Selected_Runway_Heading_BCD" Guid="a1f7b048f-14e4-48c9-b945-cba37d72e016a" Notes="Operationl range is 0 to 359.9 per ARINC 743B." BitOffsetWithinDS="192">
+          <DP Name="LABEL" Guid="a2803e78d-d49c-4361-a505-168d23e8b52ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="17" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a13fdb963-0fcd-47af-b028-bfc261bb8c5aa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="af54a5d24-5ef3-400f-9cbc-00190e85d413a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Front_Course_1" Guid="a37bb04eb-56b4-4eef-b215-198d10a0ae62a" BitOffsetWithinDS="14" DataFormatType="BCD" Multiplier=".1" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_2" Guid="a62102119-581a-4fe7-989d-a12f8fe152bea" BitOffsetWithinDS="18" DataFormatType="BCD" Multiplier="1" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_3" Guid="a1fbc697b-a462-4edb-897f-08356f9f1b64a" BitOffsetWithinDS="22" DataFormatType="BCD" Multiplier="10" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_4" Guid="aec6d0e6f-99f4-47f5-a728-24bc040357afa" BitOffsetWithinDS="26" DataFormatType="BCD" Multiplier="100" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="ab022b3db-d4ce-4abc-8f03-555c6c44cc7da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="af1e5e602-15c1-4a61-9be7-bde3f2a6c2a3a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L110_Selected_Course_2" Guid="a1117d5d5-3e5e-4f58-b423-f960960ed1aea" Notes="This is the selected course value on the NAV tuning page for VOR-2." BitOffsetWithinDS="224">
+          <DP Name="LABEL" Guid="a739b31d2-a0b6-4aac-bb78-5871ae66a029a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="110" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a9656449b-6220-48d2-8ab2-1e85ffce8646a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="ad5d677bf-1e73-4151-9a1c-4e0e15d0b26ba" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Course_2" Guid="a742b859b-dcf8-4102-b6af-c27033c48aa4a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="179.9560547" FullScaleRngMin="-180" FuncRngMax="179.9560547" FuncRngMin="-180" LsbRes="0.043945313" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a5d5778e2-81ed-4949-b8ef-8db58c401339a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a15ba3f1b-b484-4c2b-8416-c5676ab31bbaa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L242_GLS_Ground_Station_ID" Guid="a369985b3-53d7-4723-bb01-cde5ea69393fa" BitOffsetWithinDS="256">
+          <DP Name="LABEL" Guid="a78a5fefa-e867-4513-87cd-e9a0910256afa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="242" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aa91e4048-483d-4f83-b776-6d76dbcad06ca" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="First_Character" Guid="aa12a7ff1-a806-44e8-af40-a36903f416e3a" BitOffsetWithinDS="10" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD1" Guid="a3c71bee9-8064-454e-babf-c89633c7bd93a" BitOffsetWithinDS="17" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Second_Character" Guid="a16254037-49c2-49b4-84e1-01ce8c826261a" BitOffsetWithinDS="18" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD2" Guid="a5b60edfd-15c4-4be7-9a17-792f0f1941fda" BitOffsetWithinDS="25" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Spare" Guid="aa752219c-9eee-4f96-88c3-03cbc39aadbca" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="ab16e042a-33e3-4a58-af68-7b17d68af117a" BitOffsetWithinDS="29" CodedSet="00=Verified; 01=No Computed Data; 10=Functional Test; 11= Not Defined" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a628b6118-1ca9-470e-a32a-4b15aaeb99f4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_OUTPUT_2" Guid="a10c3f312-d605-46ed-a2b2-127b1b5e391ca" Direction="Source" MessageSize="44" Networks="Both" RefreshPeriod="200">
+    <A664Message Name="ARINC429_MIX_MSG_TUNE_2" Guid="ad65cc226-6d34-4cc9-af18-23d080bffacda" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="44" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="200">
+      <DS Name="FSS1_TUNE" Guid="ab01e700e-f870-4fd6-92fa-597a66db0650a" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1_TUNE" Guid="a0fe1d4c0-df00-4247-a2e5-5db2a60775bea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+      </DS>
+      <DS Name="DS1_TUNE" Guid="adc8db929-2d00-469e-9ac0-d51c3b4bcdcea" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="36" DsDataProtocolType="Parametric data">
+        <A429Word Name="L032_ADF_Freq" Guid="a34bcc508-1094-488d-97e6-80a153539841a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="adefc0ad4-2561-40e1-a2bc-9be98841cbd9a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="32" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a936ca086-2d13-4b00-9b17-a3e2d8fe0064a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="BFO" Guid="aba10ab0a-08dc-4075-baeb-807c744a158ea" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="BFO_ON" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="BFO_OFF" />
+          <DP Name="ANT" Guid="adc4457c8-06f3-4b4c-af62-09f1231f38a2a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="ANT_Mode" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="ADF_Mode" />
+          <DP Name="Pad" Guid="a9d927d75-bdab-4c47-a72f-30dbf5f6402ea" BitOffsetWithinDS="12" DataFormatType="PAD" OneState="ANT_Mode" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="ADF_Mode" />
+          <DP Name="HalfOfKHz" Guid="a9d7858d8-d5b9-4517-9522-e5eb93b25e29a" BitOffsetWithinDS="13" DataFormatType="BCD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfKHz" Guid="a7c4c9901-4acf-44d6-99eb-e935dfa02ea0a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfKHz" Guid="a7f808c35-86a8-4dfc-a40f-72fa26298d99a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="HundredsOfKHz" Guid="a8f40e3a5-7279-4f28-b520-91c5223d664ea" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="ThousandsOfKHz" Guid="a9f0a0422-bc07-4aa6-8b0f-f6c6067ce3dea" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a0bc01cab-3d6f-4e74-b84c-2138c3a16dcca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a8045875a-39c0-4a73-bf4d-18a3259385dfa" Notes="odd" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L034_VOR_Freq" Guid="ac231848a-c9c7-44e9-8427-85beca580f72a" BitOffsetWithinDS="32">
+          <DP Name="LABEL" Guid="a55bc0b6b-d3bd-4136-a902-23f15d6c499fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="34" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="afa818dc7-d313-43d0-9958-995e13ad8ba7a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="MB_Sensitivity" Guid="a1cdb3613-1e15-47b3-a4d2-acbc80c4db7fa" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="High" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="Low" />
+          <DP Name="Tuning_Source" Guid="a5d18de30-3f3f-47dd-9465-1acec646f66da" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="Auto_FMS" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="Manual" />
+          <DP Name="PAD" Guid="a636bab02-bdd9-4439-b382-56737f5353cda" BitOffsetWithinDS="12" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="ILS_VOR" Guid="a98661e54-7dd2-4ad7-bb9e-a54df32645eca" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="ILS_Frequencies" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="VOR_Frequencies" />
+          <DP Name="HundredthsOfMHz" Guid="a1f319bd1-f240-4d84-8277-70508cacc296a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TenthsOfMHz" Guid="aa60dcada-2f2d-4754-9d48-87882b444b48a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfMHz" Guid="a741bca08-c409-4696-9a84-91e058c2f1b6a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfMHz" Guid="a32fd35ce-603a-46af-9482-195f7a97a59ca" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a139a5278-8bba-4106-b0ce-f65bc206c3c3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a8c6c5f16-5ba7-419b-b8bf-37f01c1df6d3a" Notes="odd" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L033_Landing_System_ModeFreq" Guid="a94134423-b68d-42f2-9969-6389e41b3ef4a" Notes="Operational range is 108.00 MHz through 117.95 MHz per ARINC 710-10 for an ILS, 20000 through 39999 for GLS GBAS and 40000-99999 for GLS SBAS. Label can either be BCD or BNR depending on selected mode. " BitOffsetWithinDS="64">
+          <DP Name="LABEL" Guid="a250eb3ee-011e-4b9c-8aed-a1a3484f7486a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="33" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aff5f116e-1e1c-4365-9213-4182f013f2a3a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Mode" Guid="a331fa2e7-1168-46c7-93f8-c869cea067b9a" Notes="GLS BNR; Bit 11 = 32768; Bit 12 = 65536;" BitOffsetWithinDS="10" CodedSet="0=ILS (Cat not encoded; 1=ILS (CAT I);2=ILS (CAT II);3=ILS (CAT III);4=GLS Mode;5=GLS Mode;6=GLS Mode;7=GLS Mode;8=MLS AutoMode;9=Rsvd;10=Data Broadcast Mode;11=Data Broadcast Mode;12=Data Broadcast Mode;13=Data Broadcast Mode;14=Data Broadcast Mode;15=Data Broadcast Mode" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OneHundrethMHz" Guid="adfb136a3-d317-489e-99bd-9dc7e6d1428ba" Notes="GLS BNR = 1" BitOffsetWithinDS="14" DataFormatType="BCD" Multiplier=".01" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoHundredthsMHz" Guid="aa3b36885-d15b-43e2-b784-e2798b7397e9a" Notes="GLS BNR = 2" BitOffsetWithinDS="15" DataFormatType="BCD" Multiplier=".02" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourHundrethsMHz" Guid="aa530f15a-0953-4605-aba1-1d71ccd8d6f3a" Notes="GLS BNR = 4" BitOffsetWithinDS="16" DataFormatType="BCD" Multiplier=".04" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightHundrethsMHz" Guid="af98363be-562b-4282-8304-8f1a3c5b85fba" Notes="GLS BNR = 8" BitOffsetWithinDS="17" DataFormatType="BCD" Multiplier=".08" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="OneTenthMHz" Guid="a897e9819-bda3-475f-ac4f-2262cf15e5a8a" Notes="GLS BNR = 16" BitOffsetWithinDS="18" DataFormatType="BCD" Multiplier=".1" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoTenthsMHz" Guid="abbae00d8-ea16-4d2a-9be4-95ff30649153a" Notes="GLS BNR = 32" BitOffsetWithinDS="19" DataFormatType="BCD" Multiplier=".2" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourTenthsMHz" Guid="aa02e994b-fa07-45b9-9068-03143639bd1ca" Notes="GLS BNR = 64" BitOffsetWithinDS="20" DataFormatType="BCD" Multiplier=".4" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightTenthsMHz" Guid="a0fc062dc-086d-43a5-a4f7-fdf683370eaca" Notes="GLS BNR = 128" BitOffsetWithinDS="21" DataFormatType="BCD" Multiplier=".8" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="OneMHz" Guid="a812c4710-62fa-4615-b1d2-bb283cfe3c88a" Notes="GLS BNR = 256" BitOffsetWithinDS="22" DataFormatType="BCD" Multiplier="1" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwoMHz" Guid="a895bff43-bc83-4092-a913-75e7e6332de4a" Notes="GLS BNR = 512" BitOffsetWithinDS="23" DataFormatType="BCD" Multiplier="2" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourMHz" Guid="a0dbf9cdc-d5f1-4cc7-991b-de8498309d8fa" Notes="GLS BNR = 1024" BitOffsetWithinDS="24" DataFormatType="BCD" Multiplier="4" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="EightMHz" Guid="a1409fd5b-154b-4d8a-b252-0c8891e82befa" Notes="GLS BNR = 2048" BitOffsetWithinDS="25" DataFormatType="BCD" Multiplier="8" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TenMHz" Guid="a227b66e6-1c5b-4453-a0a6-8b32f6e3ccbaa" Notes="GLS BNR = 4096" BitOffsetWithinDS="26" DataFormatType="BCD" Multiplier="10" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="TwentyMHz" Guid="a2caaa5ba-cc5b-448a-8909-c2e1af92283ba" Notes="GLS BNR = 8192" BitOffsetWithinDS="27" DataFormatType="BCD" Multiplier="20" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="FourtyMHz" Guid="ab1203f4c-d879-4daf-bda9-f42c939c849ca" Notes="GLS BNR = 16384" BitOffsetWithinDS="28" DataFormatType="BCD" Multiplier="40" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="MHz" />
+          <DP Name="SSM" Guid="af0a7a44c-f3b5-4094-90d5-94a83b9f1eb2a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a6807362f-8f6a-4304-9a30-cae08461cd84a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L035_DME_Frequency" Guid="acc909a24-165d-43f0-8d3c-5605e50e9116a" BitOffsetWithinDS="96">
+          <DP Name="LABEL" Guid="a449d52ee-21ab-42a2-8616-1cbe27525784a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="35" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a4c74853c-cbe6-4a54-aa74-e08f9ca9f69ca" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="DME_Mode" Guid="a9d0ae5b7-753d-44ee-81c4-1bab9eda86fda" BitOffsetWithinDS="10" CodedSet="0=STANDBY;1=DIR FREQ 1;2=DIR FREQ 2;3=DIR FREQ 3;4=DIR FREQ 4;5=DIR FREQ 5;6=FREE SCAN;7=SPARE" DataFormatType="COD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Nav_Mode" Guid="a267b6fd4-a4f0-4b0b-960f-20168ac9e34da" BitOffsetWithinDS="13" CodedSet="0=VOR/VHF COM Frequency;1=ILS Frequency;2=MLS Frequency;3=Spare" DataFormatType="COD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Display_ON_OFF" Guid="affb3644c-dcfd-499d-b974-494a8d508ba8a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Display_On" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0=Display_Off" />
+          <DP Name="Ident_ON_OFF" Guid="a95624046-17df-457d-b5c9-116f4c29aef2a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Ident_On" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0=Ident_Off" />
+          <DP Name="FiveHundrethsOfMhz" Guid="a3f369b06-bae4-43d5-bf9d-cf7ee338176ca" Notes="Bit no. 18 is only used in VOR/ILS and VHF COM frequencies which are limited to 0.01 MHz and 0.05 MHz in the hundredths of MHz decade." BitOffsetWithinDS="17" DataFormatType="DIS" OneState="0.05MHz " ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" ZeroState="0" />
+          <DP Name="TenthsOfMhz" Guid="a0646e7e6-361d-4fc5-854c-2df2e49a1189a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="OnesOfMhzMHz" Guid="a97a49d34-5d3b-49aa-b80b-c82d0f805e0ca" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="TensOfMHz" Guid="aa15daea7-05af-4e8b-9235-5a661f198faca" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="af0ded0c5-4e8a-44c0-bb65-b9b7e89bf6d6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="ad1a6679f-4b23-4989-8a64-74efe921cad1a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L100_Selected_Course_1" Guid="a6d725e5c-2427-49c3-9de9-b5c5b4893047a" Notes="This is the selected course value on the NAV tuning page for VOR-1." BitOffsetWithinDS="128">
+          <DP Name="LABEL" Guid="a28ea77ca-93ec-4c40-ac63-ac64dfe2d034a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="100" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="af9abebbc-4489-412a-aa44-3ccb20c38b7da" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="af3c597ff-c5c7-4c28-aa05-4379727af7fda" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Course_1" Guid="ae2b4d836-fbb7-4090-a89b-f76c08a6bd46a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="179.9560547" FullScaleRngMin="-180" FuncRngMax="179.9560547" FuncRngMin="-180" LsbRes="0.043945313" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a758174c7-2173-4052-bd83-896746e21bfca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a5430a169-7ef9-4870-a7b9-a8e39c9f6d28a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L105_Selected_Runway_Heading_BNR" Guid="ad6022126-67fd-4415-b887-3f4681d33f0ba" BitOffsetWithinDS="160">
+          <DP Name="LABEL" Guid="a28353ada-267d-45a8-b373-c17d1c31b063a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="105" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a043cceda-5b21-4e1c-a07c-029db6c49943a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a3fd838cc-816f-449e-9630-21f0d662d9d4a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Runway_Heading" Guid="aa7a9a9f4-213c-4d2c-bfed-ce8990adf34da" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="179.912109" FullScaleRngMin="-180" FuncRngMax="179.912109 " FuncRngMin="-180" LsbRes="0.087890625" ParameterSize="12" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a6703bd8a-bdbf-4bfd-b992-a85b4639c4b6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a9a31609e-3b1d-42ce-84c3-84171c0c0f3ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L017_Selected_Runway_Heading_BCD" Guid="a506b6330-5393-4ee5-af3a-ea9d6ad41548a" Notes="Operationl range is 0 to 359.9 per ARINC 743B." BitOffsetWithinDS="192">
+          <DP Name="LABEL" Guid="aa8850ea7-edf1-4221-a991-0e5e206f2378a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="17" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a9412b0a3-fa56-48d6-92b2-f7a3436a210fa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="ad681247b-9087-4d3a-b861-8ed35fc620a4a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Front_Course_1" Guid="af9f03bda-72a1-4965-b1ef-f7d22b01f0cba" BitOffsetWithinDS="14" DataFormatType="BCD" Multiplier=".1" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_2" Guid="ae3df4d8d-5c39-4811-9b6d-15c914d51623a" BitOffsetWithinDS="18" DataFormatType="BCD" Multiplier="1" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_3" Guid="ad1509fdb-0bb9-46b2-9953-1090b6fae561a" BitOffsetWithinDS="22" DataFormatType="BCD" Multiplier="10" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="Front_Course_4" Guid="af2420cfa-c9a5-497f-ae7b-46773f99819da" BitOffsetWithinDS="26" DataFormatType="BCD" Multiplier="100" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a17e45cc6-cc9b-4a12-90e2-6379e791eb0aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a6aa81690-1f08-47a1-8b20-e0bd77829e16a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L110_Selected_Course_2" Guid="aeb4134c2-527d-4fea-a2d8-1b8961ff1946a" Notes="This is the selected course value on the NAV tuning page for VOR-2." BitOffsetWithinDS="224">
+          <DP Name="LABEL" Guid="ac094591f-8681-4c56-8e9f-e4c0ebf1d0cca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="110" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="accdfe08a-4370-49bf-932f-6ab4e2ec7433a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="ac4fae7c6-c1bc-4809-9830-6b50e8a8d0c7a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Selected_Course_2" Guid="ac2c19cd1-4b92-4ddd-bedc-77a47af8c398a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="179.9560547" FullScaleRngMin="-180" FuncRngMax="179.9560547" FuncRngMin="-180" LsbRes="0.043945313" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a10d2701a-4247-4ca7-bb93-93b1c055688aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="abf9d4efb-1588-4778-b6a6-0202da22555ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+        <A429Word Name="L242_GLS_Ground_Station_ID" Guid="a19f61d08-9201-4258-95e1-e21c22ab66cda" BitOffsetWithinDS="256">
+          <DP Name="LABEL" Guid="af46db587-ace5-4fdb-be24-38c13945f26ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="242" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a071a3bfa-1c3b-4818-ac21-d64d965299fba" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FMS_L;2=FMS_R;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="First_Character" Guid="a55946407-cbff-499d-95cd-e2fde1044111a" BitOffsetWithinDS="10" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD1" Guid="ac7ed4427-a85f-472f-bef5-1cfc1400a540a" BitOffsetWithinDS="17" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Second_Character" Guid="ad62949c5-7f38-4842-bb77-d0c9890f6caaa" BitOffsetWithinDS="18" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD2" Guid="a4cd01ea2-0a61-424b-aa20-ded995476c57a" BitOffsetWithinDS="25" DataFormatType="PAD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Spare" Guid="a2064e7db-1f8b-4355-9285-49dfd2a257fda" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a9d9dc422-e6a4-4295-a55a-904621719e1ea" BitOffsetWithinDS="29" CodedSet="00=Verified; 01=No Computed Data; 10=Functional Test; 11= Not Defined" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+          <DP Name="Parity" Guid="a29afc5f4-09ec-403d-8c6e-a2023e667b31a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="200" />
+        </A429Word>
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU1" Guid="a556d41e1-91a4-44c9-be68-f3259328dadda" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU1" Guid="a4bcd38c4-c2ea-48ae-8ff7-e18975114eeaa" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_BLK" Guid="abfd235af-41dc-433a-b25d-1d38fd861a94a" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="Parametric data">
+        <DP Name="FMS_MDB_661" Guid="a441411cc-6852-4127-813d-14356ffc3391a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="65440" PublishedLatency="600" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU2" Guid="afb930354-d1ac-464e-b98b-4ec0c43979b8a" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU2" Guid="a97277e46-8c00-4c2a-8690-040942e846dba" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_BLK" Guid="a8f793db8-64c4-4f14-9ae1-2a607bd4e3f8a" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="Parametric data">
+        <DP Name="FMS_MDB_661" Guid="a5db5566a-a1c7-46f1-8e59-70470b55164ba" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="65440" PublishedLatency="600" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU3" Guid="a4b22ae15-1355-4b34-91d3-cb2e7a2a48a1a" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU3" Guid="a37d5adcc-bd56-4d43-973a-4eafa0a91683a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_BLK" Guid="ae18e0b43-c0d4-4539-a6bb-1f5cac8572bba" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="Parametric data">
+        <DP Name="FMS_MDB_661" Guid="a5e728dd9-585d-480e-8596-ddb17e63c53ba" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="65440" PublishedLatency="600" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU4" Guid="afe7c4320-9fcb-4512-81cd-5da0150d3439a" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU4" Guid="a0cccefd3-f6d4-499c-9971-151a5ea6ae18a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_BLK" Guid="a4668905f-3d15-4247-b8c3-4c5720820c7aa" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="Parametric data">
+        <DP Name="FMS_MDB_661" Guid="aafa1dd96-51c5-4cbe-afd8-6cf6c3afb7a3a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="65440" PublishedLatency="600" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU5" Guid="a62c2ed60-1eba-42b5-921b-53997db0ebe2a" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="50">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU5" Guid="ae5456db4-c94d-425a-896a-d33811f1cc82a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_BLK" Guid="a04af14c8-fc72-440e-8936-4579123688dfa" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="Parametric data">
+        <DP Name="FMS_MDB_661" Guid="aef315b6c-9335-4f42-9e06-630a52cfb298a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="65440" PublishedLatency="600" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU1" Guid="ac91865f9-82ae-4dc6-958a-f469309fce88a" Direction="Source" MessageSize="300" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU1" Guid="a8be6e996-0863-493c-805b-17922edbe55ba" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="300" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_HP_BLK" Guid="ac52f5d77-821d-4941-bfff-b4897e889114a" ByteOffsetWithinMsg="0" DataSetSize="300" DsDataProtocolType="Parametric data">
+        <DP Name="NG_MDB_661_HP" Guid="aabaf78b7-ce66-4f2a-886b-22feeb8218d6a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2400" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU2" Guid="ac939dac8-8fed-4616-99e9-cdbb2bda26bca" Direction="Source" MessageSize="300" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU2" Guid="af431b219-cc9d-4680-a77f-83ed5402ab44a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="300" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_HP_BLK" Guid="a076f161a-1b5e-4fa7-bf0e-8ec1f573fd83a" ByteOffsetWithinMsg="0" DataSetSize="300" DsDataProtocolType="Parametric data">
+        <DP Name="NG_MDB_661_HP" Guid="af69be700-98a7-48d4-afa2-83dc21cabe18a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2400" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU3" Guid="a71b15971-4c5e-4dd7-89de-43eea6e60ed9a" Direction="Source" MessageSize="300" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU3" Guid="a99539871-a3c7-4497-80b8-bef17e98ffd5a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="300" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_HP_BLK" Guid="a7c3d03ec-f201-47ac-954b-709fbdbe8c63a" ByteOffsetWithinMsg="0" DataSetSize="300" DsDataProtocolType="Parametric data">
+        <DP Name="NG_MDB_661_HP" Guid="adbfec90b-8657-44b9-bcc0-be2b65dd7b7fa" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2400" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU4" Guid="a0e017e1a-85a7-431d-a07c-78dc8a9c1309a" Direction="Source" MessageSize="300" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU4" Guid="a858b57bc-9185-4d51-9cb6-27482c993272a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="300" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_HP_BLK" Guid="a56a34d92-da6d-4d50-a569-b1f4b1812f1fa" ByteOffsetWithinMsg="0" DataSetSize="300" DsDataProtocolType="Parametric data">
+        <DP Name="NG_MDB_661_HP" Guid="ade0b8a04-24e2-4fc5-b5ef-35f87dc81825a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2400" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU5" Guid="a97378a7d-9a6c-42b2-8099-d6d559111191a" Direction="Source" MessageSize="300" Networks="Both" QueueLength="5" RefreshPeriod="50">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU5" Guid="a2469be6e-04e1-4ab0-a723-017ca991d042a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="300" MsgDataProtocolType="ARINC 661-1" TransmissionIntervalMinimum="50">
+      <DS Name="DS_HDD_HP_BLK" Guid="aa014228c-5b89-4184-ac96-9820e236382da" ByteOffsetWithinMsg="0" DataSetSize="300" DsDataProtocolType="Parametric data">
+        <DP Name="NG_MDB_661_HP" Guid="aad561eb8-14a7-413f-8ea3-1fdf36e2be6da" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="2400" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+</A653ApplicationComponentClass>

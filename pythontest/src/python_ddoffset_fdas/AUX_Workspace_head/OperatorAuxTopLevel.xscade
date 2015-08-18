@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Operator kind="node" name="AuxTopLevel">
+			<inputs>
+				<Variable name="InputsDD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ipAUXType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3c98/6140/E74/535f1374155"/>
+					</pragmas>
+				</Variable>
+				<Variable name="CurSysTime">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/2a8d/307/61BC/547ef04cb6a"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="AUXOutput">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3cae/D18/16DC/535f157c4d52"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<locals>
+				<Variable name="_L1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ipAUXType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3c9a/6140/E74/535f138a6dd4"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L3">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKChronographType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3ed6/2DE7/16D8/5379a4a844a2"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L4">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKDateType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3edc/2DE7/16D8/5379a4ac53d5"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L5">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKEFTType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3ee2/2DE7/16D8/5379a4bd437d"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L7">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKUTCType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3eee/2DE7/16D8/5379a4d02d2e"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L8">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3ef4/2DE7/16D8/5379a5526f50"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L9">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Clock::popCLKFlightNumberType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/3f10/2DE7/16D8/5379a63a6a0b"/>
+					</pragmas>
+				</Variable>
+				<Variable name="_L10">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/2aa1/307/61BC/547ef085217a"/>
+					</pragmas>
+				</Variable>
+			</locals>
+			<data>
+				<!-- _L1 = InputsDD; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L1"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="InputsDD"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3c99/6140/E74/535f138a72d7"/>
+					</pragmas>
+				</Equation>
+				<!-- _L3 = Clock::Chronograph(_L1, _L10); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L3"/>
+					</lefts>
+					<right>
+						<!-- Clock::Chronograph(_L1, _L10) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="Clock::Chronograph"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L10"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3ed5/2DE7/16D8/5379a4a858d"/>
+					</pragmas>
+				</Equation>
+				<!-- _L4 = Clock::Date(_L1); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L4"/>
+					</lefts>
+					<right>
+						<!-- Clock::Date(_L1) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="Clock::Date"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3edb/2DE7/16D8/5379a4ac2a80"/>
+					</pragmas>
+				</Equation>
+				<!-- _L5 = Clock::ElapsedTime(_L1, _L10); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L5"/>
+					</lefts>
+					<right>
+						<!-- Clock::ElapsedTime(_L1, _L10) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="Clock::ElapsedTime"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L10"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3ee1/2DE7/16D8/5379a4bd3bc0"/>
+					</pragmas>
+				</Equation>
+				<!-- _L7 = Clock::UTC(_L1); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L7"/>
+					</lefts>
+					<right>
+						<!-- Clock::UTC(_L1) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="Clock::UTC"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3eed/2DE7/16D8/5379a4d018e5"/>
+					</pragmas>
+				</Equation>
+				<!-- _L8 = (make Clock::popCLKType)(_L3, _L4, _L5, _L9, _L7); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L8"/>
+					</lefts>
+					<right>
+						<!-- (make Clock::popCLKType)(_L3, _L4, _L5, _L9, _L7) -->
+						<CallExpression>
+							<operator>
+								<MakeOp name="1">
+									<type>
+										<TypeRef name="Clock::popCLKType"/>
+									</type>
+								</MakeOp>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L3"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L4"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L5"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L9"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L7"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3ef3/2DE7/16D8/5379a55261b8"/>
+					</pragmas>
+				</Equation>
+				<!-- AUXOutput = _L8; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="AUXOutput"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L8"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3efd/2DE7/16D8/5379a5633d95"/>
+					</pragmas>
+				</Equation>
+				<!-- _L9 = Clock::FlightNumber(_L1); -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L9"/>
+					</lefts>
+					<right>
+						<!-- Clock::FlightNumber(_L1) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="Clock::FlightNumber"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+						</CallExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/3f0f/2DE7/16D8/5379a63a134d"/>
+					</pragmas>
+				</Equation>
+				<!-- _L10 = CurSysTime; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L10"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="CurSysTime"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/2aa0/307/61BC/547ef085f18"/>
+					</pragmas>
+				</Equation>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/3c93/6140/E74/535e17a56ac8" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<NetDiagram name="diagram_AuxTopLevel_1" landscape="true" format="A4 (210 297)" oid="!ed/3c94/6140/E74/535e17a55265">
+							<presentationElements>
+								<EquationGE presentable="!ed/3c99/6140/E74/535f138a72d7">
+									<position>
+										<Point x="4233" y="6959"/>
+									</position>
+									<size>
+										<Size width="265" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3ed5/2DE7/16D8/5379a4a858d">
+									<position>
+										<Point x="9022" y="3704"/>
+									</position>
+									<size>
+										<Size width="4275" height="1127"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3edb/2DE7/16D8/5379a4ac2a80">
+									<position>
+										<Point x="9022" y="5556"/>
+									</position>
+									<size>
+										<Size width="4275" height="1127"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3ee1/2DE7/16D8/5379a4bd3bc0">
+									<position>
+										<Point x="9022" y="7435"/>
+									</position>
+									<size>
+										<Size width="4275" height="1128"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3eed/2DE7/16D8/5379a4d018e5">
+									<position>
+										<Point x="9022" y="11165"/>
+									</position>
+									<size>
+										<Size width="4275" height="1127"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<position>
+										<Point x="16237" y="2400"/>
+									</position>
+									<size>
+										<Size width="2001" height="11234"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/3efd/2DE7/16D8/5379a5633d95">
+									<position>
+										<Point x="21008" y="7726"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3ef3/2DE7/16D8/5379a55261b8" dstEquation="!ed/3efd/2DE7/16D8/5379a5633d95">
+									<positions>
+										<Point x="18230" y="8017"/>
+										<Point x="19632" y="8017"/>
+										<Point x="19632" y="8017"/>
+										<Point x="21061" y="8017"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3ed5/2DE7/16D8/5379a4a858d" dstEquation="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<positions>
+										<Point x="13309" y="4286"/>
+										<Point x="14764" y="4286"/>
+										<Point x="14764" y="4286"/>
+										<Point x="16245" y="4286"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/3edb/2DE7/16D8/5379a4ac2a80" dstEquation="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<positions>
+										<Point x="13309" y="6138"/>
+										<Point x="14764" y="6138"/>
+										<Point x="14764" y="6138"/>
+										<Point x="16245" y="6138"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/3ee1/2DE7/16D8/5379a4bd3bc0" dstEquation="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<positions>
+										<Point x="13309" y="8017"/>
+										<Point x="14764" y="8017"/>
+										<Point x="14764" y="8017"/>
+										<Point x="16245" y="8017"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="5" srcEquation="!ed/3eed/2DE7/16D8/5379a4d018e5" dstEquation="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<positions>
+										<Point x="13309" y="11748"/>
+										<Point x="14764" y="11748"/>
+										<Point x="14764" y="11748"/>
+										<Point x="16245" y="11748"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/3f0f/2DE7/16D8/5379a63a134d">
+									<position>
+										<Point x="9022" y="9313"/>
+									</position>
+									<size>
+										<Size width="4275" height="1127"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/3f0f/2DE7/16D8/5379a63a134d" dstEquation="!ed/3ef3/2DE7/16D8/5379a55261b8">
+									<positions>
+										<Point x="13309" y="9895"/>
+										<Point x="14764" y="9895"/>
+										<Point x="14764" y="9895"/>
+										<Point x="16245" y="9895"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3c99/6140/E74/535f138a72d7" dstEquation="!ed/3f0f/2DE7/16D8/5379a63a134d">
+									<positions>
+										<Point x="4498" y="7223"/>
+										<Point x="6800" y="7223"/>
+										<Point x="6800" y="9895"/>
+										<Point x="9022" y="9895"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3c99/6140/E74/535f138a72d7" dstEquation="!ed/3ed5/2DE7/16D8/5379a4a858d">
+									<positions>
+										<Point x="4498" y="7223"/>
+										<Point x="6800" y="7223"/>
+										<Point x="6800" y="4075"/>
+										<Point x="9022" y="4075"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3c99/6140/E74/535f138a72d7" dstEquation="!ed/3edb/2DE7/16D8/5379a4ac2a80">
+									<positions>
+										<Point x="4498" y="7223"/>
+										<Point x="6800" y="7223"/>
+										<Point x="6800" y="6138"/>
+										<Point x="9022" y="6138"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3c99/6140/E74/535f138a72d7" dstEquation="!ed/3ee1/2DE7/16D8/5379a4bd3bc0">
+									<positions>
+										<Point x="4498" y="7223"/>
+										<Point x="6800" y="7223"/>
+										<Point x="6800" y="7805"/>
+										<Point x="9022" y="7805"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/3c99/6140/E74/535f138a72d7" dstEquation="!ed/3eed/2DE7/16D8/5379a4d018e5">
+									<positions>
+										<Point x="4498" y="7223"/>
+										<Point x="6800" y="7223"/>
+										<Point x="6800" y="11748"/>
+										<Point x="9022" y="11748"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/2aa0/307/61BC/547ef085f18">
+									<position>
+										<Point x="4233" y="7938"/>
+									</position>
+									<size>
+										<Size width="265" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/2aa0/307/61BC/547ef085f18" dstEquation="!ed/3ee1/2DE7/16D8/5379a4bd3bc0">
+									<positions>
+										<Point x="4498" y="8202"/>
+										<Point x="6747" y="8202"/>
+										<Point x="6747" y="8202"/>
+										<Point x="9022" y="8202"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/2aa0/307/61BC/547ef085f18" dstEquation="!ed/3ed5/2DE7/16D8/5379a4a858d">
+									<positions>
+										<Point x="4498" y="8202"/>
+										<Point x="7752" y="8202"/>
+										<Point x="7752" y="4471"/>
+										<Point x="9022" y="4471"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

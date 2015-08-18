@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW02_I_40005_HF_EMPC_EPS" Guid="a68d492e2-bf01-4a4c-b771-ebd5be9237b4a" XsdVersion="7.9" Hardware="RDIU_02">
+  <A429Port Name="pi429_EMPC_10000_HF_EMPC_EPS" Guid="a6701eee5-f4e8-44a5-80b6-e09104bf6526a" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_02.40005_A02" SamplePeriod="1280">
+    <Dataflow_Ref SrcName="HF_EMPC_EPS.po429_EMPC_10000" SrcGuid="a5edd99cb-e658-4497-ae2f-b1aecf025d30a" />
+  </A429Port>
+  <A429Port Name="pi429_EMPC_1000_HF_EMPC_EPS" Guid="a8d79ffbf-6098-4a20-a791-4b9ac2246667a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_02.40005_A02" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_EMPC_EPS.po429_EMPC_1000" SrcGuid="ae8b9ba67-5cd8-400b-b8c7-cda218630e17a" />
+  </A429Port>
+  <A429Port Name="pi429_EMPC_200_HF_EMPC_EPS" Guid="ac9dc7a93-3e9e-4d47-ad2a-0ff13ad295d0a" ActivityTimeout="800" Direction="Destination" Physical="RDIU_02.40005_A02" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_EMPC_EPS.po429_EMPC_200" SrcGuid="a77fbc2d4-8104-4864-ad2c-e033142e6884a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_EMPC_A429_Tx_Msg_10000" Guid="ab69996d6-4ce6-4ec7-a45b-2b0450dff0b7a" Direction="Source" MessageSize="24" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="EMPC_A429_Tx_Msg_10000_S_1" Guid="a0ef8b4a1-4ec3-48aa-8831-6711471df0eaa" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="24" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="10000" VLID="33318">
+      <DS Name="FSS1" Guid="ad982e062-e2a2-4db4-b506-b207f65b7d46a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a203c1219-c9db-4238-ae76-104a33524611a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a1b51f287-9175-45ff-9f62-9e4975b936cda" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a8132ad10-9c40-4e7d-8be5-42e6cdd4cab7a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a38d6afe5-8655-43af-9664-82e5f7160bf1a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L257_EMPC_Identification_Words_1" Guid="a905e4a56-43c5-4cbf-9457-3c4de18834cca" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L257_EMPC_Identification_Words_1" Guid="a9f585852-ffe3-4cdf-b3b5-b14c2352132ca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="afb0bf337-dcd8-4d91-b12d-29faf0dc5c71a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="257" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="SDI" Guid="a9a609708-5107-4618-b7c6-ef4d957b3ce6a" BitOffsetWithinDS="8" CodedSet="0=Words_1;1=Words_2;2=word_3;3=word_4" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="EMPC_Identification_Words_1" Guid="a914f5891-4e8e-4209-a078-bb8a27e5fb0fa" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="19" PublishedLatency="200" TransmissionIntervalMinimum="10000">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_Identification_Words_1" DestGuid="ae7fe2edd-d1b3-44bb-8232-d3a6c7a5f7d4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_Identification_Words_1" DestGuid="a8cda2fae-0b79-4123-9ccb-a17dcbdb70dfa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_Identification_Words_1" DestGuid="a46ce1b10-ffe7-4a79-9db3-f681ccddc58aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_Identification_Words_1" DestGuid="a39ef5026-0ace-435c-b1a3-32e810257f87a" />
+          </DP>
+          <DP Name="SSM" Guid="af462d3ca-f3d4-4901-8fa8-cb5d3b081b5aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_CUSTOM" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="PARITY" Guid="a89ec1067-5d74-427c-826b-0882a045ffefa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_10000.L257_EMPC_Identification_Words_1" SrcGuid="ac7c5f220-f895-46e8-a32f-456bf87df99da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_10000_L257_EMPC_Identification_Words_1" DestGuid="a7c58f9f4-7c9e-4add-9755-ad1558004abea" />
+        </A429Word>
+      </DS>
+      <DS Name="L257_EMPC_Identification_Words_2" Guid="aceb31ca5-e494-4638-98c4-69d4c5bc1696a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L257_EMPC_Identification_Words_2" Guid="ae1ad096b-3b6d-4f22-921a-2ee8251ea053a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0eff7b9f-4910-4c07-8623-6a741d79c34da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="257" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="SDI" Guid="a210ae877-6cba-4be3-94fd-e521bb04ad82a" BitOffsetWithinDS="8" CodedSet="0=Words_1;1=Words_2;2=word_3;3=word_4" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="EMPC_Identification_Words_2" Guid="ab7122bcc-3ff2-41dd-9364-ee3847201cdfa" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="19" PublishedLatency="200" TransmissionIntervalMinimum="10000">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_Identification_Words_2" DestGuid="af0e7d11c-d630-4070-b18a-35d55464a303a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_Identification_Words_2" DestGuid="afdc0a7ff-275b-47ac-be23-c44f817b5436a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_Identification_Words_2" DestGuid="afb2ca7c1-d70f-43df-a645-e3ccac9a2d96a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_Identification_Words_2" DestGuid="ab42c6923-085e-4e25-856e-f13ec4203dc7a" />
+          </DP>
+          <DP Name="SSM" Guid="a4bf1ef2b-3982-42ef-9fd4-fcd8f2ec6507a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_CUSTOM" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="PARITY" Guid="ab468b886-4db8-4048-b935-ee3b8be04be8a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_10000.L257_EMPC_Identification_Words_2" SrcGuid="aa2bd36d6-71a9-47b7-960c-28c4485e78a2a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_10000_L257_EMPC_Identification_Words_2" DestGuid="ae6d85a38-de1b-4af9-a69b-e062d443bcd9a" />
+        </A429Word>
+      </DS>
+      <DS Name="L257_EMPC_Identification_Words_3" Guid="aba92d83f-56a5-4e66-bb29-b0614b4714f7a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L257_EMPC_Identification_Words_3" Guid="a32a2c4a1-2e5d-4a6d-ae1a-3f54e17511dea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af8a896c2-5f7b-4a9b-812f-c57b45fe3496a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="257" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="SDI" Guid="a03b2e9b9-e9f1-48bb-ae30-cd17fe011759a" BitOffsetWithinDS="8" CodedSet="0=Words_1;1=Words_2;2=word_3;3=word_4" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="EMPC_Identification_Words_3" Guid="ae32b8e25-0056-4b0c-9405-475bad4c5156a" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="19" PublishedLatency="200" TransmissionIntervalMinimum="10000">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_Identification_Words_3" DestGuid="aa7069328-aa42-430b-a66e-c430fd77c62da" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_Identification_Words_3" DestGuid="a423647d5-055a-409f-bece-9d7f00967345a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_Identification_Words_3" DestGuid="acedb5d05-2519-4ef3-a4d2-3eaeab12ca9fa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_Identification_Words_3" DestGuid="a2801aca7-3d47-46cf-827c-76c9975e49a7a" />
+          </DP>
+          <DP Name="SSM" Guid="a1863958c-fa34-4c7c-8a08-7bb715153cfda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_CUSTOM" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="PARITY" Guid="a5b31a92b-de44-4b2c-b234-86a25d3b598ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_10000.L257_EMPC_Identification_Words_3" SrcGuid="abfd6e310-eee1-443e-a9ea-05f6176e3dd0a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_10000_L257_EMPC_Identification_Words_3" DestGuid="a13afa90d-25cf-4767-972c-d3f30937ded2a" />
+        </A429Word>
+      </DS>
+      <DS Name="L257_EMPC_Identification_Words_4" Guid="afe2d532a-6c4e-43a0-9730-05647daa9118a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L257_EMPC_Identification_Words_4" Guid="a2fe78d37-993c-4985-bc26-94ac4cd8c072a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad74751e6-7b37-4407-94bc-c2132f8bbf6aa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="257" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="SDI" Guid="ae13fb8c8-7516-4640-bbdb-ee1330bb5f16a" BitOffsetWithinDS="8" CodedSet="0=Words_1;1=Words_2;2=word_3;3=word_4" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="EMPC_Identification_Words_4" Guid="a510b5992-33f0-426f-87ce-02ebb520bba2a" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="18" PublishedLatency="200" TransmissionIntervalMinimum="10000">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_Identification_Words_4" DestGuid="a5792291b-d833-4fc4-8323-f4936b812535a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_Identification_Words_4" DestGuid="a13bb005d-198a-4314-a782-ac575081b50da" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_Identification_Words_4" DestGuid="a6e357f09-ccf6-4de6-aa8a-6e16ddb95077a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_Identification_Words_4" DestGuid="ae5ec87c8-681a-4440-b2ce-f9f75d9f39ada" />
+          </DP>
+          <DP Name="SSM" Guid="aa0e0ac26-6a8e-4541-b955-84059d9b4c5ba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_CUSTOM" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <DP Name="PARITY" Guid="a90a0af5e-b5de-4e89-b0ef-f8f44d498daba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="10000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_10000.L257_EMPC_Identification_Words_4" SrcGuid="a8e433616-fcbd-4dd1-903c-befb7c1aad84a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_10000_L257_EMPC_Identification_Words_4" DestGuid="a37aa1937-8476-4515-8bb7-b74f39f440e9a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW02_I_40005_HF_EMPC_EPS.pi429_EMPC_10000_HF_EMPC_EPS" SrcGuid="a6701eee5-f4e8-44a5-80b6-e09104bf6526a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_O_A664_EMPC_A429_Tx_Msg" Guid="a6236dccc-f311-499a-9992-3b4122089698a" Direction="Source" MessageSize="32" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="EMPC_A429_Tx_Msg_S_2" Guid="a0bb41f4d-6cc9-4769-a2cb-c8ff84a6e70ea" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="32" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="1000" VLID="33318">
+      <DS Name="FSS1" Guid="a34a1582a-41ae-43ee-b299-c08030706a63a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aca747ecb-edbc-4b0c-8e17-05631029acd1a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ae2e23951-6605-4086-a294-ad28168b87c2a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="ae5cadabe-e56b-44cc-96cc-3e97dc6f256ba" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a0112376b-7076-419b-9fc2-3ea2da8b5c92a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L352_EMPC_OTHER_CT_FAILURES" Guid="aa03fa80c-2b48-4c94-83b1-f13e69145973a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L352_EMPC_OTHER_CT_FAILURES" Guid="aaa810565-b4a6-45cf-9ba6-81cc041ad017a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a74ef3e31-17ea-46a9-b5c5-3b514a62a0c8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="352" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="ab6f4c17a-f0b3-49a3-8432-b880e17251c1a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_11" Guid="aaa6cafe5-66ed-4937-8e41-94eb547b103ba" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_12" Guid="a59e81351-1aa1-421f-aa5b-f57dd9f2a92ca" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_13" Guid="a83f0fcc1-d714-4338-a3dd-bff27e6984fca" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETC3_FAILED" Guid="a9af303e5-fc16-4974-a605-e27aa95602f6a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LACETR_SHORTED_FAILED" Guid="a0e7adb66-7301-4057-acbe-f8aebe9e31e1a" BitOffsetWithinDS="14" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_16" Guid="ab49f697c-21bb-49e9-8713-99d577c4c322a" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_17" Guid="a38e69bbf-cfb3-4120-801a-6fee6394431ba" BitOffsetWithinDS="16" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_18" Guid="a462cc7dd-a85c-4923-9db9-0522bfe95a4ea" BitOffsetWithinDS="17" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_19" Guid="a1a17ee9a-9435-420b-92dd-16e7cbd38b09a" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LTRUC_AUX_IN_FAILED" Guid="a586aefed-755b-4531-8990-f2bfc84eb8d7a" BitOffsetWithinDS="19" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_EMERGENCY_SHORTED_FAILED" Guid="aa22264c2-36b1-4466-b3ff-3dece88d1d39a" BitOffsetWithinDS="20" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_22" Guid="a3250a5d6-6514-4188-b7f7-7f5fa467941fa" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_23" Guid="aac490b13-3d5c-4e8a-acf1-7e42ce071343a" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LACETR_STUCK_OPEN" Guid="a348c2167-7104-4ff5-985f-922103908578a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_25" Guid="aaa1b3443-ee34-4f9b-8e87-75a44d9c0bfca" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_26" Guid="a4921d2b6-2282-4d1b-a641-0f03b1fafe6da" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_27" Guid="a8cc2e97c-6844-4d76-a1c8-33bf6cf5e740a" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_28" Guid="a221a3283-63bb-455b-a298-b09d197a4340a" BitOffsetWithinDS="27" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LACETR_STUCK_CLOSED" Guid="a6cd6b193-028e-49fc-9726-0b37ef917fb8a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a722f06df-11eb-4708-809a-03e22c5f3596a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aa1df7b57-8ba8-4a98-b967-e8ad4ffe1c0da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg.L352_EMPC_OTHER_CT_FAILURES" SrcGuid="a4cf10e1f-2b8c-4af6-9932-0374d53b1d4ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_EMPC_1000_A429_Tx_Msg_L352_EMPC_OTHER_CT_FAILURES" DestGuid="ae2a162de-d88e-416a-b6f3-fdc14553831fa" />
+        </A429Word>
+      </DS>
+      <DS Name="L353_EMPC_SENSOR_FAILURES" Guid="a7b994306-e664-4a63-9569-4bc071a79585a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L353_EMPC_SENSOR_FAILURES" Guid="acdc76bf9-e744-4de2-b5cb-994482016f9ca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="addd879af-57ba-4a0f-8180-30e1f22428afa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="353" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a139601b1-7640-43b7-85a7-b89e89117e18a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_TEMP_IN_FAILED" Guid="af0f1e27b-661b-4506-9f95-662ff0aab4b5a" BitOffsetWithinDS="10" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_12" Guid="ad93f4977-e3b7-41b0-80ff-3d79305b097aa" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_13" Guid="ab0b08356-6fe9-4741-80b2-a02e2b8eef32a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RIGHT_AC_VOLTS_IN_FAILED" Guid="aed5cf9c0-d878-45af-94aa-1a5129096625a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ACESSBUS_VOLTS_IN_FAILED" Guid="a2b15653d-432f-469a-82f8-b305a2ffb4e5a" BitOffsetWithinDS="14" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_FAN_STS_FAILED" Guid="a54ecb353-b428-4c99-aa15-34028ae34b31a" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_DCESSBUS3_VOLTS_IN_FAILED" Guid="ab52eacc0-f39d-4348-8eb7-95e679ef77aea" BitOffsetWithinDS="16" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_DCESSTRANSFER_VOLTS_IN_FAILED" Guid="a2009381a-c7d0-4af4-b3a7-547f4a33dc55a" BitOffsetWithinDS="17" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_19" Guid="a2377d445-2c55-403b-9ad5-f2ed5b05bfcaa" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_VOLT_IN_FAILED" Guid="a2699b126-c7ee-46ec-a657-7cb62ec3c7cca" BitOffsetWithinDS="19" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_21" Guid="a8ece07fc-af3b-4f39-8af8-b31605a6f40ea" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_22" Guid="ab040bd3b-26ad-4478-bd1e-2748193a503aa" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_23" Guid="a73190dc6-effb-49c4-b32a-da3afde83fbaa" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_24" Guid="ae31e51f5-9ead-44ce-9744-d5913521d2aba" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_ISENSE_FAILED" Guid="a4115d6ad-a015-4ae6-844d-6d7e590fc7b7a" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_OC_FAILED" Guid="a0a4b9638-94c6-40af-87c6-ede5ddf7adf4a" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_PROT_FAILED" Guid="add666243-a928-494e-b0c2-71e52ae76f6ca" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_EMER_FET_ON_FAILED" Guid="a64e50f81-abdf-49a1-bbfb-143cbd38e2afa" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_EMERGENCY_OPEN_COIL" Guid="abd911ce3-4dee-4ae9-9f79-74070acc3163a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="aebe55a43-a469-4e59-9fca-558719fe2289a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a41928391-93c6-4260-8c62-36cce06c45f3a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg.L353_EMPC_SENSOR_FAILURES" SrcGuid="a8d801035-1637-419b-a289-76f966faae36a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_EMPC_1000_A429_Tx_Msg_L353_EMPC_SENSOR_FAILURES" DestGuid="af92a7810-4308-4551-8ca5-bd37ac4709d8a" />
+        </A429Word>
+      </DS>
+      <DS Name="L354_EMPC_CONTACTOR_FAILURES" Guid="a782de3c1-7ec4-4ed6-b285-77433e7e25f2a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L354_EMPC_CONTACTOR_FAILURES" Guid="aecb2257c-4230-45e9-a4a9-8244c52fdd6ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a5ba930c7-1a7d-45c1-a2ef-cb58701dfb65a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="354" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a50c50a46-a34f-442a-8061-9b3e57c1a98ea" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRU_RIPPLE_FAILED" Guid="a69621821-2115-46b0-b570-cc8aa9b02e48a" BitOffsetWithinDS="10" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_12" Guid="a20a22d9c-fce6-4a9b-be52-03623c9ece01a" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_13" Guid="a41194877-0fb3-481d-ad6c-299dfdda32c8a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_14" Guid="a7cf6c064-83f2-491e-968c-a0224157fdefa" BitOffsetWithinDS="13" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_15" Guid="a73706f80-4724-4b07-9ccd-23b5e4e01661a" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_16" Guid="a3ff2eac7-58ea-450b-b2b7-77a29a8ab280a" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_17" Guid="a466bd4b1-e1d8-4eb7-a7ea-b6e27cdecbefa" BitOffsetWithinDS="16" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LACETR_AUX_IN_FAILED" Guid="a6eb8c8eb-e90f-425e-9eca-7328fadf1135a" BitOffsetWithinDS="17" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RACETR_AUX_IN_FAILED" Guid="a945c0762-bfc6-4c39-bf9a-747557c97ae7a" BitOffsetWithinDS="18" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_AUX_IN_FAILED" Guid="a8f740d24-4d6f-4333-ba04-61b5902d3c49a" BitOffsetWithinDS="19" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RACETR_FAILED" Guid="a6c5316cf-02b1-4fe9-a16b-8fda79a0e561a" BitOffsetWithinDS="20" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_22" Guid="aa010028a-949c-4625-88dc-0f200d36691fa" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RGLC_AUX_IN_FAILED" Guid="af2c86889-1487-44fe-9dad-2f6e24b5e10ea" BitOffsetWithinDS="22" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_AGC_AUX_IN_FAILED" Guid="a91b1e533-17d2-4a77-b479-c8b41076a7eba" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RACETR_SHORTED_FAILED" Guid="a5b50ddf8-5e8a-4240-b9d7-c658d3f7475ea" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_26" Guid="a4754ff3b-0158-47af-a818-f391e8b74a41a" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RACETR_STUCK_OPEN" Guid="ad016fb79-4921-48b8-a056-3a910e80f1efa" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_RACETR_STUCK_CLOSED" Guid="ab8c4e39b-fb9e-4270-b29a-eadc55115ae9a" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_BIT_FAIL" Guid="a22ef42eb-5db0-4aea-872d-cbb26a4e2af3a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a3dbd66af-e7f7-4da7-823c-f2032dfb2504a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aba4bc1e0-e2d5-444c-8467-36deef280ca5a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg.L354_EMPC_CONTACTOR_FAILURES" SrcGuid="ab16e5f62-1941-4e75-af6d-470e41f08d41a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_EMPC_1000_A429_Tx_Msg_L354_EMPC_CONTACTOR_FAILURES" DestGuid="a44def63e-3dd2-4c2d-93c0-8ee1a6aa4a51a" />
+        </A429Word>
+      </DS>
+      <DS Name="L355_EMPC_OTHER_FAILURES" Guid="adbaabb24-50aa-4a2d-8e06-dffd8849e5ada" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L355_EMPC_OTHER_FAILURES" Guid="ab31cb78d-ca6c-4815-aee7-4ac175ae6ae1a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3e22ba5c-f601-4623-8d10-4b24f581731ba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="355" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a4ba8b174-b598-4627-a506-ed06989a8b7ba" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_11" Guid="a840ed2fe-12f4-414f-b1a7-7897be5d3ecca" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_12" Guid="a6d5f506c-f7a0-4a21-ab0b-498964985c57a" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_OC_LOCKOUT" Guid="ae7145a4b-6074-4dec-9a31-66933c92339ea" BitOffsetWithinDS="12" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ACETR_DP_LOCKOUT" Guid="a9a501e27-25ca-42dc-92d3-7faad72f5e47a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_FTC_LOCKOUT" Guid="aedf747a9-c737-43d0-84e7-51ac75502703a" BitOffsetWithinDS="14" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LEFT_AC_VOLT_IN_FAILED" Guid="a17b973ae-c5c9-4c59-947a-c03524dc4547a" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_EMER_LATCH_FAILED" Guid="a294ed1c1-4e3c-4e0e-9d9e-fa3b4a110cbfa" BitOffsetWithinDS="16" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_18" Guid="ae87c878c-e30f-42ec-baf5-de6cb6623a91a" BitOffsetWithinDS="17" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_FTO_LOCKOUT" Guid="a54956a5b-950c-48fd-a685-00b9b4afc309a" BitOffsetWithinDS="18" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_FAILED" Guid="a95c3359b-1320-4a94-8b1f-70ee84ae08bfa" BitOffsetWithinDS="19" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_CC_LOCKOUT" Guid="af1c8eba2-c9a4-4cd8-bc42-1242222152eda" BitOffsetWithinDS="20" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_22" Guid="ad700e2c5-5a6f-4174-a514-ce97aa0e3190a" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_LACETR_FAILED" Guid="ad3812879-c60a-4d75-82dd-cb5dea16733aa" BitOffsetWithinDS="22" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_SHORTED_FAILED" Guid="a7565bc85-afaf-4c20-b4b3-f5469dd066b2a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_25" Guid="a4d04863c-d2b0-4821-b236-a35bb3ed2828a" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_STUCK_OPEN" Guid="ad83f1d5c-d31f-45fd-87f6-5b37dc128a1ba" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_ETRUC_STUCK_CLOSED" Guid="a80aeeeba-3da7-4687-9286-95a4ce39968aa" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_28" Guid="ad7e2be34-1c9f-484f-b95f-f60606ef701ba" BitOffsetWithinDS="27" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_DP_CURRENT_IN_FAILED" Guid="af9c0ce80-e9df-453c-840d-cf18d1842461a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a970f7ddf-7840-444f-a137-80c2c926d18ba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="af710b10c-c12f-4886-bc86-9ac6bb1e6be4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg.L355_EMPC_OTHER_FAILURES" SrcGuid="a93ced276-fb53-4440-a59b-5a1701176753a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_EMPC_1000_A429_Tx_Msg_L355_EMPC_OTHER_FAILURES" DestGuid="a06fc96da-16c7-4185-af1c-a3f868eaf377a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a9268bb09-ba16-43ae-872d-ea8a4dea6a33a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a9c9a3b96-b396-4165-8093-9fa70327babea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L357_EMPC_BIT_Reserve_Message" Guid="a765f523c-dfdb-4b57-88b9-df6e674157d4a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L357_EMPC_BIT_Reserve_Message" Guid="ad4d9fdd2-ac9f-4a7a-a8c5-82c3860d4d83a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af3357e18-ace4-4eeb-b309-70b6d97d9f8ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="357" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a8a6c2f4f-d901-4771-a4d6-a87f65893ce2a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_WOW1_IN_FAILED" Guid="a7890ea2d-c1fa-48b5-b45a-187f886e1d3ba" BitOffsetWithinDS="10" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_WOW2_IN_FAILED" Guid="a0bb373da-0b68-46cd-9b81-8030c8e6e2f2a" BitOffsetWithinDS="11" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_COMM_R1_FAILED" Guid="aab359d8c-a557-4381-b388-1695ccbf2d33a" BitOffsetWithinDS="12" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_COMM_R2_FAILED" Guid="acb83f1ee-7b1d-485b-8d6e-6cd1e78350d8a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_15" Guid="a28946e96-1d43-4a5e-8bb0-c1b35af35151a" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_R1_IN_FAILED" Guid="ad02b47b3-372e-46f3-b6fc-47f379ba17a5a" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_R2_IN_FAILED" Guid="a1f854faa-9faa-4f1f-812a-1d574a8b2b9ba" BitOffsetWithinDS="16" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_18" Guid="a6cbfc7c3-c339-4f49-92ab-344ea3e7f873a" BitOffsetWithinDS="17" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_19" Guid="a386ac749-f8f2-44de-9436-6d970831a89fa" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_20" Guid="ae89b373b-e136-4c1c-8285-d36830bfb15aa" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_21" Guid="aef08f8d9-61db-48f4-a00a-46eeed1620eba" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_22" Guid="a8dec6343-70db-4cc7-bd8e-f1ee8694c283a" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RESERVED_23" Guid="ab422c60a-a38d-4041-ac70-dabf96b3fa34a" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_FAILED_ETRUC_DRV" Guid="a6dfbe268-efa3-4282-9081-e33915904443a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_FAILED_RACETR_DRV" Guid="af01471a6-e755-4be3-b47d-3fbebfa2cc1ca" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_FAILED_LACETR_DRV" Guid="a8d27d130-c871-4a56-8e6a-7771e6a9aa3ea" BitOffsetWithinDS="25" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_L323_INVALID" Guid="a23a70d9b-f800-4d5d-a1b8-30bb04a5f98aa" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="EMPC_L206_INVALID" Guid="a9ee43e18-ad4d-4399-9f49-edf79270e059a" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a09f07e5b-f056-4acd-990d-8a26dc9a2bdba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a40b6cc9e-5ac8-4812-9029-92c43ad21386a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg.L357_EMPC_BIT_Reserve_Message" SrcGuid="af85e03a4-3715-4691-b59a-efee9b38c7bca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_EMPC_1000_A429_Tx_Msg_L357_EMPC_BIT_Reserve_Message" DestGuid="a14048ecc-c071-4caf-9932-d5ab29a5c362a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW02_I_40005_HF_EMPC_EPS.pi429_EMPC_1000_HF_EMPC_EPS" SrcGuid="a8d79ffbf-6098-4a20-a791-4b9ac2246667a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS3_O_A664_EMPC_A429_Tx_Msg_200" Guid="a804e2383-0dab-47e0-8efc-7e9fdc8fab2fa" Direction="Source" MessageSize="72" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="EMPC_A429_Tx_Msg_200_S_3" Guid="a60da43e2-243d-4f5b-bc6a-48f978e25800a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="72" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="200" VLID="33318">
+      <DS Name="FSS1" Guid="ae796745d-6cc1-4048-81c5-03e09688b7eaa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a478ca7ae-0abd-43ad-8113-29d46780fd9ba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a76663a93-fac9-4d5d-b10d-16f882194406a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a83d07fc5-131a-4f9b-bf31-cb563dd5e9bda" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a779f2faa-790c-40c8-a356-767ae9060ee8a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L107_EMPC_AC_BUS_VOLTS_PHA" Guid="a16a6c9b3-b0e7-4e3d-ad6f-5083c87ade4aa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L107_EMPC_AC_BUS_VOLTS_PHA" Guid="a2a713caa-7f97-4f67-80e3-10deb2d7a780a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0c5252d9-b029-4937-89ed-a1f6fd284514a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="107" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a699b0f4f-a1ec-4227-b945-94614292c6f3a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="ab8dd2ca4-d442-4d73-9e77-bd72437c09a7a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_AC_BUS_VOLTS_PHA" Guid="ae98dd1b2-5e02-40df-bd9a-bac7e5a19d4ca" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="210" FuncRngMin="0" LsbRes=".1411" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="V">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_AC_BUS_VOLTS_PHA" DestGuid="af7d77f4d-b7c5-438d-9c7a-6bba695f5b62a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_AC_BUS_VOLTS_PHA" DestGuid="af70dcd50-c1b4-48f5-8a25-355be8a68b61a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_AC_BUS_VOLTS_PHA" DestGuid="a5b06283d-166e-46d5-880e-4abe054d77b5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_AC_BUS_VOLTS_PHA" DestGuid="a82392757-7637-4d9e-bc19-ff2537407a02a" />
+          </DP>
+          <DP Name="SSM" Guid="ab6625cb3-7541-477c-bde1-4b23ce110b7fa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aced05bcb-ab1b-485c-b0e0-02af17b154aaa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L107_EMPC_AC_BUS_VOLTS_PHA" SrcGuid="aeafe1907-e04d-4c06-bf0d-0514da876cc8a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L107_EMPC_AC_BUS_VOLTS_PHA" DestGuid="abe5cc27e-c9ed-494f-a578-174f20ad8960a" />
+        </A429Word>
+      </DS>
+      <DS Name="L145_EMPC_Operational_Status_Word" Guid="af167ed60-e003-4ba1-8560-7619f154ed12a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L145_EMPC_Operational_Status_Word" Guid="a7c8ce793-9645-4174-a237-70db717b26f1a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae43d0364-0898-472d-bf40-dbc550615c96a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="145" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a5def8847-2d2d-477d-8e13-b202967b6ca1a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_11" Guid="a9206b33f-0303-4c21-9530-0f92fe94354ba" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_12" Guid="a005892a9-a541-452d-b3ff-b45f922a216fa" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_ETRU_VOLT_FAILED" Guid="a0b5c8129-083d-43c4-989a-e424e82d3e89a" BitOffsetWithinDS="12" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_ETRU_VOLT_FAILED" DestGuid="a7c4b31e0-5133-42f6-94a3-12a09d82b282a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_ETRU_VOLT_FAILED" DestGuid="a233cdf97-8106-4fc1-9418-3d9f2c278e36a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_ETRU_VOLT_FAILED" DestGuid="a2a5fc19b-f20d-46a5-9e45-f4f6cbc64aa5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_ETRU_VOLT_FAILED" DestGuid="abbfd6d3b-91ff-4687-90d9-6537f0e9f62ca" />
+          </DP>
+          <DP Name="EMPC_ETRU_FAN_FAILED" Guid="add0ff59f-2dfd-4099-bb21-9b3b88f2c5cea" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_ETRU_FAN_FAILED" DestGuid="a65d0c533-cc84-4920-b761-77293eae3446a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_ETRU_FAN_FAILED" DestGuid="aa83cf67c-d355-4178-b4ef-aa2981ffd6b8a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_ETRU_FAN_FAILED" DestGuid="a651805b3-8161-4e5e-81f5-c68bf64af3d7a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_ETRU_FAN_FAILED" DestGuid="a06eade9d-95d6-4db5-9ed9-d2c50a26749ca" />
+          </DP>
+          <DP Name="RESERVED_15" Guid="a591e1b36-f166-4c99-9b9e-3be30ee0aef4a" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_MAIN_ISOLATED" Guid="a148eb77d-8e83-46f4-936e-242a4d17a216a" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_MAIN_ISOLATED" DestGuid="a8a6e5b40-95c8-4ffb-b101-d6f1767b1688a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_MAIN_ISOLATED" DestGuid="a1597b85a-5c2a-484d-b455-3651ddbfdbbca" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_MAIN_ISOLATED" DestGuid="a70e41568-3e05-432c-a863-5b4623dfa7c5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_MAIN_ISOLATED" DestGuid="ab5272217-c153-4b98-919a-f34c325e651aa" />
+          </DP>
+          <DP Name="EMPC_AC_ESS_BUS_TRUE" Guid="a5a282c29-4a4d-4f99-90c8-6a3fd39cbef3a" BitOffsetWithinDS="16" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_AC_ESS_BUS_TRUE" DestGuid="a8dd31a2d-70b1-435a-914b-0eccb242e62ba" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_AC_ESS_BUS_TRUE" DestGuid="a32acff6e-ad54-4ade-8568-81b02376b232a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_AC_ESS_BUS_TRUE" DestGuid="a262cdb89-0ea9-4fa5-b271-931700c32afda" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_AC_ESS_BUS_TRUE" DestGuid="af413ff9e-4d1f-4d23-b9d2-38353763948aa" />
+          </DP>
+          <DP Name="EMPC_LACETR_COMMAND_ON" Guid="a05356b2e-fd22-4a58-857a-2b893d0f628fa" BitOffsetWithinDS="17" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_LACETR_COMMAND_ON" DestGuid="adcb602fe-f83c-4928-baca-d91eba26eccfa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_LACETR_COMMAND_ON" DestGuid="a26705eee-6e85-40c0-ac15-b05d487dfad8a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_LACETR_COMMAND_ON" DestGuid="a6a013f8f-5c6d-426f-9f4e-9bde1195ca04a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_LACETR_COMMAND_ON" DestGuid="ae5d5694f-6408-44de-8ad0-8446c9ca1994a" />
+          </DP>
+          <DP Name="EMPC_LACETR_AUX_CLOSED" Guid="a16768aad-5a34-4ef5-85d4-9eecca7a2f0fa" BitOffsetWithinDS="18" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_LACETR_AUX_CLOSED" DestGuid="a892bff7c-e691-4fcb-8607-e9d780445d99a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_LACETR_AUX_CLOSED" DestGuid="a677c606b-7b2b-44ea-810e-dd6ff4e81d5aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_LACETR_AUX_CLOSED" DestGuid="ab69bce34-8ba9-400f-8005-ccf26c5db6c1a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_LACETR_AUX_CLOSED" DestGuid="a181f492a-187d-4aea-80fd-1b256acd51aca" />
+          </DP>
+          <DP Name="RESERVED_20" Guid="ac248fe1a-9254-4974-bfc0-3e3eb99c95d0a" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_RGLC_AUX_CLOSED" Guid="ab543545a-c2db-4c95-98ee-6ec332fab0dea" BitOffsetWithinDS="20" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RGLC_AUX_CLOSED" DestGuid="a06507171-5f7c-48e9-a344-f52bc5679e40a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RGLC_AUX_CLOSED" DestGuid="ad98083ad-0bfa-43f4-b98b-4e9a8b7c4363a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RGLC_AUX_CLOSED" DestGuid="aa48fc0ca-b5c8-48de-b58b-dc016b234760a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RGLC_AUX_CLOSED" DestGuid="affde4694-ff7d-4093-afcc-ff278a09d4d5a" />
+          </DP>
+          <DP Name="EMPC_RACETR_COMMAND_ON" Guid="a50e60648-94c0-4f5f-aeb3-b0b9a5fcf313a" BitOffsetWithinDS="21" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RACETR_COMMAND_ON" DestGuid="a3bde1bdf-2b34-4640-b5cc-a15393e59558a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RACETR_COMMAND_ON" DestGuid="a20bf70e4-a3e9-4555-a347-243d095f0e1ba" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RACETR_COMMAND_ON" DestGuid="a10462728-d422-446d-b644-2f16694a6b07a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RACETR_COMMAND_ON" DestGuid="ac5db303f-715e-4114-a0a1-5105b239048da" />
+          </DP>
+          <DP Name="EMPC_RACETR_AUX_CLOSED" Guid="a5868524f-b210-4636-8466-7a6e6db17a87a" BitOffsetWithinDS="22" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RACETR_AUX_CLOSED" DestGuid="a56257157-f81c-43bb-8578-9044d5125572a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RACETR_AUX_CLOSED" DestGuid="a15c741ca-812f-4026-9141-d5c4b0700868a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RACETR_AUX_CLOSED" DestGuid="aff487e29-222c-41f3-a091-8c7b1741d9c1a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RACETR_AUX_CLOSED" DestGuid="ad8b3c373-d57c-4a2e-99f1-ea075b595728a" />
+          </DP>
+          <DP Name="EMPC_ETRUC_COMMAND_ON" Guid="a23fd7a7f-d1c1-4550-bdc0-6662f1618054a" BitOffsetWithinDS="23" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_ETRUC_COMMAND_ON" DestGuid="a0c4f26c1-72c3-469e-b5fd-03171d8c6c5aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_ETRUC_COMMAND_ON" DestGuid="a3df81d21-6b8d-4682-8a2d-0c2e7e7cc3e9a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_ETRUC_COMMAND_ON" DestGuid="a973a0658-860b-477c-8a5e-ed11493dac7aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_ETRUC_COMMAND_ON" DestGuid="a790975d3-3014-4372-ad5c-ad473656bc49a" />
+          </DP>
+          <DP Name="EMPC_ETRUC_AUX_CLOSED" Guid="a17aa9e60-6849-42be-b2a9-5c968a86443aa" BitOffsetWithinDS="24" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_ETRUC_AUX_CLOSED" DestGuid="a384ba7f8-3b5d-4a86-8426-abba27a082b3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_ETRUC_AUX_CLOSED" DestGuid="abed63595-c350-47cb-9386-d80b525c6149a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_ETRUC_AUX_CLOSED" DestGuid="a122a277a-4e8c-4292-b9bf-30da8fb9318aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_ETRUC_AUX_CLOSED" DestGuid="aad55f744-724b-42b6-bf84-6e204a5c6082a" />
+          </DP>
+          <DP Name="RESERVED_26" Guid="aadacf6df-5b06-45d2-9d12-3126a58394f4a" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_27" Guid="a4ca0e012-df14-484d-b7a8-d7ffb8eb6957a" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_ETC4_COMMAND_ON" Guid="a90b2a40e-f348-4571-ae47-5811d51fd379a" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_29" Guid="a3599520b-c7eb-4b68-a5a7-c8b8abd160b5a" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="ada36c0b8-30f0-4a90-840c-1a6e4bd78153a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a54e5b410-012b-4222-89ac-c4b7317e6538a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L145_EMPC_Operational_Status_Word" SrcGuid="a770dfd7c-e508-4097-99be-6baf2aaf224aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L145_EMPC_Operational_Sta_Word" DestGuid="a779c2a9e-532f-43a0-9201-122fbbc63fbca" />
+        </A429Word>
+      </DS>
+      <DS Name="L146_EMPC_System_Config_Status_Word" Guid="a4c869bc7-2187-414f-97c9-ab9a9a267156a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L146_EMPC_System_Config_Status_Word" Guid="a21a49208-813e-4d00-ae7e-87c8795b23a2a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a32bfa98b-b2db-415c-aa8a-ff693551d39fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="146" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a6ad9d5fd-9055-4d4a-9342-d803a7ebeb42a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_11" Guid="a3a4ece67-71f7-4c8f-b3bc-53759622c792a" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_AGC_AUX_CLOSED" Guid="aa66c0165-53d8-42a1-bd55-d796d7aae0aca" BitOffsetWithinDS="11" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_AGC_AUX_CLOSED" DestGuid="a22e0c575-202b-4912-9ce3-811aa68b4a94a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_AGC_AUX_CLOSED" DestGuid="a9a975392-37d2-4cc8-be84-40626b1c0593a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_AGC_AUX_CLOSED" DestGuid="a79c7247e-de2c-485c-81d2-bb96ca6dd06ba" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_AGC_AUX_CLOSED" DestGuid="a551179e5-34d0-41b5-abb0-4cb693ad5e51a" />
+          </DP>
+          <DP Name="RESERVED_13" Guid="a76ea0756-68fc-4089-911f-1b20d9494934a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_LGC_AUX_CLOSED" Guid="a610ac3af-da74-4bca-b17b-1f026bc9d2b6a" BitOffsetWithinDS="13" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_LGC_AUX_CLOSED" DestGuid="a50afeaef-237b-4f78-ae8b-bb8f4c6c3ff8a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_LGC_AUX_CLOSED" DestGuid="a6a451717-4089-4149-8641-8df2654ad79aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_LGC_AUX_CLOSED" DestGuid="ab791f5d4-22e7-49a8-bbab-120b69a99f7fa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_LGC_AUX_CLOSED" DestGuid="a203b1d13-a64f-4295-b065-3437cebe744ba" />
+          </DP>
+          <DP Name="EMPC_RGC_AUX_CLOSED" Guid="ad88e6f03-a965-4684-9939-1207b7545836a" BitOffsetWithinDS="14" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RGC_AUX_CLOSED" DestGuid="a1a991bcb-beef-4a1e-ab0f-1b2a88da75e5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RGC_AUX_CLOSED" DestGuid="aafeec781-8822-4f54-9edf-8f1fac1ba393a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RGC_AUX_CLOSED" DestGuid="afc79ca3c-9b25-4e12-bf98-c47629e594ffa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RGC_AUX_CLOSED" DestGuid="a4b82dfc4-b2c8-48aa-84b4-99f531d8c42aa" />
+          </DP>
+          <DP Name="EMPC_LTRUC_AUX_CLOSED" Guid="a9d9e43aa-1a76-4188-9f60-5f912526070ba" BitOffsetWithinDS="15" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_LTRUC_AUX_CLOSED" DestGuid="a7018b83d-a6f0-41f1-aa85-7523eb1af6d3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_LTRUC_AUX_CLOSED" DestGuid="a81188864-459e-44e2-ae52-e8f99e4f06a1a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_LTRUC_AUX_CLOSED" DestGuid="af3352dca-b919-4c89-b791-fd595e9b1e08a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_LTRUC_AUX_CLOSED" DestGuid="a981b1f2a-90d4-4830-943d-f0b8ff65b64aa" />
+          </DP>
+          <DP Name="EMPC_DCESS_TRANSFER_TRUE" Guid="af35c52b0-f06c-4f69-ac66-a41ccd959308a" BitOffsetWithinDS="16" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DCESS_TRANSFER_TRUE" DestGuid="a89186abd-825e-4b2d-bde8-cb75d1e03ad3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DCESS_TRANSFER_TRUE" DestGuid="a6d794a10-a793-4e0b-a84d-e214ded2f465a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DCESS_TRANSFER_TRUE" DestGuid="ad6ddf870-8e02-4682-9ae4-38e5e5ccb259a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DCESS_TRANSFER_TRUE" DestGuid="a1c1816a9-978a-4be1-b7e8-7d848bd6e198a" />
+          </DP>
+          <DP Name="EMPC_FAILSAFE" Guid="abc0d0b1c-cf08-4953-b030-969340fbd4f0a" BitOffsetWithinDS="17" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_FAILSAFE" DestGuid="a9da82746-4a8b-4e00-8366-1a9a9720cbe3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_FAILSAFE" DestGuid="a3b95e494-2d69-4491-a072-cb84413451efa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_FAILSAFE" DestGuid="a17d6ba0d-96fa-45af-a732-f66ac1609811a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_FAILSAFE" DestGuid="a81d200f0-7f90-4086-a16d-77bca569631fa" />
+          </DP>
+          <DP Name="RESERVED_19" Guid="a19940034-9ce6-41b7-80e3-24622945e836a" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_EMER_LATCH_ON" Guid="a38610d33-aaa2-4999-88be-a57882ca78c6a" BitOffsetWithinDS="19" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_EMER_LATCH_ON" DestGuid="a26def0c9-640b-4110-960d-a76ec5f33081a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_EMER_LATCH_ON" DestGuid="af51bc593-71c5-4f54-96a6-a6791e5b6775a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_EMER_LATCH_ON" DestGuid="af0822527-4760-4e46-ac3f-ed44c78fa724a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_EMER_LATCH_ON" DestGuid="a4d493edb-af1e-4bc6-963a-5942d9beeed4a" />
+          </DP>
+          <DP Name="RESERVED_21" Guid="a15d7c23b-f00c-48f8-b645-2277f9ca5dc0a" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_22" Guid="a3d2ff3b8-d663-44d4-9320-c327314d3519a" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_23" Guid="aafa71575-c485-446c-9425-726ac297281aa" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_24" Guid="ac83f0c70-f0b4-4db1-819b-ea328cdbdbada" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_25" Guid="a93a07551-f3b6-41ce-9a67-baf98a9b19e3a" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="RESERVED_26" Guid="ab2b9922a-3ca4-4c01-ac3e-899344ee84dea" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_ETRU_TEMP_FAILED" Guid="a66a8fc2d-edbf-420a-8346-a271e159c7c2a" BitOffsetWithinDS="26" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_WOW1_GROUND" Guid="a108bb6a4-4806-4720-9b50-25c3c070a879a" BitOffsetWithinDS="27" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_WOW1_GROUND" DestGuid="a067496d3-66ee-463b-98f8-c365a8e4d4e6a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_WOW1_GROUND" DestGuid="a93cbbf74-d93c-4b1b-89ab-7ce06f8c432ea" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_WOW1_GROUND" DestGuid="aadf7e238-a3f2-4b59-90b0-0f9695fe9653a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_WOW1_GROUND" DestGuid="af15f552a-7c16-4c20-981a-3884d96dbe1da" />
+          </DP>
+          <DP Name="EMPC_WOW2_GROUND" Guid="a70db2aee-af8d-4d34-ad65-8914d38992c1a" BitOffsetWithinDS="28" DataFormatType="DIS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_WOW2_GROUND" DestGuid="a3e5e7994-ea81-4f7d-ada8-74356493931ea" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_WOW2_GROUND" DestGuid="a3953df4d-d2cd-4654-b77b-2f0c1150c37da" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_WOW2_GROUND" DestGuid="ad05c836b-6bac-4aca-b982-0c146e32f8c2a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_WOW2_GROUND" DestGuid="a225bc338-b529-44fc-a79d-4e63ddb9571ca" />
+          </DP>
+          <DP Name="SSM" Guid="a8303aab4-f4c7-48d5-bb95-d10109b85095a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a15cb97d6-e7a2-4a0a-8d7a-0b21df3146aba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L146_EMPC_System_Config_Status_Word" SrcGuid="a78441bcb-6942-41b4-8fa0-dc08a36c9b9aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L146_EMPC_System_Config_Sta_Word" DestGuid="ac7326870-d678-4f17-8ef9-0fc1da206ff3a" />
+        </A429Word>
+      </DS>
+      <DS Name="L110_EMPC_DC_ESS_TRANSFER_V" Guid="a6bf4919c-5c72-48d0-8bba-6ac68c614598a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L110_EMPC_DC_ESS_TRANSFER_V" Guid="a64349fe9-6964-43f7-b42e-7e56d39f5f5ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a72313898-07ff-400f-9107-fa0e329a260ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="110" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a4dcab454-922a-4cf6-a1b6-5cb65a15db5fa" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="ace62e399-ed36-4fd5-822a-ad5f665b797ea" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_DC_ESS_TRANSFER_V" Guid="a5c35b076-a908-49b6-b085-135552b478eba" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="63" FuncRngMin="0" LsbRes=".0325" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="VDC">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DC_ESS_TRANSFER_V" DestGuid="a5fe784a4-a346-4844-8159-6443250f13f1a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DC_ESS_TRANSFER_V" DestGuid="a2701fdc3-94e4-4798-a7ae-b67f751824b4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DC_ESS_TRANSFER_V" DestGuid="a51f78653-d1c8-4757-80dd-0b3fb396806aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DC_ESS_TRANSFER_V" DestGuid="aeb19b034-243b-44e5-9543-6f62efd1854da" />
+          </DP>
+          <DP Name="SSM" Guid="a2b4940c5-c7bd-4e00-85cb-f2a916721fd1a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a0d89ac74-1eda-4743-8bf0-61df365daf67a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L110_EMPC_DC_ESS_TRANSFER_V" SrcGuid="acc931853-bd0e-4331-b849-521d64eab3f2a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L110_EMPC_DC_ESS_TRANSFER_V" DestGuid="ae9949099-88ef-4438-a1e7-5549db3e9b66a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="aad3a84c7-0e6d-4e9d-a243-9d0d57cefbbaa" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="abc979998-ec7a-47df-9b13-855d1d301c1ba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="ab6b92105-5c2a-45fe-ac0a-3385145ccbd3a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a18082eda-23e1-4af9-8bd3-f905cb272ef4a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="ae40049a7-30ab-41d1-9634-a531976a396aa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L111_EMPC_DC_ETRU_V" Guid="a631cd315-10fa-4352-a324-0744728a3a9ba" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L111_EMPC_DC_ETRU_V" Guid="a16ce9d29-cc78-4ec2-9acb-f72c6fba475ca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a810c57fe-5a9d-4e4a-bc02-7e58a7b4ab1da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="111" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="afe0eaab0-8791-4cc0-bc2b-d1486eae95dfa" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a67f3c099-4834-49be-84a4-a56a7602bbc2a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_DC_ETRU_V" Guid="ab9a1d0c1-6830-449f-8e1c-80a5822cb30da" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="46" FuncRngMin="0" LsbRes=".0244" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="VDC">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DC_ETRU_V" DestGuid="a8174dceb-eb4e-4504-b839-c0f3e159d74ea" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DC_ETRU_V" DestGuid="a4e87ccf7-7cbc-4fd3-b137-ed062178fa16a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DC_ETRU_V" DestGuid="abea7b35b-9c8b-4073-8148-8a72ff0cf8d3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DC_ETRU_V" DestGuid="af27063fd-eba6-4d8c-aa99-af7f42c9106ea" />
+          </DP>
+          <DP Name="SSM" Guid="a7dada683-4b92-4d93-afd4-7693ccc20c4da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a8245a23a-e7ef-4048-ab67-c0625da4bfc9a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L111_EMPC_DC_ETRU_V" SrcGuid="a1881b18e-b3d7-40f8-b309-63faf87b334ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L111_EMPC_DC_ETRU_V" DestGuid="a308af661-3715-43c1-86ec-be8fd2afc177a" />
+        </A429Word>
+      </DS>
+      <DS Name="L113_EMPC_DP_PHA_SNS" Guid="a95cf5a4b-24bc-42d2-be57-7e944dc917e0a" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L113_EMPC_DP_PHA_SNS" Guid="a66ab3613-e16a-49e8-8f19-ca38ed886d52a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aeae4d262-19b0-4d0b-9879-e0e3cdb01912a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="113" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="adcb8659b-55de-4e7d-b83c-8ecc11df653ea" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a156746db-f969-4e02-88e9-84f9907d4fd1a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_DP_PHA_SNS" Guid="af87e3485-f3e3-416c-a7a8-384aaa9c09e8a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="720" FuncRngMin="0" LsbRes=".3749" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="amperes">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DP_PHA_SNS" DestGuid="a28bde069-c61d-4306-9a05-adbe296af2cfa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DP_PHA_SNS" DestGuid="a1e79762e-77c5-4275-81c4-25282ae0ad66a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DP_PHA_SNS" DestGuid="a72555552-cb5b-4859-a1c1-45efeaf3a2d4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DP_PHA_SNS" DestGuid="ac342c1f9-0b8e-4adf-b41b-7e71fe275090a" />
+          </DP>
+          <DP Name="SSM" Guid="ab481b584-f6a9-43e5-99d7-7f310d9d9500a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aae544177-ee59-4dfc-b034-a1aae5404079a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L113_EMPC_DP_PHA_SNS" SrcGuid="a1ff42d3c-ef72-4b92-bc57-fe4b8fa60588a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L113_EMPC_DP_PHA_SNS" DestGuid="a1b2e0920-6427-4348-b1f5-c04d05a35cd4a" />
+        </A429Word>
+      </DS>
+      <DS Name="L114_EMPC_DP_PHB_SNS" Guid="a45bce8fe-81a3-4b7d-a50c-b2894e4cd48aa" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L114_EMPC_DP_PHB_SNS" Guid="a145ff67e-1234-4128-ab95-3f4d214d8824a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aee5883c5-505a-49a9-b5b4-7091bbbdde24a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="114" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ac2648d99-1a0c-4bdd-8d1e-1cde46534b44a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a46ef9370-264e-4fee-bdaa-2933d987ea81a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_DP_PHB_SNS" Guid="a2e2bd2c4-ca5c-4c73-b8a5-0b24bce40bc0a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="720" FuncRngMin="0" LsbRes=".3749" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="amperes">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DP_PHB_SNS" DestGuid="a0f141a5c-bb11-4e0f-953e-95d3ca3295a6a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DP_PHB_SNS" DestGuid="a5e35d809-efdb-40ad-a77c-6feb205000c7a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DP_PHB_SNS" DestGuid="abd33a878-4cdf-4d9d-b21a-a1028f12f894a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DP_PHB_SNS" DestGuid="aa564e526-c84a-4fd9-98dc-266d8e226fc0a" />
+          </DP>
+          <DP Name="SSM" Guid="ae525d8d5-9930-4faa-89e9-24ca5cb6a480a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a9656968e-75a2-432a-8553-1ae092a594daa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L114_EMPC_DP_PHB_SNS" SrcGuid="a78b1eaa0-68fd-40b8-80a1-d5e4d3f89bf3a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L114_EMPC_DP_PHB_SNS" DestGuid="a569b13a6-b6e4-48fa-92bc-a6c03949a9d4a" />
+        </A429Word>
+      </DS>
+      <DS Name="L115_EMPC_DP_PHC_SNS" Guid="a2b04b2f7-cdfe-431b-b001-d649b2676efda" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L115_EMPC_DP_PHC_SNS" Guid="a83ecf3a5-67b8-4a43-af35-b7b1e3b6d2dfa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6c66f724-200a-48c9-9178-3fb540e488f5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="115" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a1184194a-2add-46ac-9e67-17167764a228a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a1e38e5cb-1e61-499a-9cc8-90d9ae716c8fa" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_DP_PHC_SNS" Guid="aa2d2fb25-834e-4327-81c9-e15b2f5baaa0a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="720" FuncRngMin="0" LsbRes=".3749" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="amperes">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_DP_PHC_SNS" DestGuid="a21d25879-68eb-4b66-a2fd-f350cec25a13a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_DP_PHC_SNS" DestGuid="af6de161f-88ab-4e59-8f0e-06167abe9fcda" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_DP_PHC_SNS" DestGuid="ad35c8bae-7464-41c6-8514-646e385ea9b4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_DP_PHC_SNS" DestGuid="afb8d2d03-249a-4806-ad9f-ed38ac423f4ea" />
+          </DP>
+          <DP Name="SSM" Guid="a4153c62c-2312-4eed-842a-0c78c195e91da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a7e66b623-10f2-4ed0-b320-2fe792d23c5ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L115_EMPC_DP_PHC_SNS" SrcGuid="adccc018f-03a2-4093-8f8d-9342cdca7240a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L115_EMPC_DP_PHC_SNS" DestGuid="a4c30268b-7046-420a-b180-bd03036ca68fa" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS3" Guid="adc6cc7a1-5427-43a3-9fd1-8fa6692734d6a" ByteOffsetFSF="0" ByteOffsetWithinMsg="44" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="aba1ba60b-6c06-419c-ac13-10dc428b77d1a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB10" Guid="a39432af7-0331-4f25-a2c5-3810beb42e03a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB11" Guid="a4ddeb82c-e2bb-471c-b785-5a3a201fbe96a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB12" Guid="a24897cc5-ffb7-4cbd-a78c-cb33f94ba85da" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L112_EMPC_ETRU_ISENSE" Guid="ae2123ffb-14ec-47a0-96a4-4bf9196fce4fa" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L112_EMPC_ETRU_ISENSE" Guid="acfa06e00-f507-4c55-8c9e-9fc23ea3261ca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac8b1d1fd-54e3-4f0a-a915-c319f92c0e74a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="112" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a1b1bff4b-a067-4294-a6a9-1e8b94553486a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a5fc7488f-b19c-4e62-abe4-24e3caa73caca" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_ETRU_ISENSE" Guid="a8f371fdc-ae72-45cc-b373-6ef41fa0ed05a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="1870" FuncRngMin="0" LsbRes="1.9531" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="amperes">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_ETRU_ISENSE" DestGuid="a32951d7e-0629-4d8f-ad55-bb796b43d64ba" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_ETRU_ISENSE" DestGuid="a7fadd013-1f3d-4399-9eae-8ccf327b2607a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_ETRU_ISENSE" DestGuid="a70e7e586-3ea2-4700-8f9b-3d4ba38f02d3a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_ETRU_ISENSE" DestGuid="ac070e8a8-1e34-4f32-a199-046f09920e33a" />
+          </DP>
+          <DP Name="SSM" Guid="a5a80fd25-f15b-427e-aea2-4951f1587dd4a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a316becfc-179b-4bfa-8f63-9fe5d0ec6cdda" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L112_EMPC_ETRU_ISENSE" SrcGuid="adc6599d9-a0e5-4784-9725-62045048ef2aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L112_EMPC_ETRU_ISENSE" DestGuid="a63fbf2c6-dfe3-436b-94f4-ee04d89f6fdda" />
+        </A429Word>
+      </DS>
+      <DS Name="L100_EMPC_LEFT_AC_VOLTS_PHA" Guid="aeedebff2-6513-404d-a310-242d575eff94a" ByteOffsetFSF="45" ByteOffsetWithinMsg="52" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L100_EMPC_LEFT_AC_VOLTS_PHA" Guid="ab6e3862c-bb31-4dd9-9f4f-fed9600ff977a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a2b0095c3-d6e1-4d16-9f1c-f88469a2a35ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="100" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aad683a5a-f1f0-44fe-ac86-9ee710d45a9da" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a4be37750-a6c1-4f80-8b6c-943f612fd9d2a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_LEFT_AC_VOLTS_PHA" Guid="a38fd3def-72e6-44b2-bcdf-f4348492c426a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="210" FuncRngMin="0" LsbRes=".1411" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="V">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_LEFT_AC_VOLTS_PHA" DestGuid="a43d26d9c-50a6-46ae-9c7b-e56b3e902958a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_LEFT_AC_VOLTS_PHA" DestGuid="a84e53d72-5450-415b-9c6e-2fce5165e731a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_LEFT_AC_VOLTS_PHA" DestGuid="ae0b771ca-a801-4bf7-9b42-697d3ad7d2d0a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_LEFT_AC_VOLTS_PHA" DestGuid="a49c88a63-ad02-48a2-b183-037efd6db72ba" />
+          </DP>
+          <DP Name="SSM" Guid="a4bcfcc6c-6b0b-41b9-96e8-3406ea916deba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a04e94f1d-d234-48ed-b647-62aa60b6cae6a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L100_EMPC_LEFT_AC_VOLTS_PHA" SrcGuid="a93ee22fe-3b73-4d26-998c-d04421f198aea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L100_EMPC_LEFT_AC_VOLTS_PHA" DestGuid="a88e8b24a-32aa-4425-a7cf-da2a4fbcbc2ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L101_EMPC_RIGHT_AC_VOLTS_PHA" Guid="a5537b81d-429f-4d90-a611-82f6fa2105baa" ByteOffsetFSF="46" ByteOffsetWithinMsg="56" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L101_EMPC_RIGHT_AC_VOLTS_PHA" Guid="ae0c572d6-d819-4ef8-99b3-bd4deeff1d0ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a92c731d3-c79e-45be-862e-f3bfbcd44694a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="101" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aa2ee06d3-48eb-43ae-861d-f3094e4b17eba" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="a51cbe01c-1bf4-4dc3-b28d-731021dbb19ca" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_RIGHT_AC_VOLTS_PHA" Guid="a552e160c-3eeb-447b-9d9d-d0b521620294a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="210" FuncRngMin="0" LsbRes=".1411" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="V">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RIGHT_AC_VOLTS_PHA" DestGuid="a3e9cc820-0281-4ca8-a2da-69af2e85a31aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RIGHT_AC_VOLTS_PHA" DestGuid="a659a3533-664a-4b0e-9e60-c9b2ae922d94a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RIGHT_AC_VOLTS_PHA" DestGuid="a42019cf2-d378-4e47-9a48-e02531cc03cca" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RIGHT_AC_VOLTS_PHA" DestGuid="a78c81dbd-90d3-4970-8ee0-4a34ef26f904a" />
+          </DP>
+          <DP Name="SSM" Guid="a29c55aaf-b59b-4cd2-9ccf-aa8f616cc521a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a412f46b8-ff1d-4752-a0dc-3ffcf4501e6ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L101_EMPC_RIGHT_AC_VOLTS_PHA" SrcGuid="a1953265b-383c-42fd-be16-5db6746edab1a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L101_EMPC_RIGHT_AC_VOLTS_PHA" DestGuid="adbccc053-e738-4ff5-8472-0084f555d515a" />
+        </A429Word>
+      </DS>
+      <DS Name="L102_EMPC_RIGHT_AC_VOLTS_PHB" Guid="a761252ad-1449-4476-8acf-12c6d8f0bc5ba" ByteOffsetFSF="47" ByteOffsetWithinMsg="60" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L102_EMPC_RIGHT_AC_VOLTS_PHB" Guid="aa1e7f7bb-abdf-4161-9347-baca0796d70aa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aed78943b-b42a-488d-8961-52178cf75040a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="102" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a647b19a6-d318-49de-925c-0f17b29e0df6a" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="aa2880823-19ec-4b13-9e8c-ef4bd26a8cc4a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_RIGHT_AC_VOLTS_PHB" Guid="acadd3a70-0d45-47ea-a859-99e9834d04c4a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="210" FuncRngMin="0" LsbRes=".1411" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="V">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RIGHT_AC_VOLTS_PHB" DestGuid="a6ff29277-92f3-4a9f-b35f-b04671eca7f1a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RIGHT_AC_VOLTS_PHB" DestGuid="a0ec44999-8b30-4ffe-8e74-ce146834721aa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RIGHT_AC_VOLTS_PHB" DestGuid="af63c98a0-664c-4c48-bfd3-bfe600e272d5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RIGHT_AC_VOLTS_PHB" DestGuid="a335be04a-9814-40ca-b842-d114109af07fa" />
+          </DP>
+          <DP Name="SSM" Guid="a8aeef68f-af1a-4a72-b6f4-20df524d2b85a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a943aaf3a-5edf-4fbb-8b21-f0540b70501da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L102_EMPC_RIGHT_AC_VOLTS_PHB" SrcGuid="a4405c989-9736-4898-a4e8-8c2db11ec03aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L102_EMPC_RIGHT_AC_VOLTS_PHB" DestGuid="a23d08b93-7b3f-405b-b122-edf84f402fe0a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS4" Guid="a25000b01-1628-4e99-86d7-2d92d254c1c3a" ByteOffsetFSF="0" ByteOffsetWithinMsg="64" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB13" Guid="a74236fe0-c623-4e5f-884b-33ef41cd865aa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L103_EMPC_RIGHT_AC_VOLTS_PHC" Guid="a84913e5f-5111-4434-9d26-55fca4c284b7a" ByteOffsetFSF="64" ByteOffsetWithinMsg="68" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L103_EMPC_RIGHT_AC_VOLTS_PHC" Guid="a79219e16-05d6-4ef1-b4f9-6b9c16659911a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad9175ff6-8bf1-438e-b595-48386c08c062a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="103" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aeaba24cc-dab2-4f9e-9802-081a5d6f904fa" BitOffsetWithinDS="8" CodedSet="1=EMPC" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="pad" Guid="aa32e8d4c-c1a4-40b1-ae6a-7f365b573928a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EMPC_RIGHT_AC_VOLTS_PHC" Guid="a94d5d228-fbbe-4629-880a-77c98dad0564a" BitOffsetWithinDS="17" DataFormatType="BNR" FuncRngMax="210" FuncRngMin="0" LsbRes=".1411" Multiplier="1" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="V">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_EMPC_RIGHT_AC_VOLTS_PHC" DestGuid="a4b08871b-bf06-46be-8ae3-cf913e2dd833a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_EMPC_RIGHT_AC_VOLTS_PHC" DestGuid="a88b553f7-6414-4305-9fe0-434c4960e75da" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_EMPC_RIGHT_AC_VOLTS_PHC" DestGuid="abcfeb0fb-7a73-4bd3-9ad9-3b0613160909a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_EMPC_RIGHT_AC_VOLTS_PHC" DestGuid="acf24fd16-2268-4f14-afda-3a1dc2f89a12a" />
+          </DP>
+          <DP Name="SSM" Guid="a2e233d11-bd99-4d84-98b1-041b5336b1b8a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a73b73b9c-2b04-4f5f-afc8-406892d8ce3ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_EMPC_EPS.EMPC_A429_Tx_Msg_200.L103_EMPC_RIGHT_AC_VOLTS_PHC" SrcGuid="a9543c302-17b0-43d6-bcf7-5b35e4edbb87a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_Tx_Msg_200_L103_EMPC_RIGHT_AC_VOLTS_PHC" DestGuid="afb26d9df-340a-4c01-b620-0ea3d74922a7a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW02_I_40005_HF_EMPC_EPS.pi429_EMPC_200_HF_EMPC_EPS" SrcGuid="ac9dc7a93-3e9e-4d47-ad2a-0ff13ad295d0a" />
+  </HFSamplingPort>
+</RemoteGateway>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW04_Analog_In_ATA21AMS" Guid="af2c3f923-a70c-4859-965c-b7147741ba51a" XsdVersion="7.9" Hardware="RDIU_04">
+  <AnalogPort Name="piDISC_Fault_HF_FWDGHEAT" Guid="af58827e1-11e8-485a-8cb9-6ec4b277dbf0a" Direction="Destination" Physical="RDIU_04.40022_A01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_FWDGHEAT.poDISC_Fault" SrcGuid="a9879009a-327e-4a70-b2bd-6a8307db6e7fa" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA21AMS" Guid="a9776404d-4f78-4e4d-807f-01f3a4f8f897a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA21AMS_Msg" Guid="a4a9a103d-8980-455a-98d0-310581275c63a" EdeEnable="True" MessageOverhead="32" MessagePad="31" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33317">
+      <DS Name="FSS1" Guid="ae98c0505-d1a9-43ed-a232-ad927032c372a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aece09603-e936-43c7-b1cb-0eee1cb28212a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_Fault_HF_FWDGHEAT" Guid="a8ac812a2-f809-46ed-a1fb-30d6bc9744e6a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="af3e12227-a342-4ef0-82e8-a45338299404a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_FWDGHEAT.DISC_Fault.Status" SrcGuid="a79732989-158e-42a6-ac91-f43d1b9f8aaba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_FWDGHEAT_FAULT" DestGuid="a75d05737-435e-4195-922c-23e91d0dd3e2a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW04_Analog_In_ATA21AMS.piDISC_Fault_HF_FWDGHEAT" SrcGuid="af58827e1-11e8-485a-8cb9-6ec4b277dbf0a" />
+  </HFSamplingPort>
+</RemoteGateway>

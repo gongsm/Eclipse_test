@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW03_I_40005_HF_WHCC" Guid="a10f82501-3853-43f8-98e8-5d87abc8ac3ba" XsdVersion="7.9" Hardware="RDIU_03">
+  <A429Port Name="pi429_ARINC0_Tx1_HF_WHCC" Guid="a56d5aa32-ce0d-4be1-b78e-d5b1f722adbca" ActivityTimeout="800" Direction="Destination" Physical="RDIU_03.40005_A02" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_WHCC.po429_ARINC0_Tx1" SrcGuid="a329207a2-d925-4589-ae7c-ed53b444cb9aa" />
+  </A429Port>
+  <A429Port Name="pi429_ARINC0_Tx3_HF_WHCC" Guid="a2200d4f3-80a1-4bb1-9849-62f03f9da607a" ActivityTimeout="400" Direction="Destination" Physical="RDIU_03.40005_A02" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_WHCC.po429_ARINC0_Tx3" SrcGuid="ac699f97f-217c-44bb-b059-eb300634dc05a" />
+  </A429Port>
+  <HFQueuingPort Name="HFQ2_O_A664_po429_ARINC0_Tx3_Msg" Guid="a627073fe-cdbf-4b71-a653-fe4b93f769d3a" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_ARINC0_Tx3_Msg_Q_2" Guid="aacb645f1-0bfb-44c5-9e7f-046d4608f478a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="A429 Block" SubVLID="1" TransmissionIntervalMinimum="100" VLID="33350">
+      <DS Name="FSS1" Guid="a96a6964a-0b8b-4e10-aae0-c418234db7c6a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a14d6a2d6-5f60-465b-bbac-9ae57ec199daa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L357_WHC_configuration_Data" Guid="a898100e5-76a0-43d9-8e3f-d10eb3ebb866a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L357_WHC_configuration_Data" Guid="afc4373f9-ad87-401d-8f99-44ad570eaf9ea" BitOffsetWithinDS="0">
+          <DP Name="Label" Guid="a778ae121-76de-4ab7-9740-c2f72811c66da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="357" ParameterSize="8" PublishedLatency="130" TransmissionIntervalMinimum="100" />
+          <DP Name="BLOCK" Guid="a031a042d-117e-4dfa-9050-d7283a0ecccea" BitOffsetWithinDS="8" DataFormatType="BLK" ParameterSize="23" PublishedLatency="130" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="ac06bdf45-93c7-4188-be43-a7f015bd3c0fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_WHCC.po429_ARINC0_Tx3_Msg.L357_WHC_configuration_Data" SrcGuid="a5a96647c-ecbb-48f1-b8b3-29de205a8b65a" />
+          <Gw_Pub_Ref DestName="HF_AHMUInstance.WHC_WHCC_CONFIG_RPT" DestGuid="abdc4badc-1658-4994-abc4-cdd14d74399ba" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_WHCC.pi429_ARINC0_Tx3_HF_WHCC" SrcGuid="a2200d4f3-80a1-4bb1-9849-62f03f9da607a" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS1_O_A664_po429_ARINC0_Tx1_Msg" Guid="ad7224c1d-a8f0-4801-9a8c-9a3f55615945a" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="160">
+    <A664Message Name="po429_ARINC0_Tx1_Msg_S_1" Guid="a75f3ef23-8d4c-44fc-8434-e3bc44f4aed6a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="200" VLID="33350">
+      <DS Name="FSS1" Guid="ae9f8ebca-8f01-4467-97dd-c705d9ac9f0aa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a466bf6bc-7836-4110-9cd5-959e9c1f7652a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a52266333-441a-4ed3-9c0c-941f58a27894a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L270_WHC_Status_Word_Load_1" Guid="afae85022-ad13-41f9-8028-ce9a06d95690a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L270_WHC_Status_Word_Load_1" Guid="ae334e1c8-2868-4ba7-8018-6f7c81f60952a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a61b3470c-b031-4e77-a408-30aabca32141a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="270" ParameterSize="8" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a3ab5043a-9963-4b0e-9a21-8f9f9deeeccda" BitOffsetWithinDS="8" CodedSet="0=WHC A Left Windshield;1=Invalid;2=WHC C Left Side Window;3=WHC B Right Windshield" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="Channel_1_System_Failed" Guid="a6d2c4bff-12dc-4c06-ba1f-c30d6af46b26a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Good">
+            <Gw_Pub_Ref DestName="FDAS_L1.WHCC_Channel_1_System_Failed" DestGuid="a853a6aea-acc9-46e0-a5b8-67c66fbf2653a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.WHCC_Channel_1_System_Failed" DestGuid="ad543f43f-d7e4-4af4-9988-1d035bf07fc2a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.WHCC_Channel_1_System_Failed" DestGuid="ae511f2e5-3e29-42ed-ba65-d10acb1be245a" />
+          </DP>
+          <DP Name="Echo_Current_CFG0_Input_Pin" Guid="a00091146-5ad8-4938-9a17-323c7ab92c2ba" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG0" />
+          <DP Name="Echo_Current_CFG1_Input_Pin" Guid="a6da27404-03ba-427c-92b0-b2bd6315d5f3a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG1" />
+          <DP Name="Echo_Current_Parity_Input_Pin" Guid="a443541bf-92ef-48b0-8543-bbc09f5e2baba" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG_PARITY" />
+          <DP Name="Inhibit" Guid="a641a3724-5bcc-4a83-a744-7bb208d45d4aa" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Inhibit" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=No Inhibit" />
+          <DP Name="Heating_Enabled" Guid="a2a7530f6-6e78-40e3-9bea-e5ad866d6558a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Enabled" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Not Enabled">
+            <Gw_Pub_Ref DestName="FDAS_L1.WHCC_1_Heating_Enabled" DestGuid="af5746295-3603-4124-b422-3d261678fbb9a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.WHCC_1_Heating_Enabled" DestGuid="a281735f2-a20c-4534-96fd-98bf3341639ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.WHCC_1_Heating_Enabled" DestGuid="a601fdd68-4c62-4ffc-ad4a-862a4a0fc794a" />
+          </DP>
+          <DP Name="ARINC_Not_Present" Guid="a1a60bd90-0371-47bb-aaef-2a2b132b2813a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="Uncontrolled_Heating" Guid="a1d785b42-c180-48ad-8717-d7e4d76f497ea" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Uncontrolled" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Controlled" />
+          <DP Name="Overheat" Guid="a3b87b2b2-efc3-4f30-b2ff-35603ed55da6a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Overheat true" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Not overheat" />
+          <DP Name="Active_heater_test_in_progress" Guid="adbace54e-5fc6-47ff-a79d-6a1b2c761522a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=In progress" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=False" />
+          <DP Name="IBIT" Guid="a72af76af-f09f-4cb3-9664-bbd35c08c4c7a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=IBIT Active" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=IBIT Not Active" />
+          <DP Name="SSM" Guid="a9ff5db5d-6c8e-4561-938c-5704f9e61f07a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a11ee9912-6188-4139-9c58-a00dfb002792a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_WHCC.po429_ARINC0_Tx1_Msg.L270_WHC_Status_Word_Load_1" SrcGuid="abe9f7434-46c3-46c2-9367-a28595d9bb87a" />
+        </A429Word>
+      </DS>
+      <DS Name="L271_WHC_Status_Word_Load_2" Guid="aa150e4a4-c40c-4eac-a1bb-1b0f738c2944a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L271_WHC_Status_Word_Load_2" Guid="aa73391c4-2764-4cbd-a76f-b59493ca452ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a031ab948-3a01-4390-a780-7df333c35659a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a948a94b8-f3f1-4045-9e05-f94c99b0cc03a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=Invalid;2=WHC C Right Side Window;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="Channel_2_System_Failed" Guid="add14e4cc-a8a0-43e1-943a-840bf311896ba" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Good">
+            <Gw_Pub_Ref DestName="FDAS_L1.WHCC_Channel_2_System_Failed" DestGuid="a4a85b69d-fa0d-46ba-badb-1b37638be86da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.WHCC_Channel_2_System_Failed" DestGuid="a153c4214-9c3d-4b54-82a0-d0ec54563136a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.WHCC_Channel_2_System_Failed" DestGuid="aaa696eec-1618-4ae7-8c4b-6c19731bc302a" />
+          </DP>
+          <DP Name="Echo_Current_CFG0_Input_Pin" Guid="ac75a93ff-a7ab-4bab-b6d7-d8bd73dde327a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG0" />
+          <DP Name="Echo_Current_CFG1_Input_Pin" Guid="aa2976461-3a1e-47b2-b8e5-0d86ef332cada" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG1" />
+          <DP Name="Echo_Current_Parity_Input_Pin" Guid="ac4eb61d2-2c73-4ee7-9930-77aa347649bda" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=CFG_PARITY" />
+          <DP Name="Inhibit" Guid="a97c2b66c-dac4-4979-8470-7969769e5334a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Inhibit" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=No Inhibit" />
+          <DP Name="Heating_Enabled" Guid="adc214953-68e5-4662-ae02-b071169551f6a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Enabled" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Not Enabled">
+            <Gw_Pub_Ref DestName="FDAS_L1.WHCC_2_Heating_Enabled" DestGuid="a34a62032-cf95-42c3-b8e3-19a9a8fc703aa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.WHCC_2_Heating_Enabled" DestGuid="a6745931a-868d-4146-947b-829382f8f575a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.WHCC_2_Heating_Enabled" DestGuid="a592ab898-5526-4ff3-bf18-f643da980481a" />
+          </DP>
+          <DP Name="ARINC_Not_Present" Guid="a2f1eeec1-83cc-4e62-ae35-d11b28993786a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="Uncontrolled_Heating" Guid="adba0c29b-85c2-4ca0-a68e-4337cea6079fa" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Uncontrolled" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Controlled" />
+          <DP Name="Overheat" Guid="a4aed6817-095a-4bc4-b821-000c5f79bf19a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Overheat true" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=Not overheat" />
+          <DP Name="Active_heater_test_in_progress" Guid="ad4660573-7a9c-4b9e-8dbe-55c1089e6d75a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=In progress" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=False" />
+          <DP Name="IBIT" Guid="a664c410c-92ad-45f1-b2e7-b71e10b10192a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=IBIT Active" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" ZeroState="0=IBIT Not Active" />
+          <DP Name="SSM" Guid="afcf60cbd-50be-4cb2-83c5-31ea6bc5b1e6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a369337dd-f761-4ae0-af19-8309e913120ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="130" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_WHCC.po429_ARINC0_Tx1_Msg.L271_WHC_Status_Word_Load_2" SrcGuid="ae17627b9-6750-49b5-b356-ca7234c9a8b8a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_WHCC.pi429_ARINC0_Tx1_HF_WHCC" SrcGuid="a56d5aa32-ce0d-4be1-b78e-d5b1f722adbca" />
+  </HFSamplingPort>
+</RemoteGateway>

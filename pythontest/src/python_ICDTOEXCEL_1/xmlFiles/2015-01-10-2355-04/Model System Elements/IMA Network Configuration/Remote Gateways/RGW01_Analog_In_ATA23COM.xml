@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW01_Analog_In_ATA23COM" Guid="a0acb8fc4-1b60-40b1-964d-7cbc75694e1ba" XsdVersion="7.9" Hardware="RDIU_01">
+  <AnalogPort Name="piDISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_3" Guid="aeff38652-8590-4374-91cf-75ee6fc80e00a" Direction="Destination" Physical="RDIU_01.40022_B06" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_TCP_3.poDISC_HF_GND_XMIT_INHIBIT_OVERRIDE" SrcGuid="a035d5832-31bb-4a70-8a50-8d09e410b9eaa" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA23COM" Guid="aeda1055e-e4bf-462b-8aca-3a6a7d186e90a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="1280">
+    <A664Message Name="A664_O1_40022_ATA23COM_Msg" Guid="a3cd8f10b-ef6e-488f-a324-0d3938067ec0a" EdeEnable="True" MessageOverhead="32" MessagePad="31" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="0.4" VLID="33387">
+      <DS Name="FSS1" Guid="abab1a2bc-8b46-4d90-9aee-0363603404cda" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a202c0fbc-13e8-447c-ab3e-031ea782dad1a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_3" Guid="a03455211-9a70-4abd-b2ea-d9e33a1de512a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="adedf20c9-dab1-4aea-b0db-c68245b18b92a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="0.4">
+          <Copy_Ref SrcName="HF_TCP_3.DISC_HF_GND_XMIT_INHIBIT_OVERRIDE.Status" SrcGuid="abdb2c1a0-937b-4478-b4ee-77d4b581e8dfa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_TCP3_GIPC_DISC_HF_GNF_XMIT_INHIBIT_OVERRIDE_Status" DestGuid="a68610a55-731c-4c75-ab49-37bfd111fb6ea" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW01_Analog_In_ATA23COM.piDISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_3" SrcGuid="aeff38652-8590-4374-91cf-75ee6fc80e00a" />
+  </HFSamplingPort>
+</RemoteGateway>

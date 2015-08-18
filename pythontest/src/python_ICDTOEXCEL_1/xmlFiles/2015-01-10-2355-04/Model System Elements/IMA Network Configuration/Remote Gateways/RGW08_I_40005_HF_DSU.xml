@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW08_I_40005_HF_DSU" Guid="a30c264d6-10d3-4273-a972-e5f03184e4c8a" XsdVersion="7.9" Hardware="RDIU_08">
+  <A429Port Name="pi429_DL_DB1_TX_HF_DSU" Guid="aca1020e2-cbe1-4a91-a5c0-c5999fa10b23a" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_08.40005_B03" SamplePeriod="320">
+    <Dataflow_Ref SrcName="HF_DSU.po429_DL_DB1_TX" SrcGuid="af6fd4147-0098-4253-b176-772e6adbbf65a" />
+  </A429Port>
+  <A429Port Name="pi429_DL_DB2_TX_HF_DSU" Guid="a08bc785c-e544-493b-8d9b-73714b310b55a" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_08.40005_B04" SamplePeriod="320">
+    <Dataflow_Ref SrcName="HF_DSU.po429_DL_DB2_TX" SrcGuid="aeda38f04-8156-415a-8a2a-7568fc8713bda" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_po429_DL_DB1_TX_Msg" Guid="a5e9b2bbf-6580-4b43-b0d1-5132e0594aeea" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_DL_DB1_TX_Msg_S_1" Guid="a7d069883-7725-421d-bac7-583f43f1c697a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="0.5" VLID="33281">
+      <DS Name="FSS1" Guid="a7fc15acb-8251-4c64-bb5f-662f295ab281a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="abb4c10a7-4159-4ba8-9f03-fc00c0cbea0ca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L304_ACARS_IFE" Guid="a036c184c-c5f1-4457-9a15-897cffb877bba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L304_ACARS_IFE" Guid="a9190b41a-013d-405e-8f55-813383db6429a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a49cd929c-2b9e-4353-9351-b560c2e46822a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Data" Guid="a799d6913-37db-4609-be6d-17c61949db98a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="65535" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="16" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Data_Extension" Guid="a672d1c0d-d62b-4018-9766-e3a521e39fe2a" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="4" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Word_Type" Guid="a4ccab922-ce9d-4547-8ebd-e7cec8cf861ba" BitOffsetWithinDS="28" CodedSet="0=Reserved;1=Reserved;2=Interface_status;3=Reserved;4=Reserved;5=Reserved;6=Reserved;7=Reserved" DataFormatType="COD" ParameterSize="3" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="PARITY" Guid="a4c58655d-dc54-42e8-a2ef-40e0dbd897dfa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <Copy_Ref SrcName="HF_DSU.po429_DL_DB1_TX_Msg.L304_ACARS_IFE" SrcGuid="aba241055-9f0d-406d-b124-f8ffc142b6aca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_DL_DB1_TX_Msg_L304_ACARS_IFE" DestGuid="afc16957e-d7d8-438d-9fe0-45483a2c6197a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_DSU.pi429_DL_DB1_TX_HF_DSU" SrcGuid="aca1020e2-cbe1-4a91-a5c0-c5999fa10b23a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS1_O_A664_po429_DL_DB2_TX_Msg" Guid="a7e427dda-bfaf-4551-8340-af9b8cf7d477a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_DL_DB2_TX_Msg_S_1" Guid="aa3df65f6-0cca-42f7-9b43-14e35c07b661a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="0.5" VLID="33291">
+      <DS Name="FSS1" Guid="a9a2176d4-2c66-4cc2-a8bd-d772bd9354dea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a9cb32865-6906-4eca-912c-d1c9f08752d5a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L304_ACARS_IFE" Guid="a5d414789-d0a8-483c-ae68-f89ff20d072fa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L304_ACARS_IFE" Guid="a69759c80-5d17-4678-be6f-0ba4c5698e02a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad8f8f83c-1e04-4163-95f7-b7dd5f88e10ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Data" Guid="a0b518fbd-12a0-4de9-9e88-bdf67d75aa1aa" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="65535" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="16" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Data_Extension" Guid="a789af217-a9ce-4f6b-9ac6-6b36018932f5a" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="4" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="IFE_Word_Type" Guid="a37a36d3d-424e-4fc3-a9ed-173f23761170a" BitOffsetWithinDS="28" CodedSet="0=Reserved;1=Reserved;2=Interface_status;3=Reserved;4=Reserved;5=Reserved;6=Reserved;7=Reserved" DataFormatType="COD" ParameterSize="3" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <DP Name="PARITY" Guid="a11da763b-36be-4c44-be6e-c7f3163d8ebca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+          <Copy_Ref SrcName="HF_DSU.po429_DL_DB2_TX_Msg.L304_ACARS_IFE" SrcGuid="a7e209309-6b3e-4814-b60d-84db421c573fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_DL_DB2_TX_po429_DL_DB2_TX_Msg_L304_ACARS_IFE" DestGuid="ad30ecbb5-41ad-4e80-8ff2-e486fbe7c139a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_DSU.pi429_DL_DB2_TX_HF_DSU" SrcGuid="a08bc785c-e544-493b-8d9b-73714b310b55a" />
+  </HFSamplingPort>
+</RemoteGateway>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW15_Analog_In_ATA29HYD" Guid="a0e31af6e-6aaa-4e35-bf17-f880e40ca380a" XsdVersion="7.9" Hardware="RDIU_15">
+  <A429Port Name="pi429_ECU_1_200_HF_ECU" Guid="ac2a86424-c01a-41b3-9a40-858e0b7b38b1a" ActivityTimeout="800" Direction="Destination" Physical="RDIU_15.40005_A04" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_ECU.po429_ECU_1_200" SrcGuid="a7a5af105-17c8-47d7-9e30-e5da908d6e43a" />
+  </A429Port>
+  <AnalogPort Name="piANA_EMPTemp_HF_EMP3ATEMPSENSOR" Guid="ab399bbf0-9500-4f2a-9dd4-ed6927fc2468a" Direction="Destination" Physical="RDIU_15.40059_A01" RIUTemplate="40059" SamplePeriod="80" UDC="Cable resistance=2">
+    <Dataflow_Ref SrcName="HF_EMP3ATEMPSENSOR.poANA_Temp_Sensor" SrcGuid="aeec42b00-5bde-43ed-98ce-b703a7886634a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_ECU_1_Msg_200" Guid="a85496e8b-6aae-447d-9a94-0f202d9338cda" Direction="Source" MessageSize="40" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_ECU_1_Msg_200_S_2" Guid="a024b404d-8700-499d-9a08-6f8335afd8ffa" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="40" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="200" VLID="33464">
+      <DS Name="FSS1" Guid="af63bdfa9-20d8-4023-9002-97f392858d3ca" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a15b18996-00e0-457f-a9cd-c9c6ef313a55a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a6acf81d6-903f-48d9-91e4-2d40124107e0a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="ab6b90020-dcf3-4cd5-a754-7565b5545bdea" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a5a5c1e12-5f08-4a48-a17d-e197bf0cd816a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L121_Calculated_Bleed_Air_Temperature" Guid="a507124de-c68c-4cca-b427-364a4ce44f79a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L121_Calculated_Bleed_Air_Temperature" Guid="a10063d17-80a5-4254-be9c-76c5f72da979a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad64eb578-af41-4396-b561-30aa8e50dfb5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="121" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a033c940a-19cd-4bca-9f04-e980602dbe3da" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="Calculated_Bleed_Air_Temperature" Guid="a47a24c66-b094-4ead-a499-b4f1b41ca697a" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="2047" FullScaleRngMin="-2047" FuncRngMax="1100" FuncRngMin="-70" LsbRes="1" ParameterSize="12" PublishedLatency="240" TransmissionIntervalMinimum="200" Units="degrees C" />
+          <DP Name="SSM" Guid="a0c72aa33-26d8-4924-a8b2-a01d2c975122a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a7d42adc6-99c4-4288-a828-5d820837ed27a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L121_Calculated_Bleed_Air_Temperature" SrcGuid="a3989d1ac-e555-42f3-a3d5-f6ee3332d6d9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_ECU_1_Msg_200_L121_Calculated_Bleed_Air_Temperature" DestGuid="a97f683c5-750d-4b43-80cf-5575f28e7b29a" />
+        </A429Word>
+      </DS>
+      <DS Name="L272_APU_Status_Word_3" Guid="a6561ebca-54e3-4794-9040-e0a5450525d4a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L272_APU_Status_Word_3" Guid="ab0f47108-a709-494c-b0c6-63fff4d5e805a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a7b90e47f-3a80-4aca-87c8-0a9198b19351a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a6a405fac-250e-4ed3-b4ee-e7835d32e47ea" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="Bleed_Air_Valve_Open_Position" Guid="adcb37bcc-9126-4fa7-bd85-215ff7054069a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Valve Open" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Valve not Open" />
+          <DP Name="Impending_Filter_Bypass_Switch" Guid="ac1899713-5d64-441c-8734-d5684fb331c3a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="Low_Oil_Quantity" Guid="a5896094b-a3d3-477a-b0c2-a09b7b167783a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="Add_Oil" Guid="aa91fe664-12bc-42d0-ab2d-816ac461fc6ba" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="LOP_Switch" Guid="afecbd2f7-a34d-451f-b842-9087d0a4c8c1a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="Aircraft_Configuration_Pin_1" Guid="adf946eaf-7e9e-4066-a661-e4da9cad7108a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="Aircraft_Configuration_Pin_2" Guid="a2657a40d-c44a-4ec0-a233-5079e16e504ea" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Gnd" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Open" />
+          <DP Name="SSM" Guid="a46e784e3-2aba-4aa2-8e5b-f88fa2c14c7da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="abba4c872-d22f-4ca5-8722-5484a8eb1571a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L272_APU_Status_Word_3" SrcGuid="a8ba2b283-4508-41df-815f-2989b95186e2a" />
+        </A429Word>
+      </DS>
+      <DS Name="L270_APU_Status_Word_1" Guid="a97cd6e35-069c-4048-aa96-2d683f02bba9a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L270_APU_Status_Word_1" Guid="a97f118f9-fa48-4b6e-852d-66b855ca3c1da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aba01fb1d-73fc-43f0-9bc2-fefc6d511be1a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="270" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="add34fb90-4783-4abc-9937-bbd3d5130a42a" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="APU_Ready_to_Start" Guid="ad70f7806-4d31-49a3-8578-be4ec188b40ba" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=APU is ready to start" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU not ready to start" />
+          <DP Name="Ready_to_Load" Guid="a35232800-d3c5-46f7-8ced-e88cc4efbc32a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Ready-to-Load" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Ready-to_Load" />
+          <DP Name="APU_Windmilling" Guid="a47708148-bc55-491c-beaf-524589e2a0f6a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=APU Windmilling" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU not Windmilling" />
+          <DP Name="APU_EGT_Display_Red" Guid="a0b5a178d-318a-4c56-a823-7139da153cf2a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=EGT has reached Red Limit" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=EGT has not reached Red Limit" />
+          <DP Name="Low_Oil_Pressure_Shutdown" Guid="af73361cc-e0e7-499f-86c5-7bf39bcaa66aa" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Low Oil Pressure Shutdown" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Low Oil Pressure Shutdown">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_Low_Oil_Pressure_Shutdown_2" DestGuid="ae9b52221-24f4-4394-93e3-3c35b05fd1f2a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_Low_Oil_Pressure_Shutdown_2" DestGuid="a2a16aa3e-8670-4757-87cf-f401bd2037e3a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_Low_Oil_Pressure_Shutdown_2" DestGuid="af4b5b9a8-fdc7-470c-8445-f335ae15063ba" />
+          </DP>
+          <DP Name="High_Oil_Temperature_Shutdown" Guid="a1636f8cd-521f-42d7-931a-4f01f3dd22bba" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=High Oil Temperature Shutdown" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not High Oil Temperature Shutdown">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_High_Oil_Temperature_Shutdown_2" DestGuid="af5eda602-d247-485d-8083-254770334f93a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_High_Oil_Temperature_Shutdown_2" DestGuid="ab6488b0d-d00b-49b7-9ad9-fe80dfaed472a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_High_Oil_Temperature_Shutdown_2" DestGuid="a3d2355fa-9c17-46b3-a544-5d8c60b7b414a" />
+          </DP>
+          <DP Name="APU_Speed_Display_Red" Guid="a81ddb4b4-b234-4bc3-a36c-51ab10b6d5d8a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=APU Speed has reached Red Limit" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Speed has not reached Red Limit" />
+          <DP Name="APU_Exceedance" Guid="ab0604105-9a2d-41ae-87ea-bbb8b93b794ea" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=APU Exceedance" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not APU Exceedance" />
+          <DP Name="Protective_Shutdown_Fault" Guid="aa5476485-0f48-41a7-a22b-42c30b57861ea" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Protective Shutdown" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Protective Shutdown" />
+          <DP Name="Maintenance_Fault" Guid="aedc74601-25f2-43f1-90ad-83116ff56ba7a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Any Fault is set" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=No Fault is set" />
+          <DP Name="Protective_Shutdown_Bypass" Guid="afec6a2b7-1335-4d55-a242-2a1a0e4d237da" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Essential Mode and Protective Shutdown bypassed" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Essential Mode or Not Protective Shutdown bypassed">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_Protective_Shutdown_Bypass_2" DestGuid="a8a77ab5b-6174-48c1-93d0-7622cd8b5b5fa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_Protective_Shutdown_Bypass_2" DestGuid="a464b2b2c-dedf-4c14-bb5f-b49d8f24b3e8a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_Protective_Shutdown_Bypass_2" DestGuid="a284626cd-4974-435d-8a68-cf85d43a6270a" />
+          </DP>
+          <DP Name="APU_FAIL" Guid="a54e76f33-414d-46e8-921c-62875498ec0da" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=APU Fail" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not APU Fail">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_APU_FAIL_2" DestGuid="abc321aee-37c2-4ad5-bfc9-e06cdabfae70a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_APU_FAIL_2" DestGuid="a484feaff-2154-4c76-a519-73d15440b83ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_APU_FAIL_2" DestGuid="a256f9c24-160e-4c4c-8663-6decacb3eb02a" />
+          </DP>
+          <DP Name="APU_Door_Not_Positioned" Guid="adf94cdc6-a3eb-4e19-8966-78e0dda0eebfa" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=APU Door not positioned" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Door positioned correctly" />
+          <DP Name="SGS_Maintenance_Fault" Guid="af6b2f05a-6a3f-4a7f-a64f-72f4aebd5c9ba" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Any SGS Fault is set" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=SGS Fault is set" />
+          <DP Name="Shutdown_Complete_Turn_Master_Switch_OFF" Guid="a29e869b8-63e0-44e6-837a-4836342a6cc0a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Shutdown Complete and Master Switch is ON" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Normal Operation" />
+          <DP Name="Overspeed_Shutdown_HW_or_SW" Guid="a77bfa15b-197e-42f7-b185-f4ecd5520d3ea" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Overspeed Shutdown" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Overspeed Shutdown" />
+          <DP Name="Emergency_Shutdown" Guid="a17b0dae3-ca30-461c-bdd4-5a0c0e5ddf78a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Emergency Shutdown" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Emergency Shutdown">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_Emergency_Shutdown_2" DestGuid="aec8c5477-c80c-4555-85f1-7e7148437e62a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_Emergency_Shutdown_2" DestGuid="a145b7851-da92-450f-993d-4740e687fc58a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_Emergency_Shutdown_2" DestGuid="aa472708a-c260-4ec0-85c6-04eb4c0f32e6a" />
+          </DP>
+          <DP Name="APU_Start_Fail" Guid="ad49abee7-3577-4477-993a-14b2d7db2a6ba" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Failed APU Start" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Failed APU Start" />
+          <DP Name="SSM" Guid="a17b55a53-92cd-4552-af74-69e04a02353ea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="afb727f07-f758-4679-9b76-25b2ad16ec98a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L270_APU_Status_Word_1" SrcGuid="acad7d515-f3d5-4761-94b8-4dbc423574afa" />
+        </A429Word>
+      </DS>
+      <DS Name="L166_Total_Pressure" Guid="a5db87760-ab5a-4af6-907c-7c290b0f2347a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L166_Total_Pressure" Guid="ac58e8ba6-ad99-4d48-911c-9b20907a0053a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a940fec1e-a1c5-41ea-840d-cf11395bb15fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="166" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="adfe42792-859a-4ad8-8da4-aebac07d363ca" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="Total_Pressure" Guid="ad737a4de-1e8c-4bb0-b953-308787c1b279a" BitOffsetWithinDS="18" DataFormatType="UBNR" FullScaleRngMax="8184" FullScaleRngMin="0" FuncRngMax="5861" FuncRngMin="0" LsbRes="8" ParameterSize="10" PublishedLatency="240" TransmissionIntervalMinimum="200" Units="mB">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.Total_Pressure" DestGuid="ae2473b06-115c-450b-9957-ae3ccb362842a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.Total_Pressure" DestGuid="a9da82774-3062-4b79-8bc0-1945ec6d4181a" />
+          </DP>
+          <DP Name="SSM" Guid="a1fb7fd4f-f70f-4424-a3a9-34b8baa562d8a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a507a1535-5bbc-4c72-98f3-1c96ffbfceb2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L166_Total_Pressure" SrcGuid="ac918b268-ff90-4b49-a20d-6c44e4bd13f7a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_ECU_1_Msg_200_L166_Total_Pressure" DestGuid="a67d8ebac-37cf-4bf0-b9c1-924a838f81c7a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a8a74f620-4e94-429d-996e-8dd0e672991ea" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="ad548c800-cd9b-4540-94df-ff72ea348044a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="aabaf323b-81b6-4b4f-8505-ee870324b517a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a6ce705e3-e050-47e7-a479-d2ac57eb3019a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L274_APU_Status_Word_5" Guid="a190341b2-5876-49b9-bd86-42db30205590a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L274_APU_Status_Word_5" Guid="a6a03cf0a-96f3-4ff3-9f2f-523e502a0dd7a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="affa460ab-0a2c-410b-91ab-a195e81b0bada" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="274" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a13f7f4c4-701a-4344-adc0-042082e858e3a" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="APU_Fuel_Valve_Open_Cmd" Guid="aa5c14932-c6e6-428d-bdbc-74b57f966d56a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=On" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Off">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU_ECU_APU_Fuel_Valve_Open_Cmd_2" DestGuid="a6d4d6dcc-73fa-44a2-ac9a-ae657f46ff68a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU_ECU_APU_Fuel_Valve_Open_Cmd_2" DestGuid="a1a7df430-4d01-4f69-987b-1440f1c6d9d8a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU_ECU_APU_Fuel_Valve_Open_Cmd_2" DestGuid="ac44c6944-db3d-4f07-badd-2b847fed1615a" />
+          </DP>
+          <DP Name="APU_Oil_Quantity_Low_Indicator" Guid="aa6f6cb57-6dd6-462e-beb6-23f50732d441a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=APU Oil Level Sensor Low or Add Oil" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not APU Oil Level Sensor Low or Add Oil" />
+          <DP Name="APU_Speed_Sensor_1_Fail" Guid="a38c8391c-dc6a-4b3b-8e08-9415145584caa" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=APU Speed Sensor 1 Fail" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Speed Sensor 1 Not Fail" />
+          <DP Name="APU_Speed_Sensor_2_Fail" Guid="ab8cbf2b4-e416-47ec-84e7-0b1399db3450a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=APU Speed Sensor 2 Fail" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Speed Sensor 2 Not Fail" />
+          <DP Name="APU_Low_Fuel_Flow" Guid="a557a0efe-8aac-49fb-a9df-425a4210c445a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=APU Low Fuel Flow" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Not Low Fuel Flow" />
+          <DP Name="SSM" Guid="aa388103b-040b-4a60-90a8-964c8c53b2d3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="acb389c4e-00af-4e6b-a3be-9eac06116874a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L274_APU_Status_Word_5" SrcGuid="a7b7ef25b-7f84-49eb-ade0-58ca7f0d3381a" />
+        </A429Word>
+      </DS>
+      <DS Name="L275_APU_Status_Word_6" Guid="a9984395d-a58b-481f-8a93-3671b8f7e18aa" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L275_APU_Status_Word_6" Guid="a93326104-8a5d-4743-a17f-16fea435193ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aca49e867-c46f-411d-b388-dfcf1b36e4e3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a15f4b5c4-dca3-4186-84e5-b1f57130bfc9a" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="APU_Normal_Shutdown_Commanded" Guid="a8f724719-2099-4768-82af-632269d7ad44a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Normal Shutdown in Progress" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Normal Shutdown in Progress">
+            <Gw_Pub_Ref DestName="FDAS_L1.ECU1_APU_Normal_Shutdown_Commanded_2" DestGuid="aff4bed79-1904-4647-998b-60c7530d8006a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.ECU1_APU_Normal_Shutdown_Commanded_2" DestGuid="a2365c769-67df-444a-9cbd-7e89423a5640a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.ECU1_APU_Normal_Shutdown_Commanded_2" DestGuid="adc3bf643-521e-4079-90d8-c4b5ad8e9082a" />
+          </DP>
+          <DP Name="APU_Normal_Shutdown_Complete" Guid="ab7818733-2bd7-4363-960e-f32c25cc279ca" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Normal Shutdown Complete" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Normal Shutdown Complete" />
+          <DP Name="ECU_BIT_FAIL" Guid="a9f04f888-17ac-4911-a367-076277061466a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=ECU BIT FAIL" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=ECU BIT OK" />
+          <DP Name="Start_in_Process" Guid="a53497ea4-9999-481d-a7c5-d9169439385fa" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Start in Process" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Start not in Process" />
+          <DP Name="Master_Switch_Status" Guid="a4fb94a8b-ba89-422c-88c3-492f4f71ac95a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Master Switch is ON" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Master Switch is OFF" />
+          <DP Name="APU_Door_Override_Mode" Guid="a1883bcb7-b50d-46db-9b45-cf2811cb5486a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=APU Door Override Mode" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Normal Mode" />
+          <DP Name="APU_EGT_Display_Amber" Guid="a268eeaf4-438e-4534-bbc5-e56b0936e7fea" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=EGT &gt; Amber limit" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=EGT &lt;= Amber limit" />
+          <DP Name="APU_Speed_Display_Amber" Guid="a06d9ac65-fa4d-429b-a24c-94a9215d2964a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Speed &gt; 104% (amber limit)" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Speed &lt;= 104%" />
+          <DP Name="APU_Inoperable" Guid="ab486c161-09cf-4d51-8d61-78d3600af199a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=APU Inoperable" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU not Inoperable" />
+          <DP Name="APU_Degraded" Guid="a5d5d4d74-f0fb-4701-ac54-e495b363ff46a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=APU Degraded" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Not Degraded" />
+          <DP Name="APU_Redundancy_Lost" Guid="a25ae3f55-290b-4739-8302-0bf76d547b2fa" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=APU Redundancy Lost" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Redundancy Not Lost" />
+          <DP Name="APU_Door_Inoperable" Guid="a4d9a6f59-9c9b-4c51-a8ae-7a823bbe6579a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=APU Door Inoperable" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Door Not Inoperable" />
+          <DP Name="APU_Bleed_Fail" Guid="a788d310c-cbc9-4b5a-97c3-f3725b254716a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=APU Bleed Air Failed" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU Bleed Air Not Failed" />
+          <DP Name="ECU_Power_On" Guid="a68ba676a-831e-43d9-aa0c-e8401b9380afa" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=ECU Power On" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=ECU Not Power On" />
+          <DP Name="Essential_Mode" Guid="ac1c9b8c8-e729-4845-b108-592878fe65a0a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Essential Mode" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Essential Mode" />
+          <DP Name="Grooming_Mode" Guid="acabc7aa3-5995-41cc-9e73-f741bb066b9da" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Grooming Mode" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not Grooming Mode" />
+          <DP Name="Variable_Speed_Mode" Guid="a6abe8042-8b4d-42e2-8f1f-35643a270b32a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=APU operating in Variable Speed" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=APU operating in fixed Speed" />
+          <DP Name="AMS_Mode" Guid="ab3ce0e19-168a-4674-b642-29b28ae5e11ca" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=AMS Mode" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not AMS Mode" />
+          <DP Name="MES_Mode" Guid="ae8b3cc48-39ee-456f-9e05-3d7f5e574e72a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=MES Mode" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" ZeroState="0=Not MES Mode" />
+          <DP Name="SSM" Guid="ae444c720-0ef6-4cdd-99a0-de9883f7f4bda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ad9ebb0a5-0089-4a77-a497-f5ac4888bc3da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L275_APU_Status_Word_6" SrcGuid="ab7cea098-37ce-4823-9217-44d6c0514d13a" />
+        </A429Word>
+      </DS>
+      <DS Name="L247_APU_Oil_Temperature" Guid="a4e3dcec3-f791-44aa-8fe8-c8cd4eaa5522a" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L247_APU_Oil_Temperature" Guid="a1448d955-a29d-4f58-9cbf-0e7dfbdaf465a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a5cd9e328-a570-4a40-955a-bf3586c0e483a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="247" ParameterSize="8" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a5ef36bf3-6a1f-4e80-8915-a9dcd9cae040a" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Not used;2=Not used;3=Not used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="APU_Oil_Temperature" Guid="a468a5ea3-6bf8-4a97-a01b-e96c0db6f874a" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="255" FullScaleRngMin="-255" FuncRngMax="200" FuncRngMin="-55" LsbRes="1" ParameterSize="9" PublishedLatency="240" TransmissionIntervalMinimum="200" Units="degrees C" />
+          <DP Name="SSM" Guid="a958dfd5c-e743-43f1-9896-a02f6dc29877a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="acf92db50-2f24-4ea2-b620-9389b2a6fd09a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="240" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_ECU.po429_ECU_1_Msg_200.L247_APU_Oil_Temperature" SrcGuid="a414ce4be-d27e-4957-ac1c-c727820ad436a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.APU_Oil_Temperature" DestGuid="a05b41461-5b62-4ebf-b517-07674ca7d525a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA29HYD.pi429_ECU_1_200_HF_ECU" SrcGuid="ac2a86424-c01a-41b3-9a40-858e0b7b38b1a" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_RsvrTempSwLo_HF_RSVR1TEMPSW" Guid="a97b60bf6-e6ac-4d83-8d01-d93f23fdd419a" Direction="Destination" Physical="RDIU_15.40022_A01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RSVR1TEMPSW.poDISC_RsvrTempSwLo" SrcGuid="a8b951df1-9308-435c-bdff-e481152a2207a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40059_ATA29HYD" Guid="a1daddc30-c70f-4562-ac51-5dadd84a4a16a" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40059_ATA29HYD_Msg" Guid="a71364b11-1b01-4b54-a281-a6fc3ca7ebf1a" EdeEnable="True" MessageOverhead="32" MessagePad="47" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="1280" VLID="33464">
+      <DS Name="FSS1" Guid="adb30d17a-7f23-4a63-99f3-39a9cc897dc3a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ad8aafbe1-04b3-47e7-8eaf-b8783dd4c779a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a49c27e07-af25-4dfa-85ae-be4e9ef21449a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_EMP3ATEMPSENSOR" Guid="acc89c11a-d16b-46b7-a14f-a3ce34919843a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Temperature" Guid="a01f24951-b68c-462e-8c21-4daf621baa0ea" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_EMP3ATEMPSENSOR.Temp_Sensor_Signal.Temperature" SrcGuid="a3b5c6da0-795b-4b69-a6e0-332b1f24189aa" />
+          <Gw_Pub_Ref DestName="FDAS_L1.EMP3A_ANA_Temperature" DestGuid="a225bd96e-1730-43f9-89ab-c595a6a534d5a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.EMP3A_ANA_Temperature" DestGuid="aa5d9cb57-e2ff-4bf5-a98c-634c463b38cda" />
+          <Gw_Pub_Ref DestName="FDAS_R3.EMP3A_ANA_Temperature" DestGuid="ab3798b66-529b-457e-b7e8-e492a3732fc9a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_RsvrTempSwLo_HF_RSVR1TEMPSW" Guid="ad5498247-eb69-4b1b-9264-89371e345a2ea" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ae2f5cabd-a4aa-403c-8c52-de3205df4186a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RSVR1TEMPSW.DISC_RsvrTempSwLo.Status" SrcGuid="a13107815-9ebd-4fb1-960b-f24305486bc2a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.RSVR1_LO_DISC_RsvrTempSwLo" DestGuid="ab394ed4a-cef9-4a91-894f-c5c1fb536f3fa" />
+          <Gw_Pub_Ref DestName="FDAS_L3.RSVR1_LO_DISC_RsvrTempSwLo" DestGuid="af86777d3-f5bb-4329-a39b-46e2108c1ca4a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.RSVR1_LO_DISC_RsvrTempSwLo" DestGuid="ae8658220-b1d0-449d-9100-4d152c69509ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.poDISC_RsvrTempSwLo_DISC_RsvrTempSwLo_Status" DestGuid="af1c1f382-a21e-4fba-9bb9-9101f92f76f1a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA29HYD.piANA_EMPTemp_HF_EMP3ATEMPSENSOR" SrcGuid="ab399bbf0-9500-4f2a-9dd4-ed6927fc2468a" />
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA29HYD.piDISC_RsvrTempSwLo_HF_RSVR1TEMPSW" SrcGuid="a97b60bf6-e6ac-4d83-8d01-d93f23fdd419a" />
+  </HFSamplingPort>
+</RemoteGateway>

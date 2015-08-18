@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW10_Analog_In_ATA24RAT" Guid="aaf83a9f4-4a9f-43ac-9260-542201be03a4a" XsdVersion="7.9" Hardware="RDIU_10">
+  <AnalogPort Name="piDISC_RAT_HTR_CNTRL_RELAY_AUX_HF_RATRELAYBOX" Guid="abcbba55e-49d3-4397-a633-1173bff05f04a" Direction="Destination" Physical="RDIU_10.40022_A08" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RATRELAYBOX.poDISC_RAT_HTR_CNTRL_RELAY_AUX" SrcGuid="ac0979c55-aeef-48b5-b3a0-0b02bbc69629a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA24RAT" Guid="a7d3a2547-aefa-47f1-a6b8-3f0cd121d021a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="5">
+    <A664Message Name="A664_O1_40022_ATA24RAT_Msg" Guid="ade370d6c-0e91-472b-ab11-4c3f3c8d1757a" EdeEnable="True" MessageOverhead="32" MessagePad="31" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33312">
+      <DS Name="FSS1" Guid="ab5fdd8f9-46e8-4919-9ec1-dd3fbc3328d1a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ada2bc371-3c65-4d39-a56b-a411749bff7ca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="RAT_HTR_CNTRL_RELAY_AUX_HF_RATRELAYBOX" Guid="ab34d5464-87d8-400e-bbe1-374563f36f48a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="af0514d66-567d-4821-9464-914003bd88b6a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RATRELAYBOX.RAT_HTR_CNTRL_RELAY_AUX.Status" SrcGuid="af5bf8772-9b9f-48f2-9f74-acfb7579a257a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_RAT_HTR_CNTRL_RELAY_AUX_Status" DestGuid="aac18a653-4726-413b-a429-da8a1b68a478a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_RAT_HTR_CNTRL_RELAY_AUX" DestGuid="a48f67810-b6df-4489-995c-db4f8f50c370a" />
+          <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_RAT_HTR_CNTRL_RELAY_AUX" DestGuid="a12644664-af5b-4c1c-b359-13ae0a97b13ca" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW10_Analog_In_ATA24RAT.piDISC_RAT_HTR_CNTRL_RELAY_AUX_HF_RATRELAYBOX" SrcGuid="abcbba55e-49d3-4397-a633-1173bff05f04a" />
+  </HFSamplingPort>
+</RemoteGateway>

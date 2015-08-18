@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponentClass Name="OMSCockpitDisplayAppClass" Guid="a0D2E8E0D-2F58-42c3-B9A6-2B92DEF57616a" XsdVersion="7.9" ATA="45xxxx" ComputeTime="5" Criticality="D" MemoryBssSize="9437184" MemoryDataSize="40960" MemoryPersistentBssSize="4096" MemoryPersistentDataSize="4096" MemoryRoDataSize="262144" MemoryTextSize="1187840" PartitionId="83" PartitionType="APP_PARTITION" Period="50" RequiredMemorySize="18874368" SchedulePriority="0">
+  <A653QueuingPort Name="A653QUE_O10" Guid="a5b0c0dfa-bfe3-4df7-995c-bbdb99db637ba" Direction="Source" MessageSize="8180" Networks="Both" QueueLength="5" RefreshPeriod="500">
+    <A664Message Name="CDA_AHMU" Guid="ab9caa73f-1a0b-4dc3-a0aa-765332297b6aa" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8180" MsgDataProtocolType="Other" TransmissionIntervalMinimum="500">
+      <DS Name="DS_1" Guid="aac30cd09-9483-4521-aeb7-e6393de3e077a" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8180" DsDataProtocolType="UNDEFINED">
+        <DP Name="CDA_YV3086_Request" Guid="a99005151-72c6-4f54-b8be-88646028801fa" BitOffsetWithinDS="0" DataFormatType="OPAQUE" ParameterSize="65440" PublishedLatency="0" TransmissionIntervalMinimum="500" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653QUE_I15" Guid="a1a2ef0f7-5954-4cc0-87ff-1bed07e7348ca" Direction="Destination" MessageSize="8212" Networks="Both" QueueLength="5" SamplePeriod="500">
+    <RP Name="Rx_AHMU_YV3086_RESPONSE" Guid="a52697c4f-4746-409a-b385-a3cd63ee0a48a" BitOffsetWithinMsg="0" DataFormatType="OPAQUE" ParameterSize="65440" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_OMS_A661_BLOCK" Guid="afd6fc609-8694-42d9-acc2-baf0e8c14324a" Notes="OMS CDA connection to DU5 Lower aka Center display" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="10" SamplePeriod="50">
+    <RP Name="OMS_A661_BLOCK" Guid="a2f19391f-67cd-40f1-a01d-696fc1a01e08a" BitOffsetWithinMsg="32" DataFormatType="BLK" ParameterSize="65344" SDIExpected="-1" SysLatencyWCLimit="210" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_OMS_A661_BLOCK" Guid="ace229605-5fbb-483c-b060-2d55a2e70f47a" Notes="OMS CDA connection to DU5 Lower aka Center display" Direction="Source" MessageSize="8136" Networks="Both" QueueLength="2" RefreshPeriod="50">
+    <A664Message Name="MSG_HDD_DU5_A661_BLOCK" Guid="a65f5ff26-1307-4b50-ae9b-a2d6247f6608a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8136" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="50">
+      <DS Name="DS1" Guid="a7c1a375a-9568-44d5-9801-47bc00cb446da" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="8140" DsDataProtocolType="UNDEFINED">
+        <DP Name="MSG_OMS_HDD_DU5_A661_BLOCK" Guid="a2da43c5c-0a21-41c7-aa62-64c285fc3b1aa" BitOffsetWithinDS="32" DataFormatType="OPAQUE" ParameterSize="65088" PublishedLatency="0" TransmissionIntervalMinimum="50" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+</A653ApplicationComponentClass>

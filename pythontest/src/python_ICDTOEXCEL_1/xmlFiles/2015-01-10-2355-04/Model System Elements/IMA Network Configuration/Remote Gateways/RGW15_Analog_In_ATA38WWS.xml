@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW15_Analog_In_ATA38WWS" Guid="ae9b120a0-4bfc-4e21-ba3e-5d5107dcb74ea" XsdVersion="7.9" Hardware="RDIU_15">
+  <AnalogPort Name="piANA_TempTD5A_HF_F_D_NIPPLEHTRTEMPSENSOR" Guid="a518dfc06-7a94-4e85-a52f-833fd90ca6fda" Direction="Destination" Physical="RDIU_15.40062_B01" RIUTemplate="40062" SamplePeriod="160" UDC="Cable resistance=0">
+    <Dataflow_Ref SrcName="HF_F_D_NIPPLEHTRTEMPSENSOR.poANA_Temp_Sensor" SrcGuid="a3e2237a0-9d2b-4659-8f26-e7a93127c42da" />
+  </AnalogPort>
+  <AnalogPort Name="piANA_TempTD5A_HF_HTDHOSETEMPSENSOR_AFT_GAL" Guid="af384fe86-891d-40b9-b7ec-647b50d2d5a1a" Direction="Destination" Physical="RDIU_15.40062_C01" RIUTemplate="40062" SamplePeriod="160" UDC="Cable resistance=0">
+    <Dataflow_Ref SrcName="HF_HTDHOSETEMPSENSOR_AFT_GAL.poANA_Temp_Sensor" SrcGuid="a55b11ff4-3133-4f38-b470-abff7b7b04e7a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40062_ATA38WWS" Guid="ab1d80eca-4e80-4d2f-b5ed-fc6d7bfd636ea" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="160">
+    <A664Message Name="A664_O1_40062_ATA38WWS_Msg" Guid="a12f54c3e-87f9-4830-bc79-5ae0204f28e7a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33315">
+      <DS Name="FSS1" Guid="a29ecff9d-3fa6-4c4c-b8f2-2bb19ef7eb9ca" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a232101d0-a97b-406d-ae4c-f19895c09740a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a43945f2b-fe56-4345-838a-c287d7ebb7bfa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_F_D_NIPPLEHTRTEMPSENSOR" Guid="aeb10119c-8a9c-4926-9dda-ad2868a8d9eba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="a3d6beb5c-d8f6-4698-9b19-0715ea95cdefa" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_F_D_NIPPLEHTRTEMPSENSOR.Temp_Sensor_Signal.Resistance" SrcGuid="a2c7a8f04-b2df-4365-9f70-87a0304b3e26a" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_AFT_F_D_Nipple_Resistance" DestGuid="a1cca60fb-f588-4bb0-b363-2da41c709d6aa" />
+        </DP>
+        <DP Name="Temperature" Guid="a56b5295b-2308-4e46-8988-dd297cb0455da" BitOffsetWithinDS="16" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_F_D_NIPPLEHTRTEMPSENSOR.Temp_Sensor_Signal.Temperature" SrcGuid="a4de4f8f9-e0f6-4b4a-b2eb-c2e61aaab7cca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Fill_Drain_Vlv_Temp_Analog" DestGuid="a38a51270-1926-4c73-aea7-4856c06e9982a" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_AFT_F_D_Nipple" DestGuid="a6cbb1226-8ecc-4275-aea8-f64e20ffffe0a" />
+        </DP>
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_HTDHOSETEMPSENSOR_AFT_GAL" Guid="a4e44bbb2-cc05-4360-bd3c-550b3e6fff97a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="a1dfde104-0d96-4e23-a830-d48b75f39bb4a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_HTDHOSETEMPSENSOR_AFT_GAL.Temp_Sensor_Signal.Resistance" SrcGuid="a3f3d07fd-ca13-49ff-872d-bda35ad97dbca" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_Hose_AFT_GAL_Resistance" DestGuid="a213309bd-7658-4d5f-9798-78deb9c6e82aa" />
+        </DP>
+        <DP Name="Temperature" Guid="a2a296d20-3f31-4897-904f-d6e1bd54cdf6a" BitOffsetWithinDS="16" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_HTDHOSETEMPSENSOR_AFT_GAL.Temp_Sensor_Signal.Temperature" SrcGuid="a274ebbaf-84b2-44e2-bc31-ef69f1a27934a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Heater_Temp_Hose_AFT_GAL" DestGuid="aba66b6f1-f977-484a-bc1d-58855aaa381fa" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_Hose_AFT_GAL" DestGuid="a87ed21c0-8ac1-493e-ab4a-7cab74ac260aa" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA38WWS.piANA_TempTD5A_HF_F_D_NIPPLEHTRTEMPSENSOR" SrcGuid="a518dfc06-7a94-4e85-a52f-833fd90ca6fda" />
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA38WWS.piANA_TempTD5A_HF_HTDHOSETEMPSENSOR_AFT_GAL" SrcGuid="af384fe86-891d-40b9-b7ec-647b50d2d5a1a" />
+  </HFSamplingPort>
+</RemoteGateway>

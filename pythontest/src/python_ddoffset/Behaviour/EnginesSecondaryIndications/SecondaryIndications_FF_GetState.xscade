@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" kind="function" visibility="private" name="SecondaryIndications_FF_GetState">
+	<inputs>
+		<Variable name="ipValue_Status">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/cbf4/CF6/18E4/53966a2f5e9b"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="opStateRange">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="Global::GLOB_INVALID"/>
+					</path>
+				</IdExpression>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/cbf1/CF6/18E4/53966a2f7e20"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="IsValueValid">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/cbf8/CF6/18E4/53966a2f2f7a"/>
+			</pragmas>
+		</Variable>
+		<Variable name="IsValueEmpty">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/8b55/D8/19DC/5466e5b57ae5"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L49">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/cc63/CF6/18E4/53966a2f4727"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L5">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/cc05/CF6/18E4/53966a2f68d8"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L52">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/8b3a/D8/19DC/5466e5a246cc"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L55">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/8b4e/D8/19DC/5466e5b158af"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L5 = Utilities::LibDataStatusValid(_L49); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L5"/>
+			</lefts>
+			<right>
+				<!-- Utilities::LibDataStatusValid(_L49) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="3">
+							<operator>
+								<OperatorRef name="Utilities::LibDataStatusValid"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L49"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/cc04/CF6/18E4/53966a2fa17"/>
+			</pragmas>
+		</Equation>
+		<!-- IsValueValid = _L5; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="IsValueValid"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L5"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/cc5f/CF6/18E4/53966a2fe8"/>
+			</pragmas>
+		</Equation>
+		<!-- _L49 = ipValue_Status; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L49"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="ipValue_Status"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/cc62/CF6/18E4/53966a2f34dc"/>
+			</pragmas>
+		</Equation>
+		<IfBlock name="FuelFlowStateBlock">
+			<block>
+				<IfNode>
+					<if>
+						<!--  not IsValueValid and  not IsValueEmpty -->
+						<NAryOp name="10" operator="and">
+							<operands>
+								<!--  not IsValueValid -->
+								<UnaryOp name="10" operator="not">
+									<operand>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="IsValueValid"/>
+											</path>
+										</IdExpression>
+									</operand>
+								</UnaryOp>
+								<!--  not IsValueEmpty -->
+								<UnaryOp name="11" operator="not">
+									<operand>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="IsValueEmpty"/>
+											</path>
+										</IdExpression>
+									</operand>
+								</UnaryOp>
+							</operands>
+						</NAryOp>
+					</if>
+					<then>
+						<Action>
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/ccec/CF6/18E4/53966c102f29"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- opStateRange = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="opStateRange"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/ccce/CF6/18E4/53966be58f2"/>
+									</pragmas>
+								</Equation>
+								<!-- _L1 = Global::GLOB_INVALID; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="Global::GLOB_INVALID"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/cceb/CF6/18E4/53966c103c60"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<pragmas>
+								<ed:Action oid="!ed/cc88/CF6/18E4/53966af862a8"/>
+							</pragmas>
+						</Action>
+					</then>
+					<else>
+						<IfNode>
+							<if>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="IsValueEmpty"/>
+									</path>
+								</IdExpression>
+							</if>
+							<then>
+								<Action>
+									<locals>
+										<Variable name="_L1">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="int"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/ccf2/CF6/18E4/53966c157534"/>
+											</pragmas>
+										</Variable>
+									</locals>
+									<data>
+										<!-- opStateRange = _L1; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="opStateRange"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L1"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/ccd5/CF6/18E4/53966bee7fba"/>
+											</pragmas>
+										</Equation>
+										<!-- _L1 = Global::GLOB_EMPTY; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L1"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="Global::GLOB_EMPTY"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/ccf1/CF6/18E4/53966c152acb"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/cc91/CF6/18E4/53966b11e23"/>
+									</pragmas>
+								</Action>
+							</then>
+							<else>
+								<IfNode>
+									<if>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="IsValueValid"/>
+											</path>
+										</IdExpression>
+									</if>
+									<then>
+										<Action>
+											<locals>
+												<Variable name="_L1">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="int"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/ccf8/CF6/18E4/53966c21417c"/>
+													</pragmas>
+												</Variable>
+											</locals>
+											<data>
+												<!-- opStateRange = _L1; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="opStateRange"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L1"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/ccdc/CF6/18E4/53966bf44abe"/>
+													</pragmas>
+												</Equation>
+												<!-- _L1 = Global::GLOB_NORMAL; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L1"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="Global::GLOB_NORMAL"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/ccf7/CF6/18E4/53966c212d9e"/>
+													</pragmas>
+												</Equation>
+											</data>
+											<pragmas>
+												<ed:Action oid="!ed/cc9e/CF6/18E4/53966b16450b"/>
+											</pragmas>
+										</Action>
+									</then>
+									<else>
+										<Action>
+											<pragmas>
+												<ed:Action oid="!ed/8140/41F2/8E4/548153311437"/>
+											</pragmas>
+										</Action>
+									</else>
+									<pragmas>
+										<ed:IfNode oid="!ed/cc99/CF6/18E4/53966b157488"/>
+									</pragmas>
+								</IfNode>
+							</else>
+							<pragmas>
+								<ed:IfNode oid="!ed/cc8c/CF6/18E4/53966b0f7a96"/>
+							</pragmas>
+						</IfNode>
+					</else>
+					<pragmas>
+						<ed:IfNode oid="!ed/cc87/CF6/18E4/53966af84d0"/>
+					</pragmas>
+				</IfNode>
+			</block>
+			<pragmas>
+				<ed:IfBlock oid="!ed/cc82/CF6/18E4/53966af83b2b"/>
+			</pragmas>
+		</IfBlock>
+		<!-- _L52 = ipValue_Status; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L52"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="ipValue_Status"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/8b39/D8/19DC/5466e5a25838"/>
+			</pragmas>
+		</Equation>
+		<!-- _L55 = Utilities::LibDataStatusEmpty(_L52); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L55"/>
+			</lefts>
+			<right>
+				<!-- Utilities::LibDataStatusEmpty(_L52) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="2">
+							<operator>
+								<OperatorRef name="Utilities::LibDataStatusEmpty"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L52"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/8b4d/D8/19DC/5466e5b111b1"/>
+			</pragmas>
+		</Equation>
+		<!-- IsValueEmpty = _L55; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="IsValueEmpty"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L55"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/8b56/D8/19DC/5466e5b56511"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/cb32/CF6/18E4/539669f13963" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<NetDiagram name="diagram_SecondaryIndications_FF_GetState_1" landscape="true" format="A4 (210 297)" oid="!ed/cb33/CF6/18E4/539669f118a">
+					<presentationElements>
+						<EquationGE presentable="!ed/cc04/CF6/18E4/53966a2fa17">
+							<position>
+								<Point x="10054" y="1164"/>
+							</position>
+							<size>
+								<Size width="3593" height="1180"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/cc5f/CF6/18E4/53966a2fe8">
+							<position>
+								<Point x="18352" y="1503"/>
+							</position>
+							<size>
+								<Size width="344" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/cc62/CF6/18E4/53966a2f34dc">
+							<position>
+								<Point x="5080" y="1609"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/cc62/CF6/18E4/53966a2f34dc" dstEquation="!ed/cc04/CF6/18E4/53966a2fa17">
+							<positions>
+								<Point x="5249" y="1757"/>
+								<Point x="7641" y="1757"/>
+								<Point x="7641" y="1757"/>
+								<Point x="10054" y="1757"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/cc04/CF6/18E4/53966a2fa17" dstEquation="!ed/cc5f/CF6/18E4/53966a2fe8">
+							<positions>
+								<Point x="13653" y="1757"/>
+								<Point x="15981" y="1757"/>
+								<Point x="15981" y="1757"/>
+								<Point x="18352" y="1757"/>
+							</positions>
+						</Edge>
+						<IfBlockGE presentable="!ed/cc82/CF6/18E4/53966af83b2b">
+							<position>
+								<Point x="4466" y="5694"/>
+							</position>
+							<size>
+								<Size width="13885" height="8953"/>
+							</size>
+						</IfBlockGE>
+						<ActionGE presentable="!ed/cc88/CF6/18E4/53966af862a8">
+							<position>
+								<Point x="6837" y="6435"/>
+							</position>
+							<size>
+								<Size width="10742" height="1534"/>
+							</size>
+						</ActionGE>
+						<IfNodeGE labelWidth="4043" presentable="!ed/cc87/CF6/18E4/53966af84d0">
+							<position>
+								<Point x="5313" y="6498"/>
+							</position>
+						</IfNodeGE>
+						<IfNodeGE labelWidth="1376" presentable="!ed/cc8c/CF6/18E4/53966b0f7a96">
+							<position>
+								<Point x="5313" y="8784"/>
+							</position>
+						</IfNodeGE>
+						<ActionGE presentable="!ed/cc91/CF6/18E4/53966b11e23">
+							<position>
+								<Point x="6837" y="8700"/>
+							</position>
+							<size>
+								<Size width="10742" height="1535"/>
+							</size>
+						</ActionGE>
+						<IfNodeGE labelWidth="1270" presentable="!ed/cc99/CF6/18E4/53966b157488">
+							<position>
+								<Point x="5313" y="11049"/>
+							</position>
+						</IfNodeGE>
+						<ActionGE presentable="!ed/cc9e/CF6/18E4/53966b16450b">
+							<position>
+								<Point x="6837" y="10986"/>
+							</position>
+							<size>
+								<Size width="10742" height="1534"/>
+							</size>
+						</ActionGE>
+						<EquationGE presentable="!ed/ccce/CF6/18E4/53966be58f2">
+							<position>
+								<Point x="14690" y="6964"/>
+							</position>
+							<size>
+								<Size width="318" height="502"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/ccd5/CF6/18E4/53966bee7fba">
+							<position>
+								<Point x="14690" y="9313"/>
+							</position>
+							<size>
+								<Size width="317" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/ccdc/CF6/18E4/53966bf44abe">
+							<position>
+								<Point x="14690" y="11557"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/cceb/CF6/18E4/53966c103c60">
+							<position>
+								<Point x="10478" y="7070"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/ccf1/CF6/18E4/53966c152acb">
+							<position>
+								<Point x="10499" y="9419"/>
+							</position>
+							<size>
+								<Size width="170" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/ccf7/CF6/18E4/53966c212d9e">
+							<position>
+								<Point x="10478" y="11663"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/cceb/CF6/18E4/53966c103c60" dstEquation="!ed/ccce/CF6/18E4/53966be58f2">
+							<positions>
+								<Point x="10647" y="7218"/>
+								<Point x="13187" y="7218"/>
+								<Point x="13187" y="7218"/>
+								<Point x="14732" y="7218"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/ccf1/CF6/18E4/53966c152acb" dstEquation="!ed/ccd5/CF6/18E4/53966bee7fba">
+							<positions>
+								<Point x="10668" y="9567"/>
+								<Point x="13187" y="9567"/>
+								<Point x="13187" y="9567"/>
+								<Point x="14732" y="9567"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/ccf7/CF6/18E4/53966c212d9e" dstEquation="!ed/ccdc/CF6/18E4/53966bf44abe">
+							<positions>
+								<Point x="10647" y="11811"/>
+								<Point x="13187" y="11811"/>
+								<Point x="13187" y="11811"/>
+								<Point x="14732" y="11811"/>
+							</positions>
+						</Edge>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/8b39/D8/19DC/5466e5a25838">
+							<position>
+								<Point x="5080" y="3175"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/8b4d/D8/19DC/5466e5b111b1">
+							<position>
+								<Point x="10054" y="2731"/>
+							</position>
+							<size>
+								<Size width="3577" height="1164"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/8b56/D8/19DC/5466e5b56511">
+							<position>
+								<Point x="18352" y="3069"/>
+							</position>
+							<size>
+								<Size width="359" height="508"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8b4d/D8/19DC/5466e5b111b1" dstEquation="!ed/8b56/D8/19DC/5466e5b56511">
+							<positions>
+								<Point x="13631" y="3323"/>
+								<Point x="15981" y="3323"/>
+								<Point x="15981" y="3323"/>
+								<Point x="18352" y="3323"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8b39/D8/19DC/5466e5a25838" dstEquation="!ed/8b4d/D8/19DC/5466e5b111b1">
+							<positions>
+								<Point x="5249" y="3323"/>
+								<Point x="7641" y="3323"/>
+								<Point x="7641" y="3323"/>
+								<Point x="10054" y="3323"/>
+							</positions>
+						</Edge>
+						<ActionGE presentable="!ed/8140/41F2/8E4/548153311437">
+							<position>
+								<Point x="6858" y="13272"/>
+							</position>
+							<size>
+								<Size width="1059" height="741"/>
+							</size>
+						</ActionGE>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

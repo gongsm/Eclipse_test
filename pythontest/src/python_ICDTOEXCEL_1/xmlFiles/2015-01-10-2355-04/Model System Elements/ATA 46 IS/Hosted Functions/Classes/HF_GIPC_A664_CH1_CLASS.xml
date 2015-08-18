@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_GIPC_A664_CH1_CLASS" Guid="acb885ab9-fbf2-43d0-8589-e28171b0fb6fa" XsdVersion="7.9" ATA="461002">
+  <HFQueuingPort Name="HFQ_L_ID_RX" Guid="a56b8c45e-cded-4a2e-8303-b5f7dadc3a00a" Direction="Destination" MessageSize="16" Networks="A" QueueLength="2" SamplePeriod="80">
+    <RP Name="L_DISC_ID_ICE_Status" Guid="ac0ef0096-4da8-4463-9a6b-63e29e5a315da" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" />
+    <RP Name="L_DISC_ID_ICE_STATUS_Status" Guid="a388d13a7-fdfa-4ca3-91fd-5c585644fbd9a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" />
+    <RP Name="L_ID_ICE_B" Guid="ac8416923-abcc-429a-a996-b8801376b011a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="L_ID_STATUS_B" Guid="a359c3755-388f-482d-90d5-2d3ffb14246ea" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ADS" Guid="af908640b-6291-4a81-9bf0-330d4244754ca" Direction="Destination" MessageSize="284" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="BaroAlt_BaroSet1_Voted" Guid="a6cc12d40-f404-4b59-b416-c199743fd34aa" DataFormatType="FLOAT" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_011_GOB1" Guid="ae309be44-c340-47ae-9a1c-6db5524d69b6a" Direction="Destination" MessageSize="76" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Date_L" Guid="a9580c87d-4ca5-4384-b82f-9691307f5a33a" DataFormatType="OPAQUE" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Present_position_latitude_L" Guid="a61f95e40-da3b-44d7-970d-b00379ee7e2ba" DataFormatType="OPAQUE" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Present_position_longitude_L" Guid="adcf28036-e3a1-415c-9802-d2c5bd4f58e3a" DataFormatType="OPAQUE" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="UTC_GMT_L" Guid="aebd1d8f0-229b-41be-a3b4-ecb072412345a" DataFormatType="OPAQUE" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_Discrete" Guid="a7850c8e7-f2ac-4dc4-97aa-80c96d611fe6a" Direction="Destination" MessageSize="56" Networks="A" QueueLength="8" SamplePeriod="25">
+    <RP Name="Oil_Pressure_High_Amber_Exceedance" Guid="a1b317db4-8514-4739-ab13-b589f864f434a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Oil_Pressure_Low_Amber_Exceedance" Guid="a797070ea-d44c-4e34-91af-cbc65dc64886a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Uncommanded_Engine_Shutdown" Guid="a85e15135-6cbe-4550-bb54-ad1a1de0ff01a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_FCSFMS" Guid="a1eef72c6-93e0-4d3a-b1b6-5b8f8d3dcfcca" Direction="Destination" MessageSize="116" Networks="A" QueueLength="8" SamplePeriod="50">
+    <RP Name="Engine_Running" Guid="a2da7c2ad-7bd2-4210-ac4e-a2660de5db60a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Selected_TRA" Guid="a50d527c3-12fe-44a3-8e44-beae293f054ea" DataFormatType="FLOAT" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_TrendFDR" Guid="ad8150c8b-f4a1-4601-bb22-72268aeae034a" Direction="Destination" MessageSize="260" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Engine_Thrust_Rating" Guid="a16f4b52f-daa2-4932-bb17-6ad3aa658061a" DataFormatType="SINT" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L" Guid="a00e63156-961d-4f10-94a6-fc4f7451e01ba" Direction="Destination" MessageSize="156" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Active_Flight_Plan_L" Guid="aadffc543-900e-44a6-8333-bb344c42ed8ca" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Destination_Airport_ID_L" Guid="a7d050865-6b4a-4553-a88e-f3dcc5871928a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="FMS_Printing_Data_L" Guid="a8ef4630b-818d-4d6a-86db-d82c3463c08fa" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Original_departure_Airport_ID_L" Guid="a77cb23f1-907e-4b5a-a4ec-367cc8e22024a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Phase_of_Flight_L" Guid="a69760f9d-46f1-4caf-977e-c5019b995a06a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_Destination_Char_1" Guid="aa2243ca6-2e21-46e3-8edb-419df653bc42a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Destination_Char_2" Guid="ab31bca19-b6de-451c-b69a-5e58e23fe3baa" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Destination_Char_3" Guid="ab3d6df76-8359-4fee-b667-79b231122035a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Destination_Char_4" Guid="a51e52e71-c7bc-4cbb-a4e8-3937a17f6f25a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Origin_Char_1" Guid="a7717186d-b296-4241-ab11-bae0b3dd711fa" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Origin_Char_2" Guid="a5a602896-0bde-4eca-bbb6-704227d41623a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Origin_Char_3" Guid="ab5a63314-0257-46ff-978d-476835d07635a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+    <RP Name="RX_Origin_Char_4" Guid="a4f9392f1-d475-4be4-b654-b00c3d231ab4a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="7" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_011_GOB1_1" Guid="a9bd3cc54-70c4-40b4-b13c-65937a5a7a8ea" Direction="Destination" MessageSize="156" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Time_to_Go_TO_Waypoint_L" Guid="ab9cb4ff6-6ead-4e2a-b0df-ee38354972c9a" DataFormatType="OPAQUE" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="ETA_Destination_L" Guid="aa2030c13-f7ee-4a65-8588-8cea91268c41a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="ETA_TO_waypoint_L" Guid="a2f3bf16b-95b0-4106-b73f-29b2713802b6a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_2" Guid="a932ef53e-7b01-44e5-837b-aedbf866b349a" Direction="Destination" MessageSize="1024" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="RX_L223_ACK_Word_Printer_L" Guid="a00db6956-9baf-4f51-8d90-2ffd8f66dbd7a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_CTL1_Word_Printer_L" Guid="a2ef1e236-92e1-4453-b051-bf8d799481e4a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_CTL2_Word_Printer_L" Guid="a44605732-d1cc-46a9-bd4c-f5854ed81e86a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_Data_Word_Printer_L" Guid="afccd8989-0bcf-4922-98fa-dd1d07fe488da" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_EOT_Word_Printer_L" Guid="ad21010ba-8164-4f53-b279-47ba079e2b96a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_ETX_Word_Printer_L" Guid="acd11f539-413d-4023-86e9-f172b0b157dda" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_RTS_Word_Printer_L" Guid="ace980333-fdb1-4752-83d6-806c3133e56ca" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_STX_Word_Printer_L" Guid="a86c8b998-8a6d-441d-bfa4-8449008bad97a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_LENGTH_Printer_L" Guid="ac34a5ea7-b83c-4f13-b7d2-cb4a26184fb4a" DataFormatType="UINT" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="16" SysLatencyWCLimit="200" />
+    <RP Name="RX_PAD_Printer_L" Guid="a2faa3d37-e3f1-487e-8f45-e88993b978d9a" DataFormatType="PAD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="16" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R" Guid="ad629f9d6-2f5e-4314-b34e-bc03d77bc1b6a" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Active_Flight_Plan_R" Guid="ac495d367-eafa-425d-a910-88ea049ad1c0a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="FMS_Printing_Data_R" Guid="a132d9df7-b1a9-48d1-8130-68a37cdd731ca" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Gross_Weight_lbs_R" Guid="a4f9bae73-062a-4ebe-81b9-57099630f2e7a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Original_departure_Airport_ID_R" Guid="af4b38a7b-bca1-4ba2-ba81-0dc788ad9f2fa" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Phase_of_Flight_R" Guid="a2bd292c7-b7b4-4dc1-aebd-5d68037faff7a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Destination_Airport_ID_R" Guid="adfb10d57-f0ff-4b47-9b6c-d763d1174f89a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_1" Guid="a0fcda7a9-bea4-44ec-ae02-1add5b534521a" Direction="Destination" MessageSize="76" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Date_R" Guid="af3ddb4b8-5f85-4635-acef-5700a6c2a65aa" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Present_position_latitude_R" Guid="a93871181-4d98-4315-b8cb-3c98e9846e4ba" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Present_position_longitude_R" Guid="aa1e99190-79aa-4a51-99d2-3e3418595328a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="UTC_GMT_R" Guid="a11b08791-6a4c-4883-a0c0-e60dc01008e9a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_2" Guid="a34f4a074-bd55-4277-bd02-cac1cb011038a" Direction="Destination" MessageSize="156" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="ETA_Destination_R" Guid="a51e2c16d-4fc7-446e-ad68-d6b8b281449ea" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="ETA_TO_waypoint_R" Guid="a55f91937-5410-42de-856d-1a5bacff23d5a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Time_to_Go_TO_Waypoint_R" Guid="af716ca76-3dbe-4e68-b8a3-ec366c546f4aa" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_3" Guid="a30cbf696-a93f-43cb-b2ab-c501d6b33c00a" Direction="Destination" MessageSize="1024" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="RX_L223_ACK_Word_Printer_R" Guid="a5ec00c40-3415-4535-9541-3b14a54142caa" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_CTL1_Word_Printer_R" Guid="a120288b3-3031-4d57-b3ea-b2623a2af3c0a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_CTL2_Word_Printer_R" Guid="a746acc4e-c899-4af1-b14d-17c85f5a9b3ca" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_Data_Word_Printer_R" Guid="aa74bedf3-2b2e-4feb-8c39-8b4fb0fd057aa" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_EOT_Word_Printer_R" Guid="acffa1f7e-edd7-46be-b610-71f2b587ab69a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_ETX_Word_Printer_R" Guid="a69a4b23e-7c1c-4ae5-9c97-437ce0657e37a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_RTS_Word_Printer_R" Guid="a98d84acf-5f85-4313-a652-814b5fa813ada" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_L223_STX_Word_Printer_R" Guid="aae258040-b707-410e-9726-d8aa0e32e622a" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="RX_LENGTH_Printer_R" Guid="ad56d53dd-7e1c-41e9-8bc6-53a36f377314a" DataFormatType="UINT" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="16" SysLatencyWCLimit="200" />
+    <RP Name="RX_PAD_Printer_R" Guid="aa7c2c543-ffd9-472e-a3c0-0f692059a925a" DataFormatType="PAD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="16" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS" Guid="a25d984b9-9888-436c-b91f-956d3789b539a" Direction="Destination" MessageSize="36" Networks="A" QueueLength="8" SamplePeriod="10">
+    <RP Name="Pitch_Rate_Body" Guid="a70a89bc2-c957-409a-bb51-afe95387a655a" DataFormatType="BNR" Label="326" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Roll_Rate_Body" Guid="aaae056f3-d0b2-490a-860b-4c4f48aa0d0ea" DataFormatType="BNR" Label="327" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Yaw_Rate_Body" Guid="a6ace7db4-ea63-4dea-8724-585af4d6a40ba" DataFormatType="BNR" Label="330" ParameterSize="19" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ACPS" Guid="a509566ed-09e4-4911-b3ae-2499020a3c51a" Direction="Destination" MessageSize="16" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Aircraft_Serial_Number" Guid="ae8658264-13d5-4892-abd4-a6522e65cae5a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Aircraft_Type" Guid="a0f40cb1d-4597-48f2-bba1-57ec7c66fe66a" DataFormatType="COD" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Airframe_Type_Parameter_1" Guid="a1e8a5040-1575-4088-b11a-c2a41631e902a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Airframe_Type_Parameter_2" Guid="aa001a423-8584-41b1-ba70-90a4e86d03fea" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Airframe_Type_Parameter_3" Guid="a3a28d1f5-185c-4630-8531-0f55572998bea" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Airframe_Type_Parameter_4" Guid="a62c1e584-625a-4962-95f0-eb5cf6666e60a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Serial_Number_Parameter_1" Guid="a9f7b58e6-d54e-45fb-af1b-83a3594a8043a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Serial_Number_Parameter_2" Guid="ae5442d36-a4f3-41ac-8694-e01b872255b0a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Serial_Number_Parameter_3" Guid="a34a0469c-d4dd-4ac4-8237-419e351372c2a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Serial_Number_Parameter_4" Guid="addd359d9-62f2-496f-b0e0-68f4c7aee8d6a" DataFormatType="COD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS" Guid="a663cc7f6-1871-4023-9823-81a4115dc78da" Direction="Destination" MessageSize="216" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Selected_N1_Indicated" Guid="a783ca9a9-061b-437d-a008-1ef989045cdfa" DataFormatType="FLOAT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Selected_N2_Actual" Guid="a96497848-cfbe-4178-955c-2c2716e65a33a" DataFormatType="FLOAT" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FUEL" Guid="a9c4cae79-6eb7-43e4-8d3f-13dfe808aac9a" Direction="Destination" MessageSize="464" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Total_Fuel_Quantity_kgs" Guid="a42dbb453-862d-4ea1-b3b0-e45927b14d47a" DataFormatType="BNR" Label="250" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Left_Wing_Tank_Fuel_Quantity_kgs" Guid="af3e4a604-a1c7-4358-80d2-c3a4f96156a5a" DataFormatType="BNR" Label="251" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Right_Wing_Tank_Fuel_Quantity_kgs" Guid="a70c92459-da0d-45bb-8c2b-f571aa62010fa" DataFormatType="BNR" Label="252" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Center_Wing_Tank_Fuel_Quantity_kgs" Guid="a6727b461-29ba-472f-90d4-56ae8d6ba857a" DataFormatType="BNR" Label="253" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Total_Fuel_Quantity_lbs" Guid="ae5138c41-12b7-4d3d-ad37-a024553cc032a" DataFormatType="BNR" Label="254" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Left_Wing_Tank_Fuel_Quantity_lbs" Guid="a66ee9aaf-acf9-4db5-a25f-35ac64a86a53a" DataFormatType="BNR" Label="255" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Right_Wing_Tank_Fuel_Quantity_lbs" Guid="a884201c7-3604-42c3-8a73-775303a74f4ea" DataFormatType="BNR" Label="256" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Center_Wing_Tank_Fuel_Quantity_lbs" Guid="a764ed4b9-b29c-42f3-9fe1-7c93e8dca62ea" DataFormatType="BNR" Label="257" ParameterSize="19" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_IDS_A" Guid="a6ee37eca-c52a-4153-8278-ed7917caebf1a" Direction="Destination" MessageSize="16" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="L_ID_ICE_A" Guid="aa45c7aa4-d21d-4652-ae86-c9eaf48ea2d4a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="L_ID_STATUS_A" Guid="a4ca0ff4a-413d-4e7d-816f-d5c95d75ab13a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_L_ID_RDIU_03" Guid="a3681ff03-ed36-4bf4-9c74-ec1ad50c9cb3a" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="DISC_ID_ICE_A_RDIU_03" Guid="a5e83dcb6-df0f-42db-8d05-e8492bfcb54aa" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_03" Guid="aac7ce3a4-98e9-4b2a-999f-d955b8e2b039a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_ICE_B_RDIU_03" Guid="ab67c33f0-8433-44ed-bcf5-3a36416f2fd7a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_03" Guid="aea3abddf-8720-4737-80e7-c0acb90be8a6a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_R_ID_RDIU_04" Guid="afc320264-9d40-4f7c-9cb9-e5303f922178a" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="DISC_ID_ICE_A_RDIU_04" Guid="af1afbe33-3f8a-4d17-b640-7970fee1518ca" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_04" Guid="ad0225634-0848-4fbd-a9df-1b417c4a831ba" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_ICE_B_RDIU_04" Guid="aadbdee83-59f6-417b-b301-834bf2ad4356a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_04" Guid="aab8e40b8-3e0e-4a9b-9f97-7b3162da9647a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_L_ID_RDIU_05" Guid="a798ebd4b-fd5f-46d3-bf4d-0323d0b8aa0ba" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="DISC_ID_ICE_A_RDIU_05" Guid="a5d50765e-de7b-477a-948e-0c7c64c93fc1a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_05" Guid="a69c1221e-a894-4e9e-8db6-85918e6799b3a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_ICE_B_RDIU_05" Guid="af254683d-dd7a-4bc7-940b-7bc90ab18bd6a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_05" Guid="ab0e7d84b-5222-4ac1-9325-bfccdfc93e92a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_R_ID_RDIU_06" Guid="a5a9be28d-9380-4923-82ea-8587f1c8d044a" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="DISC_ID_ICE_A_RDIU_06" Guid="a72a71965-e11f-44c1-b7c1-f129c71f24e0a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_06" Guid="aa25bae6c-8201-44b3-83c7-4758abe270a4a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_ICE_B_RDIU_06" Guid="ae0e888fc-4d84-42ce-be3e-24778653ea15a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_06" Guid="af61ad2ac-99d9-4072-a0fb-6904b1f5d31ca" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_HLS" Guid="a649ea071-59c8-46c5-9f2e-297ee9d32b9aa" Direction="Destination" MessageSize="20" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Slat_Position" Guid="a18e11d37-f6ac-4e6a-8937-bbcd9daaef5ba" DataFormatType="OPAQUE" Label="105" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="Flap_Position" Guid="a92c41847-2f8b-4fd0-9a8a-544b74651ed0a" DataFormatType="OPAQUE" Label="106" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_Datalink" Guid="aa777448b-cfc1-4ef5-8e1c-a172ca35dd59a" Direction="Destination" MessageSize="12" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Datalink_Printer_RIU_RX_L172_SubsystemID" Guid="adf847d76-5520-4629-82df-53eb3f1dcc26a" DataFormatType="OPAQUE" Label="172" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="2560" />
+    <RP Name="Datalink_Printer_RIU_RX_L223_PRINTER_SAL" Guid="a2557b61e-d712-4a71-81e6-6b4cd7ca787ca" DataFormatType="OPAQUE" Label="223" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="2560" />
+    <RP Name="Datalink_Printing_Data_IMA" Guid="a712ffa31-c2dd-44c3-ba2b-a2822ef87a29a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Datalink_Printing_Data_RIU" Guid="a0cd07f64-0340-4e4c-b848-f17ccb3a47e4a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Weather_Forecast_Data" Guid="abfb88741-24ef-4335-be2c-cee32af059fba" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_OMS" Guid="a70c5f74a-3ed8-4039-aa9e-dc812ed049b9a" Direction="Destination" MessageSize="12" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Current_Flight_Number" Guid="a5282d889-5906-4102-b2e6-ce6c5d496f84a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Departure_Airports" Guid="ad24c1057-71d3-40cb-9417-79ab89183810a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Destination_Airports" Guid="a8b2eedd1-6906-49ca-a8a2-0a1309b91fbda" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="Fault_History_Get_Command" Guid="a292f62d0-95ad-4857-a4b0-44d06b6fcc18a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Fault_History_Get_Next_Block_Command" Guid="a37465a8e-4692-4a75-83e0-a2966d7beb74a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Fault_History_Get_Previous_Block_Command" Guid="a583f4722-4e46-499e-b6e9-79482012f0b0a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Fault_History_Reset_Command" Guid="a0a7cde90-b891-4e24-8101-f428e324da0da" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="Flight_Leg" Guid="a8d4b8b61-a650-4743-b612-9d2e28013aa2a" DataFormatType="SINT" ParameterSize="16" SysLatencyWCLimit="200" />
+    <RP Name="Global_Abort_Flag" Guid="ad4fdf58b-7886-49ee-8144-8f9d33d50f33a" DataFormatType="BOOL" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="ICAO_transponder_code" Guid="a463f0cfc-022f-4a4e-ad04-256c34f594dda" DataFormatType="UINT" ParameterSize="24" SysLatencyWCLimit="200" />
+    <RP Name="OMS_Flight_Phase" Guid="adf7419de-2bc8-44f2-9c53-71e716c5e997a" DataFormatType="COD" ParameterSize="16" SysLatencyWCLimit="200" />
+    <RP Name="Registration_number" Guid="a5d8705ca-6c28-4e9d-9ac7-ef38d0b00ce0a" DataFormatType="CHAR STRING" SysLatencyWCLimit="200" />
+    <RP Name="RX_Days_10s" Guid="ae82d3767-2afc-49a6-904e-1d024095f292a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Days_1s" Guid="aded70589-a669-4a7d-bfc3-57672ad819b3a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Departure_Airport_Char_1" Guid="a5cf7ea55-bcf7-40f5-b1a5-2249f0339bdda" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Departure_Airport_Char_2" Guid="a42501cbd-c1ce-4220-bf94-ab48e0c69431a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Departure_Airport_Char_3" Guid="af1d40c34-9574-45d6-92f7-d056d6e10885a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Departure_Airport_Char_4" Guid="a3874eea9-b33a-4803-9105-89a3b964bd86a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Destination_Airport_Char_1" Guid="acc3b8acc-e8de-4f3f-a7ab-cd5656c3c952a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Destination_Airport_Char_2" Guid="a6e82bee6-a9e7-4970-afb9-56dd5dc34d36a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Destination_Airport_Char_3" Guid="a37ad39d2-9b13-4cef-b36b-bf62cace5db9a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Destination_Airport_Char_4" Guid="ad25d705f-5e26-4378-bae3-9e3b55e61bf0a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_1" Guid="a10b4c27b-2bd3-4bb7-b357-f9a371e1c8e3a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_2" Guid="a50a21cd8-9665-4ce5-9f96-bd5631ca6b9ca" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_3" Guid="aac63021b-3e0a-4f8d-b322-92ca71c3bddaa" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_4" Guid="abbe00790-f75c-4b26-a62e-13bfd46e7bb0a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_5" Guid="a223f03b7-db48-4889-9c92-867ffbdf8776a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_6" Guid="a30c7de23-8715-473d-bbe4-88d82dad7a2ba" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_7" Guid="a1e0487d4-269c-4715-be02-b944e2dadc43a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Flight_Num_Char_8" Guid="a38e51cc7-5b39-49c1-996f-62335920b542a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Hours_10s" Guid="a4b21f8ab-e5cd-4381-91e3-2def40207716a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Hours_1s" Guid="a2e29a353-b23c-4e53-b84f-f1de3622d1c0a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Minutes_10s" Guid="a294b0b95-d33d-4b07-97ee-72f4508d03d6a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Minutes_1s" Guid="ab64c1e5f-00a5-4229-8966-221e486430a8a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Months_10s" Guid="a4b96bcaa-2157-43ec-aebb-6379a1a4fde4a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Months_1s" Guid="ad902285d-6436-4529-b4a3-875d9e5eade5a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_1" Guid="add062f8d-d071-47d1-be38-55da308dd51da" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_2" Guid="a89a04ef1-3bdb-467c-aa77-fc6a003f72dea" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_3" Guid="ac4a6cd30-0be4-48a5-bb13-4c2e0e4dac2fa" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_4" Guid="abff0d531-afec-4f49-98dc-a3fdb9c2a4fba" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_5" Guid="ab2253bc8-9bae-495f-ae28-33777d7c22eda" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_6" Guid="adf40e6a4-011e-4ed8-95e4-352aa86dacf3a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_7" Guid="a90ff1b49-7a41-45ec-9b06-8fcca3b9a8f5a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_8" Guid="a38bcb341-586a-4639-bab2-abef2ce04974a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Reg_Num_Char_9" Guid="a1fa533f2-ed0a-4aef-8f62-681e42d23253a" DataFormatType="ISO-5" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="8" SysLatencyWCLimit="200" />
+    <RP Name="RX_Seconds_10s" Guid="a9a9af613-5683-4af6-b99d-634a1d3f42a6a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Seconds_1s" Guid="a2770749b-f6b8-47e4-bd28-f6f17a6f0573a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_String_Length_1" Guid="ad8eb6676-5b24-4cd5-8da1-9072a55b58b0a" DataFormatType="UINT" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="16" SysLatencyWCLimit="200" />
+    <RP Name="RX_Years_10s" Guid="a99e9d0f9-5ed5-4b82-b314-c4e6117df353a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="RX_Years_1s" Guid="a090eaf81-5027-43c1-9986-a9d7263da692a" DataFormatType="BCD" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="4" SysLatencyWCLimit="200" />
+    <RP Name="Time_Cycle_Get_Command" Guid="a8d0e8ad2-2d78-48c8-8460-4361e33e574ba" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="UTC_Date" Guid="a68b9339c-5ee8-4425-b27a-5716cad105dea" DataFormatType="BNR" SysLatencyWCLimit="200" />
+    <RP Name="UTC_Time" Guid="a121db855-b8f5-4aaf-8087-18b672a1ca08a" DataFormatType="BNR" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s1" Guid="a2b81b9bd-458b-4184-bcda-aaec60ece0fba" Direction="Destination" MessageSize="72" Networks="A" QueueLength="8" SamplePeriod="20">
+    <RP Name="Pitch_Angle" Guid="abb05242e-b2d3-4561-854f-bf26d47edb77a" DataFormatType="BNR" Label="324" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Roll_Angle" Guid="a1bb2ca26-c654-45af-a8c1-be4a70511aaaa" DataFormatType="BNR" Label="325" ParameterSize="19" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s2" Guid="abb074e6b-744b-4657-8499-3a97d65487a6a" Direction="Destination" MessageSize="84" Networks="A" QueueLength="8" SamplePeriod="40">
+    <RP Name="Hybrid_True_Heading" Guid="a66ca984f-543a-4648-b26b-d642c5fe5ee6a" DataFormatType="BNR" Label="132" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Hybrid_Ground_Speed" Guid="ad92ab303-b583-49f4-88fe-4b41688d42efa" DataFormatType="BNR" Label="175" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Ground_Speed" Guid="a3d9c7433-ca18-49b9-a2cb-1db54066755ba" DataFormatType="BNR" Label="312" ParameterSize="18" SysLatencyWCLimit="200" />
+    <RP Name="Track_Angle_True" Guid="ad721b657-8695-40a4-a8a9-2835560898e8a" DataFormatType="BNR" Label="313" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="True_Heading" Guid="a984b6cd1-8381-407f-a200-3433aa8dead6a" DataFormatType="BNR" Label="314" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Track_Angle_Magnetic" Guid="a390f3e5a-098c-4c3d-a687-06674bc20043a" DataFormatType="BNR" Label="317" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Magnetic_Heading" Guid="adcb9931f-d4f8-4bad-b686-b4e895ed6a7ca" DataFormatType="BNR" Label="320" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Drift_Angle" Guid="a0353f9b5-bf8c-4b71-a792-18bf1837c6b5a" DataFormatType="BNR" Label="321" ParameterSize="19" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s3" Guid="aa1cf8a53-8656-4db9-9d60-164ac5199ae4a" Direction="Destination" MessageSize="72" Networks="A" QueueLength="8" SamplePeriod="80">
+    <RP Name="Hybrid_Present_Position_Latitude" Guid="a182020f9-c634-41fa-9f5a-37d5e2595fd3a" DataFormatType="BNR" Label="254" ParameterSize="21" SysLatencyWCLimit="200" />
+    <RP Name="Hybrid_Present_Position_Longitude" Guid="a28b726fc-75fa-4600-ad37-e88bdb175b58a" DataFormatType="BNR" Label="255" ParameterSize="21" SysLatencyWCLimit="200" />
+    <RP Name="Wind_Speed" Guid="ad3310a7e-fd58-4710-b697-aa1c502387c2a" DataFormatType="BNR" Label="315" ParameterSize="19" SysLatencyWCLimit="200" />
+    <RP Name="Wind_Angle" Guid="a4e71a185-7e41-4c18-a7b3-55efebf3fe6ca" DataFormatType="BNR" Label="316" ParameterSize="19" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_IDS_B_s1" Guid="a75739249-7af2-4bd9-8273-83dbd6b237ffa" Direction="Destination" MessageSize="16" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="R_ID_ICE_B" Guid="ab4b65cf0-6e98-4048-8a0b-3702063742c8a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="R_ID_STATUS_B" Guid="a8e5ac9ff-1a61-4658-bed9-cbd56ad02928a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ADS_s1" Guid="aa3784627-b9a3-4f72-a960-42b351f3df1ca" Direction="Destination" Networks="A" QueueLength="8" SamplePeriod="100">
+    <RP Name="Press_Alt_Voted" Guid="a2b00fedb-11fc-43a7-aa87-ea826abb5f16a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="BaroAlt_BaroSet2_Voted" Guid="a982bbd0a-65cc-4d83-a625-8043e44bce89a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="CAS_Voted" Guid="a3db87ca0-c9e4-4697-8377-f805252201b3a" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="TAS_Voted" Guid="af9f58e75-43be-4408-9092-ec91e3f060dea" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="SAT_Voted" Guid="ab5bf40e3-6ed0-4084-ac5e-6b2c6239e68ea" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="TAT_Voted" Guid="a26092d99-5d96-4eac-b92a-2634b2e4749ca" DataFormatType="OPAQUE" ParameterSize="32" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_R_ID_RX" Guid="a123ab82f-6b5f-4c26-96c7-dfb7feff6208a" Direction="Destination" MessageSize="16" Networks="A" QueueLength="2" SamplePeriod="80">
+    <RP Name="R_DISC_ID_ICE_Status" Guid="a7583c74b-0f03-4f1e-8e30-ed0ea8306d01a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" />
+    <RP Name="R_DISC_ID_ICE_STATUS_Status" Guid="a88e48672-8943-4b3b-a310-bbc68c008590a" DataFormatType="DIS" Label="-1" LsbRes="-1" Multiplier="1" ParameterSize="1" />
+    <RP Name="R_ID_ICE_A" Guid="ade3d95e5-39fa-49d8-a55a-19fcd2eb240ca" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="R_ID_STATUS_A" Guid="abf9cc02f-1d92-4f88-ba87-d94fe328d106a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </HFQueuingPort>
+</HostedFunctionClass>

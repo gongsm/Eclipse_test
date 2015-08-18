@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Package name="SecondaryIndications">
+			<declarations>
+				<Constant name="FuelQtyKGSCaution">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="880"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/611d/7807/1A20/5417dca71eb2" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>It is the KG caution value of the fuel quantity.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelQtyLBSCaution">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1940"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/613b/7807/1A20/5417e3006657" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>It is the LBS caution value of the fuel quantity.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelArrowRToL">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/305b/1E99/1680/541a36d77a2e"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelArrowLToR">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/305c/1E99/1680/541a36da3d3b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelUnitKGS">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/76be/1E99/1680/541ab7511c1b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="OIL_TEMP_EXTEND_ARC_START">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="181.8"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/31ff/39F0/1B24/546d582fe89" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>The threshold value of caution and warning data range is different from the OilTemperature value range, in case of display the whole range of threshold value ,this value is create.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelUnitLBS">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e8a3/41F2/8E4/54817969c9e"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelArrowDualDirection">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/609e/155E/1060/551511ed2a9b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FuelArrowNotDisplay">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/60c9/155E/1060/55151262487f"/>
+					</pragmas>
+				</Constant>
+				<Type visibility="private" name="N2Plugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popN2ValueL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97e5/3E/1630/53951cd625c9"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2ValueR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/13974/7F3C/1624/539525f97df3"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2StateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/13975/7F3C/1624/5395260647e7"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2StateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/13983/7F3C/1624/5395261d161c"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97e4/3E/1630/53951a0d61b1"/>
+					</pragmas>
+				</Type>
+				<Type name="popSecondaryIndicationsPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popN2Plugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="N2Plugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97e7/3E/1630/53951cf867d2"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelFlowPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="FuelFlowPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3855d/1DB1/D84/53955b8d3f9d"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressurePlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OilPressurePlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/38567/1DB1/D84/53955bbab30"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilQtyPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OilQtyPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/38571/1DB1/D84/53955bc91060"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OilTempPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c555/1DB1/D84/53955c0c34fc"/>
+									</pragmas>
+								</Field>
+								<Field name="popVibPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="VibPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c55f/1DB1/D84/53955c5350f6"/>
+									</pragmas>
+								</Field>
+								<Field name="popImperialOrMetricUnits">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c569/1DB1/D84/53955cf918d3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>For metric, this value is 0; For Imperial, this value is 1.</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="popFuelQtyPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="FuelQtyPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2fbd/7807/1A20/5417d82d50f3"/>
+									</pragmas>
+								</Field>
+								<Field name="popWAIPlugs">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="WAIPlugs"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/61bd/EBA/F60/5465916b6882"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97e6/3E/1630/53951cde5d8"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="OilTempPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popOilTempL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97f2/3E/1630/53951d7af9"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/934d/7639/15E4/53980b607804"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/9353/7639/15E4/53980b785875"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/9359/7639/15E4/53980b855b6d"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempActivityL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/41c1/51C/1B90/546b1689382b"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilTempActivityR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/41c7/51C/1B90/546b168b1254"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97f1/3E/1630/53951d691de7"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="OilPressurePlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popOilPressureValueL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97f4/3E/1630/53951d8b50f0"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressureValueR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/500b/6FD4/14C4/53995311757e"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressureStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5011/6FD4/14C4/539953275684"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressureStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5017/6FD4/14C4/53995328352d"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressureActiveStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a4b/5237/16C8/546c6d8b7820"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilPressureActiveStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a4c/5237/16C8/546c6d8f680"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97f3/3E/1630/53951d8065be"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="FuelFlowPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popFuelFlowL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97f6/3E/1630/53951da36535"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelFlowR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cc69/1DB1/D84/539587854d62"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelFlowL_State">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cc6a/1DB1/D84/539587d31eb2"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelFlowR_State">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cc78/1DB1/D84/539587e5639e"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97f5/3E/1630/53951d8e3885"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="OilQtyPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popOilQtyValueL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97f8/3E/1630/53951dc36b55"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilQtyValueR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/47d3/DCC/1600/53991e283730"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilQtyStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/47d9/DCC/1600/53991e292497"/>
+									</pragmas>
+								</Field>
+								<Field name="popOilQtyStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/47df/DCC/1600/53991e2a7d4f"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97f7/3E/1630/53951db75809"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="VibPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popN1VibValueL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/97fa/3E/1630/53951dd7a51"/>
+									</pragmas>
+								</Field>
+								<Field name="popN1VibValueR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57f3/6FD4/14C4/53995d0c3caa"/>
+									</pragmas>
+								</Field>
+								<Field name="popN1VibStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57f9/6FD4/14C4/53995d0d3717"/>
+									</pragmas>
+								</Field>
+								<Field name="popN1VibStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57ff/6FD4/14C4/53995d0e7155"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2VibValueL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/39ea/51C/1B90/546ad68e29e"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2VibValueR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/39f0/51C/1B90/546ad690785f"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2VibStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/39f6/51C/1B90/546ad69142c7"/>
+									</pragmas>
+								</Field>
+								<Field name="popN2VibStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/39fc/51C/1B90/546ad692726b"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/97f9/3E/1630/53951dcd2ac9"/>
+					</pragmas>
+				</Type>
+				<Type name="FuelQtyPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popTotalFuelQty">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f55/7807/1A20/5417d72357a8"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelQtyUnitSelect">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f56/7807/1A20/5417d78f2f0a"/>
+									</pragmas>
+								</Field>
+								<Field name="popTotalFuelReadoutState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f64/7807/1A20/5417d79ae1f"/>
+									</pragmas>
+								</Field>
+								<Field name="popLeftFuelQty">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f6a/7807/1A20/5417d7a13b97"/>
+									</pragmas>
+								</Field>
+								<Field name="popLeftFuelReadoutState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f70/7807/1A20/5417d7a17c80"/>
+									</pragmas>
+								</Field>
+								<Field name="popCenterFuelQty">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f76/7807/1A20/5417d7a15c25"/>
+									</pragmas>
+								</Field>
+								<Field name="popCenterFuelReadoutState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f7c/7807/1A20/5417d7a23008"/>
+									</pragmas>
+								</Field>
+								<Field name="popRightFuelQty">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f82/7807/1A20/5417d7a2517"/>
+									</pragmas>
+								</Field>
+								<Field name="popRightFuelReadoutState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f88/7807/1A20/5417d7a22167"/>
+									</pragmas>
+								</Field>
+								<Field name="popFuelTransDirections">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f94/7807/1A20/5417d7a320c8"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/2f54/7807/1A20/5417d71135ba"/>
+					</pragmas>
+				</Type>
+				<Type visibility="private" name="WAIPlugs">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popWAIStateL">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/61a2/EBA/F60/54655aa76a36"/>
+									</pragmas>
+								</Field>
+								<Field name="popWAIStateR">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/61b0/EBA/F60/54655ac15f34"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/61a1/EBA/F60/54655a93282b"/>
+					</pragmas>
+				</Type>
+				<Operator name="SecondaryIndications" href="SecondaryIndications.xscade"/>
+				<Operator name="SecondaryIndications_N2" href="SecondaryIndications_N2.xscade"/>
+				<Operator name="SecondaryIndications_FF" href="SecondaryIndications_FF.xscade"/>
+				<Operator name="SecondaryIndications_OilTemp_GetState" href="SecondaryIndications_OilTemp_GetState.xscade"/>
+				<Operator name="SecondaryIndications_N2_GetState" href="SecondaryIndications_N2_GetState.xscade"/>
+				<Operator name="SecondaryIndications_FF_GetState" href="SecondaryIndications_FF_GetState.xscade"/>
+				<Operator name="SecondaryIndications_OilTemp" href="SecondaryIndications_OilTemp.xscade"/>
+				<Operator name="SecondaryIndications_OilQty" href="SecondaryIndications_OilQty.xscade"/>
+				<Operator name="SecondaryIndications_OilQty_GetState" href="SecondaryIndications_OilQty_GetState.xscade"/>
+				<Operator name="SecondaryIndications_OilPressure" href="SecondaryIndications_OilPressure.xscade"/>
+				<Operator name="SecondaryIndications_OilPressure_GetState" href="SecondaryIndications_OilPressure_GetState.xscade"/>
+				<Operator name="SecondaryIndications_Vib" href="SecondaryIndications_Vib.xscade"/>
+				<Operator name="SecondaryIndications_Vib_GetState" href="SecondaryIndications_Vib_GetState.xscade"/>
+				<Operator name="SecondaryIndications_FuelQty" href="SecondaryIndications_FuelQty.xscade"/>
+				<Operator name="SecondaryIndications_FuelQty_NumStateAndValue" href="SecondaryIndications_FuelQty_NumStateAndValue.xscade"/>
+				<Operator name="SecondaryIndications_FuelQty_ArrowState" href="SecondaryIndications_FuelQty_ArrowState.xscade"/>
+				<Operator name="SecondaryIndications_WAI" href="SecondaryIndications_WAI.xscade"/>
+				<Operator name="SecondaryIndications_WAI_GetState" href="SecondaryIndications_WAI_GetState.xscade"/>
+				<Operator name="SecondaryIndications_FuelQty_C_NumStateAndValue" href="SecondaryIndications_FuelQty_C_NumStateAndValue.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/9/3E/1630/539519527ee3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/a/3E/1630/539519526f2a" blockKind="constants" columnsSize="0, 283, 150, 150, 417"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/b/3E/1630/53951952747" blockKind="types" columnsSize="0, 379, 150, 407"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/c/3E/1630/539519524987" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

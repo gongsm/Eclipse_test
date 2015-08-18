@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponent Name="APP_FMS_TUNE_1" Guid="a5b957ca9-d339-428b-9731-ba4dabd415a0a" NameDef="APP_FMS_TUNE" GuidDef="a303d3595-f9de-4b06-9f0f-998d77ccf182a" XsdVersion="7.9" Hardware="CCR_LEFT.GPM_L5" IpAddress="10.42.44.105" TotalTime="7">
+  <A653SamplingPort Name="A653_IN_ADF_1" Guid="a4BE73ED9-1E49-47ef-924E-4F8FF72941BDa" NameDef="APP_FMS_TUNE.A653_IN_ADF_1" GuidDef="aD6AEB83A-7836-49e4-9C7A-A43B11A54F0Ba" PathName="VLPath15">
+    <RP Name="L032_ADF_Frequency_VOR1" Guid="a1a77b6f5-df91-489e-8157-8d0026a1f27ba" NameDef="APP_FMS_TUNE.L032_ADF_Frequency_VOR1" GuidDef="a8b588118-8a5c-4124-b00a-44dc17a46a28a">
+      <Pub_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_Msg.L032_ADF_Frequency_Echo" SrcGuid="a4ad6633d-c9fa-4d5b-a413-a656c2b53869a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.HFS1_O_A664_po429_ADF_LS_Out_1_A_B_Msg" SrcGuid="a3622d958-4dde-4d45-a2e3-62b5e3acf17ea" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ADF_2" Guid="a5789C715-879B-47f6-BD0C-7E8718C0A281a" NameDef="APP_FMS_TUNE.A653_IN_ADF_2" GuidDef="aDF237249-F0FC-4a2a-9095-49E30AC2B7EFa" PathName="VLPath1">
+    <RP Name="L032_ADF_Frequency_VOR2" Guid="aef467cc9-9847-41ee-944e-49d531307f05a" NameDef="APP_FMS_TUNE.L032_ADF_Frequency_VOR2" GuidDef="acedd7010-ed52-488d-968f-7227864ae0f7a">
+      <Pub_Ref SrcName="HF_NAV_4000_R.po429_ADF_LS_Out_1_A_B_Msg.L032_ADF_Frequency_Echo" SrcGuid="a79973af7-9ece-4409-b933-be8b086f5824a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_NAV_4000_R.HFS1_O_A664_po429_ADF_LS_Out_1_A_B_Msg" SrcGuid="a5abb4ac7-4372-452e-bb70-c7532050d1d9a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_CCR_REDUNDANCY_RPT" Guid="a7e4bd7b5-865f-46b0-903c-4b38e4f8a7b4a" NameDef="APP_FMS_TUNE.A653_IN_CCR_REDUNDANCY_RPT" GuidDef="a92819964-b591-4a2b-a265-1d159a703baba" PathName="VLPath18">
+    <RP Name="CCR_Power_Warning_CCR" Guid="a7db14272-aee1-4983-83d1-469815a4d2aca" NameDef="APP_FMS_TUNE.CCR_Power_Warning_CCR" GuidDef="a85e08ffc-ea84-405d-bde2-f654f89cca6aa">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.CCR_Power_Warning" SrcGuid="aece4de7e-a856-4f6b-9b02-42d9ee9486ffa" />
+    </RP>
+    <RP Name="GPM_Cabinet_Position_CCR" Guid="aabb00c0e-aec6-4fcc-8aed-5bc901a05d7fa" NameDef="APP_FMS_TUNE.GPM_Cabinet_Position_CCR" GuidDef="ab3d8fa7f-b3e5-4e74-a087-d959193b58f7a">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.GPM_Cabinet_Position" SrcGuid="ac4c54c73-3b12-4847-ab2e-1c4747306b2ea" />
+    </RP>
+    <RP Name="GPM_Module_Position_CCR" Guid="a2053d751-eff0-4308-ac80-1cb7b9d61da2a" NameDef="APP_FMS_TUNE.GPM_Module_Position_CCR" GuidDef="a49df89cf-8c25-41a5-bf5f-a8f322339c00a">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.GPM_Module_Position" SrcGuid="a2195d272-34be-4e41-b0d7-e2f52a5c03dea" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.CCR_REDUNDANCY_RPT_TX" SrcGuid="ad4f51310-d1a7-41eb-b200-91b6c40133eea" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_1_B" Guid="aB8CE053F-DF05-4b10-AB71-F4C2BBDB0E48a" NameDef="APP_FMS_TUNE.A653_IN_VOR_1_B" GuidDef="a927FF8DF-0E0D-4c62-8D0A-A171DC125DB6a" PathName="VLPath13">
+    <RP Name="L222_VOR_Omnibearing_VOR1" Guid="a27d6a804-a263-47fa-8865-5621821ee99aa" NameDef="APP_FMS_TUNE.L222_VOR_Omnibearing_VOR1" GuidDef="a8cf5a66b-6dfc-43b5-9399-4f941fede4dfa">
+      <Pub_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_50.L222_VOR_Bearing" SrcGuid="a0ff7a905-6472-478a-a94e-ea40f040042da" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.HFS3_O_A664_po429_VIR_LS_OUT_1_A_B_msg_50" SrcGuid="a0b6419cc-4054-422a-8c3d-9624afd1149fa" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_2_B" Guid="aCD4D1A20-58B1-45bf-BF62-C128AFB1F70Fa" NameDef="APP_FMS_TUNE.A653_IN_VOR_2_B" GuidDef="a663B97BE-BB3C-47be-8068-862D1E220B89a" PathName="VLPath18">
+    <RP Name="L222_VOR_Omnibearing_VOR2" Guid="a87ca8999-d4b6-4d10-b348-27dd40c65bf9a" NameDef="APP_FMS_TUNE.L222_VOR_Omnibearing_VOR2" GuidDef="a41c79c36-99bb-4a78-8121-05ea8a7530bca">
+      <Pub_Ref SrcName="HF_NAV_4000_R.po429_VIR_LS_OUT_1_A_B_msg_50.L222_VOR_Bearing" SrcGuid="a866a5665-1b4d-4e18-b9aa-0114890d7443a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_NAV_4000_R.HFS3_O_A664_po429_VIR_LS_OUT_1_A_B_msg_50" SrcGuid="a2adb2b93-bb03-4835-b921-0cb93f69d73ca" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_FMS_STATUS" Guid="a6b0c9d00-a37c-479e-af5b-6b87975bec55a" NameDef="APP_FMS_TUNE.A653_IN_FMS_STATUS" GuidDef="ae2a58668-5a9a-4b16-a468-4d5998d95738a" PathName="VLPath4">
+    <RP Name="FMS_Status" Guid="a79720ecb-4ceb-4215-906e-71745f50d08ea" NameDef="APP_FMS_TUNE.FMS_Status" GuidDef="abd90ffc8-7534-49d0-9181-e311fafbfca2a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.MSG_FMS_Status.DS_FMS_Status.FMS_Status" SrcGuid="a76475f52-5a54-4f2c-9985-c84c9ea21be1a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_FMS_STATUS" SrcGuid="a8034fa34-af02-4417-b11e-72af9895e186a" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_DME_1_A" Guid="a3f44664f-e202-4a65-b072-b4fc48110097a" NameDef="APP_FMS_TUNE.A653_IN_DME_1_A" GuidDef="a3ea90cb6-fe17-4149-81cc-96e33ede44e2a" PathName="VLPath15">
+    <RP Name="L035_DME_Frequency_DME1" Guid="a921f068a-dfb2-4e2c-b0f7-2c4a89adeeffa" NameDef="APP_FMS_TUNE.L035_DME_Frequency_DME1" GuidDef="a458a34e1-7347-41ab-9d87-0ed7e4b6204da">
+      <Pub_Ref SrcName="HF_DME_4000_L.po429_OUT_Ch1_Msg.L035_DME_FREQUENCY" SrcGuid="a80c26a77-cf66-4854-85a4-09853fcdfe00a" />
+    </RP>
+    <RP Name="L202_DME_Distance_DME1" Guid="affdc1315-8193-428c-a091-b816e711ef6ba" NameDef="APP_FMS_TUNE.L202_DME_Distance_DME1" GuidDef="a78c872b3-806e-41f8-a4f0-e7eabdf3a62da">
+      <Pub_Ref SrcName="HF_DME_4000_L.po429_OUT_Ch1_Msg.L202_DME_DISTANCE_BNR" SrcGuid="ab83c426f-606e-46c6-8b56-dc7c0e413057a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_I_40005_HF_DME_4000_L.HFS2_O_A664_po429_OUT_Ch1_Msg" SrcGuid="ab144e7e2-eb45-4c00-b365-b42f8db64fa3a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_1_B" Guid="a242168cd-2ad1-423c-a24a-8960f29a7229a" NameDef="APP_FMS_TUNE.A653_IN_DME_1_B" GuidDef="a2222ed38-61c5-4e17-945e-4768b0e94876a" PathName="VLPath15">
+    <RP Name="L300_DME_Ident_Wd_1_DME1" Guid="a528c8721-43fe-46b7-9dff-d72efbc618b4a" NameDef="APP_FMS_TUNE.L300_DME_Ident_Wd_1_DME1" GuidDef="a3a8021cc-b291-4651-9917-cf0a3626ee6ea">
+      <Pub_Ref SrcName="HF_DME_4000_L.po429_OUT_Ch1_Msg_200.L300_DME_IDENTIFIER_WD_1" SrcGuid="ad916e543-2e2e-4c70-83c8-90ffbd2ae087a" />
+    </RP>
+    <RP Name="L300_DME_Ident_Wd_2_DME1" Guid="a5e951412-9579-4f39-b3e0-2ee66298b55ca" NameDef="APP_FMS_TUNE.L300_DME_Ident_Wd_2_DME1" GuidDef="a5ef1fad3-be1d-4205-8cca-5c72b3f06f1ca">
+      <Pub_Ref SrcName="HF_DME_4000_L.po429_OUT_Ch1_Msg_200.L300_DME_IDENTIFIER_WD_2" SrcGuid="a237eeb86-6b08-4479-8458-e6d88c4ea62ca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_I_40005_HF_DME_4000_L.HFS1_O_A664_po429_OUT_Ch1_Msg_200" SrcGuid="a5cba78a5-bb92-46bf-8fce-4bfaf4a5a7eaa" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_2_A" Guid="a975600d2-254f-4c97-8e78-7ceac26bcdc5a" NameDef="APP_FMS_TUNE.A653_IN_DME_2_A" GuidDef="a16f76bff-9530-41b8-8fc6-72c6ece420f8a" PathName="VLPath18">
+    <RP Name="L035_DME_Frequency_DME2" Guid="ae82fe7c6-5bf2-4461-b45f-36a3365a2db8a" NameDef="APP_FMS_TUNE.L035_DME_Frequency_DME2" GuidDef="ac1736a1e-35ae-4fb1-9447-1686500cfc8ca">
+      <Pub_Ref SrcName="HF_DME_4000_R.po429_OUT_Ch1_Msg.L035_DME_FREQUENCY" SrcGuid="a9136ea32-33ff-4f0e-a9ab-69d56f8640baa" />
+    </RP>
+    <RP Name="L202_DME_Distance_DME2" Guid="ab4bffc1e-0d15-44fe-a193-917e8232908da" NameDef="APP_FMS_TUNE.L202_DME_Distance_DME2" GuidDef="a79bbf9b8-34c2-404e-9937-fd0190f62907a">
+      <Pub_Ref SrcName="HF_DME_4000_R.po429_OUT_Ch1_Msg.L202_DME_DISTANCE_BNR" SrcGuid="ac1ea34c5-e3c4-45eb-9c90-d4f853a82948a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_DME_4000_R.HFS2_O_A664_po429_OUT_Ch1_Msg" SrcGuid="a3cb95c84-db1e-4c90-b8d8-67951f35c76ba" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_DME_2_B" Guid="a6c10c68c-80fe-42cc-9145-97705643da5ba" NameDef="APP_FMS_TUNE.A653_IN_DME_2_B" GuidDef="a5dccdcf2-18f2-45a7-bd85-c570b15b7296a" PathName="VLPath18">
+    <RP Name="L300_DME_Ident_Wd_1_DME2" Guid="ac20c56de-0e43-44b7-9a7e-f4f9b0c3d0b2a" NameDef="APP_FMS_TUNE.L300_DME_Ident_Wd_1_DME2" GuidDef="a5f1b632d-76a0-42a0-ada2-d69f23c3f62ba">
+      <Pub_Ref SrcName="HF_DME_4000_R.po429_OUT_Ch1_Msg_200.L300_DME_IDENTIFIER_WD_1" SrcGuid="aaeeca54b-bd09-4c54-8a10-11b56b98bddca" />
+    </RP>
+    <RP Name="L300_DME_Ident_Wd_2_DME2" Guid="a86cbb623-fd71-4e4b-a68d-19aeaacc777fa" NameDef="APP_FMS_TUNE.L300_DME_Ident_Wd_2_DME2" GuidDef="ad39c235e-6186-40bd-ae58-75693c1ecb7fa">
+      <Pub_Ref SrcName="HF_DME_4000_R.po429_OUT_Ch1_Msg_200.L300_DME_IDENTIFIER_WD_2" SrcGuid="aeb6cd748-dff6-459c-88f1-621c8c1ce882a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_DME_4000_R.HFS1_O_A664_po429_OUT_Ch1_Msg_200" SrcGuid="a8645e416-6eb0-4294-93b1-a1622a9d75a8a" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_VOR_1_A" Guid="a3ea5dc36-8b51-4935-8ebc-3756e20a6e74a" NameDef="APP_FMS_TUNE.A653_IN_VOR_1_A" GuidDef="a68dc4cc0-0037-44bb-a2a5-f515e6780e27a" PathName="VLPath13">
+    <RP Name="L034_VOR_Freq_VOR1" Guid="a5c5bced7-24eb-4067-a90e-f88dfd36dfeca" NameDef="APP_FMS_TUNE.L034_VOR_Freq_VOR1" GuidDef="a11c7bd8a-271b-4042-aa46-d4468ec7da45a">
+      <Pub_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_200.L034_VOR_Frequency_Echo" SrcGuid="af76f41aa-1dd7-494e-bfb6-8857f1b986f9a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.HFS2_O_A664_po429_VIR_LS_OUT_1_A_B_msg_200" SrcGuid="adf61c27d-8c1f-476e-86d7-5af2970860e3a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_VOR_2_A" Guid="abb5821c8-fd1b-400e-82a7-e51809b8f0daa" NameDef="APP_FMS_TUNE.A653_IN_VOR_2_A" GuidDef="a1312e363-d6ca-425c-ba65-1d5627daaf5ea" PathName="VLPath18">
+    <RP Name="L034_VOR_Freq_VOR2" Guid="a6245431e-c12f-43df-9335-9938e1853a9ea" NameDef="APP_FMS_TUNE.L034_VOR_Freq_VOR2" GuidDef="ac8c9e47b-c801-4756-9c08-b4bee1e5d577a">
+      <Pub_Ref SrcName="HF_NAV_4000_R.po429_VIR_LS_OUT_1_A_B_msg_200.L034_VOR_Frequency_Echo" SrcGuid="a584a1397-dfa6-4447-8e3c-346e73d3170ca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_NAV_4000_R.HFS2_O_A664_po429_VIR_LS_OUT_1_A_B_msg_200" SrcGuid="afca6c22f-5378-416f-8bd4-1dcdeba3da7fa" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ILS_GLS_1" Guid="a8c1376dd-b0c9-4dec-9992-06ea330c2083a" NameDef="APP_FMS_TUNE.A653_IN_ILS_GLS_1" GuidDef="a8aa10bad-5dbb-4677-bd1d-69be35733cd8a" PathName="VLPath2">
+    <RP Name="L173_Localizer_Deviation_ILS1" Guid="af611d5b1-a653-4de2-ab89-50abb0528014a" NameDef="APP_FMS_TUNE.L173_Localizer_Deviation_ILS1" GuidDef="acebbbe24-9590-43bf-9c3d-d4c95926500fa">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_50.L173_Localizer_Dev" SrcGuid="a9a02374f-47f1-4732-9813-25b91dc28fdea" />
+    </RP>
+    <RP Name="L033_ILS_Frequency_ILS1" Guid="a5ef2da13-b3d4-490f-8691-fdc98e25d874a" NameDef="APP_FMS_TUNE.L033_ILS_Frequency_ILS1" GuidDef="a763a26f0-a0fa-4867-84d1-b3ddb0db0bc7a">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200.L033_Landing_Sys_Mod_Freq_ILS" SrcGuid="a1301ff0c-a593-4b7e-89ce-563cd9a2a6e5a" />
+    </RP>
+    <RP Name="L105_Selected_Runway_Heading_ILS1" Guid="a886b424f-d29a-4ca2-ab65-1d23b94463e3a" NameDef="APP_FMS_TUNE.L105_Selected_Runway_Heading_ILS1" GuidDef="a8174fe10-7e09-4cba-91a6-12d8e3ae2a8da">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200.L105_Selected_Runway_Heading_BNR" SrcGuid="a2fdbce52-33a5-43e3-9ef8-f520df90eccea" />
+    </RP>
+    <RP Name="L017_Selected_Runway_Heading_BCD_ILS1" Guid="afde8871c-cc04-4f57-a4ee-4c4dfa511af4a" NameDef="APP_FMS_TUNE.L017_Selected_Runway_Heading_BCD_ILS1" GuidDef="aa4be7053-6248-487f-8355-92bcf30324c4a">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200.L017_Select_Runway_Heading_BCD" SrcGuid="aa97414ce-f2ac-4ed9-bbbf-68079f16e650a" />
+    </RP>
+    <RP Name="L263_ILS_Ground_Station_ID_1_ILS1" Guid="a64b25738-9deb-4819-8f0c-75189b3c7c58a" NameDef="APP_FMS_TUNE.L263_ILS_Ground_Station_ID_1_ILS1" GuidDef="a8892c722-219c-474e-897c-1edb22dbbfaca">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200_Block.L263_Ground_Station_ID_1" SrcGuid="ac0bc3349-eab7-48b8-b797-3b564f6c5513a" />
+    </RP>
+    <RP Name="L264_ILS_Ground_Station_ID_2_ILS1" Guid="a98e9ad2e-0c8c-44f2-9f31-dfd6f76e887da" NameDef="APP_FMS_TUNE.L264_ILS_Ground_Station_ID_2_ILS1" GuidDef="a69661932-a21f-4e71-8143-21805994925aa">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200_Block.L264_Ground_Station_ID_2" SrcGuid="aeed85429-7148-49a8-b14d-f71604ae8046a" />
+    </RP>
+    <RP Name="L232_GLS_Airport_ID_ILS1" Guid="af707292d-ea8a-45ef-886c-f553a61ef97ca" NameDef="APP_FMS_TUNE.L232_GLS_Airport_ID_ILS1" GuidDef="a74ad557c-e419-4281-8167-83fe8053ac88a">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_ILS_Look_Alike_Instruments_Msg_200.L232_GLS_Airport_ID" SrcGuid="a66998dee-96fa-4e62-86b0-3d09c2381beca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW03_I_40005_HF_GLU_925_L.HFQ4_O_A664_po429_ILS_Look_Alike_Instruments_Msg_200_Block" SrcGuid="a931fa746-419c-42c5-9014-13d3d2e66ed7a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_ILS_GLS_2" Guid="ad4b196b5-b191-44cc-8e29-00104a95f5c1a" NameDef="APP_FMS_TUNE.A653_IN_ILS_GLS_2" GuidDef="a33d5477d-1a32-4c01-95e9-9d75fb7f4fbea" PathName="VLPath18">
+    <RP Name="L173_Localizer_Deviation_ILS2" Guid="a37abe996-b6fc-49cc-9c4c-2a275fda3e79a" NameDef="APP_FMS_TUNE.L173_Localizer_Deviation_ILS2" GuidDef="a5c69dda9-4057-4498-ae31-96f7c143185da">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_50.L173_Localizer_Dev" SrcGuid="a603f8ada-e61f-4f67-98c2-b2245ab2543aa" />
+    </RP>
+    <RP Name="L033_ILS_Frequency_ILS2" Guid="a7d7dca9d-938a-47c5-901e-1896aedc9d17a" NameDef="APP_FMS_TUNE.L033_ILS_Frequency_ILS2" GuidDef="a026a0975-149d-4cb3-be8a-eef4172dfcf2a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200.L033_Landing_Sys_Mod_Freq_ILS" SrcGuid="acb33f0c5-da6d-4d82-8a2c-70790e884d62a" />
+    </RP>
+    <RP Name="L105_Selected_Runway_Heading_ILS2" Guid="a6f832e7b-e723-4aa5-b45a-bbf483b4f7a0a" NameDef="APP_FMS_TUNE.L105_Selected_Runway_Heading_ILS2" GuidDef="ac2c7ea0e-ef5c-4b5c-a0ae-ee32eed67116a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200.L105_Selected_Runway_Heading_BNR" SrcGuid="a78a99b4e-50ce-4de3-a2b1-42ea1d03e897a" />
+    </RP>
+    <RP Name="L017_Selected_Runway_Heading_BCD_ILS2" Guid="af10bc30c-0136-474b-b659-3872fc7757cea" NameDef="APP_FMS_TUNE.L017_Selected_Runway_Heading_BCD_ILS2" GuidDef="acc62a0a9-aa07-409a-9d1a-e276771f87b5a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200.L017_Select_Runway_Heading_BCD" SrcGuid="a74ad6b50-5602-4b39-bb44-e6977081f0e3a" />
+    </RP>
+    <RP Name="L263_ILS_Ground_Station_ID_1_ILS2" Guid="a8c8b8778-55cd-4559-a673-1af5559d9db4a" NameDef="APP_FMS_TUNE.L263_ILS_Ground_Station_ID_1_ILS2" GuidDef="a664ea9d6-f525-48ab-b20a-b963c1620d1ca">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200_Block.L263_Ground_Station_ID_1" SrcGuid="a39823e38-2ebc-445a-88ee-f3b6caac77dea" />
+    </RP>
+    <RP Name="L264_ILS_Ground_Station_ID_2_ILS2" Guid="a44c91c6f-ea95-4eea-90de-2732c6837a50a" NameDef="APP_FMS_TUNE.L264_ILS_Ground_Station_ID_2_ILS2" GuidDef="af1f18135-0241-4bc4-9ce9-93ca33f1e809a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200_Block.L264_Ground_Station_ID_2" SrcGuid="a7828c5d9-9129-4404-a308-16d890bf30bda" />
+    </RP>
+    <RP Name="L232_GLS_Airport_ID_ILS2" Guid="ac65f5618-eaf3-4c0d-92f5-268aa197c0bfa" NameDef="APP_FMS_TUNE.L232_GLS_Airport_ID_ILS2" GuidDef="aac6eb62e-d559-4ae4-a904-35cf2f8b0c9aa">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_ILS_Look_Alike_Instruments_Msg_200.L232_GLS_Airport_ID" SrcGuid="a03cc2adf-836b-4f54-9a7f-7682a774e860a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW08_I_40005_HF_GLU_925_R.HFQ4_O_A664_po429_ILS_Look_Alike_Instruments_Msg_200_Block" SrcGuid="a71dcc57c-079e-4cfd-836f-a2e0a953c79ca" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU1" Guid="a167ea987-fb91-4e85-bd5a-ba22ca869eeea" NameDef="APP_FMS_TUNE.A653_IN_A661_BLOCK_DU1" GuidDef="a0de31d02-74da-4c5f-b1ac-8626682408eda" PathName="VLPath1">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU1" Guid="a669efb0b-3c0f-413a-9d10-35a6535b2f00a" NameDef="APP_FMS_TUNE.FMS_1_TUNING_A661_BLOCK_DU1" GuidDef="a3b444805-93e0-4a3e-ae13-7f13cbb39a0da">
+      <Pub_Ref SrcName="HF_IDULEFTOUTBOARD.MSG_HDD_FMS_1_A661_BLOCK.DS1.FMS_1_A661_BLOCK" SrcGuid="ad4db11f3-aa41-4ad9-a7f7-7732eab54482a" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDULEFTOUTBOARD.OP_QP_FMS_1_A661_BLOCK" SrcGuid="a949bb795-994a-4fe9-9882-c7f0bc20ee49a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU2" Guid="a05e8f46a-68f9-4d0e-aad1-a672d5e57456a" NameDef="APP_FMS_TUNE.A653_IN_A661_BLOCK_DU2" GuidDef="a5ab7c4d0-f13c-4a82-9e3f-0f5e88eb8028a" PathName="VLPath2">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU2" Guid="ab572decc-c59d-4d60-aa39-c6c9207d9433a" NameDef="APP_FMS_TUNE.FMS_1_TUNING_A661_BLOCK_DU2" GuidDef="a94b5fe1a-0f43-4f7c-bb45-82b472257c5ea">
+      <Pub_Ref SrcName="HF_IDULEFTINBOARD.MSG_HDD_FMS_2_A661_BLOCK.DS1.FMS_2_A661_BLOCK" SrcGuid="af28c7ad5-2527-457c-a909-32d0958435e6a" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDULEFTINBOARD.OP_QP_FMS_2_A661_BLOCK" SrcGuid="a8467086c-bd31-4c8b-8052-5be4f4c8d0e6a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU3" Guid="ae35d4d53-29df-4c85-9f0b-7ccb986f2414a" NameDef="APP_FMS_TUNE.A653_IN_A661_BLOCK_DU3" GuidDef="a6fe5cfa9-a315-4c8b-b058-9ab41b9a89c5a" PathName="VLPath0">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU3" Guid="a608bab15-4f4e-4fac-b1bc-4720ea929694a" NameDef="APP_FMS_TUNE.FMS_1_TUNING_A661_BLOCK_DU3" GuidDef="a46e76e2d-353e-47e4-bc8a-fa3d96d44d53a">
+      <Pub_Ref SrcName="HF_IDUCENTER.MSG_HDD_FMS_1_A661_BLOCK.DS1.FMS_1_A661_BLOCK" SrcGuid="a12bbef46-dae5-40f2-8dfa-909540c0ed3ca" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDUCENTER.OP_QP_FMS_1_A661_BLOCK" SrcGuid="a4d31280c-48e9-4ade-908c-8e8a36a864b6a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU4" Guid="a4b15b333-ad6b-45a1-9fa8-c58bd599fc6fa" NameDef="APP_FMS_TUNE.A653_IN_A661_BLOCK_DU4" GuidDef="a1cc6833e-c8d2-4d1d-a09b-72662c750d0fa" PathName="VLPath2">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU4" Guid="a63cc0b2f-2194-458f-8b8c-9769fc51459da" NameDef="APP_FMS_TUNE.FMS_1_TUNING_A661_BLOCK_DU4" GuidDef="a4d308b3f-5b88-4446-a57a-38a7a1b47e9da">
+      <Pub_Ref SrcName="HF_IDURIGHTINBOARD.MSG_HDD_FMS_1_A661_BLOCK.DS1.FMS_1_A661_BLOCK" SrcGuid="a651e81b7-3d96-41ce-9242-db9acff865c5a" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDURIGHTINBOARD.OP_QP_FMS_1_A661_BLOCK" SrcGuid="aff1f43de-838c-4047-9b38-7530d684c123a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_A661_BLOCK_DU5" Guid="a61fc63da-9527-4488-ab38-d178b6dadaada" NameDef="APP_FMS_TUNE.A653_IN_A661_BLOCK_DU5" GuidDef="aa7a1880b-601a-423e-96e0-937032a275c4a" PathName="VLPath1">
+    <RP Name="FMS_1_TUNING_A661_BLOCK_DU5" Guid="aa1c7ecc9-c003-42f9-a261-8b1a535c73ffa" NameDef="APP_FMS_TUNE.FMS_1_TUNING_A661_BLOCK_DU5" GuidDef="a950a06ee-fb12-46fc-a539-71abfc859ecaa">
+      <Pub_Ref SrcName="HF_IDURIGHTOUTBOARD.MSG_HDD_FMS_1_A661_BLOCK.DS1.FMS_1_A661_BLOCK" SrcGuid="a761989f2-446e-4eb2-8bd6-f1490ee2352ca" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_IDURIGHTOUTBOARD.OP_QP_FMS_1_A661_BLOCK" SrcGuid="a5fea79f7-5a4b-46d1-9341-c55a0facab85a" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_CORE_STATE_Onside" Guid="a47aa841d-eba8-4fdb-b042-205494627503a" NameDef="APP_FMS_TUNE.A653_IN_CORE_STATE_Onside" GuidDef="a8f6700c1-efd1-4312-983b-5069d2b10d6aa" PathName="VLPath4">
+    <RP Name="Core_State_Onside" Guid="abef71cde-7882-4018-8e78-a211055e8c65a" NameDef="APP_FMS_TUNE.Core_State_Onside" GuidDef="a2c5fd524-e16d-4165-aea8-fa917f39f366a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.MSG_Core_State.DS_Core_State.Core_State" SrcGuid="ad235fa1b-6473-4e1f-9eaf-e14bf2016c0fa" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_CORE_STATE" SrcGuid="a4041e815-20e2-49b2-8194-c7407044705ba" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_IN_TUNING_REQUEST_Onside" Guid="a3615ce96-035b-4db1-b7b0-64a8d4828c13a" NameDef="APP_FMS_TUNE.A653_IN_TUNING_REQUEST_Onside" GuidDef="a0aee4af1-ce19-4a30-b09a-dbdbf7eec3cba" PathName="VLPath15">
+    <RP Name="Tuning_Request_Onside" Guid="a944950de-77e9-4b88-b117-7ac619394818a" NameDef="APP_FMS_TUNE.Tuning_Request_Onside" GuidDef="a06d53d0b-fd2e-4582-8f08-27a6bca78eaba">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.MSG_Tuning_Request.DS_Tuning_Request.Tuning_Request" SrcGuid="aae81a475-c202-4ab7-a59a-0a3017c03d7ba" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_TUNING_REQUEST" SrcGuid="a2ea6798d-c88a-4ec1-b32e-30b315832a4aa" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_IN_TUNING_REQUEST_Xside" Guid="ae0f07ae9-baeb-4167-a4f8-6f73b61fddf6a" NameDef="APP_FMS_TUNE.A653_IN_TUNING_REQUEST_Xside" GuidDef="a42cd2d74-1fa3-477c-af65-f58df2b24925a" PathName="VLPath1">
+    <RP Name="Tuning_Request_Xside" Guid="a88e344f6-31f0-4f92-85fa-dcf7b0a947a2a" NameDef="APP_FMS_TUNE.Tuning_Request_Xside" GuidDef="a855b91ba-0ef3-4da0-8d88-7930e3edd6bca">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.MSG_Tuning_Request.DS_Tuning_Request.Tuning_Request" SrcGuid="aa9754740-e282-41ad-816f-821bd8647c95a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_2.A653_OUT_TUNING_REQUEST" SrcGuid="a39847cbf-bfc0-433b-965f-8cbcd2542a03a" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="A653_IN_TUNING_STATE_Xside" Guid="a178edab4-c784-4c9f-a085-975840b7479aa" NameDef="APP_FMS_TUNE.A653_IN_TUNING_STATE_Xside" GuidDef="a7dcd804b-7f05-41f5-bc6d-be6e6482bd66a" PathName="VLPath5">
+    <RP Name="Tuning_State_Xside" Guid="ae0bbe22e-037b-448b-b296-02b264efe687a" NameDef="APP_FMS_TUNE.Tuning_State_Xside" GuidDef="aa870589d-bab4-46ea-946c-4e46efceed67a">
+      <Pub_Ref SrcName="APP_FMS_TUNE_2.MSG_Tuning_State.DS_Tuning_State.Tuning_State" SrcGuid="aef1ea0a8-02ea-4124-8153-3f9aa1c797baa" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_TUNE_2.A653_OUT_TUNING_STATE" SrcGuid="abcfcad5c-6cb2-41e4-a0fc-1d07bf853b06a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_FMS_MESSAGES_TUNE" Guid="a257e0e1f-2476-4697-933d-dc8968dd51c0a" NameDef="APP_FMS_TUNE.A653_OUT_FMS_MESSAGES_TUNE" GuidDef="aef7a4d7f-890c-4fde-a49c-8e3b961030f3a">
+    <A664Message Name="MSG_FMS_Messages_TUNE" Guid="a4ba6e1c0-eccc-4587-9e94-bfd15e22feeda" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE" GuidDef="a3a7d8fd9-ff3d-4101-a064-7b59cc4ab1cba" SubVLID="2" VLID="32927">
+      <DS Name="FSS1_FMS_Messages_Tune" Guid="aa35d0b2e-a94f-4dbb-9aca-bfb8c9771abea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.FSS1_FMS_Messages_Tune" GuidDef="a1210f0b8-8979-4afd-ae51-0a2d666eb148a">
+        <DP Name="FSB1_FMS_Messages_Tune" Guid="a1afd4c2a-25e3-4c5b-b214-bd72aa9b23a9a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.FSS1_FMS_Messages_Tune.FSB1_FMS_Messages_Tune" GuidDef="aa203b6b5-8dda-4c71-9080-2eb0ea2e028ba" />
+      </DS>
+      <DS Name="DS_FMS_Messages_Tune" Guid="a7f2e9b4f-9c5a-4f48-84ca-f9cb99318e42a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune" GuidDef="ac208ad09-b55b-4666-9778-9d67a997da88a">
+        <DP Name="IMA_BIT_Rate_Fail" Guid="a0808eac1-ee62-4a44-918b-d272692860a6a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_BIT_Rate_Fail" GuidDef="ae9c2169e-127e-430e-89c3-06c846f1ae75a" />
+        <DP Name="IMA_Reserved_1" Guid="acdb8a130-b6a4-43d0-8884-19e11d0b72b6a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_Reserved_1" GuidDef="ab87d77cd-5465-420e-9533-59d5c303717aa" />
+        <DP Name="IMA_BIT_FSB_Fail" Guid="a0e5e192a-4a07-426f-88ba-4a028f4974a2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_BIT_FSB_Fail" GuidDef="a728a9cb9-b26a-4808-9bbf-3d9ecd7a48f6a" />
+        <DP Name="IMA_Reserved_2" Guid="aa462daf5-7ffd-4315-b2e7-9e4570fe4164a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_Reserved_2" GuidDef="a6e9d8aa3-9741-4011-baff-f705475a081ca" />
+        <DP Name="IMA_BIT_Power_Down_Warn" Guid="a80c93c61-188a-4b49-ad92-ce642bbb31c8a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_BIT_Power_Down_Warn" GuidDef="aec591b4e-ff6f-4e27-8a1a-76ef98b97425a" />
+        <DP Name="IMA_Reserved_3" Guid="a95fccd25-e150-47b1-995c-3d3e48662d31a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_Reserved_3" GuidDef="a45e3c5ac-8225-48e4-8f74-4aa2382a48f0a" />
+        <DP Name="IMA_Reserved_4" Guid="a32b469c0-f277-45cc-b84d-405fde0dc94ca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_Reserved_4" GuidDef="a65e221f6-3349-43e4-83a2-6423c6054dffa" />
+        <DP Name="IMA_Reserved_5" Guid="ab74fef29-3d58-4957-9656-0ba15c661193a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.IMA_Reserved_5" GuidDef="a111dfceb-71bf-477b-9339-62ebd9a255d4a" />
+        <DP Name="FMS_Core_OnSide_Reserved_1" Guid="abe8be8f2-c472-4640-9cc6-f5ec9361fed2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_1" GuidDef="a2cf28a84-57e8-4355-8bc6-5ebe1c1f35b8a" />
+        <DP Name="FMS_Core_OnSide_BIT_FSB_Fail" Guid="a0856c28f-6424-4050-b976-2cc443a58084a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_BIT_FSB_Fail" GuidDef="a05e409af-a930-476c-b82a-898631039392a" />
+        <DP Name="FMS_Core_OnSide_Reserved_2" Guid="af7921c8d-fbc8-46b2-9d3d-4e619f7b6404a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_2" GuidDef="ab3dc70f8-41fa-4570-bdea-46938f4cc37fa" />
+        <DP Name="FMS_Core_OnSide_Reserved_3" Guid="a31ef800a-293c-4859-94ba-08e25270dc28a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_3" GuidDef="a62406f39-8bed-411d-829a-47abe0fd9ec2a" />
+        <DP Name="FMS_Core_OnSide_Reserved_4" Guid="a92bca0b8-67eb-4c02-97b7-1a7204e1decea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_4" GuidDef="a752a9272-31ec-4bf9-8b7e-80cdebf53790a" />
+        <DP Name="FMS_Core_OnSide_Reserved_5" Guid="ad345e50d-064f-479f-be76-0012fb18bd32a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_5" GuidDef="ab738c347-b3a0-4cee-b44e-8ddd02b49bf4a" />
+        <DP Name="FMS_Core_OnSide_Reserved_6" Guid="a187036cf-ab8f-4d64-a8f1-abfddc5ecbe2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_6" GuidDef="afa547158-1fba-4116-b0f2-76f514c67399a" />
+        <DP Name="FMS_Core_OnSide_Reserved_7" Guid="aab7bf563-2347-481d-8697-1f411bd87568a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_OnSide_Reserved_7" GuidDef="a4b067805-ddaf-432f-bf8e-531ad78c0be1a" />
+        <DP Name="FMS_Core_XSide_Reserved_1" Guid="ac531cf7f-43a1-48c0-b993-0f47ccb77698a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_1" GuidDef="a8b4a8918-650d-46c2-9d3c-220441035fe4a" />
+        <DP Name="FMS_Core_XSide_BIT_FSB_Fail" Guid="a0f3a86d9-ea30-4ea7-bcd2-e70c5cca0478a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_BIT_FSB_Fail" GuidDef="ac296506c-a742-41ab-bf53-bed70f89ce62a" />
+        <DP Name="FMS_Core_XSide_Reserved_2" Guid="a68bd6fb3-d3bf-41f9-839b-55cc461c00aba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_2" GuidDef="a4267749a-7310-49c9-96bc-44b351547396a" />
+        <DP Name="FMS_Core_XSide_Reserved_3" Guid="aabf6ba74-c0c9-49f9-ac03-e1898ce2e86da" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_3" GuidDef="ae1f4ae20-de79-4f93-b3c3-e536236dd5f3a" />
+        <DP Name="FMS_Core_XSide_Reserved_4" Guid="a2a40f531-e4b7-4683-9587-53f2673f89aca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_4" GuidDef="a005760db-81d6-4912-adf4-999847f18318a" />
+        <DP Name="FMS_Core_XSide_Reserved_5" Guid="a61287927-5af2-4932-b91d-578c114cbae7a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_5" GuidDef="abced8737-7dc9-4bd5-9f30-c95d86476c4ba" />
+        <DP Name="FMS_Core_XSide_Reserved_6" Guid="a83fee6b4-dfd2-4b47-b0ab-0a79e69dd5e9a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_6" GuidDef="ac6323924-46d1-4bb2-8ae2-45035dc02ce9a" />
+        <DP Name="FMS_Core_XSide_Reserved_7" Guid="a208ecef6-504d-4c93-8e74-1de460944abaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Core_XSide_Reserved_7" GuidDef="afaea14b0-0f55-471a-9dc1-e55136a4e5fda" />
+        <DP Name="FMS_Tune_XSide_Reserved_1" Guid="aebda5eaf-8d6a-4a76-a031-6f4fdf7be131a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_1" GuidDef="a8dd7a2d2-f3a9-4b98-b849-cb6c2246f1c2a" />
+        <DP Name="FMS_Tune_XSide_BIT_FSB_Fail" Guid="ae7b96da4-a001-43f4-9136-44c8f32f211aa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_BIT_FSB_Fail" GuidDef="ae0234930-958e-499c-ac8d-efdb110c646ea" />
+        <DP Name="FMS_Tune_XSide_Reserved_2" Guid="a4de610c1-043c-483a-850a-f6923b9fe256a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_2" GuidDef="a0d5634d7-31d5-431a-958d-a7fb84a5c018a" />
+        <DP Name="FMS_Tune_XSide_Reserved_3" Guid="a5f089769-5374-4ecb-9731-6f2ef95ab8b0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_3" GuidDef="afdd33620-d099-4373-8452-4b87c41cc7aba" />
+        <DP Name="FMS_Tune_XSide_Reserved_4" Guid="af7bf025d-6c5e-40dc-b792-efbe384f980fa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_4" GuidDef="adb0a8b1a-c052-4956-ad84-f54e4e6279e7a" />
+        <DP Name="FMS_Tune_XSide_Reserved_5" Guid="a6c5c325d-8310-47b9-b39d-9dd960a516dea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_5" GuidDef="abb237fef-14de-4019-897c-cbf6da10f144a" />
+        <DP Name="FMS_Tune_XSide_Reserved_6" Guid="ae65f2364-562e-4765-b5bb-2609be0d6013a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_6" GuidDef="a155f3aec-15bc-4092-a967-d76e1ffbb8eea" />
+        <DP Name="FMS_Tune_XSide_Reserved_7" Guid="a3c5829e8-6f98-431b-9531-efe36a1c3cc3a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.FMS_Tune_XSide_Reserved_7" GuidDef="ac050f793-580f-4b91-96f0-5aad3e90dd79a" />
+        <DP Name="DME_1_BIT_Rate_Fail" Guid="a22dead72-6508-4bd9-b1cc-b0682329fe42a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_BIT_Rate_Fail" GuidDef="a45281859-98ce-41bb-b08c-7611e92b4155a" />
+        <DP Name="DME_1_BIT_SSM_Fail" Guid="adf4658cd-4752-4ce7-a784-f1839f98a721a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_BIT_SSM_Fail" GuidDef="a09c56d32-f3c1-45de-b096-e4c69ddc0847a" />
+        <DP Name="DME_1_BIT_FSB_Fail" Guid="a199dc73f-636d-42c8-b528-83e7608e8155a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_BIT_FSB_Fail" GuidDef="a5e7b55cb-bac0-417d-b35e-b7c47568e2fda" />
+        <DP Name="DME_1_BIT_Reason_Fail" Guid="ac2cc1a58-9f41-4428-96ad-399a6aa4abcaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_BIT_Reason_Fail" GuidDef="abd7eba04-b907-4d01-a0b6-20486f5f55e5a" />
+        <DP Name="DME_1_Reserved_1" Guid="a16869b92-c78b-467e-a030-24c097fb8e42a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_Reserved_1" GuidDef="a4e518438-f2ca-444c-840f-ec348ac950b9a" />
+        <DP Name="DME_1_Reserved_2" Guid="a95e1a96d-1b57-49b1-890e-b8757f4347a9a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_Reserved_2" GuidDef="a7daa26a1-3167-4f89-9c0e-411d25362b24a" />
+        <DP Name="DME_1_Reserved_3" Guid="aca38ba00-98e4-419b-899d-1af6fb4efbe0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_Reserved_3" GuidDef="a40bdc343-0bf8-4a2c-b4e5-25488580e152a" />
+        <DP Name="DME_1_Reserved_4" Guid="a0a248133-a99e-4724-8780-4c091b2d9232a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_1_Reserved_4" GuidDef="a355aa599-0889-4b45-a5f5-0b913ba760aba" />
+        <DP Name="DME_2_BIT_Rate_Fail" Guid="ab2e03c29-29bb-4dd3-ac1d-544c20360eaea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_BIT_Rate_Fail" GuidDef="a38bff685-1115-4c9e-b9c4-0145f8f77e33a" />
+        <DP Name="DME_2_BIT_SSM_Fail" Guid="a26e633b8-f354-4690-8227-2c1101131b86a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_BIT_SSM_Fail" GuidDef="a83a871fe-cd7b-4978-a596-2c1a844aea70a" />
+        <DP Name="DME_2_BIT_FSB_Fail" Guid="a3c216262-7730-45af-835d-9197d3641e1ea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_BIT_FSB_Fail" GuidDef="af01d2617-42b3-4528-95c4-0ee2c86525b6a" />
+        <DP Name="DME_2_BIT_Reason_Fail" Guid="a2c7b1bca-4502-47b9-934a-7bbd9f53c324a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_BIT_Reason_Fail" GuidDef="aa94dbbf7-f7a8-4265-a00d-5f2b6ab699f3a" />
+        <DP Name="DME_2_Reserved_1" Guid="a0af238ec-f6c3-4949-b9f5-693148f8ecc2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_Reserved_1" GuidDef="aa5be0096-a1f9-4270-aa9e-326352f16e4da" />
+        <DP Name="DME_2_Reserved_2" Guid="a7696aaf3-6b04-4eb4-8f3a-99a5ce197b62a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_Reserved_2" GuidDef="ada361adf-c611-4f47-8e28-c3cc287ec413a" />
+        <DP Name="DME_2_Reserved_3" Guid="ac5d16eec-da7c-47a3-af2d-c02ebb9af16fa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_Reserved_3" GuidDef="a14a8b19c-e6f2-4261-8d3f-7e4b5482d856a" />
+        <DP Name="DME_2_Reserved_4" Guid="aa7ad2a1f-f82a-46a3-ae3e-1e5c69646ec9a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DME_2_Reserved_4" GuidDef="a34f08d00-8929-4a8d-9e42-aee2dc239429a" />
+        <DP Name="ADF_VOR_1_BIT_Rate_Fail" Guid="ab349d44a-883f-4e30-875e-eb2a4dc5ac62a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_BIT_Rate_Fail" GuidDef="a1bb0f702-f493-4f5d-b6c8-bc4fbe745eb6a" />
+        <DP Name="ADF_VOR_1_BIT_SSM_Fail" Guid="a8fa856e0-f908-422a-a6d6-816d2ee2b834a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_BIT_SSM_Fail" GuidDef="a06956730-1ed9-4fd0-bd3f-c652dd630daea" />
+        <DP Name="ADF_VOR_1_BIT_FSB_Fail" Guid="a825c98be-175c-4ea2-a8bc-0ffd8c16603aa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_BIT_FSB_Fail" GuidDef="aeb8575e8-48ff-4db3-bc67-6d3bca6af488a" />
+        <DP Name="ADF_VOR_1_BIT_Reason_Fail" Guid="aceea83ec-6f56-4a31-9adf-9908190ba2eda" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_BIT_Reason_Fail" GuidDef="a3c49358e-8a25-4fa3-94e3-76027614d3d3a" />
+        <DP Name="ADF_VOR_1_Reserved_1" Guid="a329536e0-3b00-493b-8626-199325a616b5a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_Reserved_1" GuidDef="a5d024338-df00-46d1-b075-4cf9cc455bc5a" />
+        <DP Name="ADF_VOR_1_Reserved_2" Guid="ae30e162b-9ab4-4363-89ce-518e1c6bb6e7a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_Reserved_2" GuidDef="a50e2269b-9792-4303-bdeb-d27112b52ea5a" />
+        <DP Name="ADF_VOR_1_Reserved_3" Guid="aaa493003-4ceb-4f7c-abd5-fd3686853705a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_Reserved_3" GuidDef="a914be65e-0182-4f98-9fbe-dc86ac2dcf68a" />
+        <DP Name="ADF_VOR_1_Reserved_4" Guid="aa8d758ca-0c3f-4d9a-9053-cb2f1a07a824a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_1_Reserved_4" GuidDef="a01593fa0-8e8f-4a44-acc3-2911162a323da" />
+        <DP Name="ADF_VOR_2_BIT_Rate_Fail" Guid="a265c2606-0ad6-4725-b22a-a145c6f08711a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_BIT_Rate_Fail" GuidDef="aa7daea04-f856-4cb5-bbb4-30501bca3cfca" />
+        <DP Name="ADF_VOR_2_BIT_SSM_Fail" Guid="a4a863d2f-0204-47eb-a36f-8d3b5bb7b884a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_BIT_SSM_Fail" GuidDef="a91279745-05f4-4209-9ffd-fe55313cf530a" />
+        <DP Name="ADF_VOR_2_BIT_FSB_Fail" Guid="a8e71bedc-66d8-4456-8a7d-316615365030a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_BIT_FSB_Fail" GuidDef="a3f2eba3e-f822-40eb-b2a9-44b764a94a10a" />
+        <DP Name="ADF_VOR_2_BIT_Reason_Fail" Guid="aa7111917-fdc1-4d0a-836e-216d0686a34ca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_BIT_Reason_Fail" GuidDef="afec1c5a4-9b6e-4ce8-8fd0-bb5a19832a89a" />
+        <DP Name="ADF_VOR_2_Reserved_1" Guid="ade013079-1858-40e4-84f5-45c2050d0da3a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_Reserved_1" GuidDef="a34ea0394-d4a7-4b76-98e9-01a831e10615a" />
+        <DP Name="ADF_VOR_2_Reserved_2" Guid="a7bcf8b70-395a-4612-9ec3-984a25413bf6a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_Reserved_2" GuidDef="a7659b382-9c00-43f1-bddd-70ff5cbcd5caa" />
+        <DP Name="ADF_VOR_2_Reserved_3" Guid="ab7ffbff0-6fbe-47a0-9ad4-d25b3b81543ea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_Reserved_3" GuidDef="a7431dcfd-8d4d-4c40-a3f0-8921713c72b3a" />
+        <DP Name="ADF_VOR_2_Reserved_4" Guid="a06f40de3-1a10-4d31-8ce8-5e3dcd3b7129a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ADF_VOR_2_Reserved_4" GuidDef="a7c5eff4f-d7bc-40f0-ae8f-154e39715389a" />
+        <DP Name="ILS_GLS_1_BIT_Rate_Fail" Guid="a783827c5-9024-4a5e-8d36-e2966f388165a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_BIT_Rate_Fail" GuidDef="aa92cf8c6-794f-46ff-ba3a-1011463499f3a" />
+        <DP Name="ILS_GLS_1_BIT_SSM_Fail" Guid="afb10f2e7-6671-473b-8ca2-8ed54273a6b2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_BIT_SSM_Fail" GuidDef="a4751ed2f-6a8c-4edf-9499-d909602ad738a" />
+        <DP Name="ILS_GLS_1_BIT_FSB_Fail" Guid="abe82abc3-e51f-4f69-b0cc-bfe0b07b2b09a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_BIT_FSB_Fail" GuidDef="af9cdf6ce-27fa-454f-b9bb-7fec2332fe62a" />
+        <DP Name="ILS_GLS_1_BIT_Reason_Fail" Guid="a1be6eabe-01f3-4a11-81ff-072546cb28a0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_BIT_Reason_Fail" GuidDef="aa3d0779f-f35d-4dc8-98ad-53b73cdb3d50a" />
+        <DP Name="ILS_GLS_1_Reserved_1" Guid="ad8c02698-92f6-48ed-ae08-39ac67067595a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_Reserved_1" GuidDef="af0040cd2-89aa-4572-86cb-b4560ce57346a" />
+        <DP Name="ILS_GLS_1_Reserved_2" Guid="a3603af3e-fc49-4924-95fc-c90096a85aeea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_Reserved_2" GuidDef="a46b9da4d-13bf-4571-ba51-6a10dd2bb531a" />
+        <DP Name="ILS_GLS_1_Reserved_3" Guid="aaa1aad93-c674-423f-a8e4-e02e93885af6a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_Reserved_3" GuidDef="a98aafc02-66c0-4137-8e05-f0158cce8939a" />
+        <DP Name="ILS_GLS_1_Reserved_4" Guid="afa9ca1af-a114-4421-96b0-ef21b1250c54a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_1_Reserved_4" GuidDef="a3ec8de3b-15ff-46f7-b650-299d5aa83c7ba" />
+        <DP Name="ILS_GLS_2_BIT_Rate_Fail" Guid="a4708c019-a070-4fbf-b169-0c7eee270bbaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_BIT_Rate_Fail" GuidDef="a4e812a39-f08a-4187-844a-e14402b1b156a" />
+        <DP Name="ILS_GLS_2_BIT_SSM_Fail" Guid="a010a9298-13fc-4b38-89cb-189a4feb2769a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_BIT_SSM_Fail" GuidDef="afc58ca41-6c3b-4544-8f2e-46d053e81f0ea" />
+        <DP Name="ILS_GLS_2_BIT_FSB_Fail" Guid="a344bd6e2-721d-4d09-a5af-fab8dd603702a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_BIT_FSB_Fail" GuidDef="aa52b67b5-9bc8-459b-bf0a-014f90de55b1a" />
+        <DP Name="ILS_GLS_2_BIT_Reason_Fail" Guid="a584268d9-5fc7-4cfd-9dbe-1f68163d51f4a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_BIT_Reason_Fail" GuidDef="a9c3d3fa8-a443-4026-9684-43574a316861a" />
+        <DP Name="ILS_GLS_2_Reserved_1" Guid="a5f1bced9-fa32-4163-b2ac-8b0a6c545374a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_Reserved_1" GuidDef="a7678587f-1787-47a9-8f7f-9b34f3e04659a" />
+        <DP Name="ILS_GLS_2_Reserved_2" Guid="a5bf82d39-9beb-445e-b355-7567aa99b7dfa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_Reserved_2" GuidDef="a9ffcfb41-bfb3-4fef-8f66-6a49336f10b9a" />
+        <DP Name="ILS_GLS_2_Reserved_3" Guid="a31efed1e-4c17-4988-badb-4a79744c4d0da" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_Reserved_3" GuidDef="af9808724-2a65-430b-bfa0-05476b4d85f9a" />
+        <DP Name="ILS_GLS_2_Reserved_4" Guid="ae518c123-4e0f-4d78-8b9f-1ba4d43604fba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.ILS_GLS_2_Reserved_4" GuidDef="a1cafec46-48dc-4c7e-a2e3-6f4e4fa2597aa" />
+        <DP Name="DU_1_Reserved_1" Guid="a00970a17-d7c8-4d50-a11d-2e7c9531251ba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_1" GuidDef="ab83a94f2-4d70-44d5-9c27-3b7747f14248a" />
+        <DP Name="DU_1_Reserved_2" Guid="afa568391-deea-4b16-a1d3-a6cd5ebd95e1a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_2" GuidDef="aad0c7dcd-9f86-473e-8cce-2fbee44bc5d4a" />
+        <DP Name="DU_1_Reserved_3" Guid="a0021ce13-4a39-4a1b-b611-5873f7bb47eea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_3" GuidDef="a0f1590aa-9ae0-40e6-8aa0-7832d352f329a" />
+        <DP Name="DU_1_Reserved_4" Guid="a0b4be387-22ac-49c4-b025-f45f66afd169a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_4" GuidDef="a827a2356-2677-4bf8-8d72-8d6f14016e0ea" />
+        <DP Name="DU_1_BIT_Fail" Guid="a0c582f0f-b3cf-4a3e-97b8-15c0e9a38f75a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_BIT_Fail" GuidDef="ab133f894-6fc1-4210-b014-d9ce5e6dec2ea" />
+        <DP Name="DU_1_Reserved_5" Guid="a6250e2b6-eba1-4c67-9857-946c45214df1a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_5" GuidDef="ac2139aee-5522-44b6-b0dc-119cca5c3acda" />
+        <DP Name="DU_1_Reserved_6" Guid="a07c45244-bba6-4c9e-92c6-dfbfc53dd32da" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_6" GuidDef="a1887449e-4294-4a44-aa5b-18eb9c3aaf90a" />
+        <DP Name="DU_1_Reserved_7" Guid="a48e5f1c3-245e-4331-9287-6e987cac49c0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_1_Reserved_7" GuidDef="ae4cdbce7-f122-4270-963a-1541d7cbab7ea" />
+        <DP Name="DU_2_Reserved_1" Guid="aa1f56e5d-042d-4266-9f15-e245f0280e12a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_1" GuidDef="ab93c5f1f-1e85-4f02-bffd-6bf3f4a788c2a" />
+        <DP Name="DU_2_Reserved_2" Guid="a5573ead4-0333-4c65-8188-4744b423fdaaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_2" GuidDef="a46d825ab-b370-46db-af3a-747b73388030a" />
+        <DP Name="DU_2_Reserved_3" Guid="a84fd87b5-ff25-4630-bf98-1f8f586c7153a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_3" GuidDef="ab8a6d0a6-4a2a-4e72-a798-ff485878be41a" />
+        <DP Name="DU_2_Reserved_4" Guid="a3ef0e1a9-5078-4dbf-bad2-b0791f4268cea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_4" GuidDef="a4ae9f1e9-dfc9-4804-9ba6-734a30b0c482a" />
+        <DP Name="DU_2_BIT_Fail" Guid="a59c2c815-1a66-403a-9251-9b09971bb1dea" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_BIT_Fail" GuidDef="a772d14b7-9a89-4e7d-9f3b-50dd023d7de0a" />
+        <DP Name="DU_2_Reserved_5" Guid="af4f11ce3-a95d-4727-a749-63233c618abaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_5" GuidDef="aea1498e8-e40b-4fb6-a00a-f3fc62cbf9fba" />
+        <DP Name="DU_2_Reserved_6" Guid="a7f39b5e5-b989-4a0b-9324-5d08ae8ba16aa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_6" GuidDef="a618a3e62-db17-40f2-8102-1f56285269aba" />
+        <DP Name="DU_2_Reserved_7" Guid="addad8618-d3f2-4653-9e9f-61010297d695a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_2_Reserved_7" GuidDef="a09ad4c75-8e7e-41d3-987a-c0d5d4ed3901a" />
+        <DP Name="DU_3_Reserved_1" Guid="addf7bc82-fb8f-4a7a-8374-101c16d2438fa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_1" GuidDef="a89d6abba-fdad-490d-89f0-64996d09d518a" />
+        <DP Name="DU_3_Reserved_2" Guid="a39bd8b3a-11fe-4d29-9a8a-9d64b97b752ca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_2" GuidDef="afe34cfc2-b3b4-4bdf-b2a6-9e143e1f5b93a" />
+        <DP Name="DU_3_Reserved_3" Guid="a627cf5af-f7f1-4495-ade0-5bbcb4fa4339a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_3" GuidDef="a9bb9e0f5-93e9-46fa-af19-ce2e5d33a2c7a" />
+        <DP Name="DU_3_Reserved_4" Guid="a219ca740-8e1b-4a35-9612-0472cfa9b751a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_4" GuidDef="a3422d14c-ebdd-4d42-91d0-1ad173dc3e39a" />
+        <DP Name="DU_3_BIT_Fail" Guid="aeac417dd-e760-4552-85fe-0adc9ea15c96a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_BIT_Fail" GuidDef="a52dc0c55-9a06-45ae-ab53-f7094665822aa" />
+        <DP Name="DU_3_Reserved_5" Guid="a432a9770-7d5a-4fe3-b87a-4a1e14be1066a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_5" GuidDef="aa3f7295e-749c-43b4-972f-2a3733fb5a16a" />
+        <DP Name="DU_3_Reserved_6" Guid="aa91b82b6-9fdb-43c7-906e-44af0b672869a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_6" GuidDef="a0e305ea5-15d2-4860-bf0f-d659fa65e286a" />
+        <DP Name="DU_3_Reserved_7" Guid="aa2554f66-4ba0-4253-b944-4954086ace9ca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_3_Reserved_7" GuidDef="a157e4982-1c6a-4f18-b918-4b291f1d6ad8a" />
+        <DP Name="DU_4_Reserved_1" Guid="a7682602d-3126-45e9-bf49-9986dce7e662a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_1" GuidDef="a2221c0f9-2487-4e47-aeba-b0f96dac482fa" />
+        <DP Name="DU_4_Reserved_2" Guid="a0ad85417-f2ae-4933-9286-9b42b329106ba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_2" GuidDef="a13865845-0c70-4baa-ad7a-5c6a08dd8a0ba" />
+        <DP Name="DU_4_Reserved_3" Guid="a3891b753-ec8f-4270-8dd3-acb85f7fe4f2a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_3" GuidDef="a637c3abb-3caa-46c3-bbc3-90935b5356f5a" />
+        <DP Name="DU_4_Reserved_4" Guid="a80e5324e-748e-4fe4-9cee-a1e304212695a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_4" GuidDef="a4d17e551-f5a2-4897-b283-b1efa57b819aa" />
+        <DP Name="DU_4_BIT_Fail" Guid="aa2ed5c9b-5c6b-4131-8d91-836f5e1b0e16a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_BIT_Fail" GuidDef="a5e5a4cbb-9284-490e-b21e-862b49ca55bba" />
+        <DP Name="DU_4_Reserved_5" Guid="a47e731f2-d847-4a52-a679-b7a8be501067a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_5" GuidDef="a80506cef-1825-41f1-95f0-cf25f16c995da" />
+        <DP Name="DU_4_Reserved_6" Guid="a96235c8b-6ce6-40f1-a407-e4c405f8df99a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_6" GuidDef="aa21150b0-be72-4094-a96d-42632e7cd3f7a" />
+        <DP Name="DU_4_Reserved_7" Guid="af518de34-6445-4caf-aec2-29afa524c4c8a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_4_Reserved_7" GuidDef="aa1220b5d-0a07-4f22-8e65-89af12f3eba3a" />
+        <DP Name="DU_5_Reserved_1" Guid="abf17468d-4e1b-4db5-856e-0cf8cec253f8a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_1" GuidDef="a8d3a66f6-de44-42ed-80e2-2266e6d86d11a" />
+        <DP Name="DU_5_Reserved_2" Guid="afa19a71a-1901-48d4-85d8-f874ab032d5fa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_2" GuidDef="a4aa4f79c-4dec-4a91-8e1d-6a45ae51d193a" />
+        <DP Name="DU_5_Reserved_3" Guid="ae30426a2-265b-419b-9318-760eb3496ec7a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_3" GuidDef="a9fd405ee-6fda-44ed-be1c-c41859836870a" />
+        <DP Name="DU_5_Reserved_4" Guid="a73344961-8bed-435d-958f-aa282baa57d9a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_4" GuidDef="ac10c5371-2671-428b-a2e6-19498fb444bba" />
+        <DP Name="DU_5_BIT_Fail" Guid="a5d7f0861-850b-4203-bdc5-b3b466bc8308a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_BIT_Fail" GuidDef="a444912c5-a744-4a88-bfd6-5d485ddfb70da" />
+        <DP Name="DU_5_Reserved_5" Guid="ab47697e8-4c6c-4748-871d-2ab6b4fc2ebda" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_5" GuidDef="a6c754a74-c17e-47d8-8cae-e443b0eb25f9a" />
+        <DP Name="DU_5_Reserved_6" Guid="ada64d8ca-a1c6-4bde-beb8-0c6ab6bb2886a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_6" GuidDef="af40347c3-e128-460b-bb8a-c1fc58f5f076a" />
+        <DP Name="DU_5_Reserved_7" Guid="ac6505e29-95b8-4ea4-8ba9-76485fc89fc4a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.DU_5_Reserved_7" GuidDef="a3f4016e9-6edc-4640-886a-71b56df98ac7a" />
+        <DP Name="Internal_Unhandled_Exception" Guid="afd7b35f1-43f7-4d80-90d0-88823c669cbda" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Unhandled_Exception" GuidDef="aabd27171-4417-48ba-a875-0b124dc327e4a" />
+        <DP Name="Internal_Reserved_1" Guid="a3a7e6f40-d39f-43ee-be28-b681f62f6ce7a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_1" GuidDef="abe662b7f-d732-4f8a-8f23-e31e0a527854a" />
+        <DP Name="Internal_Reserved_2" Guid="a55e80b0b-f520-4c6c-b9f5-7434018e286ba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_2" GuidDef="ab6e3af4d-680b-4629-b644-f98373574b63a" />
+        <DP Name="Internal_Reserved_3" Guid="a2ceff40b-a16c-4c24-a94a-2ed421ada31ba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_3" GuidDef="a09832163-a79d-470d-83d2-ff3600e95b19a" />
+        <DP Name="Internal_Reserved_4" Guid="a1ed15121-67ec-4464-b819-58ecbc932966a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_4" GuidDef="af0d9f15e-87cc-4bca-8c54-e4f4a1b3fdd1a" />
+        <DP Name="Internal_Reserved_5" Guid="ae42704ed-cfc1-4907-8950-31c9f305222da" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_5" GuidDef="a0585816e-ab4a-4759-9dc8-245846e7c1aca" />
+        <DP Name="Internal_Reserved_6" Guid="acb4d822c-3d3b-412f-ba4c-77bc3996b9e0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_6" GuidDef="a390a945e-7d8c-4187-b2da-ce9c67cd1adba" />
+        <DP Name="Internal_Reserved_7" Guid="a2f1ed54b-8620-47c4-b81c-32faf3160620a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Internal_Reserved_7" GuidDef="a80638296-fa8b-43c2-8e51-cd4c38d1a383a" />
+        <DP Name="Tune_DB_Reserved_1" Guid="a476809a0-848c-4cc2-8ea2-5cf20451e5cda" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_1" GuidDef="a175900f4-12a0-4659-bce0-980639a97c0da" />
+        <DP Name="MagVar_DB_Invalid" Guid="a80c9244c-db52-431a-b7fe-3d4faa469981a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.MagVar_DB_Invalid" GuidDef="a9a4a7769-8cae-4c8f-9ad7-aae59b6a58b7a" />
+        <DP Name="Tune_DB_Reserved_2" Guid="a20dc4c45-eb86-4db3-903a-899e7ff8557ba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_2" GuidDef="a95422a9c-9b76-4753-9ee4-63fb5655da9ca" />
+        <DP Name="Tune_DB_Reserved_3" Guid="a0fc4bee3-08e5-4406-82e2-e31a4dc65820a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_3" GuidDef="a7e5d5b0e-1b67-4667-8fc3-1868229c0589a" />
+        <DP Name="Tune_DB_Reserved_4" Guid="ae9e3151f-ba52-49ea-ad8b-366ca72ad8c5a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_4" GuidDef="a662fe6eb-86e6-4ab8-9034-21675d159667a" />
+        <DP Name="Tune_DB_Reserved_5" Guid="a6be68975-2ce5-4983-9bdb-e21de986cbcfa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_5" GuidDef="a6d91c5f2-c340-4245-943b-6b404d6ee260a" />
+        <DP Name="Tune_DB_Reserved_6" Guid="aed930e97-504b-472e-b707-7c5fb51c1f92a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_6" GuidDef="a625bfdbb-7dd7-423b-b80b-4569eccd135ba" />
+        <DP Name="Tune_DB_Reserved_7" Guid="a69a94110-e9f1-4158-92d5-8547d21e9faca" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tune_DB_Reserved_7" GuidDef="a2f5c715b-5944-492e-9501-dc34aa61df18a" />
+        <DP Name="Data_Entry_Error_Message_Text" Guid="a59fd037b-64d3-40dd-91f6-3506e34e9141a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Data_Entry_Error_Message_Text" GuidDef="a092b6e41-e0a1-4968-ac57-3cd3249efba6a" />
+        <DP Name="Data_Entry_Error_Message_Counter" Guid="a45e8c5b6-76c0-40c6-8cf3-8c32ddea09fba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Data_Entry_Error_Message_Counter" GuidDef="a4d324d56-d991-4381-9fe1-3e9a16db2d95a" />
+        <DP Name="Tuning_Visible_PopUp" Guid="a938c04c8-d42a-47e4-a475-d435bfdb831aa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Visible_PopUp" GuidDef="ad0842d14-63a1-4ff9-8157-390c2c6c9968a" />
+        <DP Name="Tuning_Reserved_1" Guid="a01652a2f-7518-4365-ac82-45002dbd4fdaa" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_1" GuidDef="abdb217e5-60df-496b-a611-f0e1b7f1e679a" />
+        <DP Name="Tuning_Reserved_2" Guid="a4716737f-4db7-421b-9688-31ed4f237346a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_2" GuidDef="a4b2fe889-ffd8-4e03-a19f-9661f726c4f0a" />
+        <DP Name="Tuning_Reserved_3" Guid="a3ed7a4b3-a47a-4989-ba3d-0de5f12b46fba" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_3" GuidDef="af5349b40-1348-460f-bf7b-6dcdd72a2f54a" />
+        <DP Name="Tuning_Reserved_4" Guid="ad6b2bad4-a4d2-4d57-9fdc-5b3e827e9d83a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_4" GuidDef="aa635d940-41c4-4de6-85e3-9bab3ade5b04a" />
+        <DP Name="Tuning_Reserved_5" Guid="ad15f2cc0-33d7-4857-a672-2c61030a1f36a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_5" GuidDef="accf215f8-b98f-4ae9-a729-2b363ce1bc50a" />
+        <DP Name="Tuning_Reserved_6" Guid="aa80d32b9-78e9-4c5a-b4e3-eab31544c256a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_6" GuidDef="a6b83111a-e8b4-41dd-82d8-1dc127719d1ca" />
+        <DP Name="Tuning_Reserved_7" Guid="aae3ce6e6-9638-458b-b52d-f1d8997c9cc0a" NameDef="APP_FMS_TUNE.MSG_FMS_Messages_TUNE.DS_FMS_Messages_Tune.Tuning_Reserved_7" GuidDef="a9e0c58db-8d21-4fca-b955-2506cb0b8480a" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_STATE" Guid="af78017d2-b5c6-4796-b61a-fddb21b54849a" NameDef="APP_FMS_TUNE.A653_OUT_TUNING_STATE" GuidDef="a8d422936-f118-4a5e-a043-abbcdc375798a">
+    <A664Message Name="MSG_Tuning_State" Guid="ac81f9524-a65c-483d-8e9c-e7dc5aa3ed07a" NameDef="APP_FMS_TUNE.MSG_Tuning_State" GuidDef="af157e8c3-dcac-4207-96b0-0652f19c6056a" SubVLID="1" VLID="32926">
+      <DS Name="DS_Tuning_State" Guid="af1a32dcc-46df-4983-8dda-dd84b724d254a" NameDef="APP_FMS_TUNE.MSG_Tuning_State.DS_Tuning_State" GuidDef="ae2313acf-806a-4372-bd3f-92bf5197238aa">
+        <DP Name="Tuning_State" Guid="afa021250-a1aa-438d-bf89-1ca5b456163da" NameDef="APP_FMS_TUNE.MSG_Tuning_State.DS_Tuning_State.Tuning_State" GuidDef="a6413a0c4-0558-4aa5-ba83-c8e23c67c841a" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_OUTPUT_1" Guid="aabec811b-1857-47ff-b8fc-8492dc43c2b1a" NameDef="APP_FMS_TUNE.A653_OUT_TUNING_OUTPUT_1" GuidDef="aa6926f89-0895-4aa1-bc2c-75569fb314e5a">
+    <A664Message Name="ARINC429_MIX_MSG_TUNE_1" Guid="a334c1c2b-6827-456c-ada0-2c83e6974254a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1" GuidDef="a50aa1869-8394-4c01-bdd8-29493d17639ba" SubVLID="3" VLID="32883">
+      <DS Name="FSS1_TUNE" Guid="a29e57b3f-8678-4ac2-8b05-61a406007422a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.FSS1_TUNE" GuidDef="ad6a87cb9-a3d4-4a44-93ba-0591c5876ea3a">
+        <DP Name="FSB1_TUNE" Guid="a060b245e-e13c-442a-bf0a-aaeaf53b5b65a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.FSS1_TUNE.FSB1_TUNE" GuidDef="a80da4b30-9fe0-4e99-9730-b1a5c23236ffa" />
+      </DS>
+      <DS Name="DS1_TUNE" Guid="aab687e83-5e95-4097-87aa-cc4db4adfd63a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE" GuidDef="a124629db-5c7f-481a-b5bb-d52b1f631a65a">
+        <A429Word Name="L032_ADF_Freq" Guid="a43acb0b4-166c-41df-b21b-2fbfb27618daa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq" GuidDef="a70fa43d7-4993-4465-a4bb-c92a352fb732a">
+          <DP Name="LABEL" Guid="ad9a09679-d4ea-45bf-bcaf-270edd1d1047a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.LABEL" GuidDef="af5dad05e-de50-4bb7-a22c-245f23c783dea" />
+          <DP Name="SDI" Guid="a9fde7e71-7b23-4239-a799-79760b2dcf22a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.SDI" GuidDef="ae52b2f04-d232-4b2e-b712-1794001a2920a" />
+          <DP Name="BFO" Guid="a77204141-2e99-4f3f-a364-2fe48e5308b4a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.BFO" GuidDef="a942c65d9-da2b-48a7-8abe-80d8bc81ce72a" />
+          <DP Name="ANT" Guid="ad34cef7a-9ed7-4b9b-b7d2-26acf6d859f9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.ANT" GuidDef="a21219425-657c-4433-9b70-460240a17feea" />
+          <DP Name="Pad" Guid="a359021e8-0ece-4226-90ab-a5d1b82f689ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.Pad" GuidDef="ae6ed5552-c659-4bf3-8bc7-623ec0226618a" />
+          <DP Name="HalfOfKHz" Guid="aabe35086-07dd-47b8-a5cf-d3e0ec656988a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.HalfOfKHz" GuidDef="a9aec89b8-a6c4-46b6-9413-4a6c699124bfa" />
+          <DP Name="OnesOfKHz" Guid="a1711d9dc-2983-4eef-a4c5-b348d4c1cbaea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.OnesOfKHz" GuidDef="acbc45aaf-ec26-4965-9774-ac541045479fa" />
+          <DP Name="TensOfKHz" Guid="a30a22a90-7cc2-4343-b2a2-1ca278463f6ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.TensOfKHz" GuidDef="ae91c8383-bd89-4198-85fc-213ff34acedba" />
+          <DP Name="HundredsOfKHz" Guid="ab04e0465-81fd-4fdf-b553-d79f288346b2a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.HundredsOfKHz" GuidDef="a2dc7476d-dcb9-475f-8433-c249bcc74b56a" />
+          <DP Name="ThousandsOfKHz" Guid="ac094f9de-6c9c-4a08-b962-f7e512288dbda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.ThousandsOfKHz" GuidDef="a3d155857-eeba-4a00-9ddb-c9d0509d9135a" />
+          <DP Name="SSM" Guid="a7f9a9d06-6fc7-423c-8153-794368b707c0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.SSM" GuidDef="a9ccc0b8a-f0b1-4951-8545-a2d6a8ae1680a" />
+          <DP Name="Parity" Guid="aaa8bc935-c4ef-46ba-afbd-065c71070dfba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L032_ADF_Freq.Parity" GuidDef="ab6efc7fe-1da9-469b-81a1-378bdbef2478a" />
+        </A429Word>
+        <A429Word Name="L034_VOR_Freq" Guid="a2614e4ff-43d0-43f1-9e64-6509120af30ca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq" GuidDef="a0bcbbc45-7494-413f-b666-fd7a65d393cca">
+          <DP Name="LABEL" Guid="a23bcfb5f-c6e8-4846-8e3a-48492c5cac66a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.LABEL" GuidDef="a8d454519-2d74-4918-ac70-a94b774bc0bba" />
+          <DP Name="SDI" Guid="ae30c82cd-b5f6-4b98-be95-17c16fce0dafa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.SDI" GuidDef="a83de0844-9eb4-49d0-a94d-a31fa8dd3c8aa" />
+          <DP Name="MB_Sensitivity" Guid="a1101962c-f2cd-4051-98ce-8f17298ff76aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.MB_Sensitivity" GuidDef="a302a47d1-724e-4f5a-a15d-7235bdcfe828a" />
+          <DP Name="Tuning_Source" Guid="a90b107a9-0553-441d-89cf-7085f9eb614fa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.Tuning_Source" GuidDef="a8d3fea15-e7d5-435d-b2ef-d40ed5b02b4ca" />
+          <DP Name="PAD" Guid="adf59e123-bf8f-4632-a02e-42588cecb31aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.PAD" GuidDef="aea27ff74-7ab5-4a2e-90a2-1db8354d07b4a" />
+          <DP Name="ILS_VOR" Guid="adab31c31-c529-44ba-b46d-809e45f5d8daa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.ILS_VOR" GuidDef="aec6caf25-7447-4cf7-a99a-a37a65eb1f1ca" />
+          <DP Name="HundredthsOfMHz" Guid="aa758c2a4-b6c8-408c-bfec-bd71e0a511e1a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.HundredthsOfMHz" GuidDef="a68a8126c-8642-4544-95e6-ecfead09f75aa" />
+          <DP Name="TenthsOfMHz" Guid="abbb346fa-3926-4e94-8c98-19a4be04e57aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.TenthsOfMHz" GuidDef="a1f5883ac-eb8b-4de8-9c91-5fac61359b3ba" />
+          <DP Name="OnesOfMHz" Guid="a628a32d6-e933-43c6-bce2-0bf4dd3d7915a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.OnesOfMHz" GuidDef="a1797e68c-f32b-41a8-9eb4-83b8a4891839a" />
+          <DP Name="TensOfMHz" Guid="a8967d009-f1a9-4236-93ec-fd8e07ebe4dba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.TensOfMHz" GuidDef="aecbc9ba0-3636-40d3-be26-404556c4997da" />
+          <DP Name="SSM" Guid="a827d7df2-aa15-49b0-ae20-4232736b2609a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.SSM" GuidDef="a4bef596d-0e42-44a4-96ec-35e006df6758a" />
+          <DP Name="Parity" Guid="ad6e19a8f-37c8-4546-b38b-fe626df8900fa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L034_VOR_Freq.Parity" GuidDef="ac573af9b-0597-49cb-b7be-b987b9659a3ca" />
+        </A429Word>
+        <A429Word Name="L033_Landing_System_ModeFreq" Guid="a9e78350e-8307-4b8e-a4a3-cd0a2fb20e80a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq" GuidDef="a5132a387-2aab-4602-a78a-690ec09cd826a">
+          <DP Name="LABEL" Guid="a2a161e2f-f849-40cf-94e7-6ff4aa8985d2a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.LABEL" GuidDef="af1d18071-ddfe-4417-a682-13fcf95ffe1ba" />
+          <DP Name="SDI" Guid="adc6fe776-d18d-4552-979a-7ed6a95f8318a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.SDI" GuidDef="a02e4bbe5-bff4-4367-bfdc-b251a0dc483ea" />
+          <DP Name="Selected_Mode" Guid="af7d4926a-2cd6-4bb5-b422-4ccb27cc9652a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.Selected_Mode" GuidDef="a8893a22b-0108-40a1-b3a8-d92f3a1af9a3a" />
+          <DP Name="OneHundrethMHz" Guid="aa8e53a86-27de-4e21-9c9e-b5256341350ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.OneHundrethMHz" GuidDef="ad74e2a0c-feec-4340-8584-8015de1ab488a" />
+          <DP Name="TwoHundredthsMHz" Guid="a564905f9-2d75-47bf-b090-cc84f7b9d9b1a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.TwoHundredthsMHz" GuidDef="a3cb0c3ff-da00-463b-a589-0ea2b56cb6d8a" />
+          <DP Name="FourHundrethsMHz" Guid="a98d66fc7-0980-4e25-94bf-5c07fe595c34a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.FourHundrethsMHz" GuidDef="ad366ec40-1571-49b7-b983-da76908517eba" />
+          <DP Name="EightHundrethsMHz" Guid="a72d33c91-0d25-47d5-8da1-da65087f3938a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.EightHundrethsMHz" GuidDef="ae40dd8ce-97ef-4c41-9edb-75e40b859790a" />
+          <DP Name="OneTenthMHz" Guid="aec272ef0-1a35-41a7-81ee-64c2f4e2cc43a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.OneTenthMHz" GuidDef="a0a90e158-30a0-49c8-bade-22271933fa05a" />
+          <DP Name="TwoTenthsMHz" Guid="a59036cc2-4965-4a77-a9c6-63aa96a1ec95a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.TwoTenthsMHz" GuidDef="a3f11b9f2-8a5c-4240-9a8a-4a22dac1e615a" />
+          <DP Name="FourTenthsMHz" Guid="aa569d301-ab30-4a28-8630-bb3af1bb6753a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.FourTenthsMHz" GuidDef="a82e235f2-90a6-45f5-8094-282ea9bc57b9a" />
+          <DP Name="EightTenthsMHz" Guid="af1c1429b-5759-48ee-bbc6-56d7c36bd4d0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.EightTenthsMHz" GuidDef="a75f4e72d-e046-47f9-82f0-bd9c7f70fbf5a" />
+          <DP Name="OneMHz" Guid="a7d63577e-425f-48a2-b848-8d42de8342aea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.OneMHz" GuidDef="ab66a85f3-0970-4628-b1c7-314822b67e9ea" />
+          <DP Name="TwoMHz" Guid="ae7f0040c-5861-4eb1-bd2d-2faf036acd0aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.TwoMHz" GuidDef="ade021b7e-9b0b-483c-b554-5ffec1a377bba" />
+          <DP Name="FourMHz" Guid="a1d696fca-26bd-4e29-b799-44ed06abc03ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.FourMHz" GuidDef="a02b22141-f0f9-4cb0-b00b-a08a9ceb8435a" />
+          <DP Name="EightMHz" Guid="adb3513b3-58ec-49a5-a118-4164f3e88a17a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.EightMHz" GuidDef="ac12eb2e1-a4fb-4b5e-b53f-a74b62618d22a" />
+          <DP Name="TenMHz" Guid="a3fef2a71-40d3-418a-997a-955fc83c99a2a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.TenMHz" GuidDef="a2d7b84a8-3a0a-45d0-a638-116d7e02bbf6a" />
+          <DP Name="TwentyMHz" Guid="a0dafbf49-9edc-426f-943d-2abe01d0a7d6a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.TwentyMHz" GuidDef="a88549838-2e0e-4ca0-9cd2-ccc6f426b8cda" />
+          <DP Name="FourtyMHz" Guid="a4f977b47-e9f3-45dc-bb93-caf63ee3f2f9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.FourtyMHz" GuidDef="a7c578a7a-d648-4ea1-9473-3b63c39a1a13a" />
+          <DP Name="SSM" Guid="a9e267885-3c68-40eb-97fc-9f9d77eb3a36a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.SSM" GuidDef="ad64bb519-2d91-4cb6-a581-7ec50ee71937a" />
+          <DP Name="Parity" Guid="a135d86e5-0d09-4e1b-ab05-76a96111334da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L033_Landing_System_ModeFreq.Parity" GuidDef="a36eddce1-1c13-4984-8678-c920cb8aa1d7a" />
+        </A429Word>
+        <A429Word Name="L035_DME_Frequency" Guid="a91d06fd4-17cc-4a51-9096-4aea33850b43a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency" GuidDef="a4554f62b-dc6d-4ffc-bfcc-bbe6df299242a">
+          <DP Name="LABEL" Guid="a44a53d5d-56b7-49cd-b224-1ad962c19166a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.LABEL" GuidDef="aab683ef8-a93f-4784-a7e0-472a8b6faceda" />
+          <DP Name="SDI" Guid="a1db101ed-98ef-4b90-a862-92f9064908c9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.SDI" GuidDef="ab8483c05-3b28-4b7d-916c-f9b26e27c7b9a" />
+          <DP Name="DME_Mode" Guid="a5782ee0b-493c-4de8-bfe1-aca8d6a41308a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.DME_Mode" GuidDef="af6965d29-2a02-4d88-ba7d-f25cdc790b35a" />
+          <DP Name="Nav_Mode" Guid="aadaeaade-faa3-439e-93eb-16907cfade18a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.Nav_Mode" GuidDef="a53c02e5d-28f3-4a30-a310-ca197cda2a27a" />
+          <DP Name="Display_ON_OFF" Guid="a77165aea-9dc1-449f-94a7-86b0ba5b0d50a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.Display_ON_OFF" GuidDef="a0cdb0c35-b575-4cf6-849d-562f16597f4da" />
+          <DP Name="Ident_ON_OFF" Guid="ae972cefa-06c6-4df9-b51d-4ec48e9eef82a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.Ident_ON_OFF" GuidDef="a41c305ce-5772-42dd-a29e-f7dafa5f5aa0a" />
+          <DP Name="FiveHundrethsOfMhz" Guid="a657942f1-a310-4fdd-82d4-a5d26c048fe0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.FiveHundrethsOfMhz" GuidDef="a8dc7b26e-3c88-4172-be7c-660af01ad56aa" />
+          <DP Name="TenthsOfMhz" Guid="a6495256b-da0e-44cd-a717-109614203955a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.TenthsOfMhz" GuidDef="a0d786d8e-69ed-48ea-aed6-67ff198a8acba" />
+          <DP Name="OnesOfMhzMHz" Guid="a7a4027aa-1f6e-42e7-8e3c-f0e267fbfbfda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.OnesOfMhzMHz" GuidDef="af9a0d796-c5e8-4fa9-8b0d-773430f9d3b6a" />
+          <DP Name="TensOfMHz" Guid="a6d168613-9351-439e-9f4b-230211443bf0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.TensOfMHz" GuidDef="aa1bb8f4d-97ad-4b48-9722-1f4965809cd3a" />
+          <DP Name="SSM" Guid="a4154ee6e-a467-42e5-9675-ed42e0bf981da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.SSM" GuidDef="a72e86eb4-b42a-458b-8ae6-35c6888864eba" />
+          <DP Name="Parity" Guid="a322e2868-1a87-4708-804a-50c573bd7a2aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L035_DME_Frequency.Parity" GuidDef="aa28cd33b-01ae-4d4b-a311-61698294d14ba" />
+        </A429Word>
+        <A429Word Name="L100_Selected_Course_1" Guid="a898f1243-f19a-4390-8d05-ce1b5c21784da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1" GuidDef="adb8e8173-5aa2-4991-8a3f-aaa498548020a">
+          <DP Name="LABEL" Guid="a9d94e780-33b8-43d6-a6bc-ab5c1ea484a0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.LABEL" GuidDef="a31786b66-2837-4a11-8d71-49d17a7ec466a" />
+          <DP Name="SDI" Guid="aa365306e-01ff-491e-9806-3cdbf2c32801a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.SDI" GuidDef="a70df70cf-b4fe-4207-8e01-b17ba16a49d3a" />
+          <DP Name="PAD" Guid="a9dfe31f9-77b6-400d-9316-4b376182a156a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.PAD" GuidDef="a3f23e492-11f2-42a5-a57f-f4a757fdedcda" />
+          <DP Name="Selected_Course_1" Guid="a30576cea-143e-483b-85b8-1d22d5c90a8ca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.Selected_Course_1" GuidDef="a81bf1b14-7d9e-4898-ace8-d58e02098712a" />
+          <DP Name="SSM" Guid="a186a18fc-4a4d-4a95-b36d-e7c1c9e252efa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.SSM" GuidDef="a1b62fb66-03a8-4e3f-9d07-b096eef9c5c3a" />
+          <DP Name="PARITY" Guid="a94880e01-6e33-473d-97c2-86250b3b21c5a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L100_Selected_Course_1.PARITY" GuidDef="ade87a538-2046-48aa-b80e-d0ee8299ce6ba" />
+        </A429Word>
+        <A429Word Name="L105_Selected_Runway_Heading_BNR" Guid="aca52aa7f-e4ec-401c-b8ce-f1e21f915441a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR" GuidDef="a4a4691cb-f62e-40d0-8f69-ce75bbbfd016a">
+          <DP Name="LABEL" Guid="ae01f69e5-dab5-4f59-ad2d-f9b93639a711a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.LABEL" GuidDef="a1e20233a-6907-44e7-91b2-e7a6bb8ea89ca" />
+          <DP Name="SDI" Guid="acc1e5b06-4b10-4d43-b8fd-f4fd09f09469a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.SDI" GuidDef="acd084812-6895-4e44-b762-58129d15733ca" />
+          <DP Name="PAD" Guid="a166d7dc0-a601-4a9c-939c-7ef72d6ce4c0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.PAD" GuidDef="a896386ef-b501-4e69-a274-284ec85c7503a" />
+          <DP Name="Runway_Heading" Guid="a13920940-3aa4-4457-8dd8-4160a475f396a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.Runway_Heading" GuidDef="a85bc4f48-02d9-4057-951d-2361118b09eaa" />
+          <DP Name="SSM" Guid="af002995e-ff84-49b0-86f4-722647c2e8bfa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.SSM" GuidDef="aa2516c25-3e5a-4e64-bd7c-34dec1c93964a" />
+          <DP Name="PARITY" Guid="ac98ed2a6-0ae9-418f-8c7a-851b767165efa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L105_Selected_Runway_Heading_BNR.PARITY" GuidDef="a8045963d-987d-4177-8676-0fff2d99f712a" />
+        </A429Word>
+        <A429Word Name="L017_Selected_Runway_Heading_BCD" Guid="a899aac32-4ba8-4aeb-81b2-91c4268a5c33a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD" GuidDef="a1f7b048f-14e4-48c9-b945-cba37d72e016a">
+          <DP Name="LABEL" Guid="aaa1cc52b-7ce3-4423-9d39-915339804766a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.LABEL" GuidDef="a2803e78d-d49c-4361-a505-168d23e8b52ea" />
+          <DP Name="SDI" Guid="a82d12add-2b70-4b1b-ae0a-e5f24efb03eda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.SDI" GuidDef="a13fdb963-0fcd-47af-b028-bfc261bb8c5aa" />
+          <DP Name="PAD" Guid="a031f2c82-268e-4935-96e5-9ec9dc59f883a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.PAD" GuidDef="af54a5d24-5ef3-400f-9cbc-00190e85d413a" />
+          <DP Name="Front_Course_1" Guid="ad010ada9-32f1-45a7-8dc0-3c10e0678148a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_1" GuidDef="a37bb04eb-56b4-4eef-b215-198d10a0ae62a" />
+          <DP Name="Front_Course_2" Guid="ae0c97bb5-3557-477c-8b4e-321d147776aaa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_2" GuidDef="a62102119-581a-4fe7-989d-a12f8fe152bea" />
+          <DP Name="Front_Course_3" Guid="added226b-afe4-446c-9fdb-78546b377004a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_3" GuidDef="a1fbc697b-a462-4edb-897f-08356f9f1b64a" />
+          <DP Name="Front_Course_4" Guid="a48cf2f19-3047-45e0-8ef6-f09de22792aba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_4" GuidDef="aec6d0e6f-99f4-47f5-a728-24bc040357afa" />
+          <DP Name="SSM" Guid="aed53f8a1-48e7-4296-a94a-2876479e0a62a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.SSM" GuidDef="ab022b3db-d4ce-4abc-8f03-555c6c44cc7da" />
+          <DP Name="PARITY" Guid="ab2e639a4-8695-47bd-9378-08c1aaf311a4a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L017_Selected_Runway_Heading_BCD.PARITY" GuidDef="af1e5e602-15c1-4a61-9be7-bde3f2a6c2a3a" />
+        </A429Word>
+        <A429Word Name="L110_Selected_Course_2" Guid="aefdab0a2-d0a0-4f31-841a-83e352b38efca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2" GuidDef="a1117d5d5-3e5e-4f58-b423-f960960ed1aea">
+          <DP Name="LABEL" Guid="ac344b529-8800-47d3-b40b-2abb0e7acea8a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.LABEL" GuidDef="a739b31d2-a0b6-4aac-bb78-5871ae66a029a" />
+          <DP Name="SDI" Guid="a3b9a5992-a7ee-4014-a8bb-fab95500f65aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.SDI" GuidDef="a9656449b-6220-48d2-8ab2-1e85ffce8646a" />
+          <DP Name="PAD" Guid="a3f5c0989-6b60-4aee-9fc8-ed6920649fd8a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.PAD" GuidDef="ad5d677bf-1e73-4151-9a1c-4e0e15d0b26ba" />
+          <DP Name="Selected_Course_2" Guid="a7c273194-aa63-474e-8857-8606b976e7b9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.Selected_Course_2" GuidDef="a742b859b-dcf8-4102-b6af-c27033c48aa4a" />
+          <DP Name="SSM" Guid="af9e6edc7-ab33-4788-8cb8-73faa179f423a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.SSM" GuidDef="a5d5778e2-81ed-4949-b8ef-8db58c401339a" />
+          <DP Name="PARITY" Guid="a3e92a071-b9dd-4a9b-8436-fc3697287acda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L110_Selected_Course_2.PARITY" GuidDef="a15ba3f1b-b484-4c2b-8416-c5676ab31bbaa" />
+        </A429Word>
+        <A429Word Name="L242_GLS_Ground_Station_ID" Guid="a410adeb4-7d6b-4aea-a642-c23f3ae47c6da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID" GuidDef="a369985b3-53d7-4723-bb01-cde5ea69393fa">
+          <DP Name="LABEL" Guid="ad862df04-02b1-4cff-bd6d-b58d386fcad7a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.LABEL" GuidDef="a78a5fefa-e867-4513-87cd-e9a0910256afa" />
+          <DP Name="SDI" Guid="ae02bfb5b-3ec3-45d8-80bc-8f9de2370649a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.SDI" GuidDef="aa91e4048-483d-4f83-b776-6d76dbcad06ca" />
+          <DP Name="First_Character" Guid="a04855264-6b3d-471b-99df-0e65172d1c3ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.First_Character" GuidDef="aa12a7ff1-a806-44e8-af40-a36903f416e3a" />
+          <DP Name="PAD1" Guid="a226217d9-78a4-456f-b483-88de25248e99a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.PAD1" GuidDef="a3c71bee9-8064-454e-babf-c89633c7bd93a" />
+          <DP Name="Second_Character" Guid="a6bc99f99-ef7e-4c76-b049-0bba8f077979a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.Second_Character" GuidDef="a16254037-49c2-49b4-84e1-01ce8c826261a" />
+          <DP Name="PAD2" Guid="a40058f4c-f89f-46fb-a4b3-a2ddd74853dda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.PAD2" GuidDef="a5b60edfd-15c4-4be7-9a17-792f0f1941fda" />
+          <DP Name="Spare" Guid="a22637cb4-36aa-4849-9e3b-dee0affc3c9ca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.Spare" GuidDef="aa752219c-9eee-4f96-88c3-03cbc39aadbca" />
+          <DP Name="SSM" Guid="a07b888c6-7f4d-4c1d-9ab7-1928dfb71d06a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.SSM" GuidDef="ab16e042a-33e3-4a58-af68-7b17d68af117a" />
+          <DP Name="Parity" Guid="aff964f3f-722d-4591-b742-98291cf3876ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_1.DS1_TUNE.L242_GLS_Ground_Station_ID.Parity" GuidDef="a628b6118-1ca9-470e-a32a-4b15aaeb99f4a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_TUNING_OUTPUT_2" Guid="a0423d07f-400b-43d0-8194-dc2f9aaff23ca" NameDef="APP_FMS_TUNE.A653_OUT_TUNING_OUTPUT_2" GuidDef="a10c3f312-d605-46ed-a2b2-127b1b5e391ca">
+    <A664Message Name="ARINC429_MIX_MSG_TUNE_2" Guid="ae9865481-f23e-42c4-8c91-78918f3bd4daa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2" GuidDef="ad65cc226-6d34-4cc9-af18-23d080bffacda" SubVLID="2" VLID="32947">
+      <DS Name="FSS1_TUNE" Guid="a1a7ad8e5-ddb8-4474-869c-b8a1f481792ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.FSS1_TUNE" GuidDef="ab01e700e-f870-4fd6-92fa-597a66db0650a">
+        <DP Name="FSB1_TUNE" Guid="a7cfc1456-9e08-4ca5-b68c-a19129c52a49a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.FSS1_TUNE.FSB1_TUNE" GuidDef="a0fe1d4c0-df00-4247-a2e5-5db2a60775bea" />
+      </DS>
+      <DS Name="DS1_TUNE" Guid="ac42a219f-f9d8-4daa-a3f4-9d9ac0fa099ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE" GuidDef="adc8db929-2d00-469e-9ac0-d51c3b4bcdcea">
+        <A429Word Name="L032_ADF_Freq" Guid="a0012a222-f2b4-42c6-98ed-ecc90c619c96a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq" GuidDef="a34bcc508-1094-488d-97e6-80a153539841a">
+          <DP Name="LABEL" Guid="a9f45bcdc-d0f7-4d60-85fd-39756b7b2830a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.LABEL" GuidDef="adefc0ad4-2561-40e1-a2bc-9be98841cbd9a" />
+          <DP Name="SDI" Guid="a5c498c6c-ae3c-451a-92da-c684f2acee6ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.SDI" GuidDef="a936ca086-2d13-4b00-9b17-a3e2d8fe0064a" />
+          <DP Name="BFO" Guid="ad6552406-6aa5-4c86-870f-7bf50d556b09a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.BFO" GuidDef="aba10ab0a-08dc-4075-baeb-807c744a158ea" />
+          <DP Name="ANT" Guid="aff4ef980-f220-4c69-81e2-030d797c2bb6a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.ANT" GuidDef="adc4457c8-06f3-4b4c-af62-09f1231f38a2a" />
+          <DP Name="Pad" Guid="ae42bb94c-e620-41af-8507-66cd2db544c4a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.Pad" GuidDef="a9d927d75-bdab-4c47-a72f-30dbf5f6402ea" />
+          <DP Name="HalfOfKHz" Guid="a49e3c54b-9806-47e2-9eac-4ce59512eba5a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.HalfOfKHz" GuidDef="a9d7858d8-d5b9-4517-9522-e5eb93b25e29a" />
+          <DP Name="OnesOfKHz" Guid="a7fedbdef-67a5-42e8-89ae-0d9b33b2e672a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.OnesOfKHz" GuidDef="a7c4c9901-4acf-44d6-99eb-e935dfa02ea0a" />
+          <DP Name="TensOfKHz" Guid="a3a56b12a-c883-40df-bf15-0e00a7c90279a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.TensOfKHz" GuidDef="a7f808c35-86a8-4dfc-a40f-72fa26298d99a" />
+          <DP Name="HundredsOfKHz" Guid="a214fb796-6f39-49f4-b8e9-fbc3c5fb2035a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.HundredsOfKHz" GuidDef="a8f40e3a5-7279-4f28-b520-91c5223d664ea" />
+          <DP Name="ThousandsOfKHz" Guid="ae3624aba-fd7e-4e7c-90bd-5628c061e62ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.ThousandsOfKHz" GuidDef="a9f0a0422-bc07-4aa6-8b0f-f6c6067ce3dea" />
+          <DP Name="SSM" Guid="a9058de05-79d3-49fd-87d7-9e5a4d9e1590a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.SSM" GuidDef="a0bc01cab-3d6f-4e74-b84c-2138c3a16dcca" />
+          <DP Name="Parity" Guid="a98946e25-7b38-4ba9-b3a4-cd589630329ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L032_ADF_Freq.Parity" GuidDef="a8045875a-39c0-4a73-bf4d-18a3259385dfa" />
+        </A429Word>
+        <A429Word Name="L034_VOR_Freq" Guid="a52babcea-0ab7-4eb1-bd6c-4abcf2e125d4a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq" GuidDef="ac231848a-c9c7-44e9-8427-85beca580f72a">
+          <DP Name="LABEL" Guid="ac4cc5a36-49cf-4d55-b72b-c1a184c533a5a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.LABEL" GuidDef="a55bc0b6b-d3bd-4136-a902-23f15d6c499fa" />
+          <DP Name="SDI" Guid="a21b43c80-08c1-4ac3-a552-135d0e9241efa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.SDI" GuidDef="afa818dc7-d313-43d0-9958-995e13ad8ba7a" />
+          <DP Name="MB_Sensitivity" Guid="a0e3843a3-0d5d-462c-9eaf-adefca136a17a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.MB_Sensitivity" GuidDef="a1cdb3613-1e15-47b3-a4d2-acbc80c4db7fa" />
+          <DP Name="Tuning_Source" Guid="a6629c07a-7ad7-4abe-a02c-06d811eed06da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.Tuning_Source" GuidDef="a5d18de30-3f3f-47dd-9465-1acec646f66da" />
+          <DP Name="PAD" Guid="aa9bfb37e-870d-40f4-a7e7-ee4b08e3a36da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.PAD" GuidDef="a636bab02-bdd9-4439-b382-56737f5353cda" />
+          <DP Name="ILS_VOR" Guid="ad178e8c4-741a-4764-b847-42df0518088aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.ILS_VOR" GuidDef="a98661e54-7dd2-4ad7-bb9e-a54df32645eca" />
+          <DP Name="HundredthsOfMHz" Guid="af9abe326-1092-4f3f-b4a8-624ecd0bbe63a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.HundredthsOfMHz" GuidDef="a1f319bd1-f240-4d84-8277-70508cacc296a" />
+          <DP Name="TenthsOfMHz" Guid="abc0a2145-15ce-40c9-8a3c-28d96b40141ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.TenthsOfMHz" GuidDef="aa60dcada-2f2d-4754-9d48-87882b444b48a" />
+          <DP Name="OnesOfMHz" Guid="a2184da6e-d4b0-405c-ad6d-19430f7718daa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.OnesOfMHz" GuidDef="a741bca08-c409-4696-9a84-91e058c2f1b6a" />
+          <DP Name="TensOfMHz" Guid="ae349ce4d-3e76-4406-9b79-e05448f826c2a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.TensOfMHz" GuidDef="a32fd35ce-603a-46af-9482-195f7a97a59ca" />
+          <DP Name="SSM" Guid="ace2ccd36-a198-4548-8926-50a06af7cce1a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.SSM" GuidDef="a139a5278-8bba-4106-b0ce-f65bc206c3c3a" />
+          <DP Name="Parity" Guid="a66b5d547-e910-478f-a5e9-339975c82adca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq.Parity" GuidDef="a8c6c5f16-5ba7-419b-b8bf-37f01c1df6d3a" />
+        </A429Word>
+        <A429Word Name="L033_Landing_System_ModeFreq" Guid="a215d5db4-984c-4dab-9dfb-2794f4464412a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq" GuidDef="a94134423-b68d-42f2-9969-6389e41b3ef4a">
+          <DP Name="LABEL" Guid="a7702cbac-085a-4a27-95a0-2b07946825f6a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.LABEL" GuidDef="a250eb3ee-011e-4b9c-8aed-a1a3484f7486a" />
+          <DP Name="SDI" Guid="aaf14d89b-6983-4410-8202-35c3cde0cb08a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.SDI" GuidDef="aff5f116e-1e1c-4365-9213-4182f013f2a3a" />
+          <DP Name="Selected_Mode" Guid="aeb799e43-8d05-4bf5-a4b5-d2e271b1fa6aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.Selected_Mode" GuidDef="a331fa2e7-1168-46c7-93f8-c869cea067b9a" />
+          <DP Name="OneHundrethMHz" Guid="a3a9b00ab-d549-4208-bd32-5782127143d0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.OneHundrethMHz" GuidDef="adfb136a3-d317-489e-99bd-9dc7e6d1428ba" />
+          <DP Name="TwoHundredthsMHz" Guid="ab88f252a-b743-4141-a1c6-fca08128caeea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.TwoHundredthsMHz" GuidDef="aa3b36885-d15b-43e2-b784-e2798b7397e9a" />
+          <DP Name="FourHundrethsMHz" Guid="ae5565fed-c4d8-40e0-aa11-8c56929b8ddaa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.FourHundrethsMHz" GuidDef="aa530f15a-0953-4605-aba1-1d71ccd8d6f3a" />
+          <DP Name="EightHundrethsMHz" Guid="a0efb4a01-b15e-41de-938c-05a844976cdea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.EightHundrethsMHz" GuidDef="af98363be-562b-4282-8304-8f1a3c5b85fba" />
+          <DP Name="OneTenthMHz" Guid="ab7a90ba9-2a89-452f-828a-cb6bf6535508a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.OneTenthMHz" GuidDef="a897e9819-bda3-475f-ac4f-2262cf15e5a8a" />
+          <DP Name="TwoTenthsMHz" Guid="a49596844-0745-4ef7-8fcf-554a31089cb9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.TwoTenthsMHz" GuidDef="abbae00d8-ea16-4d2a-9be4-95ff30649153a" />
+          <DP Name="FourTenthsMHz" Guid="ad6d97a3b-f1e6-4d84-8578-c53d4d00a0eda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.FourTenthsMHz" GuidDef="aa02e994b-fa07-45b9-9068-03143639bd1ca" />
+          <DP Name="EightTenthsMHz" Guid="a8594f4ac-cdaf-4502-ad8c-1585748f5019a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.EightTenthsMHz" GuidDef="a0fc062dc-086d-43a5-a4f7-fdf683370eaca" />
+          <DP Name="OneMHz" Guid="aba9cfd5a-efdf-43d8-8ae3-de33780e3e2ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.OneMHz" GuidDef="a812c4710-62fa-4615-b1d2-bb283cfe3c88a" />
+          <DP Name="TwoMHz" Guid="a97109449-5586-46cd-960c-555d209500bda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.TwoMHz" GuidDef="a895bff43-bc83-4092-a913-75e7e6332de4a" />
+          <DP Name="FourMHz" Guid="a3bf16045-d4be-42fb-be52-027e1087cc32a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.FourMHz" GuidDef="a0dbf9cdc-d5f1-4cc7-991b-de8498309d8fa" />
+          <DP Name="EightMHz" Guid="a1225f9aa-af07-421e-bee7-318796622a96a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.EightMHz" GuidDef="a1409fd5b-154b-4d8a-b252-0c8891e82befa" />
+          <DP Name="TenMHz" Guid="a9f84be55-928d-417e-9691-a74576542c02a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.TenMHz" GuidDef="a227b66e6-1c5b-4453-a0a6-8b32f6e3ccbaa" />
+          <DP Name="TwentyMHz" Guid="a1d409a07-d2cb-4bea-a98e-c67bc6275c46a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.TwentyMHz" GuidDef="a2caaa5ba-cc5b-448a-8909-c2e1af92283ba" />
+          <DP Name="FourtyMHz" Guid="a96e16317-e99b-477d-b0d6-97668b731150a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.FourtyMHz" GuidDef="ab1203f4c-d879-4daf-bda9-f42c939c849ca" />
+          <DP Name="SSM" Guid="ae0937664-9c09-475e-ab5f-b0f25ad80c3da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.SSM" GuidDef="af0a7a44c-f3b5-4094-90d5-94a83b9f1eb2a" />
+          <DP Name="Parity" Guid="ad57d5818-9ae2-4086-9f66-ebcae438c492a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L033_Landing_System_ModeFreq.Parity" GuidDef="a6807362f-8f6a-4304-9a30-cae08461cd84a" />
+        </A429Word>
+        <A429Word Name="L035_DME_Frequency" Guid="a5a899e83-2581-46ec-905f-5cd1f0c4f9f6a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency" GuidDef="acc909a24-165d-43f0-8d3c-5605e50e9116a">
+          <DP Name="LABEL" Guid="a03a74e0b-ae33-4c39-b1e6-d5a2525d734da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.LABEL" GuidDef="a449d52ee-21ab-42a2-8616-1cbe27525784a" />
+          <DP Name="SDI" Guid="a8d081a1b-7e73-4195-9149-4c9f9ba82312a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.SDI" GuidDef="a4c74853c-cbe6-4a54-aa74-e08f9ca9f69ca" />
+          <DP Name="DME_Mode" Guid="a2e9c7865-f0eb-4ba8-879d-f2cc8eb7431da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.DME_Mode" GuidDef="a9d0ae5b7-753d-44ee-81c4-1bab9eda86fda" />
+          <DP Name="Nav_Mode" Guid="ad1c6a2f2-a5d0-4bac-88a8-323393744997a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.Nav_Mode" GuidDef="a267b6fd4-a4f0-4b0b-960f-20168ac9e34da" />
+          <DP Name="Display_ON_OFF" Guid="a6e158e7c-bea7-4276-b96e-7fe8a168a1fba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.Display_ON_OFF" GuidDef="affb3644c-dcfd-499d-b974-494a8d508ba8a" />
+          <DP Name="Ident_ON_OFF" Guid="a9874127c-944b-46a3-94f5-adb76a1ca256a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.Ident_ON_OFF" GuidDef="a95624046-17df-457d-b5c9-116f4c29aef2a" />
+          <DP Name="FiveHundrethsOfMhz" Guid="af66819b8-4de9-470e-9d09-3a632c4ac463a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.FiveHundrethsOfMhz" GuidDef="a3f369b06-bae4-43d5-bf9d-cf7ee338176ca" />
+          <DP Name="TenthsOfMhz" Guid="a1b0d83cd-24c5-4f39-99d5-5c7cb8d59c5ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.TenthsOfMhz" GuidDef="a0646e7e6-361d-4fc5-854c-2df2e49a1189a" />
+          <DP Name="OnesOfMhzMHz" Guid="a245d039f-1df7-4b73-b343-0ca6e06e6c04a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.OnesOfMhzMHz" GuidDef="a97a49d34-5d3b-49aa-b80b-c82d0f805e0ca" />
+          <DP Name="TensOfMHz" Guid="ab8cfc75e-902d-405a-bd7a-c2031d03e129a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.TensOfMHz" GuidDef="aa15daea7-05af-4e8b-9235-5a661f198faca" />
+          <DP Name="SSM" Guid="a3bd5425a-37ae-460b-8c0c-6a6fca0a5994a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.SSM" GuidDef="af0ded0c5-4e8a-44c0-bb65-b9b7e89bf6d6a" />
+          <DP Name="Parity" Guid="a31550d3a-fdde-4ad5-b361-71666366b1d9a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L035_DME_Frequency.Parity" GuidDef="ad1a6679f-4b23-4989-8a64-74efe921cad1a" />
+        </A429Word>
+        <A429Word Name="L100_Selected_Course_1" Guid="ac58211b3-e629-4a8a-a954-914eb20ebe82a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1" GuidDef="a6d725e5c-2427-49c3-9de9-b5c5b4893047a">
+          <DP Name="LABEL" Guid="a1703d9b3-fe0f-48f9-9f87-0849b5dbfca2a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.LABEL" GuidDef="a28ea77ca-93ec-4c40-ac63-ac64dfe2d034a" />
+          <DP Name="SDI" Guid="a0fd4d277-7714-46d0-907c-570bf148777da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.SDI" GuidDef="af9abebbc-4489-412a-aa44-3ccb20c38b7da" />
+          <DP Name="PAD" Guid="adcf00faf-15a8-445c-a798-1bb799b2306ba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.PAD" GuidDef="af3c597ff-c5c7-4c28-aa05-4379727af7fda" />
+          <DP Name="Selected_Course_1" Guid="aaff86037-1bd6-495a-9dd9-9e3d764a02eca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.Selected_Course_1" GuidDef="ae2b4d836-fbb7-4090-a89b-f76c08a6bd46a" />
+          <DP Name="SSM" Guid="ac1491cad-c274-4151-852f-3ff2715054fda" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.SSM" GuidDef="a758174c7-2173-4052-bd83-896746e21bfca" />
+          <DP Name="PARITY" Guid="a107e4e53-99a7-475e-b898-4c5dc3d84e07a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L100_Selected_Course_1.PARITY" GuidDef="a5430a169-7ef9-4870-a7b9-a8e39c9f6d28a" />
+        </A429Word>
+        <A429Word Name="L105_Selected_Runway_Heading_BNR" Guid="ac49737bd-084f-4145-9227-c8d92a8b636ea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR" GuidDef="ad6022126-67fd-4415-b887-3f4681d33f0ba">
+          <DP Name="LABEL" Guid="a7c979625-2683-4765-93af-ffd3e70912c8a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.LABEL" GuidDef="a28353ada-267d-45a8-b373-c17d1c31b063a" />
+          <DP Name="SDI" Guid="afa5be868-8c0a-4a52-82ee-5e8f6eda1eaba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.SDI" GuidDef="a043cceda-5b21-4e1c-a07c-029db6c49943a" />
+          <DP Name="PAD" Guid="a1303af3c-6f9c-4cde-819f-f8e758899fdba" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.PAD" GuidDef="a3fd838cc-816f-449e-9630-21f0d662d9d4a" />
+          <DP Name="Runway_Heading" Guid="aa89162df-57b9-4b76-9230-52699cd00140a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.Runway_Heading" GuidDef="aa7a9a9f4-213c-4d2c-bfed-ce8990adf34da" />
+          <DP Name="SSM" Guid="a794a659b-c3d2-429a-b03a-54b9f0b1e41fa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.SSM" GuidDef="a6703bd8a-bdbf-4bfd-b992-a85b4639c4b6a" />
+          <DP Name="PARITY" Guid="afc12e504-7172-4f29-9f69-fcfebc90c5aca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L105_Selected_Runway_Heading_BNR.PARITY" GuidDef="a9a31609e-3b1d-42ce-84c3-84171c0c0f3ba" />
+        </A429Word>
+        <A429Word Name="L017_Selected_Runway_Heading_BCD" Guid="abb77f8d9-23d7-4bca-a650-2366f8ebbf67a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD" GuidDef="a506b6330-5393-4ee5-af3a-ea9d6ad41548a">
+          <DP Name="LABEL" Guid="af2d00aa8-871f-4fcb-821a-adb3f36d84e1a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.LABEL" GuidDef="aa8850ea7-edf1-4221-a991-0e5e206f2378a" />
+          <DP Name="SDI" Guid="ad4e447e4-b546-41b4-897d-49b70fb4dbdfa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.SDI" GuidDef="a9412b0a3-fa56-48d6-92b2-f7a3436a210fa" />
+          <DP Name="PAD" Guid="a74c4bf6f-538d-408a-a8e3-3d98e35071b4a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.PAD" GuidDef="ad681247b-9087-4d3a-b861-8ed35fc620a4a" />
+          <DP Name="Front_Course_1" Guid="aa6f3f572-b273-4d60-b189-c158888b2769a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_1" GuidDef="af9f03bda-72a1-4965-b1ef-f7d22b01f0cba" />
+          <DP Name="Front_Course_2" Guid="a52c50922-c6a7-4a73-b84d-3d0caab0710fa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_2" GuidDef="ae3df4d8d-5c39-4811-9b6d-15c914d51623a" />
+          <DP Name="Front_Course_3" Guid="a96e97c9d-5fd3-4798-9837-b365600f05d5a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_3" GuidDef="ad1509fdb-0bb9-46b2-9953-1090b6fae561a" />
+          <DP Name="Front_Course_4" Guid="a03819d1f-7fdc-4c0d-ad4b-e07256489611a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.Front_Course_4" GuidDef="af2420cfa-c9a5-497f-ae7b-46773f99819da" />
+          <DP Name="SSM" Guid="a343fe00c-5a23-404f-9d69-71dccc108be8a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.SSM" GuidDef="a17e45cc6-cc9b-4a12-90e2-6379e791eb0aa" />
+          <DP Name="PARITY" Guid="a5ad4fbc0-1590-46cd-8a4d-7124d1c095a0a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L017_Selected_Runway_Heading_BCD.PARITY" GuidDef="a6aa81690-1f08-47a1-8b20-e0bd77829e16a" />
+        </A429Word>
+        <A429Word Name="L110_Selected_Course_2" Guid="ae9e8277a-0ed1-4af5-9b4e-574971af017da" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2" GuidDef="aeb4134c2-527d-4fea-a2d8-1b8961ff1946a">
+          <DP Name="LABEL" Guid="ac3b0d6d1-a2ac-46b7-8e18-bc4276f451dfa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.LABEL" GuidDef="ac094591f-8681-4c56-8e9f-e4c0ebf1d0cca" />
+          <DP Name="SDI" Guid="a0be835d6-a409-4c9e-a4b4-63f580d5112aa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.SDI" GuidDef="accdfe08a-4370-49bf-932f-6ab4e2ec7433a" />
+          <DP Name="PAD" Guid="a7efd4aaf-9151-475b-ac81-a3dd848038d7a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.PAD" GuidDef="ac4fae7c6-c1bc-4809-9830-6b50e8a8d0c7a" />
+          <DP Name="Selected_Course_2" Guid="a2ab91dd5-044d-4846-8fc1-c08f46c6e22fa" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.Selected_Course_2" GuidDef="ac2c19cd1-4b92-4ddd-bedc-77a47af8c398a" />
+          <DP Name="SSM" Guid="af1817b78-d6e4-4fe0-ad42-138c238af63ca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.SSM" GuidDef="a10d2701a-4247-4ca7-bb93-93b1c055688aa" />
+          <DP Name="PARITY" Guid="aeadde65a-4e8e-427b-be22-b90b385ce7b3a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L110_Selected_Course_2.PARITY" GuidDef="abf9d4efb-1588-4778-b6a6-0202da22555ca" />
+        </A429Word>
+        <A429Word Name="L242_GLS_Ground_Station_ID" Guid="a3cebb124-f8de-4f59-b713-28ea81377610a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID" GuidDef="a19f61d08-9201-4258-95e1-e21c22ab66cda">
+          <DP Name="LABEL" Guid="a32acb2f8-4bb9-4573-ae6b-ae1f7b676d29a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.LABEL" GuidDef="af46db587-ace5-4fdb-be24-38c13945f26ca" />
+          <DP Name="SDI" Guid="a8c8d985f-75be-4bba-a051-8fda29744472a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.SDI" GuidDef="a071a3bfa-1c3b-4818-ac21-d64d965299fba" />
+          <DP Name="First_Character" Guid="a19e8a9b6-0340-40c7-a7f0-bf96cb7515dea" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.First_Character" GuidDef="a55946407-cbff-499d-95cd-e2fde1044111a" />
+          <DP Name="PAD1" Guid="a5774ff53-f53e-4f62-807e-c06b2716736ca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.PAD1" GuidDef="ac7ed4427-a85f-472f-bef5-1cfc1400a540a" />
+          <DP Name="Second_Character" Guid="a59da7af6-e9a6-47fe-8edc-edfa3c613785a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.Second_Character" GuidDef="ad62949c5-7f38-4842-bb77-d0c9890f6caaa" />
+          <DP Name="PAD2" Guid="a76fa6c54-686d-4b0d-afde-23fa1ba7fabca" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.PAD2" GuidDef="a4cd01ea2-0a61-424b-aa20-ded995476c57a" />
+          <DP Name="Spare" Guid="a231d28b1-bf4a-4dbe-90ac-6bd217245855a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.Spare" GuidDef="a2064e7db-1f8b-4355-9285-49dfd2a257fda" />
+          <DP Name="SSM" Guid="aa06a3fc8-f768-43bd-a68a-8848a4ce9ee8a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.SSM" GuidDef="a9d9dc422-e6a4-4295-a55a-904621719e1ea" />
+          <DP Name="Parity" Guid="a9206787b-b1da-4440-ac13-45bfee0ec3e3a" NameDef="APP_FMS_TUNE.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L242_GLS_Ground_Station_ID.Parity" GuidDef="a29afc5f4-09ec-403d-8c6e-a2023e667b31a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU1" Guid="a9770e840-ee21-4b6e-888a-b3902e135c39a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_DU1" GuidDef="a556d41e1-91a4-44c9-be68-f3259328dadda">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU1" Guid="a70095a91-77a7-4120-b9e1-f4298e9af650a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU1" GuidDef="a4bcd38c4-c2ea-48ae-8ff7-e18975114eeaa" SubVLID="0" VLID="32926">
+      <DS Name="DS_HDD_BLK" Guid="aad1a2a2d-5d3e-4f6c-99a5-7881b6b13f2ea" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU1.DS_HDD_BLK" GuidDef="abfd235af-41dc-433a-b25d-1d38fd861a94a">
+        <DP Name="FMS_MDB_661" Guid="a6474957a-765c-4b97-b3e9-14f2c3f0026da" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU1.DS_HDD_BLK.FMS_MDB_661" GuidDef="a441411cc-6852-4127-813d-14356ffc3391a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU2" Guid="a010b07b9-ef5e-426f-bd17-9f62aac65162a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_DU2" GuidDef="afb930354-d1ac-464e-b98b-4ec0c43979b8a">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU2" Guid="a324e8984-20fa-4ca9-ada5-a0fce9c99058a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU2" GuidDef="a97277e46-8c00-4c2a-8690-040942e846dba" SubVLID="0" VLID="32926">
+      <DS Name="DS_HDD_BLK" Guid="a4f7d33c1-6507-4c57-be5e-3bd29f153b3da" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU2.DS_HDD_BLK" GuidDef="a8f793db8-64c4-4f14-9ae1-2a607bd4e3f8a">
+        <DP Name="FMS_MDB_661" Guid="a168ad6dd-fdc9-4637-8276-1cddfbe99cbca" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU2.DS_HDD_BLK.FMS_MDB_661" GuidDef="a5db5566a-a1c7-46f1-8e59-70470b55164ba" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU3" Guid="a18a704ea-2fdf-427f-ba77-d61ee73fba43a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_DU3" GuidDef="a4b22ae15-1355-4b34-91d3-cb2e7a2a48a1a">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU3" Guid="ab72bc891-8a18-4b19-bff5-1b5f12ee7e3da" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU3" GuidDef="a37d5adcc-bd56-4d43-973a-4eafa0a91683a" SubVLID="0" VLID="32926">
+      <DS Name="DS_HDD_BLK" Guid="a59b6d2dc-3ec9-4450-beb8-9448ca827f59a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU3.DS_HDD_BLK" GuidDef="ae18e0b43-c0d4-4539-a6bb-1f5cac8572bba">
+        <DP Name="FMS_MDB_661" Guid="ad05b151b-d70d-474a-abe0-bacbaf0f9eb8a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU3.DS_HDD_BLK.FMS_MDB_661" GuidDef="a5e728dd9-585d-480e-8596-ddb17e63c53ba" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU4" Guid="a7026bb21-7c22-431a-bf59-7e9bf54f1cb5a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_DU4" GuidDef="afe7c4320-9fcb-4512-81cd-5da0150d3439a">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU4" Guid="a0b8578cd-a5ff-407d-b023-5b6e4fdf5289a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU4" GuidDef="a0cccefd3-f6d4-499c-9971-151a5ea6ae18a" SubVLID="0" VLID="32926">
+      <DS Name="DS_HDD_BLK" Guid="a34b705aa-a57e-482e-99fb-45ecd4666c47a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU4.DS_HDD_BLK" GuidDef="a4668905f-3d15-4247-b8c3-4c5720820c7aa">
+        <DP Name="FMS_MDB_661" Guid="a7d592660-8f09-45c1-b23c-cdb44c652530a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU4.DS_HDD_BLK.FMS_MDB_661" GuidDef="aafa1dd96-51c5-4cbe-afd8-6cf6c3afb7a3a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_DU5" Guid="afaa73e83-367f-4562-a6c6-6c0620186d9ea" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_DU5" GuidDef="a62c2ed60-1eba-42b5-921b-53997db0ebe2a">
+    <A664Message Name="MSG_FMS_HDD_A661_Block_DU5" Guid="a14e9ca43-753d-484f-b33e-362ee2fdac3fa" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU5" GuidDef="ae5456db4-c94d-425a-896a-d33811f1cc82a" SubVLID="0" VLID="32883">
+      <DS Name="DS_HDD_BLK" Guid="a2b7f6ce5-6844-4e9a-87bf-a2ad30d65db7a" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU5.DS_HDD_BLK" GuidDef="a04af14c8-fc72-440e-8936-4579123688dfa">
+        <DP Name="FMS_MDB_661" Guid="ac00d4e36-631f-4299-b3a2-1e03118187cba" NameDef="APP_FMS_TUNE.MSG_FMS_HDD_A661_Block_DU5.DS_HDD_BLK.FMS_MDB_661" GuidDef="aef315b6c-9335-4f42-9e06-630a52cfb298a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU1" Guid="a32dcbbcf-fd67-4ece-afd5-cfd126f57620a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_HP_DU1" GuidDef="ac91865f9-82ae-4dc6-958a-f469309fce88a">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU1" Guid="ad9758514-40bb-45ab-b86b-a0732a31c63ca" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU1" GuidDef="a8be6e996-0863-493c-805b-17922edbe55ba" SubVLID="3" VLID="32926">
+      <DS Name="DS_HDD_HP_BLK" Guid="ae8d57d1f-3adb-42d4-a597-d74604a7833ba" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU1.DS_HDD_HP_BLK" GuidDef="ac52f5d77-821d-4941-bfff-b4897e889114a">
+        <DP Name="NG_MDB_661_HP" Guid="a28833ffd-bf58-49e5-a51c-91e12a1135a4a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU1.DS_HDD_HP_BLK.NG_MDB_661_HP" GuidDef="aabaf78b7-ce66-4f2a-886b-22feeb8218d6a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU2" Guid="a971a7f92-a95d-439f-909b-1d619c3c8956a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_HP_DU2" GuidDef="ac939dac8-8fed-4616-99e9-cdbb2bda26bca">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU2" Guid="afd8e8bc6-a7de-4a0b-a624-87661ee79205a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU2" GuidDef="af431b219-cc9d-4680-a77f-83ed5402ab44a" SubVLID="1" VLID="32926">
+      <DS Name="DS_HDD_HP_BLK" Guid="a6a32f690-594d-4fdf-aa58-29c3f49d2af2a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU2.DS_HDD_HP_BLK" GuidDef="a076f161a-1b5e-4fa7-bf0e-8ec1f573fd83a">
+        <DP Name="NG_MDB_661_HP" Guid="a2ed6ece0-7255-460e-84e7-0ac69cbf8815a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU2.DS_HDD_HP_BLK.NG_MDB_661_HP" GuidDef="af69be700-98a7-48d4-afa2-83dc21cabe18a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU3" Guid="a5deb5836-5c4a-48ca-8eb0-038e971c110ca" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_HP_DU3" GuidDef="a71b15971-4c5e-4dd7-89de-43eea6e60ed9a">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU3" Guid="a3bd74c88-8960-4163-999b-01b767ffb8eba" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU3" GuidDef="a99539871-a3c7-4497-80b8-bef17e98ffd5a" SubVLID="2" VLID="32926">
+      <DS Name="DS_HDD_HP_BLK" Guid="a4c96eab8-f34d-42ad-974e-1c52303d68c6a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU3.DS_HDD_HP_BLK" GuidDef="a7c3d03ec-f201-47ac-954b-709fbdbe8c63a">
+        <DP Name="NG_MDB_661_HP" Guid="af2c3a242-d93e-4ae8-8029-a7b5ea7c8bb8a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU3.DS_HDD_HP_BLK.NG_MDB_661_HP" GuidDef="adbfec90b-8657-44b9-bcc0-be2b65dd7b7fa" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU4" Guid="a59facb8b-f869-43fd-a8a8-e59573e26af7a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_HP_DU4" GuidDef="a0e017e1a-85a7-431d-a07c-78dc8a9c1309a">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU4" Guid="a0fdacae9-c022-4b94-8d90-db340fc25ebda" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU4" GuidDef="a858b57bc-9185-4d51-9cb6-27482c993272a" SubVLID="3" VLID="32926">
+      <DS Name="DS_HDD_HP_BLK" Guid="a317efc22-04bc-4256-98c8-1744f495ad5da" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU4.DS_HDD_HP_BLK" GuidDef="a56a34d92-da6d-4d50-a569-b1f4b1812f1fa">
+        <DP Name="NG_MDB_661_HP" Guid="a739d5996-43ac-446e-a224-89733b0a151fa" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU4.DS_HDD_HP_BLK.NG_MDB_661_HP" GuidDef="ade0b8a04-24e2-4fc5-b5ef-35f87dc81825a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="A653_OUT_A661_BLOCK_HP_DU5" Guid="a8720038b-6abc-4cf7-9ff2-394def0fc1d4a" NameDef="APP_FMS_TUNE.A653_OUT_A661_BLOCK_HP_DU5" GuidDef="a97378a7d-9a6c-42b2-8099-d6d559111191a">
+    <A664Message Name="MSG_NG_HDD_A661_Block_HP_DU5" Guid="af1299cb5-3ecb-4185-bfe1-15dca302f29fa" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU5" GuidDef="a2469be6e-04e1-4ab0-a723-017ca991d042a" SubVLID="1" VLID="32883">
+      <DS Name="DS_HDD_HP_BLK" Guid="a69cf82c1-34ae-44b8-b787-5acea379cb59a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU5.DS_HDD_HP_BLK" GuidDef="aa014228c-5b89-4184-ac96-9820e236382da">
+        <DP Name="NG_MDB_661_HP" Guid="aae3dbc16-3c2e-4709-ae98-6a06a68f66b8a" NameDef="APP_FMS_TUNE.MSG_NG_HDD_A661_Block_HP_DU5.DS_HDD_HP_BLK.NG_MDB_661_HP" GuidDef="aad561eb8-14a7-413f-8ea3-1fdf36e2be6da" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+</A653ApplicationComponent>

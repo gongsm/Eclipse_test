@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponent Name="APP_FMS_GUIDANCE_1" Guid="a18779a52-2430-4375-b93a-294c07757702a" NameDef="APP_FMS_GUIDANCE" GuidDef="a58c907e6-a096-484c-b054-3c3d654ba7c0a" XsdVersion="7.9" Hardware="CCR_LEFT.GPM_L3" IpAddress="10.42.42.103" TotalTime="5">
+  <A653SamplingPort Name="A653_IN_CCR_REDUNDANCY_RPT" Guid="a3f5f7817-dfba-4857-9e20-9071e66f1559a" NameDef="APP_FMS_GUIDANCE.A653_IN_CCR_REDUNDANCY_RPT" GuidDef="a76a9ae40-a9ca-4404-ba31-63368f70f11fa" PathName="VLPath24">
+    <RP Name="CCR_Power_Warning_CCR" Guid="a8035792e-567d-411b-8d8f-b9f8439b3e78a" NameDef="APP_FMS_GUIDANCE.CCR_Power_Warning_CCR" GuidDef="a2b47c86a-cc2a-45ac-b822-07b263182736a">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.CCR_Power_Warning" SrcGuid="aece4de7e-a856-4f6b-9b02-42d9ee9486ffa" />
+    </RP>
+    <RP Name="GPM_Cabinet_Position_CCR" Guid="a1ebdf53e-014f-4c4f-9627-07cfa51bd848a" NameDef="APP_FMS_GUIDANCE.GPM_Cabinet_Position_CCR" GuidDef="a117f2a06-f128-4820-8445-839566816ddfa">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.GPM_Cabinet_Position" SrcGuid="ac4c54c73-3b12-4847-ab2e-1c4747306b2ea" />
+    </RP>
+    <RP Name="GPM_Module_Position_CCR" Guid="a78422117-7f53-499c-84ee-2fa2141232f5a" NameDef="APP_FMS_GUIDANCE.GPM_Module_Position_CCR" GuidDef="a54a2157c-c5a9-48c2-8506-8b3f9a5cd27da">
+      <Pub_Ref SrcName="SM_I2C_L1.CCR_Redundancy_Report.CCR_Redundancy_Report.GPM_Module_Position" SrcGuid="a2195d272-34be-4e41-b0d7-e2f52a5c03dea" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.CCR_REDUNDANCY_RPT_TX" SrcGuid="ad4f51310-d1a7-41eb-b200-91b6c40133eea" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_FMS_STATUS" Guid="a38923a70-995d-4b44-8edc-8513296e1162a" NameDef="APP_FMS_GUIDANCE.A653_IN_FMS_STATUS" GuidDef="af28ba59a-4a8f-4330-8e5b-75089c888013a" PathName="VLPath52">
+    <RP Name="FMS_Status" Guid="a1da51b51-19e9-4075-b04f-309d3addea38a" NameDef="APP_FMS_GUIDANCE.FMS_Status" GuidDef="a5c0d65bd-5786-4c27-b758-cc4a0b574849a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.MSG_FMS_Status.DS_FMS_Status.FMS_Status" SrcGuid="a76475f52-5a54-4f2c-9985-c84c9ea21be1a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_FMS_STATUS" SrcGuid="a8034fa34-af02-4417-b11e-72af9895e186a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_IN_PATH_ERRORS" Guid="ab636637c-a8f3-4120-9891-6854b9bf6f98a" NameDef="APP_FMS_GUIDANCE.A653_IN_PATH_ERRORS" GuidDef="a54410eeb-6555-4a23-bb7a-424346cb5b3ea" PathName="VLPath0">
+    <RP Name="Path_Errors" Guid="ad0142321-0786-4c5c-ac5a-5ec2c673b6f3a" NameDef="APP_FMS_GUIDANCE.Path_Errors" GuidDef="ad590c1a7-f835-44c1-aa4e-459614fb2cd3a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.MSG_Path_Errors.DS_Path_Errors.Path_Errors" SrcGuid="a39c2a2c3-6fe1-4e8e-9944-9a0cf1df3768a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_PATH_ERRORS" SrcGuid="a8d28d1fe-1738-4f58-adec-4e8ab2690692a" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_FMS_MESSAGES_GUIDE" Guid="a400872a0-58bd-4640-8d3c-a31b559eb1e2a" NameDef="APP_FMS_GUIDANCE.A653_OUT_FMS_MESSAGES_GUIDE" GuidDef="a8b71dc19-41b1-41df-ba98-73196512aaeba">
+    <A664Message Name="MSG_FMS_Messages_GUIDE" Guid="a4c0f115d-420f-46b7-bac0-5dd3110462e1a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE" GuidDef="accb2cceb-4c4e-4a0a-8e72-e8f66a6df1c4a" SubVLID="1" VLID="32829">
+      <DS Name="FSS1_FMS_Messages_Guid" Guid="a55fa60ac-7043-4609-9687-0ab527bb1449a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.FSS1_FMS_Messages_Guid" GuidDef="a399fb730-b4da-4505-94be-6130d2fdef76a">
+        <DP Name="FSB1_FMS_Messages_Guid" Guid="a5871b7c9-c53f-48de-ae27-1e1e21a3f4d4a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.FSS1_FMS_Messages_Guid.FSB1_FMS_Messages_Guid" GuidDef="ac4ac5e8b-2061-4e32-b026-79ca18568a0fa" />
+      </DS>
+      <DS Name="DS_FMS_Messages_Guid" Guid="a05eaead9-98de-4098-9452-d8e274c96d91a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid" GuidDef="a78e63b7c-a473-40ff-8dcd-76d2438e837ca">
+        <DP Name="IMA_BIT_Rate_Fail" Guid="a96bec6c9-623b-454d-936d-a12b1c90de3aa" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_BIT_Rate_Fail" GuidDef="a7a819ab5-a2f5-476e-88b1-55a154bd3235a" />
+        <DP Name="IMA_Reserved_1" Guid="a82f45ba0-1b92-4073-a663-263e49090f59a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_Reserved_1" GuidDef="afc09e0dd-0a46-4dfa-8e26-666e69be2eb7a" />
+        <DP Name="IMA_BIT_FSB_Fail" Guid="a0bcdd367-d871-4a58-8274-e5505be6dee8a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_BIT_FSB_Fail" GuidDef="a0ed7cdb6-1534-44e2-875e-72dd15dc7ebfa" />
+        <DP Name="IMA_Reserved_2" Guid="afd40c7ba-316e-4518-802c-3a5420bf1e9da" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_Reserved_2" GuidDef="a6137d28f-a120-4234-b287-93a78105b1f4a" />
+        <DP Name="IMA_BIT_Power_Down_Warn" Guid="a9a4e40b9-46ff-4af5-b642-10721b89cdfba" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_BIT_Power_Down_Warn" GuidDef="a8f9f1016-c967-4d70-880f-a297b59a356ea" />
+        <DP Name="IMA_Reserved_3" Guid="a32a7cc3c-c95c-44fb-bb2c-6c52f9351183a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_Reserved_3" GuidDef="ac6e294c7-01ef-4839-bfcc-c076d2888582a" />
+        <DP Name="IMA_Reserved_4" Guid="aa08beb25-e589-4c43-9e6f-97ad6e255468a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_Reserved_4" GuidDef="a6f2edb16-f6b5-4b25-8e81-b63002cccd94a" />
+        <DP Name="IMA_Reserved_5" Guid="a74da673c-a568-41ca-b382-e4ec97e043a1a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.IMA_Reserved_5" GuidDef="a72d5c3a2-ec0f-44c3-8aa5-0d6a4040777fa" />
+        <DP Name="FMS_Core_OnSide_Reserved_1" Guid="a8c33f725-223d-4118-8cd2-3f6a7519253ba" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_1" GuidDef="a943f8fb1-5bcf-4d86-87d7-a65d294db915a" />
+        <DP Name="FMS_Core_OnSide_BIT_FSB_Fail" Guid="a61fc7b69-b79d-47ef-833f-486a4bb5a49fa" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_BIT_FSB_Fail" GuidDef="a872bef15-1e74-4571-a74f-3f5bdc8625c7a" />
+        <DP Name="FMS_Core_OnSide_Reserved_2" Guid="a705a7109-c0c6-4567-873b-1abcd912aa13a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_2" GuidDef="af0307c50-cd50-4b32-bb3e-65cf82683d17a" />
+        <DP Name="FMS_Core_OnSide_Reserved_3" Guid="a633d9219-d07c-4827-9cba-337fcd054bc0a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_3" GuidDef="a7db195b7-e27f-4d54-aa02-da558bb58339a" />
+        <DP Name="FMS_Core_OnSide_Reserved_4" Guid="a26f7b148-727f-4fba-b2c0-62ef9b62ecf5a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_4" GuidDef="ade9ea690-2ff3-47ab-af66-ca61ae882322a" />
+        <DP Name="FMS_Core_OnSide_Reserved_5" Guid="a984d5f0e-ddae-4adf-ac20-97bdb5833e8ba" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_5" GuidDef="aec567615-4077-4563-80d3-49cd535e1f2ba" />
+        <DP Name="FMS_Core_OnSide_Reserved_6" Guid="adb95adfe-f6a2-49a7-adea-cb896bc7d7e0a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_6" GuidDef="aa74f79e4-4745-4cfa-9394-f4a5f4e54fe1a" />
+        <DP Name="FMS_Core_OnSide_Reserved_7" Guid="a01791a2a-ad98-47c0-a7f6-4ebecdc41a72a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.FMS_Core_OnSide_Reserved_7" GuidDef="aba9d2fea-70e4-4ab8-a36a-da26ed51d871a" />
+        <DP Name="Internal_Unhandled_Exception" Guid="aab1d79f9-9896-4b8b-a2bb-c83036acd381a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Unhandled_Exception" GuidDef="ad497e120-200f-4b15-8caa-aedecaf157fba" />
+        <DP Name="Internal_Reserved_1" Guid="a7ce1e214-0b08-4d2a-a435-3ef27b2b1ed1a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_1" GuidDef="ad5ff531b-9b90-49c7-99dc-52e4802114c9a" />
+        <DP Name="Internal_Reserved_2" Guid="a7b16be59-eb55-47a1-bf83-881fb13dcc10a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_2" GuidDef="a15b9d451-c3c1-4cdc-b1ce-74f0f245f01aa" />
+        <DP Name="Internal_Reserved_3" Guid="ad73b97ed-ccef-4467-930f-abb7049b2caca" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_3" GuidDef="a4bc05406-24cf-4b44-aa39-b6e1bdff20a8a" />
+        <DP Name="Internal_Reserved_4" Guid="af2f6c513-1329-4b08-9910-bb9cb8674380a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_4" GuidDef="ad17124e4-6102-4190-bf48-ee9dddb21103a" />
+        <DP Name="Internal_Reserved_5" Guid="a5c142651-7e68-4651-8c81-6cd78c3f0de2a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_5" GuidDef="abdc113b3-10aa-415a-8ce0-cfcb97b4a11aa" />
+        <DP Name="Internal_Reserved_6" Guid="a43cf3c73-b2fe-4f03-b7c8-bd9c4ccd3c23a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_6" GuidDef="aac2ec873-ddbb-492a-8485-2d3af7dfcf37a" />
+        <DP Name="Internal_Reserved_7" Guid="a89dd8aed-fe5a-4e51-819e-429fa4e88289a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Internal_Reserved_7" GuidDef="afe69bb06-31a1-423c-809d-d66871ca47d4a" />
+        <DP Name="Guid_DB_Reserved_1" Guid="a947f9a0f-88cf-4506-ad2f-071d3b56bf63a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_1" GuidDef="ac5d5dbb8-2a34-4050-b446-19f1b2be55c0a" />
+        <DP Name="Guid_DB_Reserved_2" Guid="a85c1a303-2981-4606-86a4-94fe60d47dcca" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_2" GuidDef="a38995984-f6f8-4e0d-90fc-aac63b5de37da" />
+        <DP Name="Guid_DB_Reserved_3" Guid="a5164c5a0-de73-4a47-821b-b4c4a1e93f9ea" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_3" GuidDef="a384d04b1-8ff6-492c-94a7-83724f5e9198a" />
+        <DP Name="Guid_DB_Reserved_4" Guid="a84ad29f2-0744-4329-83d1-e07f10b0fa2ba" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_4" GuidDef="abfea29a2-d984-4931-87fe-e22729c97379a" />
+        <DP Name="Guid_DB_Reserved_5" Guid="a8697d8d9-342d-4f2d-9968-637b618ed822a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_5" GuidDef="adc34f20d-144b-4644-8c1c-bfc26d71d4d6a" />
+        <DP Name="Guid_DB_Reserved_6" Guid="aa0b781a4-0a35-4f78-991e-1c0cd42c26c3a" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_6" GuidDef="acbfb56a2-c78b-4dd6-b85e-7228451b9163a" />
+        <DP Name="Guid_DB_Reserved_7" Guid="a3a0ec8bb-2d95-406b-9d09-b73fbbf3d22ea" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_7" GuidDef="a6965a80f-2198-41a2-970c-673e7199c38fa" />
+        <DP Name="Guid_DB_Reserved_8" Guid="ac7f722ef-de73-4e8f-bd82-1a8783544b0aa" NameDef="APP_FMS_GUIDANCE.MSG_FMS_Messages_GUIDE.DS_FMS_Messages_Guid.Guid_DB_Reserved_8" GuidDef="ac83adf18-f07a-4930-9f35-9f8944fe811ca" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="A653_OUT_GUIDANCE_OUTPUT" Guid="a4d2a2bc9-e10f-4ae2-8775-f9aff332cae1a" NameDef="APP_FMS_GUIDANCE.A653_OUT_GUIDANCE_OUTPUT" GuidDef="a8f82ec14-8f6c-4b71-93a6-07822519c9e0a">
+    <A664Message Name="ARINC429_MIX_MSG_GUIDANCE" Guid="a7008779a-5cbe-4187-ab7a-c6c9674ea218a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE" GuidDef="ac28bbf1f-7105-46ee-8aa7-2b4db3a84f9aa" SubVLID="3" VLID="32829">
+      <DS Name="FSS1_GUIDANCE" Guid="a4ea1f556-d930-4af9-896f-411c08d9d25ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.FSS1_GUIDANCE" GuidDef="abfb940eb-36e9-41fc-b8e9-013d96baf546a">
+        <DP Name="FSB1_GUIDANCE" Guid="a6dd98ced-c5bc-43f1-9b25-154a0cab1062a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.FSS1_GUIDANCE.FSB1_GUIDANCE" GuidDef="a00c3555a-af20-404d-85d4-34d209d904faa" />
+      </DS>
+      <DS Name="DS1_GUIDANCE" Guid="a00ad03b0-9bed-42fa-85f5-9622858fe5c9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE" GuidDef="ab416b0b3-ad48-4f52-b8f0-273d15ad44f0a">
+        <A429Word Name="L155_Selected_Glide_Path" Guid="acd211686-67c3-47ee-b11a-4918346e9359a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path" GuidDef="a8f7424c7-000b-487b-81f4-d3d931acc8bea">
+          <DP Name="LABEL" Guid="ae1a32555-40fc-4d8c-8455-d5a22a8a5594a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.LABEL" GuidDef="a60f709cc-f68c-495c-abf3-d6b181e1b299a" />
+          <DP Name="SDI" Guid="ae3f79264-cfb7-4bdc-9886-6d1017bcdf7fa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.SDI" GuidDef="ac092cafb-f32e-48bf-bfe3-6ea6d3cb3d60a" />
+          <DP Name="PAD" Guid="ad30f23c1-b4bb-4a64-a1dc-aa294526c70ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.PAD" GuidDef="ade97159f-ce88-4b86-bc3f-ee0f2015b384a" />
+          <DP Name="Auto_Manual_Select" Guid="a3ade659c-782e-41e2-9ba8-e79b7460f09ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.Auto_Manual_Select" GuidDef="aa64bef98-2dbe-4aeb-8f21-1c3abde50a90a" />
+          <DP Name="Selected_Glide_Path" Guid="a9fc68846-efb1-41a0-a88d-7c36f80c3f41a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.Selected_Glide_Path" GuidDef="aff1f0246-99db-4de2-921f-e4cc284ad12ca" />
+          <DP Name="SSM" Guid="a04fd0e18-eb03-4c77-9ff2-6031262cc39ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.SSM" GuidDef="a704addf1-901c-4d31-b248-ca3e54cabf10a" />
+          <DP Name="PARITY" Guid="a0fc24a08-a4cb-4e8a-bb4b-00d28d9ee1cda" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L155_Selected_Glide_Path.PARITY" GuidDef="a69f53eb2-b036-4240-ba1a-5649112d15dba" />
+        </A429Word>
+        <A429Word Name="L174_Vertical_Angular_Deviation" Guid="aaa4ff45b-d9bf-4f43-8335-935b147cd675a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation" GuidDef="ab7887657-6478-48ba-877b-45a5ca57bdb4a">
+          <DP Name="LABEL" Guid="ad04a4565-4d38-428a-8ba8-14e8d4d20385a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.LABEL" GuidDef="a6f2cfd07-ec4c-4388-8c14-469d5dc1846ca" />
+          <DP Name="SDI" Guid="a71e5ce39-6250-485d-9aa3-c38ec63fe307a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.SDI" GuidDef="a18e4f784-c944-4ffd-b489-11884625135ca" />
+          <DP Name="PAD" Guid="a5589333d-ec81-406f-b0dd-481159859055a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.PAD" GuidDef="a0e29c629-7bf4-4766-b013-fc195fc25167a" />
+          <DP Name="Vertical_Angular_Deviation" Guid="ad776f654-e9f0-44f9-89ff-0f50a2bcdef6a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.Vertical_Angular_Deviation" GuidDef="a1bd40b45-d94c-42e5-bf02-6bf67ce74a33a" />
+          <DP Name="SSM" Guid="adad75aba-2d51-4f94-85a6-d0ad738c6803a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.SSM" GuidDef="a44e52e3b-0177-42a7-99dd-ee4ecf608e71a" />
+          <DP Name="PARITY" Guid="a5e76e55d-f9a0-4949-8434-533b0e7dcc04a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L174_Vertical_Angular_Deviation.PARITY" GuidDef="a226a57c6-ef8d-4a2a-bbbe-7e1dcaf32ad9a" />
+        </A429Word>
+        <A429Word Name="L117_Vertical_Deviation_Rectilinear" Guid="a6518a2a8-78a5-4377-9687-5bfd6c68ff66a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear" GuidDef="a1f491cac-9548-48d7-a49e-d7054184b1b0a">
+          <DP Name="LABEL" Guid="ab1c94b73-0f46-4837-a4f1-dd4529324472a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.LABEL" GuidDef="ad1612a13-5645-49e1-afac-1e5cee63526da" />
+          <DP Name="SDI" Guid="a80369d4e-bdf9-40cc-8fdd-6acb9746288ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.SDI" GuidDef="af37a33ba-28a6-47dc-aa6f-7f3fffd0f3f3a" />
+          <DP Name="PAD" Guid="a3e83991e-e078-445d-86d6-c0b11cf12857a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.PAD" GuidDef="ae6900e9c-f3f0-4cc6-8ccf-dbd593538aeda" />
+          <DP Name="Vertical_Deviation_Rectilinear" Guid="a1afbc099-bec3-4ee4-a828-4070d68fb974a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.Vertical_Deviation_Rectilinear" GuidDef="a6596c2b2-9141-4b18-8f03-13d476c78539a" />
+          <DP Name="SSM" Guid="a4186d3db-fb1c-41d7-9c59-f96e4093dda7a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.SSM" GuidDef="a47a51c30-931b-43ec-b01d-095e5c7fbdeba" />
+          <DP Name="Parity" Guid="a38332f78-331e-4e58-9846-c395200cb64da" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L117_Vertical_Deviation_Rectilinear.Parity" GuidDef="a1d04d9d9-7fc1-4baa-879a-983148228eeca" />
+        </A429Word>
+        <A429Word Name="L116_Horizontal_Deviation_Rectilinear" Guid="aefd3359d-1b0d-42ad-9439-198dcaccf95ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear" GuidDef="a2f00aa90-f9bb-4896-8777-080f95e13a4ba">
+          <DP Name="LABEL" Guid="abf97661c-e52b-4cf7-a89b-3608786a4903a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear.LABEL" GuidDef="a865e106e-b0d8-4bb2-8929-efb1aab31864a" />
+          <DP Name="SDI" Guid="afce0f0cd-46ce-45f6-87b7-89d0b17de665a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear.SDI" GuidDef="afb3604c8-37fc-40b5-96d2-93f1653703f5a" />
+          <DP Name="Horizontal_Deviation_Rectilinear" Guid="af7f1efba-1723-4ba6-b59c-e20791704d4ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear.Horizontal_Deviation_Rectilinear" GuidDef="a69e45a47-497d-4226-b6a6-cc19283ff023a" />
+          <DP Name="SSM" Guid="a9c9f8dc4-c736-45a0-9c6b-f52888210e13a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear.SSM" GuidDef="a6dbc64d5-746a-468b-813d-d736516b8b4ba" />
+          <DP Name="Parity" Guid="a7c0fec5d-2586-447f-a303-20b4b293cf53a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L116_Horizontal_Deviation_Rectilinear.Parity" GuidDef="a953839a6-d82b-45ae-b056-0c0afcf03ab6a" />
+        </A429Word>
+        <A429Word Name="L102_Selected_Altitude" Guid="ae15a203b-ba8e-4f21-ab2e-33d614eb5e9ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude" GuidDef="a7062222e-050e-4c56-8301-1babee9c595aa">
+          <DP Name="LABEL" Guid="a0ba6c1bd-1385-49b2-a7cf-9f43574ab0a9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.LABEL" GuidDef="abc652fb5-87a3-4fce-b3c5-9ef0cbdf2c84a" />
+          <DP Name="SDI" Guid="aeba19759-34d5-43e3-bfac-ea82307e7bafa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.SDI" GuidDef="a0ea49199-b3ae-485d-9449-254683c00501a" />
+          <DP Name="PAD" Guid="a02d949e6-a120-46de-9382-5654b608eae3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.PAD" GuidDef="aa7e082af-a07e-4e22-b5ce-0bbbfe7084f5a" />
+          <DP Name="Selected_Altitude" Guid="a070a4ec6-7724-43df-be67-b769b3d4af6ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.Selected_Altitude" GuidDef="a58da71f7-7b28-4389-ae04-31c38850f37da" />
+          <DP Name="SSM" Guid="ad5c4aaf0-e6ba-4bed-ba8c-09a4d3ebf6daa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.SSM" GuidDef="ae5d598b1-7f2c-4600-9970-b97d7605cb80a" />
+          <DP Name="PARITY" Guid="a8029a2b7-41a4-489e-b359-c5e2c1342d71a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L102_Selected_Altitude.PARITY" GuidDef="a1a342d0a-fef0-4f24-83f8-291d2958cccaa" />
+        </A429Word>
+        <A429Word Name="L103_Selected_Airspeed" Guid="a8480628a-2c41-4008-8bdd-012bf4be8c69a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed" GuidDef="a0266e7b8-de90-4a8b-95ad-d4dec15195a7a">
+          <DP Name="LABEL" Guid="a75956d04-de8c-40d9-b48d-e0c2b1b9df93a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.LABEL" GuidDef="aff998386-76b5-4422-8720-d007fdccc4e0a" />
+          <DP Name="SDI" Guid="a65e654a0-b050-43de-abac-a87f58bc2b86a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.SDI" GuidDef="ac0ffd0b4-6283-4470-a959-32bc164fa380a" />
+          <DP Name="PAD" Guid="a8eda9748-7a9e-4071-9a4f-d569799b9a39a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.PAD" GuidDef="ae0be5ee0-a055-41a6-8a44-581109c35f74a" />
+          <DP Name="Selected_Airspeed" Guid="a51e36552-ae7a-417f-bb38-0994db32240fa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.Selected_Airspeed" GuidDef="af1307188-4c36-4741-bf36-0a56fb0146dea" />
+          <DP Name="SSM" Guid="a9416a1c4-f10b-42a9-95ba-ac14f0b4f2f9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.SSM" GuidDef="ac8076573-9caf-4934-9ff8-e4bbf1a43a6aa" />
+          <DP Name="Parity" Guid="ab933e432-f85c-45be-a7bc-5d3b436c8914a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L103_Selected_Airspeed.Parity" GuidDef="a0f82146a-06e7-4c28-85e3-0f346126e0f1a" />
+        </A429Word>
+        <A429Word Name="L106_Selected_Mach" Guid="a17f810b3-4349-4b50-a0c3-9155de958c1aa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach" GuidDef="a58b4d0a0-c0b2-4725-96e6-429786432ec5a">
+          <DP Name="LABEL" Guid="aa36ed4a7-d3d3-4c7d-9f52-274099d7fc6ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.LABEL" GuidDef="a3c56b25c-c570-4341-9e18-179174601ed9a" />
+          <DP Name="SDI" Guid="aa5ce5ce0-7ae0-4b42-9d7b-dd5e90d9a0e4a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.SDI" GuidDef="acf401bba-c8e5-44ea-97a5-882a54f5c2ffa" />
+          <DP Name="PAD" Guid="ac184ea85-e7d5-4040-be18-287ed143e991a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.PAD" GuidDef="a502f4a16-abe3-4627-a10a-37c12e7672c6a" />
+          <DP Name="Selected_Mach" Guid="a308e2a9f-a1fd-443e-bb49-48f0ba7566bba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.Selected_Mach" GuidDef="a66b95a2e-89c1-4ab8-92db-2da372289d80a" />
+          <DP Name="SSM" Guid="a764b0f27-8e17-4ff5-b4b9-436fd5a033baa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.SSM" GuidDef="a15fe56a3-ed45-4105-b837-266d1580fb45a" />
+          <DP Name="Parity" Guid="a922b8b26-012c-4ace-923a-8493db09448ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L106_Selected_Mach.Parity" GuidDef="a148e9e48-907f-4695-8a38-02409f10a1d7a" />
+        </A429Word>
+        <A429Word Name="L104_Vertical_Speed_Command" Guid="a1de0cbe4-e6b8-4b0d-9f06-41f27f45547ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command" GuidDef="abe63172b-943e-4942-9142-ae93960a2e2fa">
+          <DP Name="LABEL" Guid="a48a40ecf-3977-421f-af18-edf1e871bc85a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.LABEL" GuidDef="a3045a9c5-2218-432b-9745-20556a89efd8a" />
+          <DP Name="SDI" Guid="aa7c06952-5661-4feb-a30a-039ce5364923a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.SDI" GuidDef="a7d26be6a-9bc2-43ee-8e67-4d9cf934e3eaa" />
+          <DP Name="PAD" Guid="ace823c74-fcc7-40d8-93f5-799c997fef2ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.PAD" GuidDef="adb16b5e0-a7cb-40f0-a075-73f9062fef86a" />
+          <DP Name="Vertical_Speed_Command" Guid="a3a01af15-7792-4207-be28-3df053ef9051a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.Vertical_Speed_Command" GuidDef="aa9909145-11a3-4421-b431-e572e83f550da" />
+          <DP Name="SSM" Guid="a7f9863da-4d7e-4877-b1ca-32fd51c30fbfa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.SSM" GuidDef="ad9533878-5851-415a-83cf-9d7ff18f1c0ba" />
+          <DP Name="PARITY" Guid="ae8c5e891-c0a2-4bc9-9449-00c36aab26a8a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L104_Vertical_Speed_Command.PARITY" GuidDef="ab958f9d4-ccc6-4aa2-b88b-4be8e2fba292a" />
+        </A429Word>
+        <A429Word Name="L214_Selected_Temp" Guid="a978d70f0-ebb9-47da-ad99-7e04f43c2c14a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp" GuidDef="ac2b6762a-c1de-43e4-91ea-3e5775d7692ba">
+          <DP Name="LABEL" Guid="a7e540c71-fbfe-4c92-a0cc-ee291a0925a9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.LABEL" GuidDef="a10c70c1d-9fa5-4d45-8a3c-cc1ea1070cc5a" />
+          <DP Name="SDI" Guid="a8db26d6b-0c44-48ca-b563-5adc8e5d4440a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.SDI" GuidDef="a52ff3bfe-c5bf-4245-aca8-8e2625b27a09a" />
+          <DP Name="PAD" Guid="aa912ccd5-c17b-4318-89f8-a7b3d7a663a5a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.PAD" GuidDef="a476c9aa1-5c51-46cf-9db8-0755912ff494a" />
+          <DP Name="Selected_Temp" Guid="ad9832223-6d20-45b5-9462-0eec00f016dfa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.Selected_Temp" GuidDef="a9a3fe17d-9859-4058-b33f-da46c19a9442a" />
+          <DP Name="SSM" Guid="a7271488f-d1fb-4490-8798-87630bf26fb3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.SSM" GuidDef="ad7194470-88f4-4df8-ab88-606ec8cfa675a" />
+          <DP Name="PARITY" Guid="a7cd2ff79-1c02-4908-a897-2a3f9f91f3e3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L214_Selected_Temp.PARITY" GuidDef="a3ef85d90-af67-4b55-9d56-1b293ef66998a" />
+        </A429Word>
+        <A429Word Name="L173_Angular_Lateral_Deviation" Guid="a2b303964-55d6-41a6-b466-433ae68dd215a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation" GuidDef="a5349d206-3855-489a-aeed-7cd015737e6ba">
+          <DP Name="LABEL" Guid="a9516a94f-d9ae-4f2e-922d-bb728b685018a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.LABEL" GuidDef="ac65dc1cf-73aa-4c23-ac22-dff40bec738ea" />
+          <DP Name="SDI" Guid="ab5b11fad-8517-44c0-ae48-e57f056f7a71a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.SDI" GuidDef="a05f341b6-fac2-4960-949b-037633222b46a" />
+          <DP Name="Reserved" Guid="aa5d20f36-8379-40c0-8151-467dee050767a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.Reserved" GuidDef="ab82abdd3-f5ee-4dba-99d5-46b834165d09a" />
+          <DP Name="PAD" Guid="ac3425bf2-d005-4278-a87f-6a61e37267d2a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.PAD" GuidDef="a1a62adae-cbd7-4a0f-b87e-8fbcb9074b53a" />
+          <DP Name="Angular_Lateral_Deviation" Guid="a95b35d67-34f7-449c-9e3d-a701710eb949a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.Angular_Lateral_Deviation" GuidDef="ab87fe11a-ea34-4d9e-9852-1b51261ff6b2a" />
+          <DP Name="SSM" Guid="a62a7b007-229b-476a-b667-ce346e13a901a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.SSM" GuidDef="a07ecfee0-cffe-4601-9914-6658308c9400a" />
+          <DP Name="Parity" Guid="a66b97f50-8370-48de-826e-903ce75586dba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L173_Angular_Lateral_Deviation.Parity" GuidDef="a463e34b9-74cb-4162-a058-25342c6c82eba" />
+        </A429Word>
+        <A429Word Name="L075_Gross_Weight" Guid="a878c7335-150d-4642-9b30-0b50fdd467c5a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight" GuidDef="a4bad862d-f0b8-4356-ab14-da04114346c8a">
+          <DP Name="LABEL" Guid="a7135f814-eb3f-4a9f-aec7-e5b55dfe4311a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.LABEL" GuidDef="abcff7969-4399-4b01-b4bd-9325f23ac7b0a" />
+          <DP Name="SDI" Guid="ab9411e9b-aad2-45ef-aecf-d172bda8057da" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.SDI" GuidDef="aa0796ea3-7397-41fc-8841-7f4bc1b3fb7aa" />
+          <DP Name="PAD" Guid="ade7797c2-13d3-4bcb-9e17-19e2eb2d4061a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.PAD" GuidDef="a25718666-f17b-465b-b327-b886a91cb5e6a" />
+          <DP Name="Gross_Weight" Guid="a5685d8fb-209a-4dfd-beae-11ac964ac3fba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.Gross_Weight" GuidDef="aac60e556-cdbb-49b6-976e-a2e09e7b19a6a" />
+          <DP Name="SSM" Guid="aa4609373-a902-4314-8f3c-f1e587192c84a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.SSM" GuidDef="a52964428-1a24-458e-a332-5ec0250e3699a" />
+          <DP Name="Parity" Guid="a43c0d392-c373-4111-bffe-bf0c579a63f1a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L075_Gross_Weight.Parity" GuidDef="a2451f9b0-d49b-43aa-801a-11c00c9694b5a" />
+        </A429Word>
+        <A429Word Name="L251_Distance_To_Runway_Threshold" Guid="a2132f18d-7799-492b-99dd-cfe96dc7b1a1a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold" GuidDef="af0d6c296-fea2-4705-9801-5acebe207578a">
+          <DP Name="LABEL" Guid="ab017e97f-ae31-4648-a624-50f10bf22866a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.LABEL" GuidDef="a0b4834a7-96eb-4731-b5d7-1d2f82c64ccda" />
+          <DP Name="SDI_1" Guid="af94c9989-a7e6-43e2-a3e3-c82f95126513a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.SDI_1" GuidDef="a33b3c4d9-e7fc-489f-9293-bc8b22db96b2a" />
+          <DP Name="PAD" Guid="a9b186615-e0d5-4935-8ec0-f746630a25c3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.PAD" GuidDef="a9ef120f8-5fea-4b99-be02-35287b3be255a" />
+          <DP Name="Distance_to_Runway_Threshold" Guid="a19938c3f-da4b-4476-92b3-6617f547e9b9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.Distance_to_Runway_Threshold" GuidDef="a3db1d111-2ad2-4a40-a267-69539df00d07a" />
+          <DP Name="SSM" Guid="a9b9dc5f4-9b90-42c8-99b8-6ed052b96acaa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.SSM" GuidDef="a7c5cf979-8587-4717-929b-2fa06e8e26f8a" />
+          <DP Name="PARITY" Guid="a7cc4f77d-825a-486b-9150-7e497a527e7aa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L251_Distance_To_Runway_Threshold.PARITY" GuidDef="a605239ae-f240-4553-9a71-0765eb1c954ca" />
+        </A429Word>
+        <A429Word Name="L105_Selected_Runway_Heading_BNR" Guid="a0606ff0b-c9a7-4cb7-99f2-0894a68ca7b8a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR" GuidDef="afbe84a52-a8ea-4c24-9191-4e9482b72502a">
+          <DP Name="LABEL" Guid="a161843aa-b939-41fa-b324-2cc602c74f67a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.LABEL" GuidDef="aff4fd74a-1830-4724-a620-c2a18877e583a" />
+          <DP Name="SDI" Guid="a87b6f8ea-89f2-4dea-88db-1a2ffb187185a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.SDI" GuidDef="a2ddebb98-aaef-4686-88f5-01e266244f66a" />
+          <DP Name="Selected_FCS_Approach_Type" Guid="a31ae0b8e-4217-437a-93e6-23865092976fa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.Selected_FCS_Approach_Type" GuidDef="aabacee4c-8e3a-4db4-ae1e-83b70949bd9ea" />
+          <DP Name="FMS_LRN_to_xLS_Capture_Inhibit" Guid="a8c21e266-112b-4fa2-83a2-3b65aaa361d5a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.FMS_LRN_to_xLS_Capture_Inhibit" GuidDef="abb6b3cd3-9e41-4662-80cc-98659df54ce1a" />
+          <DP Name="PAD" Guid="a6c8d1cb6-7690-4be6-9510-925a2fb9984ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.PAD" GuidDef="affa7ecd7-7e5a-4fa8-a03f-4299da77c808a" />
+          <DP Name="Runway_Heading" Guid="a0fe9b9ed-521f-4746-9149-de944e003747a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.Runway_Heading" GuidDef="a90dc5a2b-d1f4-4a70-a2da-8e787619bc70a" />
+          <DP Name="SSM" Guid="af4f48ab8-c958-4c4f-a252-58e2b9aca286a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.SSM" GuidDef="a44a6033d-3d21-432c-8ae9-1866b2534a56a" />
+          <DP Name="PARITY" Guid="abe2ac199-5b94-4a73-8064-21984bb47545a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L105_Selected_Runway_Heading_BNR.PARITY" GuidDef="a980d67e6-2b2c-4390-990c-56480b06b3c3a" />
+        </A429Word>
+        <A429Word Name="L121_Horizontal_Command_Signal" Guid="a204ee066-d73b-4f24-9486-03adf99394f5a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal" GuidDef="a982e6672-deb3-494c-b5ec-3d593bbde240a">
+          <DP Name="LABEL" Guid="a22ef8650-d935-4b07-9b7b-7f1c7c01ae5da" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.LABEL" GuidDef="a2e9eb848-b40f-42dd-8f77-ed94e36f9200a" />
+          <DP Name="SDI" Guid="a594f5555-867e-4eec-b26f-99caedb9ed82a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.SDI" GuidDef="a925cfe62-e304-4751-857e-1c2b94fa985ba" />
+          <DP Name="LFLS_Arm_Enable" Guid="ad43990bb-9337-4e4a-8fcf-815e13b28afba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.LFLS_Arm_Enable" GuidDef="ae54d58d0-dbcb-4276-822b-2e2401e4d375a" />
+          <DP Name="VFLS_Arm_Enable" Guid="ae7ade3cb-40f4-4a54-9916-45f519c216bea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.VFLS_Arm_Enable" GuidDef="a1e899cc6-e8e1-463a-bc4c-fef56d22ad70a" />
+          <DP Name="SPARE" Guid="a0c1df673-6e24-4181-9f8a-2087a7ca1ea2a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.SPARE" GuidDef="a9faf96b7-4639-4d0d-a6f9-4773bdb6642ca" />
+          <DP Name="Horizontal_Command_Signal" Guid="ab91f0008-b11b-4646-9e8d-6a2114fe57ada" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.Horizontal_Command_Signal" GuidDef="acc2cd7a2-423b-48a6-aa0a-8c7eed8939b2a" />
+          <DP Name="SSM" Guid="a704985c0-bdbe-4be1-aa54-d69725eff4dda" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.SSM" GuidDef="a7ecf43c6-3d75-48f5-a072-3a2266d32583a" />
+          <DP Name="PARITY" Guid="a7a0799e1-e7ac-4ba3-9610-6f8f7e7b97bba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L121_Horizontal_Command_Signal.PARITY" GuidDef="aa549a83d-d790-42a4-92ab-5e3a26a86a82a" />
+        </A429Word>
+        <A429Word Name="L271_Discrete_Word_2" Guid="a1ca2b10c-1cd8-4d39-9884-7e6998730381a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2" GuidDef="a70847aa7-f8a5-47c3-87f8-b126b2f53759a">
+          <DP Name="LABEL" Guid="a12d2071d-cc28-427f-b4ae-ede4728fc8dca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.LABEL" GuidDef="a8c2eee76-bb03-4033-98c8-99a73c5d33ffa" />
+          <DP Name="SDI" Guid="a25671fbe-f598-4450-9b5c-6098551138fea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.SDI" GuidDef="a30ae1d68-b021-4f5f-a4a0-facdba1d5a41a" />
+          <DP Name="SPARE_1" Guid="aff7af9b9-a948-4679-8c25-013602a5eb98a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.SPARE_1" GuidDef="a9859350c-d42f-48f8-a6ef-aab7017339e7a" />
+          <DP Name="FMS_Synchronous" Guid="a89424f75-03e4-48dd-990c-3782c5271ca8a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.FMS_Synchronous" GuidDef="a90b21cce-e114-47fa-a059-7d934e8c63a3a" />
+          <DP Name="SPARE_2" Guid="a35cc87b0-3fcd-447d-885e-dd02b562819ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.SPARE_2" GuidDef="aadf563d7-fb16-4699-9471-d2b52104cceaa" />
+          <DP Name="FMS_in_Control" Guid="ad8daeaee-c99b-4b5b-9efd-44e4e0aceec0a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.FMS_in_Control" GuidDef="ab80d4287-f907-4714-a2e7-162d91be516ea" />
+          <DP Name="SPARE_3" Guid="ac6bf4e22-2fce-4afc-865d-416e1ea99bfca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.SPARE_3" GuidDef="a22a4ef78-1c58-4ca0-9041-53fa5a6e4b62a" />
+          <DP Name="SSM" Guid="a8e2c61f3-918c-44e5-8fb8-889079279b82a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.SSM" GuidDef="a73eae435-9353-41ea-ac23-15aac9ef15dfa" />
+          <DP Name="PARITY" Guid="a96f8e662-d6db-401c-b8ab-3dd06fafbab3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L271_Discrete_Word_2.PARITY" GuidDef="ae7bc63ed-19eb-46e1-815d-d820c5543ca9a" />
+        </A429Word>
+        <A429Word Name="L275_Discrete_Word_3" Guid="af8b2858f-928f-4e50-96b3-de6915b430c4a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3" GuidDef="a6d2d8dad-74fe-40f7-83cb-65034147cde0a">
+          <DP Name="LABEL" Guid="ae95025ea-f93f-4509-89e9-832aa5ca2b0ea" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.LABEL" GuidDef="a800e2a76-2dcc-4ab3-98d9-1ec3cb2ad703a" />
+          <DP Name="FMS_VNAV_Autothrust_Reduction" Guid="ae293f415-28d5-41b3-802f-5c70df317296a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.FMS_VNAV_Autothrust_Reduction" GuidDef="ab1736c1a-3eb5-43b2-8fe4-279410211f0ca" />
+          <DP Name="Spare_1" Guid="ad22079e3-466b-43f6-8593-639212445cc9a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.Spare_1" GuidDef="ab7a77c88-7e3b-4d8f-9e13-2ce502a8d3b7a" />
+          <DP Name="FMS_VNAV_Status" Guid="a13a0382f-4d07-47c6-a3d2-9b563f1686c3a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.FMS_VNAV_Status" GuidDef="aee1dd2f6-dce7-42e5-ba3c-6b11d73d06d4a" />
+          <DP Name="SPARE_2" Guid="a4b9b1905-686b-4616-b651-223abb3f0851a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.SPARE_2" GuidDef="ac490bf17-4678-4325-9517-1f93560d03d8a" />
+          <DP Name="LFLS_Capable" Guid="a352e8bb9-26ef-4c73-b2fc-678094fb3bc0a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.LFLS_Capable" GuidDef="a2dabdcc1-7154-4966-91c6-e334fc1bf3a7a" />
+          <DP Name="VFLS_Capable" Guid="acd890d44-649c-4515-89be-ceb4c49fe205a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.VFLS_Capable" GuidDef="ad9cc6058-42cc-4a55-89b2-bb2e68dfd375a" />
+          <DP Name="FMS_Vertical_Mode_Request" Guid="a48d9596d-6d1b-4eb6-9d58-c134f191879ca" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.FMS_Vertical_Mode_Request" GuidDef="a2e2c1dba-bf07-494f-8514-9f303e870564a" />
+          <DP Name="N1_Thrust_Rating_Type" Guid="a0017d935-5fb9-47dc-b9b1-d2dfe47fe5a4a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.N1_Thrust_Rating_Type" GuidDef="a72160ae0-04d5-445e-8ac4-ccf950f67492a" />
+          <DP Name="SPARE_3" Guid="a16684882-41de-49c4-8ea6-d99edcd28c0ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.SPARE_3" GuidDef="a41813b61-cef1-4ac3-a692-5d53be235366a" />
+          <DP Name="FMS_Thrust_Mode_Request" Guid="ae7c69273-583b-4b39-bf62-d3e83930bb0ba" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.FMS_Thrust_Mode_Request" GuidDef="a7a02ab92-892d-4fed-b949-1094cf2ff07ea" />
+          <DP Name="SPARE_4" Guid="ab8119036-6d48-4f3c-8d1a-f198743cb588a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.SPARE_4" GuidDef="a6981aa6f-141e-4010-976b-2be15ef1578ea" />
+          <DP Name="FMS_Selected_Airspeed_Type" Guid="a722ae34e-6476-46d5-9bc7-54564bb1bbb6a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.FMS_Selected_Airspeed_Type" GuidDef="a2dff707a-61a4-414f-8953-6bddcc8609cca" />
+          <DP Name="SSM" Guid="aede55f05-6575-4230-823e-1162769cebb4a" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.SSM" GuidDef="a69aa61e1-ed9e-43ff-90d8-fbe76452aa59a" />
+          <DP Name="PARITY" Guid="a6bca20a1-08f3-4f2e-9f4a-45c66d2dcd5aa" NameDef="APP_FMS_GUIDANCE.ARINC429_MIX_MSG_GUIDANCE.DS1_GUIDANCE.L275_Discrete_Word_3.PARITY" GuidDef="ac1f68705-7725-4373-af73-2d096343688ca" />
+        </A429Word>
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+</A653ApplicationComponent>

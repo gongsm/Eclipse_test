@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_L_FOOT_HEAT_CMD1_EPS_A" Guid="a31a34438-fe4f-458f-89cd-a86a391b27c5a" XsdVersion="7.9" ChangeAuthority="UnknownOwner" DiagramFile="C:\Program Files (x86)\GE Aviation\Embedded Function Editor Toolset - Obfuscated\ApplicationResource\Layout Files\a31a34438-fe4f-458f-89cd-a86a391b27c5a.efl" DiagramMD5="RUZCRDI2QjdFODA5QjIwMjU0MDVCMTg2RTk3Mzc3MzQ=" UpdatePeriod="160">
+  <DesignConstant Name="DIS1_ONE_NO" Guid="aa5de0d69-a055-432d-b484-9d386687ebe5a" DataFormatType="DIS" ParameterSize="1" />
+  <DesignConstant Name="BYTE8_ZERO_ND" Guid="a8fed0f0f-e7f9-4f28-9da6-c284505cdb27a" DataFormatType="OPAQUE" ParameterSize="8" />
+  <DataInPort Name="FOOT_HEAT_CMD_1A" Guid="a2d94d15e-4d41-4951-80ee-a73a6a7b06f0a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L310_RPDU_Command_Word.FOOT_HEAT_CMD_1" SrcGuid="ad5f290c8-40fb-440e-aedf-f98ccde74322a" />
+  </DataInPort>
+  <DataInPort Name="FOOT_HEAT_CMD_1B" Guid="aec8dda5f-b5c4-4a2e-ac5a-957bbd0a4c75a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L310_RPDU_Command_Word.FOOT_HEAT_CMD_1" SrcGuid="ad91f3305-eba2-48b6-bd88-9312c442dc0aa" />
+  </DataInPort>
+  <DataOutPort Name="L_FOOT_HEAT_CMD1_EPS_1A" Guid="a06b8bffc-a607-4b5f-a2f2-393f6d04f73da" DataFormatType="COD" ParameterSize="8">
+    <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_17.Output" SrcGuid="ac244cfcc-1659-4f86-bd30-f9e66c9854bfa" />
+  </DataOutPort>
+  <TransFcn Name="INSTANCE_1" Guid="ae0a91b9d-b123-47b3-abb1-8009de3d4133a" RIUTemplate="41065" SequenceNumber="1" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="a6d5f6ef8-4176-47c6-8443-bae575db2aafa" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.FOOT_HEAT_CMD_1A" SrcGuid="a2d94d15e-4d41-4951-80ee-a73a6a7b06f0a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a2f1178f9-0d3e-4163-86b9-05570175288ba" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.FOOT_HEAT_CMD_1B" SrcGuid="aec8dda5f-b5c4-4a2e-ac5a-957bbd0a4c75a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a73c1bf92-df50-48b9-a4ff-698811adacb5a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_2" Guid="aada7f3ec-c2fb-4320-999a-5b9458b9509ea" RIUTemplate="41065" SequenceNumber="2" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="ab3a10d8a-bf2a-4605-9173-d08cf652e405a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.FOOT_HEAT_CMD_1A" SrcGuid="a2d94d15e-4d41-4951-80ee-a73a6a7b06f0a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a6a1eb1b4-3e11-4630-9432-939f2f5bc7b7a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.FOOT_HEAT_CMD_1B" SrcGuid="aec8dda5f-b5c4-4a2e-ac5a-957bbd0a4c75a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a8c859c7a-ad3c-4736-a7da-e8af3c3a1470a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_3" Guid="ab102df2b-efb1-41b2-882f-e6a54e82a3fca" RIUTemplate="41039" SequenceNumber="3" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a7f545c8a-875a-458c-947b-a713ce8232d0a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_1.Output" SrcGuid="a73c1bf92-df50-48b9-a4ff-698811adacb5a" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="ae7e1bdcb-0761-49bf-bf2d-503c363bb854a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_4" Guid="ae9232b7b-158d-460d-8286-b6902da763c7a" RIUTemplate="41039" SequenceNumber="4" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a087ab11d-ae15-4dad-a511-7ed8e09a715ba" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_2.Output" SrcGuid="a8c859c7a-ad3c-4736-a7da-e8af3c3a1470a" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="ac97c8680-8be6-4e06-b2c8-f7499dbe8642a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_5" Guid="a3e57932a-0dce-4284-943f-596f87b563d9a" RIUTemplate="41000" SequenceNumber="5" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xF888h;">
+    <DataInPort Name="Input_1" Guid="a2887c980-a70f-4419-aedb-f2c8d75825bda" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="ae7e1bdcb-0761-49bf-bf2d-503c363bb854a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a54336638-b7c3-41de-9f35-af6a45499fb2a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_1.Output" SrcGuid="a73c1bf92-df50-48b9-a4ff-698811adacb5a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a907a85fb-c2d8-43f2-b248-981a1a758c7ca" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="ac97c8680-8be6-4e06-b2c8-f7499dbe8642a" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a6f265389-02a0-4bff-8112-c9ed1498b519a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_2.Output" SrcGuid="a8c859c7a-ad3c-4736-a7da-e8af3c3a1470a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a4d55db1f-b986-4d67-b47d-5cfb1771d42fa" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_6" Guid="a4b718ab3-000e-4d4e-a3e2-e957c69e8db0a" RIUTemplate="41000" SequenceNumber="6" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xABA8h;">
+    <DataInPort Name="Input_1" Guid="a9e9fb130-03c0-4028-ae67-2d32041ac136a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_5.Output" SrcGuid="a4d55db1f-b986-4d67-b47d-5cfb1771d42fa" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a8f592998-b98d-43e9-887e-3c25cb20cbc0a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="ae7e1bdcb-0761-49bf-bf2d-503c363bb854a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a02949dbe-d61f-47f5-80fe-b7382a0fc3d7a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="ac97c8680-8be6-4e06-b2c8-f7499dbe8642a" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a0591da8f-a70a-4540-9a1b-a294ad57cbb2a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_7.Output" SrcGuid="a5ab85682-004f-4312-b360-5d4614661b8ba" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="abeca02d3-94d8-4f0d-b535-f9505443ddfca" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_7" Guid="a0a80f00b-6565-4611-aa77-89e2011fae19a" RIUTemplate="41043" SequenceNumber="7" TemplateInstance="41043_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Data" Guid="ae3d7ffb2-4898-4ff5-9355-705e12392d5ea" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_6.Output" SrcGuid="abeca02d3-94d8-4f0d-b535-f9505443ddfca" />
+    </DataInPort>
+    <DataInPort Name="Validity Parameter" Guid="a9d90144a-4eb6-456a-b42d-f54caadb4d84a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.DIS1_ONE_NO" SrcGuid="aa5de0d69-a055-432d-b484-9d386687ebe5a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a5ab85682-004f-4312-b360-5d4614661b8ba" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_8" Guid="a985882b2-23ea-4ed1-85c5-82b822758945a" RIUTemplate="41035" SequenceNumber="8" TemplateInstance="41035_T01" UDC="Constant=10;">
+    <DataOutPort Name="Output" Guid="ae61280b9-9279-4d3c-a1b7-fb19e1896d6ea" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_9" Guid="a6371739b-5b7d-44c1-b19d-045602703b7ca" RIUTemplate="41061" SequenceNumber="9" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="a99b543b5-58a2-49a0-9622-54b27f8bc1c3a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_8.Output" SrcGuid="ae61280b9-9279-4d3c-a1b7-fb19e1896d6ea" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ab8664f05-3d03-407a-bf62-b4dcfc836b17a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_10" Guid="a74a4aa94-af65-4563-8548-d8a7c88f26d2a" RIUTemplate="41055" SequenceNumber="10" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a53f20b73-cffc-4cb1-92ca-fe288a40f7dba" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_9.Output" SrcGuid="ab8664f05-3d03-407a-bf62-b4dcfc836b17a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a5d5bbfe6-eacd-4dc8-9879-21c32dc8de4ea" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_11" Guid="ab6db3e25-6817-4e51-a0f2-72b662e8b9d3a" RIUTemplate="41035" SequenceNumber="11" TemplateInstance="41035_T01" UDC="Constant=5;">
+    <DataOutPort Name="Output" Guid="a123d2499-13e8-4c01-98cb-676a56e99d21a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_12" Guid="a5d6faaf3-0f14-4c29-ba3c-e958788c19b4a" RIUTemplate="41061" SequenceNumber="12" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="a51f04e3a-4b15-499b-9928-ba8ee21de5cfa" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_11.Output" SrcGuid="a123d2499-13e8-4c01-98cb-676a56e99d21a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="adf460d18-3df7-4a25-bd17-868f4737bc01a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_13" Guid="a7798ed82-43cd-4944-83b8-72611cbca83aa" RIUTemplate="41055" SequenceNumber="13" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a9add4ea1-083c-4667-8a49-79b02b39e069a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_12.Output" SrcGuid="adf460d18-3df7-4a25-bd17-868f4737bc01a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a1afec362-e8dc-4d28-96c5-d21acd6a156ea" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_14" Guid="a1ffbfeb3-297d-4b1d-9ee4-7f5701c7c082a" RIUTemplate="41044" SequenceNumber="14" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="ae58f8a6e-8538-4b94-bb6a-dc6cf985b3e8a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_7.Output" SrcGuid="a5ab85682-004f-4312-b360-5d4614661b8ba" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="a13d3901c-5642-4a21-8936-4e3cc9a47c41a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_10.Output" SrcGuid="a5d5bbfe6-eacd-4dc8-9879-21c32dc8de4ea" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="adb5319a1-f063-4b24-b40d-1041febbb67fa" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_15" Guid="a589fdece-c3d2-49d4-836b-a99598b40f72a" RIUTemplate="41004" SequenceNumber="15" TemplateInstance="41004_T01" UDC="Output Inversion=2;">
+    <DataInPort Name="Input" Guid="a190b3f87-e4ff-448e-a9f0-da0a97884315a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_7.Output" SrcGuid="a5ab85682-004f-4312-b360-5d4614661b8ba" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a28425699-2030-4596-8d39-8b270727557ba" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_16" Guid="a6cd2f38b-3d8e-4d31-9477-7ad3f9880cb7a" RIUTemplate="41044" SequenceNumber="16" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="a9b839e60-3882-4b05-9620-c811b1ad8e6ca" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_15.Output" SrcGuid="a28425699-2030-4596-8d39-8b270727557ba" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="ac5c363db-dd2b-46f3-b9de-e29b360d4929a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_13.Output" SrcGuid="a1afec362-e8dc-4d28-96c5-d21acd6a156ea" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ac4b0608e-0a7a-403a-9991-1f2f75b90516a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_17" Guid="a36164aff-619d-4f82-b0d9-4824ccde79afa" RIUTemplate="41075" SequenceNumber="17" TemplateInstance="41075_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="a87f89f52-3ed8-43a1-9517-38b4c434e000a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_14.Output" SrcGuid="adb5319a1-f063-4b24-b40d-1041febbb67fa" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a18a03a60-73d4-4198-adbc-2daeb49a172ca" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.INSTANCE_16.Output" SrcGuid="ac4b0608e-0a7a-403a-9991-1f2f75b90516a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a45408163-0c39-4d63-bb65-166c6d8b5dd2a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.BYTE8_ZERO_ND" SrcGuid="a8fed0f0f-e7f9-4f28-9da6-c284505cdb27a" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a26a171cd-337b-4f78-b0f5-1321094298cba" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="d">
+      <Trans_Ref SrcName="EF_L_FOOT_HEAT_CMD1_EPS_A.BYTE8_ZERO_ND" SrcGuid="a8fed0f0f-e7f9-4f28-9da6-c284505cdb27a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ac244cfcc-1659-4f86-bd30-f9e66c9854bfa" DataFormatType="COD" ParameterSize="8" RIULabel="e" />
+  </TransFcn>
+</EmbFcn>

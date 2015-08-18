@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW06_Analog_In_ATA23COM" Guid="af9cc43cc-0f8e-4685-94e4-91c64254cbada" XsdVersion="7.9" Hardware="RDIU_06">
+  <AnalogPort Name="piDISC_Mic_Key_Event_HF_HF_2" Guid="ad21c9ed4-5124-439a-8c53-45ec7e6fc229a" Direction="Destination" Physical="RDIU_06.40022_A01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_HF_2.poDISC_Mic_Key_Event" SrcGuid="ac4fee576-d654-428b-8ff7-8aa1e1b30799a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_EMER_PTT_OUT_HF_ACP_2" Guid="aafcf0dc2-9ced-4912-a46d-4f5c44d395d9a" Direction="Destination" Physical="RDIU_06.40022_B01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_ACP_2.poDISC_EMER_PTT_OUT" SrcGuid="a0c43eebf-956c-4411-bbe3-83ba18dc083ea" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_2" Guid="a507e5497-7a9c-47cc-8ca8-e81bcba1ce98a" Direction="Destination" Physical="RDIU_06.40022_A02" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_TCP_2.poDISC_HF_GND_XMIT_INHIBIT_OVERRIDE" SrcGuid="a1e8407cc-1e3b-4116-b114-002c25a176e5a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA23COM" Guid="a59a80a10-5b1a-4e10-9593-97e1e2b2d074a" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="1280">
+    <A664Message Name="A664_O1_40022_ATA23COM_Msg" Guid="ac039bc98-bf1d-4bd1-8310-3c2c4c109cbaa" EdeEnable="True" MessageOverhead="32" MessagePad="93" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="0.4" VLID="33461">
+      <DS Name="FSS1" Guid="a5fc65757-03dd-4c1e-bf89-c9c87b770849a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="adbac1a28-b418-4047-ba77-22cb47772eeaa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a13557c74-2c6b-4129-bbff-a58aa6474cc1a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a8bb028d4-b397-4f81-b283-147a61a3d1cca" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_Mic_Key_Event_HF_HF_2" Guid="ad900212e-361e-4139-999a-ee1d084d643da" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="abc5b9068-2414-4fba-b988-8cba64ca6663a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="100">
+          <Copy_Ref SrcName="HF_HF_2.DISC_Mic_Key_Event.Status" SrcGuid="ad864bc15-ae18-4e67-bf5a-c48496d98679a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_HF2_GIPC_Mic_Key_Event_Status" DestGuid="acdd3f5ff-1895-4e3f-9edf-41bc2addbe43a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_EMER_PTT_OUT_HF_ACP_2" Guid="ac55cd3da-3593-4dc1-bdbe-1ef178614429a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="DISC_EMER_PTT" Guid="aa5c3f58a-b697-4273-8d4f-cffb206a9e81a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ACP_2.DISC_EMER_PTT_OUT.DISC_EMER_PTT" SrcGuid="ac3c08d6d-7c4d-4f26-90af-1905ddcf9173a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_EMER_PTT_OUT" DestGuid="acc1eb352-7aa5-4904-abd1-c93e33b22e79a" />
+          <Gw_Pub_Ref DestName="PAA_L5Instance.DISC_EMER_PTT_ACP_2" DestGuid="a0c091811-091a-41d7-9e1e-b155836a8078a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_2" Guid="a7ef1d8c1-e26a-450d-b647-afd226138ed1a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="acbf70194-79d2-4d07-821f-5d15fc915876a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="0.4">
+          <Copy_Ref SrcName="HF_TCP_2.DISC_HF_GND_XMIT_INHIBIT_OVERRIDE.Status" SrcGuid="af32a77f4-89e8-4ba6-bc68-157771eec7ada" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_TCP2_GIPC_DISC_HF_GND_XMIT_INHIBIT_OVERRIDE_Status" DestGuid="aa8fdf906-7314-4d9f-a637-ec424e5b9239a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA23COM.piDISC_EMER_PTT_OUT_HF_ACP_2" SrcGuid="aafcf0dc2-9ced-4912-a46d-4f5c44d395d9a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA23COM.piDISC_HF_GND_XMIT_INHIBIT_OVERRIDE_HF_TCP_2" SrcGuid="a507e5497-7a9c-47cc-8ca8-e81bcba1ce98a" />
+    <Gateway_Ref SrcName="RGW06_Analog_In_ATA23COM.piDISC_Mic_Key_Event_HF_HF_2" SrcGuid="ad21c9ed4-5124-439a-8c53-45ec7e6fc229a" />
+  </HFSamplingPort>
+</RemoteGateway>

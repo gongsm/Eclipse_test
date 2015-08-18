@@ -1,0 +1,341 @@
+
+<IOMConfiguration HF="" REV="" ICD="">
+
+<AfdxInput>
+    <AfdxMessage id="1" messageName="IMA_DM_L4.MSG_DMI_MCAST_DU_STATUS" portType="QUEUING" queueLength="1" portId="67525" portName="IP_QP_DMI_1_DMH" rate="75" length="72"/>
+    <AfdxMessage id="2" messageName="IMA_DM_L5.MSG_DMI_MCAST_DU_STATUS" portType="QUEUING" queueLength="1" portId="67529" portName="IP_QP_DMI_3_DMH" rate="75" length="72"/>
+    <AfdxMessage id="3" messageName="IMA_DM_R4.MSG_DMI_MCAST_DU_STATUS" portType="QUEUING" queueLength="1" portId="67528" portName="IP_QP_DMI_2_DMH" rate="75" length="72"/>
+    <AfdxMessage id="4" messageName="RGW04_I_40009_A01.A825_Q_msg_2" portType="QUEUING" queueLength="2" portId="65828" portName="IP_QP_CPA_825_1" rate="60" length="176"/>
+    <AfdxMessage id="5" messageName="RGW06_I_40009_A01.A825_Q_msg_2" portType="QUEUING" queueLength="2" portId="66356" portName="IP_QP_CPA_825_2" rate="120" length="188"/>
+
+    <DataSet name="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorOn">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="1"/>
+                <condition type="A664FS"    message="1" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="3"/>
+                <condition type="A664FS"    message="3" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="2"/>
+                <condition type="A664FS"    message="2" offset="5"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorOn" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorOn.Status" paramOffsetValue="180" paramOffsetStatus="184">
+            <source type="COD" message="1" offset="36" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="3" offset="36" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="2" offset="36" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorOn">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="1"/>
+                <condition type="A664FS"    message="1" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="3"/>
+                <condition type="A664FS"    message="3" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="2"/>
+                <condition type="A664FS"    message="2" offset="5"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorOn" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorOn.Status" paramOffsetValue="116" paramOffsetStatus="120">
+            <source type="COD" message="1" offset="40" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="3" offset="40" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="2" offset="40" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDUBrightness.ipDU5Brightness">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="4"/>
+                <condition type="A664FS"    message="4" offset="67"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="5"/>
+                <condition type="A664FS"    message="5" offset="84"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDUBrightness.ipDU5Brightness" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDUBrightness.ipDU5Brightness.Status" paramOffsetValue="52" paramOffsetStatus="56">
+            <source type="COD" message="4" offset="88" access="4" lsb="16" bits="11" lsbvalue="1"/>
+            <source type="COD" message="5" offset="92" access="4" lsb="16" bits="11" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDUBrightness.ipDU3Brightness">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="4"/>
+                <condition type="A664FS"    message="4" offset="126"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="5"/>
+                <condition type="A664FS"    message="5" offset="115"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDUBrightness.ipDU3Brightness" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDUBrightness.ipDU3Brightness.Status" paramOffsetValue="36" paramOffsetStatus="40">
+            <source type="COD" message="4" offset="140" access="4" lsb="16" bits="11" lsbvalue="1"/>
+            <source type="COD" message="5" offset="144" access="4" lsb="16" bits="11" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDUBrightness.ipDU1Brightness">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="4"/>
+                <condition type="A664FS"    message="4" offset="95"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="5"/>
+                <condition type="A664FS"    message="5" offset="112"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDUBrightness.ipDU1Brightness" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDUBrightness.ipDU1Brightness.Status" paramOffsetValue="20" paramOffsetStatus="24">
+            <source type="COD" message="4" offset="120" access="4" lsb="16" bits="11" lsbvalue="1"/>
+            <source type="COD" message="5" offset="128" access="4" lsb="16" bits="11" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorJumpPosition">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="1"/>
+                <condition type="A664FS"    message="1" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="3"/>
+                <condition type="A664FS"    message="3" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="2"/>
+                <condition type="A664FS"    message="2" offset="5"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorJumpPosition" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotCursorMovement.ipDMICopilotCursorJumpPosition.Status" paramOffsetValue="172" paramOffsetStatus="176">
+            <source type="COD" message="1" offset="28" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="3" offset="28" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="2" offset="28" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDUBrightness.ipDU4Brightness">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="4"/>
+                <condition type="A664FS"    message="4" offset="126"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="5"/>
+                <condition type="A664FS"    message="5" offset="115"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDUBrightness.ipDU4Brightness" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDUBrightness.ipDU4Brightness.Status" paramOffsetValue="44" paramOffsetStatus="48">
+            <source type="COD" message="4" offset="148" access="4" lsb="16" bits="11" lsbvalue="1"/>
+            <source type="COD" message="5" offset="152" access="4" lsb="16" bits="11" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDUBrightness.ipDU2Brightness">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="4"/>
+                <condition type="A664FS"    message="4" offset="95"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="5"/>
+                <condition type="A664FS"    message="5" offset="112"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDUBrightness.ipDU2Brightness" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDUBrightness.ipDU2Brightness.Status" paramOffsetValue="28" paramOffsetStatus="32">
+            <source type="COD" message="4" offset="112" access="4" lsb="16" bits="11" lsbvalue="1"/>
+            <source type="COD" message="5" offset="120" access="4" lsb="16" bits="11" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipDMIPersonality.ipDUPersonality">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="1"/>
+                <condition type="A664FS"    message="1" offset="4"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="3"/>
+                <condition type="A664FS"    message="3" offset="4"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="2"/>
+                <condition type="A664FS"    message="2" offset="4"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipDMIPersonality.ipDUPersonality" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipDMIPersonality.ipDUPersonality.Status" paramOffsetValue="4" paramOffsetStatus="8">
+            <source type="UINT" message="1" offset="16" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="UINT" message="3" offset="16" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="UINT" message="2" offset="16" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorJumpPosition">
+        <Logic>
+            <sourceLogic>
+                <condition type="Freshness" message="1"/>
+                <condition type="A664FS"    message="1" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="3"/>
+                <condition type="A664FS"    message="3" offset="5"/>    
+            </sourceLogic>
+            <sourceLogic>
+                <condition type="Freshness" message="2"/>
+                <condition type="A664FS"    message="2" offset="5"/>    
+            </sourceLogic>
+        </Logic>
+        <Parameter paramNameValue="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorJumpPosition" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotCursorMovement.ipDMIPilotCursorJumpPosition.Status" paramOffsetValue="108" paramOffsetStatus="112">
+            <source type="COD" message="1" offset="32" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="3" offset="32" access="4" lsb="0" bits="32" lsbvalue="1"/>
+            <source type="COD" message="2" offset="32" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+</AfdxInput>
+
+<CanInput>
+    <CanMessage id="1" messageName="HF_CCD1.A825_CCD_L_PilotInputs" canId="139067396" rate="8" length="5">
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotCCDLeftEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotCCDLeftEnterPressed.Status" paramOffsetValue="212" paramOffsetStatus="216">
+            <source type="BOOL" message="1" offset="4" lsb="27" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotCCDRightEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotCCDRightEnterPressed.Status" paramOffsetValue="220" paramOffsetStatus="224">
+            <source type="BOOL" message="1" offset="4" lsb="28" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotCCDMainMenuPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotCCDMainMenuPressed.Status" paramOffsetValue="196" paramOffsetStatus="200">
+            <source type="BOOL" message="1" offset="4" lsb="26" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotCCDScroll" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotKey.ipPilotCCDScroll.Status" paramOffsetValue="204" paramOffsetStatus="208">
+            <source type="INT" message="1" offset="2" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotCursorMovement.ipPilotCCDTrackballX" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotCursorMovement.ipPilotCCDTrackballX.Status" paramOffsetValue="60" paramOffsetStatus="64">
+            <source type="INT" message="1" offset="1" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotCursorMovement.ipPilotCCDTrackballY" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotCursorMovement.ipPilotCCDTrackballY.Status" paramOffsetValue="68" paramOffsetStatus="72">
+            <source type="INT" message="1" offset="0" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+    <CanMessage id="2" messageName="HF_CCD1.A825_CCD_R_PilotInputs" canId="139067397" rate="8" length="5">
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotCCDLeftEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotCCDLeftEnterPressed.Status" paramOffsetValue="340" paramOffsetStatus="344">
+            <source type="BOOL" message="2" offset="4" lsb="27" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotCCDRightEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotCCDRightEnterPressed.Status" paramOffsetValue="348" paramOffsetStatus="352">
+            <source type="BOOL" message="2" offset="4" lsb="28" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotCCDMainMenuPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotCCDMainMenuPressed.Status" paramOffsetValue="324" paramOffsetStatus="328">
+            <source type="BOOL" message="2" offset="4" lsb="26" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotCCDScroll" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotCCDScroll.Status" paramOffsetValue="332" paramOffsetStatus="336">
+            <source type="UINT" message="2" offset="2" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotCursorMovement.ipCopilotCCDTrackballX" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotCursorMovement.ipCopilotCCDTrackballX.Status" paramOffsetValue="124" paramOffsetStatus="128">
+            <source type="UINT" message="2" offset="1" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotCursorMovement.ipCopilotCCDTrackballY" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotCursorMovement.ipCopilotCCDTrackballY.Status" paramOffsetValue="132" paramOffsetStatus="136">
+            <source type="UINT" message="2" offset="0" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+    <CanMessage id="3" messageName="HF_DCP1.A825_DCP_PilotInputs" canId="139075716" rate="10" length="5">
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotDCPCASPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotDCPCASPressed.Status" paramOffsetValue="300" paramOffsetStatus="304">
+            <source type="BOOL" message="3" offset="0" lsb="18" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotDCPCancelRCLPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotDCPCancelRCLPressed.Status" paramOffsetValue="308" paramOffsetStatus="312">
+            <source type="BOOL" message="3" offset="0" lsb="19" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+    <CanMessage id="4" messageName="HF_DCP1.DCP_R_A825_DCP_PilotInputs" canId="139075717" rate="10" length="5">
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotDCPCASPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotDCPCASPressed.Status" paramOffsetValue="428" paramOffsetStatus="432">
+            <source type="BOOL" message="4" offset="0" lsb="18" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotDCPCancelRCLPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotDCPCancelRCLPressed.Status" paramOffsetValue="436" paramOffsetStatus="440">
+            <source type="BOOL" message="4" offset="0" lsb="19" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+    <CanMessage id="5" messageName="HF_MKB1.A825_MKB_L_PilotInputs" canId="139071556" rate="10" length="5">
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBAlphanumericPressed" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBAlphanumericPressed.Status" paramOffsetValue="292" paramOffsetStatus="296">
+            <source type="INT" message="5" offset="4" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBDownPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBDownPressed.Status" paramOffsetValue="252" paramOffsetStatus="256">
+            <source type="BOOL" message="5" offset="0" lsb="11" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBEnterPressed.Status" paramOffsetValue="284" paramOffsetStatus="288">
+            <source type="BOOL" message="5" offset="0" lsb="6" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBLeftPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBLeftPressed.Status" paramOffsetValue="260" paramOffsetStatus="264">
+            <source type="BOOL" message="5" offset="0" lsb="9" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBRightPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBRightPressed.Status" paramOffsetValue="268" paramOffsetStatus="272">
+            <source type="BOOL" message="5" offset="0" lsb="10" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBTabPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBTabPressed.Status" paramOffsetValue="236" paramOffsetStatus="240">
+            <source type="BOOL" message="5" offset="0" lsb="7" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBUpPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBUpPressed.Status" paramOffsetValue="244" paramOffsetStatus="248">
+            <source type="BOOL" message="5" offset="0" lsb="8" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBMRCScroll" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBMRCScroll.Status" paramOffsetValue="276" paramOffsetStatus="280">
+            <source type="INT" message="5" offset="1" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotCursorMovement.ipPilotMKBMRCMovement" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipPilotCursorMovement.ipPilotMKBMRCMovement.Status" paramOffsetValue="76" paramOffsetStatus="80">
+            <source type="COD" message="5" offset="0" lsb="12" bits="4" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipPilotKey.ipPilotMKBMRCEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipPilotKey.ipPilotMKBMRCEnterPressed.Status" paramOffsetValue="228" paramOffsetStatus="232">
+            <source type="BOOL" message="5" offset="0" lsb="24" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+    <CanMessage id="6" messageName="HF_MKB1.A825_MKB_R_PilotInputs" canId="139071557" rate="10" length="5">
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBAlphanumericPressed" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBAlphanumericPressed.Status" paramOffsetValue="420" paramOffsetStatus="424">
+            <source type="INT" message="6" offset="4" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBDownPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBDownPressed.Status" paramOffsetValue="380" paramOffsetStatus="384">
+            <source type="BOOL" message="6" offset="0" lsb="11" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBEnterPressed.Status" paramOffsetValue="412" paramOffsetStatus="416">
+            <source type="BOOL" message="6" offset="0" lsb="6" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBLeftPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBLeftPressed.Status" paramOffsetValue="388" paramOffsetStatus="392">
+            <source type="BOOL" message="6" offset="0" lsb="9" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBRightPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBRightPressed.Status" paramOffsetValue="396" paramOffsetStatus="400">
+            <source type="BOOL" message="6" offset="0" lsb="10" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBTabPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBTabPressed.Status" paramOffsetValue="364" paramOffsetStatus="368">
+            <source type="BOOL" message="6" offset="0" lsb="7" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBUpPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBUpPressed.Status" paramOffsetValue="372" paramOffsetStatus="376">
+            <source type="BOOL" message="6" offset="0" lsb="8" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBMRCScroll" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBMRCScroll.Status" paramOffsetValue="404" paramOffsetStatus="408">
+            <source type="UINT" message="6" offset="1" lsb="0" bits="8" access="1" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotCursorMovement.ipCopilotMKBMRCMovement" paramSize="32" paramType="INT" paramNameStatus="InputsDD.ipCopilotCursorMovement.ipCopilotMKBMRCMovement.Status" paramOffsetValue="140" paramOffsetStatus="144">
+            <source type="COD" message="6" offset="0" lsb="12" bits="4" access="4" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="InputsDD.ipCopilotKey.ipCopilotMKBMRCEnterPressed" paramSize="32" paramType="BOOL" paramNameStatus="InputsDD.ipCopilotKey.ipCopilotMKBMRCEnterPressed.Status" paramOffsetValue="356" paramOffsetStatus="360">
+            <source type="BOOL" message="6" offset="0" lsb="24" bits="1" access="4" lsbvalue="1"/>
+        </Parameter>
+    </CanMessage>
+</CanInput>
+
+<AfdxOutput>
+    <AfdxMessage id="1" messageName="HF_IDUCENTER.dmi_msg_op" portType="SAMPLING" queueLength="0" portId="65623" portName="OP_SPORT_DMI" rate="25" length="36"/>
+
+    <DataSet name="('dmi_msg_op', 'DS_DMH_DU_STATUS')" dsOffset="8" fsbOffset="4" messageId="1" dsType="A664" dsA429Label="" dsA429SDI="" dsA429SSMType="">
+        <Parameter paramNameValue="OutputsDD.opDUPersonalityConfirmation.opDUPersonalityConfirmation" paramSize="32" paramType="INT" paramNameStatus="OutputsDD.opDUPersonalityConfirmation.opDUPersonalityConfirmation.Status" paramOffsetValue="8" paramOffsetStatus="12">
+            <source type="UINT" message="1" offset="8" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="OutputsDD.opDUStateValid" paramSize="32" paramType="BOOL" paramNameStatus="OutputsDD.opDUStateValid.Status" paramOffsetValue="16" paramOffsetStatus="20">
+            <source type="BOOL" message="1" offset="16" access="4" lsb="0" bits="1" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+    <DataSet name="('dmi_msg_op', 'DS_DMH_CURSOR')" dsOffset="20" fsbOffset="5" messageId="1" dsType="A664" dsA429Label="" dsA429SDI="" dsA429SSMType="">
+        <Parameter paramNameValue="OutputsDD.opCopilotCursorActivity.opCopilotCursorLeaving" paramSize="32" paramType="INT" paramNameStatus="OutputsDD.opCopilotCursorActivity.opCopilotCursorLeaving.Status" paramOffsetValue="80" paramOffsetStatus="84">
+            <source type="COD" message="1" offset="20" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+        <Parameter paramNameValue="OutputsDD.opPilotCursorActivity.opPilotCursorLeaving" paramSize="32" paramType="INT" paramNameStatus="OutputsDD.opPilotCursorActivity.opPilotCursorLeaving.Status" paramOffsetValue="48" paramOffsetStatus="52">
+            <source type="COD" message="1" offset="24" access="4" lsb="0" bits="32" lsbvalue="1"/>
+        </Parameter>
+    </DataSet>
+</AfdxOutput>
+</IOMConfiguration>

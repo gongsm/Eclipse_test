@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW03_I_40005_HF_LGCU2" Guid="aa50e833c-e904-4385-8c56-db7ab89142a6a" XsdVersion="7.9" Hardware="RDIU_03">
+  <A429Port Name="pi429_LGCU_ConCh_Tx1_Block_4000_HF_LGCU2" Guid="a7804d920-b733-40bf-bdfa-68891d7ac99ea" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_03.40005_B01" SamplePeriod="1280">
+    <Dataflow_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Block_4000" SrcGuid="a1da3801a-773a-4d32-bb83-df470527f727a" />
+  </A429Port>
+  <A429Port Name="pi429_LGCU_ConCh_Tx1_1000_HF_LGCU2" Guid="a892b9b45-531f-4921-b37e-9a02c5c61ad4a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_03.40005_B01" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_1000" SrcGuid="a6951ba32-86b4-4f7d-9305-feeb5dfad0e1a" />
+  </A429Port>
+  <A429Port Name="pi429_LGCU_ConCh_Tx1_Block_HF_LGCU2" Guid="a8a3af8b8-35d1-4f8e-9951-b9c274b10bb7a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_03.40005_B01" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Block" SrcGuid="a708ea896-37ac-4424-b661-478ade8fadb5a" />
+  </A429Port>
+  <A429Port Name="pi429_LGCU_ConCh_Tx1_HF_LGCU2" Guid="ab6a754a4-eaba-43c5-99c2-e121a38184d3a" ActivityTimeout="400" Direction="Destination" Physical="RDIU_03.40005_B01" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1" SrcGuid="a2c030117-9a11-4817-acaf-4b0869103874a" />
+  </A429Port>
+  <A429Port Name="po429_ARINC0_Rx_275_LGCU2_HF_WHCC_80ms" Guid="a6d68d49e-d5b4-4ba1-8be2-929777b604e5a" Direction="Source" Physical="RDIU_03.40006_B03" RefreshPeriod="80">
+    <A429Channel Name="A429_ARINC0_Rx_275_LGCU2_HF_WHCC_80ms" Guid="a2b98ccb3-b8e8-4c60-afd2-07511345ee37a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L275_Consolidated_WOW_Data" Guid="ae9e2ee9c-211b-43b2-96d4-7bcc2695b7e8a">
+        <DP Name="LABEL" Guid="a37243433-d96a-4bb7-a950-7c0814f46798a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a3dcc6847-96bf-4e45-8fd6-97d98556b19da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="Spare1" Guid="a9d6d9b6b-0d0b-4efd-af56-94fb04c8fcdba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="All_Gear_WOW" Guid="a037d76dc-1d6a-4c70-b38b-f28e27f69a36a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW">
+          <Gw_Pub_Ref DestName="HF_WHCC.Consolidated_WOW_Data_LGCU2" DestGuid="ab45be9e9-b90c-4196-b270-21212e9e94bda" />
+        </DP>
+        <DP Name="MLG_WOW_LH_RH" Guid="a964a4d59-da36-47c6-852c-ff3c1233b94ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW" />
+        <DP Name="GR_WOFFW" Guid="a8cf12cbc-70bc-4b46-b734-751395da4e75a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;" />
+        <DP Name="Spare2" Guid="ab8f58548-22e1-4855-93db-85fbe1ef2b1ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="NLG_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a1b16ca4e-7aeb-45d9-8e9b-e7d1c0e66e30a" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_RH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="aa10fe9e6-f41f-4f6a-b518-8991a788a7c0a" Notes="LGCU2 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_LH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="a5397e1cf-ed40-4cd8-8f1a-94eb06941d9ba" Notes="LGCU2 Only" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="NLG_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a59f43c44-2333-4d92-9f69-ab54f36e9dd6a" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_RH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a455d2380-6dff-42c9-a650-4fc34596994da" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="MLG_LH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="ade932a11-25bc-437a-a3c4-0a1a7d8a3315a" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+        <DP Name="Spare4" Guid="a8e9abe1f-a10b-45ff-9d03-aae48a1ce7a7a" Notes="LGCU1 Only" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="DI_MON_AES_GND_DISC" Guid="a56579197-c931-48b0-a54a-1ecedd5ddd1ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=GND disconnected;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = GND connected;" />
+        <DP Name="DI_AES_28V_EN_LGCU2_Only" Guid="a631efdf2-0551-4c68-83bb-42b5abc6d47aa" Notes="LGCU2 Only" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=28V enabled;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = 28V not enabled;" />
+        <DP Name="Spare3" Guid="a7834f5e9-28d6-4de9-8bd2-419812379a2ca" Notes="LGCU2 Only" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="a78f86af8-fd8a-4898-ab71-63d1703fb37aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a73d7591c-e04a-4cb5-8f15-25059c7ee940a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+        <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L275_Consolidated_WOW_Data" SrcGuid="a86675026-dde4-4230-b9a9-c976288c06b6a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_LGCU2.pi429_LGCU_ConCh_Tx1_HF_LGCU2" SrcGuid="ab6a754a4-eaba-43c5-99c2-e121a38184d3a" />
+  </A429Port>
+  <HFQueuingPort Name="HFQ1_O_A664_po429_LGCU_ConCh_Tx1_Block_4000_Ch" Guid="aeaca93c7-1ded-41ef-9419-298d1bc4c99fa" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_LGCU_ConCh_Tx1_Block_4000_Ch_Q_1" Guid="a46e7910f-9602-4b55-b061-d5779f943889a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="A429 Block" SubVLID="2" TransmissionIntervalMinimum="4000" VLID="33375">
+      <DS Name="FSS1" Guid="a3df19cf5-3251-45a5-8e3a-c997fc9da36ba" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a6a5c6052-3285-4429-aad4-9e956d761ee1a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L357_LGCU_Config_Data_CC" Guid="a47963f8e-52fc-436f-8b76-c02f4476dbbca" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L357_LGCU_Config_Data_CC" Guid="aec449b97-d47d-4546-9187-dd11c0238356a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6a9d3e42-4e65-420a-a0b6-997625e57267a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="357" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="4000" />
+          <DP Name="SDI" Guid="ad2005ca6-0e79-4a82-83e3-b5d77a3a8dc2a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="4000" />
+          <DP Name="Per_ARINC_protocol_automatic_mode" Guid="a9083b45f-e623-49ab-a6c9-4623ec6d5d7fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="21" PublishedLatency="550" TransmissionIntervalMinimum="4000" />
+          <DP Name="PARITY" Guid="a81ac8862-66b2-43ad-8809-99557e8caf2fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="4000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Block_4000_Ch.L357_LGCU_Config_Data_CC" SrcGuid="a662b945a-65ac-46c1-a7f7-4e8a37c7739fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_Configuration_Data" DestGuid="a4e59a914-1133-499d-81ca-dc78cb67be4ba" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_LGCU2.pi429_LGCU_ConCh_Tx1_Block_4000_HF_LGCU2" SrcGuid="a7804d920-b733-40bf-bdfa-68891d7ac99ea" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HFQ3_O_A664_po429_LGCU_ConCh_Tx1_Block_Ch" Guid="adcd53a17-459d-491a-8442-9dc1dd9e65e8a" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_LGCU_ConCh_Tx1_Block_Ch_Q_3" Guid="aae4861d2-5427-45a7-a6da-836aae83e125a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="A429 Block" SubVLID="3" TransmissionIntervalMinimum="1000" VLID="33375">
+      <DS Name="FSS1" Guid="a6d89615d-56a9-427a-9e5a-a9040de7ef19a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a33bad4ed-6f31-4f35-8831-0df54159aacba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L356_LGCU_TX_to_OMS_ARINC624_Prcl" Guid="a28b5eb47-089a-41b7-b72b-0a8a29f92ba3a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L356_LGCU_TX_to_OMS_ARINC624_Prcl" Guid="a7aa797d4-af67-4759-b1a4-67d89fbb113aa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6cfe7fd7-d2c8-4df5-9df1-2dea698a90aea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="LGCU_Tx_Data_to_OMS_per_cmd_Rqst" Guid="a126b9def-d5af-4f35-a6ac-86c5e7e73661a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="BLK" ParameterSize="21" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a9ef0645c-c781-4d8b-b562-26b1fca268dda" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Block_Ch.L356_LGCU_TX_to_OMS_ARINC624_Prcl" SrcGuid="a5136ec6d-c807-4a0c-a34b-19f74fac98d2a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Transmit_data_to_OMS" DestGuid="a763bf0eb-dd9a-478e-b148-7267d3c3dc2ba" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_LGCU2.pi429_LGCU_ConCh_Tx1_Block_HF_LGCU2" SrcGuid="a8a3af8b8-35d1-4f8e-9951-b9c274b10bb7a" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_LGCU_ConCh_Tx1_Ch_1000" Guid="aee6b4d53-279f-4f70-b2eb-cc1c688f06baa" Direction="Source" MessageSize="72" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_LGCU_ConCh_Tx1_Ch_1000_S_2" Guid="ae86bf07e-9c55-4caa-baaa-7bd9a19b4048a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="72" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1000" VLID="33375">
+      <DS Name="FSS1" Guid="a3cc6a558-488e-462e-b0d7-be54ce607b2da" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ad22440ee-0af2-4135-a145-26c80c9761aaa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a7406fa35-5f16-472d-87f5-32efb2fcf38ea" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a593d5bbd-aa73-48dd-b329-c6c1f3ef81aea" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="ad9dacaae-833d-4d3c-a569-6ca87333729da" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L152_Steering_Ctrl_Cmd" Guid="a78f2eec5-02cd-4921-a36e-1ba878e05262a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L152_Steering_Ctrl_Cmd" Guid="adcb0600b-4bc3-47b3-b46b-fe3f39f3694fa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a11af02c8-3a6e-426a-b522-f0af7ee2b607a" Notes="LGCU1 Only" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="152" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="aeb1e21e6-d423-442e-80cb-02e165fe582aa" Notes="LGCU1 Only" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare" Guid="a0cec6cd6-8935-4fde-b523-00dc0b95b5c8a" Notes="LGCU1 Only" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Steering_Ctrl_Cmd" Guid="a1163b139-7511-41e1-bfe5-4d3c7a01b710a" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="BNR" FullScaleRngMax="102.3" FullScaleRngMin="-102.4" FuncRngMax="102.3" FuncRngMin="-102.4" LsbRes="0.1" ParameterSize="11" PublishedLatency="550" TransmissionIntervalMinimum="1000" Units="degrees">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.ipFCSGroundSteeringDirector_3" DestGuid="a1d7ff21f-c0f5-4804-9052-2aeb9f7bd60aa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.ipFCSGroundSteeringDirector_3" DestGuid="a865bca0a-d54b-4b52-931c-9dc9c0acd07ca" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.ipFCSGroundSteeringDirector_3" DestGuid="a34495046-c68b-4f98-af8b-5431d9dd0f53a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.ipFCSGroundSteeringDirector_3" DestGuid="a415d80f6-c2b5-4269-9549-0e11c9b1db03a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.ipFCSGroundSteeringDirector_3" DestGuid="ac0d6a5e4-43af-40f7-bea9-ae76b7723ae8a" />
+          </DP>
+          <DP Name="SSM" Guid="a42b5cdfc-809e-4326-ad4a-82a2447cf028a" Notes="LGCU1 Only" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a459e758f-1740-4b02-ace0-9c58c8c91898a" Notes="LGCU1 Only" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L152_Steering_Ctrl_Cmd" SrcGuid="a1738b734-2e4b-4fe0-8f5c-b6294c5f5cafa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.po429_LGCU_ConCh_Tx1_1000_L152_Steering_Ctrl_Cmd" DestGuid="aca87e575-be96-4af2-ab27-5f75510e2666a" />
+        </A429Word>
+      </DS>
+      <DS Name="L351_LGCU_MW2_Adj_Reqd_LG_Prox" Guid="abf4bba30-fd5b-4f10-9ec2-9aaa01eac4a1a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L351_LGCU_MW2_Adj_Reqd_LG_Prox" Guid="ae5bb50dd-b160-456f-9336-0e17f15890fca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a76489065-2bd7-4092-bf48-25d9149654b8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a56cdbd6c-2492-4937-8a84-881718e59b40a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_WOFFW_prx_Snsr_adj" Guid="ab94d99fc-371e-4ee3-b881-a328353dd0cda" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_WOFFW_Proxi_Sen_Adjust_2" DestGuid="a4120c3f4-95ff-4b13-90a0-64613252f357a" />
+          </DP>
+          <DP Name="MLG_RH_WOFFW_prx_Snsr_adj" Guid="abae51924-3ad8-46b6-a0d5-de6272a2fc48a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_WOFFW_Proxi_Sen_Adjust_2" DestGuid="ae3a88831-ee00-470f-ae54-215669e0dd33a" />
+          </DP>
+          <DP Name="NLG_WOFFW_prx_Snsr_adj" Guid="ad036774d-7fa6-4130-8c20-bbed60ab7aa9a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_WOFFW_Proxi_Sen_Adjust_2" DestGuid="a8862788f-273e-4b7c-a4a8-5c663988705ca" />
+          </DP>
+          <DP Name="MLG_LH_downlock_prx_Snsr_adj" Guid="a124d5d21-5a09-4a1f-89b8-d38326511592a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_DNLK_Proxi_Sen_Adjust_2" DestGuid="a2e7ee4c4-1f46-4b8b-9df7-5b7842dee2c6a" />
+          </DP>
+          <DP Name="MLG_RH_dowlock_prx_Snsr_adj" Guid="abadb9fb7-9bcf-4686-9bb1-476bee1df9f5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_DNLK_Proxi_Sen_Adjust_2" DestGuid="a1655e5db-3aef-4c88-bc4c-272754732bc1a" />
+          </DP>
+          <DP Name="NLG_downlock_prx_Snsr_adj" Guid="a13559387-04d9-4912-90a0-8f9ee8a15823a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_DNLK_Proxi_Sen_Adjust_2" DestGuid="ac6ef8c99-ad11-499f-bc9d-199c8db0f94ca" />
+          </DP>
+          <DP Name="NLG_uplock_prx_Snsr_adj" Guid="a62cf98bf-ef8e-493c-9535-c30a742e086ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_Door_UPLK_Proxi_Adjust_2" DestGuid="ab09610b0-45fc-46bb-9556-212ffae66843a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_UPLK_Proxi_Sen_Adjust_2" DestGuid="ab60ec3c2-4079-40f2-bac7-34a426dc518da" />
+          </DP>
+          <DP Name="MLG_RH_uplock_prx_Snsr_adj" Guid="ae6ba9706-a20b-469c-820d-8b6ce77b4a6ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_UPLK_Proxi_Adjust_2" DestGuid="a3209cc0a-e591-403e-bec7-0ca5315f3b45a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_UPLK_Proxi_Sen_Adjust_2" DestGuid="acc428936-9391-4d4f-a608-3714effbc630a" />
+          </DP>
+          <DP Name="MLG_LH_uplock_prx_Snsr_adj" Guid="ab9c219ea-ace4-43c3-b962-df37e126e8f8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_UPLK_Proxi_Adjust_2" DestGuid="a4f9d9cb6-5f48-4ebc-9ac7-a520e3a9434aa" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_UPLK_Proxi_Sen_Adjust_2" DestGuid="a9875fb0d-cfa6-46df-af8b-c8f7ff4f7b38a" />
+          </DP>
+          <DP Name="Spare1" Guid="ac9455ee4-41f0-42c6-9b40-b2f43ec5cd9fa" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_Door_Open_prx_adj" Guid="af605a926-b7b2-430a-aa13-2963caa11b91a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_Open_Proxi_Adjust_2" DestGuid="a253949b9-a969-4c16-ad61-042d15825f8fa" />
+          </DP>
+          <DP Name="MLG_RH_Door_Open_prx_adj" Guid="ab528926b-fc27-443d-a560-8f3685d5f6f5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_Open_Proxi_Adjust_2" DestGuid="a68b3c562-200c-414a-88a8-4dc8c4644437a" />
+          </DP>
+          <DP Name="NLG_LH_Door_Open_prx_adj" Guid="a228ab05b-afe3-4679-890c-08e9f001d53ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Open_Proxi_Adjust_2" DestGuid="af41be232-9b84-4071-b0f3-e3dae755cf3ba" />
+          </DP>
+          <DP Name="NLG_RH_Door_Open_prx_adj" Guid="a3b2d7c41-87cd-4847-8723-58259bf00644a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Open_Proxi_Adjust_2" DestGuid="a85ccb6e2-fcd3-4392-ba62-5d307aeb1850a" />
+          </DP>
+          <DP Name="MLG_LH_Door_Clsd_prx_adj" Guid="a6a1b4c1b-c040-461b-b220-ed26e50defb5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required" />
+          <DP Name="MLG_RH_Door_Clsd_prx_adj" Guid="afb65d0fe-64ce-45d6-9354-fea0b5b54218a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required" />
+          <DP Name="NLG_LH_Door_Clsd_prx_adj" Guid="ac20e73c4-3e44-4bc8-b94a-5188f469eb4fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Closed_Proxi_Adjust_2" DestGuid="af7b60c4c-3eb7-4a40-99ab-832ff3a20165a" />
+          </DP>
+          <DP Name="NLG_RH_Door_Clsd_prx_adj" Guid="a5c157c96-bd80-4e59-9f87-eb499962c189a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Closed_Proxi_Adjust_2" DestGuid="acd2c38be-6b06-4efe-b25d-69c0c4f27162a" />
+          </DP>
+          <DP Name="Spare" Guid="a3ad7a963-acc8-4b42-8b77-211a2707262ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="SPAR" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required" />
+          <DP Name="SSM" Guid="a922fa753-e368-4474-ac50-a583e98f2326a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a90d9d35a-b9d2-4f05-8d14-f1e7a11d3f08a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L351_LGCU_MW2_Adj_Reqd_LG_Prox" SrcGuid="ae077fd29-bb69-49e3-9e92-daff58401033a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_2_Adj_Required_of_LG_Prox_Sens_" DestGuid="a94a20329-b9b5-4055-8bdc-f1f4a576cc6ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L352_LGCU_MW3_Aux_Snsr_Adj_Reqd_AC_Prox" Guid="aad80b62a-91c3-479b-bd52-0d67377ee392a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L352_LGCU_MW3_Aux_Snsr_Adj_Reqd_AC_Prox" Guid="abd1c7ec0-61b9-46a8-b7cd-514864152da2a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a23d3bcbe-806b-4be8-8467-0383c2d3d259a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="352" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a9cf71a80-cfac-4fad-8268-bc82707a5602a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="spare" Guid="a451c0f95-ae09-4be5-ab04-2db94f5da54ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="18" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Ground_Spoiler_LH_LGCU_1_RH_LGCU2_prx_Snsr_adj" Guid="a0a2997fc-2f38-4b18-a2ad-3252f2f971b3a" Notes="LH-LGCU1,RH-LGCU2" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=adjust required" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=adjust not required">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Ground_Spoiler_Proxi_Sen_Adjust_2" DestGuid="ae98e67bf-409c-4278-8cc5-bcff5f587d3da" />
+          </DP>
+          <DP Name="SSM" Guid="a651e3008-2471-4130-98a0-48e2da1a6f35a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a64af8596-d0f6-476b-bda3-f7c5c60746aba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L352_LGCU_MW3_Aux_Snsr_Adj_Reqd_AC_Prox" SrcGuid="afa2a334c-aa47-4b34-b7ce-4cf8a29ac2aca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_3_Adj_Required_of_A_or_C_Prox_Sens" DestGuid="ae5df93d0-a2ab-4b4f-a828-a276fdacca19a" />
+        </A429Word>
+      </DS>
+      <DS Name="L353_LGCU_MW4_EI_Fault_AC_Prox" Guid="a294d47ff-fea1-43ec-a439-2b6dd7d4cd5ea" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L353_LGCU_MW4_EI_Fault_AC_Prox" Guid="a75e7568e-54bc-49ad-9317-fe4fffa3ff6da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a2d1c920c-07e3-4816-9c5a-a4c1e52ab7aca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="353" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a70deb612-5472-44e1-99f3-30276bccbc8ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare" Guid="a75bfeca6-b35d-4229-b76a-01e63763d9fea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="18" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Ground_Spoiler_LH_LGCU_1_RH_LGCU2_prx_Snsr_elctrl_fault" Guid="ae6129ec2-2b52-4b76-9b99-d14dcda36441a" Notes="LH-LGCU1,RH-LGCU2" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Ground_Spoiler_Proxi_Sen_Electrical_Fault_2" DestGuid="ab2828655-43cb-46dc-a0f5-3023ed0e0477a" />
+          </DP>
+          <DP Name="SSM" Guid="ae0b57225-f80e-428b-910a-72763695ba46a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a40598f71-0ec3-44b0-9d14-bdcf6006ae42a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L353_LGCU_MW4_EI_Fault_AC_Prox" SrcGuid="a19f2d841-4bba-4ff7-9d65-c740e5138af0a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_4_Elect_Fault_of_A_or_C_Prox_Sens_Aux" DestGuid="a6475ca99-ddd9-49f2-96e0-10d9ac6a6a73a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a8e02aec4-66a9-4d6f-b0a8-46099437eb6ba" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a4e340a3e-5c13-4067-8ce6-e8ad1a4431e6a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="ac1982b5c-d70a-44c9-b914-266fb0acf632a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a1a9d885a-ef46-477e-992d-6a87b8949b0da" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="a0b380c86-40eb-424b-9f81-fafc4c7f89aea" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L360_LGCU_MW8_LG_Snsr_Unreasbl" Guid="ad291d7ff-e450-4703-a030-91a03545a991a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L360_LGCU_MW8_LG_Snsr_Unreasbl" Guid="af5e1b329-8fb3-4f28-a44b-68429b637e8ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ada6024cb-4bfb-4858-8104-480883863992a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="360" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a3a50e8bd-6368-4dbe-b310-325a48e1e922a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_WOFFW_prx_unreasbl" Guid="a738cf046-f6c0-4cc3-a8b4-35b72c2456aca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_WOFFW_Proxi_Unrsn_2" DestGuid="a5181363b-6285-4342-b0d4-4a87375dc8eba" />
+          </DP>
+          <DP Name="MLG_RH_WOFFW_prx_unreasbl" Guid="ad7f4ffc3-b30a-4661-a4e3-6c43e033a9c4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_WOFFW_Proxi_Unrsn_2" DestGuid="ab05e3949-60f8-4f7f-88af-ebacc3a222c3a" />
+          </DP>
+          <DP Name="NLG_WOFFW_prx_unreasbl" Guid="afe02022b-6ceb-4719-8e80-558b871a49a6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_WOFFW_Proxi_Unrsn_2" DestGuid="a0df71172-0a54-4837-8dcd-eed6e7320c0ca" />
+          </DP>
+          <DP Name="MLG_LH_downlock_prx_unreasbl" Guid="ac7655e04-eb73-4c02-a4ea-6e7290047298a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_DNLK_Proxi_Unrsn_2" DestGuid="af7426d74-78da-42c2-905c-0ef9ddcf9e3fa" />
+          </DP>
+          <DP Name="MLG_RH_dowlock_prx_unreasbl" Guid="a9b197dbd-d078-4d0b-bfab-1ea25fd76f3ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_DNLK_Proxi_Unrsn_2" DestGuid="a26eaed86-490f-4ab9-b6b5-05e4c9bb9f57a" />
+          </DP>
+          <DP Name="NLG_downlock_prx_unreasbl" Guid="a6d258115-4961-47db-a09a-a3d942ba04e7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_DNLK_Proxi_Unrsn_2" DestGuid="a25cef241-012b-46ac-8adb-ca61ef300664a" />
+          </DP>
+          <DP Name="NLG_uplock_prx_unreasbl" Guid="ab5c44177-ea1c-41b1-b571-ff771838aad4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_Door_UPLK_Proxi_Unrsn_2" DestGuid="a2e46cda3-b65d-4c4c-b7b0-3526c0271624a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_UPLK_Proxi_Unrsn_2" DestGuid="a99a2276d-524c-4ff7-96ab-dc8e4ac76a0ca" />
+          </DP>
+          <DP Name="MLG_RH_uplock_prx_unreasbl" Guid="a4cdc1de6-8f0a-4e8d-a562-3d728448154ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_UPLK_Proxi_Unrsn_2" DestGuid="a2073d7cc-a5a9-4e5a-af47-e6c04a0036b7a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_UPLK_Proxi_Unrsn_2" DestGuid="afa705cf2-0556-40c2-a138-9eb4778af612a" />
+          </DP>
+          <DP Name="MLG_LH_uplock_prx_unreasbl" Guid="ae40b4184-e4f2-4d63-9fba-e4c5abcae56aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_UPLK_Proxi_Unrsn_2" DestGuid="a52b64664-7c39-4e5f-8778-933e697650c8a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_UPLK_Proxi_Unrsn_2" DestGuid="a65d8f185-980c-45a9-a6d1-34122cd999cca" />
+          </DP>
+          <DP Name="Spare1" Guid="a492bb8f5-1ea5-41ec-8fc5-cb063d11c7f0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_Door_Open_prx_unreasbl" Guid="a94d7c66a-3b1f-4319-bf38-5e85827f33ada" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_Open_Proxi_Unrsn_2" DestGuid="af19eb765-0588-41ff-9434-596f63edce75a" />
+          </DP>
+          <DP Name="MLG_RH_Door_Open_prx_unreasbl" Guid="a9233ef56-2205-488a-9311-e0620979045ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_Open_Proxi_Unrsn_2" DestGuid="ac1694d62-f9a8-4e76-a6ec-f430f48512fea" />
+          </DP>
+          <DP Name="NLG_LH_Door_Open_prx_unreasbl" Guid="aacdcdfd3-8669-4bbe-98ed-1711e99d9312a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Open_Proxi_Unrsn_2" DestGuid="a8d9d796b-5fd5-4273-a901-0422a92d77a0a" />
+          </DP>
+          <DP Name="NLG_RH_Door_Open_prx_unreasbl" Guid="a3fcbf22c-1ee3-4319-8629-966fc31abd0ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Open_Proxi_Unrsn_2" DestGuid="aa41b929c-76ca-4c0b-aea6-3a99bbf08283a" />
+          </DP>
+          <DP Name="MLG_LH_Door_Clsd_prx_unreasbl" Guid="a6c40ed2c-74da-4f24-b84f-ac4f82b6b749a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason" />
+          <DP Name="MLG_RH_Door_Clsd_prx_unreasbl" Guid="a33e8e24f-97d1-406f-8321-b7dd3d9b74c7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason" />
+          <DP Name="NLG_LH_Door_Clsd_prx_unreasbl" Guid="a70f9db4c-468d-497f-80f3-0089e81defb8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Closed_Proxi_Unrsn_2" DestGuid="ac4fb44b5-6b54-453e-8fe9-99a0dde91d54a" />
+          </DP>
+          <DP Name="NLG_RH_Door_Clsd_prx_unreasbl" Guid="aedf76549-730b-4ac8-a5b1-0dd6aa8858faa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=unreason" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not unreason">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Closed_Proxi_Unrsn_2" DestGuid="a30dd75e6-edb7-4771-aabb-1cc220293ea9a" />
+          </DP>
+          <DP Name="Spare2" Guid="a811add2a-0b83-4ab5-a7d8-1107c0ffda95a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="af206fdbb-471b-4bf1-a379-8d7b81568769a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a3fe2e11d-5e50-446a-82db-a56d3da55850a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L360_LGCU_MW8_LG_Snsr_Unreasbl" SrcGuid="a53d860c3-cef0-4cdc-a9c5-3d51667942bea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_8Unreasonable_Faults_of_LG_Sensors" DestGuid="aeeb00ebd-bae8-4ed0-95df-b32c7086c8d6a" />
+        </A429Word>
+      </DS>
+      <DS Name="L361_LGCU_MW9_EI_Fault_LG_Prox" Guid="ace6bc29e-8957-435e-a9cd-2042d58d9ca4a" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L361_LGCU_MW9_EI_Fault_LG_Prox" Guid="a679d8d22-3265-426e-b4a6-921bde85ebb7a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a8147478f-ea06-4ce1-99cc-49d7797c42c4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="361" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a39f7cd0d-2c01-43da-b0b4-a29c9d72e7d4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_WOFFW_prx_Fault" Guid="abf9d7366-3027-45da-a366-43d30b40f51ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_WOFFW_Proxi_Fault_2" DestGuid="abb2af90e-1661-4b16-94e8-51518009f17ca" />
+          </DP>
+          <DP Name="MLG_RH_WOFFW_prx_Fault" Guid="ab15481db-89e1-4d03-84cd-95ec2e92e75ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_WOFFW_Proxi_Fault_2" DestGuid="ae0fe3603-dd80-4de2-8436-941db290ddf8a" />
+          </DP>
+          <DP Name="NLG_WOFFW_prx_Fault" Guid="a6071c3d3-737a-49b9-916b-3c4098ae41afa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_WOFFW_Proxi_Fault_2" DestGuid="a943e3cf5-30b6-43e9-949d-c98c046c8098a" />
+          </DP>
+          <DP Name="MLG_LH_downlock_prx_Fault" Guid="a2433e335-63ef-4c18-8b4d-b279a721ab9fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_DNLK_Proxi_Fault_2" DestGuid="a59246672-d404-4448-a4b6-4c5017dcedf0a" />
+          </DP>
+          <DP Name="MLG_RH_dowlock_prx_Fault" Guid="aee206bf6-3e54-4f3a-9157-a6e9b16e11ffa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_DNLK_Proxi_Fault_2" DestGuid="a16912363-0b11-41e4-b33d-2adeee03a6a9a" />
+          </DP>
+          <DP Name="NLG_downlock_prx_Fault" Guid="a6439c3ca-fbe5-43e9-839e-cbdd7cb843a1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_DNLK_Proxi_Fault_2" DestGuid="a6395a968-dbef-43c1-a63f-36a94ca7dedea" />
+          </DP>
+          <DP Name="NLG_uplock_prx_Fault" Guid="a92da6a9a-3185-4265-b9df-bbf10db4dc0da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_Door_UPLK_Proxi_Fault_2" DestGuid="a0531ccd0-a2f5-4418-b7b0-e60c2bd98013a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_UPLK_Proxi_Fault_2" DestGuid="a17eb10c0-f9e1-4c85-b6c3-5a93fcf03d82a" />
+          </DP>
+          <DP Name="MLG_RH_uplock_prx_Fault" Guid="a8bb56f09-3d1a-4c30-a391-3030779ee050a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_UPLK_Proxi_Fault_2" DestGuid="a82912a5c-df71-4bd4-81af-15855ff627a3a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_UPLK_Proxi_Fault_2" DestGuid="aa052e7f0-ff99-46c2-9a19-efe39f61ed37a" />
+          </DP>
+          <DP Name="MLG_LH_uplock_prx_Fault" Guid="a73c663df-b1d5-49d0-a197-bf9e77e6d1efa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_UPLK_Proxi_Fault_2" DestGuid="a82ca2983-7179-4cd8-880a-9ef2039ba59ca" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_UPLK_Proxi_Fault_2" DestGuid="a5dfa65f7-fdaf-49ea-be4a-a19af61bd0dda" />
+          </DP>
+          <DP Name="Spare1" Guid="ab9ed5b4d-86e2-4835-8959-5353958f4210a" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="DO_CONS_MLG_WOW_Fault" Guid="a7874fd6d-4e75-4c9a-acdd-81ec0c36dd90a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.DO_MLG_WOW_1_Fault_2" DestGuid="ab5bf16d2-4c15-4e50-aea5-9dd28aa98a3ea" />
+          </DP>
+          <DP Name="DO_MLG_LH_WOW_Fault" Guid="ad57fdcef-64d5-4d65-9574-2ab5dd206cd1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.DO_MLG_WOW_2_Fault_2" DestGuid="aac487ba1-ba5a-4619-b076-024925a11ab3a" />
+          </DP>
+          <DP Name="DO_MLG_RH_WOW_Fault" Guid="a7b7b4b3f-077c-4308-8db5-5d93b7e8d588a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.DO_MLG_WOW_3_Fault_2" DestGuid="ae6c25c6d-76e2-417a-b60e-8d44212d1168a" />
+          </DP>
+          <DP Name="DO_CONS_MLG_UPLK_Fault" Guid="a098e7416-7866-4aa6-9b8a-bf19985b27c0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.DO_MLG_WOW_4_Fault_2" DestGuid="a2ad1cf0c-8bb1-46ae-8d06-074ca24c5244a" />
+          </DP>
+          <DP Name="DO_CONS_MLG_NOT_DNLK_Fault" Guid="a63100b5c-5d4b-44fe-ab1c-d4ef1f185459a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.DO_MLG_WOW_5_Fault_2" DestGuid="ac6f19965-d680-4997-ab69-1402da282422a" />
+          </DP>
+          <DP Name="Secondary_Power_Supply_Low" Guid="aa4cf55a7-364a-4339-8bdc-d4dca2dd8065a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=low" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not low">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Secure_Power_Supply_Low_2" DestGuid="a4eeef26d-7738-420d-8c7f-5680d8f03854a" />
+          </DP>
+          <DP Name="DO_Ground_Spoiler_Deployed_Fault" Guid="aae3d2dd8-799a-47fd-8625-2e9d07c69a18a" Notes="LH - LGCU1, RH - LGCU2" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AE_Valve_mechanical_Fault" Guid="ae94b6763-5389-49a9-83d9-43d2290e5661a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Solenoid_Power_Supply_Low" Guid="af2217134-77e3-44e9-b9fa-ece5db102789a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=low" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not low">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Solenoid_Power_Supply_Low_2" DestGuid="a3c2a0f8c-b424-4cd5-9f0c-c93607190d94a" />
+          </DP>
+          <DP Name="SSM" Guid="af4a0b9f3-a7c3-47a7-8331-92566df11c49a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ac93d1a2f-20b4-472f-8272-0d04a8b2830da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L361_LGCU_MW9_EI_Fault_LG_Prox" SrcGuid="a3b3de1f8-98d1-47a2-beeb-00c7d3f4053ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_9Electrical_Faults_of_LG_Prox_Sens" DestGuid="a964c8410-9f7e-4710-b763-c45bf21a2c77a" />
+        </A429Word>
+      </DS>
+      <DS Name="L365_LGCU1_MW7_NWS_SCS_Faults" Guid="aed46d903-9d41-45f0-80f8-c6ea5635a420a" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L365_LGCU1_MW7_NWS_SCS_Faults" Guid="ac1828bf4-2afb-4f50-8636-4da8a68ea872a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a307a9449-8d36-4cf5-a9df-161e1f2d32f5a" Notes="LGCU1 Only" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="365" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="ac406e856-3c6f-4248-a125-83b8fe67d150a" Notes="LGCU1 Only" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Hyd_Press_Low" Guid="af1d45bbf-d3b0-4e45-8c7e-a93b3409e1eca" Notes="LGCU1 Only" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=low" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=not low" />
+          <DP Name="NWS_OFF_Switch_Fault" Guid="a74ca9ff7-ea5f-4077-9dab-1ad3dd9b504aa" Notes="LGCU1 Only" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Steering_Jam_Fault" Guid="a131f35e0-224f-4cc0-8380-25af9df58e64a" Notes="LGCU1 Only" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Steering_Runaway_Fault" Guid="a2fc7370c-755a-49ff-a3c2-bdb87bfafb5da" Notes="LGCU1 Only" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Pedal_Position_Mon_CC_Fault" Guid="a52f9665d-d506-4b94-a920-7155e6e88bbda" Notes="LGCU1 Only" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Spare1" Guid="ad89cfc10-d785-424d-b396-a697d1349fe5a" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SFS1_Resolver_Elec_Fault" Guid="a48f14c0e-437e-41a7-8205-927a0ca76b5fa" Notes="LGCU1 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="SFS2_Resolver_Elec_Fault" Guid="ad8442b4f-1d2e-41a6-8ee2-d15555f0f66fa" Notes="LGCU1 Only" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="SFS_Assymetry_Fault" Guid="a773fcb3d-b14d-4a11-88d1-ca0af8c77cf3a" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Pilot_Tiller_Elec_Fault_ConCh" Guid="a0937aeff-88c2-474b-8f3c-ad59ba7a1ae3a" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Pilot_Tiller_Elec_Fault_MonCh" Guid="a3c71a887-888b-4b40-b9a4-a6ac8d7fe936a" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Pilot_Tiller_Asymmetry_Fault" Guid="a45c42e36-dfe4-4b70-8004-25c6e087d346a" Notes="LGCU1 Only" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CoPilot_Tiller_Elec_Fault_ConCh" Guid="a8a2d2baa-5201-4c48-ac07-62c90e938777a" Notes="LGCU1 Only" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CoPilot_Tiller_Elec_Fault_MonCh" Guid="a6018513a-5e62-4bbd-8467-c4d4965eab7fa" Notes="LGCU1 Only" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CoPilot_Tiller_Asymmetry_Fault" Guid="aa726c215-7609-4749-8850-45a045e3c378a" Notes="LGCU1 Only" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="NWS_Overtravel_Mon_Fault" Guid="a7a582c6f-88c6-4ae6-8141-4582f83b4c84a" Notes="LGCU1 Only" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NWS_Overtravel_Sen_Fault_2" DestGuid="a3fd46f28-dbba-4188-89ae-744f3f2e0006a" />
+          </DP>
+          <DP Name="Spare2" Guid="ad222b0f1-3e57-419e-a52c-d16a6e968853a" Notes="LGCU1 Only" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Steering_Manifold_Mechanical_Fault" Guid="a76c79674-b4e7-4716-ad4c-e4443dba832aa" Notes="LGCU1 Only" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Steering_Manifold_elctrl_Fault" Guid="a96e188c7-c3e8-433f-bc0b-43a700bb5ea7a" Notes="LGCU1 Only" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="SSM" Guid="a709c2b5c-69c2-4dc5-9e13-600403e07f59a" Notes="LGCU1 Only" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a815be3d1-7f8f-4c37-81b4-d57f1022b40da" Notes="LGCU1 Only" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L365_LGCU1_MW7_NWS_SCS_Faults" SrcGuid="a576eca42-7e7b-41e7-9a19-5a8b02591a50a" />
+        </A429Word>
+      </DS>
+      <DS Name="L362_LGCU_MW10_LG_Door_Snsr_Elec_Fault" Guid="aa8745efc-4e70-4fca-b587-d1df282995daa" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L362_LGCU_MW10_LG_Door_Snsr_Elec_Fault" Guid="a70d21ccd-01ba-45f0-ac35-1e5e6b3092eaa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1c8f4836-9ad3-44e8-9273-cca65e512470a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="362" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a345d724a-67a2-437d-a26d-350f55c595eba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare1" Guid="aa4bda2d2-e640-4cdd-a635-5aec6b0302c2a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="10" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MLG_LH_Door_Open_prx_Fault" Guid="a00eba57b-372c-47f3-877d-a43f3e865820a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_LH_Door_Open_Proxi_Fault_2" DestGuid="a70b145b4-9b6e-49a5-b160-1e814d4e3359a" />
+          </DP>
+          <DP Name="MLG_RH_Door_Open_prx_Fault" Guid="a365c465a-f4df-4b41-86bd-8f88b0c114e5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.MLG_RH_Door_Open_Proxi_Fault_2" DestGuid="a7bf79e5f-746e-483c-a223-ded77c6ffb95a" />
+          </DP>
+          <DP Name="NLG_LH_Door_Open_prx_Fault" Guid="ae89ddd97-8638-4362-9489-26673d57b9c5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Open_Proxi_Fault_2" DestGuid="a95ef8152-c8ba-4249-93b0-e987aa03e780a" />
+          </DP>
+          <DP Name="NLG_RH_Door_Open_prx_Fault" Guid="a3e9f2156-5f1c-4373-9094-1f7f8f009ceaa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Open_Proxi_Fault_2" DestGuid="a4a2c34d6-9b97-4ff3-9618-cd1090fbf463a" />
+          </DP>
+          <DP Name="MLG_LH_Door_Clsd_prx_Fault" Guid="afabe518c-2524-40d2-9eef-c4a3f33a6e06a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="MLG_RH_Door_Clsd_prx_Fault" Guid="aa73428cb-3eaf-40a2-bc2b-ffdcb28e2d53a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="NLG_LH_Door_Clsd_prx_Fault" Guid="a1fe1cd41-55f6-45b7-8c85-d6b776380fb6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_LH_Door_Closed_Proxi_Fault_2" DestGuid="a1ef50146-1a3f-46ee-8d4f-93bb09bb3a5ea" />
+          </DP>
+          <DP Name="NLG_RH_Door_Clsd_prx_Fault" Guid="a37cef902-325b-4610-801f-7043b206e7faa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.NLG_RH_Door_Closed_Proxi_Fault_2" DestGuid="a22faac5e-c68a-4388-bbe2-800499f49f30a" />
+          </DP>
+          <DP Name="Spare2" Guid="ab8510e0c-3c13-4e18-95d7-379aa8307a61a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a131fb28f-36da-47bd-9f0c-10e3a43f51c5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a5a8e7bf2-51b5-4452-9d8a-07d242cbd89ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L362_LGCU_MW10_LG_Door_Snsr_Elec_Fault" SrcGuid="ac3c81bf4-1e41-4a94-9397-a58519275ea2a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_10_Electr_Faults_of_LG_Door_Prox_Sens" DestGuid="abf566693-d970-4017-bfbe-d0389da6f212a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS3" Guid="ab207b553-765e-431f-a085-45d0a9a6f0f0a" ByteOffsetFSF="0" ByteOffsetWithinMsg="44" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="a76ccad37-4971-4fd0-934a-09c8b3a4e2c8a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB10" Guid="ac6430918-8e75-4e82-8bec-0fff3e21a7daa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB11" Guid="a02fc3636-3863-4a66-98c0-94e4e2ee5573a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB12" Guid="ac032b3b8-10ea-41cb-bbdf-e3dbd157b121a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L363_LGCU1_MW11_SCS_Faults" Guid="a6b9156da-37f9-4451-b158-d35093db0693a" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L363_LGCU1_MW11_SCS_Faults" Guid="a1518f1fd-7013-4b35-a2e8-e13073fdb8daa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad8703df8-6661-4e61-8695-6196efb176dba" Notes="LGCU1 Only" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="363" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a79e11192-1e10-484e-9c2c-0d1f2a505d5fa" Notes="LGCU1 Only" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Pedal_Position_Mon_MC_Fault" Guid="a5a967dd5-68fe-49c8-b0d8-314f954814eba" Notes="LGCU1 Only" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Spare1" Guid="a15708c7f-4290-465a-860b-be9ce1b41273a" Notes="LGCU1 Only" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare2" Guid="a3b19095a-ac75-431f-a0f2-dbfe7f8edc01a" Notes="LGCU1 Only" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare3" Guid="a8aa93396-860e-4286-b1a4-ab63c6154452a" Notes="LGCU1 Only" BitOffsetWithinDS="13" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare4" Guid="a1a7d159b-bafd-4490-b652-2525b30bc7dfa" Notes="LGCU1 Only" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare5" Guid="aa97f4c07-004c-4653-8602-bca152e8d162a" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare6" Guid="a1cd50ebc-e13c-4950-95c2-e454344b25cba" Notes="LGCU1 Only" BitOffsetWithinDS="16" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare7" Guid="a3a7c946a-0170-4228-8339-5592f51280cfa" Notes="LGCU1 Only" BitOffsetWithinDS="17" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare8" Guid="a7e3c2b3e-dcdc-4943-9a44-a189b5562db1a" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare9" Guid="a55df025a-287d-442e-b199-23ca4a0630e9a" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare10" Guid="a21872ad1-755a-4e3c-994a-246ad9157554a" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare11" Guid="abbdef76d-6cd8-4509-a185-7142af2340baa" Notes="LGCU1 Only" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare12" Guid="ac3dacff4-509c-4e22-b171-b9d37a442bdca" Notes="LGCU1 Only" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare13" Guid="afa8a2d9b-64a5-40ee-84ab-7324c172ebf8a" Notes="LGCU1 Only" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare14" Guid="a0ed95774-7251-46c6-82ab-902d1c5f1684a" Notes="LGCU1 Only" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare15" Guid="ad611fc2c-5d40-4ac0-9766-ce8f7a876557a" Notes="LGCU1 Only" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare16" Guid="a086ced4e-6982-445c-99cf-e2bfe45ceaa8a" Notes="LGCU1 Only" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare17" Guid="ac86eec6a-bde4-4ea5-99d2-6032ebf789b6a" Notes="LGCU1 Only" BitOffsetWithinDS="27" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Spare18" Guid="a88192c85-d8b7-41fb-ae06-e77c559d0257a" Notes="LGCU1 Only" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a4cb88a7e-ccb6-4fa5-b685-4913ce4c3aa4a" Notes="LGCU1 Only" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a0b7a72aa-0fae-47fa-93f0-d63256197634a" Notes="LGCU1 Only" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L363_LGCU1_MW11_SCS_Faults" SrcGuid="aa7653308-b07a-4b5e-8bf7-fef6183c9dd9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.po429_LGCU_ConCh_Tx1_1000_L363_LGCU1_MW11_SCS_Faults" DestGuid="a98e93775-f754-43f1-922b-342f2b37afb7a" />
+        </A429Word>
+      </DS>
+      <DS Name="L350_LGCU_MW1_LGCIS_AES_faults" Guid="ab12503a9-89bd-4ea8-8db2-91337085aa77a" ByteOffsetFSF="45" ByteOffsetWithinMsg="52" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L350_LGCU_MW1_LGCIS_AES_faults" Guid="a38b957c9-3012-4f1d-b464-c2ef4e86e1c3a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a2701dac9-ddad-48c1-84b3-4b9a2bcc231fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a989fdbde-e45d-4f94-accd-c0782b877ce5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="LGCU_Non_Dispatchable_Fault" Guid="a1cbc81ab-bdd3-41de-9c11-1751b135f073a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_3_Non_Dispatchable_Fault" Guid="a93c58dd8-d0ad-4477-b844-54f29e280ccea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_3_elctrl_Fault" Guid="a2860633a-74b9-469f-85fe-da0c80dd55e4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_2_Non_Dispatchable_Fault" Guid="a6331aea1-e183-4bc4-b71e-014eeb754cd4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_1_elctrl_Fault" Guid="a75a77745-2fcc-4e0a-9638-f058092e0170a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_2_elctrl_Fault" Guid="a3481ce5c-d97a-4b40-b568-f378c037a436a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_NG_Uplk_elctrl__Fault" Guid="a9227d4d8-0663-4823-9f36-58c6085a331fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_LG_Uplk_elctrl__Fault" Guid="adeaee918-b205-4348-bb62-a2bb3aae7afea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_RG_Uplk_elctrl__Fault" Guid="ac98d22ea-1229-4f81-82d8-3edc912855dba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_NLG_Door_Uplock_elctrl_Fault" Guid="a75dfcd8f-9c89-4342-8e74-bbf29bed7607a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_MLG_LH_Door_Uplock_elctrl_Fault" Guid="a09ab3612-b86d-4dc1-b009-1aaad9b94a11a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_MLG_RH_Door_Uplock_elctrl_Fault" Guid="a598b5bd7-9787-40bd-a27b-e2da9a882020a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="LGCL_elctrl_Fault" Guid="aba10c7bf-097c-4630-803e-f715e6e40886a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="LGCL_non_Dispatchable_Fault" Guid="afd5cdcb0-29a9-4986-b173-1b2835798968a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AEV_Position2_elctrl_Fault_LGCU2" Guid="a72f17a00-e152-49a3-ba27-d97ae45d871fa" Notes="LGCU2 Only" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Retract_Valve_elctrl_Fault" Guid="ab9559885-7215-4165-abaa-22445b975e97a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Extend_Valve_elctrl_Fault" Guid="aae788b28-5edb-4271-ad8e-5fe55ace26d0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AEV_Position1_elctrl_Fault" Guid="a7c4c7163-a666-44e9-bfea-8fb36316dc93a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_1_Non_Dispatchable__Fault" Guid="af8966365-3f1f-4806-85b3-825adf24496ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="SSM" Guid="ad3298f02-72ce-497a-b781-18155b2e2ba0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a5ca71db5-1d46-41be-89db-2f94b9cf8aafa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L350_LGCU_MW1_LGCIS_AES_faults" SrcGuid="a5ee08d40-d362-4d25-a9a0-5d13badaea78a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_1_LGCIS_and_AES_Fault" DestGuid="a64eb623d-64e2-49c8-b5d7-5310718fbbfca" />
+        </A429Word>
+      </DS>
+      <DS Name="L354_LGCU_MW5_Spare" Guid="af47c0b95-80b9-4ed3-a358-467dd311b1e5a" ByteOffsetFSF="46" ByteOffsetWithinMsg="56" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L354_LGCU_MW5_Spare" Guid="a6d4d7874-21a5-42df-8784-b729fcaadefea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac6105085-e6e3-46de-b58e-ba3fa5e6b954a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="354" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a48453985-cd46-487a-a9f7-94f68a880be5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="LG_Door_Open_Valve_elctrl_Fault" Guid="ae72af9a3-fe80-4f4b-b7d3-d60d3c70f0eda" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="LG_Door_Clsd_Valve_elctrl_Fault" Guid="aa1cd8e47-d0e4-4a90-b701-53d186d79044a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_4_Non_Dispatchable_Fault" Guid="a5ce62c82-ecfe-4ab5-9b3e-162a0210c686a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_4_elctrl_Fault" Guid="a71cc4c9e-0407-4528-a64a-89489ff4d6eda" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_5_Non_Dispatchable_Fault" Guid="ac1aaaf20-3907-4865-8b51-e3cb599d6c04a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AES_Relay_5_elctrl_Fault" Guid="a9bb3fb7e-5a69-43be-8a9f-b010432b09a1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Spare" Guid="aaa1d1ff7-8476-4631-9c5a-cb7b71228978a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="SPAR" ParameterSize="13" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a0219b9aa-5a0e-49cc-8ca7-02df2124d063a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aa1679ab9-bc68-41dc-ba30-79c0b7fcdd6ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L354_LGCU_MW5_Spare" SrcGuid="ac720f56a-1d7c-49a2-95e6-cef6de2f41cfa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_5_spare" DestGuid="a8c139f2f-eae8-4c5a-aafd-49dd850a22eea" />
+        </A429Word>
+      </DS>
+      <DS Name="L355_LGCU_MW6_InVld_ARINC_Data" Guid="a507ce0d6-01b1-474e-99c8-67e62249fa01a" ByteOffsetFSF="47" ByteOffsetWithinMsg="60" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L355_LGCU_MW6_InVld_ARINC_Data" Guid="a41ea4315-192e-4601-a740-a2e5e787fdf9a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a21f3ef0f-3b8e-42cd-8ad0-f13a403ac649a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="355" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a0eb474b8-37dc-4f4a-a0f0-80f5ba812f01a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="InVld_Time_Date_Flight_Leg_AC_Registn" Guid="a4fc260a3-be75-4001-9de1-d9fa50c8c35ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Spare1" Guid="aa811abce-b29d-4ccd-915e-e4b4d3dc5b1ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="InVld_FCM1_RudPed_data_ConCh_Rx2_LGCU1_only" Guid="a96647cd7-9c94-49d5-9717-b426bf9f5a96a" Notes="LGCU1 Only" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_FCM2_RudPed_data_ConCh_Rx3_LGCU1_only" Guid="a1635c8e0-bc9c-421a-ae9e-a978a8389e32a" Notes="LGCU1 Only" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Spare2" Guid="a1ac1150b-5293-4d76-8e48-b6cf1f8e9b98a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="InVld_FCM3_RudPed_data_MonCh_Rx2_LGCU1_only" Guid="a0f1005a1-8af5-4b2f-b093-8e0430dfc22ca" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_FCM2_RudPed_data_MonCh_Rx3_LGCU1_only" Guid="a3d3c9cf8-3254-4c6e-a4bc-deb68e004317a" Notes="LGCU1 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Invalid_Parking_Brake_for_ConCh_Rx1" Guid="a85de9042-3675-4595-9067-999c633c0e52a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Invalid_Brake_Pressure_for_ConCh_Rx1" Guid="a0170109a-3613-40ae-aa77-36d34ee9b199a" Notes="Brake Pressure of Left INBD,Right INBD,Left OUTBD,Right OUTBD LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_AC_left_Whlspd_MonCh" Guid="ab07a6a56-d283-462c-8f93-a67408550a61a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_AC_right_Whlspd_MonCh" Guid="a5af7ac0d-0b15-4a95-ba34-1a3ea7e62a56a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_Hyd_Pressure_System_2_data" Guid="a91f95977-2578-4bb1-bc57-eb247b361983a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="InVld_AC_calibrated_Airspeed_data" Guid="acb00c89e-c0ae-41ef-a221-92db4b6f94c4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Spare4" Guid="a19296f94-3131-4a9b-948d-0bb0e423686ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="InVld_Crosscom_Control_Channel" Guid="a68e33f46-9e3b-4d22-9933-04d9ffe9930fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=no valid data" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=valid data" />
+          <DP Name="Spare5" Guid="aab1e311b-7e32-45f9-8cf5-e9aea043c50da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="Pedal_cmd_Asym_Mon_Fault_LGCU1" Guid="a98261df7-0398-4ca7-bf89-8cb0556f2df1a" Notes="LGCU1 Only" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Spare6" Guid="aa7ff1da1-395a-4c09-b964-1088a8fd19c7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="SPAR" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a816ac615-cd19-4435-aceb-d9cc0155041aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ae0bc557b-d402-4f98-bde1-779bd37ed66ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L355_LGCU_MW6_InVld_ARINC_Data" SrcGuid="ae5a14dd3-4083-4259-994b-ef28674d31e0a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_6_Invalid_A_Data" DestGuid="a2e19bf09-30d4-4098-95d3-411d0f80e5a0a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS4" Guid="a6e9031d1-2f71-4539-bc75-6e0a88b6b208a" ByteOffsetFSF="0" ByteOffsetWithinMsg="64" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB13" Guid="a24edcecc-3650-45e0-8568-de02fbad6ee6a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L364_LGCU_MW12_LGCU_Internal_Faults" Guid="a690605d4-6ce2-4c4a-a115-0001c51bb39da" ByteOffsetFSF="64" ByteOffsetWithinMsg="68" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L364_LGCU_MW12_LGCU_Internal_Faults" Guid="a32ebd12b-1d28-4749-820a-0e8ad57f3fa3a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac38f5ecd-8d30-4b18-b0f9-d18d610208b8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="364" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a46742540-4b67-4544-9889-36bca2dd10e1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="MC_ADC_BIT_Flt" Guid="ad59d8b02-1d61-430f-b08e-a2de1195e49fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CC_ADC_BIT_Flt" Guid="a453633cc-f4e2-44ee-bf4d-629cabc9923ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="DAC_BIT_Flt" Guid="a0ba12358-00da-4438-b4ea-e4e66f17d005a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="EnVlvDrvIct_Flt" Guid="a6f2a269a-ab21-4dd2-8e30-c4348a73ea10a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="MC_EnVlvDrvEnCld_Flt" Guid="afaa7ca5e-6fd8-4189-b2f6-0c320f4e8d5da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="Spare" Guid="a4447b1b2-b91f-4308-baf8-aff830d70bcfa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="SPAR" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AevDoPos2Mon_Flt_LGCU2_Only" Guid="a2bf562a6-4e7f-4950-80ec-f460a25a9c16a" Notes="LGCU2 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="MC_SwInopMonCirTest_Flt" Guid="a15b10be8-1f7c-418e-94ab-fa55b6356f34a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CC_SwInopMonCirTest_Flt" Guid="a519dfc60-309e-4611-878f-50c07f5564e9a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="PowIntEvalCirTest_Flt" Guid="a6f01b0dc-aa24-4ca1-889f-0f2f8e9486d3a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="AevDoMon_Flt" Guid="a9ddd2601-ea76-4342-a540-fe8ab5c08c5aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="ExtDoMon_Flt" Guid="a979fb19f-a77e-4337-a9ea-b2b7b0e71388a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CmdAsymMon_Flt" Guid="a10517396-2f60-42b7-bd0c-6e2e85c87899a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="CAN_Update_Mon_Flt" Guid="a78b07bca-d048-4c99-850a-47dabcca0949a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="EEPROM_CalibDataBIT_Flt" Guid="a6e3d5f62-f185-435a-aa77-9b3e73449bbfa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="MC_TimingTest_Flt" Guid="a0433834f-75c6-4bbf-bcf6-e411860a0c95a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="DrOpenDoMon_Flt" Guid="a4b6fcb13-035d-4d3c-982c-8a68cc6234c5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="DrCldDoMon_Flt" Guid="a84266ec7-7ed5-4ffc-9a7e-8676001ba424a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="RetDoMon_Flt" Guid="aabc84541-5212-44bc-b80d-4a89bf9be215a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" ZeroState="0=no fault" />
+          <DP Name="SSM" Guid="a443a46ad-7c37-4098-b282-7d760d015571a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a47a0103a-2077-456a-ab95-ef62d327e79ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch_1000.L364_LGCU_MW12_LGCU_Internal_Faults" SrcGuid="a97f72f0d-8031-4adb-a962-9cd6c6cb0bc5a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LGCU_2_Maintenance_Word_12_LGCU_internal_Faults" DestGuid="ac3d19f17-e8d2-45f4-991b-62acef8ef3b3a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_LGCU2.pi429_LGCU_ConCh_Tx1_1000_HF_LGCU2" SrcGuid="a892b9b45-531f-4921-b37e-9a02c5c61ad4a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS4_O_A664_po429_LGCU_ConCh_Tx1_Ch" Guid="a5b1b7351-b895-45c4-b432-fe0abbb8ef6fa" Direction="Source" MessageSize="56" Networks="Both" RefreshPeriod="5">
+    <A664Message Name="po429_LGCU_ConCh_Tx1_Ch_S_4" Guid="aef520e04-1f60-4ebe-a1db-48799796377ea" EdeEnable="True" MessageOverhead="32" MessagePad="64" MessageSize="56" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="100" VLID="33375">
+      <DS Name="FSS1" Guid="af7d30331-f6e8-476a-b278-9a6e4c136d34a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a274b1439-a470-4c69-9a94-923cbb05ed1ba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a8034e4b9-6e74-4081-a48c-eed4940db3fba" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a5a971303-60fb-4600-81a5-5a1789b08bcda" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a891c3244-0d44-4514-8dc8-c25a3982393fa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L275_Consolidated_WOW_Data" Guid="addbe0214-4a7a-45da-a686-0971e4045dc3a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L275_Consolidated_WOW_Data" Guid="afe697690-e068-43e0-94c4-bfc42a90e8e6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a65e03f18-dc77-4cdc-8ffe-1aabe192c953a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a901e49b5-e153-43eb-9df7-ff669835b55ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare1" Guid="abecbfc3f-250a-4d98-a60e-fcf3b17c6dfea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="All_Gear_WOW" Guid="a39f9d9c3-f31c-4e07-85e8-6577d6a7c4baa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.All_Gear_WOW_LGS_LGCU_2" DestGuid="a13a062ea-161b-44b9-9fb6-0624f6acb64fa" />
+            <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.All_Gear_WOW_2" DestGuid="a179dc8a4-35fa-4924-95fb-b279bc0d324fa" />
+            <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.All_Gear_WOW_2" DestGuid="a465681a1-8b44-441a-8422-fd1fec2f1aa6a" />
+            <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.All_Gear_WOW_2" DestGuid="a885ef8ac-b554-4126-99ba-11f4053d325ea" />
+            <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.All_Gear_WOW_2" DestGuid="a30529773-89ba-4b68-8ace-674b88c163c8a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.All_Gear_WOW_LGS_LGCU_2" DestGuid="af9d2784e-73b6-40b4-adba-c017fd7a27a5a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LGCU_2_AircraftHasWeightOnWheels" DestGuid="ad31507e7-af5c-4210-ad1a-c53da6042045a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LGCU_2_AircraftHasWeightOnWheels" DestGuid="a8a4b8d2f-2a18-43a5-963b-e8362b29366fa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LGCU_2_AircraftHasWeightOnWheels" DestGuid="afedbd87a-a9ab-4fe8-bf7e-e9384ef0c862a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LGCU_2_AircraftHasWeightOnWheels" DestGuid="a4b41e2fd-60a0-4fca-a546-3b041bff86ada" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LGCU_2_AircraftHasWeightOnWheels" DestGuid="a23ecf852-e758-42a5-a484-d18e68429038a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_LGCU2_All_Gear_WOW" DestGuid="ac4eedf73-0c1e-425d-8c71-c1db71485dd5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_LGCU2_All_Gear_WOW" DestGuid="ab3aed46a-5ad3-425f-803d-672fbf4a2c9da" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_All_Gear_WOW" DestGuid="a098bcc3a-b3e0-4377-b37f-65550262740fa" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_All_Gear_WOW" DestGuid="a845662e6-6551-4e4a-b47b-3085e3ca9950a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.LGCU_2_AllGearsHaveWeightOnWheels" DestGuid="aacb46d04-5e5e-476f-b85a-44a6ad12bbc1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.LGCU_2_AllGearsHaveWeightOnWheels" DestGuid="a45571057-3113-4b44-96d3-37e7b004afb9a" />
+            <Gw_Pub_Ref DestName="VALVEAPP.ON_Gnd_2" DestGuid="a2fc53e90-4212-45f9-8c0d-ae3c4e6e071da" />
+            <Gw_Pub_Ref DestName="WWAPP.ON_Ground_2_IN" DestGuid="a5ed19f65-5535-4a13-9608-13b69fbb426ea" />
+          </DP>
+          <DP Name="MLG_WOW_LH_RH" Guid="a32db1428-8f25-476e-a7d1-2b69bc9836c4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=WOW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOW">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.MLG_WOW_LHandRH_LGS_LGC_2" DestGuid="a61115d37-4301-479b-a097-03966987a270a" />
+            <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.MLG_WOW_2" DestGuid="afd5eba4c-58d9-41a2-96d2-faf12ca99646a" />
+            <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.MLG_WOW_2" DestGuid="a1754593d-4592-43b5-a23b-869c35dbf50fa" />
+            <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.MLG_WOW_2" DestGuid="af2be41f8-45de-432e-829f-9a266793dda8a" />
+            <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.MLG_WOW_2" DestGuid="aa45bdadc-d617-4203-af74-5bd738b93721a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.MLG_WOW_LHandRH_LGS_LGC_2" DestGuid="a4eb631e9-5aed-4d4e-9c75-f95732ee77a5a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1A.RX_LGCU2_MLG_WOW_LH_RH" DestGuid="a5eb69609-0eb0-4138-bdee-0d85fdf5aaf4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_LGCU2_MLG_WOW_LH_RH" DestGuid="a6646279e-725d-4721-9125-187af352c6b4a" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2A.RX_LGCU2_MLG_WOW_LH_RH" DestGuid="a38b4a1e3-ddf7-4f78-b917-91114efbd8bca" />
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_2B.RX_LGCU2_MLG_WOW_LH_RH" DestGuid="ade1b9b88-0378-46a7-9163-2a7a7d1d0fada" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.LGCU_2_MLGWOWLHRH" DestGuid="a0aebc2d8-b297-4b1c-870d-b06dcd6766efa" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.LGCU_2_MLGWOWLHRH" DestGuid="af13bb33f-ab01-49a6-a6c7-e2a0711bf3cfa" />
+          </DP>
+          <DP Name="GR_WOFFW" Guid="a37c44731-ba36-4060-b4f9-9194dae960ffa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.All_Gear_WOFFW_LGS_LGCU_2" DestGuid="a245d4279-6d85-430d-bdbc-444db7cf5126a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.All_Gear_WOFFW_LGS_LGCU_2" DestGuid="a71caf070-5ec6-46f6-9783-fc12fe7e1080a" />
+          </DP>
+          <DP Name="Spare2" Guid="aa47c462b-0dae-4d7d-bf76-ed12de4d4853a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="NLG_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a06375cfa-3136-468d-a286-b30c7311ba9aa" Notes="LGCU1 Only" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="MLG_RH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="a96ca2cbf-145a-4c3a-971a-633c5e641a2da" Notes="LGCU2 Only" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="MLG_LH_Uplock_Switch_Off_Mon_LGCU2_Only" Guid="a69954665-d38d-41ed-b108-6e5d8b9c7c29a" Notes="LGCU2 Only" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="NLG_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="abc284727-f1dc-49d8-9c4e-4c443978622ea" Notes="LGCU1 Only" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="MLG_RH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="aa3f0cc54-cf61-4f54-9ab3-77171d6701eba" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="MLG_LH_Door_Uplock_Switch_Off_Mon_LGCU1_Only" Guid="a895f7bd5-9868-4a35-ad8e-e83d3dcec698a" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=in OFF Posn;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in OFF Posn;" />
+          <DP Name="Spare4" Guid="a1ec58328-a77b-4cfb-8a91-722f081f9013a" Notes="LGCU1 Only" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="DI_MON_AES_GND_DISC" Guid="a7228371b-59b3-42ec-86fe-b54b7b2271c0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=GND disconnected;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = GND connected;" />
+          <DP Name="DI_AES_28V_EN_LGCU2_Only" Guid="a195cea0c-1eef-4ba2-a076-603d7033720da" Notes="LGCU2 Only" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=28V enabled;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0 = 28V not enabled;" />
+          <DP Name="Spare3" Guid="a1127c245-bcab-449d-a9ca-4b83f5390d20a" Notes="LGCU2 Only" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SSM" Guid="a65bb26fd-a1f2-4064-8a47-39062f280783a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a7482b7c4-55d2-4a0d-827e-05b85ff82a1ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L275_Consolidated_WOW_Data" SrcGuid="a86675026-dde4-4230-b9a9-c976288c06b6a" />
+          <Gw_Pub_Ref DestName="APP_FMS_CORE_2.L275_Consolidated_WOW_Data_LGS" DestGuid="a84801e9b-9ff8-4805-a697-71b88345cf46a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L275_Consolidated_WOW_Data_LGCU2_1" DestGuid="a014baa63-1ddc-42e9-87b8-d9933f697e22a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L275_Consolidated_WOW_Data_LGCU2_1" DestGuid="a2264606c-ef26-428f-8943-0e030fa9db5ca" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L275_Consolidated_WOW_Data_LGCU2_1" DestGuid="a90305ab5-d969-471d-93ee-9ab5ce088adea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Consolidated_WOW_Data" DestGuid="af4614998-0aaa-4237-8015-d1e76dc87bc1a" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_L.L275_Consolidated_WOW_Data_2" DestGuid="a035e094c-c0da-4b5e-be0f-22934e22fdb6a" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_R.L275_Consolidated_WOW_Data_2" DestGuid="a053ea2bb-c171-4257-82cd-9593e10aa8e8a" />
+        </A429Word>
+      </DS>
+      <DS Name="L001_Towing_Indication_Box_Command_LGCU1_only" Guid="aef04426e-9944-48b5-b26c-5899e400ef1ca" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L001_Towing_Indication_Box_Command_LGCU1_only" Guid="a143bd2e5-1b2c-4c52-a867-ea6fb53b6c35a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad575a76d-5966-4852-9c0b-f4c1f031cd2ba" Notes="LGCU1 Only" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="1" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a6fb644a6-6f7f-4348-b190-67d9f0aa7a37a" Notes="LGCU1 Only" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Towing_Box_Enable_lights_on_off" Guid="a5ef64b83-5e81-492e-9316-a79f997a9ebfa" Notes="LGCU1 Only" BitOffsetWithinDS="10" CodedSet="5=Towing Box Disabled;10=Towing Box Enabled" DataFormatType="COD" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_Towing_Box_Enable_lights_on_off" DestGuid="af5a7f4a9-9f03-435a-870e-7c7a5de62399a" />
+          </DP>
+          <DP Name="Towing_Box_Select_red_green" Guid="a170c8b20-4349-46c6-a180-c1f6d3c7b7a3a" Notes="LGCU1 Only" BitOffsetWithinDS="18" CodedSet="5=red lights energized;10=green lights energized" DataFormatType="COD" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100">
+            <Gw_Pub_Ref DestName="HF_RPDU_UP_1B.RX_Towing_Box_Select_red_green" DestGuid="a0fd47a41-deb0-4d1f-88c0-848309f880c7a" />
+          </DP>
+          <DP Name="Spare1" Guid="ae36294fb-c85c-47eb-89b5-7bd2d6ef2228a" Notes="LGCU1 Only" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SSM" Guid="a65052e9c-f3e2-4e7e-b1fe-9621cf6fc090a" Notes="LGCU1 Only" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a85dd2825-ec1f-443b-b712-f04d29886d2ea" Notes="LGCU1 Only" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L001_Towing_Indication_Box_Command_LGCU1_only" SrcGuid="a192f2363-65f9-4a54-81fe-aa5e950e53b8a" />
+        </A429Word>
+      </DS>
+      <DS Name="L271_LG_Posn_Snsrs" Guid="ada590282-8d36-471e-9448-a33111435810a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L271_LG_Posn_Snsrs" Guid="ad404fd7a-49da-459b-b6b0-46b1a49597c7a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a696579d8-880f-4826-8ea9-2769f7ddf5c6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="ae0913ebe-4d78-4a31-b761-79995054f946a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="MLG_RH_UPLK_prx_Snsr" Guid="a42439a89-0fc6-416f-ace3-92f50994ff8fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;" />
+          <DP Name="MLG_LH_UPLK_prx_Snsr" Guid="aff456506-9ab4-4d6c-bd35-b5fbb2220e75a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;" />
+          <DP Name="NLG_UPLK_prx_Snsr" Guid="abba3f982-c047-4f57-b5fa-08d5f10d9e3aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;" />
+          <DP Name="MLG_RH_DNLK_prx_Snsr" Guid="a54ee5029-6a15-4ba9-bf47-7d28e02bcba6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked;" />
+          <DP Name="MLG_LH_DNLK_prx_Snsr" Guid="ae9bbaeec-2f83-49db-a518-1343b7511315a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked;" />
+          <DP Name="NLG_DNLK_prx_Snsr" Guid="a3725e7fb-6381-49a1-a3a3-c3fe7c46727fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked;" />
+          <DP Name="MLG_RH_UPLK_prx_Snsr_Oprtnl" Guid="ab989c973-4376-4d00-9077-d3b2e1ea192fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.Landing_Gear_Uplocked_MLG_RH_LGCU_2" DestGuid="a047054a0-7661-4768-a942-093cd7e1498da" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.Landing_Gear_Uplocked_MLG_RH_LGCU_2" DestGuid="a134cf8e7-855d-42e1-8fa5-006aeeb2a4c8a" />
+          </DP>
+          <DP Name="MLG_LH_UPLK_prx_Snsr_Oprtnl" Guid="a41c65c9c-c3f0-4c47-a879-fa50f3d880e3a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.Landing_Gear_Uplocked_MLG_LH_LGCU_2" DestGuid="a8d7ef8b0-9287-4890-a475-06c5fc1b1ee7a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.Landing_Gear_Uplocked_MLG_LH_LGCU_2" DestGuid="aa846b8a5-5c99-4216-a5fc-119a7f8a3697a" />
+          </DP>
+          <DP Name="NLG_UPLK_prx_Snsr_Oprtnl" Guid="a886d98f1-d9a5-47e8-955d-96ef9977106ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="MLG_RH_DNLK_prx_Snsr_Oprtnl" Guid="a9bb6f8c9-34a7-493d-b238-821cced401e5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.Landing_Gear_Downlocked_MLG_RH_LGCU_2" DestGuid="a07b5a26b-a38d-41fc-95fc-273572078a28a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.Landing_Gear_Downlocked_MLG_RH_LGCU_2" DestGuid="abb16e3cf-1402-4bbf-bfcf-8ce6eba4335da" />
+          </DP>
+          <DP Name="MLG_LH_DNLK_prx_Snsr_Oprtnl" Guid="a5f7ad622-1add-40da-bbba-fda4a33ed0cea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.Landing_Gear_Downlocked_MLG_LH_LGCU_2" DestGuid="a8f98fa5f-eaa9-4cd0-8039-86ff4f0d0075a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.Landing_Gear_Downlocked_MLG_LH_LGCU_2" DestGuid="ad76433c7-2f8e-4728-a39e-8a5187113f25a" />
+          </DP>
+          <DP Name="NLG_DNLK_prx_Snsr_Oprtnl" Guid="af58dddf2-bbe1-40f9-bbf7-949208821183a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="LGCL_Selected_Posn_Up" Guid="aacf31732-4667-4cea-a290-d8400a3bcd0ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=up;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not up;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.LGCL_selected_position_up_retraction_LGS_2" DestGuid="a706a40cf-e050-4550-a308-5a4ecd298beea" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.LGCL_selected_position_up_retraction_LGS_2" DestGuid="a7ef9fdd5-efbc-49ec-839c-731b2525ab44a" />
+          </DP>
+          <DP Name="LGCL_selected_Posn_Down" Guid="a24b2faf8-baf1-4947-82f0-f7326ccfbb76a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=down;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not down;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.LGCL_selected_position_down_extension_LGS_2" DestGuid="ab34bd62a-74ed-4853-8c61-b60ab2d912d2a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.LGCL_selected_position_down_extension_LGS_2" DestGuid="a4def602e-41e9-4d47-bd54-526c4235fb33a" />
+          </DP>
+          <DP Name="LGCL_Selected_Posn_Up_Oprtnl" Guid="ada66f012-07b6-4ba5-87d6-412145d4ffd1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.LGCL_selected_position_up_operational_LGS_2" DestGuid="a84adc943-a2af-4b4b-b064-e8ae93eed7a7a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.LGCL_selected_position_up_operational_LGS_2" DestGuid="a17483fb6-db15-4a1e-b203-b5a792f5f590a" />
+          </DP>
+          <DP Name="LGCL_Selected_Posn_down_Oprtnl" Guid="ab02623e4-3d6f-43a9-a4d9-938a124de9a3a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.LGCL_selected_position_down_operational_LGS_2" DestGuid="ac353a9d9-5b29-455f-b196-ec5b372a736ba" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.LGCL_selected_position_down_operational_LGS_2" DestGuid="a96d79efa-5c3f-4bf8-a33c-87fe1bbed1dea" />
+          </DP>
+          <DP Name="Spare" Guid="a08699f99-bfb4-4bd5-912f-9f47801fd786a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="cmd_Retract" Guid="a96e4673b-0adc-4996-abec-72284116fb54a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Command Retract;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Command Retract;" />
+          <DP Name="cmd_Extend" Guid="aba8e7164-3d0f-43ee-a676-3a2ef668c4caa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Command Extend;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Command Extend;" />
+          <DP Name="SSM" Guid="acc307b97-6fe0-4fb8-8d39-c22a1e6ddb06a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="ad4823a45-3f0d-4627-81b3-04391ae0efeaa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L271_LG_Posn_Snsrs" SrcGuid="aa4f01add-3d07-4ff2-84a8-215fdc1d8b00a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L271_LG_Position_Sensors_LGCU2_1" DestGuid="afb6d75d9-d9d0-4f03-ba3f-987d5663b2b0a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L271_LG_Position_Sensors_LGCU2_1" DestGuid="aecbd2e35-853e-4af9-9a04-4dd73f0507c1a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L271_LG_Position_Sensors_LGCU2_1" DestGuid="a3011b594-2f93-4b8d-ac82-786a8cfd3046a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LG_Position_Sensors" DestGuid="a9a3d4c8a-c673-44fe-a186-c2f3d209ed0ba" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_L.L271_LG_Posn_Snsrs_2" DestGuid="a662dabae-cdca-4300-94c5-6e9fcda138aaa" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_R.L271_LG_Posn_Snsrs_2" DestGuid="a680cd3fe-98c2-45b7-943f-4671be080b2ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L272_LG_Posn_Snsrs" Guid="ac3c772df-f48b-4f7b-be5f-6739daceaa5ba" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L272_LG_Posn_Snsrs" Guid="a5358b688-e815-4695-a288-f229047bedd5a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a319206f3-1e7a-4043-b6f3-89f48aca6429a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="aabe1b117-3bd5-4334-a034-f9ffbce24e1ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare" Guid="add25936a-a930-4b2b-858b-76f3c0efc903a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="3" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="MLG_RH_Door_Clsd_prx_Snsr" Guid="aa86f0b44-51f5-4124-af4f-ca630260a3b0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=closed;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed;" />
+          <DP Name="MLG_LH_Door_Clsd_prx_Snsr" Guid="a4815053d-3f04-42b6-b9de-c37f2460fee7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=closed;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed;" />
+          <DP Name="NLG_RH_Door_Clsd_prx_Snsr" Guid="a9fa41143-5453-4fb6-9111-8722220ecacaa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=closed;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed;" />
+          <DP Name="NLG_LH_Door_Clsd_prx_Snsr" Guid="abfeac8ed-c7dd-4d08-bbcd-967f0d45b6caa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=closed;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed;" />
+          <DP Name="MLG_RH_Door_Open_prx_Snsr" Guid="aeef034ee-3eaf-4a77-80dc-15ca7671e89ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Open;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open;" />
+          <DP Name="MLG_LH_Door_Open_prx_Snsr" Guid="a8018d28e-8985-49dd-a82d-516d99fd784fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Open;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open;" />
+          <DP Name="NLG_RH_Door_Open_prx_Snsr" Guid="a1865ebfb-dd83-4bf3-81ba-f783bb37ef83a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Open;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open;" />
+          <DP Name="NLG_LH_Door_Open_prx_Snsr" Guid="ad2989130-2f00-462c-ac6c-e58d0cfff491a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Open;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open;" />
+          <DP Name="MLG_RH_Door_Clsd_prx_Snsr_Oprtnl" Guid="a3d301da6-44a4-4887-a975-671f21dcfcbfa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="MLG_LH_Door_Clsd_prx_Snsr_Oprtnl" Guid="aed768b96-9392-4506-8b0f-b1b913342220a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="NLG_RH_Door_Clsd_prx_Snsr_Oprtnl" Guid="acc4f925e-8be8-4a57-9524-0525491d967ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="NLG_LH_Door_Clsd_prx_Snsr_Oprtnl" Guid="aead5d2ea-8d8d-4724-a01e-e7dce13e1382a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="MLG_RH_Door_Open_prx_Snsr_Oprtnl" Guid="a4058dca3-bc21-427d-ae29-2c64b1905a5ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="MLG_LH_Door_Open_prx_Snsr_Oprtnl" Guid="aa471a14a-1cfa-4edf-9090-4e11262ccb28a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="NLG_RH_Door_Open_prx_Snsr_Oprtnl" Guid="aeda4aace-c11b-4978-8dae-41b3517c39f6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="NLG_LH_Door_Open_prx_Snsr_Oprtnl" Guid="a0d65dab7-6711-44ce-815e-4b5777dd58b5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="SSM" Guid="aa70cf127-9c06-4379-8aec-1ded1ee5b5a7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="adf5d8466-8e6c-4bdc-b0cf-86156e45c865a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L272_LG_Posn_Snsrs" SrcGuid="a31ad7b93-c6a0-423c-9fa1-f7acec3ba3b0a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L272_LG_Door_Position_Sensors_LGCU2_1" DestGuid="afbaa87fe-a48c-4420-b5fb-5d4075f408ffa" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L272_LG_Door_Position_Sensors_LGCU2_1" DestGuid="a73ca08e2-70ef-42a0-9b38-f996811827d5a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L272_LG_Door_Position_Sensors_LGCU2_1" DestGuid="ad29f750e-3a63-4356-ab83-91410960ced6a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LG_Door_Position_Sensors" DestGuid="ad1a2eaf5-ff89-4db9-8af2-1b160d945b68a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a0c47141d-5179-4a06-baea-57ace1572dfba" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a799cf53a-30b1-4c28-919c-aed269386ec7a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="afc6778c0-f1a5-453b-ba85-5f8904d50e13a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a129c9f37-f12c-429f-bf2c-f9485f94b53ba" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="aae11dc7f-0b70-46dd-ae55-00eccd271daba" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L273_Consolid_LG_Posn_Data_CC" Guid="a0f100d21-247e-4dca-987b-8f6b8629f3e4a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L273_Consolid_LG_Posn_Data_CC" Guid="ab3e1471e-cb69-4628-bb7b-aee51a14f3e4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a73ffd342-78a9-497d-8d93-d5b1038a95ada" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="273" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a94da2410-8951-413f-bc13-dfbd2c10d11da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="All_Gear_Dnlocked" Guid="a9d421db0-4efd-4fc7-a776-9cb64d37aefba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked;">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_All_Gear_Dnlocked" DestGuid="a48a900af-c20c-4910-b65b-ba9219ae49cfa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_All_Gear_Dnlocked" DestGuid="a0ebff5aa-7c17-4b3b-aa26-6a9c0e4dc325a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_All_Gear_Dnlocked" DestGuid="a00a4a43c-bdb2-4bb6-8522-522ba21dfd36a" />
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.All_Gear_Downlocked_CC_MC_LGS_LGCU_2" DestGuid="ae46fabb6-6332-4a15-8ed5-f843188d7589a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.All_Gear_Downlocked_CC_MC_LGS_LGCU_2" DestGuid="af8db17af-7887-465d-8a7c-7cb149dff36aa" />
+          </DP>
+          <DP Name="All_Gear_Uplocked" Guid="a1363abf3-8784-445e-9fc7-2e2d94b8073ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_All_Gear_Uplocked" DestGuid="ac1586c2d-5615-4abe-aff1-890606415e69a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_All_Gear_Uplocked" DestGuid="aa9812bf4-621a-4038-92be-5ded02f1eec1a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_All_Gear_Uplocked" DestGuid="aa53770e7-ee44-40e7-8174-593b3169c9f2a" />
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.All_Gear_Uplocked_LGS_LGCU_2" DestGuid="a7df2d384-1431-42c5-a0ec-ad95c2d59e38a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.All_Gear_Uplocked_LGS_LGCU_2" DestGuid="a319e108f-d127-4c3e-8243-d858bc38230aa" />
+          </DP>
+          <DP Name="NLG_Uplocked" Guid="aa5ed7f1f-b952-476c-8a8a-8dc4a86fdf9da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.NLG_Uplocked_LGS_LGCU_2" DestGuid="a7b239111-1aa4-4204-9b2a-6e7faaaab8cfa" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.NLG_Uplocked_LGS_LGCU_2" DestGuid="abe07128a-8c09-4b78-a8a7-92e3dd018f61a" />
+          </DP>
+          <DP Name="NLG_Dnlocked" Guid="a8fb303ad-96c1-4655-8eb8-08921861dcf8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked;">
+            <Gw_Pub_Ref DestName="HF_AFTEAFR.NLG_Downlocked_LGS_LGCU_2" DestGuid="afb6deb06-ea89-442f-a0c9-d2be1fc8cb43a" />
+            <Gw_Pub_Ref DestName="HF_FWDEAFR.NLG_Downlocked_LGS_LGCU_2" DestGuid="a5f2eadcf-9b2b-47cc-8173-486b4c76c296a" />
+          </DP>
+          <DP Name="Ext_Driver_engzd" Guid="a0fe2055f-533a-464e-ade0-1b9a0f02316ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="Retraction_Driver_engzd" Guid="ae11c36d4-aeaf-40ff-9fd6-3e0aa4298ef7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="Alt_Ext_Valve_Pos_1_engzd" Guid="abe486d6a-48b1-4a24-a70d-332f00ccb3e5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="LG_Door_open_Driver_engzd" Guid="a3d126891-423b-41e4-b3fb-334adaede4b3a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="LG_Door_close_Driver_engzd" Guid="aa641b654-acbe-4cb3-ac8d-c39447b45ce8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="Alt_Ext_Valve_Pos_2_Hi_engzd" Guid="a49896497-ac48-4338-8f7f-7bc62fd7df53a" Notes="LGCU2 Only, LGCU1 is Spare" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="AES_Relays_2_Driver_Low_engzd" Guid="a34c487df-9dbc-414a-9c1b-f07068ecfdd7a" Notes="LGCU2 Only, LGCU1 is Spare" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="AES_Relay_1_Driver_Low_engzd" Guid="a1bf91048-a256-4e91-934d-017c682abbbea" Notes="LGCU2 Only, LGCU1 is Spare" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="AES_Relay_3to5_Driver_Low_engzd" Guid="a7ab6fc53-e4e4-4065-9bbc-28a8f47aa3dea" Notes="LGCU2 Only, LGCU1 is Spare" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=energized;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not energized;" />
+          <DP Name="Spare1" Guid="a3416fad6-818b-4c27-a68b-03c3c400d924a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="All_LG_Door_open" Guid="a058a413d-c145-46ae-9c04-baf919f62a6da" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=open;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open;" />
+          <DP Name="All_LG_Door_Clsd" Guid="acfa38647-303d-4456-88ab-633bc0ecabbfa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=closed;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed;" />
+          <DP Name="Consolidated_MLG_Not_Dnlocked" Guid="ad46d08dd-26a2-4281-8e31-82ea146fcddca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=not Downlocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=Downlocked;" />
+          <DP Name="Consolidated_MLG_Uplocked" Guid="aed48c4f1-61ec-4797-892a-96b70955834aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Uplocked;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked;" />
+          <DP Name="Spare2" Guid="ad0387596-c0df-438a-8b3b-c02c0492ce68a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SSM" Guid="a24043fc0-343f-40b9-b630-58b799954911a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a48120a5d-26ae-4974-8e88-90af9cc145dda" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L273_Consolid_LG_Posn_Data_CC" SrcGuid="a034ba729-0a14-4aa8-b516-d25d0211f482a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L273_Consolid_LG_Posn_Data_CC_LGCU2_1" DestGuid="a88008f7c-a79e-45c9-b659-fd8a4f8b5972a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L273_Consolid_LG_Posn_Data_CC_LGCU2_1" DestGuid="af4771d75-a225-4a36-8c16-f7b61ad81764a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L273_Consolid_LG_Posn_Data_CC_LGCU2_1" DestGuid="a975fe4f6-9446-4131-9a1c-fac5db1cf6b3a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.L273_Data_MC" DestGuid="aa8874d62-af46-414a-beab-241d1fc4907da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Consolidated_Gear_Position_Data" DestGuid="adefce36f-2434-42ca-9479-2d5133009d5ba" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_L.L273_Consolid_LG_Posn_Data_CC_2" DestGuid="a0a40b435-d241-4c4c-95cc-8dc1e1f6c2dda" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_R.L273_Consolid_LG_Posn_Data_CC_2" DestGuid="a03f62719-4546-4a2c-ad14-28b0bdb23dd8a" />
+          <Gw_Pub_Ref DestName="PAA_L5Instance.L273_Consolidated_LG_Posn_Data_MC_LGCU2" DestGuid="a83fac80c-1b36-4b4e-92c2-c5cdd6c14d6ba" />
+        </A429Word>
+      </DS>
+      <DS Name="L274_WOFFW_Spoiler_Snsr_Data" Guid="a610c917d-6be7-4b74-ba15-9da18bafe8b8a" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L274_WOFFW_Spoiler_Snsr_Data" Guid="a62802d26-be1d-4f0a-b79d-6478d6f6e176a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af3e43683-ed41-46ff-a95c-c30d4567f1f4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="274" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a90f3aa73-cc2c-40dd-869c-003c248df0eea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="MLG_RH_WOFFW_prx_Snsr" Guid="aef8ea717-8e79-4a14-87f5-338506816dd0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.LGCU_2_RightGearHasWeightOffWheels" DestGuid="af34b1ce6-ec0f-49f4-a654-63e6b0d5763ba" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.LGCU_2_RightGearHasWeightOffWheels" DestGuid="aaa7eefd9-a813-45ff-8c41-b00a4f6b1976a" />
+          </DP>
+          <DP Name="MLG_LH_WOFFW_prx_Snsr" Guid="a7a6a3bf6-294e-4ec0-afae-5b2b5f7b7c10a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.LGCU_2_LeftGearHasWeightOffWheels" DestGuid="a0f2c4879-a2b7-43f8-801f-9a675b6c2748a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.LGCU_2_LeftGearHasWeightOffWheels" DestGuid="a51d77900-cfbd-4852-9fa7-2dc6946382eca" />
+          </DP>
+          <DP Name="NLG_WOFFW_prx_Snsr" Guid="a5184c05c-9a6c-416f-ba1c-72335b2e39efa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=WOFFW;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not WOFFW;" />
+          <DP Name="MLG_RH_WOFFW_prx_Snsr_Oprtnl" Guid="ab170fe98-abf5-4e89-81b5-e62ae0ebc4f5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="MLG_LH_WOFFW_prx_Snsr_Oprtnl" Guid="a51488c09-c364-4564-916d-f4716fc9a6f1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="NLG_WOFFW_prx_Snsr_Oprtnl" Guid="a43879739-c0b5-456c-954c-64beec3420dba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="RH_LH_Spoiler_prx_Snsr" Guid="a5ea20eb2-4e98-4b59-977e-40ac5a95b366a" Notes="LH - LGCU1, RH-LGCU2" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Target near;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=Target far;" />
+          <DP Name="RH_LH_Spoiler_prx_Snsr_Oprtnl" Guid="ab87c129b-032c-4c57-b5e0-4e939495f881a" Notes="LH - LGCU1, RH-LGCU2" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Operational;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Operational;" />
+          <DP Name="Spare1" Guid="af08f1fd2-a508-40e1-9488-cccc73029500a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare3" Guid="ae3b3a050-be93-4802-9e98-fc9634097851a" Notes="LGCU1 Only" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare4" Guid="af0f9248a-a42f-46b9-aa68-41dad42ea4bca" Notes="LGCU1 Only" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare2" Guid="a9f1a909b-0a69-4df5-b86e-37c103e5f7bca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="SPAR" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SSM" Guid="a55615526-2962-436f-b334-fd06dfe3d8f8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a687a07be-0f2f-48ed-86de-900f4f40f17ea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L274_WOFFW_Spoiler_Snsr_Data" SrcGuid="a10be2479-6ebe-4dd6-9746-afbd0b3bba1ba" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L274_WOWFW_Sensors_LGCU2_1" DestGuid="aff549504-8cf2-4063-b80a-194070bb6dd4a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L274_WOWFW_Sensors_LGCU2_1" DestGuid="a3e78d772-9b57-4101-a050-35fe471c42cfa" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L274_WOWFW_Sensors_LGCU2_1" DestGuid="a891bf4db-3f01-4ce8-b959-67fbc5d184b1a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.WOFFW_Sensors" DestGuid="aad4e9556-2b88-43b5-bf7b-17154f55d10aa" />
+        </A429Word>
+      </DS>
+      <DS Name="L276_LG_Posn_Ind_Status_CAS" Guid="a0372cae2-c998-4a30-a556-61073887ba1ba" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L276_LG_Posn_Ind_Status_CAS" Guid="a54c81875-a158-4a53-ac06-7cb4c6dd9d43a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a74406574-7a3e-439a-ae78-e64dba3afcd9a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="276" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a59d45080-5423-4a6d-b1f4-0ae25af09639a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="LG_System_non_Dispatchable_Fault" Guid="a9371423c-7e53-4f1b-a414-1172fd524e71a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=fault;" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_LG_System_non_Dispatchable_Fault" DestGuid="a10259ff0-3035-4d9a-b713-6a1bacda4a34a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_LG_System_non_Dispatchable_Fault" DestGuid="a35bdffe7-dade-4623-88fb-6b9d214d522ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_LG_System_non_Dispatchable_Fault" DestGuid="a8f57962c-afc8-4bc0-8653-76e87014f7efa" />
+          </DP>
+          <DP Name="LG_System_Fault" Guid="ae2bacdda-6607-4ba8-8053-e05b868cb7e7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_LG_System_Fault" DestGuid="aea48c0c8-58da-4bf7-a39c-12e146d5d0aaa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_LG_System_Fault" DestGuid="aa70a886d-59ff-4022-93d3-c2bafc1b1c1da" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_LG_System_Fault" DestGuid="a80d83f3f-7f7e-4b8b-b8ec-76f258742284a" />
+          </DP>
+          <DP Name="LG_System_Degraded" Guid="a1e3e951e-cbda-475d-826c-12988f3b8be1a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=degraded" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_LG_System_Degraded" DestGuid="a83400811-51e3-4079-83e4-81b4a2508b4ea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_LG_System_Degraded" DestGuid="a61d43da1-0266-4c98-9722-7a6c71168d1ca" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_LG_System_Degraded" DestGuid="af42f1cff-681f-4a60-ade2-efa0622c1423a" />
+          </DP>
+          <DP Name="WOW_System_Fault" Guid="a4ec01275-78c2-49f8-8524-4655094a66bea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=no fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_WOW_System_Fault" DestGuid="ae7373441-d1bf-42e7-a1d5-7abc1e58e83fa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_WOW_System_Fault" DestGuid="a7446ae1a-fbf6-45bd-ae76-5985d55f0a2da" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_WOW_System_Fault" DestGuid="abac95067-a369-4742-935f-bff3177853f0a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LGCU_2_WowFaultActive" DestGuid="a40f10aa4-6df7-481a-a72d-ac67dd3f6f0fa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LGCU_2_WowFaultActive" DestGuid="a2ae45c9b-fab6-41de-83f8-7815dbe8e34da" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LGCU_2_WowFaultActive" DestGuid="ab1902921-982c-4823-8408-27954a155dbaa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LGCU_2_WowFaultActive" DestGuid="a94878885-c2ec-4eab-95fb-c8c67dbecc2ba" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LGCU_2_WowFaultActive" DestGuid="a13353f84-90f6-46b3-86b0-0670c37b385ba" />
+          </DP>
+          <DP Name="WOW_System_Degraded" Guid="a7bcb7a30-0f45-4f08-abd5-bbabd2735277a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=degraded" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_WOW_System_Degraded" DestGuid="afd385b9a-0888-4f2e-9ae3-6d065d878794a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_WOW_System_Degraded" DestGuid="ae216cee3-9395-4fcf-bc02-b9b3de1a94bda" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_WOW_System_Degraded" DestGuid="a3d927843-5c04-4556-adae-5f28aa2a479fa" />
+          </DP>
+          <DP Name="Alter_Exten_LG_Down" Guid="a909692c8-fca4-4490-93bc-79002710a621a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=down" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not down">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_Alter_Exten_LG_Down" DestGuid="ac88fca30-6aab-4a9b-9a2e-96965aea8d36a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_Alter_Exten_LG_Down" DestGuid="ac2432b0f-c558-41e3-9c7d-1c0f6a1de635a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_Alter_Exten_LG_Down" DestGuid="a210f4ae2-71f8-475e-8622-ddabe3fa9909a" />
+          </DP>
+          <DP Name="Alter_Exten_LG_Fault" Guid="a6a1c040c-f8c0-4fe2-8e2e-d9408c86f06ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=fault" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=no fault" />
+          <DP Name="NG_Disagree" Guid="ae15f1c9f-7224-4273-82be-ccb12e792b40a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_NG_Disagree" DestGuid="ae26df9fd-6277-4f6e-aafc-3221f57ad389a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_NG_Disagree" DestGuid="aab82456d-b425-4296-8914-22ee75a7d04ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_NG_Disagree" DestGuid="a15ae334f-1e22-486d-acbd-0d61cc919a42a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.NG_Disagree_LGCU2" DestGuid="a5b81c32e-91cd-4c72-b124-e76f251507aca" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.NG_Disagree_LGCU2" DestGuid="ad4e3ff59-2d57-4ee8-a0a7-f3b7af39bf2fa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.NG_Disagree_LGCU2" DestGuid="ac3c5eeff-3d45-4407-9c81-e72839d16e8aa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.NG_Disagree_LGCU2" DestGuid="a43861851-27a5-4289-8df2-13dce5991f2aa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.NG_Disagree_LGCU2" DestGuid="a02d6778f-2c6d-451a-a8da-2fdb3a4aa26fa" />
+          </DP>
+          <DP Name="LG_Disagree" Guid="a08ea8b5a-a841-4d69-b2b2-32e48be78938a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_LG_Disagree" DestGuid="ad5b3be40-fde1-404b-91f7-87dcd7302e4ca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_LG_Disagree" DestGuid="a3ba64763-8e40-4011-968e-584eb01aab09a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_LG_Disagree" DestGuid="a9e086573-684d-494e-ba7f-8ae6b7d1ad0ea" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LG_Disagree_LGCU2" DestGuid="a08ebb7e6-d676-4e62-9a04-99a00d60a934a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LG_Disagree_LGCU2" DestGuid="ae1d07b35-0523-4480-adf3-32cf2d7ac6f0a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LG_Disagree_LGCU2" DestGuid="ab12b5553-5c84-4b9c-888b-ac30d5b33eb6a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LG_Disagree_LGCU2" DestGuid="a8f591856-6ff7-48dc-b2a1-e8b93c8248e6a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LG_Disagree_LGCU2" DestGuid="afe59f94c-af01-429b-a28e-0900445338b9a" />
+          </DP>
+          <DP Name="RG_Disagree" Guid="ac4a34b49-16a8-477e-8322-2cd2eff1ff5aa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_RG_Disagree" DestGuid="a1580563a-d8f3-45ac-a4a0-a16f72f2a40ba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_RG_Disagree" DestGuid="a756084d4-d551-4bff-b313-73021dd089c9a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_RG_Disagree" DestGuid="ae9ba17d4-1503-4e6b-aee1-bf0caa965394a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.RG_Disagree_LGCU2" DestGuid="a40672da8-7b93-4e02-8f6c-e44346261749a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.RG_Disagree_LGCU2" DestGuid="a57cf4909-c183-4fb2-8e7a-28d1fb5a99b1a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.RG_Disagree_LGCU2" DestGuid="a95f212b0-3139-4da6-86de-5d12a612b825a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.RG_Disagree_LGCU2" DestGuid="aa702ff59-6aad-45a3-9087-290432799dfca" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.RG_Disagree_LGCU2" DestGuid="a1f0fa45d-c03d-40c7-955e-4f6730308e9ea" />
+          </DP>
+          <DP Name="NG_Uplocked" Guid="a74de5f60-2bb0-41f5-a415-1438e6e94743a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Uplocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.NG_Uplocked_LGCU2" DestGuid="a237fb86f-4407-42da-a54b-5aa674aa6444a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.NG_Uplocked_LGCU2" DestGuid="a0c9b5e24-f158-4c68-93f5-09071a8cc855a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.NG_Uplocked_LGCU2" DestGuid="a1518df34-0359-4dad-bde5-92bd21408db8a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.NG_Uplocked_LGCU2" DestGuid="a344aab6d-88dc-4c80-bf77-ece48423223ca" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.NG_Uplocked_LGCU2" DestGuid="a3014cbf4-9ace-45f5-b0ba-fa434fff01dea" />
+          </DP>
+          <DP Name="LG_Uplocked" Guid="a27c26fd6-ca12-4719-9825-192f7b57108ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Uplocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LG_Uplocked_LGCU2" DestGuid="a50b89fd2-d60a-4152-8cc6-f9df321fbfcfa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LG_Uplocked_LGCU2" DestGuid="abc4c1837-2c0d-4bb1-b0b8-7d6786ce573aa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LG_Uplocked_LGCU2" DestGuid="a96c90931-fc6b-4471-b06d-3916c4238d8ca" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LG_Uplocked_LGCU2" DestGuid="a15ca285d-ca8d-41c9-b2a4-c175de918acca" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LG_Uplocked_LGCU2" DestGuid="a13f416e4-8e2b-433c-a62f-876a7e27a7b1a" />
+          </DP>
+          <DP Name="RG_Uplocked" Guid="acb46374e-02d0-4884-9d76-33bc57cf3686a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Uplocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Uplocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.RG_Uplocked_LGCU2" DestGuid="acdd9b49c-e34b-4546-947e-e32ea53fa6d8a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.RG_Uplocked_LGCU2" DestGuid="a11b805f3-e5df-4cdb-be3f-b69f9f7f4911a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.RG_Uplocked_LGCU2" DestGuid="a10015365-548a-4362-ac3f-bb3decf32da4a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.RG_Uplocked_LGCU2" DestGuid="a52527a4b-701e-4ba2-99b7-8e5cdffe2d8da" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.RG_Uplocked_LGCU2" DestGuid="a4a2dd622-324b-4d4b-a7e6-dcfdb7167579a" />
+          </DP>
+          <DP Name="NG_In_Transit" Guid="aa8455603-38c3-4a77-b4eb-bf7694240952a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.NG_In_Transit_LGCU2" DestGuid="aa1d7c91a-75c2-4dad-a753-f292240497b7a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.NG_In_Transit_LGCU2" DestGuid="aa87e55d1-db8c-4a05-b6f8-a5fff314c84aa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.NG_In_Transit_LGCU2" DestGuid="a97a93dca-631f-4132-b988-19bc80f33536a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.NG_In_Transit_LGCU2" DestGuid="aa165ee5c-7421-460a-8c2b-851574f4dd9da" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.NG_In_Transit_LGCU2" DestGuid="abb124c8b-4365-4fb7-b2bd-b8277348ad33a" />
+          </DP>
+          <DP Name="LG_In_Transit" Guid="a393bda2d-c459-4897-8f73-427b63fd40b5a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LG_In_Transit_LGCU2" DestGuid="ad24edc2b-9206-4903-b6a5-606f047cf6f7a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LG_In_Transit_LGCU2" DestGuid="aeccf1bb8-b325-4ba8-a5bb-b3c86a0a4edfa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LG_In_Transit_LGCU2" DestGuid="a1a0bb969-abc9-447f-be21-f8e3b259b98aa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LG_In_Transit_LGCU2" DestGuid="a62aa634b-56ca-4f81-bdc5-e65d0e1fd9dda" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LG_In_Transit_LGCU2" DestGuid="a63c8efca-dfbe-4db7-a953-6c8aac79aeeea" />
+          </DP>
+          <DP Name="RG_In_Transit" Guid="a5a2da2d7-6b57-4047-a9f5-fac767ac1d94a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.RG_In_Transit_LGCU2" DestGuid="a3376a019-9afa-485e-a114-41a15a8c5ef8a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.RG_In_Transit_LGCU2" DestGuid="a841881ce-0664-493f-81ab-8da6fe92819da" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.RG_In_Transit_LGCU2" DestGuid="aa2d9ff26-de6a-4605-b261-6bb00d152b9ca" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.RG_In_Transit_LGCU2" DestGuid="a9bbbeff8-1b1a-4a6c-ba3d-20f3bf37dd2ba" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.RG_In_Transit_LGCU2" DestGuid="ac39f677a-7298-4ba6-928d-8cbbf3ec7294a" />
+          </DP>
+          <DP Name="NG_Dnlocked" Guid="af9cf0d6c-84dc-4429-965a-8a02b29f8095a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Downlocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.NG_Dnlocked_LGCU2" DestGuid="a3634837e-1cef-4e99-87ba-329e1a8de1f5a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.NG_Dnlocked_LGCU2" DestGuid="ad1ac6455-735e-4bd8-a3b4-048bd95a02a2a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.NG_Dnlocked_LGCU2" DestGuid="aacca934b-4c6e-4f02-82fd-6b6e05e57f7fa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.NG_Dnlocked_LGCU2" DestGuid="a4a75bfe3-b76b-4269-9d73-de4619259ec2a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.NG_Dnlocked_LGCU2" DestGuid="af1790097-6762-4772-be41-7e76bc826d73a" />
+          </DP>
+          <DP Name="LG_Dnlocked" Guid="a1f0de4dc-a2df-4b1b-8eb5-cfaa8b78c0c7a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Downlocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.LG_Dnlocked_LGCU2" DestGuid="ae3fa3ec7-9d91-452d-90a9-c0df7e143da0a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.LG_Dnlocked_LGCU2" DestGuid="a346400c6-5909-4f7c-bc46-ce859a625d74a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.LG_Dnlocked_LGCU2" DestGuid="ada3eea1b-b78a-44e3-a5b5-c68b98b10bffa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.LG_Dnlocked_LGCU2" DestGuid="a6f409ca0-2685-4c58-9553-20a5000d1f23a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.LG_Dnlocked_LGCU2" DestGuid="a749be8b2-0417-4183-bcca-79aa5abeeb45a" />
+          </DP>
+          <DP Name="RG_Dnlocked" Guid="aa4cde256-9184-4f45-80b7-f668b6fa9629a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Downlocked" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not Downlocked">
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.RG_Dnlocked_LGCU2" DestGuid="ae25db536-2031-4ea2-9c1e-ff5e191bf794a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.RG_Dnlocked_LGCU2" DestGuid="af58f8c07-090b-4dd1-a195-081f0fd08309a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.RG_Dnlocked_LGCU2" DestGuid="a910cfc19-aa83-4555-8f45-fdd83b3ba799a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.RG_Dnlocked_LGCU2" DestGuid="af59903f9-8029-49c4-8085-ebd9011b9bb8a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.RG_Dnlocked_LGCU2" DestGuid="a353d6188-8282-4a06-aa6b-9d747824ecc6a" />
+          </DP>
+          <DP Name="SSM" Guid="a81dca41d-1fc9-4145-9b45-03ae5a3165a8a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="ab13e88b8-b20e-47d7-89cf-5dc68e7e6240a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L276_LG_Posn_Ind_Status_CAS" SrcGuid="ac15dc64a-4a69-4054-98a8-716285253bb8a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LG_Position_Indication_Status" DestGuid="af6d37457-2a81-4d9a-b474-525ca143dd81a" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_L.L276_LG_Posn_Ind_Status_CAS_2" DestGuid="affe3dbff-d4db-4914-bfde-b47e24c0b42da" />
+          <Gw_Pub_Ref DestName="HF_ISSPROCESSINGUNIT_R.L276_LG_Posn_Ind_Status_CAS_2" DestGuid="aab9837e8-2de3-49ac-a326-bb9d59b9f73aa" />
+        </A429Word>
+      </DS>
+      <DS Name="L277_LG_Door_Posn_Ind_Status_CAS" Guid="a95a6b988-402a-4da7-94fe-43512d5b5415a" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L277_LG_Door_Posn_Ind_Status_CAS" Guid="a5139e565-dcee-429a-9e38-5bf43f5555ada" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="afa1db673-e2e1-45b8-9152-4c08c3999802a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="277" ParameterSize="8" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a86bb7e64-5193-45de-abb3-863a9004cd0ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="8" CodedSet="1=A429_LGCU1_ConCh_Tx1;2=A429_LGCU2_ConCh_Tx1" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Spare1" Guid="aef3642dd-8085-4ec5-a35c-14c79f5afe18a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="Any_LG_Door_Open" Guid="aade7ee62-e702-4c3c-b5d4-9524679fa589a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=open" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open">
+            <Gw_Pub_Ref DestName="FDAS_L1.LGCU2_Any_LG_Door_Open" DestGuid="a11eff6a7-c3aa-4a02-a2b9-73590b9032a9a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.LGCU2_Any_LG_Door_Open" DestGuid="aba569386-b217-4d84-ac09-7c57a1f0cd8aa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.LGCU2_Any_LG_Door_Open" DestGuid="a36d94752-3463-4c0d-81a8-4d1a08810c75a" />
+          </DP>
+          <DP Name="NLG_Door_RH_Disagree" Guid="a34c1f228-3eca-4559-9c55-a6895557a9caa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree" />
+          <DP Name="NLG_Door_LH_Disagree" Guid="a229e711c-f917-4d22-af19-110b66e7db11a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree" />
+          <DP Name="MLG_LH_Door_Disagree" Guid="a398954cb-4aaf-40b7-8d2f-e8565d168e6ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree" />
+          <DP Name="MLG_RH_Door_Disagree" Guid="ae2cdc7ce-6daf-45d3-849f-e789877f524ca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=disagree" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not disagree" />
+          <DP Name="NLG_RH_Door_Clsd" Guid="ae714131b-b79a-4dcb-928d-e7dc318bc6efa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=closed" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed" />
+          <DP Name="NLG_LH_Door_Clsd" Guid="a8dff3dbb-3155-4634-9409-e07ae8b0a24fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=closed" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed" />
+          <DP Name="MLG_LH_Door_Clsd" Guid="a5606d383-2741-4aa9-a675-c480e47bb6b4a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=closed" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed" />
+          <DP Name="MLG_RH_Door_Clsd" Guid="ac14df795-9394-4d8a-9c0f-0fe63b140579a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=closed" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not closed" />
+          <DP Name="NLG_RH_Door_In_Transit" Guid="ad5e468d7-cb2b-48cd-9105-3754425276f0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit" />
+          <DP Name="NLG_LH_Door_In_Transit" Guid="a87a4fdf4-9673-4b45-a693-3126e5e4e6e6a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit" />
+          <DP Name="MLG_LH_Door_In_Transit" Guid="ad41ef3c3-58dd-4039-9cbd-e6c53f1df1fea" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit" />
+          <DP Name="MLG_RH_Door_In_Transit" Guid="ac93dad7e-725b-48aa-97b9-e9021f3c1c8ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=in Transit" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not in Transit" />
+          <DP Name="NLG_RH_Door_Open" Guid="aa69fe50a-01e9-4e38-b5d7-5f17096a312ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=open" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open" />
+          <DP Name="NLG_LH_Door_Open" Guid="a1e5bcc7b-8272-48b6-8b97-43818e948959a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=open" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open" />
+          <DP Name="MLG_LH_Door_Open" Guid="a8cf36405-0ce2-49be-99b4-4fd7592d27dca" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=open" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open" />
+          <DP Name="MLG_RH_Door_Open" Guid="a25af9312-875b-4ec5-afa9-6f67e50822c0a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=open" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" ZeroState="0=not open" />
+          <DP Name="Spare2" Guid="acfa8c9e3-ede0-479d-aa71-18e46424390ba" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="28" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="SSM" Guid="a6137992f-e747-4949-95f8-f72f714a6f47a" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="ad1302b18-a8e4-4624-bc97-7d1b207d115fa" Notes="LGCU1 and LGCU2 Both" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_LGCU2.po429_LGCU_ConCh_Tx1_Ch.L277_LG_Door_Posn_Ind_Status_CAS" SrcGuid="ae2fc76c6-94d8-4f76-8f11-c5c19851eb2ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.LG_Door_Position_Indication_Status" DestGuid="a1786c36b-b6ed-4701-b43e-394b7d8886f4a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS3" Guid="a7B0155C3-0C70-4981-BEB2-51FA46301BEBa" ByteOffsetFSF="0" ByteOffsetWithinMsg="44" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="a09EEC48C-2394-4dce-B65E-FE8151C90446a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB10" Guid="a96347D7A-B868-4f80-81D7-6B5D47028BE4a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="PAD1" Guid="a352F0D83-2F9C-4751-9F2E-C881B81BC48Fa" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="PAD1" Guid="a47CACFD6-423B-4821-9A0A-071AB10F37C4a" BitOffsetWithinDS="0" DataFormatType="PAD" ParameterSize="32" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+      </DS>
+      <DS Name="PAD2" Guid="a1C43F74C-F949-4925-8060-0421D897BD19a" ByteOffsetFSF="45" ByteOffsetWithinMsg="52" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="PAD2" Guid="aAC3865B1-2192-4548-805C-0B042CE935DDa" BitOffsetWithinDS="0" DataFormatType="PAD" ParameterSize="32" PublishedLatency="550" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW03_I_40005_HF_LGCU2.pi429_LGCU_ConCh_Tx1_HF_LGCU2" SrcGuid="ab6a754a4-eaba-43c5-99c2-e121a38184d3a" />
+  </HFSamplingPort>
+</RemoteGateway>

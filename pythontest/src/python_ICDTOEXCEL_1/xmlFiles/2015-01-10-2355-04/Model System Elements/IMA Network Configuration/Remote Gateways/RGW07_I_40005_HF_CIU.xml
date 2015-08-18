@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW07_I_40005_HF_CIU" Guid="a551ae5a5-2b33-496d-bb6a-b592c24af495a" XsdVersion="7.9" Hardware="RDIU_07">
+  <A429Port Name="pi429_CA_DB1_TX_HF_CIU" Guid="aa7c21b5d-7ddd-47dd-bade-d836c69b82c0a" ActivityTimeout="400" Direction="Destination" Physical="RDIU_07.40005_C03" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_CIU.po429_CA_DB1_TX" SrcGuid="a583c5ae5-8fea-43e1-aca0-53b62b5b74faa" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_po429_CA_DB1_TX_Msg" Guid="a78b6143f-3915-40bb-b1a7-3aa51eecbe4aa" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_CA_DB1_TX_Msg_S_1" Guid="a53574f1d-bf78-4830-b9b5-4439f1cd92f0a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="100" VLID="33289">
+      <DS Name="FSS1" Guid="a1a7af693-8af3-4035-a739-82d25c8ee058a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a7aaab0ef-d699-4484-9d7c-fc66554b66d5a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L132_IAMS_control_word" Guid="a0ea0e43d-b5ef-4f14-abab-523b61f4675ea" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L132_IAMS_control_word" Guid="abfaba2d5-049b-481e-b10b-6cf7b6406da8a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af430df7f-dc3e-47c9-89da-958790aa1d26a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="132" ParameterSize="8" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="af80b56e6-3965-4547-8f2d-4f3d56c46297a" BitOffsetWithinDS="8" CodedSet="0=Unused;1=CIUA;2=CIUB;3=Unused" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+          <DP Name="FWD_CAB_TEMP_TRIM_SELECTION" Guid="ad61e274b-db08-4192-8aa4-b270781c9167a" BitOffsetWithinDS="21" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_CA_DB1_TX_Msg_L132_FWD_CAB_TEMP_TRIM_SELECTION" DestGuid="ae9f710ca-1d68-4c97-837f-f76b3ddbce3da" />
+          </DP>
+          <DP Name="AFT_CAB_TEMP_TRIM_SELECTION" Guid="a2688cb89-c588-40f2-ab24-de77fa7f7ea4a" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="3" FullScaleRngMin="-4" FuncRngMax="2" FuncRngMin="-2" LsbRes="1" ParameterSize="3" PublishedLatency="300" TransmissionIntervalMinimum="100" Units="degrees">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_CA_DB1_TX_Msg_L132_AFT_CAB_TEMP_TRIM_SELECTION" DestGuid="a9125f6f4-67c5-4e15-bc51-c5823b0fd375a" />
+          </DP>
+          <DP Name="FWD_GAL_HTR_SELECTED_ON" Guid="a20b9836a-8693-420c-8704-9ed140b11a82a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_CA_DB1_TX_Msg_L132_FWD_GAL_HTR_SELECTED_ON" DestGuid="a48b8a5e0-6428-4133-8784-e38d41e11acba" />
+          </DP>
+          <DP Name="AFT_GAL_HTR_SELECTED_ON" Guid="acde6d296-1367-4946-b79e-2dbd3e483ddda" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_CA_DB1_TX_Msg_L132_AFT_GAL_HTR_SELECTED_ON" DestGuid="a39f6a16f-04eb-4ef8-9a5f-da8d680951c6a" />
+          </DP>
+          <DP Name="SSM" Guid="a028ab147-f64a-4072-8a35-8e50dfc92f10a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="aca134b0e-3045-4630-8642-f3d53d2cdfeda" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="300" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_CIU.po429_CA_DB1_TX_Msg.L132_IAMS_control_word" SrcGuid="a63431fd9-07fa-4714-810d-623d56bf5a16a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW07_I_40005_HF_CIU.pi429_CA_DB1_TX_HF_CIU" SrcGuid="aa7c21b5d-7ddd-47dd-bade-d836c69b82c0a" />
+  </HFSamplingPort>
+</RemoteGateway>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunction Name="HF_LRA_2100_L" Guid="a5464d1b3-d1a7-4ecc-b5f9-e693a5ed203aa" NameDef="HF_RADIO_ALTIMETER_CLASS" GuidDef="abe6d09e1-4a34-4434-98e5-c9acc419bbbaa" XsdVersion="7.9" Hardware="LRA_2100_L">
+  <AnalogPort Name="piDISC_WOW" Guid="ae9f06128-e7be-4fb8-8f6b-95cd75c3a0f7a" NameDef="HF_RADIO_ALTIMETER_CLASS.piDISC_WOW" GuidDef="a91e48990-878f-49a7-892f-4d613a9f8a7fa" Physical="LRA_2100_L.piDISC_WOW">
+    <RP Name="DISC_WOW" Guid="a55d6831a-d037-4f12-975b-b74c6d8e967ca" NameDef="HF_RADIO_ALTIMETER_CLASS.DISC_WOW" GuidDef="a84caded3-4bf1-4c0d-8243-a5af03c45304a">
+      <Pub_Ref SrcName="HF_LGCU1.po429_LGCU_ConCh_Tx1_Ch.L275_Consolidated_WOW_Data.All_Gear_WOW" SrcGuid="abe459065-1d31-4903-ac25-827843257a22a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_A664_In.poDISC_WOW_HF_LRA_2100_L" SrcGuid="a08cd622e-3042-4803-88de-1c526e02bc49a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Function_Test" Guid="ab11f01f5-887a-404c-9778-f89dcb6718dca" NameDef="HF_RADIO_ALTIMETER_CLASS.piDISC_Function_Test" GuidDef="a0fbf2e3c-6cc4-40fb-a837-7157208dc3b7a" Physical="LRA_2100_L.piDISC_Functional_Test">
+    <RP Name="DISC_Function_Test" Guid="afaa3127f-7e7b-4613-808c-573dadefd6d5a" NameDef="HF_RADIO_ALTIMETER_CLASS.DISC_Function_Test" GuidDef="a6fb5a4fa-d921-47df-acfa-dc62273fcceea" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Tune_Test_Inhibit" Guid="a485dee92-ed98-4174-b322-20bd00c259d3a" NameDef="HF_RADIO_ALTIMETER_CLASS.piDISC_Tune_Test_Inhibit" GuidDef="a5dc0124f-039e-4806-8358-bcf86ccb8ccea" Physical="LRA_2100_L.piDISC_Tune_Test_Inhibit">
+    <RP Name="DISC_Tune_Test_Inhibit" Guid="ae7d11cae-a089-473e-9962-b512a2411e32a" NameDef="HF_RADIO_ALTIMETER_CLASS.DISC_Tune_Test_Inhibit" GuidDef="aca116b55-d63a-4784-8e42-9ff4cf92115aa">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_Data_AF20.DS13.RA_Functional_Test_Inhibit" SrcGuid="a86bf90e6-2626-4509-aeb4-032d13ccc2f0a" />
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_Data_AF20.DS13.RA_Functional_Test_Inhibit" SrcGuid="aad8bb107-91ad-4b9c-a2df-95366cdfc4b9a" />
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_Data_AF20.DS13.RA_Functional_Test_Inhibit" SrcGuid="afc28ff3d-9695-415b-95cc-7b95fe069b7ea" />
+    </RP>
+  </AnalogPort>
+  <A429Port Name="po429_Altitude_Bus_2_1000" Guid="a2f0017d0-6406-4192-b994-447cae55b6e9a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_1000" GuidDef="a36f71c79-9461-47c1-a0cc-e350450a1384a" Physical="LRA_2100_L.po429_Altitude_Bus_2">
+    <A429Channel Name="po429_Altitude_Bus_2_Msg_1000" Guid="a701c3aa3-24a5-4a35-a7fd-2a9c4b2e453ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000" GuidDef="a14a80eb2-c146-4529-aed6-a308775b2421a">
+      <A429Word Name="L271_Discrete_Data" Guid="a12e37cb6-bc0d-44ed-afd8-439b7c01180fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data" GuidDef="a0a5c5b87-6ecc-4080-9305-b120f991ab03a">
+        <DP Name="LABEL" Guid="abf97350b-8c62-497e-a88d-6939908546a9a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.LABEL" GuidDef="a8d6cf6e6-23d2-41dc-853a-ae199c54a8e4a" />
+        <DP Name="Remote_Test_Input_Bus" Guid="a1456ba63-69ba-4da4-be50-1a05343f1276a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Remote_Test_Input_Bus" GuidDef="a0b819d05-2942-4d02-b646-385bed13b003a" />
+        <DP Name="Maintenance_Input_Bus" Guid="a13b317ab-7ee4-4a4e-8288-2b6755b05af3a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Maintenance_Input_Bus" GuidDef="a3f6aac83-634e-4a9f-ac6b-0d66fba824e9a" />
+        <DP Name="SPARE" Guid="a19b39738-37c9-4a79-b05a-877fc47c5713a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.SPARE" GuidDef="a9496d5c8-f235-4523-bbbb-aac6f585bc22a" />
+        <DP Name="AID_40_ft" Guid="ace0ed84d-ff13-45df-a13c-b945ee44ef65a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.AID_40_ft" GuidDef="a6b59c455-acbe-4200-af27-42858ebd3feea" />
+        <DP Name="AID_57_ft" Guid="a234b9c6c-8493-4298-a98b-76e7af6183e1a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.AID_57_ft" GuidDef="a9aeebd71-7c05-4e57-86f0-ed891fd7d010a" />
+        <DP Name="AID_80_ft" Guid="a2b4a065c-86a7-414e-8066-2002c842d1aba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.AID_80_ft" GuidDef="ad44cf312-1543-431e-9128-69d5dd75389ba" />
+        <DP Name="System_Select1" Guid="a5113a007-2663-4136-af3a-81f2b4c8b417a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.System_Select1" GuidDef="ad610d3f9-9414-42f5-b26d-a5ba05cab602a" />
+        <DP Name="System_Select2" Guid="ace962d60-f9d3-49dc-9ef3-d130ca5a0a48a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.System_Select2" GuidDef="a59d66719-49f4-4739-a2ab-89e26f47b895a" />
+        <DP Name="System_Select3" Guid="a7b2d5c3e-d2dc-42ad-be04-aad4b8075d0ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.System_Select3" GuidDef="a92666efa-0908-4e22-82ca-1cde3fb6a255a" />
+        <DP Name="AFS_Data_Control" Guid="acc646191-496c-4e32-b37e-c67f865876c8a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.AFS_Data_Control" GuidDef="a6d1eb86b-18d5-4cfd-9d3e-ba66807a7ef8a" />
+        <DP Name="DC_Antenna_Monitoring" Guid="ab540dbaf-78eb-4fc5-af2b-3c263a8e6b0fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.DC_Antenna_Monitoring" GuidDef="a4c70ee6e-b1dd-451e-b6fb-fc46c4a7a3c0a" />
+        <DP Name="Functional_Test" Guid="a4e87d146-1c0f-4562-97e7-a1dddef54f7aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Functional_Test" GuidDef="aa570cdd4-37af-4aa8-9fca-4c7bf001d83ca" />
+        <DP Name="Test_Inhibit" Guid="aa2ae6549-8619-467d-bf64-9ae3b58b7c3ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Test_Inhibit" GuidDef="aece94d40-c026-4d28-bf6a-59a3aff1825da" />
+        <DP Name="Air_OR_Ground" Guid="a179cd2c9-7183-40f2-8709-1a0ee141dbd4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Air_OR_Ground" GuidDef="acfc3defe-eb30-477a-85ba-446885d4c69aa" />
+        <DP Name="Reserved" Guid="afb994762-cd49-45e8-b4cc-06d03811bef0a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.Reserved" GuidDef="a2406f406-b2c1-49f8-b575-aa2782fcd6f0a" />
+        <DP Name="SSM" Guid="aaaff899e-e007-4090-b7a0-4ff0af9cf90ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.SSM" GuidDef="ac26d9018-1760-4ac2-ae89-c1c7e8c8f4c2a" />
+        <DP Name="PARITY" Guid="ac451b763-a576-4052-a4a1-173e32bdde2ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L271_Discrete_Data.PARITY" GuidDef="a5156d104-f319-4201-8de1-729835674b95a" />
+      </A429Word>
+      <A429Word Name="L350_Fault_Summary_Word" Guid="ae5771e28-5b3b-4809-9854-fe882067f72ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word" GuidDef="a93bdf526-5172-41e5-a2c7-2902441fb154a">
+        <DP Name="LABEL" Guid="a950f3871-c853-4a01-84ba-3a4a426ed361a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.LABEL" GuidDef="a7d1cfcda-053d-4a71-abc4-9e0f32b5abafa" />
+        <DP Name="SDI" Guid="a14782dee-e74f-4701-9a3d-d43b075d41b9a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.SDI" GuidDef="afd32d17e-735a-4003-b2cd-a2171f955cd5a" />
+        <DP Name="LRU_FAILURE" Guid="a73b6e827-8b67-42dd-8090-1f724051d9b4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.LRU_FAILURE" GuidDef="ac3a883dd-e9a0-432b-8bd9-e3292ec455e9a" />
+        <DP Name="TRANSMIT_ANTENNA_FAILURE" Guid="a9cf36e8f-c7d4-4dab-9ae9-e93493147b67a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.TRANSMIT_ANTENNA_FAILURE" GuidDef="af917ddbc-064f-434d-8608-5112a699fa09a" />
+        <DP Name="Reserved1" Guid="ae99ab213-e626-4955-9871-4a751e6dce24a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.Reserved1" GuidDef="a873b7fde-f95f-47c2-8db0-b7fff1fcd68fa" />
+        <DP Name="Maintenance_Input_Bus_Failure" Guid="ab43d1e23-0fc7-4598-a64f-71c00291b97da" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.Maintenance_Input_Bus_Failure" GuidDef="a65a690b5-5e9e-4501-9e40-57d36a94d999a" />
+        <DP Name="Receiver_Antenna_Failure" Guid="a25de9bf9-5e70-4171-9796-3c43f0e94a9da" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.Receiver_Antenna_Failure" GuidDef="ade9b5356-7f16-4e12-9620-d7ddeef9caa2a" />
+        <DP Name="OMS_Internal_Bus_Failure" Guid="ab45739ba-36a1-40bc-99df-1e5bf469e65ca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.OMS_Internal_Bus_Failure" GuidDef="a95c32cc8-4c6a-43c0-8541-f5365d09c475a" />
+        <DP Name="SPARE" Guid="aea3bce3d-9980-4d36-a518-fc109c108888a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.SPARE" GuidDef="afb35b560-95f7-40d6-a1ba-029253be7300a" />
+        <DP Name="Power_Supply_Interrupt" Guid="a058412dc-b50c-456f-b1e2-4fe70cf94181a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.Power_Supply_Interrupt" GuidDef="aa09f7705-7e37-4d3d-af3a-83ff7aac71e8a" />
+        <DP Name="BITE_Test_Inhibit" Guid="a5160f725-4462-4a30-9c5b-bc2ae94716d3a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.BITE_Test_Inhibit" GuidDef="ab356050c-45dd-4dce-a0bb-2a8fde2dc5c8a" />
+        <DP Name="Reserved2" Guid="a955cf87f-c30a-40e5-8ad5-2cc3e96d750aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.Reserved2" GuidDef="ac3860713-4858-4738-8ec8-ace7f2cea39da" />
+        <DP Name="SSM" Guid="a07264e9f-e51a-451d-a8b5-0814f4135944a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.SSM" GuidDef="a27c0ed15-0b5d-45d4-88c6-a1c4df7ab82da" />
+        <DP Name="PARITY" Guid="a6deafc5d-1ffa-4334-bcef-d68542fb5440a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L350_Fault_Summary_Word.PARITY" GuidDef="a5773eb1b-d810-429f-89bd-29f08ca7c7c1a" />
+      </A429Word>
+      <A429Word Name="L377_Equipment_ID" Guid="a18077624-5b83-4ff8-936c-08291b4bf79aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID" GuidDef="ad029b9d9-0dd9-4d7c-b047-bb8dcc46eba9a">
+        <DP Name="LABEL" Guid="aff3abf59-689d-499f-9dd4-a9199baeea79a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.LABEL" GuidDef="a3c12eec9-6808-413a-8470-aee27780c6cea" />
+        <DP Name="SDI" Guid="a3148871a-8a1d-4797-9883-7436571404bfa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.SDI" GuidDef="affc2358b-cf09-484f-8bb0-5fab63d4bad8a" />
+        <DP Name="Equipment_ID_LSD" Guid="acc80c2c9-df0e-473f-ab51-15292227dc19a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.Equipment_ID_LSD" GuidDef="a129c27fa-3242-409e-b26a-fa64385ed0e4a" />
+        <DP Name="Equipment_ID" Guid="a7c70ffef-11e2-473a-85ca-e5865ae28301a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.Equipment_ID" GuidDef="a695a38ea-da09-4197-9fdb-f0cb1f0b4ffba" />
+        <DP Name="Equipment_ID_LMSD" Guid="ab58a63e3-27a1-4309-82d2-ed4af3d32925a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.Equipment_ID_LMSD" GuidDef="a05992201-c76d-4c5f-96cf-5bba8991ee57a" />
+        <DP Name="PAD" Guid="a39f1c14b-2556-4a1d-9049-a646e5c39c02a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.PAD" GuidDef="a61d408c9-1f9d-4433-bb27-26a20227b98da" />
+        <DP Name="SSM" Guid="a7e8721ca-1b3b-4b74-bcc9-f4ecd8ad4f40a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.SSM" GuidDef="a3af378c4-07d3-4d88-bb34-edc41a1dcc18a" />
+        <DP Name="PARITY" Guid="a2a587e74-6fd4-4c24-b2d8-9b8881906f26a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_1000.L377_Equipment_ID.PARITY" GuidDef="af34764a7-c567-44fc-a2fa-bcde9a1c33f0a" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_Altitude_Bus_2_25" Guid="ae513418d-ce58-4291-a0f6-0518d1963058a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_25" GuidDef="a6cb178f3-8099-4bd3-80cf-c576939797a4a" Physical="LRA_2100_L.po429_Altitude_Bus_2">
+    <A429Channel Name="po429_Altitude_Bus_2_Msg_25" Guid="af429c5cd-28d7-480c-a0b3-a5b7b8c859f5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25" GuidDef="a343156bf-eb87-470a-ab46-579ae4080ec8a">
+      <A429Word Name="L164_Filtered_Height" Guid="a52ce4d5b-8b7d-401c-a119-2fe3fb86d1e1a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height" GuidDef="ae2b41852-c209-4558-9562-883e63d78779a">
+        <DP Name="LABEL" Guid="aa4ea3a3f-7a16-4362-8a2a-44d1464a0961a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.LABEL" GuidDef="aa3368306-4e0c-4a5f-be1a-a2fe1a2a994ba" />
+        <DP Name="SDI" Guid="a2e6bba92-8649-4d3f-b0e8-e40d349f6c75a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.SDI" GuidDef="acfac8c7a-aeb1-4fe6-ab29-bb7a34dcf6f0a" />
+        <DP Name="FuncTestInhibit" Guid="a8b3ee771-1179-4a49-a3a2-fb7d71eb7d72a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.FuncTestInhibit" GuidDef="ab412bae2-ad56-42d3-a693-aceae4ab9f6ca" />
+        <DP Name="PAD" Guid="a0d115d58-13a2-41f3-b77a-3ff72483c72ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.PAD" GuidDef="a5168a810-b3ae-483a-bbd5-8d1751769bcda" />
+        <DP Name="FilteredHeight_BNR" Guid="afd02b4b3-fb83-4ae3-8136-e70fd65942bca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.FilteredHeight_BNR" GuidDef="a525bc930-30b4-4d19-9b6a-1a29df8a6314a" />
+        <DP Name="SSM" Guid="a25e99c7d-e795-4850-9d1d-e1c9b54276b5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.SSM" GuidDef="adf258a16-3347-42c9-9e43-90430a27595da" />
+        <DP Name="PARITY" Guid="ac6e56ab1-e0e2-4362-88dc-eef4639e9caba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L164_Filtered_Height.PARITY" GuidDef="ae45ed061-9660-4320-b0ca-f9525e95f6b4a" />
+      </A429Word>
+      <A429Word Name="L165_Filtered_Height" Guid="a127f8b66-1fe1-4b49-a361-6f1f90ca2f11a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height" GuidDef="a1e76d872-5417-484d-8241-36ab8d6e5c57a">
+        <DP Name="LABEL" Guid="aa51b2317-573d-42fd-ba8c-bb25fae960ffa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.LABEL" GuidDef="a08b36c01-5fd8-46d9-bf47-262dc9270b9ea" />
+        <DP Name="SDI" Guid="a8fafc215-5390-4a3c-b56e-2c2c4b323283a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.SDI" GuidDef="a7bb35dbb-7f9f-46a3-8d2e-f83a8de2377ba" />
+        <DP Name="Feet_tenths" Guid="ad5439640-551c-4938-b6f6-a789a5ae5d03a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.Feet_tenths" GuidDef="a6385814c-255b-4711-a1d8-b875cb47326ea" />
+        <DP Name="Feet_ones" Guid="ab5821e19-d9ca-45d3-bf67-c5cede581383a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.Feet_ones" GuidDef="a241c7337-8c12-4db2-9458-07a51cd63047a" />
+        <DP Name="Feet_tens" Guid="af0c975fe-2f6f-462c-90df-8075478eeec0a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.Feet_tens" GuidDef="a7da4ae17-1266-4b33-b60f-8d00492b5480a" />
+        <DP Name="Feet_hundreds" Guid="a55b50945-96de-4b72-b7bd-4994590c54aea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.Feet_hundreds" GuidDef="a8e7049aa-b512-4579-9054-b36bc1ea0c09a" />
+        <DP Name="Feet_thousands" Guid="a939b7222-cdf8-4eff-b404-c06369d290e2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.Feet_thousands" GuidDef="ae2a4f949-0e14-400c-a6cb-73c52808c9e6a" />
+        <DP Name="SSM" Guid="a0357043c-1278-435c-b464-f840ce46d414a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.SSM" GuidDef="a93209ddb-9945-470a-9364-6814b24176c1a" />
+        <DP Name="PARITY" Guid="a67c7ba23-74a9-4ed3-bf40-4f368b5e4ce0a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L165_Filtered_Height.PARITY" GuidDef="a69444c41-f5ea-43fc-acb3-91f03a2586f7a" />
+      </A429Word>
+      <A429Word Name="L166_Unfiltered_Height" Guid="a9711eea9-64f5-4aa7-84ca-167a75dee009a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height" GuidDef="abb092874-b8d1-49e2-b6d0-11b1c3b1a5d9a">
+        <DP Name="LABEL" Guid="a9de33b96-4e2d-4628-b9b7-f95bc83e6319a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.LABEL" GuidDef="aa30e3eae-b091-4b38-81ea-50ecc69058fea" />
+        <DP Name="SDI" Guid="aa059d184-7103-4867-9a47-47b4c8e2e57fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.SDI" GuidDef="aa418086c-24dd-4c64-9272-b4bf26c7d549a" />
+        <DP Name="FuncTestInhibit" Guid="aa54447e6-c25a-4e24-8580-3fa6ac38687aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.FuncTestInhibit" GuidDef="af9597965-5fdc-4074-9927-ba7d933c4ce7a" />
+        <DP Name="PAD" Guid="a2df6ee73-6647-4253-a39f-0ef6866bb86aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.PAD" GuidDef="a6cf9c827-88a0-429c-b853-af37d42bcb74a" />
+        <DP Name="UnfilteredHeight" Guid="ad02c4112-545d-43cc-a672-6c27409ef999a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.UnfilteredHeight" GuidDef="a19072b1c-f3f4-4f58-8441-9e119305aa71a" />
+        <DP Name="SSM" Guid="a6e975bc2-a5b3-49f6-bd08-b17505d87da4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.SSM" GuidDef="a0c1e5599-246f-4cdc-9f86-0c960a63afd8a" />
+        <DP Name="PARITY" Guid="a13d01aa1-0d19-4fc0-ad5f-739bc4c4ba44a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_25.L166_Unfiltered_Height.PARITY" GuidDef="a680830f1-1a07-4f8f-8c05-47ac905f0074a" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_Altitude_Bus_2_50" Guid="a9cc39902-5f80-4ded-929b-bb3c8957040da" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_50" GuidDef="a64e0633c-4549-4523-a532-3e571d6ee6eea" Physical="LRA_2100_L.po429_Altitude_Bus_2">
+    <A429Channel Name="po429_Altitude_Bus_2_Msg_50" Guid="a3601f60e-ec8a-460d-85de-efe44d38af84a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50" GuidDef="abb6ad2b0-11a7-459b-a54b-279ea0821ffda">
+      <A429Word Name="L354_ID_Word_Initial" Guid="ae4f6e219-287c-4f67-bc6f-6322391de584a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial" GuidDef="a0843527c-b3ee-4a9d-99da-9de60d7b1432a">
+        <DP Name="LABEL" Guid="adb4b0217-8ca9-4ab0-bd8c-64688ed6d65fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial.LABEL" GuidDef="acc9c635e-5ecd-4083-9e2a-57855cfd67e5a" />
+        <DP Name="Block_Word_Count" Guid="a2356397f-f588-4619-9649-0377ba61fc98a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial.Block_Word_Count" GuidDef="a2e480cde-7da1-4c7c-abef-0ff6a1761836a" />
+        <DP Name="PAD" Guid="aec9dc287-d680-409e-8ea9-ce900cf4caefa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial.PAD" GuidDef="a5dfe46e3-22f0-49b1-b25c-1eef191767c3a" />
+        <DP Name="ISO_5_Character" Guid="afdeb55e9-56b7-40c9-a732-be2972fe231ca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial.ISO_5_Character" GuidDef="a1a536e76-7ce7-4d81-9be5-0e2709aa2cfaa" />
+        <DP Name="PARITY" Guid="a9403f0ec-760f-4225-a5bb-4cd34f57f8eda" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Initial.PARITY" GuidDef="a37d4c6be-a0f9-4c3f-af34-1a5d1415a01fa" />
+      </A429Word>
+      <A429Word Name="L354_ID_Word_Intermediate" Guid="aed512060-031d-4f83-a25f-b9c126f657d4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate" GuidDef="a24b1f4e5-b1d0-4ff8-b2d2-4151a8e20f1da">
+        <DP Name="LABEL" Guid="aafb39693-525c-4a78-a4b4-3b2eb492dcb0a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.LABEL" GuidDef="a0110b849-f25b-4261-aaf0-fc1c901dd8d9a" />
+        <DP Name="ISO_5_Character_1" Guid="a7369f3c1-80cb-4ea9-b47b-3579e394d5c1a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.ISO_5_Character_1" GuidDef="a1a6729f6-fca0-4944-b159-4aec6bca98e0a" />
+        <DP Name="PAD1" Guid="a566ec3fc-4148-45ac-8fe3-25fb27ed8424a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.PAD1" GuidDef="a0c947fdb-402c-4b6e-aa32-fe21637198baa" />
+        <DP Name="ISO_5_Character_2" Guid="a2f17ceec-5d0d-4aae-ac39-f451c6bb3a62a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.ISO_5_Character_2" GuidDef="a7b2536d4-0888-4961-b8a6-10b9b5c9c443a" />
+        <DP Name="PAD2" Guid="a10f1dc75-a1ec-467e-9c4e-b6b4e59514fea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.PAD2" GuidDef="a51cd51ce-06e1-4ba2-a489-dfc7806db194a" />
+        <DP Name="ISO_5_Character_3" Guid="a9b84b244-0e53-4d3f-8c42-3307593d3960a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.ISO_5_Character_3" GuidDef="a3d8813c6-2aae-43b7-8dd4-602d041e16eda" />
+        <DP Name="PARITY" Guid="abe695ae3-131a-46c1-87de-490d4a963fa8a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Intermediate.PARITY" GuidDef="ada4877e3-1e83-4b15-99c6-cc2b366ee19ea" />
+      </A429Word>
+      <A429Word Name="L354_ID_Word_Final" Guid="a882697b1-b738-48b9-a2c4-a064a511f3caa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final" GuidDef="a861d5195-e588-4dd6-80a1-7d87ba2a14a3a">
+        <DP Name="LABEL" Guid="aa79564ab-7a7b-44da-8caa-8a97377a282ca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.LABEL" GuidDef="a20ec9ced-4ded-44e3-922a-82086d1a849ca" />
+        <DP Name="ISO_5_Character_1" Guid="a5ea0e53e-edce-4319-9fae-adccca1fe528a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.ISO_5_Character_1" GuidDef="ab1f7b8fe-c92d-49dd-9431-b95204faf434a" />
+        <DP Name="PAD1" Guid="ac6082090-5ede-44a5-b10f-0f49e4031989a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.PAD1" GuidDef="a136feeca-f721-4e49-b6f6-d4704fe3ce3fa" />
+        <DP Name="ISO_5_Character_2" Guid="a09ff693c-beb8-4e75-82d3-515b276f899ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.ISO_5_Character_2" GuidDef="a01801082-528c-4503-885e-ba5dd21e65bfa" />
+        <DP Name="PAD2" Guid="a5c044775-fabe-4e8d-bf4b-25f1228269aba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.PAD2" GuidDef="a32b78ea7-06d0-4d20-8478-3c936cc27a07a" />
+        <DP Name="ISO_5_Character_3" Guid="ae18df146-4dd7-48f0-86b6-0cdc5b30f881a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.ISO_5_Character_3" GuidDef="ad34a9b73-f51e-4e2c-afce-cfc3a374ec7da" />
+        <DP Name="PARITY" Guid="ac6f646b2-da4d-4cd5-8b37-e4043f36b8aea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L354_ID_Word_Final.PARITY" GuidDef="a3155f4ef-346f-4227-a72f-d68838d2537ba" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults_Def_1_STX" Guid="aed1b6dbb-2bd7-4f04-b982-91dac63ab6dfa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX" GuidDef="a9ea074f1-bb2d-4816-bdbf-1a8bdb86ddf8a">
+        <DP Name="LABEL" Guid="a7e2ecb13-b1c5-43f6-87f0-8083d53bb0aca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.LABEL" GuidDef="ab333c18e-206e-4ea9-a56a-70258eead0b1a" />
+        <DP Name="Block_Word_Count" Guid="acd0c9c30-cd09-4da0-ba64-2842834b0000a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Block_Word_Count" GuidDef="a72475317-3439-4897-8b3f-520617a126caa" />
+        <DP Name="Failure_Class" Guid="a52c58795-2c8c-4ab2-b5ba-db747457eb4ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Failure_Class" GuidDef="aa6e7f36d-c82a-434d-9ef3-2949dda95ccda" />
+        <DP Name="Failure_Origin" Guid="a2a991062-f938-413d-bc28-5c7c32c8b3bfa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Failure_Origin" GuidDef="acc584364-bbe3-4cbc-be6a-b61e3bb1ac4ca" />
+        <DP Name="Failure_Type" Guid="a8c0c944c-3020-4b5c-812c-2155c69bfe75a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Failure_Type" GuidDef="a47a405be-45c8-4e45-b979-68d1c51aa926a" />
+        <DP Name="Current_Flag_Class_3" Guid="ac410bb72-6c4c-4933-b195-4855849f7ed2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Current_Flag_Class_3" GuidDef="a2effe6c2-34d2-4729-9d49-4f1cfcf1e879a" />
+        <DP Name="Current_Flag_Class_1_or_2" Guid="a0f29a66c-ae0d-4567-9773-d169985ec40ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Current_Flag_Class_1_or_2" GuidDef="a644a0f41-1e95-420e-bda6-989aa3e30e9ea" />
+        <DP Name="BITE_History_Flag" Guid="a6445b207-bf82-4c0f-b460-70a2012592b5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.BITE_History_Flag" GuidDef="a90098669-a34c-4946-9bc9-c7d0a6bfa46aa" />
+        <DP Name="Message_Type" Guid="a2dd3398d-fbb9-4635-b6e0-cc80d205fbe2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.Message_Type" GuidDef="ac6de4053-b36e-40d3-b21d-c93c63625227a" />
+        <DP Name="ISO_5_Character" Guid="a0f627f16-d8a8-481f-be9c-4538da971b68a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.ISO_5_Character" GuidDef="a27c0489e-2c9d-45f3-86b4-7b995c58f7a3a" />
+        <DP Name="PARITY" Guid="afec09898-1c55-4acc-a776-8702bda3cfe3a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_1_STX.PARITY" GuidDef="a052ed1f1-5be8-4aad-9445-c2b6558f3f67a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate" Guid="aab38787c-4962-4d26-b507-5cc2c4fc5a65a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate" GuidDef="a29064861-4239-41af-892a-7fe4b3aca468a">
+        <DP Name="LABEL" Guid="a47fdc8ae-cfd2-451e-a5fa-e3913712270ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.LABEL" GuidDef="a95db784e-94ea-4b22-992c-9e4962e3fb51a" />
+        <DP Name="ISO_5_Character_1" Guid="a95a8bf99-810e-412d-bfc3-0904139a35f9a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.ISO_5_Character_1" GuidDef="a6266af96-03c6-4240-b828-31fd11dfdb7aa" />
+        <DP Name="PAD1" Guid="a3df5799a-0663-494e-9fcf-b0c76e99ee8ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.PAD1" GuidDef="a54a046c8-13cb-4820-9333-9b2c995b7548a" />
+        <DP Name="ISO_5_Character_2" Guid="a1d5bb8af-d633-41d8-8240-b94733afbd68a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.ISO_5_Character_2" GuidDef="a0b05edd8-3841-4183-858d-014d9e10920ba" />
+        <DP Name="PAD2" Guid="a1ab6406f-0fb2-4238-bf93-62fdf732df1da" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.PAD2" GuidDef="aa2b48f90-70b0-4d94-87a5-e7d23d2b8e3ca" />
+        <DP Name="ISO_5_Character_3" Guid="a6d2a4487-b8d1-4b5e-bdaf-400cf14bae32a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.ISO_5_Character_3" GuidDef="ae619c183-d421-4187-8282-9886a5d58c64a" />
+        <DP Name="PARITY" Guid="acdd77fcb-5a6a-4af4-820e-67373d4e3a78a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_2_Intermediate.PARITY" GuidDef="a09bca309-e636-4907-a739-a30d768ce9a3a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults__Def_3_ETX" Guid="ac9aeef56-db6d-4a48-95e1-f7d36ecb5282a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX" GuidDef="ab4d3130b-f91d-47c6-8ccf-787e52efdf6fa">
+        <DP Name="LABEL" Guid="a3f647ef4-a014-4709-ba41-a702ec05b18fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.LABEL" GuidDef="a23097a3a-9c17-4bb4-8cea-6d90d90b91f0a" />
+        <DP Name="ISO_5_Character_1" Guid="a4e06ad80-951e-4b10-acfc-1cbd88f669f8a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.ISO_5_Character_1" GuidDef="af93a6f8f-0d10-49d6-b2f1-4ff3383a7a2ba" />
+        <DP Name="PAD1" Guid="a94f68421-3b11-4c4f-8d62-4ec3ccb67bd5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.PAD1" GuidDef="aee73e749-01e2-4822-af13-f2d56c112173a" />
+        <DP Name="ISO_5_Character_2" Guid="ad84fd983-b0f7-4ef5-baad-67e816aa2aeea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.ISO_5_Character_2" GuidDef="a1ee38002-2ccd-4fff-9cab-fee3cfcf9089a" />
+        <DP Name="PAD2" Guid="a7c1a3427-28f3-40f8-af36-02a12339330aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.PAD2" GuidDef="a95c791f5-02cd-4a2c-98b2-e3b15e3ee93ca" />
+        <DP Name="ISO_5_Character_3" Guid="abba414fd-39b9-4f40-bdc2-bf63d0afe5a7a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.ISO_5_Character_3" GuidDef="ad017be62-baa1-4229-96be-89ccfc3971f1a" />
+        <DP Name="PARITY" Guid="a36e8eecb-f599-4dbb-804b-9bfc5b3c5701a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults__Def_3_ETX.PARITY" GuidDef="aa2a798c8-c81d-4b83-b2aa-c70496144d8ea" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults_Def_4_STX" Guid="a4cedc1e5-bbef-49f0-97d8-e34898756389a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX" GuidDef="ad2b93c73-4353-4d1c-8fa1-cc491c9fd964a">
+        <DP Name="LABEL" Guid="ac0efa750-c3c6-4da0-b127-8098994a92e5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.LABEL" GuidDef="ac3cb4ac9-ceec-4cc5-ad27-6c8da8bff3eea" />
+        <DP Name="Block_Word_Count" Guid="a17099eeb-a55c-47d1-811b-3302e930e472a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Block_Word_Count" GuidDef="a821560f0-bc4c-4a1b-a022-94d4d8cb9ad5a" />
+        <DP Name="Failure_Class" Guid="a300de298-37ea-41e1-a6ce-239c66c7af0ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Failure_Class" GuidDef="a2a0f4885-5b5a-4e0e-ac73-06fce9846717a" />
+        <DP Name="Failure_Origin" Guid="a2ed3ef91-e21a-4c97-ae6a-81c6d5bb24bda" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Failure_Origin" GuidDef="a50021e3a-7844-4410-a069-a62a54f62be4a" />
+        <DP Name="Failure_Type" Guid="adb5e93a4-0b98-45ac-a1af-3c2c2caee8cfa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Failure_Type" GuidDef="aa00f4ff4-a598-455c-b0be-ff695a178636a" />
+        <DP Name="Current_Flag_Class_3" Guid="a2937e5bf-e195-4de2-a79e-4d86f498a219a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Current_Flag_Class_3" GuidDef="a4c9501a7-c315-43bd-8d16-789fd48ddf51a" />
+        <DP Name="Current_Flag_Class_1_or_2" Guid="ae6bf2881-f4c9-47c1-9a68-8878c10af3a7a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Current_Flag_Class_1_or_2" GuidDef="a4b5f5f23-9b5e-4102-a5df-9371556f381ba" />
+        <DP Name="BITE_History_Flag" Guid="a7baf621a-ac2c-4f22-ae71-8dfb165f0240a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.BITE_History_Flag" GuidDef="a2ffe5252-3fdd-4ce8-a14b-95e5373ff282a" />
+        <DP Name="Message_Type" Guid="ae64f81dd-9f48-46d5-9cfc-d3566bb186aba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.Message_Type" GuidDef="a6516533c-97f5-49d8-8724-bc0b95285384a" />
+        <DP Name="ISO_5_Character" Guid="abb479deb-3740-44c0-a2ff-2d910b669e83a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.ISO_5_Character" GuidDef="a1b8f471f-c346-4868-a90d-52cee636456fa" />
+        <DP Name="PARITY" Guid="a585e01b5-4b5c-4981-b120-7972360b4448a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_4_STX.PARITY" GuidDef="a31845aae-7a7d-4f3a-afdc-25edaf348251a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate" Guid="a69ef3ec5-2494-42d4-a70b-df909140f280a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate" GuidDef="afe47e759-d2d9-4063-b782-02b5d4f31d1ca">
+        <DP Name="LABEL" Guid="a994d1905-70b4-4ff4-83a9-fc24c3dfdaf2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.LABEL" GuidDef="a6fbbf2e5-63b3-4836-a2f2-f407a1114201a" />
+        <DP Name="ISO_5_Character_1" Guid="a54a5bf51-52d2-4a52-b807-1bbb739277d1a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.ISO_5_Character_1" GuidDef="ae0044417-2f31-47c7-98b4-4a5d850179fea" />
+        <DP Name="PAD1" Guid="a242cd768-b14d-472d-aa8e-31a0e4646d44a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.PAD1" GuidDef="a98a4c2d7-f561-4064-9da9-df202c634f37a" />
+        <DP Name="ISO_5_Character_2" Guid="a991f1ab7-4832-4574-98a9-3caa42405f6aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.ISO_5_Character_2" GuidDef="a9543a6b3-2f55-4e0d-b094-37aaa00e9824a" />
+        <DP Name="PAD2" Guid="ac9901909-3bbb-49bb-bc62-27cb02ec2c2fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.PAD2" GuidDef="a5d48de32-a545-44f5-be60-041129f1fb7aa" />
+        <DP Name="ISO_5_Character_3" Guid="aa40f45fd-7501-4ff6-99d2-40c1d134fadfa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.ISO_5_Character_3" GuidDef="a2a09a984-c629-4d03-b037-c6e05fee93aaa" />
+        <DP Name="PARITY" Guid="acb1381de-8400-48bb-8b80-78146520d624a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_5_Intermediate.PARITY" GuidDef="a34739f34-3cb2-42bf-b5ac-b79aef977fe6a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Multiple_Faults_Def_6_EOT" Guid="a8762a9ed-73f6-4f63-80f8-7d464f974d83a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT" GuidDef="aee0ca61b-5685-4347-a1ab-a81f4ae3234ca">
+        <DP Name="LABEL" Guid="ae58e6401-0a99-4af3-982d-72ae64732f9ca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.LABEL" GuidDef="adba7549e-c3f0-4998-b6b7-205459770247a" />
+        <DP Name="ISO_5_Character_1" Guid="a482f21fa-0254-4a4a-90ec-abf4b98777d6a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.ISO_5_Character_1" GuidDef="a9e339c43-7ad5-4450-9ab6-6bee142c9fa8a" />
+        <DP Name="PAD1" Guid="ad3f84442-0c6f-4626-a4eb-898bd812a1ada" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.PAD1" GuidDef="a0fd1660e-ce06-4df0-85ff-28b311b6dcd4a" />
+        <DP Name="ISO_5_Character_2" Guid="ae9b9575a-33f6-4019-8d07-9bfb7bb5055da" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.ISO_5_Character_2" GuidDef="a71249316-3cc9-4a02-84f8-569e0bde43c8a" />
+        <DP Name="PAD2" Guid="ae17ee264-8509-41df-83bb-f02501195113a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.PAD2" GuidDef="a80ebc6f5-5839-4d66-bfb4-145adf6e2087a" />
+        <DP Name="ISO_5_Character_3" Guid="a4a727d79-ad97-4b2a-bac5-705948bd68b2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.ISO_5_Character_3" GuidDef="abbbacfb8-0514-4f59-885d-fcf4e7b6540da" />
+        <DP Name="PARITY" Guid="a48e1d042-c589-4d23-a6f0-7e7bba7989d8a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Multiple_Faults_Def_6_EOT.PARITY" GuidDef="ab0179f89-a35a-4528-8763-df13296448a8a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Single_Faults_Def_1_STX" Guid="a1c092584-c3cb-48ac-bf5e-5c2ee83e0ca4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX" GuidDef="a6a47eb57-70f7-46ee-958f-324278b3d58ba">
+        <DP Name="LABEL" Guid="a6f5f7699-fb0b-4a46-8730-da854d045b2ea" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.LABEL" GuidDef="a9cf4b300-42bb-4740-88ca-200d3b519155a" />
+        <DP Name="Block_Word_Count" Guid="a57682db9-03be-4f1d-8522-6382a8b6cfe4a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Block_Word_Count" GuidDef="af9f52a11-d4e3-43f9-ac98-e4dc4e529104a" />
+        <DP Name="Failure_Class" Guid="a23271740-bdcf-417a-a264-b4ca3ff33fe2a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Failure_Class" GuidDef="a2b5d5ec5-6809-4177-8f6f-4445db79361ba" />
+        <DP Name="Failure_Origin" Guid="a4e82f956-2e30-4757-b202-610eb3d737aaa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Failure_Origin" GuidDef="a77c3b1d4-65d8-4e96-8d5b-afa54d65c375a" />
+        <DP Name="Failure_Type" Guid="aa7c952c2-c4bf-4e37-94e9-40c7074cd866a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Failure_Type" GuidDef="acb4b3022-b994-4b64-88db-c17f59353d69a" />
+        <DP Name="Current_Flag_Class_3" Guid="a78d2cb92-e00a-4bb0-a331-d4afa8227136a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Current_Flag_Class_3" GuidDef="a1b5e34f7-9aba-42bc-8581-31a0e485d1a3a" />
+        <DP Name="Current_Flag_Class_1_or_2" Guid="a765ad371-ea5c-464e-b3cf-ba04db154456a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Current_Flag_Class_1_or_2" GuidDef="ab33772b1-a823-4b0d-9f84-6ee203bbd74aa" />
+        <DP Name="BITE_History_Flag" Guid="a28aa0e43-c9b3-4e01-b468-c0ae63282887a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.BITE_History_Flag" GuidDef="ab3844928-72b8-4aa2-9a90-ab7607765a41a" />
+        <DP Name="Message_Type" Guid="a3ac72f03-7362-4b3d-b3c5-13a06e71fe33a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.Message_Type" GuidDef="aae59b34d-bc21-4701-befb-3df62aea0050a" />
+        <DP Name="ISO_5_Character" Guid="afe5be751-076d-43a5-9068-29e09f193539a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.ISO_5_Character" GuidDef="ac7c904cd-48dc-4045-8cc7-532711964eaba" />
+        <DP Name="PARITY" Guid="a88482476-5da8-4661-b9f3-ac9df0dd9817a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_1_STX.PARITY" GuidDef="a4c082bcf-f113-4bc8-a217-836c24e1ca17a" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Single_Faults_Def_2_Intermediate" Guid="ae9cf5380-9d92-4734-83c8-b20b49bdfe66a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate" GuidDef="aacd45742-06d9-471f-b7cf-ed3db0fac504a">
+        <DP Name="LABEL" Guid="a07dc9c18-4ffb-4cab-88c3-a37885efde87a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.LABEL" GuidDef="a272e9f96-2fd5-4185-971c-43600b1e46ada" />
+        <DP Name="ISO_5_Character_1" Guid="a650cda46-2359-4199-93d7-ae820515ce45a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.ISO_5_Character_1" GuidDef="a3a1c21cd-7892-4a59-b835-0fba53efcdb5a" />
+        <DP Name="PAD1" Guid="a9e4f87bc-2ac1-491d-aedc-a1a43870fc39a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.PAD1" GuidDef="a10bcf63f-cb43-4fb6-a522-610e8fd0740aa" />
+        <DP Name="ISO_5_Character_2" Guid="ae41b3055-6e85-4983-a48f-c7a63876421fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.ISO_5_Character_2" GuidDef="a5df44401-cf72-4328-8b6a-4e6c725429d8a" />
+        <DP Name="PAD2" Guid="a09d246f8-8b63-4143-a750-b0eeb8eeb35ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.PAD2" GuidDef="a437735b8-4462-4ad1-bfe6-d694699d8e69a" />
+        <DP Name="ISO_5_Character_3" Guid="a4e68c528-59c2-49d0-8f54-c1fbda057824a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.ISO_5_Character_3" GuidDef="ac0f48bb0-9ecc-428c-beb5-e916bc267176a" />
+        <DP Name="PARITY" Guid="ab5b939bc-a08c-447c-bd74-190e8deac7ada" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults_Def_2_Intermediate.PARITY" GuidDef="a7c213c1f-7b5f-4309-be3c-4d290d68669da" />
+      </A429Word>
+      <A429Word Name="L356_Maintenance_Word_Single_Faults__Def_3_EOT" Guid="a38994d2e-8f85-4269-8481-059ad67d26d5a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT" GuidDef="abf888e6f-a616-46f5-b68a-8ccc9445cf54a">
+        <DP Name="LABEL" Guid="afb942506-550a-448c-aac4-34a717f6dc7aa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.LABEL" GuidDef="a49743c85-ea58-438f-8933-60423d61cd45a" />
+        <DP Name="ISO_5_Character_1" Guid="a49fb3ed7-d15a-4141-a2ac-8de1b20f8b56a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.ISO_5_Character_1" GuidDef="af8348539-7800-4ff3-ba39-cab44f6cf390a" />
+        <DP Name="PAD1" Guid="a0e817960-ef70-4d5c-8c9a-ea4e4845104ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.PAD1" GuidDef="ae7861cb6-eeaa-400f-b4bd-609183f3c41ca" />
+        <DP Name="ISO_5_Character_2" Guid="a410c8e77-8b51-45ff-ac7b-79311c258dbca" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.ISO_5_Character_2" GuidDef="a2d3fdd30-aca4-4835-9f2b-683d160d3573a" />
+        <DP Name="PAD2" Guid="a15f88eec-c70b-483a-9629-32655c1bdb3ba" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.PAD2" GuidDef="ad179c87d-a852-4e72-936a-45a85454b4f1a" />
+        <DP Name="ISO_5_Character_3" Guid="acc39efa4-21ad-4715-8856-3eeb53e52c4fa" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.ISO_5_Character_3" GuidDef="a7e6ef2af-3b23-4e17-af2a-a39a596ec1e5a" />
+        <DP Name="PARITY" Guid="aa7b73d78-3e86-4593-93d1-3d0df74e7c67a" NameDef="HF_RADIO_ALTIMETER_CLASS.po429_Altitude_Bus_2_Msg_50.L356_Maintenance_Word_Single_Faults__Def_3_EOT.PARITY" GuidDef="ab01ce0b4-1c72-422a-a6c1-92060d5110afa" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="pi429_Maintenance_Bus_125" Guid="a9e56b7c0-753f-444f-9f0b-ad749cc03583a" NameDef="HF_RADIO_ALTIMETER_CLASS.pi429_Maintenance_Bus_125" GuidDef="a7c915398-25bf-42d1-9df8-d14e47ffc585a" Physical="LRA_2100_L.pi429_Maintenance_Bus">
+    <RP Name="A429_RX_Maintenance_Bus_L125_UTC_Minutes_Tenths" Guid="a4279fafc-353d-4203-ab6c-5a007a9f85d6a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L125_UTC_Minutes_Tenths" GuidDef="a003c26c3-79a9-4a9c-9a85-3701fad4958ea" SysLatencyWCLimit="0" />
+    <RP Name="A429_RX_Maintenance_Bus_L125_UTC_Minutes_Ones" Guid="aababf69b-2d74-4739-9fd7-129b2ece08d0a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L125_UTC_Minutes_Ones" GuidDef="a44ee4b39-d3cf-4f2b-b63c-7a625e943095a" SysLatencyWCLimit="0" />
+    <RP Name="A429_RXMaintenance_Bus_L125_UTC_Minutes_Tens" Guid="ab32dec67-097c-4582-95db-e1cb46f0cfb5a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RXMaintenance_Bus_L125_UTC_Minutes_Tens" GuidDef="a2a0d61fa-8cc2-4f99-8272-afe611182f71a" SysLatencyWCLimit="0" />
+    <RP Name="A429_RX_Maintenance_Bus_L125_UTC_Hours" Guid="a55213286-0cb3-4430-9649-c05c7419a939a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L125_UTC_Hours" GuidDef="a9d621136-68b8-426a-bf09-b178f6be132da" SysLatencyWCLimit="0" />
+    <RP Name="A429_RX_Maintenance_Bus_L125_UTC_Hours_Tens" Guid="ab80b4197-3c07-47e3-bd55-0eb0aca351b4a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L125_UTC_Hours_Tens" GuidDef="a100972d2-ab9c-47de-971f-1df8bf78321aa" SysLatencyWCLimit="0" />
+  </A429Port>
+  <A429Port Name="pi429_Maintenance_Bus_260" Guid="a0999c70a-c37f-461f-8e0a-6d0f1bf5086ba" NameDef="HF_RADIO_ALTIMETER_CLASS.pi429_Maintenance_Bus_260" GuidDef="a1a7b1ae2-6630-4815-a955-06af5d86d6b1a" Physical="LRA_2100_L.pi429_Maintenance_Bus">
+    <RP Name="A429_RX_Maintenance_Bus_L260_Year_Ones" Guid="ac008d08b-8e46-431e-bfb1-a61c4a17c5eea" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Year_Ones" GuidDef="a984ae7d2-62ed-4c1e-807a-555e7f9ee72ea" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Years" SrcGuid="ad83bceb9-66cc-44ac-80bc-76f04968d039a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L260_Year_Tens" Guid="adf7a1a7a-843a-405e-9c40-5789b191d0aba" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Year_Tens" GuidDef="acc500a5b-e4d2-44c0-9e64-f6dafc6815eea" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Years" SrcGuid="accd68129-9020-4651-a8d5-e36e10f8b2c0a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L260_Month_Ones" Guid="a8ad32bcb-d141-45c9-b432-85e9f92cd504a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Month_Ones" GuidDef="aba6bcc3f-ddc9-464e-94f2-4b6f3cbaf2c3a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Months" SrcGuid="a18fa1541-6d89-4cd2-8447-9764b69e7f10a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L260_Month_Tens" Guid="a097a9861-5df4-4b18-b6ad-1f34f9568868a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Month_Tens" GuidDef="ae3610394-7078-4fd3-aba0-83dd54dd9bdda" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Months" SrcGuid="a9fcd89db-ec52-4bb6-ab18-2c828b4884ada" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L260_Day_Ones" Guid="a8dd685d3-96d9-4f2e-9050-70bfe68bd470a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Day_Ones" GuidDef="a77f1cb53-79e6-4c73-a62a-0c9397ea3fe4a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Days" SrcGuid="ad83b0eb3-01a2-4769-9552-dbf7be201c25a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L260_Day_Tens" Guid="ad3a90e89-84c0-47f6-9f1c-7684aa7af2dda" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L260_Day_Tens" GuidDef="abcaa2710-634c-43ee-80fd-dc7b4d06db4ea" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Days" SrcGuid="ad98f9107-0829-4f6c-8a79-e6abb843bdc3a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_A664_In.po429_Maintenance_Bus_260_HF_LRA_2100_L_HFS_640ms" SrcGuid="a1535b397-789d-4af7-9f44-9bf75150bd81a" />
+  </A429Port>
+  <A429Port Name="pi429_Maintenance_Bus_301" Guid="a892cd349-c604-4acf-81d5-e5bee4d0fb8fa" NameDef="HF_RADIO_ALTIMETER_CLASS.pi429_Maintenance_Bus_301" GuidDef="a10cbc9eb-4327-4a0d-b844-6c32447a7a1da" Physical="LRA_2100_L.pi429_Maintenance_Bus">
+    <RP Name="A429_RX_Maintenance_Bus_L301_Character1" Guid="a05b3902e-27e4-4849-941c-b561bdaec7efa" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L301_Character1" GuidDef="ab1eef070-e480-471f-abcb-161df15171b9a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_1" SrcGuid="ad952c6f6-41a9-4d43-86e4-8804a6fa9be9a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L301_Character2" Guid="ac061328d-5a21-438e-8fa2-fb7e6b6f6f53a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L301_Character2" GuidDef="a59debc74-8b5d-426d-9f3f-9c690af0e452a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_2" SrcGuid="abb941ad7-aa74-4a98-a52d-e00f245c17fba" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L301_Character3" Guid="a2d4e1e14-f31b-4cdd-9674-ca9b632a509fa" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L301_Character3" GuidDef="a907caa98-dc3b-4b03-a700-ebcdc76aece3a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_3" SrcGuid="a2dd18980-d457-4075-b396-c7b2c587be84a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_A664_In.po429_Maintenance_Bus_301_HF_LRA_2100_L_HFS_640ms" SrcGuid="a953fdf89-4403-422e-a323-e78d8ac68149a" />
+  </A429Port>
+  <A429Port Name="pi429_Maintenance_Bus_302" Guid="a10810029-797e-4a29-be5b-4c65226f0576a" NameDef="HF_RADIO_ALTIMETER_CLASS.pi429_Maintenance_Bus_302" GuidDef="ad039c025-a1e4-488a-9e7d-c526160bb371a" Physical="LRA_2100_L.pi429_Maintenance_Bus">
+    <RP Name="A429_RX_Maintenance_Bus_L302_Character4" Guid="a7a6bec02-e2fe-4e9f-8a05-792fb413a3daa" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L302_Character4" GuidDef="af6192b15-fe6a-46ea-b290-c344a417e487a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_4" SrcGuid="ac163c2ed-2037-48df-b655-812c0aa7920ba" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L302_Character5" Guid="a0ca43856-81e9-4d7e-b718-9046915b2d95a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L302_Character5" GuidDef="a737b189b-c803-4c53-9181-27d52d5c520ea" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_5" SrcGuid="a2af0ff96-acc0-4eb9-a13c-d0e11c7bb181a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L302_Character6" Guid="a7473f1d4-efce-4652-8e85-7c918729c535a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L302_Character6" GuidDef="a44563be1-c523-44b9-a1fa-73c11ee1dabba" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_6" SrcGuid="a4001c055-bcb6-43ad-a5ee-ab7e0aefdaaba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_A664_In.po429_Maintenance_Bus_302_HF_LRA_2100_L_HFS_640ms" SrcGuid="a7a6c23ad-30ef-4d3a-bd7f-f824fe8c86fda" />
+  </A429Port>
+  <A429Port Name="pi429_Maintenance_Bus_303" Guid="af120dc57-7d35-4e66-ae1b-1e28c5162fcba" NameDef="HF_RADIO_ALTIMETER_CLASS.pi429_Maintenance_Bus_303" GuidDef="a1ad86ef4-c636-4571-a863-cad95c756d92a" Physical="LRA_2100_L.pi429_Maintenance_Bus">
+    <RP Name="A429_RX_Maintenance_Bus_L303_Character7" Guid="aeac934da-ca4e-4923-b419-2f1b12685f73a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L303_Character7" GuidDef="aea3bae9a-77af-4357-a36b-c824bd1e8057a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_7" SrcGuid="a30cfb31b-6c3c-4f31-ab4d-cfc76ec7ecb2a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L303_Character8" Guid="a641b10e4-4c15-4c70-8396-551e98b669cfa" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L303_Character8" GuidDef="a6037c8eb-4a72-4540-b85b-946c0fb722a1a" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_8" SrcGuid="a9ca77be1-d450-42ca-a5bb-fbdb70d90816a" />
+    </RP>
+    <RP Name="A429_RX_Maintenance_Bus_L303_Character9" Guid="a95ecea07-73eb-4537-bfea-a7b344d03c45a" NameDef="HF_RADIO_ALTIMETER_CLASS.A429_RX_Maintenance_Bus_L303_Character9" GuidDef="aa90a66f5-d6b5-42a5-8a3a-9bc1e50bb2ffa" SysLatencyWCLimit="0">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_9" SrcGuid="a5e99db8a-7dd2-4c1c-8124-6d1ac462e301a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_A664_In.po429_Maintenance_Bus_303_HF_LRA_2100_L_HFS_640ms" SrcGuid="a4b3ecab3-1c86-434b-b710-144d2ba796a6a" />
+  </A429Port>
+</HostedFunction>

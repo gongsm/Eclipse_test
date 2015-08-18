@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponentClass Name="SYSTEMSYNOPTICMENUAPPCLASS" Guid="a711972c1-3aa4-438e-9eab-0259b22b6e92a" XsdVersion="7.9" ATA="310000" ComputeTime="4" Criticality="B" FloatingPointExceptionEnable="True" IDAL="B" MemoryBssSize="1048576" MemoryDataSize="524288" MemoryPersistentBssSize="65536" MemoryPersistentDataSize="65536" MemoryRoDataSize="65536" MemoryTextSize="1048576" PartitionId="68" PartitionType="APP_PARTITION" Period="100" RequiredMemorySize="8388608" SchedulePriority="0" TotalTime="4">
+  <A653SamplingPort Name="OP_SP_SYN_MENU_PEER_XTALK" Guid="a3efb2602-b9f6-45c2-9dec-59e426a390a2a" Direction="Source" MessageSize="24" Networks="Both" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_MCAST_PEER_XTALK" Guid="a5d4ac9fa-9649-401e-b39d-d8c48571696ba" EdeEnable="True" MessageOverhead="32" MessagePad="60" MessageSize="24" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="100">
+      <DS Name="FSS1" Guid="addcfbc5a-c007-495e-bcd0-35c92561dd17a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ae855d5c8-c46d-4796-b6c6-a117313d0fdca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="DS_SYN_MENU_PCO_DATA" Guid="abd58a631-2a5b-413c-9dfd-237f8e2365f5a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="16" DsDataProtocolType="Parametric data">
+        <DP Name="SYNMenuInControl" Guid="a4abf3bf2-4ae2-4817-b1ae-53ea644a2f88a" BitOffsetWithinDS="0" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYNMenuControlInhibited" Guid="a7efd2d5e-a6cd-43fc-83cf-93d034239e7ca" BitOffsetWithinDS="1" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYNMenuPeerXTalkReceived" Guid="a550a008a-0306-4e25-9fe8-ec33694bcebfa" BitOffsetWithinDS="2" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYNMenuVersionDisagree" Guid="a09dbf3af-67ba-4781-b83c-ae983940814aa" BitOffsetWithinDS="3" DataFormatType="BOOL" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PAD" Guid="af2415724-3bc2-4adc-bcaf-396163e90196a" BitOffsetWithinDS="32" DataFormatType="PAD" ParameterSize="28" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYNMenuHealthScore" Guid="a7d95151f-355a-4a28-9467-960855644d94a" BitOffsetWithinDS="64" DataFormatType="UINT" FuncRngMax="59" FuncRngMin="0" ParameterSize="32" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYNMenuVersionNb" Guid="a738babc0-3e62-4efa-9662-77fd62e40999a" BitOffsetWithinDS="96" DataFormatType="UINT" FuncRngMax="10000" FuncRngMin="1" ParameterSize="32" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="OP_SP_SYN_MENU_OMS_DATA" Guid="af62a3dfb-72bb-4b8a-9b1d-df7e4aa87d32a" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_MCAST_OMS_DATA" Guid="a1ad7cab1-f5f7-4913-8d4f-b90d45728638a" EdeEnable="True" MessageOverhead="32" MessagePad="16" MessageSize="20" MsgDataProtocolType="Parametric data" TransmissionIntervalMinimum="100">
+      <DS Name="FSS1" Guid="af109b03a-be4d-467a-afd8-f162b0df720aa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a0323f780-70ab-4bc8-b3b3-53bc36f22ef7a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+      </DS>
+      <DS Name="DS_SYN_MENU_OMS_A661_DATA" Guid="afcca54c4-8a56-4821-a6f0-69de5acfbab3a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="12" DsDataProtocolType="Parametric data">
+        <DP Name="SYNMenuOMSdata" Guid="ae7453886-e536-40a7-a097-2c90fad33b69a" BitOffsetWithinDS="0" DataFormatType="OPAQUE" ParameterSize="80" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653QueuingPort Name="OP_QP_IDU_LOB_A661_BLOCK" Guid="a7bd62cf5-f6a8-4495-a361-e243c2b9d378a" Direction="Source" MessageSize="8170" Networks="Both" QueueLength="10" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_HDD_1_A661_BLOCK" Guid="a911382fb-bbe1-48bc-b543-fd5257b65359a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8170" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="100">
+      <DS Name="DS1" Guid="ace55171b-63f7-4292-8bfe-85ecb433580ba" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8170" DsDataProtocolType="Parametric data">
+        <DP Name="SYN_MENU_HDD_1_LENGTH" Guid="a2fd149e6-6f23-457c-b100-a3f2ecf193f1a" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYN_MENU_HDD_1_A661_BLOCK" Guid="a48a836f4-e53b-4f22-af6e-babf4a4f9d8fa" BitOffsetWithinDS="32" DataFormatType="BLK" ParameterSize="65344" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_IDU_LIB_A661_BLOCK" Guid="aeb5857a0-6525-4f31-aa6b-95f385bab71da" Direction="Source" MessageSize="8170" Networks="Both" QueueLength="10" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_HDD_2_A661_BLOCK" Guid="acb84aadb-ca58-4723-a5e0-d5a0ba6d59f9a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8170" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="100">
+      <DS Name="DS1" Guid="a43976ad6-1bdf-43b4-9e6d-00cb734411e2a" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8170" DsDataProtocolType="Parametric data">
+        <DP Name="SYN_MENU_HDD_2_LENGTH" Guid="a8cfcc2f0-84c0-4306-98d4-ef24cd8f8bc6a" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYN_MENU_HDD_2_A661_BLOCK" Guid="a89bc815f-b443-4c51-ad5a-ea983f060e67a" BitOffsetWithinDS="32" DataFormatType="BLK" ParameterSize="65344" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_HDD_3_A661_BLOCK" Guid="a1e9d787e-49bf-426f-bb53-fa37b8b4b5eaa" Direction="Source" MessageSize="8170" Networks="Both" QueueLength="10" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_HDD_3_A661_BLOCK" Guid="aaca5ebf9-5bdc-4928-84d1-6c38a562f170a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8170" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="100">
+      <DS Name="DS1" Guid="aa8bf464a-bf6f-4c61-8021-80eec5f61424a" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8170" DsDataProtocolType="Parametric data">
+        <DP Name="SYN_MENU_HDD_3_LENGTH" Guid="ac9ffd807-f01a-4973-a4e1-0bcf8d27f841a" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYN_MENU_HDD_3_A661_BLOCK" Guid="a3436adf3-e567-4506-805e-0151a9d5c132a" BitOffsetWithinDS="32" DataFormatType="BLK" ParameterSize="65344" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_HDD_4_A661_BLOCK" Guid="a8d66a84c-04b9-4f1c-a22a-6e5e09af122ba" Direction="Source" MessageSize="8170" Networks="Both" QueueLength="10" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_HDD_4_A661_BLOCK" Guid="a7025c050-01ce-4960-b04c-6e00cfb1b241a" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8170" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="100">
+      <DS Name="DS1" Guid="aed7b2cf2-36fa-4905-bc81-ec247802224ba" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8170" DsDataProtocolType="Parametric data">
+        <DP Name="SYN_MENU_HDD_4_LENGTH" Guid="a673f8f14-5aa1-4845-9216-eb01e015600aa" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYN_MENU_HDD_4_A661_BLOCK" Guid="a734cb168-5330-4c5c-a99c-691d25ff911da" BitOffsetWithinDS="32" DataFormatType="BLK" ParameterSize="65344" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="OP_QP_HDD_5_A661_BLOCK" Guid="aa371a934-535f-41af-ae4a-3448fc5178f4a" Direction="Source" MessageSize="8170" Networks="Both" QueueLength="10" RefreshPeriod="100">
+    <A664Message Name="MSG_SYN_MENU_HDD_5_A661_BLOCK" Guid="a0daa31ae-2efe-4878-84a5-5378b89e501ba" EdeEnable="True" MessageOverhead="0" MessagePad="0" MessageSize="8170" MsgDataProtocolType="ARINC 661-1 Unicast" TransmissionIntervalMinimum="100">
+      <DS Name="DS1" Guid="a43112d71-079e-44e3-bfdb-f97b0f62d3caa" ByteOffsetFSF="0" ByteOffsetWithinMsg="0" DataSetSize="8170" DsDataProtocolType="Parametric data">
+        <DP Name="SYN_MENU_HDD_5_LENGTH" Guid="a5a60a3a7-ec9f-4342-bf8d-391274c08530a" BitOffsetWithinDS="16" DataFormatType="UINT" ParameterSize="16" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SYN_MENU_HDD_5_A661_BLOCK" Guid="ace7b6d96-0aae-414e-b584-d94fb7980244a" BitOffsetWithinDS="32" DataFormatType="BLK" ParameterSize="65344" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653SamplingPort Name="IP_SP_FROM_DMI_1_TO_SYN_MENU" Guid="a4eeebc19-67ec-4fcf-bce5-c74d82d5eab2a" Direction="Destination" MessageSize="104" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="DMI_1_DMHDD1Available" Guid="a533ef784-64d5-43bc-ae9e-409c13b7eaa0a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD2Available" Guid="a678ce4e0-0e36-41b6-a0fc-556cd555f15da" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD3Available" Guid="a1a25a164-7916-427e-8220-0d14f6fc9492a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD4Available" Guid="aa1d12bc9-99bc-485b-b4ed-5f0dee8b6f8ba" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD5Available" Guid="aa928eaa0-93e8-47c1-9fe5-eed731a8935ca" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD1Personality" Guid="a6364113c-f004-4c8d-9750-5d88daa18620a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD2Personality" Guid="ac5352c91-48e5-4e84-8494-aec4569debe5a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD3Personality" Guid="a7f887140-3c2d-42ee-9ae5-2734afdab010a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD4Personality" Guid="a70e936b5-1804-4d50-bb97-27f997117caaa" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_1_DMHDD5Personality" Guid="ada6796c3-dadf-4c8f-b857-869c8022a7c4a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="IP_SP_FROM_DMI_2_TO_SYN_MENU" Guid="a333e4be0-bd83-475b-bc0e-f263869cbd9fa" Direction="Destination" MessageSize="104" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="DMI_2_DMHDD1Available" Guid="aad6b3ab4-56c8-479d-b069-ec7999c261f6a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD2Available" Guid="a3740ed94-a53e-4b1b-a273-c8f6f3711087a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD3Available" Guid="a36940b0c-f45c-4dec-9050-f8f0ee12be65a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD4Available" Guid="a95635c5f-9bee-49ed-b6eb-c0f7b9c8ca2ba" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD5Available" Guid="ab13fc9ad-7110-4440-94a4-88cca1f121e8a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD1Personality" Guid="ad328c75f-f983-4e54-b1d4-90cf7df031aea" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD2Personality" Guid="a47def879-94c9-4359-9e32-5a07805b2df0a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD3Personality" Guid="a27a7820a-b0c7-4db1-81f2-3973d533e9b4a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD4Personality" Guid="a78718a4a-5d53-4957-b625-cde8b7436d92a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_2_DMHDD5Personality" Guid="abfec69ce-e2c2-4659-b03c-42cad1798e13a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="IP_SP_FROM_DMI_3_TO_SYN_MENU" Guid="a779346b1-a4a0-4bd7-9341-a712a81151e2a" Direction="Destination" MessageSize="104" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="DMI_3_DMHDD1Available" Guid="a0259fdb3-33bb-4b04-83ec-6676d6ff5267a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD2Available" Guid="abb3ad583-de9b-49b3-b3c3-93a801ea540ca" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD3Available" Guid="acda6f90c-0487-4087-bdd0-ca802e1c6b39a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD4Available" Guid="a20acd52b-4c43-4ca5-8329-49343a588f94a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD5Available" Guid="ac87b6bc4-2cb4-4780-a8e4-b7765aef3d28a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD1Personality" Guid="a3931668b-1db7-43d3-8e9d-ec8be5acfff7a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD2Personality" Guid="a97892f1c-a841-4617-8b5c-1feb5e9135a1a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD3Personality" Guid="aa69bfe25-a693-43e0-8d3e-f1d0846e425ba" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD4Personality" Guid="ab662830b-5326-44ae-b52f-a1b5f15fac2da" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="DMI_3_DMHDD5Personality" Guid="adf8fa908-97fe-4843-85bf-50252dab64aaa" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="IP_SP_SYN_MENU_PEER_XTALK" Guid="a728a89c4-cfdf-4df1-bf44-064d0c823a67a" Direction="Destination" MessageSize="56" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="SYN_MENU_PeerInControl" Guid="ae1cfd67e-dc84-4b5c-9c43-4a874e7e62e6a" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="SYN_MENU_PeerControlInhibited" Guid="a26d63d6c-dccc-4a4a-b162-df575cda740ea" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="SYN_MENU_PeerXTalkReceived" Guid="a43cff3a2-c506-4391-a33b-aa0f1672e12ea" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+    <RP Name="SYN_MENU_PeerHealthScore" Guid="a95f2e232-8c7a-4f77-8f06-bb66a740c55ca" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="SYN_MENU_PeerVersionNb" Guid="a87203000-6bab-476a-a1dc-d123fe2838d7a" DataFormatType="UINT" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="SYN_MENU_PeerVersionDisagree" Guid="a3d0b8ee8-0ca0-4925-acc2-26da93a958cca" DataFormatType="BOOL" ParameterSize="1" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="IP_SP_FDAS_1_ALERTS" Guid="a2de6fa00-4bf2-45a8-8474-b973938be95aa" Direction="Destination" MessageSize="2184" Networks="Both" QueueLength="2" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_1_FDASAlertBuffer" Guid="ad3a8f12a-e30b-498c-86a5-27d24a8eda05a" DataFormatType="OPAQUE" ParameterSize="4000" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_1_FDASActiveMsgPositionList" Guid="a8884424f-399b-4111-8654-3c2c559c2209a" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="IP_SP_FDAS_1_GENERAL" Guid="a967a3d8b-e8b4-44bf-9744-f9369b62aae6a" Direction="Destination" MessageSize="220" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_1_FDASCommandedSynopticPage" Guid="a268721e3-84ed-49b7-91d3-2a29ea6b72d9a" DataFormatType="COD" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_1_FDASFlightPhase" Guid="ae54b43e7-6405-4ca5-be6b-af88920468d8a" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="IP_SP_FDAS_2_ALERTS" Guid="a955b861a-2bf5-4fdf-a152-cded75c79169a" Direction="Destination" MessageSize="2184" Networks="Both" QueueLength="2" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_2_FDASAlertBuffer" Guid="adfb57efd-dce8-404c-bcc6-c0d437efbe3fa" DataFormatType="OPAQUE" ParameterSize="4000" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_2_FDASActiveMsgPositionList" Guid="ad87d3efc-f785-4ff1-82d0-c9649f489c6ca" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="IP_SP_FDAS_2_GENERAL" Guid="a3a968a68-8350-4d58-9d5f-a6ee861beb6ca" Direction="Destination" MessageSize="220" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_2_FDASCommandedSynopticPage" Guid="a76a02763-8f70-4c49-9595-a32df0fc9f6fa" DataFormatType="COD" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_2_FDASFlightPhase" Guid="afdb3667c-38ae-4ce9-8f77-6049dfe6bfd9a" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="IP_SP_FDAS_3_ALERTS" Guid="a02322718-672c-41c7-be33-139a709ac685a" Direction="Destination" MessageSize="2184" Networks="Both" QueueLength="2" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_3_FDASAlertBuffer" Guid="a86b2d8fa-4fb3-4147-97d1-d37ff09f1b42a" DataFormatType="OPAQUE" ParameterSize="4000" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_3_FDASActiveMsgPositionList" Guid="abc2ef9dd-6fcb-43b7-bf8a-0f79fc1fdd5aa" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="IP_SP_FDAS_3_GENERAL" Guid="aeef03db7-2407-4638-8f66-e7796d624d11a" Direction="Destination" MessageSize="220" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="FDAS_3_FDASCommandedSynopticPage" Guid="aede59091-32d9-46c4-87f5-b7b2813f96d7a" DataFormatType="COD" ParameterSize="32" SysLatencyWCLimit="200" />
+    <RP Name="FDAS_3_FDASFlightPhase" Guid="adc585f65-7c45-49f5-a31b-0f5f1d2eada2a" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653SamplingPort Name="IP_SP_FROM_APM_TO_SYN_MENU" Guid="acf42fb28-7bf8-4cdb-8dcc-11dcc9a798a4a" Direction="Destination" Networks="Both" RefreshPeriod="100" SamplePeriod="50">
+    <RP Name="APM_APMHFLocation" Guid="ab3cafa13-ef73-41aa-abb1-c869fa85c2eda" SysLatencyWCLimit="200" />
+  </A653SamplingPort>
+  <A653QueuingPort Name="IP_QP_IDU_LOB_A661_BLOCK" Guid="aeccbfc61-5607-4ce7-a402-6669bf142849a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="2" SamplePeriod="50">
+    <RP Name="HDD_1_A661_LENGTH" Guid="afe5376d9-0029-46c0-995c-52c6de5d7ba6a" SysLatencyWCLimit="200" />
+    <RP Name="IDU_LOB_A661_BLOCK" Guid="a841bb98c-0913-4a7c-95e5-3418617d864aa" DataFormatType="BLK" ParameterSize="65312" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_IDU_LIB_A661_BLOCK" Guid="ab2912791-fbdd-4e7d-97b6-b5bfaec6d69ba" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="2" SamplePeriod="50">
+    <RP Name="HDD_2_A661_LENGTH" Guid="ae3aeb3f7-ff6b-4cb6-a615-f5f41e576ea3a" SysLatencyWCLimit="200" />
+    <RP Name="IDU_LIB_A661_BLOCK" Guid="ac6e9ff4b-369f-468d-b49d-10b3cd3a97e6a" DataFormatType="BLK" ParameterSize="65312" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_IDU_C_A661_BLOCK" Guid="af066acb8-8d15-4020-b8f0-753306115209a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="2" SamplePeriod="50">
+    <RP Name="HDD_3_A661_LENGTH" Guid="a8b22b4f7-db8c-429e-ac94-26d4a96c0479a" SysLatencyWCLimit="200" />
+    <RP Name="IDU_C_A661_BLOCK" Guid="a3ace7dc0-08a2-494d-bdf5-c96c87d2720ea" DataFormatType="BLK" ParameterSize="65312" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_IDU_RIB_A661_BLOCK" Guid="a7d739a8f-c791-48bc-be17-0076dda83ea6a" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="2" SamplePeriod="50">
+    <RP Name="HDD_4_A661_LENGTH" Guid="a61c84a92-8dfd-47f8-8034-02dc1fbc6bd4a" SysLatencyWCLimit="200" />
+    <RP Name="IDU_RIB_A661_BLOCK" Guid="a097f7d08-85dc-41b3-998f-838670313dd4a" DataFormatType="BLK" ParameterSize="65312" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="IP_QP_IDU_ROB_A661_BLOCK" Guid="a1706cc42-2199-41c7-9d70-c6cb6fc71bfba" Direction="Destination" MessageSize="8200" Networks="Both" QueueLength="2" SamplePeriod="50">
+    <RP Name="HDD_5_A661_LENGTH" Guid="aa315f9de-17cb-4677-bff5-bbeb7d5972b3a" SysLatencyWCLimit="200" />
+    <RP Name="IDU_ROB_A661_BLOCK" Guid="a47c1f258-b48e-4773-bfe6-e5ca2e11e33ba" DataFormatType="BLK" ParameterSize="65312" SysLatencyWCLimit="200" />
+  </A653QueuingPort>
+</A653ApplicationComponentClass>

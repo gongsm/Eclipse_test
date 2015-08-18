@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW08_Analog_In_ATA28and47Fuel" Guid="a625e104a-60d4-497a-9600-148948c0530aa" XsdVersion="7.9" Hardware="RDIU_08">
+  <AnalogPort Name="piDISC_BE_GEA_2_003_HF_LPS" Guid="a8ce456c4-e043-4478-b2a7-e88ed2853166a" Direction="Destination" Physical="RDIU_08.40022_A12" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_LPS.poDISC_BE_GEA_2_003" SrcGuid="a760A96EA-8993-468b-937A-B712909208F5a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_PumpRelayStatus_HF_L_AFT_AC_PUMPCONTACTOR" Guid="a83421404-5776-4beb-8927-a3e22bba8ef0a" Direction="Destination" Physical="RDIU_08.40022_A03" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_L_AFT_AC_PUMPCONTACTOR.poDISC_PumpRelayStatus" SrcGuid="a2cf9a185-14a0-4d35-91d5-b0c9f906c5e2a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Status1_HF_APS1" Guid="aa5e18335-264e-4377-9d15-1b9bd4e54650a" Direction="Destination" Physical="RDIU_08.40022_A14" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_APS1.poDISC_APS_Pressure14500" SrcGuid="a90B7345C-A0DE-4379-AE83-0F2C7E8B47E1a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_BE_GEA_2_004_HF_LPS" Guid="af59aeaf3-3be7-42c8-9052-5bdd42087c44a" Direction="Destination" Physical="RDIU_08.40022_A13" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_LPS.poDISC_BE_GEA_2_004" SrcGuid="aF8DD61BC-C74E-47a4-B40E-4431C07E5669a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_PumpRelayStatus_HF_R_AFT_AC_PUMPCONTACTOR" Guid="a5ccfc5dd-bfb8-43d3-ac22-141d747e7cbba" Direction="Destination" Physical="RDIU_08.40022_A04" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_R_AFT_AC_PUMPCONTACTOR.poDISC_PumpRelayStatus" SrcGuid="a87ca9708-1689-4655-85e0-8fb536be98ada" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Status2_HF_APS1" Guid="a311855e5-05ee-4011-bc30-5b7a2a480e26a" Direction="Destination" Physical="RDIU_08.40022_A15" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_APS1.poDISC_APS_AltPress16500" SrcGuid="a38E4193A-55E5-4ff2-8608-D118C806CC18a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA35POS" Guid="a7da2a61c-0c83-4e6d-a3b8-499b5f77310da" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA35POS_Msg" Guid="aa4d06bcd-eddf-4853-a64c-b1046038f52fa" EdeEnable="True" MessageOverhead="32" MessagePad="62" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="1280" VLID="33454">
+      <DS Name="FSS1" Guid="adb831749-79e0-4cbf-b975-d8aef1ec4f30a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="acfe562a4-4c7c-4939-8166-5d84cac9bdaaa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ad39ddc57-39c0-4805-a8a3-02da403d0832a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="AltitudePressure14500_HF_APS1" Guid="af752c421-47d0-4b3f-a5da-34b54c6ce1bea" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="afb087fd5-414b-484a-9ee9-1a6ec5c79443a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_APS1.AltitudePressure14500.Status" SrcGuid="a8E9B3C47-A72E-44db-8247-62E388891300a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_APS1_AltPress14500" DestGuid="ad380053f-d152-482d-af4f-1c5a09515896a" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Status_14500" DestGuid="a2ca33551-1e3d-46bc-ba24-19f75e5a9084a" />
+        </DP>
+      </DS>
+      <DS Name="AltitudePressure16500_HF_APS1" Guid="a17457357-e6c9-4345-91fa-c0e4eb5d36c2a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a7de256bc-911f-452d-b434-2b36a74d8a81a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_APS1.AltitudePressure16500.Status" SrcGuid="a1584E509-1EC4-4be3-8B0B-EFB785B7818Da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_APS1_AltPress16500" DestGuid="aaf3b58f0-7a07-427a-93a6-d311d0b177eca" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Status_16500" DestGuid="a6e14327a-db6c-4215-85a3-5af4422e696ca" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_Status1_HF_APS1" SrcGuid="aa5e18335-264e-4377-9d15-1b9bd4e54650a" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_Status2_HF_APS1" SrcGuid="a311855e5-05ee-4011-bc30-5b7a2a480e26a" />
+  </HFSamplingPort>
+  <AnalogPort Name="piANA_BE_GEA_2_001_HF_TPT" Guid="a5ecadc2a-622e-45ab-bbe1-461d0f55aa64a" Direction="Destination" Physical="RDIU_08.40010_B01" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=5;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_TPT.poANA_BE_GEA_2_001" SrcGuid="a6D5C5B99-FEDA-4b29-BB69-98E2E3C2C633a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_PumpRelayStatus_HF_R_CTR_AC_PUMPCONTACTOR" Guid="a11674dd2-e701-4b27-9559-f52088d67e0ca" Direction="Destination" Physical="RDIU_08.40022_A05" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_R_CTR_AC_PUMPCONTACTOR.poDISC_PumpRelayStatus" SrcGuid="a1c92eaeb-36a9-4cf3-a581-6c23078d759fa" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA28and47Fuel" Guid="a4145167f-eeef-4502-9f4d-0108616a5e8fa" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA28and47Fuel_Msg" Guid="a57a28fb0-0cc9-49b3-a8ba-ccf81e7c9541a" EdeEnable="True" MessageOverhead="32" MessagePad="93" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1280" VLID="33454">
+      <DS Name="FSS1" Guid="a058ed911-648e-472e-9ee7-7ea891a5bc54a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ae3ce1b25-0ddc-438d-a106-419b2b243f70a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="aab804537-0db0-44d0-bc92-b4464c0572f7a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a1d77a84c-0a99-41da-91ec-8313e65f3aa4a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_PumpRelayStatus_HF_L_AFT_AC_PUMPCONTACTOR" Guid="a8c59642f-59b5-426a-8511-7eee80e091d3a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a2109db84-5e8e-4006-869d-2f8d6990a7d1a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_L_AFT_AC_PUMPCONTACTOR.DISC_PumpRelayStatus.Status" SrcGuid="a9e62ad9a-17df-44d2-823b-ea77935ff4e1a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.L_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="a9af3798a-f608-47a2-bf9c-59eff46c4876a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.L_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="a2165866a-1a28-44ab-a34c-e9448929e69ba" />
+          <Gw_Pub_Ref DestName="FDAS_R3.L_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="a0d12ff0b-20d3-4e7d-a894-f33832d77c10a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_PumpRelayStatus_Status" DestGuid="a4faa8c6d-c0d4-4427-976d-6b06fbece10ea" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FUEL_A_LPump2RlyStat" DestGuid="acb76432d-5adf-47d7-852b-c54929e5580ba" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FUEL_A_LPump2RlyStat" DestGuid="afeeb0e76-27ed-4c08-ab51-c6c62783dc18a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_PumpRelayStatus_HF_R_AFT_AC_PUMPCONTACTOR" Guid="a81d34ae6-99c3-4b61-83e2-4ee9ba6c473ba" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a7082ea6c-25c7-4ed7-8b93-e1598b957c28a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_R_AFT_AC_PUMPCONTACTOR.DISC_PumpRelayStatus.Status" SrcGuid="af2cc9b9c-a217-475b-96aa-30517354c756a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.R_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="a0911c189-1254-4966-91de-702b04b63254a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.R_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="ada8c029b-494e-4e3c-9a51-0261c58c36eba" />
+          <Gw_Pub_Ref DestName="FDAS_R3.R_AFT_AC_PUMPCON_PS_DISC_PumpRelayStatus" DestGuid="a0003f0ad-f3d2-4140-bcd1-f443b997e218a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FUEL_A_RPump2RlyStat" DestGuid="a12437d11-29f4-4e80-8e4e-2374bf92ed46a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FUEL_A_RPump2RlyStat" DestGuid="a560d5873-d53c-4ac0-b3de-fc00bea40b38a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_PumpRelayStatus_HF_R_CTR_AC_PUMPCONTACTOR" Guid="a8c988255-4bbc-4b34-8565-46a4f7f9b31aa" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a1bee1021-69fc-4bba-89b8-bdf39001a3b3a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_R_CTR_AC_PUMPCONTACTOR.DISC_PumpRelayStatus.Status" SrcGuid="a0a4148c4-97cd-4061-9e62-fe6ef476537ca" />
+          <Gw_Pub_Ref DestName="FDAS_L1.R_CTR_AC_PUMPCONT_CP20A_DISC_PumpRelayStatus" DestGuid="abef62172-0209-4de4-b4a1-2df20c33213ea" />
+          <Gw_Pub_Ref DestName="FDAS_L3.R_CTR_AC_PUMPCONT_CP20A_DISC_PumpRelayStatus" DestGuid="a2d90bcc7-9a4a-4ece-9c0c-4b144c5db786a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.R_CTR_AC_PUMPCONT_CP20A_DISC_PumpRelayStatus" DestGuid="a2de24d30-7890-42bb-bcfb-79513f1470b5a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FUEL_A_CPump2RlyStat" DestGuid="a7e0f3132-a186-4b25-990c-fd1cda5c5076a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FUEL_A_CPump2RlyStat" DestGuid="ac20bfbd1-033e-4de4-9857-9429c487cefba" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_PumpRelayStatus_HF_L_AFT_AC_PUMPCONTACTOR" SrcGuid="a83421404-5776-4beb-8927-a3e22bba8ef0a" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_PumpRelayStatus_HF_R_AFT_AC_PUMPCONTACTOR" SrcGuid="a5ccfc5dd-bfb8-43d3-ac22-141d747e7cbba" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_PumpRelayStatus_HF_R_CTR_AC_PUMPCONTACTOR" SrcGuid="a11674dd2-e701-4b27-9559-f52088d67e0ca" />
+  </HFSamplingPort>
+  <AnalogPort Name="piANA_BE_GEA_2_002_HF_TPT" Guid="ac06cdea3-2154-49ee-b3b0-ef69f3419989a" Direction="Destination" Physical="RDIU_08.40010_B02" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=6;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_TPT.poANA_BE_GEA_2_002" SrcGuid="a999B912C-20A4-4f51-B590-464C7DBC8B71a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA35COS" Guid="a4e88bdb3-3596-4458-a959-38306e066946a" Direction="Source" MessageSize="24" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA35COS_Msg" Guid="ac2c86af5-01fe-49cc-8b92-b555b98b0ac9a" EdeEnable="True" MessageOverhead="32" MessagePad="94" MessageSize="24" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33454">
+      <DS Name="FSS1" Guid="ada846743-748d-48d9-bcdf-83deff262d8ca" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a4041e5b2-b984-4950-b792-65369e6a046ca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a440c3982-c149-46b2-989d-751dece0b5eea" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a470f5333-2dd6-4f7c-8b7c-e87ea7df0c6ea" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a1da64705-26d8-4173-b263-bd6ac20fe278a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="CrewOxygenPressOK_HF_LPS" Guid="a7cf56f74-2d6e-48ee-ab36-a501efe1b170a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a1b70edf0-f696-41c1-8792-e7fa1bb8ae6ca" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=OXY PRESS OK" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280" ZeroState="0=OXY PRESS NOT OK">
+          <Copy_Ref SrcName="HF_LPS.CrewOxygenPressOK.Status" SrcGuid="a0DE0593B-BD92-45f9-A69D-ED125BA11F44a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.BE_GEA_2_003_Low_Pressure_Switch" DestGuid="a05d7438d-bf87-4ee9-b2a1-2941b843b16da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_BE_GEA_2_003" DestGuid="a65711220-8709-4019-bc7d-bd97e264ea16a" />
+        </DP>
+      </DS>
+      <DS Name="CrewOxygenPressLow_HF_LPS" Guid="a2e4a0a6e-a36f-4d42-9780-434029cc8005a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="aead83f91-e872-4c6b-a0a0-b810e7c901fba" BitOffsetWithinDS="0" DataFormatType="DIS" OneState="1=OXY PRESS LOW" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280" ZeroState="0=OXY PRESS NOT LOW">
+          <Copy_Ref SrcName="HF_LPS.CrewOxygenPressLow.Status" SrcGuid="aFF5492F5-8A8C-48c6-9D2F-8BC93CD00A7Fa" />
+          <Gw_Pub_Ref DestName="FDAS_L1.LPS_CrewOxygenPressLow_Status" DestGuid="a0452f2f6-5070-4e4a-b64d-bce81e20656ca" />
+          <Gw_Pub_Ref DestName="FDAS_L3.LPS_CrewOxygenPressLow_Status" DestGuid="a23ae1b44-ae09-4dce-95b7-72f5ad058411a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.LPS_CrewOxygenPressLow_Status" DestGuid="aeddb2946-495e-41e0-8c12-5503a6575864a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.BE_GEA_2_004_Low_Pressure_Switch" DestGuid="ad43d5df6-086d-4ac1-843c-7d46a175181aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_BE_GEA_2_004" DestGuid="a0e4b4c16-921d-4f71-ba56-be28ad71582ca" />
+        </DP>
+      </DS>
+      <DS Name="CrewOxygenPress_HF_TPT" Guid="a71ba21ba-ea6c-48d3-bf6b-166c7f84a802a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a047350d3-3eb2-4693-8f67-736776c173b8a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_TPT.CrewOxygenPress.Voltage" SrcGuid="aF02ADEEB-7D40-4b62-A4C1-514792B6A7E3a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.TPT_CrewOxygenPress_Voltage" DestGuid="a26e6313b-6b6e-4c64-9599-fc0a5da7e6c5a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.TPT_CrewOxygenPress_Voltage" DestGuid="aa6acb103-09bf-44af-810d-87a6f586b8eea" />
+          <Gw_Pub_Ref DestName="FDAS_R3.TPT_CrewOxygenPress_Voltage" DestGuid="a7a53ba75-c744-4962-ba2a-0245086d5b51a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.BE_GEA_2_001_01_Pressure_Transducer" DestGuid="aa95ba606-5945-49b4-85bc-d4d4620d3002a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltage_BE_GEA_2_001" DestGuid="a44c7585c-dd32-44cf-85c8-13506c13e3f0a" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Voltage_2_001" DestGuid="a409b78a4-84be-4b9f-8ac6-eaa741b0f8dba" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.TPT_CrewOxygenPress" DestGuid="ac56e0d46-69c8-43ff-9c05-f97d53a5a30da" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.TPT_CrewOxygenPress" DestGuid="abd2fd9bd-64ba-48d3-827f-62a932f7218ea" />
+        </DP>
+      </DS>
+      <DS Name="CrewOxygenTemp_HF_TPT" Guid="a2e0eb047-a2d4-43d7-87d2-23f253bf9574a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a63aede00-f108-4713-ab85-d94577ccba30a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_TPT.CrewOxygenTemp.Voltage" SrcGuid="aBFD7FDAA-8864-4847-9BD8-9E41AAAAFC0Da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.BE_GEA_2_002_01_Temperature_Transducer" DestGuid="abb120984-e7f5-44f7-b3a5-7e9d97218ca1a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltage_BE_GEA_2_002" DestGuid="a6b7dcd72-3b2b-4ae8-a533-2b0d23c1fe19a" />
+          <Gw_Pub_Ref DestName="PAA_L1Instance.Voltage_2_002" DestGuid="a791ab6ef-1ebb-40ef-95d0-3c993509b019a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piANA_BE_GEA_2_001_HF_TPT" SrcGuid="a5ecadc2a-622e-45ab-bbe1-461d0f55aa64a" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piANA_BE_GEA_2_002_HF_TPT" SrcGuid="ac06cdea3-2154-49ee-b3b0-ef69f3419989a" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_BE_GEA_2_003_HF_LPS" SrcGuid="a8ce456c4-e043-4478-b2a7-e88ed2853166a" />
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA28and47Fuel.piDISC_BE_GEA_2_004_HF_LPS" SrcGuid="af59aeaf3-3be7-42c8-9052-5bdd42087c44a" />
+  </HFSamplingPort>
+</RemoteGateway>

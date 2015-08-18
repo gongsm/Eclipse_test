@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW16_Analog_In_ATA21AMS" Guid="a873e276f-290b-46b6-aca4-ed890b37f744a" XsdVersion="7.9" Hardware="RDIU_16">
+  <A429Port Name="pi429_MON_Block_HF_FSECU_2" Guid="aeaefd888-1506-4e1f-a6f8-b49a0974c743a" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_16.40005_A01" SamplePeriod="1280">
+    <Dataflow_Ref SrcName="HF_FSECU_2.po429_MON_Block" SrcGuid="afc4c79d9-c31d-487e-b277-4a2c7f78a93ca" />
+  </A429Port>
+  <AnalogPort Name="piANA_EMPTemp_HF_EMP3BTEMPSENSOR" Guid="ae1a229af-fced-4e3d-94e0-a579c0c79aa5a" Direction="Destination" Physical="RDIU_16.40059_A01" RIUTemplate="40059" SamplePeriod="80" UDC="Cable resistance=2">
+    <Dataflow_Ref SrcName="HF_EMP3BTEMPSENSOR.poANA_Temp_Sensor" SrcGuid="a57602764-9965-4ea7-bf6b-36aeebe38d3fa" />
+  </AnalogPort>
+  <A429Port Name="pi429_MON_2000_HF_FSECU_2" Guid="a199e36f2-8b34-4592-8a8d-28718c53f371a" ActivityTimeout="6400" Direction="Destination" Physical="RDIU_16.40005_A01" SamplePeriod="1280">
+    <Dataflow_Ref SrcName="HF_FSECU_2.po429_MON_2000" SrcGuid="a22613e0d-293c-44e8-9e7c-8bfb96b0db31a" />
+  </A429Port>
+  <AnalogPort Name="piDISC_FC_HF_AFTBBSOV1" Guid="a694dcc6c-4c48-4557-8d65-e8009a4a0bcea" Direction="Destination" Physical="RDIU_16.40022_A01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_AFTBBSOV1.poDISC_FC" SrcGuid="a3a7cda01-087d-4c8d-a3c8-81452f352f85a" />
+  </AnalogPort>
+  <A429Port Name="pi429_MON_HF_FSECU_2" Guid="a823e8ca4-d523-45f0-8a62-42e10cd455ada" ActivityTimeout="400" Direction="Destination" Physical="RDIU_16.40005_A01" SamplePeriod="80">
+    <Dataflow_Ref SrcName="HF_FSECU_2.po429_MON" SrcGuid="a5c2e7a4c-f969-4718-b5dc-508418b56f93a" />
+  </A429Port>
+  <AnalogPort Name="piDISC_FO_HF_AFTBBSOV1" Guid="aa60b2dd6-e3a1-45ee-8f65-d8c06f893a44a" Direction="Destination" Physical="RDIU_16.40022_A02" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_AFTBBSOV1.poDISC_FO" SrcGuid="a300d4905-a98e-4aad-bed2-c032845ed68fa" />
+  </AnalogPort>
+  <HFQueuingPort Name="HFQ1_O_A664_po429_MON_Block_Msg" Guid="a78921ca8-2c39-4cba-9aa4-42430d74bb2ca" Direction="Source" MessageSize="12" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_MON_Block_Msg_Q_1" Guid="ae2afcf22-63d1-48da-9dd1-73202726fb6ea" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="A429 Block" SubVLID="2" TransmissionIntervalMinimum="4000" VLID="33609">
+      <DS Name="FSS1" Guid="accf4615f-d304-4790-b990-435f423e45faa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a6be8aef9-57fa-45ae-b157-28353a7f0074a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L357_FSECU_Equip_Config" Guid="a8f7ba579-5b75-40a1-a70f-a427fb8f6534a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L357_FSECU_Equip_Config" Guid="a7b34c86d-0d51-4718-bc18-38ae224b9ea2a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a22d2dd9c-3d53-483d-9011-65a4e91599f7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="357" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="4000" />
+          <DP Name="Equip_Config_Data" Guid="a2b03662d-2b5a-4503-aa89-85f19199f2f2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="OPAQUE" ParameterSize="23" PublishedLatency="0" TransmissionIntervalMinimum="4000" />
+          <DP Name="PARITY" Guid="afb7807c0-0dcb-4b1e-ad94-3222542a8adca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="4000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Block_Msg.L357_FSECU_Equip_Config" SrcGuid="aac253aec-c641-495c-8aac-c4276366bdeba" />
+          <Gw_Pub_Ref DestName="HF_AHMUInstance.HLS_FSECU_2_CONFIG_RPT_B" DestGuid="a6cf2cbcc-ffe8-40a9-9445-b23ad4ec700fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_Configuration_Data_FSECU2_MON" DestGuid="abbcab3fb-8d7a-4101-8e5d-caa55150039ba" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.pi429_MON_Block_HF_FSECU_2" SrcGuid="aeaefd888-1506-4e1f-a6f8-b49a0974c743a" />
+  </HFQueuingPort>
+  <AnalogPort Name="piDISC_RsvrTempSwLo_HF_RSVR2TEMPSW" Guid="a493fcfd5-cf68-4797-bafd-cd471f5a6f43a" Direction="Destination" Physical="RDIU_16.40022_A08" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RSVR2TEMPSW.poDISC_RsvrTempSwLo" SrcGuid="a5f544692-179a-4951-b9a6-3fe0e36eb3cea" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_MON_Msg_2000" Guid="af71dcd1c-ee8a-436b-b9be-b90656ddf5f0a" Direction="Source" MessageSize="36" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_MON_Msg_2000_S_2" Guid="a2a63c83d-1541-469b-bb3d-b26bfbd9a18ea" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="36" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="2000" VLID="33609">
+      <DS Name="FSS1" Guid="a3342cca5-ae77-4ae1-a77d-dee0d8ae6f6aa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a5487cc35-d43b-48f5-9635-808977c66cd5a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a5567491b-353c-404f-82d5-d3f69dad5842a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="afc5a9f0d-f252-4db9-9dd2-dd1bc4eb3982a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a3d7801e4-e3bf-4413-a934-6441f92c7d92a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L351_HLS_System_Status_2" Guid="a5f5fb939-493d-49fa-83e6-41936f1cd5e7a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L351_HLS_System_Status_2" Guid="a278ca990-b2b9-42be-a8f8-306e655bb578a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a48e447b2-8533-492a-b46a-ae78cd179227a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="a69a247c8-6e2b-4ffa-bbc4-b8f64eaaf651a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="FLAPS_and_Detent_Agree" Guid="a9ffd22de-311a-429f-a980-1ccbdf7b3083a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=FLAPS Achieved the Commanded Position" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=FLAPS Not attained Commanded Position">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapsInCommand" DestGuid="a73ddef78-1e46-4ee1-adae-130760603e56a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapsInCommand" DestGuid="a63c9dc43-5700-42f7-8fde-04da65422c87a" />
+          </DP>
+          <DP Name="Local_R_Flap_Skew_LVDT_Monitor_Failed" Guid="a705908b5-97e8-4e77-b6f5-ae202156c7baa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Flap_Skew_LVDT_Monitor_Failed" Guid="ada8d57d4-3570-4c0a-a5e6-d423d9f54976a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_R_Flap_Wingtip_Sensor_Monitor_Failed" Guid="a8d11b383-3b8d-43c9-87ed-80939c7055d4a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Flap_Wingtip_Sensor_Monitor_Failed" Guid="a57050fcf-6d9c-46de-8265-746aff4fa2aba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_R_Slat_S12_Sensor_Monitor_Failed" Guid="abaec2906-e630-4e82-9a17-7e106decef06a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Slat_S12_Sensor_Monitor_Failed" Guid="afa1fe8f7-d0d7-403c-823d-28ab5c439be1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_FSCL_Position_Monitor_Failed" Guid="a51a73886-92de-4aaf-8f9f-f54b305754d8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="FLAP_SLAT_MAINTENANCE" Guid="a3ce6faf6-b913-4fb6-8fa6-dc992e120058a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_SLAT_MAINTENANCE" DestGuid="ade362a30-46a3-44b2-8094-3dbb4019d2c0a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_SLAT_MAINTENANCE" DestGuid="a2e3ac7a0-7747-4be6-8726-30fb881161e5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_SLAT_MAINTENANCE" DestGuid="a5df9f944-a2da-48b4-bc39-bd5958f95424a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.FLAP_SLAT_MAINTENANCE_2_MON" DestGuid="a36d8ec97-43aa-43ed-9fe1-9c1c2d035ca7a" />
+          </DP>
+          <DP Name="SLAT_DEGRADED" Guid="afb14bba0-2a54-4259-add0-09763ffbe196a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_SLAT_DEGRADED" DestGuid="a44fea73f-9c22-4a35-b2da-a175d592ddbda" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_SLAT_DEGRADED" DestGuid="a60acd7db-479c-43ec-b8a3-25dfeff3e3aaa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_SLAT_DEGRADED" DestGuid="a0c30e406-b5cf-446b-a5da-c3a43a42f7cca" />
+          </DP>
+          <DP Name="SLATS_and_Detent_Agree" Guid="a04433917-7d7c-4689-a4dd-c373d70b7a2ca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Slats Attained Commanded Position" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Slats not attained Commanded Position">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatsInCommand" DestGuid="a0ad4e51b-ed4d-44f5-badf-90ed06c62344a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatsInCommand" DestGuid="ac4f9dc89-d383-4d49-97b1-c902ae9c161fa" />
+          </DP>
+          <DP Name="FLAP_DEGRADED" Guid="a793db954-ce6e-4bd8-87ee-52abc294055aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_DEGRADED" DestGuid="a1758c701-5148-4bbd-a874-a92cc71834d2a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_DEGRADED" DestGuid="a3069d0c7-45a0-46ef-b054-27b77f576156a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_DEGRADED" DestGuid="a86d62288-1ae5-402e-abcd-d8a45e77fe81a" />
+          </DP>
+          <DP Name="FLAP_PROT_FAULT" Guid="aa55e7224-6030-443d-aaf5-33a1e6daf6d4a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_PROT_FAULT" DestGuid="a9e03bb4c-1a97-4b87-86be-beb93ac15d30a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_PROT_FAULT" DestGuid="a3c4b4a44-21d8-4f70-9ac9-dad510f9a13ca" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_PROT_FAULT" DestGuid="ae88622b1-05af-42dc-9f5d-fdcf79aa7c9aa" />
+          </DP>
+          <DP Name="SLAT_AOA_INHIBIT" Guid="a4140da27-4443-4e36-8d26-f93d9346a283a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active" />
+          <DP Name="FLAP_INHIBIT" Guid="a6dfc3d68-5457-448b-8627-9c52e09327cba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_FLAP_INHIBIT" DestGuid="aa60ae228-31c8-4e9f-9955-9f19c326a041a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_FLAP_INHIBIT" DestGuid="a3ac45840-d784-4397-9e12-3dd935e369fea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_FLAP_INHIBIT" DestGuid="aa1afa08a-0b5e-4cfc-9f29-0726a2aa3328a" />
+          </DP>
+          <DP Name="FLAP_SLOW" Guid="ab2bf79d6-72e3-45e2-abeb-7bcf2ff8d382a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_SLOW" DestGuid="a748769b8-1899-4981-944e-617becd984f3a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_SLOW" DestGuid="a33a554d9-0068-4952-8707-d43c16b46cfba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_SLOW" DestGuid="a6cea6066-8436-4275-ae8d-9d0895d070e8a" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.FLAPS_SLOW_2_MON" DestGuid="aaa71807f-252b-4e3f-bb97-8979e4fad6bca" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapSlow" DestGuid="a58673e51-ab6a-447a-8843-c09f5bddf30ca" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapSlow" DestGuid="a2a781ced-1e72-43a5-80f2-f59a2453b4e7a" />
+          </DP>
+          <DP Name="SLAT_SLOW" Guid="adade2d74-6e4f-456c-97f6-8c5cd50e0f2aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_SLAT_SLOW" DestGuid="acee82924-4b4d-4378-8361-5acd06866568a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_SLAT_SLOW" DestGuid="a1a474906-c7f2-49d1-ae27-64c240b4ccd8a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_SLAT_SLOW" DestGuid="abeeb2646-c618-4e75-93b6-328d98df78dba" />
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.SLATS_SLOW_2_MON" DestGuid="a000cced5-f267-4bf6-b31a-346a48da41b1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatSlow" DestGuid="a10d6e4c2-c616-4ca4-93de-c067e4fdfb29a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatSlow" DestGuid="a42ad931a-053e-42bc-ab41-553a8ee96c85a" />
+          </DP>
+          <DP Name="FLAP_FAULT" Guid="a5f5cc3ae-dd08-47ae-98d1-6d5a690f1cd6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_FLAP_FAULT" DestGuid="ad7cf2664-1aa9-4a59-b22c-bf7e373a2464a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_FLAP_FAULT" DestGuid="a355320c0-8589-4533-a102-6d0bd0b0cb78a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_FLAP_FAULT" DestGuid="a49ca1d0c-dc6d-4127-9f7c-0169f66a06cda" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapFault" DestGuid="ac0641b07-90e0-4dcd-a746-56df00a477c6a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapFault" DestGuid="ab2c9f8fe-d584-49b9-9db3-68581753fe36a" />
+          </DP>
+          <DP Name="SLAT_FAULT" Guid="aa3d373b9-71fe-495d-9b51-b8d7ec88e50ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=CAS Message Trigger Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CAS Message Trigger Not Active">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_SLAT_FAULT" DestGuid="afc28409c-8b13-467e-aed9-65afcc0c1b31a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_SLAT_FAULT" DestGuid="aba064ece-87c3-4c66-a23c-94cb246e46e7a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_SLAT_FAULT" DestGuid="ac39cab5b-ea23-43fc-b523-06de2bebc310a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatFault" DestGuid="a7aef1d80-8f6a-44e3-82bd-36bff8ef4ba1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatFault" DestGuid="a1918b84a-3be4-46c3-9103-46d76198d32ea" />
+          </DP>
+          <DP Name="SSM" Guid="a63f334ad-0e21-4877-8b55-22718923f8f6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="ad84f5f73-679f-4d91-bf24-68008f3cf877a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L351_HLS_System_Status_2" SrcGuid="a14bd80ba-3126-44e7-90ba-da6345be55cca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_2_FSECU2_MON" DestGuid="a42fb1fe4-16ff-4306-b47f-11a5234a7577a" />
+        </A429Word>
+      </DS>
+      <DS Name="L354_HLS_System_Status_5" Guid="ab1a09dc3-3959-471a-9ca8-7c8c635c9e82a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L354_HLS_System_Status_5" Guid="acff25dee-71d7-4533-8eda-a3b8b7019a07a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a712726aa-e1cc-4a2c-8653-cd538ec4dc56a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="354" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="ab9dc6039-df99-490e-9b24-56807a2062cea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Altitude_3_Monitor_Failed" Guid="a3c96316b-08c2-4025-ba16-2b2f91c827d8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Altitude_3_Monitor_Failed_2_MON" DestGuid="a5afc3fc2-1324-458a-bb19-53cee0c770bca" />
+          </DP>
+          <DP Name="Altitude_2_Monitor_Failed" Guid="a56fa5997-6b4f-4bf0-aedf-478c2e5cf9e7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Altitude_2_Monitor_Failed_2_MON" DestGuid="a4d812a35-ae02-4493-84b2-b12c773ca849a" />
+          </DP>
+          <DP Name="Altitude_1_Monitor_Failed" Guid="a7bec4258-eaa7-4c81-a6da-9bfa941b2304a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Altitude_1_Monitor_Failed_2_MON" DestGuid="aad66dd16-1bf5-460f-ac54-c134156601a2a" />
+          </DP>
+          <DP Name="FSCL_Detent_Valid" Guid="a4beb9010-929d-4d0f-bddf-81eb7b13c4aba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Valid" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Invalid">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.FSCL_Detent_Valid_2_MON" DestGuid="ab140f3c4-4c7b-487e-9d24-8c5bfd2da897a" />
+          </DP>
+          <DP Name="Flap_Asymmetry" Guid="af3359272-e1c2-4ebd-9f1b-a9599870b3f5a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Detected" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Detected">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Asymmetry_2_MON" DestGuid="a7bb81572-0754-4e25-a0a0-92ecf0774514a" />
+          </DP>
+          <DP Name="Flap_Skew" Guid="a3f549ff5-77bc-49e7-851d-b7b785b8f753a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Detected" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Detected" />
+          <DP Name="Slat_Asymmetry" Guid="a69d65b38-fd95-480a-bd6d-5d88baecba36a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Detected" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Detected" />
+          <DP Name="Slat_Skew" Guid="a65082beb-896e-48bd-a5f6-c091af0da14fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Detected" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Detected" />
+          <DP Name="Local_FSECU_Operational" Guid="a66396fa6-6ca1-46b9-9faa-8dba71944f7aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Operational" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inoperational">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.FSECU_Operational_2_MON" DestGuid="adbd90a5a-d47b-4fd2-a036-777f266bbc09a" />
+          </DP>
+          <DP Name="Configuration_Inhibit_Active" Guid="a4c24ba08-11ee-4967-834c-6e3717502471a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inactive">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Configuration_Inhibit_Active_2_MON" DestGuid="a01e7827c-b563-457a-82a7-ae8e2756aa5da" />
+          </DP>
+          <DP Name="Load_Relief_Active" Guid="a21d6a5b6-0e13-485f-bfd2-eac95b3f16d8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inactive" />
+          <DP Name="Command_Inhibit_Active" Guid="aea6c2462-16d3-4481-9ef2-5e312321c0afa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inactive">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Command_Inhibit_Active_2_MON" DestGuid="a4f8f2842-32b4-4aef-b123-c66d83569549a" />
+          </DP>
+          <DP Name="Local_Airspeed_Data_Valid" Guid="a2db550ec-9986-4662-91ea-cc4032558cc7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Valid" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Invalid" />
+          <DP Name="Flaps_in_Motion" Guid="a4fc0a932-6f25-4855-94f5-43331d8f4c42a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1 = In Motion" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not In Motion">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flaps_in_motion_2_MON" DestGuid="a5ea51572-e3b3-4936-8ef8-42d4bdcbfa22a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.FSECU_2M_FlapsinMotion" DestGuid="aa48d3a65-0c79-4c5c-81f9-e8bb5fabcfd6a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.FSECU_2M_FlapsinMotion" DestGuid="a857b7959-9aab-44f9-960b-4c6eb742a6efa" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.FSECU_2M_FlapsinMotion" DestGuid="a2caf495d-0d95-4e36-a084-6858d093bd7ba" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.FSECU_2M_FlapsinMotion" DestGuid="a8122a801-2bac-4081-b318-a6d9637a859aa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.FSECU_2M_FlapsinMotion" DestGuid="a01792289-1f0e-42df-8a5b-d2db175206caa" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapsinMotion" DestGuid="aa12a99ed-fe76-418c-b74b-f6f6afd9bd4fa" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapsinMotion" DestGuid="ac15c57d7-4a24-4202-89c2-b0052db8d386a" />
+          </DP>
+          <DP Name="Flap_Inoperative" Guid="ad9730ca8-47b2-424d-896d-f58364e775dda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Operational">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Inoperative_2_MON" DestGuid="af2f7ac50-e283-4eba-a4ae-143051261388a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapInoperative" DestGuid="a01b825a5-508f-463f-b52e-c90e5c9ebc85a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapInoperative" DestGuid="a793df0ee-48eb-447c-a2ed-9a838dd8bf73a" />
+          </DP>
+          <DP Name="Local_Flap_Channel_Operational" Guid="ab2ec2794-cec1-4536-a8f7-9813585fcbd0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Operational" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inoperative" />
+          <DP Name="Slats_in_Motion" Guid="a16cd27fa-c652-4466-bf24-61693aa495ada" Notes="Assumed TV: PL=0" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1 = slats are in motion" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not In Motion">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Slats_in_motion_2_MON" DestGuid="adeb37b8c-8491-48c7-9ecb-011e32e6c1e0a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.FSECU_2M_SlatsInMotion" DestGuid="a9d0665bb-663f-497c-a74e-94d2d59e7ec2a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.FSECU_2M_SlatsInMotion" DestGuid="a2ab9bff8-d943-4dd2-a0a5-16d5f88ab4f8a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.FSECU_2M_SlatsInMotion" DestGuid="a7acad6a9-c861-4ec5-ba66-9f1916f5510fa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.FSECU_2M_SlatsInMotion" DestGuid="a76547069-87b5-4cec-ba74-dd9bf4d3585ba" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.FSECU_2M_SlatsInMotion" DestGuid="a39559bea-260e-4eb0-9769-12d529887ee8a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatsInMotion" DestGuid="a45f5ce28-c220-420d-8408-24fdcf3282d1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatsInMotion" DestGuid="a68810693-7040-4fa5-8335-90254e9cf874a" />
+          </DP>
+          <DP Name="Slat_Inoperative" Guid="a779d353f-9972-4d72-8cb9-2b5405e61177a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Operational">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatInoperative" DestGuid="aa1934da4-d446-4ccc-9ca9-f03a852ec222a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatInoperative" DestGuid="a50e59b42-b6f7-493d-b574-3bc00c11f022a" />
+          </DP>
+          <DP Name="Local_Slat_Channel_Operational" Guid="a00643fc3-efa7-46bd-8453-15f50ecb1de9a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Operational" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inoperative" />
+          <DP Name="SSM" Guid="ab82c194b-6ed6-4323-8262-bfb29739ddb3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="a35d88074-eb00-403d-b24c-31a91f4f1ceea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L354_HLS_System_Status_5" SrcGuid="a426fb126-83bc-4600-a7d3-340ab7488014a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_5_FSECU2_MON" DestGuid="ae4be7ccc-f5e6-424e-b6c0-4b4726e50ef2a" />
+        </A429Word>
+      </DS>
+      <DS Name="L350_HLS_System_Status_1" Guid="aa9f3df5c-2b63-4886-8e8a-447358c0fbe2a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L350_HLS_System_Status_1" Guid="ad3efb233-5bb0-41b2-b45d-0232c1e6f4dca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1023f106-fc9f-4335-acd9-6890cc20b276a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="af90224ce-a891-44da-92e7-ac5bc0924f36a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Rigging_Error" Guid="a6e635b64-ba3f-4a7a-8bca-d92aef8f23eda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Rigging error" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inoperational" />
+          <DP Name="Channel_2_Slat_Motor_Brake_Failure" Guid="a8a0699ca-7b71-4aa8-98bc-471328c9a5f2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Inoperational" />
+          <DP Name="Channel_1_Slat_Motor_Brake_Failure" Guid="a57898771-6b38-4f6b-b5b6-7af6fc7938caa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Right_Slat_WTB_Failure" Guid="a7dfb8b71-8f29-4110-a0f6-8693ae75e40ca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Left_Slat_WTB_Failure" Guid="a24fbe22b-f96a-4d9e-959c-c7473fb47710a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Channel_2_Flap_Motor_Brake_Failure" Guid="a53563356-3ec7-4afe-a4b4-751aa597cf5aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Channel_1_Flap_Motor_Brake_Failure" Guid="a27a1fdd6-73e4-486f-aedf-72dec572cfcaa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Right_Flap_WTB_Failure" Guid="a9f2c5572-ea5d-4238-89c7-2b5b0b78d6d1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=De-energized" />
+          <DP Name="Left_Flap_WTB_Failure" Guid="ad8cfcbff-2601-4759-a7c3-c3d2517fb9d0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Command De-energized" />
+          <DP Name="FLAPS_SLATS_Detent_Achieved" Guid="a295f78b3-74c0-461c-8702-57e6f124c006a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Flaps and Slats achieved commanded position" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Flaps and Slats Not Achieved Commanded Position">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FSCLInCommand" DestGuid="a595ecfa1-27d2-427c-9bdb-0b26624c02d1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FSCLInCommand" DestGuid="a302d7958-4197-427b-9948-f17995c16faca" />
+          </DP>
+          <DP Name="Local_R_Flap_WTB_SOV_Current_Monitor_Failed" Guid="a9ccfef2c-557a-4820-a4bc-6f7f8bda25f1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Flap_WTB_SOV_Current_Monitor_Failed" Guid="a049f4bef-3d6b-480d-b08e-2887ddb54bfda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Initiated_Test_Test_Inhibit_Discrete_HLS_Inhibit_Condition" Guid="a86d8db71-4b4e-49b0-b962-49b2f27e8081a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="22" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Initiated_Test_Test_Inhibit_Discrete_FSECU_Inhibit_Condition" Guid="a13c9094c-40d9-462e-b8ad-3806da39d9b2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Initiated_Test_Test_Inhibit_Discrete_Lane_Inhibit_Condition" Guid="ad1aca734-10f0-48ad-ac37-e7717ba1fa0ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Powerup_Complete_Discrete" Guid="a408a0492-97dc-421f-a4c0-374e7dc73c2da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="25" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Initiated_Test_Able_To_Test_Discrete" Guid="a149dcdbf-b7ef-4ab5-acae-8e2a930522b7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="26" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Able_To_Test_Discrete_2_MON" DestGuid="a9a3cb3b0-72c0-4dfd-9127-cb949ceefcfea" />
+          </DP>
+          <DP Name="Initiated_Test_Test_Complete_Discrete" Guid="a9f85cde4-624a-44ab-b105-9839325f860ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Initiated_Test_In_Test_Discrete" Guid="ac8bd5128-ab05-4df7-8f0a-071acf41bd7fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="ISO-5" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SSM" Guid="ad1db3aa8-bfa1-49ca-bdaa-4428e0397c9fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="ad8965113-7b54-4648-b383-c4121b25d44da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L350_HLS_System_Status_1" SrcGuid="a55bbe549-2bb7-4d01-a304-0c8150a046c5a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_1_FSECU2_MON" DestGuid="a9d04399e-58f7-4327-83f0-e05bb26a455ba" />
+        </A429Word>
+      </DS>
+      <DS Name="L352_HLS_System_Status_3" Guid="afa6294d8-bb85-40b8-a368-4b4a76e5f255a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L352_HLS_System_Status_3" Guid="af2806d90-2b8a-4ed8-b5e6-75af10aa6fdea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0bde468b-ebfb-4816-ae12-ee813ce963f8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="352" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="a0dab8fea-6ef5-4e61-b3fb-3009ef3c8c54a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Altitude_Monitor_Failed" Guid="a83275e55-068c-4a9c-92e8-cb74e875ca6da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Altitude_Monitor_Failed_2_MON" DestGuid="ac775b0dd-bc80-41ec-86e1-dd4185c1642ca" />
+          </DP>
+          <DP Name="Local_Flap_Underspeed_UCM_Mon_Fail" Guid="a1a8a0c8a-427a-4f5b-8283-ee9d6fefafcca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Motor_Underspeed_Mon_Fail_2_MON" DestGuid="aa7c97d5b-8b43-4daf-bc70-29234803f681a" />
+          </DP>
+          <DP Name="Local_Slat_Underspeed_UCM_Mon_Fail" Guid="abe7e161f-9705-4672-afba-83745ae5f979a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Flap_Overspeed_UCM_Mon_Fail" Guid="aebfab4f6-2bf4-4143-8451-f21c9cac68b1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Overspeed_UCM_Mon_Fail_2_MON" DestGuid="a1e912af1-a5e8-4d38-b0de-93320373bf01a" />
+          </DP>
+          <DP Name="Local_Slat_Overspeed_UCM_Mon_Fail" Guid="a2c09ca32-ea5b-4c53-82b7-dfdbc17f9142a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Flap_Motor_Wrong_Direc_UCM_Mon_Fail" Guid="a31083d2b-7d8b-47b8-a925-a0b1067c85efa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Motor_Wrong_Direc_UCM_Mon_Fail_2_MON" DestGuid="ae7b3cab1-8d33-4808-8801-d1ea8e9529a1a" />
+          </DP>
+          <DP Name="Local_Slat_Motor_Wrong_Direc_UCM_Mon_Fail" Guid="ab3f7666b-9839-4e92-84c2-fb88ed3148aca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Flap_Sys_Wrong_Direc_Mon_Fail" Guid="a3ddad2ed-fe7e-474d-916b-de55aa1c92d7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Slat_Sys_Wrong_Direc_Mon_Fail" Guid="afc94455c-787c-4cf5-b30d-a8a968c2b536a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Sys_Wrong_Direc_Mon_Fail_2_MON" DestGuid="a797849ad-96c8-4c7c-a383-3b906d84b11fa" />
+          </DP>
+          <DP Name="Spare1" Guid="ac474b90d-7885-4698-9260-e6484b671c0ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Spare2" Guid="a7d4337b6-09fb-4110-955e-82749f489f0aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Slat_Skew_5_Monitor_Fail" Guid="aad677457-a736-437e-8fc4-962f65835397a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Slat_Skew_5_Monitor_Fail_2_MON" DestGuid="a89435b5d-657a-42e6-bd57-6079b7261245a" />
+          </DP>
+          <DP Name="Local_Slat_Skew_4_Monitor_Fail" Guid="ab314ae0b-765d-4416-85bb-8cb397d7a144a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Slat_Skew_4_Monitor_Fail_2_MON" DestGuid="a0db6a3a4-2ee1-477b-90a9-31f4b43d23c6a" />
+          </DP>
+          <DP Name="Local_R_Slat_Skew_Lanyard_Mon_Fail" Guid="a4ad083c9-4f9c-4674-bcce-4232ac8f1b87a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Slat_Skew_Lanyard_Mon_Fail" Guid="ab57a9958-ecb2-4a4c-be0a-ed40ec1d462ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_R_Slat_5_Skew_Sensor_Mon_Fail" Guid="a98b05154-c2fb-41fb-a866-655f199acb9da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Slat_5_Skew_Sensor_Mon_Fail" Guid="a1bf54b9d-e6cd-4bbf-bb02-bad1e3f91fa6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_R_Slat_4_Skew_Sensor_Mon_Fail" Guid="ab04b1e07-0c0f-4dbf-9e7b-43fa423cf840a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Slat_4_Skew_Sensor_Mon_Fail" Guid="a3e6db3b2-fe44-4a6b-80ba-568f0b5db6a0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="SSM" Guid="a96e6df10-453f-43ad-a90b-060304cba109a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="acd8b2938-4d2c-464b-adec-9174a56f7ee1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L352_HLS_System_Status_3" SrcGuid="a23812d98-a780-4225-b2d2-fa46d6c71c7da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_3_FSECU2_MON" DestGuid="a379679cf-ef70-478f-96a6-ac5b587fb2c4a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a59d415d0-d0d9-45c6-952c-9d07e68d0888a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a563c34d4-4c6b-4077-bd0f-92f213bbf0eca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="ad30c642d-bac5-4b8c-9cc3-10e74292f87ea" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L355_HLS_System_Status_6" Guid="a7cbd9a5f-e943-41ab-b4c8-21e7bf867e0ca" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L355_HLS_System_Status_6" Guid="aa8e19471-ab6f-46f4-9c3d-b1de6ce2acb6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3dc490e2-079f-4cb3-aa36-e3c5f09b170aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="355" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="a10081c8c-3ecd-42c4-b4d4-369bd8bb38f3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Flap_Motor_Rate_Maintenace" Guid="a8da3dd89-7a7c-4465-b01f-971f17a365a2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Maintenace" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Slat_Motor_Rate_Maintenace" Guid="ab9bacaaa-aa8d-4b62-b267-031bccd40569a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Maintenace" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Flap_Ch2_Operational_Test_Failed" Guid="ac212f4bf-4c01-4c1e-b2dd-77cf9d976957a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Flap_Ch1_Operational_Test_Failed" Guid="a7c08d566-677b-4a54-b0ff-fc4cf13fdae2a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Slat_Ch2_Operational_Test_Failed" Guid="a69bccac7-7746-42b6-93a7-5640e20f6c8fa" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Slat_Ch1_Operational_Test_Failed" Guid="a00ba884a-321a-48c2-b030-4ef1c415f635a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Left_Flap_WTB_SOV_Voltage_Monitor_Failed" Guid="a62030834-c82a-4777-b7cf-15a8751fb38ba" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Right_Flap_WTB_SOV_Voltage_Monitor_Failed" Guid="acae20074-f55e-4c68-9226-134cafe7257fa" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Left_Slat_WTB_SOV_Voltage_Monitor_Failed" Guid="add1d2dd1-0ce7-4fdc-b8ad-20026893df8ea" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Right_Slat_WTB_SOV_Voltage_Monitor_Failed" Guid="ae17b15c2-a211-4ee9-b40e-9e911f6ae1eca" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="A429_FCM1_Comm_Monitor" Guid="a2e02025a-e995-4195-8ee8-162e11a3f27ea" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="A429_FCM2_Comm_Monitor" Guid="a4a851bbe-ff9a-458a-aaba-288a95cc3e64a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="A429_FCM3_Comm_Monitor" Guid="a53be0159-12e3-43bf-b8bf-34701e27ff24a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Flap_System_Underspeed_Monitor_Failed" Guid="aa2ec70ec-460f-475a-9deb-9f857a793896a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Underspeed_UCM_Mon_Fail_2_MON" DestGuid="a5804d21e-29e1-44f8-a0b8-2e7ed295d972a" />
+          </DP>
+          <DP Name="Slat_System_Underspeed_Monitor_Failed" Guid="a32146890-dced-445e-89ab-c01997447de2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Flap_System_Overspeed_Mon_Fail" Guid="a76d40356-8f4f-4e21-bcf9-993f56e509b1a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_System_Overspeed_Mon_Fail_2_MON" DestGuid="a2c8fad37-7c09-4775-814f-de5714db9cbfa" />
+          </DP>
+          <DP Name="Slat_System_Overspeed_Mon_Fail" Guid="a09f6487e-ec85-41bb-9a90-c9c636f7d6eda" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="WOW_Monitor_CBDL_Backup_Fail" Guid="a03b3ed46-8e23-4f8c-afd5-523987078826a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.WOW_Monitor_CBDL_Backup_Fail_2_MON" DestGuid="afe4a6c78-14b8-4ffc-8aa5-e6c3fa0a02a8a" />
+          </DP>
+          <DP Name="Local_WOW_Mon_Fail" Guid="a3ceb57b6-2b86-4973-93d3-08bd97095151a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SSM" Guid="aa18b2942-b601-444a-b9f9-8e568acd57b6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="ac8cb3949-2173-41da-b009-46e966895a2ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L355_HLS_System_Status_6" SrcGuid="a5b1326f0-409f-4060-88bb-d651fa9d2984a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_6_FSECU2_MON" DestGuid="ac7afd212-566d-412f-acd0-38d451c0b3bba" />
+        </A429Word>
+      </DS>
+      <DS Name="L353_HLS_System_Status_4" Guid="a5b031109-cfdd-468c-bcbe-2e8917e6509ea" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L353_HLS_System_Status_4" Guid="a4ae7a433-1378-4326-a16b-2b2f31d1fad4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a96d7d3f6-9070-4486-9019-93d64e8c89fda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="353" ParameterSize="8" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="SDI" Guid="a34d53ad1-81b3-4844-9029-6292ac5c5c66a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="Local_R_Slat_WTB_SOV_Current_Mon_Fail" Guid="a74bb0b51-0ee1-4f9a-b033-bc0c3c82f6a1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_L_Slat_WTB_SOV_Current_Mon_Fail" Guid="a7f05943b-0f33-43e5-80e6-a0ec1aaa9839a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Flap_Position_Com_Mon_Fail" Guid="af4897971-9678-404d-a3c2-0f55a45917d2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Position_Com_Mon_Fail_2_MON" DestGuid="a1a755c67-b8b2-4420-b746-f0a86c49d00ba" />
+          </DP>
+          <DP Name="Airspeed_Monitor_Failed" Guid="ac987d162-0a74-46d7-8638-95a9d415e71fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Airspeed_3_Monitor_Failed" Guid="abeeed60f-a1cc-4a73-a680-5af57f9d79e6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Airspeed_2_Monitor_Failed" Guid="a14ad0681-c339-4903-8ba9-d31a57689e25a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Airspeed_1_Monitor_Failed" Guid="a88505dde-0a24-4230-b0d5-dadaa8918e14a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Slat_Position_Com_Mon_Fail" Guid="acb0214e6-30a2-402e-9aa4-5fb13aaf16a3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="AOA_Monitor_Failed" Guid="a81a147df-a91e-4494-944b-c6a4abad6a94a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.AOA_Monitor_Failed_2_MON" DestGuid="a008e84ef-a361-4658-86dc-9db79477d224a" />
+          </DP>
+          <DP Name="Flap_Motor_Rate_Monitor" Guid="a1bb0fbe2-b04b-40fa-92e3-e6959c32d38fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Motor_Rate_Monitor_2_MON" DestGuid="a3b66bc5e-059d-4814-99ac-1ff253ab0100a" />
+          </DP>
+          <DP Name="Slat_Motor_Rate_Monitor" Guid="a2f65bab1-d6b4-40a6-ba31-3ab92f75cfa2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="AOA_3_Monitor_Failed" Guid="a131e8180-c5ac-4930-ba1f-587541ac7e7ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.AOA_3_Monitor_Failed_2_MON" DestGuid="a161e78a4-a272-454f-ac0b-4867247ac5d2a" />
+          </DP>
+          <DP Name="AOA_2_Monitor_Failed" Guid="a309ec960-0772-4294-9e70-cae994d5ab0ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.AOA_2_Monitor_Failed_2_MON" DestGuid="ae173ca4d-fa95-4e95-b94b-3a053a98a0d1a" />
+          </DP>
+          <DP Name="AOA_1_Monitor_Failed" Guid="a31976beb-2af4-4e03-afae-593b8c45be02a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.AOA_1_Monitor_Failed_2_MON" DestGuid="a67a91e8b-9bed-484d-85ca-ac95965bb037a" />
+          </DP>
+          <DP Name="Loss_of_CBDL_Communication" Guid="ae463d4d3-07ed-483c-9c63-7a51eabd5982a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=No CBDL Rx" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed" />
+          <DP Name="Local_Flap_Speed_Asymmetry_Mon_Fail" Guid="a876027f9-9206-453d-a114-dab857550db7a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=CBDL Functioning">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Speed_Asymmetry_Mon_Fail_2_MON" DestGuid="a75e670f9-cc83-43c2-9e40-c67b1c99ee60a" />
+          </DP>
+          <DP Name="Local_Slat_Speed_Asymmetry_Mon_Fail" Guid="a8402a90f-228f-4f56-a5e0-a55ddd12be45a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Slat_Speed_Asymmetry_Mon_Fail_2_MON" DestGuid="aed87cf7d-a54a-409a-bf68-7b7879bf37bca" />
+          </DP>
+          <DP Name="Local_Flap_Position_Asymmetry_Mon_Fail" Guid="ad794a6d0-07f6-45b4-b708-7e12d3f5dd93a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Flap_Position_Asymmetry_Mon_Fail_2_MON" DestGuid="a23ffdb3f-b813-4c75-9495-ca84f714915ca" />
+          </DP>
+          <DP Name="Local_Slat_Position_Asymmetry_Mon_Fail" Guid="a761f8702-6471-4490-9765-5b4847f18b6fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="HF_AHMUInstance.Slat_Position_Asymmetry_Mon_Fail_2_MON" DestGuid="aefb9e404-5b00-4c5c-a3a0-33f8bbd45d3aa" />
+          </DP>
+          <DP Name="SSM" Guid="adff7beef-02af-42ed-99cb-e48b14434394a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <DP Name="PARITY" Guid="a6aabfcff-b8c9-4fc0-8f64-23d1fad276d8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1" TransmissionIntervalMinimum="2000" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg_2000.L353_HLS_System_Status_4" SrcGuid="a35da7679-2742-4dac-953d-1dd03efefd4aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.HLS_System_Status_4_FSECU2_MON" DestGuid="a90a4a14d-ceac-4a2e-af1e-1449634da2c6a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.pi429_MON_2000_HF_FSECU_2" SrcGuid="a199e36f2-8b34-4592-8a8d-28718c53f371a" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_FC_HF_AFTBBSOV2" Guid="a8f74b188-a0fe-420e-984a-44b50f8f3dc6a" Direction="Destination" Physical="RDIU_16.40022_A03" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_AFTBBSOV2.poDISC_FC" SrcGuid="aaa6b3116-740b-4e2b-87a4-a6e3978d2e1ea" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS3_O_A664_po429_MON_Msg" Guid="a05bb6e37-50a9-488c-ad2a-a890c6d3af6ca" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="40">
+    <A664Message Name="po429_MON_Msg_S_3" Guid="a6a9063a8-d1b0-495f-a13e-5e361bf0bf7ba" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="100" VLID="33609">
+      <DS Name="FSS1" Guid="ae46f7af4-044b-4c42-a2ca-e7f1139f1651a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aebc018a5-c456-4d1b-87b4-e1ef5a7534b8a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ab7dcb6b6-2665-40d0-8b06-e17ca808ededa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a2c4a7ad1-3d57-4378-b734-6145afc131c3a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L105_Slat_Position" Guid="a8c08856d-ce67-4013-b336-cda0edeec649a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L105_Slat_Position" Guid="ac18ecb50-ce9d-4573-82fd-61d46c09e370a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae23c7e8e-fdd7-46ea-bace-10ab2093f851a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="105" ParameterSize="8" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a0dfce340-d194-47cd-ade2-76c219467e6ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="Slat_Position" Guid="aeeaec196-7f26-4e7d-90d8-f0a6154e8970a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="63.984375" FullScaleRngMin="-64" FuncRngMax="63.984375" FuncRngMin="-64" LsbRes="0.015625" ParameterSize="13" PublishedLatency="500" TransmissionIntervalMinimum="100" Units="degrees">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_Slat_Position" DestGuid="a7d833c5b-76fe-4010-b107-8d8c0949ed10a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_Slat_Position" DestGuid="a13e677cf-b60c-4d1d-94d2-864dc7bcdccfa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_Slat_Position" DestGuid="af3cb850b-86fe-4fbb-8919-4a76f88394c2a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_SlatsPosition" DestGuid="a3e1e0a4f-164a-46b8-aaa7-37fde25190cda" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_SlatsPosition" DestGuid="a9e921c66-cd09-47a7-b6d2-9af1a150b0fba" />
+          </DP>
+          <DP Name="SSM" Guid="a274adb2c-698f-4052-937f-d0fc8965218ca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" CodedSet="0=Failure Warning;1=No Computed Data;2=Functional Test;3=Normal Operation" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a228f21e7-9a64-411f-a01a-6313968ae575a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg.L105_Slat_Position" SrcGuid="a5a26615b-2292-4384-9757-788729bd2d51a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.Slat_Position_FSECU2_MON" DestGuid="a7ee98dcb-47b7-4592-bc03-a00c656f0eeda" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.FSECU_2M_SlatsPosition" DestGuid="a3b9fc2f1-7fa4-41ef-a545-6d78119f2e44a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.FSECU_2M_SlatsPosition" DestGuid="a370e116f-1c65-4bc9-b1d1-b6dc4ef0e97aa" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.FSECU_2M_SlatsPosition" DestGuid="a3618862b-0c61-4bc6-8f6a-e2e34f1d6d1ca" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.FSECU_2M_SlatsPosition" DestGuid="a9ff57393-2897-41fc-98dd-a7df4dabd47ea" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.FSECU_2M_SlatsPosition" DestGuid="aec31be26-2d48-4324-b997-24e6a217bd3aa" />
+        </A429Word>
+      </DS>
+      <DS Name="L106_Flap_Position" Guid="a6b5f9665-e69e-46da-87c8-1ca231469763a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L106_Flap_Position" Guid="a429fcb8a-2234-4bca-9486-6170f8adb99ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="abe2ed1a3-7998-4c76-abd0-ec71402861fea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="106" ParameterSize="8" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a202c1501-8250-4597-93e8-64643d1715a6a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="Flap_Position" Guid="a63083bcc-03d0-4fe0-9332-48d65d1e1e55a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="63.984375" FullScaleRngMin="-64" FuncRngMax="63.984375" FuncRngMin="-64" LsbRes="0.015625" ParameterSize="13" PublishedLatency="500" TransmissionIntervalMinimum="100" Units="degrees">
+            <Gw_Pub_Ref DestName="FDAS_L1.FSECU_2_MON_Flap_Position" DestGuid="abda30e38-a678-4b57-83a9-d68ddf212b0fa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.FSECU_2_MON_Flap_Position" DestGuid="a550e0bfe-d1df-4e2a-a12c-2d875d4b6881a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.FSECU_2_MON_Flap_Position" DestGuid="ac568d9ec-b5ea-4c74-aee2-6b908d064ceaa" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_FlapsPosition" DestGuid="a74be8bcd-b736-42b6-8478-6238ec0f52e3a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_FlapsPosition" DestGuid="a8e82629c-5595-4921-b5dd-84d44e90607ea" />
+          </DP>
+          <DP Name="SSM" Guid="a162dacce-d180-4763-ae6b-1d60df72436da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" CodedSet="0=Failure Warning;1=No Computed Data;2=Functional Test;3=Normal Operation" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a141494d8-2d51-4ad5-8b01-d689a516e046a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg.L106_Flap_Position" SrcGuid="a26af3488-87be-40d3-a186-d36880e73819a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.Flap_Position_FSECU2_MON" DestGuid="accd9f5fa-05ff-4f36-b67b-1d12c41f9480a" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.FSECU_2M_FlapsPosition" DestGuid="a4447325e-7b34-4b9c-8cd5-ccea218f8b5ea" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.FSECU_2M_FlapsPosition" DestGuid="ab3af6ab1-911c-49b1-815c-35abaace47bda" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.FSECU_2M_FlapsPosition" DestGuid="a191a95f8-b035-4103-b710-bc62333e2c4ca" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.FSECU_2M_FlapsPosition" DestGuid="a63abcbde-4b73-4930-8b78-9becc12e93c2a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.FSECU_2M_FlapsPosition" DestGuid="a71dc483e-ab6c-4578-825f-3ac4474beedba" />
+        </A429Word>
+      </DS>
+      <DS Name="L107_FSCL_Detent_Detent_Command" Guid="ae6cdd461-17db-4964-9ff8-d254548b613da" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L107_FSCL_Detent_Detent_Command" Guid="a194f313e-8eb2-428a-b254-8af8ee19dfbfa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae0644b90-7b55-45f8-9c57-afc2bfef3749a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="107" ParameterSize="8" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="SDI" Guid="a0038d9cc-da1d-4a71-953b-bad871cf2095a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=FSECU1_Cmd;1=FSECU1_Mon;2=FSECU2_Cmd;3=FSECU2_Mon" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="Detent_Command_0" Guid="a4d8942a2-5465-45fa-8e72-80ecd182295fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Detent Command is 0" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not 0">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommand0" DestGuid="ac4a1bc3e-08bb-4ba1-a2ff-df90a1fa7fbda" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommand0" DestGuid="a89abaec5-1e16-452b-ae08-780a04d0efb8a" />
+          </DP>
+          <DP Name="Detent_Command_1" Guid="a4641a015-f387-44d3-a628-ffd4595f95f2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Detent Command is 1" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not 1">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommand1" DestGuid="ac95b4798-cb8a-46b9-965a-209a6990f2e4a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommand1" DestGuid="a99e2298e-b81b-4a93-81af-2c8bd4eb779ba" />
+          </DP>
+          <DP Name="Detent_Command_1_PLUS_F" Guid="a8554795f-ccfd-438a-8d34-f100852b1c53a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Detent Command is 1 plus F" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not 1 plus F">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommand1PlusF" DestGuid="a71443ede-cf5e-4321-ac59-45029c5d19fca" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommand1PlusF" DestGuid="ad719ed08-817b-4d61-8848-b3bcbef7599da" />
+          </DP>
+          <DP Name="Detent_Command_2" Guid="a6a67de05-37f0-4d20-a1be-e893af276202a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Detent Command is 2" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not 2">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommand2" DestGuid="a2e75b034-0c5e-46d7-a184-a3c4fb61059da" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommand2" DestGuid="aa5701e28-1110-462d-8955-f74a0dd45c83a" />
+          </DP>
+          <DP Name="Detent_Command_3" Guid="a56628869-67a6-4e11-9180-91b2deffb5c3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Detent Command is 3" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not 3">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommand3" DestGuid="a12b79707-7b9e-4c6c-81da-55173753dddea" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommand3" DestGuid="adc59760a-cee5-4493-bb69-386b10658aa9a" />
+          </DP>
+          <DP Name="Detent_Command_FULL_Asterisk" Guid="a07f2733a-548d-472e-ba4f-14fcfe29c350a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Detent Command is FULL AST" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not FULL AST">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommandFULLAsterisk" DestGuid="a10603068-bfcb-42b0-a32d-b4712aa4e829a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommandFULLAsterisk" DestGuid="a3d1ae7fc-2fc6-49b2-9492-35a901155ccda" />
+          </DP>
+          <DP Name="Detent_Command_FULL" Guid="a1fb34c7a-f3d4-4995-a493-85ac75d52a3ca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Detent Command is FULL" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent Command not FULL">
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.FSECU_2M_DetentCommandFULL" DestGuid="a839291ef-5027-4214-92c1-a5b520de60a1a" />
+            <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.FSECU_2M_DetentCommandFULL" DestGuid="a4c26256c-beb6-4da7-b9a7-af1694a5d94aa" />
+          </DP>
+          <DP Name="FSCL_Detent_0" Guid="a77329922-a3aa-4e9f-9ad6-c665e9afd63ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Detent is 0" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent not 0" />
+          <DP Name="FSCL_Detent_1" Guid="ae49a16fe-cb20-486c-9326-6c55ebebfb3ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Detent is 1" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent not 1" />
+          <DP Name="FSCL_Detent_2" Guid="ae1c6ce2e-3de4-4fc8-a693-8001afabb24ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Detent is 2" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent not 2" />
+          <DP Name="FSCL_Detent_3" Guid="abcd73e29-a54a-4cff-9def-1877d2544f53a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Detent is 3" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent not 3" />
+          <DP Name="FSCL_Detent_FULL" Guid="a9da24111-d22a-4fb5-bbe8-ebd609bf14bea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Detent is FULL" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" ZeroState="0=Detent not FULL" />
+          <DP Name="SSM" Guid="ae761ce24-76ed-429c-b9e6-1739a8bcd711a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <DP Name="PARITY" Guid="a7b41f405-34f6-4064-a1eb-6aebfdc8c48ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="500" TransmissionIntervalMinimum="100" />
+          <Copy_Ref SrcName="HF_FSECU_2.po429_MON_Msg.L107_FSCL_Detent_Detent_Command" SrcGuid="af702f727-19e2-454c-acd1-e61b5162011aa" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.ipFlapSlatCmdLeverPos_MON_2" DestGuid="a10f3d897-4450-4cd6-b61c-1d6e8359bb94a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.ipFlapSlatCmdLeverPos_MON_2" DestGuid="a12366514-83c6-4d92-aad6-680b8b3a066ca" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.ipFlapSlatCmdLeverPos_MON_2" DestGuid="a16bf645d-8dd9-4733-9692-b2cfd8544f14a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.ipFlapSlatCmdLeverPos_MON_2" DestGuid="acfbf9331-bb1a-47e5-9b3e-36125d753bfaa" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.ipFlapSlatCmdLeverPos_MON_2" DestGuid="a6fa28aa8-e39c-492e-8f6d-ff49d904f1f2a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.pi429_MON_HF_FSECU_2" SrcGuid="a823e8ca4-d523-45f0-8a62-42e10cd455ada" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_RsvrTempSwLo_HF_RSVR3TEMPSW" Guid="aa3b52fef-9be4-440d-8a8a-b63196e726bfa" Direction="Destination" Physical="RDIU_16.40022_A09" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=2;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_RSVR3TEMPSW.poDISC_RsvrTempSwLo" SrcGuid="ac9f8349d-b6d3-416f-85c4-891c6c93e3b2a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40059_ATA29HYD" Guid="a1923cb04-b3cd-4959-a430-dc9c97e4354ea" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40059_ATA29HYD_Msg" Guid="a26a68de4-e074-47a0-9931-db7af788c202a" EdeEnable="True" MessageOverhead="32" MessagePad="78" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1280" VLID="33609">
+      <DS Name="FSS1" Guid="a91d2221d-7d79-46df-a3dc-d6b9480d05b8a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ab3ac0c44-a67d-4335-8dc4-e03d81def818a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="af9365aba-0572-4944-9b25-09c6f1111e7ca" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="ad3dbf9c5-0621-4240-b3bb-1dc014e13273a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_EMP3BTEMPSENSOR" Guid="a34126b1c-3189-4081-8dab-709e5b23bf88a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Temperature" Guid="addec6f26-0996-4f7a-a0fb-f1a47291f5b4a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_EMP3BTEMPSENSOR.Temp_Sensor_Signal.Temperature" SrcGuid="ae313a4a4-28fe-4770-83db-2f7c0a4e216ea" />
+          <Gw_Pub_Ref DestName="FDAS_L1.EMP3B_ANA_Temperature" DestGuid="aceb68b34-88a0-49d6-aedf-f304448a3aa0a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.EMP3B_ANA_Temperature" DestGuid="a7fcd1604-b8a4-41b6-80ed-6ed96d323047a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.EMP3B_ANA_Temperature" DestGuid="a02ab71d3-813e-428a-a0ff-5df29ed60c3fa" />
+        </DP>
+      </DS>
+      <DS Name="DISC_RsvrTempSwLo_HF_RSVR2TEMPSW" Guid="a0d233f5c-1e18-4754-b715-d37eee446114a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="acbc22851-8a12-4d3a-b6f8-85b470b61373a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RSVR2TEMPSW.DISC_RsvrTempSwLo.Status" SrcGuid="aa71dde6a-98bd-4870-851e-3cd667ef343aa" />
+          <Gw_Pub_Ref DestName="FDAS_L1.RSVR2_LO_DISC_RsvrTempSwLo" DestGuid="ac5abaa08-5460-4191-b6a3-e550c2c534f5a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.RSVR2_LO_DISC_RsvrTempSwLo" DestGuid="a2ab3b07f-5c95-4956-b6d1-31f0a4583d39a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.RSVR2_LO_DISC_RsvrTempSwLo" DestGuid="a2b1b4ba9-375b-4dd4-acac-b9e4a40c96dba" />
+        </DP>
+      </DS>
+      <DS Name="DISC_RsvrTempSwLo_HF_RSVR3TEMPSW" Guid="a74280551-cc3f-4a7c-a88e-b760518d63f6a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ad76b7e90-629e-4ede-b0be-0db4607805c3a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RSVR3TEMPSW.DISC_RsvrTempSwLo.Status" SrcGuid="add10e154-24ad-4ed8-915c-98648bf401b7a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.RSVR3_LO_DISC_RsvrTempSwLo" DestGuid="a20a21714-07de-4c88-949d-6a2b9b12b588a" />
+          <Gw_Pub_Ref DestName="FDAS_L3.RSVR3_LO_DISC_RsvrTempSwLo" DestGuid="af4de21d6-d72f-45c4-8536-234b40c5593fa" />
+          <Gw_Pub_Ref DestName="FDAS_R3.RSVR3_LO_DISC_RsvrTempSwLo" DestGuid="a5e44a9f6-aa05-450c-bf0c-5d7d621c1bb3a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piANA_EMPTemp_HF_EMP3BTEMPSENSOR" SrcGuid="ae1a229af-fced-4e3d-94e0-a579c0c79aa5a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_RsvrTempSwLo_HF_RSVR2TEMPSW" SrcGuid="a493fcfd5-cf68-4797-bafd-cd471f5a6f43a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_RsvrTempSwLo_HF_RSVR3TEMPSW" SrcGuid="aa3b52fef-9be4-440d-8a8a-b63196e726bfa" />
+  </HFSamplingPort>
+  <AnalogPort Name="piDISC_FO_HF_AFTBBSOV2" Guid="a29ef87ed-5eba-4501-b7a1-c2fb55b728bfa" Direction="Destination" Physical="RDIU_16.40022_A04" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_AFTBBSOV2.poDISC_FO" SrcGuid="a94e8e488-a889-4ce2-ba26-c196dd68388ca" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Fault_HF_AFTBFAN2" Guid="a307c87c3-dc99-41d6-86a0-c0b3fe81196da" Direction="Destination" Physical="RDIU_16.40022_A05" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_AFTBFAN2.poDISC_Fault" SrcGuid="a71effabf-21da-442c-80c3-dd2d5bc45e79a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Fault_HF_AFTEFAN2" Guid="a5524266b-6437-4b0a-85ab-c436e506dbf7a" Direction="Destination" Physical="RDIU_16.40022_A06" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_AFTEFAN2.poDISC_Fault" SrcGuid="a2f48425b-fb3e-4983-ac6f-45e94a4cd704a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Fault_HF_AFTGHEAT" Guid="adda7d1b0-48fc-4e0f-b119-96467f380ab5a" Direction="Destination" Physical="RDIU_16.40022_A07" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_AFTGHEAT.poDISC_Fault" SrcGuid="abbbcd0c7-0f2d-416b-8386-923a93e8ac28a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA21AMS" Guid="a3e6cc1f9-5b74-4761-bf5b-1daa1a428d04a" Direction="Source" MessageSize="40" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA21AMS_Msg" Guid="a7b645d86-98ab-401c-b57d-ca0b945a8fa9a" EdeEnable="True" MessageOverhead="32" MessagePad="217" MessageSize="40" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="1280" VLID="33609">
+      <DS Name="FSS1" Guid="aa792fb01-63e6-49b5-97f1-2a655d396e88a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a312a21ff-af9e-4c7d-94ca-e3fe744db42da" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a823d0dd2-53fa-420a-8833-e727fcc87c7ba" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a3ed40b75-8931-46fb-87cf-ef93734024f1a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a6d7df9a1-3508-4746-95d9-ced2720f09b7a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_FC_HF_AFTBBSOV1" Guid="a0f4eb8b6-de6b-42e4-b2fe-30667e23ce3ba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="af95744da-dd68-4257-b6d4-80ead31b33aca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBBSOV1.DISC_FC.Status" SrcGuid="a6827a794-19b2-45a5-8aba-dfdac445ba6da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_FC_DISC_FC_Status" DestGuid="aac54260e-ed9d-45c9-b48b-2cb0c0e58f62a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.RX_Status_AFTBBSOV1_FC" DestGuid="ab212d611-db55-408e-9aba-8cb7ae45df3aa" />
+        </DP>
+      </DS>
+      <DS Name="DISC_FO_HF_AFTBBSOV1" Guid="af93f893b-526b-4120-a024-9411a4bd8bb9a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a0c2842a0-c57c-4c7d-a91e-218216174d38a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBBSOV1.DISC_FO.Status" SrcGuid="acfecbe61-9dea-44d4-a3d7-cc6a23ba979da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_FO_DISC_FO_Status" DestGuid="a40c0ebb4-8e2d-4cde-b0e6-9958670582b7a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.RX_Status_AFTBBSOV1_FO" DestGuid="a7832b457-4bee-4ff0-96a1-b25336375573a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.AFTBBSOV1_Open" DestGuid="af3996d0e-cad7-4209-bed1-21fc70116ba2a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.AFTBBSOV1_Open" DestGuid="aeb322056-caae-4a94-9a20-913e8ec66bf3a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_FC_HF_AFTBBSOV2" Guid="ae8ebc2fb-1c76-4251-b806-7b413d554d59a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a15f8c4e7-fad4-4a2e-a4e5-412b739db91ca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBBSOV2.DISC_FC.Status" SrcGuid="ab99220a0-316f-4dca-a3a4-a833a08b3d09a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTBBSOV2_FC" DestGuid="a39123382-459c-4d06-8b9b-67db96d55971a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_FO_HF_AFTBBSOV2" Guid="a5e31c500-283f-4d66-9ccd-3bbcfcd7a172a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a87970117-1dad-4e44-a099-e79efa324d23a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBBSOV2.DISC_FO.Status" SrcGuid="ac1dd4ed2-1466-4df8-8dbf-d9aacc7a770ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTBBSOV2_FO" DestGuid="aff000f25-c6ee-4fc8-9d82-9ed9a7df5287a" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_L.AFTBBSOV2_Open" DestGuid="a0408bec0-9c6a-49ee-9ba5-4f03b545961da" />
+          <Gw_Pub_Ref DestName="SYNOPTICPAGEAPP_R.AFTBBSOV2_Open" DestGuid="a9f3310f1-dc1a-4053-aab0-02809651e7d9a" />
+        </DP>
+      </DS>
+      <DS Name="FSS2" Guid="af848af7c-ed6b-4fb4-9463-beeb40f77411a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a33faea70-11c4-494b-b48a-661d2d713b1ca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="a4a710e7d-579c-4eae-acf8-286ff606f321a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a744a1de0-ac0d-4794-ab52-7d22eb1504e4a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_Fault_HF_AFTBFAN2" Guid="a6c93bd6a-e6e4-42dc-bc57-f5bb58d14a30a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a9bc4f709-8c64-4b9f-94b0-959ceb517510a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBFAN2.DISC_Fault.Status" SrcGuid="a447b3d59-f785-4f7c-be27-259a4c9037e4a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTBFAN2_FAULT" DestGuid="aeb54fe6e-f78d-45d0-9343-7cf62390f4c0a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_Fault_HF_AFTEFAN2" Guid="aa580992f-aa4b-4aac-b783-58d4e4f51831a" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="aed27c36f-c17c-47e0-9b9c-bb5cbaee4d11a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTEFAN2.DISC_Fault.Status" SrcGuid="a390652a9-74fb-48b6-8c64-f5e11167b86ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTEFAN2_FAULT" DestGuid="a7d92cf72-51d0-4189-8422-55801a065dd9a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_Fault_HF_AFTGHEAT" Guid="a9ab9d54b-45c9-4cd2-a6e8-65c132e4ec5ca" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a0ca75111-2f6f-4c20-b976-2c13785db8efa" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTGHEAT.DISC_Fault.Status" SrcGuid="af6fac9d0-69f5-4396-a02a-2314f8deb330a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_Fault_DISC_Fault_Status_1" DestGuid="a47200b81-1856-4821-a9f9-2d45f8ab9240a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTGHEAT_Fault" DestGuid="a04b9af9b-5d1f-41cf-ba78-18eb79a279ada" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_Fault_HF_AFTBFAN2" SrcGuid="a307c87c3-dc99-41d6-86a0-c0b3fe81196da" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_Fault_HF_AFTEFAN2" SrcGuid="a5524266b-6437-4b0a-85ab-c436e506dbf7a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_Fault_HF_AFTGHEAT" SrcGuid="adda7d1b0-48fc-4e0f-b119-96467f380ab5a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_FC_HF_AFTBBSOV1" SrcGuid="a694dcc6c-4c48-4557-8d65-e8009a4a0bcea" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_FC_HF_AFTBBSOV2" SrcGuid="a8f74b188-a0fe-420e-984a-44b50f8f3dc6a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_FO_HF_AFTBBSOV1" SrcGuid="aa60b2dd6-e3a1-45ee-8f65-d8c06f893a44a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA21AMS.piDISC_FO_HF_AFTBBSOV2" SrcGuid="a29ef87ed-5eba-4501-b7a1-c2fb55b728bfa" />
+  </HFSamplingPort>
+</RemoteGateway>

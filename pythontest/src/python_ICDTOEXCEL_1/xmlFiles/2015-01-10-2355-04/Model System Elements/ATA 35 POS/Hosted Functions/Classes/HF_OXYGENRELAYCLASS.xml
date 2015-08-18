@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_OXYGENRELAYCLASS" Guid="a25d08dec-618e-491f-8891-2098b922d03aa" XsdVersion="7.9" ATA="3520xx">
+  <AnalogPort Name="poDISC_Status" Guid="acb330d21-e8bf-44f5-aaae-07bd044d6541a" Direction="Source" RefreshPeriod="0" RIUTemplate="40021" UDC="Confirmation period=1;Status inversion=1">
+    <AnalogDiscreteParameter Name="OxyMaskDeploy" Guid="a31f042dc-7f0a-4719-9677-eac70976eb82a" HighState="1= Relay is on 28V DC" LowState="0= Relay is Open" PublishedLatency="0">
+      <DP Name="Status" Guid="ae3eaad9e-1dd0-453d-8304-1c04daee2be8a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_Status1" Guid="a824c6d06-15fb-4262-8870-866e26bd75d0a" Direction="Source" RefreshPeriod="0" RIUTemplate="40021" UDC="Confirmation period=1;Status inversion=2">
+    <AnalogDiscreteParameter Name="Relay_On" Guid="ae6da6027-9df4-4ce0-8d34-b2212bbe014ea" HighState="1= Relay is Open" LowState="0= Relay is on 28V DC" PublishedLatency="0">
+      <DP Name="Status" Guid="a99a18793-5120-4eca-837d-1aeb28273b55a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Command" Guid="aca52bc16-7610-4307-a308-81e9eb878c3ea" Direction="Destination" RIUTemplate="40012" SamplePeriod="0" UDC="Command inversion=1">
+    <RP Name="Command" Guid="a000ab413-7455-4b85-bbcf-ec1c3da22ad7a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="200" />
+  </AnalogPort>
+</HostedFunctionClass>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW11_Analog_In_ATA21AMS" Guid="afad2e0de-fc0f-4a02-8630-5909679238f2a" XsdVersion="7.9" Hardware="RDIU_11">
+  <AnalogPort Name="piDISC_Fault_HF_AFTBFAN1" Guid="a88fd66af-3b54-45d1-80da-d314ae49b274a" Direction="Destination" Physical="RDIU_11.40022_A01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_AFTBFAN1.poDISC_Fault" SrcGuid="a540b696a-1d4f-4f85-ac13-4b15ce54fb85a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Fault_HF_RFAN2" Guid="ab21acc28-7f83-491f-9ab5-48443d482ff5a" Direction="Destination" Physical="RDIU_11.40022_A02" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=2">
+    <Dataflow_Ref SrcName="HF_RFAN2.poDISC_Fault" SrcGuid="a36133246-4e1d-4f6e-bd3b-d3f26f0273e4a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA21AMS" Guid="a2c094457-5004-4916-92d2-130f981dfb48a" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA21AMS_Msg" Guid="afa81d01b-3639-4943-83f1-082338af5cb8a" EdeEnable="True" MessageOverhead="32" MessagePad="62" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33397">
+      <DS Name="FSS1" Guid="ad2556bc5-384c-45e0-a69b-75f439a928c1a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a6f09d113-5d2c-40d2-8888-a2a6e81ac0a1a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a76b2a83b-18e7-4864-bd8e-ef2cc37cda9aa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_Fault_HF_AFTBFAN1" Guid="aeb3997f9-5cff-438d-84dd-0ffe7b9acaa7a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="aa4d9e2af-56cb-4621-8244-143b009b4841a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFTBFAN1.DISC_Fault.Status" SrcGuid="a89eaf55a-2762-41f1-be17-8713ff81bceca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poDISC_Fault_DISC_Fault_Status_1_1" DestGuid="a4bdef238-669a-4b21-b7fa-b2c179781639a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_AFTBFAN1_Fault" DestGuid="a7beba29f-4ab3-4a93-91e9-22f0ee9be5b7a" />
+        </DP>
+      </DS>
+      <DS Name="DISC_Fault_HF_RFAN2" Guid="a791eae80-35d3-493d-b715-13991c821abea" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ad118f1ba-f76f-4345-917c-59bfc71ea28ca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_RFAN2.DISC_Fault.Status" SrcGuid="ad7834c2d-31e6-4814-b2ab-7fac95b972aba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_RFAN2_FAULT" DestGuid="a77538cc2-663f-4fe2-9594-c1a73fc7e396a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW11_Analog_In_ATA21AMS.piDISC_Fault_HF_AFTBFAN1" SrcGuid="a88fd66af-3b54-45d1-80da-d314ae49b274a" />
+    <Gateway_Ref SrcName="RGW11_Analog_In_ATA21AMS.piDISC_Fault_HF_RFAN2" SrcGuid="ab21acc28-7f83-491f-9ab5-48443d482ff5a" />
+  </HFSamplingPort>
+</RemoteGateway>

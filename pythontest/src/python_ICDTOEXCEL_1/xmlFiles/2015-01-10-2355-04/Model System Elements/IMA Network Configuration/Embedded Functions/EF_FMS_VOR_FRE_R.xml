@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_FMS_VOR_FRE_R" Guid="a532ada97-a598-4116-9f61-75eccf9c2aefa" XsdVersion="7.9" ChangeAuthority="UnknownOwner" DiagramFile="C:\Program Files (x86)\GE Aviation\Embedded Function Editor Toolset - Obfuscated\ApplicationResource\Layout Files\a532ada97-a598-4116-9f61-75eccf9c2aefa.efl" DiagramMD5="QzU0M0Y4MUYzOTlGQkIwMzhCQTM5M0IzRTRGNzk0NjE=" UpdatePeriod="160">
+  <DesignConstant Name="WORD32_ZERO_ND" Guid="a644c3867-3884-44db-b7d1-c0cfba5351caa" DataFormatType="OPAQUE" ParameterSize="32" />
+  <DataInPort Name="VOR_Freq_FMS1" Guid="a19f462bd-cf13-4036-ba5a-1af99b313bbea" DataFormatType="OPAQUE" ParameterSize="32">
+    <Emb_Ref SrcName="APP_FMS_TUNE_1.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq" SrcGuid="a52babcea-0ab7-4eb1-bd6c-4abcf2e125d4a" />
+  </DataInPort>
+  <DataInPort Name="VOR_Freq_FMS2" Guid="abadd5b62-e5f7-4736-aea3-dea54e42c674a" DataFormatType="OPAQUE" ParameterSize="32">
+    <Emb_Ref SrcName="APP_FMS_TUNE_2.ARINC429_MIX_MSG_TUNE_2.DS1_TUNE.L034_VOR_Freq" SrcGuid="abe4e2513-524d-49e0-b600-e30278385f7ea" />
+  </DataInPort>
+  <DataOutPort Name="VOR_Freq" Guid="a6462c756-40e2-4807-b176-afca2fdc5a2fa" DataFormatType="OPAQUE" ParameterSize="32">
+    <Trans_Ref SrcName="EF_FMS_VOR_FRE_R.INSTANCE_1.Output" SrcGuid="a9fa0b661-40b3-4d2d-93ea-216424331799a" />
+  </DataOutPort>
+  <TransFcn Name="INSTANCE_1" Guid="a489d9dc3-fabd-48ec-bef7-d6d50e6ae54ea" RIUTemplate="41073" SequenceNumber="1" TemplateInstance="41073_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="ab7cafada-2195-4d76-8586-5265a4f3520fa" DataFormatType="OPAQUE" ParameterSize="32" RIULabel="a">
+      <Trans_Ref SrcName="EF_FMS_VOR_FRE_R.VOR_Freq_FMS1" SrcGuid="a19f462bd-cf13-4036-ba5a-1af99b313bbea" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="ad5de2ef4-d75a-4b41-885a-c3f1a6ea3740a" DataFormatType="OPAQUE" ParameterSize="32" RIULabel="b">
+      <Trans_Ref SrcName="EF_FMS_VOR_FRE_R.VOR_Freq_FMS2" SrcGuid="abadd5b62-e5f7-4736-aea3-dea54e42c674a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a4628a4f3-bb63-487a-94e4-14812f8e630da" DataFormatType="OPAQUE" ParameterSize="32" RIULabel="c">
+      <Trans_Ref SrcName="EF_FMS_VOR_FRE_R.WORD32_ZERO_ND" SrcGuid="a644c3867-3884-44db-b7d1-c0cfba5351caa" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="afbe2eb66-7ed5-4910-b81e-09f0305ce28fa" DataFormatType="OPAQUE" ParameterSize="32" RIULabel="d">
+      <Trans_Ref SrcName="EF_FMS_VOR_FRE_R.WORD32_ZERO_ND" SrcGuid="a644c3867-3884-44db-b7d1-c0cfba5351caa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a9fa0b661-40b3-4d2d-93ea-216424331799a" DataFormatType="OPAQUE" ParameterSize="32" RIULabel="e" />
+  </TransFcn>
+</EmbFcn>

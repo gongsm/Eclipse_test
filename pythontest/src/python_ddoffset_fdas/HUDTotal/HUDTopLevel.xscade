@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Operator kind="function" name="AuxTopLevel">
+			<inputs>
+				<Variable name="InputsDD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="HUDDataDictionaryType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/90c4/60E6/1228/55792bd37e67"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="OutputData">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="HUDDataDictionaryType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/e11d/60E6/1228/55793e1b6e7e"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<locals>
+				<Variable name="_L1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="HUDDataDictionaryType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/e128/60E6/1228/55793e284687"/>
+					</pragmas>
+				</Variable>
+			</locals>
+			<data>
+				<!-- _L1 = InputsDD; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="_L1"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="InputsDD"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/e127/60E6/1228/55793e283ac1"/>
+					</pragmas>
+				</Equation>
+				<!-- OutputData = _L1; -->
+				<Equation>
+					<lefts>
+						<VariableRef name="OutputData"/>
+					</lefts>
+					<right>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+					</right>
+					<pragmas>
+						<ed:Equation oid="!ed/e129/60E6/1228/55793e287210"/>
+					</pragmas>
+				</Equation>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/4860/60E6/1228/55792b9e5a0c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<NetDiagram name="diagram_AuxTopLevel_1" landscape="true" format="A4 (210 297)" oid="!ed/4861/60E6/1228/55792b9e3961">
+							<presentationElements>
+								<EquationGE presentable="!ed/e127/60E6/1228/55793e283ac1">
+									<position>
+										<Point x="5768" y="5027"/>
+									</position>
+									<size>
+										<Size width="265" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/e129/60E6/1228/55793e287210">
+									<position>
+										<Point x="12753" y="5424"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e127/60E6/1228/55793e283ac1" dstEquation="!ed/e129/60E6/1228/55793e287210">
+									<positions>
+										<Point x="6033" y="5292"/>
+										<Point x="9419" y="5292"/>
+										<Point x="9419" y="5689"/>
+										<Point x="12806" y="5689"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_RFAN1_SUPPLY_CMD_EPS_A" Guid="a3aba01ce-afef-486d-a318-c0e4d476de81a" XsdVersion="7.9" ChangeAuthority="UnknownOwner" DiagramFile="C:\Program Files (x86)\GE Aviation\Embedded Function Editor Toolset - Obfuscated\ApplicationResource\Layout Files\a3aba01ce-afef-486d-a318-c0e4d476de81a.efl" DiagramMD5="QjgwOTFDQzRFQUJCNTE2RkFERDU5NzBGN0RDOTRENEE=" UpdatePeriod="160">
+  <DesignConstant Name="DIS1_ONE_NO" Guid="afb23d43f-3355-47be-9620-fa128d26dadea" DataFormatType="DIS" ParameterSize="1" />
+  <DesignConstant Name="BYTE8_ZERO_ND" Guid="a140668d6-f4ce-4673-a9d3-6fbccfa13b2ca" DataFormatType="OPAQUE" ParameterSize="8" />
+  <DataInPort Name="RFAN_SUPPLY_CMD_IASC1A" Guid="a2f3560ef-db75-4108-88d2-c7473c28c3f1a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L310_RPDU_Command_Word.RFAN_SUPPLY_CMD" SrcGuid="a6f560035-4c70-4d08-8417-9415f6a472fba" />
+  </DataInPort>
+  <DataInPort Name="RFAN_SUPPLY_CMD_IASC1B" Guid="ae93451de-b6c7-4e7f-9847-719c6e3bff29a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L310_RPDU_Command_Word.RFAN_SUPPLY_CMD" SrcGuid="a21f8fbda-5966-48f2-8d10-1b9087b2fdf3a" />
+  </DataInPort>
+  <DataOutPort Name="RFAN1_SUPPLY_CMD_EPS_1A" Guid="a5789c0d8-bbdb-47ee-a5a8-cede2d1df4c4a" DataFormatType="COD" ParameterSize="8">
+    <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_17.Output" SrcGuid="add80fb14-e2a8-4855-abcb-afd7827d2e9ca" />
+  </DataOutPort>
+  <TransFcn Name="INSTANCE_1" Guid="a0f2ab2e0-53be-41a3-96bb-4c266b47a6a4a" RIUTemplate="41065" SequenceNumber="1" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="a8287a5c8-98ba-4318-be4e-6e3b3eeabe8ca" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.RFAN_SUPPLY_CMD_IASC1A" SrcGuid="a2f3560ef-db75-4108-88d2-c7473c28c3f1a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a8005ee8d-1a21-4881-9b2d-d6ca2079adc6a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.RFAN_SUPPLY_CMD_IASC1B" SrcGuid="ae93451de-b6c7-4e7f-9847-719c6e3bff29a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a6a0fe834-24b5-4fda-a41b-2f6fdbf2255ea" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_2" Guid="aadf9b79b-952c-49f6-97e1-d87251dda691a" RIUTemplate="41065" SequenceNumber="2" TemplateInstance="41065_T01" UDC="Hold Time=1000;Acknowledge Time=1000;Logic=1;">
+    <DataInPort Name="Input_1" Guid="a5aa53f5e-c346-4466-a628-beed34a130baa" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.RFAN_SUPPLY_CMD_IASC1A" SrcGuid="a2f3560ef-db75-4108-88d2-c7473c28c3f1a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a1e0055f0-62a3-4492-9b24-bde9baa1eef9a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.RFAN_SUPPLY_CMD_IASC1B" SrcGuid="ae93451de-b6c7-4e7f-9847-719c6e3bff29a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a4c27455d-c860-4833-852b-a145664bf689a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_3" Guid="a1dd3a2e0-31b3-41c2-92ce-5e2cc6ef7df6a" RIUTemplate="41039" SequenceNumber="3" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a101f812b-a294-4d90-a5d7-b0edcfd9fc2ca" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_1.Output" SrcGuid="a6a0fe834-24b5-4fda-a41b-2f6fdbf2255ea" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="a629aaccf-4c03-478b-b7a6-2f47efd26023a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_4" Guid="ad1a91463-18f7-4d61-94d1-a4cad0746804a" RIUTemplate="41039" SequenceNumber="4" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="aa5340f4e-8501-465e-a71a-9c1f76641a2da" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_2.Output" SrcGuid="a4c27455d-c860-4833-852b-a145664bf689a" />
+    </DataInPort>
+    <DataOutPort Name="Validity Parameter" Guid="aa12156b9-ca0e-46da-8735-2132eafc69faa" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_5" Guid="ad2352d03-ac49-497f-a35b-2e9c2220dc61a" RIUTemplate="41000" SequenceNumber="5" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xF888h;">
+    <DataInPort Name="Input_1" Guid="ae1cf800a-b723-4cd7-9c9f-4be7c642870da" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="a629aaccf-4c03-478b-b7a6-2f47efd26023a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a4ad4c0ad-4a17-405d-85f3-c3f095d02397a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_1.Output" SrcGuid="a6a0fe834-24b5-4fda-a41b-2f6fdbf2255ea" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="ac6ebd3b2-2944-4f2e-a60c-de78e6d96962a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="aa12156b9-ca0e-46da-8735-2132eafc69faa" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="ae3938ceb-a27b-4165-87e7-0d9fa92dc30ca" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_2.Output" SrcGuid="a4c27455d-c860-4833-852b-a145664bf689a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a5e0ac71b-2017-40dd-a92d-1fee8de3aa3aa" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_6" Guid="a776e7011-0d71-4f86-8212-9a3d0b208ebba" RIUTemplate="41000" SequenceNumber="6" TemplateInstance="41000_T01" UDC="Hold time=0;Acknowledge time=0;Logic criteria=0xABA8h;">
+    <DataInPort Name="Input_1" Guid="ae14728fa-b3e7-4a83-a71d-a524792a4b0ea" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_5.Output" SrcGuid="a5e0ac71b-2017-40dd-a92d-1fee8de3aa3aa" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="af129c3f1-c4d8-4973-ba8b-27f61e97fb26a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_3.Validity Parameter" SrcGuid="a629aaccf-4c03-478b-b7a6-2f47efd26023a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="ad4451525-5919-4cd0-a39c-6b5e821eaec7a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_4.Validity Parameter" SrcGuid="aa12156b9-ca0e-46da-8735-2132eafc69faa" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="ad1bbe42e-3a70-4620-8a99-73098a8d0ebda" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a4c6ecf6a-7028-4732-8de0-4c893c80fcafa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ab05cb4eb-f953-4120-b334-cadca631159aa" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_7" Guid="ac7212b25-ec7a-480d-9069-f5fcdd077289a" RIUTemplate="41043" SequenceNumber="7" TemplateInstance="41043_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Data" Guid="a41e94934-1462-4423-9bce-60d0976ddd8ca" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_6.Output" SrcGuid="ab05cb4eb-f953-4120-b334-cadca631159aa" />
+    </DataInPort>
+    <DataInPort Name="Validity Parameter" Guid="afc76710e-9c00-417f-a4be-5fd867e94e3fa" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.DIS1_ONE_NO" SrcGuid="afb23d43f-3355-47be-9620-fa128d26dadea" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a4c6ecf6a-7028-4732-8de0-4c893c80fcafa" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_8" Guid="a43cb21ac-081e-4b23-9b58-6d5e07997ba0a" RIUTemplate="41035" SequenceNumber="8" TemplateInstance="41035_T01" UDC="Constant=10;">
+    <DataOutPort Name="Output" Guid="a21fe8b2c-3ae5-4fe8-a45d-c8588f4920f8a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_9" Guid="a8bb46b54-f4f4-4bbe-bd21-bcd96f7514c2a" RIUTemplate="41061" SequenceNumber="9" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="ab5ae1289-903a-403f-ae6d-1d0411dd5ac6a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_8.Output" SrcGuid="a21fe8b2c-3ae5-4fe8-a45d-c8588f4920f8a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a5da7afc6-4820-43a5-be68-5853865f382ca" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_10" Guid="ae90819fb-d431-4886-8b28-950434dbacd3a" RIUTemplate="41055" SequenceNumber="10" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a0b3180cc-52aa-4941-8280-78e822efebb8a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_9.Output" SrcGuid="a5da7afc6-4820-43a5-be68-5853865f382ca" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a75d725dc-ac95-456d-8f12-10d1082ee2bda" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_11" Guid="a5d8c2987-f9a1-485a-9d9f-5d83d53ec89fa" RIUTemplate="41035" SequenceNumber="11" TemplateInstance="41035_T01" UDC="Constant=5;">
+    <DataOutPort Name="Output" Guid="a30045b16-6f45-47bf-8493-136e642fa352a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_12" Guid="adabe9430-95b2-438b-bd3e-72a8c0c51d15a" RIUTemplate="41061" SequenceNumber="12" TemplateInstance="41061_T01" UDC=" ">
+    <DataInPort Name="Input" Guid="a775280a9-e761-4627-bee1-3abefb909fa5a" DataFormatType="UBNR" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_11.Output" SrcGuid="a30045b16-6f45-47bf-8493-136e642fa352a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="ace1e0a18-a6b8-47a9-8345-722af5093821a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_13" Guid="a1079a446-9cb7-4582-ab19-8bd00896d9e9a" RIUTemplate="41055" SequenceNumber="13" TemplateInstance="41055_T01" UDC="Index=0;">
+    <DataInPort Name="Input" Guid="a6b847376-792e-4cf9-a865-45624da79232a" DataFormatType="OPAQUE" ParameterSize="16" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_12.Output" SrcGuid="ace1e0a18-a6b8-47a9-8345-722af5093821a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a63a13518-b264-436d-b4b0-e258e53be361a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_14" Guid="a4a21c6d9-2d27-4782-ab11-eecd1346b09ba" RIUTemplate="41044" SequenceNumber="14" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="ae6cebad6-e6c0-41e0-82e4-f0ed7a611859a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a4c6ecf6a-7028-4732-8de0-4c893c80fcafa" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="a3d13c843-b29c-4b4e-b450-59c0a1817096a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_10.Output" SrcGuid="a75d725dc-ac95-456d-8f12-10d1082ee2bda" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="aa7b5032b-742c-47f5-bb1f-817d245b1640a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_15" Guid="a5850c1eb-54e7-498d-b58a-992da23be496a" RIUTemplate="41004" SequenceNumber="15" TemplateInstance="41004_T01" UDC="Output Inversion=2;">
+    <DataInPort Name="Input" Guid="a62357777-d4da-4ffb-b688-a4d536df9769a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_7.Output" SrcGuid="a4c6ecf6a-7028-4732-8de0-4c893c80fcafa" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="accfeb820-eb77-44c8-8387-ac14c5ae1b26a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_16" Guid="ab2573e25-589e-460e-bc2b-62a931246fa7a" RIUTemplate="41044" SequenceNumber="16" TemplateInstance="41044_T01" UDC="False Method=2;True Method=3;">
+    <DataInPort Name="Validity Parameter" Guid="aa4d85f62-132d-4925-b50d-8a3e0bb76df2a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_15.Output" SrcGuid="accfeb820-eb77-44c8-8387-ac14c5ae1b26a" />
+    </DataInPort>
+    <DataInPort Name="Data" Guid="a5a381bbd-bf86-4059-a8b6-25ec6a24295fa" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_13.Output" SrcGuid="a63a13518-b264-436d-b4b0-e258e53be361a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a4d230625-7431-4e9d-b650-bad4a498406fa" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c" />
+  </TransFcn>
+  <TransFcn Name="INSTANCE_17" Guid="afedbca43-6ced-4b98-af61-de7f34a4cb34a" RIUTemplate="41075" SequenceNumber="17" TemplateInstance="41075_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="a9fa9352d-0c22-41e1-8bbb-c74ef8c738cba" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="a">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_14.Output" SrcGuid="aa7b5032b-742c-47f5-bb1f-817d245b1640a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a9f4a7a17-9f71-459e-a2ed-c821e11c8267a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="b">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.INSTANCE_16.Output" SrcGuid="a4d230625-7431-4e9d-b650-bad4a498406fa" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a649e49ea-83c9-4a5b-8489-fd72a8746483a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="c">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.BYTE8_ZERO_ND" SrcGuid="a140668d6-f4ce-4673-a9d3-6fbccfa13b2ca" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="ae9650a50-1cd4-4cd2-ac6a-bc7aed457a65a" DataFormatType="OPAQUE" ParameterSize="8" RIULabel="d">
+      <Trans_Ref SrcName="EF_RFAN1_SUPPLY_CMD_EPS_A.BYTE8_ZERO_ND" SrcGuid="a140668d6-f4ce-4673-a9d3-6fbccfa13b2ca" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="add80fb14-e2a8-4855-abcb-afd7827d2e9ca" DataFormatType="COD" ParameterSize="8" RIULabel="e" />
+  </TransFcn>
+</EmbFcn>

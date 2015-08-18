@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_DSUCLASS" Guid="a81348e31-9cc3-4db7-a943-77c9e0d54085a" XsdVersion="7.9" ATA="44xxxx">
+  <A429Port Name="po429_DL_DB1_TX" Guid="adee57d5c-75c8-4949-9167-3922c3dc1d92a" ActivityTimeout="1500" Direction="Source" RefreshPeriod="500">
+    <A429Channel Name="po429_DL_DB1_TX_Msg" Guid="a4229cafd-2cae-47f9-ab1d-985ef6d8edd8a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="0.5">
+      <A429Word Name="L304_ACARS_IFE" Guid="a854ac857-a0b5-4f07-9261-cdf51318d51ea">
+        <DP Name="LABEL" Guid="a2e11899f-6eb4-4367-b770-a51438d453a6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Data" Guid="ad98793b4-9900-4477-96fa-c0c6b03ac7bba" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="65535" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="16" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Data_Extension" Guid="acc979c4e-e99c-4071-ba93-9b36c4486a8ca" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="4" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Word_Type" Guid="a1da4be4f-356e-4840-9c2d-34c28a8d831ba" BitOffsetWithinDS="28" CodedSet="0=Reserved;1=Reserved;2=Interface_status;3=Reserved;4=Reserved;5=Reserved;6=Reserved;7=Reserved" DataFormatType="COD" ParameterSize="3" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="PARITY" Guid="aee13e03c-d0e2-43ad-8b7f-ffaebbd4f26ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_DL_DB2_TX" Guid="a38104806-1cf9-4450-8072-9825b6b4563ea" ActivityTimeout="1500" Direction="Source" RefreshPeriod="500">
+    <A429Channel Name="po429_DL_DB2_TX_Msg" Guid="a626ec9c0-3db3-4151-a068-a7e1a570bf32a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="0.5">
+      <A429Word Name="L304_ACARS_IFE" Guid="a4f0c1a3c-e44b-4a62-96a1-793c8af06957a">
+        <DP Name="LABEL" Guid="a2ad900c8-ea36-43f7-8274-e91f0909640ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Data" Guid="a896626fa-4f8e-4bb7-951e-ca26f5c2a155a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="65535" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="16" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Data_Extension" Guid="a2a44ac9e-8d7f-4f8b-b77d-92d9a0398a78a" BitOffsetWithinDS="24" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" LsbRes="-1" Multiplier="1" ParameterSize="4" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="IFE_Word_Type" Guid="ac5e8c3d9-1024-420d-b8a8-3baa397a9ad6a" BitOffsetWithinDS="28" CodedSet="0=Reserved;1=Reserved;2=Interface_status;3=Reserved;4=Reserved;5=Reserved;6=Reserved;7=Reserved" DataFormatType="COD" ParameterSize="3" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+        <DP Name="PARITY" Guid="a7083704b-9841-45cc-975a-d1a51f655039a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="250" TransmissionIntervalMinimum="0.5" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="pi429_DL_DB_RX_374" Guid="a6cfa80e2-453f-4c60-8ad5-61ab0b767b14a" Direction="Destination" SamplePeriod="0">
+    <RP Name="CNS_Data" Guid="a41c9580c-be6f-49e0-ba2d-d5382169386ea" BitOffsetWithinMsg="8" DataFormatType="BNR" Label="374" Multiplier="1" ParameterSize="16" SDIExpected="-1" SysLatencyWCLimit="500" />
+    <RP Name="CNS_Data_Extension" Guid="a474f3feb-47a5-4080-90c5-d1f2a563db0ba" BitOffsetWithinMsg="24" DataFormatType="BNR" Label="374" Multiplier="1" ParameterSize="4" SDIExpected="-1" SysLatencyWCLimit="500" />
+    <RP Name="CNS_Word_Type" Guid="a7cd8b3e1-ac18-42ea-a940-4fc88c4cb6fea" BitOffsetWithinMsg="28" DataFormatType="COD" Label="374" ParameterSize="3" SDIExpected="-1" SysLatencyWCLimit="500" />
+  </A429Port>
+</HostedFunctionClass>

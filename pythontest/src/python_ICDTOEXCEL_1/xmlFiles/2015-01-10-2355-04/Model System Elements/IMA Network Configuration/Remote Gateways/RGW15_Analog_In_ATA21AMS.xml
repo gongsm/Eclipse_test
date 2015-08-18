@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW15_Analog_In_ATA21AMS" Guid="a8074997e-1ae2-45e9-9d3c-17b8bc2aa425a" XsdVersion="7.9" Hardware="RDIU_15">
+  <AnalogPort Name="piANALOG_U1_HF_AFT_CED" Guid="aa8f334f9-7e51-4bba-879c-7cd5689ba90da" Direction="Destination" Physical="RDIU_15.40010_C01" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=5;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_AFT_CED.poANALOG_U1" SrcGuid="a16de04cb-45d6-43d8-a496-bb6983a4475aa" />
+  </AnalogPort>
+  <AnalogPort Name="piANALOG_U2_HF_AFT_CED" Guid="acf9829a8-7db9-415c-b247-f91008239faba" Direction="Destination" Physical="RDIU_15.40010_C02" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=5;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_AFT_CED.poANALOG_U2" SrcGuid="aa36935a6-02de-4c2c-8a20-6542a424e5f0a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40010_ATA21AMS" Guid="aa2123e81-3134-41ac-8c0a-4946e100156fa" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40010_ATA21AMS_Msg" Guid="aa7171520-16c9-4523-8311-33cca1083f83a" EdeEnable="True" MessageOverhead="32" MessagePad="32" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33332">
+      <DS Name="FSS1" Guid="abd64c57b-efbb-4fd6-b4e7-abc7857f0a09a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a789b8bb4-8bda-4197-b479-c270f5edbf5ea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a3d144480-70c8-43f2-b04c-50111bf6d2e8a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="ANALOG_U1_HF_AFT_CED" Guid="ab4263a6d-6919-403b-9642-63e9cd9c15caa" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a165acc59-44d0-4fe8-8f5d-f84fc69ea6d3a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFT_CED.ANALOG_U1.Voltage" SrcGuid="ab56ab53b-9c99-481c-8509-630c64d73fe3a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poANALOG_U1_ANALOG_U1_Voltage" DestGuid="aaa114e22-3120-47b6-ab87-a51a35e6a9e3a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltage_AFT_CED_ANALOG_U1" DestGuid="a83f54a63-e998-49fe-b6c8-488f7206c0dda" />
+        </DP>
+      </DS>
+      <DS Name="ANALOG_U2_HF_AFT_CED" Guid="a0eb9b165-8416-4aeb-b1cc-f7379385ad75a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a52a00879-f881-4c09-bc78-22587f731f14a" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_AFT_CED.ANALOG_U2.Voltage" SrcGuid="ab2e97405-bed2-4fae-a849-a072486ddcf6a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.poANALOG_U2_ANALOG_U2_Voltage" DestGuid="a36f682ab-b3a7-4aec-b729-23a41c96b9c1a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltagee_AFT_CED_ANALOG_U2" DestGuid="ac4375bad-abc0-4011-9195-b8c2c1e29d7fa" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA21AMS.piANALOG_U1_HF_AFT_CED" SrcGuid="aa8f334f9-7e51-4bba-879c-7cd5689ba90da" />
+    <Gateway_Ref SrcName="RGW15_Analog_In_ATA21AMS.piANALOG_U2_HF_AFT_CED" SrcGuid="acf9829a8-7db9-415c-b247-f91008239faba" />
+  </HFSamplingPort>
+</RemoteGateway>

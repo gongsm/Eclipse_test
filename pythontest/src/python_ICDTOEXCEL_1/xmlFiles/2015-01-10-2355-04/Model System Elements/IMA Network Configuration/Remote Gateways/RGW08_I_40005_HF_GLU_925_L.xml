@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW08_I_40005_HF_GLU_925_L" Guid="a35de4adf-4483-4812-8174-9a1d9834fa48a" XsdVersion="7.9" Hardware="RDIU_08">
+  <A429Port Name="pi429_GIPC_1_HF_GIPC_A429_CH_INSTANCES" Guid="a7c097166-ce73-4d1b-9eed-2b3470d9ca68a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_08.40005_B05" SamplePeriod="320">
+    <Dataflow_Ref SrcName="HF_GIPC_A429_CH_INSTANCES.po429_GIPC_1" SrcGuid="a69d72202-6fe1-4813-b7bf-5272d932366ca" />
+  </A429Port>
+  <A429Port Name="pi429_GNSS_3_HF_GLU_925_L" Guid="ab54d6acd-eead-4961-bc29-68e1da673572a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_08.40005_A04" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_GLU_925_L.po429_GNSS_3" SrcGuid="a7430a2bc-36eb-407d-877f-521bc818ff37a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_po429_GIPC_1_Msg" Guid="ac8e54278-4105-40ce-b12b-d03f69596af5a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_GIPC_1_Msg_S_1" Guid="a66fec159-c805-4c37-9302-9c17f5acb91ca" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1000" VLID="33437">
+      <DS Name="FSS1" Guid="a4549502a-01d1-4daa-ab2a-e57257922d0aa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aa1b8ebf9-0f04-4eb0-a932-6e94380e009ea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L302_AWCU_Status" Guid="a1f76a0e3-daec-45af-b4f5-bb643a66516ca" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L302_AWCU_Status" Guid="ad825a608-938b-4338-88ed-0cb15913597ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aa3f90d3e-ce7a-4bf7-ac54-9d7b1b1dad41a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="302" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="afa7a9899-13eb-42b8-a573-3691cbadf0dca" BitOffsetWithinDS="8" CodedSet="0=Valid;1=Invalid;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="AWCU_FAULT" Guid="ada30f96c-f47b-4361-8450-8e8f223af28ca" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=AWCU is Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=AWCU is No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.HF_GIPC_A429_CH_INSTANCES_G1_AWCU_FAULT" DestGuid="ae046e716-56fa-418b-8849-39372ab8e327a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.HF_GIPC_A429_CH_INSTANCES_G1_AWCU_FAULT" DestGuid="aba3763c6-71b8-42bf-b3f7-05a4894b40dfa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.HF_GIPC_A429_CH_INSTANCES_G1_AWCU_FAULT" DestGuid="af007e0e7-7bf1-4361-8ba8-9e904fe719cfa" />
+          </DP>
+          <DP Name="Reserved" Guid="adcfd0363-3523-4b1a-8407-9128f961e9f2a" BitOffsetWithinDS="11" DataFormatType="RESV" ParameterSize="18" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="af9e534af-bc65-47d3-a926-9eb50249ac6ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ab1beb1fd-408f-4767-9fcb-f8bff57f32a6a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GIPC_A429_CH_INSTANCES.po429_GIPC_1_Msg.L302_AWCU_Status" SrcGuid="a43da8596-513f-4df3-ad26-85c95f3a2e48a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_GLU_925_L.pi429_GIPC_1_HF_GIPC_A429_CH_INSTANCES" SrcGuid="a7c097166-ce73-4d1b-9eed-2b3470d9ca68a" />
+  </HFSamplingPort>
+  <A429Port Name="pi429_GNSS_3_200_HF_GLU_925_L" Guid="abc5b4b29-7eb1-4894-86ad-69b1397add0da" ActivityTimeout="800" Direction="Destination" Physical="RDIU_08.40005_A04" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_200" SrcGuid="a097b422f-dc23-4410-8e2f-f49e5ceccf74a" />
+  </A429Port>
+  <A429Port Name="pi429_GNSS_3_L356_HF_GLU_925_L" Guid="a47ca8a83-298f-4963-9104-9ca98c68e807a" ActivityTimeout="800" Direction="Destination" Physical="RDIU_08.40005_A04" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_L356" SrcGuid="a262ed828-e6c2-4c2a-93d1-ce3f7909a60da" />
+  </A429Port>
+  <HFQueuingPort Name="HFQ3_O_A664_po429_GNSS_3_Msg_L356" Guid="a623660dd-2240-44e2-94c4-16478d2e529da" Direction="Source" MessageSize="24" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_GNSS_3_Msg_L356_Q_3" Guid="a07faadf5-8d4f-4d9a-a60d-b8a63802ea75a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="24" MsgDataProtocolType="A429 Block" SubVLID="1" TransmissionIntervalMinimum="200" VLID="33437">
+      <DS Name="FSS1" Guid="a590b6456-55bf-4833-bb54-78a3089a16eea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="abb8090d9-e21b-44c8-adb4-f358b9f06588a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a9f110a5a-0e42-4af6-924d-56b9c6873eefa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="ac7bc4d32-6453-4237-ba55-2b46f0e9f551a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a98008593-1253-435a-a778-57c484a27ed6a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L356_Fault_MSg_Def1" Guid="adc9401b0-6f01-40c1-a1fa-b1eb73682271a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L356_Fault_MSg_Def1" Guid="afab23fb0-dd71-4cdf-9911-e3441ac270f4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aefd986b8-f5ec-4856-92b9-44cf595e76c5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Block_Word_Count" Guid="a9851d8e7-e55e-4f30-9d21-26006cd8cccea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="0" FuncRngMax="127" FuncRngMin="0" LsbRes="1" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="count" />
+          <DP Name="MMR_Failure_Class" Guid="ab076884e-7a69-46a9-bbd8-8295373d1a43a" BitOffsetWithinDS="15" CodedSet="0=Class 1 Failure;1=Class 2 Failure;2=Class 3 Failure;3=Not Used" DataFormatType="COD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Failure_Origin" Guid="a3bec767a-3293-438c-aa6e-dce7b5b946dea" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Internal" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=External" />
+          <DP Name="Failure_Status" Guid="a901ef1ce-5f0f-497b-9e94-38bf4291a6caa" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Fault Text Included" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault Text Included" />
+          <DP Name="Current_Fault_Flag_Class3" Guid="a9f731bc1-e2a6-46c0-9af2-4fc23a283be9a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Class 3 Faults Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Class 3 Faults Present" />
+          <DP Name="Current_Fault_Flag_Class1_or_Class2" Guid="a41a67212-4f33-4d58-acf5-145f8c2f1be1a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Failures Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Failures Present" />
+          <DP Name="BITE_History_Flag" Guid="a24d715de-5a53-4c41-9d8d-191e557f75d7a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Faults Stored in NVM" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Faults Stored in NVM" />
+          <DP Name="Message_Type" Guid="a6648949f-606f-40b7-8de0-5973ae737817a" BitOffsetWithinDS="22" CodedSet="0=No Fault Msg Text;1=Fault Msg Text;2=Not Used;3=Not Used" DataFormatType="COD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="FM_STX_Char" Guid="a8353f859-6a72-4331-a70a-0b0d1253820ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aa810ffca-4406-4f8a-88aa-f6fe0a8cdb70a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_L356.L356_Fault_MSg_Def1" SrcGuid="a604c8d4a-47c5-4f90-83aa-256c6d111d9ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L356_Fault_MSg_Def1" DestGuid="acc403e9a-1214-4bab-8284-031066ed58c0a" />
+        </A429Word>
+      </DS>
+      <DS Name="L356_Fault_MSg_Def2" Guid="a8e0d469f-4818-4960-9d5a-e92d91870f1da" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L356_Fault_MSg_Def2" Guid="a56141934-6a62-42f1-ac22-11dd991c4ff0a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aad6d58ba-6849-4bd3-b02b-564982e680d3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Character" Guid="aa3024001-54a1-4331-bc36-e608fcade5aca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE1" Guid="a49189317-2d1e-4f78-8e75-ee3c6cb4c408a" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Character2" Guid="ab89a8b0a-f2d5-44d2-bb93-8f99f617f2cca" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE2" Guid="a6e575f95-cb53-4da3-a312-302662b03098a" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Character3" Guid="a51da98ec-0136-404a-b272-be68b6049224a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="af1e67469-4fac-443a-94bc-b7dcfcf0ff4ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_L356.L356_Fault_MSg_Def2" SrcGuid="ad307e6f8-29c4-420f-bd3f-1862a1ce7730a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L356_Fault_MSg_Def2" DestGuid="a2299fe6d-69f5-4eb2-948a-f166ea2f12efa" />
+        </A429Word>
+      </DS>
+      <DS Name="L356_Fault_MSg_Def3" Guid="a7ff1c4b6-6a75-47fa-98bc-c0d5a9e6683fa" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L356_Fault_MSg_Def3" Guid="ac1f3247a-171d-48eb-aad4-55e08cc633cca" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a49f49b85-b1ff-4ec0-a25a-f99d643b1901a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="NULL_Character1" Guid="a35046923-8de6-4eca-8551-824fae0e5b57a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE1" Guid="a262c2498-bf04-410b-adb7-fb841907e1a4a" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="NULL_Character2" Guid="a652ea92b-8275-481b-9fb5-b80322c91a90a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE2" Guid="add8c8735-f3c0-4b49-aa74-5c3ee2ce6aa4a" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="ETX" Guid="aacb7fdbc-9998-4847-8ea5-3073be7110b2a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aeac23d23-f9b5-4f74-a5d1-9cefda2a5777a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_L356.L356_Fault_MSg_Def3" SrcGuid="a226330f1-0eff-4ce3-a3f8-4537551f1959a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L356_Fault_MSg_Def3" DestGuid="a055c2692-c5f3-4177-ba8d-be276089052ca" />
+        </A429Word>
+      </DS>
+      <DS Name="L356_Fault_MSg_Def4" Guid="a161552a5-95db-4d8d-aaac-b41beb7dbcc2a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L356_Fault_MSg_Def4" Guid="ac36ab472-2173-4403-a7ee-5d792e532cfda" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aa79fa5e0-8d95-477a-b602-f62fc21938a9a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="NULL_Character1" Guid="a69286016-8e1c-4344-807d-79159540ad5ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE1" Guid="a7a4bd56d-e699-4024-9c59-1218525eff25a" BitOffsetWithinDS="15" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="NULL_Character2" Guid="a54b843ab-3452-4321-8178-1c9a25bb9663a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE2" Guid="acc02cbd1-9d74-41f2-aac5-35115f2d0768a" BitOffsetWithinDS="23" DataFormatType="SPAR" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="EOT" Guid="a3b04cb1a-4fc9-4181-b901-9e6c74b5fe72a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a8a810790-18fa-416b-bb95-dcf1939b6c70a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_L356.L356_Fault_MSg_Def4" SrcGuid="ab976ce46-0e58-45cb-9b55-0bd1ea612801a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L356_Fault_MSg_Def4" DestGuid="a16dea33e-495e-45a9-817b-a014719e9f1ea" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_GLU_925_L.pi429_GNSS_3_L356_HF_GLU_925_L" SrcGuid="a47ca8a83-298f-4963-9104-9ca98c68e807a" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS1_O_A664_po429_GNSS_3_Msg" Guid="a59d1a680-d16d-4b39-a9e0-65246e5a71e1a" Direction="Source" MessageSize="104" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_GNSS_3_Msg_S_1" Guid="a70ba80f5-68bd-4013-97d5-6e60afc70293a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="104" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1000" VLID="33437">
+      <DS Name="FSS1" Guid="a8472eee6-641f-40ed-80f7-b0bb36a9d8ffa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aeb02704d-f49e-4375-89f3-ca4a0d149ac8a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="aa3051984-96c5-40e3-9d7a-2f14b5195b7fa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a97c5d24b-3638-4321-905f-6297e804b8f0a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a0de5ecd0-0a32-4666-a5e2-b9cc34fade89a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L057_User_Range_Accuracy" Guid="a9b620435-a517-476a-a7c4-ea96b5209c10a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L057_User_Range_Accuracy" Guid="a1ca82240-dc67-4272-ad25-dd7ede4b0010a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a80915071-3ccb-4129-a91c-cd7c68ddedbfa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="57" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="afd6e1e17-4113-4051-94c5-a4ea45f47e0ea" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Ephemeris_Updated" Guid="a8595f881-b754-48dd-a098-1502f4e1b3c3a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Ephemeris Updated" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Not Updated">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L057_User_Range_Accuracy_Ephemeris_Updated" DestGuid="adb8afbb7-c0ad-4fdc-a44c-d2092b0737c2a" />
+          </DP>
+          <DP Name="User_Accuracy" Guid="a05c56d4a-08d9-43a5-bfef-ae3164d50f94a" BitOffsetWithinDS="11" DataFormatType="BNR" FullScaleRngMax="8192" FullScaleRngMin="-16384" FuncRngMax="8191" FuncRngMin="0" LsbRes="1" ParameterSize="18" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L057_User_Range_Accuracy_User_Accuracy" DestGuid="a4d1fc8b1-d7b3-4d41-9a78-a95fa51b8118a" />
+          </DP>
+          <DP Name="SSM" Guid="a28287937-23ef-4922-8a0d-beb75eed347fa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a107f1d2b-850f-4da3-933b-05668ca7d681a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L057_User_Range_Accuracy" SrcGuid="ac5a9e8c7-0050-40b4-87e0-905b1877321fa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L057_User_Range_Accuracy_L_GNSS_3" DestGuid="a869a90fb-c471-4fd9-9eef-ff5736fa04eba" />
+        </A429Word>
+      </DS>
+      <DS Name="L060_SV_Measure_Status" Guid="a2b284754-123e-4154-8f16-c9c54574653da" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L060_SV_Measure_Status" Guid="a23b98d24-70e1-4f66-9ba7-eb926c7e5d19a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac70e603c-3e29-474e-9f7b-ee29f67f99c3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="60" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a80ac00e6-5ec9-465d-a06d-dfeea9b0416fa" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Satellite_System" Guid="ade341c79-f36a-4959-91f0-cb988013357ba" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=GLONASS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=GPS">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Satellite_System" DestGuid="a59b998d7-09c8-46b3-9c2b-eb60ba0c1a61a" />
+          </DP>
+          <DP Name="Signal_to_Noise_Ratio" Guid="a1e8d82ac-9f07-4ccb-8b7d-cfd3ce15257da" BitOffsetWithinDS="11" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="63" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="UNDEFINED">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Signal_to_Noise_Ratio" DestGuid="af02fa202-c10a-40db-acc0-5a8c142d5ab6a" />
+          </DP>
+          <DP Name="Satellite_Position_Data_Used" Guid="a14ba0784-55e5-49f6-80cc-e38c2ed4a465a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Ephemeris Data Used" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Almanac Data Used">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Satellite_Position_Data_Used" DestGuid="afa0b6840-dfce-4632-a597-c87799fdf4f4a" />
+          </DP>
+          <DP Name="User_Clock_Update" Guid="a4b1c6432-eb18-41fe-ad06-5ac3aba05fd1a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Clock Update" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=No Clock Update">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_User_Clock_Update" DestGuid="a58e382d6-88e8-43a8-a093-5a3e63fb4171a" />
+          </DP>
+          <DP Name="Measurement_Code_Used" Guid="a8bff5cb2-6c5c-4483-9070-a0b3227fb88ea" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=P Code" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=C/A Code">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Measurement_Code_Used" DestGuid="ac2e13cd3-488e-452f-a742-ae8671f467e5a" />
+          </DP>
+          <DP Name="Rate_Measurement_Type" Guid="abd9c5096-ebff-4daa-9ac0-50d06cef3a97a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Delta Range" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Doppler (Range Rate)">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Rate_Measurement_Type" DestGuid="a7e4f6c1b-95e9-4939-a758-7cc91a10ff0ca" />
+          </DP>
+          <DP Name="Range_Rate_or_Delta_Range_Status" Guid="a39ad12cc-d6a4-4871-b72e-98430f33f74da" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Valid" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Invalid">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_Range_Rate_or_Delta_Range_Status" DestGuid="a95f85b55-6ed6-42a7-82a5-ceed9fadcdd6a" />
+          </DP>
+          <DP Name="SVID_Status_Isolation" Guid="a76730a16-97b7-4ffa-ae25-d7fd713f6b31a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Valid" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Invalid / Isolated">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_SVID_Status_Isolation" DestGuid="a7f31274c-97dd-40e5-a8da-72c5d73c18b5a" />
+          </DP>
+          <DP Name="PRN_Code" Guid="a2b825ca0-d0a2-46d9-9152-33ff1b353df6a" BitOffsetWithinDS="23" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="63" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="UNDEFINED">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L060_PRN_Code" DestGuid="ab154afcf-b41d-426c-97eb-2c219afc1487a" />
+          </DP>
+          <DP Name="SSM" Guid="ab2d32173-2994-41a8-bb65-211d7119342aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a15de2d8a-47b1-41f7-b3f4-a3bc35eacedfa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L060_SV_Measure_Status" SrcGuid="a8b818cf3-1a4e-467f-a041-eed305002bd8a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L060_SV_Measure_Status_L_GNSS_3" DestGuid="a4bf9faa1-ab04-4d1d-a6dc-643e14e21d46a" />
+        </A429Word>
+      </DS>
+      <DS Name="L061_Pseudo_Range" Guid="ab2c139cb-f5e8-4b89-9ba4-a581ee9b826ea" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L061_Pseudo_Range" Guid="a1305809c-e476-40b3-9b3a-0e1bda36c0d6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aff52533f-4226-4f7f-82de-2f9f4c91c5a0a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="61" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PseudoRange" Guid="a66c19c50-23f2-455c-b247-e6caace47dc3a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="268435455" FullScaleRngMin="-268435456" FuncRngMax="268435455" FuncRngMin="-536870911" LsbRes="256" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L061_Pseudo_Range" DestGuid="a22385818-6069-47a9-a3b8-ca119e6df211a" />
+          </DP>
+          <DP Name="SSM" Guid="a488dd28f-e154-4eca-951c-bf8a52d99ecda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a4d49e8f0-b881-4d28-b631-5ce6083f1acba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L061_Pseudo_Range" SrcGuid="aecb7a9a2-99f0-4234-82bf-8f73a1d3c64ea" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L061_Pseudo_Range_L_GNSS_3" DestGuid="a54b93fc5-05d3-4d9a-8f98-19eba29660a0a" />
+        </A429Word>
+      </DS>
+      <DS Name="L062_Pseudo_Range_Fine" Guid="a72e494fa-ed5d-476d-9815-033bbcc9a710a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L062_Pseudo_Range_Fine" Guid="a3cf41b8c-eddc-4372-a1b3-54d56b6366c2a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ad04db54c-e1f1-4a6c-be1f-ebefd8247a48a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="62" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a0e35920f-fc41-4d8e-b131-58cbec153b44a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PAD" Guid="a597b225a-cb89-40a5-8d7e-e3d0d23585a5a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PseudoRangeFine" Guid="afa580421-38d6-44b5-b211-ef841da38d09a" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="256" FullScaleRngMin="-256" FuncRngMax="256" FuncRngMin="0" LsbRes="0.125" ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L062_Pseudo_Range_Fine" DestGuid="a384db6aa-006a-4b29-b5d2-ce8e3179fc85a" />
+          </DP>
+          <DP Name="SSM" Guid="a98526fb1-4826-417e-8c29-83cda2be88a1a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="af2f4412f-5dc4-48a3-9191-0cf6856f4e08a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L062_Pseudo_Range_Fine" SrcGuid="a5e17c789-744e-4aa0-8193-5a5d01aeb812a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L062_Pseudo_Range_Fine_L_GNSS_3" DestGuid="ac00f350b-a102-4aee-942b-270af4ab38cfa" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="ad904b7ef-5bfd-41eb-9241-49e4bd087407a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a83b958fc-5ebf-41a0-8653-74fd95b868d9a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="aafe3cc39-ce1f-4a3f-becc-1e8581604a9ea" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="afc41021e-e27b-4abf-afe8-febb34ee9139a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="a52e92e04-3aeb-4133-a71a-e6ce5c1cd74fa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L063_Range_Rate" Guid="a3b7f11be-4ac6-4f0d-b0e6-60950a6637d6a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L063_Range_Rate" Guid="acc17ac10-08d0-4133-be23-c0df7d4ae960a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a13dc6d0d-794b-4c69-a8d2-8501a8aa1913a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="63" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="RangeRate" Guid="aa89656ec-d06d-4d1c-9df2-7d398f3e28a0a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-4096" FuncRngMax="4095" FuncRngMin="-8192" LsbRes="0.0039" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters/sec">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L063_Range_Rate" DestGuid="ab77d464d-448a-4944-bdb6-65cb32bd6734a" />
+          </DP>
+          <DP Name="SSM" Guid="a779b23dc-fe40-42f8-be69-ba05a641746ba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="afbc8bde3-ade4-444e-acd6-37bdecef5525a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L063_Range_Rate" SrcGuid="af272f802-11bd-41ef-8e81-b6826232b80ea" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L063_Range_Rate_L_GNSS_3" DestGuid="a9ce0a3fc-3068-4adc-881a-58cc32854837a" />
+        </A429Word>
+      </DS>
+      <DS Name="L064_Delta_Range" Guid="a663098c3-9e70-4444-a8cb-1c8d2771bb99a" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L064_Delta_Range" Guid="a29c41f34-dc22-4140-b6c3-f9e41e19ce29a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac05e5a44-c33a-4303-9ad3-9fde683ee8c2a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="64" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Delta_Range" Guid="a0205aac1-1987-46f8-87fa-fe4aae90bd34a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-4096" FuncRngMax="4095" FuncRngMin="-8192" LsbRes="0.0039" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L064_Delta_Range" DestGuid="a027bc115-d514-4f11-98e1-0184c212aae9a" />
+          </DP>
+          <DP Name="SSM" Guid="a70c0e0a4-706a-4ede-b19e-fd0597520528a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ab8cacf7d-8826-420f-87c9-acc18856f08ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L064_Delta_Range" SrcGuid="a017a539b-6819-4353-83c2-e5667b923beba" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L064_Delta_Range_L_GNSS_3" DestGuid="a76e352e0-ec3b-47ad-b77e-157bb28babd0a" />
+        </A429Word>
+      </DS>
+      <DS Name="L065_SV_Pos_X" Guid="a3e56ba12-53bd-4d30-ae30-63f0fb7e646ca" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L065_SV_Pos_X" Guid="ae133cb8b-2824-4485-b2b7-0099e2146bc9a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af623be16-cfa2-4a58-8b34-cd2074a44480a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="65" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range" Guid="a417a601f-aeb1-44c5-9bb5-fc43871a9286a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="67108863" FullScaleRngMin="-67108864" FuncRngMax="67108864" FuncRngMin="-134217728" LsbRes="64" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L065_SV_Pos_X_Position_Range" DestGuid="ae3a0546d-672a-4d9f-b35f-6504295290c4a" />
+          </DP>
+          <DP Name="SSM" Guid="a63cfa56c-56fe-4716-a783-9afdd6602fb2a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a229e63f0-215d-4315-9933-84acf6bbd65ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L065_SV_Pos_X" SrcGuid="a39a09de0-fa4d-4ba9-b76f-109c8e317d2aa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L065_SV_Pos_X_L_GNSS_3" DestGuid="a2dcdd520-4e5d-4f7a-8d0e-07ff107cb669a" />
+        </A429Word>
+      </DS>
+      <DS Name="L066_SV_Pos_X_Fine" Guid="aa95859a3-e373-4d6b-b77a-034b7ac5fd28a" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L066_SV_Pos_X_Fine" Guid="a37bf9334-a84f-4f03-82f2-5831a7b2ce35a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6454dd5c-85f0-4ba7-8a86-446ca303d5a4a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="66" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a920b7e21-e5dc-4b2a-b231-eb708f5a9b0ba" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PAD" Guid="ab08a771c-2027-4ad7-9b68-e140eb38bbada" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range_Fine" Guid="a5a9adb3f-132a-424c-9ace-00038d6b6208a" BitOffsetWithinDS="14" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="-128" FuncRngMax="63" FuncRngMin="0" LsbRes="0.0039" ParameterSize="15" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L066_SV_Pos_X_Fine_Position_Range_Fine" DestGuid="a8da3b044-5419-4217-bc96-e0cef1ec928ca" />
+          </DP>
+          <DP Name="SSM" Guid="a41b2afea-2d28-4c55-b1ea-bc02af638563a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a4e29ee65-e2b8-4089-a3fd-2ef729a0f34fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L066_SV_Pos_X_Fine" SrcGuid="a2666f433-48d9-4e40-b767-ff68d51c16e2a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L066_SV_Pos_X_Fine_L_GNSS_3" DestGuid="ac9d97d20-bd77-4209-bff2-f175f04b7f59a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS3" Guid="af249abaa-a5ee-4bac-aa81-d27fe2876f92a" ByteOffsetFSF="0" ByteOffsetWithinMsg="44" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="acf069504-e08a-4f54-b953-4b0346626500a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB10" Guid="a63cc01d1-1d8e-4540-bdb3-7894f4f947d9a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB11" Guid="a93e1b9ef-fa1d-4cc0-9753-e069f697af6ca" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB12" Guid="a4f1e5be3-a026-4ad6-8db0-5a6603e454aaa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L070_SV_Pos_Y" Guid="a1a405c18-2ff5-48ca-aad6-0de18983c847a" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L070_SV_Pos_Y" Guid="ab6b0a36c-f92e-42bc-b04f-ed11dd1b2681a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="abe655bc5-682f-45e7-8c23-76e286f3e72ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="70" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range" Guid="a57756d9c-2989-40ac-b0d1-9e799771b290a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="67108863" FullScaleRngMin="-67108864" FuncRngMax="67108864" FuncRngMin="-134217728" LsbRes="64" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L070_SV_Pos_Y_Position_Range" DestGuid="a3d86eb3e-353b-4c9c-9c02-6663645048c5a" />
+          </DP>
+          <DP Name="SSM" Guid="af4516f9a-a035-423b-952b-601bfb2d86c6a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ae8bd8b38-ed95-4cfe-9732-4d7ebe72e0ada" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L070_SV_Pos_Y" SrcGuid="a017bed02-0019-46f6-b4b6-5a7b0ff1cc8da" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L070_SV_Pos_Y_L_GNSS_3" DestGuid="a2ec9f54b-40f8-4cb2-ae06-4cb92d3eeea5a" />
+        </A429Word>
+      </DS>
+      <DS Name="L071_SV_Pos_Y_Fine" Guid="abc80c973-dbf4-4881-a285-2acd200dee3ca" ByteOffsetFSF="45" ByteOffsetWithinMsg="52" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L071_SV_Pos_Y_Fine" Guid="a1cab16b5-5c9d-4415-8b0d-ddfe8a03f34ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac156a902-0737-43dc-8cfe-f73556edd80ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="71" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="af8f81651-bf5a-486a-b18a-5af1b8999694a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PAD" Guid="a12f25aed-50de-4191-83f0-733c4c4bf93ba" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range_Fine" Guid="a4aa3005a-74f1-487b-ae21-05a9a599d732a" BitOffsetWithinDS="14" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="-128" FuncRngMax="63" FuncRngMin="0" LsbRes="0.0039" ParameterSize="15" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L071_SV_Pos_Y_Fine_Position_Range_Fine" DestGuid="a867ea592-4c7b-43c6-b978-96a482ce4535a" />
+          </DP>
+          <DP Name="SSM" Guid="a99adc611-30e9-423b-b438-a58301d6fafaa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a3ae60001-03e8-49c1-96fb-95a17cf725f4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L071_SV_Pos_Y_Fine" SrcGuid="ad979d818-115f-40ce-a073-e89c6917b673a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L071_SV_Pos_Y_Fine_L_GNSS_3" DestGuid="abd4b5b83-8f12-4a15-b59c-fe416c29025da" />
+        </A429Word>
+      </DS>
+      <DS Name="L072_SV_Pos_Z" Guid="a23df1d15-2f23-402f-b83d-aa099fe6c440a" ByteOffsetFSF="46" ByteOffsetWithinMsg="56" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L072_SV_Pos_Z" Guid="a5a009f92-c864-43ae-b82a-b34973c3e21da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aa92665bb-f5d8-470a-93e9-16d291e90684a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="72" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range" Guid="ad5f0f95f-3a8e-41b7-ab60-ea917f26467ba" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="67108863" FullScaleRngMin="-67108864" FuncRngMax="67108864" FuncRngMin="-134217728" LsbRes="64" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L072_SV_Pos_Z_Position_Range" DestGuid="a950ed7b9-94da-4438-a489-81abba354140a" />
+          </DP>
+          <DP Name="SSM" Guid="ad12f4702-9ae9-4dfb-b5b6-4966f02d7891a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a3d29a6a0-b9fb-4e28-a96b-166893843212a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L072_SV_Pos_Z" SrcGuid="a3b530ee0-8322-4c00-bf8d-7c58ba55c63ba" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L072_SV_Pos_Z_L_GNSS_3" DestGuid="a73c594c8-ff66-4b92-94bd-9dfe0a9df4eba" />
+        </A429Word>
+      </DS>
+      <DS Name="L073_SV_Pos_Z_Fine" Guid="aa55c9fe4-276f-4b36-85d6-cbf82377bd34a" ByteOffsetFSF="47" ByteOffsetWithinMsg="60" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L073_SV_Pos_Z_Fine" Guid="a3f0a8586-8f48-452b-8eb7-3ff671281199a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="abd4979e5-e742-4604-bc13-4e3b450fe7e5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="73" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a130e8e72-d9bf-40ae-a635-7d01781c876aa" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PAD" Guid="a77bf1c2b-cd0a-40d2-81e4-5e55d0753ac4a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Position_Range_Fine" Guid="ad5055210-d59b-43c2-87c4-38760106db4fa" BitOffsetWithinDS="14" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="-128" FuncRngMax="63" FuncRngMin="0" LsbRes="0.0039" ParameterSize="15" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="meters">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L073_SV_Pos_Z_Fine_Position_Range_Fine" DestGuid="ae96eb144-ab59-4e47-9267-8a87377d0e3aa" />
+          </DP>
+          <DP Name="SSM" Guid="ace8d2e81-64b5-4368-bffd-8ab86ab2d1d3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a710d6adb-2c00-407d-a264-0b40361b4aaaa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L073_SV_Pos_Z_Fine" SrcGuid="a32610329-aaed-43ab-a857-b9f6862de3f6a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L073_SV_Pos_Z_Fine_L_GNSS_3" DestGuid="a58718153-06e6-483f-a403-a48ffa0478bca" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS4" Guid="a27270333-1703-4d44-998f-6934017081d0a" ByteOffsetFSF="0" ByteOffsetWithinMsg="64" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB13" Guid="a0aad5ecd-aea0-48e1-9822-fb4691e1d334a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB14" Guid="a92302eff-1a42-43bf-ab72-75e6f15cd466a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB15" Guid="a036c363f-1d37-4175-a5a9-bde545c3248ba" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB16" Guid="a24d0efe0-680f-4491-b98c-f0df01c306efa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L074_UTC_Measure_Time" Guid="a4e416e4b-f0da-4316-811b-e12d0d5a49f0a" ByteOffsetFSF="64" ByteOffsetWithinMsg="68" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L074_UTC_Measure_Time" Guid="aeefbedb2-a44e-45ed-adf4-d6bb8f879b44a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae42428bc-fb1f-4e3c-9ff6-2393efb577cfa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="74" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="UTC_Measure_Time" Guid="af40cd268-1a9d-470c-b05e-b05f31a90c69a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="9.999999" FullScaleRngMin="-19.999999" FuncRngMax="9.999999" FuncRngMin="0" LsbRes="0.00000956743" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="secs">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L074_UTC_Measure_Time_UTC_Measure_Time" DestGuid="a441600b9-ffca-4d1f-9a33-a19d488259c4a" />
+          </DP>
+          <DP Name="SSM" Guid="ae1a9026c-d6e8-439c-9c99-2d87e74ad8fda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a6a788774-e45f-40b1-b436-1d2ae3303893a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L074_UTC_Measure_Time" SrcGuid="ab2dac427-898a-4ef8-87e8-ae2a266ea213a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L074_UTC_Measure_Time_L_GNSS_3" DestGuid="a6971df72-7c1d-4cb9-80d9-72beac11ee9ba" />
+        </A429Word>
+      </DS>
+      <DS Name="L162_ETA_Resp_Dest" Guid="aec98102e-48f7-480c-a6cb-1ad8bd82021ba" ByteOffsetFSF="65" ByteOffsetWithinMsg="72" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L162_ETA_Resp_Dest" Guid="a77a92605-0834-40eb-a578-53b91fd0fc4da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a59a14b01-80a7-41df-bb27-10009e8674a8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="162" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a5a81fac1-19b9-4a64-886d-253fcb4cbf42a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Baro_Correction_Applied" Guid="ad223fd97-e927-42d3-ad81-ccea49159dcba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Baro-Correction Applied" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Baro-Correction Not Applied">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_Baro_Correction_Applied" DestGuid="aed9d438c-0298-4fb6-a671-cc2fb14d7d72a" />
+          </DP>
+          <DP Name="Almanac_Expired" Guid="ab47fdb37-ca3c-4036-b523-48c39f6505f8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Almanac Expired" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Almanac Valid">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_Almanac_Expired" DestGuid="aa8a634c1-00ef-4601-913b-728d589dcaafa" />
+          </DP>
+          <DP Name="Request_Bus_Designator" Guid="ad84d5ca8-8895-46ae-b87e-2da94569f4eda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=X-side" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=On-side">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_Request_Bus_Designator" DestGuid="ac9f9c897-443d-4f55-ab86-cace558208e9a" />
+          </DP>
+          <DP Name="Requesting_FMS_SDI_Out" Guid="a5bcf2037-5202-4199-9540-f0a37e3df6fea" BitOffsetWithinDS="13" CodedSet="0=Power Up;1=FMS 1;2=FMS 3;3=FMS 3" DataFormatType="COD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="ETA_Request_Sequence_BIT" Guid="ad129fd25-f8a0-4ef7-ae11-9d62fca5c81aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Non-Zero" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Zero">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_ETA_Request_Sequence_BIT" DestGuid="a1444be97-8178-4943-b263-0ab214bb866ea" />
+          </DP>
+          <DP Name="GNSS_Date_OR_Time" Guid="a26f6679c-be38-42be-a7b3-239e47f2be4ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=GNSS doesn't have Time/Date" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=GNSS has determined times">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_GNSS_Date_OR_Time" DestGuid="a80b92cd0-72a0-42c4-8444-960aba3ea08fa" />
+          </DP>
+          <DP Name="UTC_Minutes" Guid="a6ea8e074-4934-4046-aa90-f8a76cf45f55a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="59" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="minutes">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_UTC_Minutes" DestGuid="a25d69f4a-0341-4844-82c8-cace38aa22c4a" />
+          </DP>
+          <DP Name="UTC_Hours" Guid="a79e9c3a3-6dd7-4850-bc85-1ecba224a255a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="BNR" FullScaleRngMax="31" FullScaleRngMin="0" FuncRngMax="23" FuncRngMin="0" LsbRes="1" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="hrs">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L162_ETA_Resp_Dest_UTC_Hours" DestGuid="aaa991925-ccb2-486c-bc2b-bfb5a4be6bdfa" />
+          </DP>
+          <DP Name="PAD" Guid="aec025a76-2012-430e-92a4-fb3d10ee87f7a" BitOffsetWithinDS="28" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="ad1cbeb52-d5be-451d-973e-ec1786d2d29ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a94d6f63e-3c9a-4014-b2c1-d55be79b8f73a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L162_ETA_Resp_Dest" SrcGuid="a69865b9d-863f-4837-bcda-d37b2dc8e2b2a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L162_ETA_Resp_Dest_L_GNSS_3" DestGuid="a02634f56-5151-42cb-9306-76ea2cd5e8eaa" />
+        </A429Word>
+      </DS>
+      <DS Name="L163_ETA_Resp_Alt_Waypoint" Guid="a8dbb5f3d-fcab-49d1-8c77-f1a01bf7dfc0a" ByteOffsetFSF="66" ByteOffsetWithinMsg="76" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L163_ETA_Resp_Alt_Waypoint" Guid="aa61054bc-c1fd-4871-9bc8-cdfc891d2367a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a43a911f4-8744-4cda-b7f9-0392640efb75a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="163" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a9d83135f-078b-4220-bef2-5a364c939a71a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="Baro_Correction_Applied" Guid="a0289e03c-be5b-4d9a-b975-15e044e52d68a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Baro-Correction Applied" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Baro-Correction Not Applied">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_Baro_Correction_Applied" DestGuid="a8c851743-de65-4f66-95bb-f4bd7db22c1ba" />
+          </DP>
+          <DP Name="Almanac_Expired" Guid="a0632e4dd-dcb6-4782-ab9a-788538571a7ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Almanac Expired" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Almanac Valid">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_Almanac_Expired" DestGuid="ad0d17911-225f-493a-8990-de3b772c8552a" />
+          </DP>
+          <DP Name="Request_Bus_Designator" Guid="abde5d068-430d-41f6-8c69-65821ebe39c5a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=X-side" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=On-side">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_Request_Bus_Designator" DestGuid="a81a13739-2299-458f-8622-65bd8fb76d27a" />
+          </DP>
+          <DP Name="Requesting_FMS_SDI_Out" Guid="a3ec77e2a-2cb9-442f-a21c-0f312efc2c5aa" BitOffsetWithinDS="13" CodedSet="0=Power Up;1=FMS 1;2=FMS 3;3=FMS 3" DataFormatType="COD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="ETA_Request_Sequence_BIT" Guid="a1e49c140-9dd0-4e79-9305-1bf2f04af217a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Non-Zero" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=Zero">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_ETA_Request_Sequence_BIT" DestGuid="a07938953-dd65-4105-b35d-32f8109e8b04a" />
+          </DP>
+          <DP Name="GNSS_Date_OR_Time" Guid="a57776152-755e-4896-8a22-8eae4c521287a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=GNSS doesn't have Time/Date" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" ZeroState="0=GNSS has determined times">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_GNSS_Date_OR_Time" DestGuid="abde42fa2-b840-4185-a4b8-a146a3e05983a" />
+          </DP>
+          <DP Name="UTC_Minutes" Guid="ae3b5bce7-2e55-477d-988e-e5e03d106431a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="59" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="minutes">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_UTC_Minutes" DestGuid="a4a018045-4852-4ea1-a8a8-ba69e952d31aa" />
+          </DP>
+          <DP Name="UTC_Hours" Guid="af77ba8bf-5238-41ca-98c6-28f58750e60ba" Notes="Assumed TV: PL=0" BitOffsetWithinDS="23" DataFormatType="BNR" FullScaleRngMax="31" FullScaleRngMin="0" FuncRngMax="23" FuncRngMin="0" LsbRes="1" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="1000" Units="hrs">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L163_UTC_Hours" DestGuid="a51a714e4-b0d8-489f-84fd-ab1c93970ee3a" />
+          </DP>
+          <DP Name="PAD" Guid="af5bfa005-dc81-4a78-b860-e41b25123400a" BitOffsetWithinDS="28" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a139ca472-a989-4abc-b1f8-32418c9d5e14a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ac841ca93-a252-4def-baa5-369ead56e1b4a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L163_ETA_Resp_Alt_Waypoint" SrcGuid="a96a3327b-d8ae-40b1-863f-035451b8f8aaa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L163_ETA_Resp_Alt_Waypoint_L_GNSS_3" DestGuid="af98d3176-cd16-4412-84c0-9ac64b8b2d12a" />
+        </A429Word>
+      </DS>
+      <DS Name="L343_Destination_HIL" Guid="a4e22ae8a-6aeb-43cf-9603-2df1fb1493cea" ByteOffsetFSF="67" ByteOffsetWithinMsg="80" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L343_Destination_HIL" Guid="a20e6bf2c-cffd-4d62-be4e-d461884da110a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1e48f72e-5769-43ed-88fd-510c9cd9fea3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="343" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="ad3b9de74-350e-44cb-ad11-220b8f854a37a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Integrity_Sequence_Horizontal" Guid="a201bdd7e-4b3f-404a-a07d-3f0f59232847a" BitOffsetWithinDS="10" CodedSet="0=Acknowledge;1=HIL at ETA;2=HIL at ETA - 5 minutes;3=HIL at ETA + 5 minutes;4=HIL at ETA - 10 minutes;5=HIL at ETA + 10 minutes;6=HIL at ETA - 15 minutes;7=HIL at ETA + 15 minutes" DataFormatType="COD" ParameterSize="3" PublishedLatency="1000" TransmissionIntervalMinimum="1000">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L343_Integrity_Sequence_Horizontal" DestGuid="a4f29ddd3-f0d7-48ee-828c-0933a44586aca" />
+          </DP>
+          <DP Name="Requesting_FMS_SDI_Out" Guid="af7b179ef-14b0-44c9-8f05-6d23bf96815ca" BitOffsetWithinDS="13" CodedSet="0=Power Up;1=FMS 1;2=FMS 2;3=FMS 3" DataFormatType="COD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Received_Sequence_BIT" Guid="af3b29d59-8733-4ce6-bf53-39b2a24fe9f9a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Non-Zero" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Zero">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L343_Received_Sequence_BIT" DestGuid="ac540ed29-2dd4-4811-8f18-18ef59c1771ca" />
+          </DP>
+          <DP Name="PRAIM_Unavailable" Guid="ae3e9738c-2935-4289-9eb6-344af17c9070a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Unavailable" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Available">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L343_PRAIM_Unavailable" DestGuid="a1e5e6704-2dae-4493-813a-eed35c91e7aca" />
+          </DP>
+          <DP Name="Horizontal_Integrity_Limit" Guid="af9607f44-036e-47e8-95cb-434e43da8f9ea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="15.99" FullScaleRngMin="-31.99" FuncRngMax="15.99" FuncRngMin="0" LsbRes="0.0078" ParameterSize="12" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="nautical miles">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L343_Horizontal_Integrity_Limit" DestGuid="a2d80c3b5-d1a4-4cb2-8765-d2eb10ae9c85a" />
+          </DP>
+          <DP Name="SSM" Guid="ad39bc33a-c58c-4815-8368-590fb85c44eea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aa040df9b-0c56-4959-aae8-6f12913a5573a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L343_Destination_HIL" SrcGuid="a4f02de71-22c0-43be-828d-bccb6f5a4b64a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L343_Destination_HIL_L_GNSS_3" DestGuid="a11a75889-e946-4d77-b640-2fbc2b7ac691a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS5" Guid="a70c80ebf-4d92-46ad-8da6-3c63ec833ec3a" ByteOffsetFSF="0" ByteOffsetWithinMsg="84" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB17" Guid="a2f2fc425-1008-4292-b793-a609c3cc3b7ea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB18" Guid="a2a412fcc-03cd-4d75-babe-1ecf2781289da" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB19" Guid="a10de2efc-bb66-445b-a7cb-3240322baccca" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB20" Guid="aecead263-c1d8-45b3-9787-e161a4641b51a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L347_HIL_Alt_Waypoint_GPS" Guid="a06fc9048-8831-49fa-b023-122becfb530ca" ByteOffsetFSF="84" ByteOffsetWithinMsg="88" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L347_HIL_Alt_Waypoint_GPS" Guid="a98ccade8-14e5-4e11-b251-1c7277439838a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aa66762d0-4e8c-4269-a942-2760c29f96d8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="347" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="aa0542e26-1494-4287-90b9-eaad3b2f2718a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Integrity_Sequence_Horizontal" Guid="a4732ef5c-9d36-45cb-b879-5f7ce8581338a" BitOffsetWithinDS="10" CodedSet="0=Acknowledge;1=HIL at ETA;2=HIL at ETA - 5 minutes;3=HIL at ETA + 5 minutes;4=HIL at ETA - 10 minutes;5=HIL at ETA + 10 minutes;6=HIL at ETA - 15 minutes;7=HIL at ETA + 15 minutes" DataFormatType="COD" ParameterSize="3" PublishedLatency="1000" TransmissionIntervalMinimum="1000">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L347_Integrity_Sequence_Horizontal" DestGuid="afd9814c6-a2eb-4623-b2bd-6bb7340872e3a" />
+          </DP>
+          <DP Name="Requesting_FMS_SDI_Out" Guid="af2bfb202-abaf-4004-b6af-d7112b247ee4a" BitOffsetWithinDS="13" CodedSet="0=Power Up;1=FMS 1;2=FMS 2;3=FMS 3" DataFormatType="COD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Received_Sequence_BIT" Guid="a5f92fe09-1d25-47c4-8728-a9c672894b5ba" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Non-Zero" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Zero">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L347_Received_Sequence_BIT" DestGuid="a27df1b46-cc9f-4db2-bd29-d0e96fe8f6c7a" />
+          </DP>
+          <DP Name="PRAIM_Unavailable" Guid="a147e7336-0d0e-46b1-b422-6d8a935d1263a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Unavailable" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Available">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L347_PRAIM_Unavailable" DestGuid="afe7d0fc1-ef53-4a38-a916-4bebff46dab2a" />
+          </DP>
+          <DP Name="Horizontal_Integrity_Limit" Guid="a9eb4b3e4-f4cd-43a6-87cb-c7f00aea6aaea" Notes="Assumed TV: PL=0" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="15.99" FullScaleRngMin="-31.99" FuncRngMax="15.99" FuncRngMin="0" LsbRes="0.0078" ParameterSize="12" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="nautical miles">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L347_Horizontal_Integrity_Limit" DestGuid="a7fdbebc8-9129-4cda-8a3d-cb48f50fb5b5a" />
+          </DP>
+          <DP Name="SSM" Guid="a6ad9a5d7-7d1a-489e-abb0-b7fd85a7a582a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a5a6852e1-f169-4d9c-a901-28e9a9d2bdb5a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L347_HIL_Alt_Waypoint_GPS" SrcGuid="a5674f657-d8de-4c05-89f0-4ad9b60ed331a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L347_HIL_Alt_Waypoint_GPS_L_GNSS_3" DestGuid="ae53064dd-9747-4160-82be-333e27d6b5a1a" />
+        </A429Word>
+      </DS>
+      <DS Name="L352_GNSS_Maint_Word" Guid="a99e8942e-abb4-47c4-9b8b-35b57d5e6767a" ByteOffsetFSF="85" ByteOffsetWithinMsg="92" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L352_GNSS_Maint_Word" Guid="a76c6cbed-d8cd-4cf7-8f41-86b8dd98a4d4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ab25499e4-37a9-411e-872b-065d7d10c1e4a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="352" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a9594d7d1-919a-44a5-ab0f-3773f1fb06baa" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left Uint;2=Right Uint;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Fault_Code" Guid="a94e8ff15-5441-454b-8958-5cfc8d1b7522a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="-128" FuncRngMax="127" FuncRngMin="0" LsbRes="1" ParameterSize="7" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="NOT APPLICABLE" />
+          <DP Name="Faulted" Guid="a1d8eba85-b856-4e7b-b76a-1f56a5a286bca" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Not Faulted" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Faulted" />
+          <DP Name="IRS1_RX_Inactivity" Guid="ad58eebda-662d-469b-89a4-a2fc89ee9667a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="SysP_LCL_TX_Inactivity" Guid="a889fa88b-c468-49df-b118-7d921caea5f9a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="IRS2_RX_Inactivity" Guid="a060a8a2c-eb56-431f-a603-af257cd61e59a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="IRS3_RX_Inactivity" Guid="af35d23ee-4d9e-45cc-b31b-34ed0717832ba" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="Xside_743_Inactivity" Guid="a325a0400-3070-45e2-9643-cf4fd23af58aa" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="Xside_DEV_Inactivity" Guid="a87812bcc-1372-4476-a042-a6d1ecfea58aa" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="GNSS_Critical_Fault" Guid="aff9bc39f-7537-41c2-a4ea-c06d70bec443a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Critical Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Critical Fault" />
+          <DP Name="RF_Input_Fail" Guid="a47245048-b14e-4b0b-8d3c-48200ebef176a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="GNSS_Receiver_Fault" Guid="a9f0e2285-342a-4073-aeb2-1be5eafbbd0ea" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Critical Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Critical Fault" />
+          <DP Name="Test_Inhibit" Guid="aec7ef122-a04f-4fb1-924c-9f07405a7c1ca" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Inhibit" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+          <DP Name="Command_Word_ACK" Guid="a5b057dab-2cdf-4246-9f9c-ed08e3ffc5afa" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Acknowledgement" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Non Acknowledgement" />
+          <DP Name="SSM" Guid="a6e59dc88-276e-4633-88e4-160d5d4d872aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="abedd03d7-e7d7-4a34-9617-129af23ee8aca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L352_GNSS_Maint_Word" SrcGuid="ad0747b15-db89-42e9-abb4-07b6d4133f2da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L352_GNSS_Maint_Word" DestGuid="a95899bc8-9b80-4ff0-8993-f38b60f38845a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L352_GNSS_Maint_Word_L_GNSS_3" DestGuid="a427aaf02-aaf2-40f3-9272-7cf969091723a" />
+        </A429Word>
+      </DS>
+      <DS Name="L354_GNSS_Maint_Word_Mon" Guid="a94a957d4-b9d0-44ae-a9f9-469247fbf609a" ByteOffsetFSF="86" ByteOffsetWithinMsg="96" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L354_GNSS_Maint_Word_Mon" Guid="a9d139efa-23ef-4126-9d99-0fde72439af4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0d8818e3-affd-4853-8fff-f2551df9d115a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="354" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a197c2a42-a349-4487-a9b4-204819715870a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left Uint;2=Right Uint;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="Fault_Code" Guid="ad1128b77-e8cd-42c5-93f2-eafd4f815ec0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="-128" FuncRngMax="127" FuncRngMin="0" LsbRes="1" ParameterSize="7" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="NOT APPLICABLE" />
+          <DP Name="Faulted" Guid="aea3d5df0-b90d-4b44-ac4a-b4ab8539b4dba" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Not Faulted" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Faulted" />
+          <DP Name="IRS1_RX_Inactivity" Guid="a60d59969-4229-43e0-8263-a71bdafba7d3a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="SysP_LCL_TX_Inactivity" Guid="a313ec8a3-8596-4a37-a604-bbd5d1c9ed72a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="IRS2_RX_Inactivity" Guid="a69bd8bf9-4f6c-4388-8b8d-876c583a801ca" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="IRS3_RX_Inactivity" Guid="a5a4957cf-8266-46e2-aa45-30d17e69c8eea" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="Xside_743_Inactivity" Guid="a332257da-3f0e-498e-a5a1-0a72eaaa6873a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="Xside_DEV_Inactivity" Guid="af371cc27-a040-4470-b814-9de2e6d866ada" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Active" />
+          <DP Name="GNSS_Critical_Fault" Guid="a747c74e3-c893-49b3-8efe-6fc3c5cda667a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Critical Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Critical Fault" />
+          <DP Name="RF_Input_Fail" Guid="adfa1ce42-8bea-4b1c-aa25-d2d143bbfb57a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="GNSS_Receiver_Fault" Guid="a05ad3a81-49b2-471a-bac3-2ea871daef02a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Critical Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Critical Fault" />
+          <DP Name="Test_Inhibit" Guid="aab2b64da-da38-4d88-b2d7-7aa1232b8306a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Inhibit" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+          <DP Name="Command_Word_ACK" Guid="a77e3aa84-afcd-4475-8e04-a7670bf076cba" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Acknowledgement" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Non Acknowledgement" />
+          <DP Name="SSM" Guid="a93c425ba-55e6-4f55-9659-2f3413c67108a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a49621353-6e91-4c52-a71a-8319c73fe837a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L354_GNSS_Maint_Word_Mon" SrcGuid="ac237531b-a7b9-4344-b89e-b996d934ad46a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L354_GNSS_Maint_Word_Mon" DestGuid="aef8ec60b-99bb-4533-828a-03f6899c58dda" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L354_GNSS_Maint_Word_Mon_L_GNSS_3" DestGuid="aa0c04501-ea17-406e-8845-fc26788edcf7a" />
+        </A429Word>
+      </DS>
+      <DS Name="L377_Equipment_ID" Guid="aad085909-fe4d-4572-9897-ded70617edc6a" ByteOffsetFSF="87" ByteOffsetWithinMsg="100" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L377_Equipment_ID" Guid="a8e0af4c1-a6cb-463b-be2f-177693437e36a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a401be386-6360-472b-a64d-dc5c82d70630a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="377" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="aef1e2373-5af3-462d-82a0-b471503c1f00a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="ID_Code_Least_Signficant_Character" Guid="ac7d7612f-93f5-422c-b3d8-0735cf1971e9a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="NOT APPLICABLE">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L377_ID_Code_Least_Signficant_Character" DestGuid="a4bfad11a-c445-4cbd-82bc-2c1ecf892878a" />
+          </DP>
+          <DP Name="ID_Code_Middle_Character" Guid="ad877f727-6178-47b3-9258-4e21d5c23e87a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="14" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="NOT APPLICABLE">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L377_ID_Code_Middle_Character" DestGuid="aaf2d4a99-7fe7-4901-b655-8b05ad5ba73ea" />
+          </DP>
+          <DP Name="ID_Code_Most_Signficant_Character" Guid="a973ab49a-7c95-4de3-94a2-949d945545c1a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="18" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="NOT APPLICABLE">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_L377_ID_Code_Most_Signficant_Character" DestGuid="af350c9e5-4db6-456c-9be0-855e96cc30bca" />
+          </DP>
+          <DP Name="PAD" Guid="a90411ebe-318a-4415-aa3d-fcd211260c76a" BitOffsetWithinDS="22" DataFormatType="PAD" ParameterSize="7" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SSM" Guid="a95e41090-5149-429f-b22a-03e806e9a8dfa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="add2dbec3-3bca-49cc-a288-8030d22713c8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg.L377_Equipment_ID" SrcGuid="a8de4d8f4-88a5-497c-8bfe-e72822cfd120a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L377_Equipment_ID_L_GNSS_3" DestGuid="a07002b70-24cd-4312-9469-1bee3a5c02e8a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_GLU_925_L.pi429_GNSS_3_HF_GLU_925_L" SrcGuid="ab54d6acd-eead-4961-bc29-68e1da673572a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_GNSS_3_Msg_200" Guid="a73857522-4334-4d05-b22e-21703003b31aa" Direction="Source" MessageSize="136" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_GNSS_3_Msg_200_S_2" Guid="ad216e664-f1a1-420c-a3fe-7bf710e88f0ea" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="136" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="200" VLID="33437">
+      <DS Name="FSS1" Guid="a6336b7f5-8147-4e7c-a1ee-0c8c41a9d0a0a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a0fe436d4-3545-41fb-b3da-fe609854e565a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a2e8bcaa0-ffda-49b6-a535-bd1b61711ab1a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a5b7dbf39-38f4-4ca7-8440-1f1d795d47c5a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="ae4b42ca0-52fa-4851-8739-52898f406060a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L355_GNSS_Fault_Sum_Word" Guid="a18e2e84a-3463-4a4c-b98d-cff5d94ee8dca" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L355_GNSS_Fault_Sum_Word" Guid="ad937c9c7-845c-4d0b-a107-e139b164464aa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a30fe0107-bb8e-48ba-80c2-62d875cde99ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="355" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a6698b964-1528-4d7f-8a3b-93da7f8e7f37a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SPARE" Guid="a0353ee4d-b195-4f16-a9a9-e31bf0ec4295a" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="FMS_Offside_Bus_No_Activity" Guid="a7b4497b6-b8d9-480c-ab35-187bbb1d2f76a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="FMS_Onside_Bus_Inactivity" Guid="a5b81a465-7bfa-4a0f-93c5-7cffd744bb7aa" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="IRS_OR_AHRS_Bus3_Inactivity" Guid="a1abdba47-08d5-4095-9ecd-3ba1f27d24eba" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="External_Data_Broadcast_RX_X_side_Inactivity" Guid="a86fee30e-ba80-4f43-a080-427b80d4d69da" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="External_Data_Broadcast_RX_Onside_Inactivity" Guid="a24f11fdc-c755-49dd-9340-21c1224ec036a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="Air_Data_Offside_Inactivity" Guid="a34b13153-90f2-48a6-b672-c8d490845ef8a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="Air_Data_Onside_Inactivity" Guid="a89513028-9c89-4fa9-856c-d85ea9bdd610a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="IRS_OR_AHRS_2_Inactivity" Guid="a40b62279-6070-470a-bfe8-fe05cacbbdfea" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="IRS_OR_AHRS_1_Inactivity" Guid="a9a5b54c8-084a-4650-979a-c9388912e849a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Inactive" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Active" />
+          <DP Name="GNSS_Failure" Guid="ac42ec179-e448-4479-a3e8-0923202f3197a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Not Failed" />
+          <DP Name="RF_Input_Failure" Guid="a40b88e1d-8e94-4df3-ad3f-82d6886e2368a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Normal Operation" />
+          <DP Name="GNSS_Receiver_Failure" Guid="ab13939e4-98e4-48e2-b9a7-39094af0645ca" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Not Failed" />
+          <DP Name="BITE_Test_Inhibit" Guid="a32fbce94-7558-49a0-a93d-38b963cf4bcda" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Test Inhibit" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Normal Operation" />
+          <DP Name="Command_Word_ACK" Guid="a1375e068-b5df-4f15-a303-0569c234e2d5a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Acknowledgement" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Non Acknowledgement" />
+          <DP Name="SSM" Guid="a9b3ca10c-bf7f-4ba6-8ae0-5923732f7140a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a29cde83d-e431-4c7e-8b5f-72a1b2aed09fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L355_GNSS_Fault_Sum_Word" SrcGuid="a75c6a31d-8ec0-4d87-9957-8147dd825af1a" />
+          <Gw_Pub_Ref DestName="FDAS_L1.GLU_925_L_GNSS_3_L355_GNSS_Fault_Sum_Word" DestGuid="afef6c5c6-3a2e-4c3a-973c-5a78bda2598aa" />
+          <Gw_Pub_Ref DestName="FDAS_L3.GLU_925_L_GNSS_3_L355_GNSS_Fault_Sum_Word" DestGuid="a0782b916-bdb3-4004-9592-2b28c298e4b2a" />
+          <Gw_Pub_Ref DestName="FDAS_R3.GLU_925_L_GNSS_3_L355_GNSS_Fault_Sum_Word" DestGuid="a1b1fb82b-4d33-4d0a-b4c6-84c3ddade906a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L355_GNSS_Fault_Sum_Word" DestGuid="a8875c336-19b1-4b4a-9f06-5a90fbc63749a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L355_GNSS_Fault_Sum_Word_L_GNSS_3" DestGuid="a7940484d-3f84-4eda-a009-74dbd3b721d6a" />
+        </A429Word>
+      </DS>
+      <DS Name="L076_GNSS_Altitude" Guid="a92258b6c-b33e-466e-a35b-1d7111a1121ea" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L076_GNSS_Altitude" Guid="a84185b6b-e685-40ee-9282-9d8f4a742904a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aaa2e79f1-3fba-4ee4-98c0-8c6528e14ab8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="76" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="GNSS_Altitude" Guid="a5c294d43-338d-4c0c-9f0f-9e778549ae79a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="131071" FullScaleRngMin="-262142" FuncRngMax="131071" FuncRngMin="0" LsbRes="0.125" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="ft" />
+          <DP Name="SSM" Guid="a48191435-157e-4c66-b988-01f2f77671f9a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aa0384bbc-d967-4bb7-a9ac-034f92abdc60a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L076_GNSS_Altitude" SrcGuid="a27b2e26c-fe08-4431-bdeb-3e906465c90ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L076_GNSS_Altitude" DestGuid="a6e653b70-b0c2-4ff8-9db5-6eeff03fb726a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L076_GNSS_Altitude_L_GNSS_3" DestGuid="a9b406ab5-6f2d-4810-8c74-d1e6660a721fa" />
+        </A429Word>
+      </DS>
+      <DS Name="L101_HDOP" Guid="a47f2ad17-32cb-4479-b386-09d2e772e3f8a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L101_HDOP" Guid="a96a75e28-027d-4a8e-b9e6-b1f44ca12d71a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a35c5f4c4-6bcc-4438-b1f3-76c309a7cab8a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="101" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a4b021a64-ed34-42ba-bd9b-ae61239feed9a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a383696c2-7e6c-4900-8431-d0944f25e1e5a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="HDOP" Guid="ab76be40d-4520-46a6-a669-6efdbb7b212da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="1023" FullScaleRngMin="-2048" FuncRngMax="1023" FuncRngMin="0" LsbRes="0.031" ParameterSize="16" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="UNDEFINED" />
+          <DP Name="SSM" Guid="a51490349-afe7-4e15-bf0f-53558af21578a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a62e8d9fe-00f7-4cbc-93b6-753a9a344a2da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L101_HDOP" SrcGuid="a498440f3-1d07-4434-a799-ba9bb4d79df9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L101_HDOP" DestGuid="a99725b3a-a2fe-46ee-b283-a0b58129a39aa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L101_HDOP_L_GNSS_3" DestGuid="a079e28f2-b172-452b-b719-c80890071ceba" />
+        </A429Word>
+      </DS>
+      <DS Name="L102_VDOP" Guid="a22434323-2ed2-48a0-9f0c-ec6c76a9b2c4a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L102_VDOP" Guid="a657eb8ee-261f-407c-a1ce-a56121679ea6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3daf6aa6-8af3-4b2e-8a65-c04ed4cddd8da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="102" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a93cd1163-0f78-4dec-ad74-ed118d5b07d1a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="add1a9e17-8592-4abc-aed7-c2927c818732a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="VDOP" Guid="aa8bf186c-329d-4f89-a0de-20b4a33efafda" Notes="Assumed TV: PL=0" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="1023" FullScaleRngMin="-2048" FuncRngMax="1023" FuncRngMin="0" LsbRes="0.031" ParameterSize="16" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="UNDEFINED" />
+          <DP Name="SSM" Guid="aef0032db-971f-42b8-bd7f-0d8fa99314f3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ac957df7d-3f7a-4913-b5d2-52f0bbd49c17a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L102_VDOP" SrcGuid="aeeadbc63-2ef5-45e5-ac2d-3438cb320e4fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L102_VDOP" DestGuid="ad076df20-7ca5-4aa6-a09b-81873c7f1b3fa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L102_VDOP_L_GNSS_3" DestGuid="abea84d8f-daf1-4aa2-8138-9c4a7f606b09a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="afca551ba-701f-4fce-9025-a882504c5043a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="ae5e445df-4551-4f7b-b759-0a02f7f3e278a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="a34d8db27-f7f9-4c81-a20b-89d3100b7666a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB7" Guid="a54fcc2f8-8606-4c5c-bb8e-132540cae63ea" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB8" Guid="a590f1370-0ab6-41e3-b65a-dae58be37fdaa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L103_GNSS_Track_Angle_T" Guid="a85ad89d0-9ad6-4459-ab39-2ad2c51e1955a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L103_GNSS_Track_Angle_T" Guid="a0fa3d5d4-24d2-4677-bbb7-b3c24f89e354a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae9235312-5cea-4570-b5df-b34e91e89abda" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="103" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a3210a401-d32a-4599-b07c-1f998a0b62e2a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a7325884f-f1b2-40c7-8fb2-0dfd434506ada" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="TrackAngleTrue" Guid="aa273680a-5eaf-444c-bb88-04200a4dc0b5a" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="179.99" FullScaleRngMin="-359.99" FuncRngMax="179.99" FuncRngMin="-180" LsbRes="0.0055" ParameterSize="16" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="aecf6f1c3-29d0-4789-8136-3f27e6f903cca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a27a9698f-2ddb-4463-ae9e-c971464eb333a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L103_GNSS_Track_Angle_T" SrcGuid="aeba653b7-c6d4-44c4-94e6-ead0b34ce20ba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L103_GNSS_Track_Angle_T" DestGuid="ab88c8719-a345-41dd-8183-fce0fb70d969a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L103_GNSS_Track_Angle_T_L_GNSS_3" DestGuid="a5dbf01f2-19b3-4878-9c18-cc0bd1e074cca" />
+        </A429Word>
+      </DS>
+      <DS Name="L110_GNSS_Latitude" Guid="abddf86ac-bee7-4449-b121-273e2633c9eba" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L110_GNSS_Latitude" Guid="ab11d004f-c61b-4ea5-a1d8-395a51859341a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a9746093a-a4b4-4b68-a816-1b628363bef7a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="110" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Present_Position_Latitude" Guid="aedffcb38-e0cc-4b05-a9d5-9409bf8c4d61a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="179.99" FullScaleRngMin="-180" FuncRngMax="90" FuncRngMin="-90" LsbRes="0.000172" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a46cab03b-915e-4a7d-951e-9d4c632a1047a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a8b3e53b7-b8ae-4680-a44b-e7cc3c687ab1a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L110_GNSS_Latitude" SrcGuid="aeedc1578-8097-4888-b53b-68733f46db80a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L110_GNSS_Latitude" DestGuid="ade83e702-ea0e-458e-ba8a-0d4062cf8660a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L110_GNSS_Latitude_L_GNSS_3" DestGuid="ae3a2f109-7006-4a80-bfb8-94b07408e96aa" />
+        </A429Word>
+      </DS>
+      <DS Name="L111_GNSS_Longitude" Guid="a31b1706e-0e11-47aa-9597-64600e3e9c3aa" ByteOffsetFSF="26" ByteOffsetWithinMsg="36" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L111_GNSS_Longitude" Guid="a5da54247-d220-47e6-96c6-ba75ecf23d63a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a953fad54-1a0f-4a76-adbc-566d4864cfbba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="111" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Present_Position_Longitude" Guid="a98bc272f-fdcb-4cc5-9a46-c7b0a5349535a" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="359.99" FullScaleRngMin="-360" FuncRngMax="179.99" FuncRngMin="-180" LsbRes="0.000172" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="af7af0076-7cbd-4139-af54-8dd364ce3549a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a6ff27aa5-a4d0-457f-82dc-57fd987e044aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L111_GNSS_Longitude" SrcGuid="af5a2ed08-4b7d-4765-a091-aedf91e45ea2a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L111_GNSS_Longitude" DestGuid="ac7a3e600-9cb2-4aeb-8769-01d291cd27c4a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L111_GNSS_Longitude_L_GNSS_3" DestGuid="ad6b6cdfd-a4ea-4b3f-a43c-cf7032154b93a" />
+        </A429Word>
+      </DS>
+      <DS Name="L112_GNSS_Gnd_Spd" Guid="a441a4d01-8e2b-4851-931d-fa6cd6a898a7a" ByteOffsetFSF="27" ByteOffsetWithinMsg="40" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L112_GNSS_Gnd_Spd" Guid="a5518e8eb-4d6e-4da4-8db0-9beb0e34a8ada" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a85dae7a8-e88a-4900-8025-e6bb3e6e732da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="112" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ae0eb597b-47e4-4315-848e-6a98c943827ea" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a317440c7-621a-4da1-8aee-ef83b41ce974a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Ground_Speed" Guid="a3840100a-0b21-426a-b694-a4303cf8efd5a" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-8192" FuncRngMax="4095" FuncRngMin="0" LsbRes="0.125" ParameterSize="16" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="knots" />
+          <DP Name="SSM" Guid="af22dd38c-b44e-49d5-bf6d-9796ce767c29a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a722038f1-2434-41d8-848a-1eb5c95479a4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L112_GNSS_Gnd_Spd" SrcGuid="a00ee67f3-7a4b-4871-825d-0e0614322355a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L112_GNSS_Gnd_Spd" DestGuid="aa02b0720-9d13-4100-bcc5-77375717533fa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L112_GNSS_Gnd_Spd_L_GNSS_3" DestGuid="a1e7a5cf6-54ae-4e7b-afb9-ddf5093df879a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS3" Guid="a031ee031-0070-4c38-8103-61005df50183a" ByteOffsetFSF="0" ByteOffsetWithinMsg="44" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB9" Guid="aff6c9ff5-cb77-417a-b923-2262100816d6a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB10" Guid="a98c89b89-23ae-4a21-a5eb-31a318bf5525a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB11" Guid="afb60f485-1306-42a9-bcc1-91f4fce17b9da" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB12" Guid="aef6b9f13-d6cb-4418-8f65-55bf8bdd66e0a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L120_GNSS_Latd_Fine" Guid="adb93c4c4-63cf-4822-b4b1-89aa9d04e49ea" ByteOffsetFSF="44" ByteOffsetWithinMsg="48" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L120_GNSS_Latd_Fine" Guid="a959295fe-3e7f-45b6-b3c7-cdec9a099468a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a2138bcc0-538d-4898-af7a-2f06b4b76121a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="120" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a9fc674c4-2336-4bee-aa58-0cbbc9c11810a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a8b076394-c134-4efa-94bb-1dc38432c578a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Latitude" Guid="a0129a35a-8dcd-48a3-a991-af57677f58eca" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="0.000086" FullScaleRngMin="-.000344" FuncRngMax="0.000086" FuncRngMin="0" LsbRes="0.0000000838 " ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a460639c7-58ef-4a93-9af5-90efce44c3a3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="af9155d23-d949-4d43-ac10-189a405b3c0fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L120_GNSS_Latd_Fine" SrcGuid="ae9755ff1-8009-47d1-bb8c-d72fc259a36ba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L120_GNSS_Latd_Fine" DestGuid="a88059474-2d60-4494-9259-1704002ab9d0a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L120_GNSS_Latd_Fine_L_GNSS_3" DestGuid="ae0323ad0-78cd-45c5-bcc4-7c4e3571afeea" />
+        </A429Word>
+      </DS>
+      <DS Name="L121_GNSS_Logd_Fine" Guid="aae8f3189-5a61-4214-b6fe-a04d3962cce9a" ByteOffsetFSF="45" ByteOffsetWithinMsg="52" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L121_GNSS_Logd_Fine" Guid="a43990041-a83f-4cd3-8da1-8b18b6c237d6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3670b806-9803-47ce-8614-13fb23550102a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="121" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aa2c69851-4ca9-4040-9a55-4ec81d1b9846a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a292be908-f04f-4e5a-bdd2-cb7756ad157fa" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Longitude" Guid="ada9ba750-1758-4d1e-b38c-a6a01be845c1a" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="0.000086" FullScaleRngMin="-.000344" FuncRngMax="0.000086" FuncRngMin="0" LsbRes="0.0000000838 " ParameterSize="12" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="degrees" />
+          <DP Name="SSM" Guid="a255cda06-f21d-422c-9158-505d20c06613a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ab6816938-5667-49ad-bcca-a24a21e78b82a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L121_GNSS_Logd_Fine" SrcGuid="aa181a00f-fc5a-4b8f-8a18-a33db34bcd72a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L121_GNSS_Logd_Fine" DestGuid="a7e1f47dc-76c2-44c0-aae8-c1386a12a55da" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L121_GNSS_Logd_Fine_L_GNSS_3" DestGuid="a070e191a-0016-4601-9f8a-61859c769f9fa" />
+        </A429Word>
+      </DS>
+      <DS Name="L125_UTC_1" Guid="aa07ce675-b2d2-41f1-95fd-7e59a43c85b3a" ByteOffsetFSF="46" ByteOffsetWithinMsg="56" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L125_UTC_1" Guid="a880f9502-6633-40b4-bf3a-b8c02f390828a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3855f765-cf48-4d14-8f4b-5942f58ead28a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="125" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ace49f128-3d31-4368-9d75-2bcf17377db7a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Minutes_Tenths_Digit" Guid="a6fcdd4da-5c0a-4bc1-9c10-baaf2518a12ea" BitOffsetWithinDS="10" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Minutes_Ones_Digit" Guid="a58942c91-505b-41f2-990a-330aaf3a2ab6a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Minutes_Tens_Digit" Guid="a16ec891b-5abc-45fa-8d0d-8a7b32c7d848a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Hours_Ones_Digit" Guid="a0a67ebf1-8356-43df-9014-1f880b902e0ea" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Hours_Tens_Digit" Guid="ac7b5c991-67c0-4663-a670-6e9f3ffc1c77a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a3ed4f6a2-33e7-429b-9242-23269805d829a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a11ff4100-ff58-453a-9527-d9f2544104afa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L125_UTC_1" SrcGuid="a8bfe349d-9467-4042-8795-95ed0a2004b7a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.UTC_Time_A_2" DestGuid="a5c33fc6f-4e83-49b4-9639-3a4146d35fdca" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.UTC_Time_A_2" DestGuid="ab77dc73e-077c-45e4-8a9f-1fa2e5ca1465a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.UTC_Time_A_2" DestGuid="a6ee165e6-5aa3-4208-bb99-d276ca41c563a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.UTC_Time_A_2" DestGuid="a2126b554-1874-45b4-bbea-732d001acf87a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L125_UTC_1" DestGuid="ad0bd7849-fd5f-467f-a874-622ab4b4e530a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L125_UTC_1_L_GNSS_3" DestGuid="a658f8249-13da-43c7-b4fa-c6597db41d37a" />
+        </A429Word>
+      </DS>
+      <DS Name="L130_Horz_Integ_Limit" Guid="a3c854de8-f874-45ed-8ce2-bed63ba46782a" ByteOffsetFSF="47" ByteOffsetWithinMsg="60" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L130_Horz_Integ_Limit" Guid="a59dc5546-90fc-4dd3-bb7c-3f3d0d0e786aa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a08a05894-d1c4-4853-a350-51bc80832143a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="130" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="abe9b37da-3947-45a8-bcbb-841c6ff73724a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Satellite_Fault" Guid="a32dd7121-ab4c-4662-976c-a404def80df0a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=RAIM Detected Satellite Fault" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+          <DP Name="Horizontal_Integrity_Limit" Guid="a39ee8438-4807-4298-b23a-1ca9479ff5c1a" BitOffsetWithinDS="11" DataFormatType="BNR" FullScaleRngMax="15.99" FullScaleRngMin="-31.99" FuncRngMax="15.99" FuncRngMin="0" LsbRes="0.0001221" ParameterSize="18" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="nautical miles" />
+          <DP Name="SSM" Guid="ad02d5793-4971-4caa-9b41-b1b60b3013a2a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ab8b30900-414f-46a4-9dfc-88ae34dc6f3ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L130_Horz_Integ_Limit" SrcGuid="a4e3aeb5f-cfd7-4c24-8e32-324606aad947a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L130_Horz_Integ_Limit" DestGuid="ab6da74f6-353a-4a0c-a665-578be7d89cf6a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L130_Horz_Integ_Limit_L_GNSS_3" DestGuid="aefd54698-cbe1-4230-b9fe-4a382fa75b98a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS4" Guid="a18781731-2c2d-4f00-8bfe-4439a444909fa" ByteOffsetFSF="0" ByteOffsetWithinMsg="64" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB13" Guid="aa034ea42-75f8-43f9-83d4-2cb4eb374dc7a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB14" Guid="a4b9cf988-c8e5-4d69-a7e4-b3bbefb9948fa" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB15" Guid="a86a7e47b-c04d-492d-be36-c3b6bdd9d516a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB16" Guid="a1f7c8296-eba2-4fea-a7b7-0a365324aa22a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L133_Vert_Integ_Limit" Guid="ad02a5b20-5adb-4574-8e67-d2490c9ed698a" ByteOffsetFSF="64" ByteOffsetWithinMsg="68" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L133_Vert_Integ_Limit" Guid="a1d39de65-ed07-45b3-82a2-bab7146f49a8a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a40289feb-c5e0-4260-9a79-08d35cb8d28ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="133" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a7acf0372-1fc8-4102-b1f4-4d1c60759c1ca" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Vertical_Integrity_Limit" Guid="a102ab85a-9b2b-4e0b-990e-35bb1e084e07a" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="32767" FullScaleRngMin="-65536" FuncRngMax="32767" FuncRngMin="0" LsbRes="0.125" ParameterSize="19" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="ft" />
+          <DP Name="SSM" Guid="a47d3c5c1-7e27-4aba-8ae7-5d8422fcb4fda" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a9f66d871-3b16-4347-9bd6-c23ffd6ba360a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L133_Vert_Integ_Limit" SrcGuid="a0f08ff30-492f-4266-b57f-5e8d751af8bfa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L133_Vert_Integ_Limit" DestGuid="ab1397dd9-85bd-49bb-a5a7-5b6e1fc61b97a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L133_Vert_Integ_Limit_L_GNSS_3" DestGuid="a8fd7f790-8f0f-45bf-8ef3-94115b000e33a" />
+        </A429Word>
+      </DS>
+      <DS Name="L136_Vert_Fig_of_Merit" Guid="aa2b271b5-d44e-4836-a04b-79835aec0669a" ByteOffsetFSF="65" ByteOffsetWithinMsg="72" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L136_Vert_Fig_of_Merit" Guid="a59db4ddf-d284-4a7b-823b-582df6cfe793a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af97d282b-5ace-4d2c-89a7-db8b1f67d34ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="136" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a87df0b96-9069-40fa-9fa9-c973a6d9f7b1a" BitOffsetWithinDS="8" CodedSet="0=Not_Used;1=Left_GPS;2=Right_GPS;3=Not_Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Vertical_Figure_of_Merit" Guid="a07892bdc-6ddd-42b9-8da5-63591f840caaa" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="32767" FullScaleRngMin="-65536" FuncRngMax="32767" FuncRngMin="0" LsbRes="0.125" ParameterSize="19" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="ft" />
+          <DP Name="SSM" Guid="a25fee821-6dde-4769-b24a-e441524e21aea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aff29864c-14a8-4d37-a066-c1bc34e22539a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L136_Vert_Fig_of_Merit" SrcGuid="a71005950-3ce7-43b5-80a5-450df5aa6fa3a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L136_Vert_Fig_of_Merit" DestGuid="ae945af2f-2c0d-4317-9098-0e433f0e92dfa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L136_Vert_Fig_of_Merit_L_GNSS_3" DestGuid="a87612cca-c80f-4bad-af3d-af8429fdfa6ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L140_UTC_Fine" Guid="adb9b0235-2f44-4f0e-80e7-b698259f5b18a" ByteOffsetFSF="66" ByteOffsetWithinMsg="76" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L140_UTC_Fine" Guid="a8ef09174-569c-4951-a6f2-cc55ce51a00ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a7ec1a48a-40af-4f06-9f52-764a8891948ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="140" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="UTC_Fine" Guid="aa8b70a13-2ae9-437f-b9b0-b4fecbf9259fa" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="0.9999999" FullScaleRngMin="-1.9999999" FuncRngMax="0.9999999" FuncRngMin="0" LsbRes="0.0000009536743" ParameterSize="21" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="secs" />
+          <DP Name="SSM" Guid="ac03fca96-945d-4dbe-ab46-cd0381e87b0da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a01502e2a-31a6-49d0-8c84-bd1da17f3b14a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L140_UTC_Fine" SrcGuid="a8300cd18-1fea-48d8-9e18-60d9e5471d6ba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L140_UTC_Fine" DestGuid="a8bb907dd-ff89-4826-b7d9-7aeb4018b20ba" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L140_UTC_Fine_L_GNSS_3" DestGuid="a119ea854-f9c7-4398-9e2f-9df765b49fd0a" />
+        </A429Word>
+      </DS>
+      <DS Name="L141_UTC_Fine_Fractions" Guid="a036ac696-35d1-482e-91e1-5edd631c4652a" ByteOffsetFSF="67" ByteOffsetWithinMsg="80" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L141_UTC_Fine_Fractions" Guid="ac42013a9-9caa-492d-900d-08548a24560aa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1725faad-117b-4ccf-9ee9-9c4ed4d577e8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="141" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="adbb15f44-d044-4be2-a532-c32287df33eaa" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="aa85ee12e-5852-42fc-8519-c5dfa86dec4da" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="UTC_Fine_Fractions" Guid="af98beb02-7620-4437-ac07-a4779cd0c847a" BitOffsetWithinDS="18" DataFormatType="BNR" FullScaleRngMax="0.00000095367431640625" FullScaleRngMin="0.0000019073486328125" FuncRngMax="0.00000095367431640625" FuncRngMin="0" LsbRes="0.000000000932233" ParameterSize="11" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="usecs" />
+          <DP Name="SSM" Guid="a194358d6-9361-4206-8e60-8181b66b86cba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aff039d96-2d01-461c-8762-d1c7feeb47b2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L141_UTC_Fine_Fractions" SrcGuid="aff2435ef-0bdd-4c0e-ab58-0a16ccbd316aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L141_UTC_Fine_Fractions" DestGuid="aa192483f-62a6-49db-ba59-292a248adb67a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L141_UTC_Fine_Fractions_L_GNSS_3" DestGuid="ac889aeb9-5350-42c4-8a16-9aa0a3cb6ee6a" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS5" Guid="a2eecac29-6104-4c54-a1e2-34820e2c6886a" ByteOffsetFSF="0" ByteOffsetWithinMsg="84" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB17" Guid="a2e3fbaf6-82f0-48b3-a760-f4c8e5603fb9a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB18" Guid="a5865df82-6ea8-4868-97f4-ed68150c1531a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB19" Guid="a98693d20-c156-480d-8a2e-2e1043d58b38a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB20" Guid="aa0d63d37-28f6-42c5-99be-31c45e669c48a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L145_Horizontal_Velocity_FOM" Guid="ab9c0dbde-483c-4d60-8d1b-0852827535a4a" ByteOffsetFSF="84" ByteOffsetWithinMsg="88" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L145_Horizontal_Velocity_FOM" Guid="ac2a02c6a-4a53-47e2-9426-c180cd8f9766a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac782c6a3-c353-41ab-a9b0-438983a1e7d3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="145" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a2b9c5369-d64b-4c3a-9800-ce1fda011119a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Horizontal_Velocity_FOM" Guid="a9855ab5b-06e7-4365-a095-32d78be36affa" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-4096" FuncRngMax="4096" FuncRngMin="0" LsbRes="0.0156" ParameterSize="19" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="knots" />
+          <DP Name="SSM" Guid="a25fd365e-75fa-484c-ab2a-3f13882f7806a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a8ba36bd6-cec4-45bd-8dc2-c782e786fd6ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L145_Horizontal_Velocity_FOM" SrcGuid="ab9132a3f-bffe-4585-b1f8-2aa45ba2a9e7a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L145_Horizontal_Velocity_FOM" DestGuid="aa7c56d09-038e-47a8-9a1e-8739a3cc4485a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L145_Horizontal_Velocity_FOM_L_GNSS_3" DestGuid="a4f96e94d-d95c-415f-b4bb-ab9a9ba292dca" />
+        </A429Word>
+      </DS>
+      <DS Name="L150_UTC_BNR" Guid="a0d3b4a54-dec4-44a1-9dd3-43f1a19699c1a" ByteOffsetFSF="85" ByteOffsetWithinMsg="92" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L150_UTC_BNR" Guid="a094fc265-d234-4b6d-add7-9e2ab051bcfda" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1dec8391-72bd-49c5-968a-ea063cbec63ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="150" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a942e7eb9-07cb-420b-a614-0a3641b99056a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="UTC_GNSS_SrcOfTime" Guid="a64cf260b-1b1f-4d4e-91fd-328d60dc5fc8a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=GNSS system clock used as the source of time" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" ZeroState="0=GNSS system clock not used as the source of time" />
+          <DP Name="UTC_Seconds" Guid="a141cece1-c5f3-4cbe-90e3-8b00be4878bba" BitOffsetWithinDS="11" DataFormatType="UBNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="59" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="secs" />
+          <DP Name="UTC_Minutes" Guid="a7334954f-5071-4b60-9a98-630389b3234aa" BitOffsetWithinDS="17" DataFormatType="UBNR" FullScaleRngMax="63" FullScaleRngMin="0" FuncRngMax="59" FuncRngMin="0" LsbRes="1" ParameterSize="6" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="minutes" />
+          <DP Name="UTC_Hours" Guid="ae4983f35-0323-40a3-9efd-b9a25f4deca9a" BitOffsetWithinDS="23" DataFormatType="UBNR" FullScaleRngMax="31" FullScaleRngMin="0" FuncRngMax="23" FuncRngMin="0" LsbRes="1" ParameterSize="5" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="hrs" />
+          <DP Name="PAD" Guid="a51909871-d301-4a5f-bec9-8a3cb2ff165ba" BitOffsetWithinDS="28" DataFormatType="PAD" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="aadff14ba-2f11-45b6-bf17-6ba46ee624d9a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ab1d94367-338e-4d42-8a78-51e532ded421a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L150_UTC_BNR" SrcGuid="a54fb79d8-30d5-4df9-9c2f-0712387d9807a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L150_UTC_BNR" DestGuid="a46625b54-5a83-4fae-9254-61136af1f68fa" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L150_UTC_BNR_L_GNSS_3" DestGuid="ae8384a82-e6f6-4e30-b9c9-de1717e0d791a" />
+        </A429Word>
+      </DS>
+      <DS Name="L165_GNSS_Vert_Velocity" Guid="abeabe545-8ddd-4674-b72e-48e190da056ba" ByteOffsetFSF="86" ByteOffsetWithinMsg="96" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L165_GNSS_Vert_Velocity" Guid="aa4ee5516-9d48-4091-8bf7-69bbf090a20ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a8d658600-d8b0-40cd-8397-c5f19570e527a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="165" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a2567a831-cb6f-4df9-83b9-d11675a4621da" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a664a70de-7b80-46ed-902b-1205b0ef81b3a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Vertical_Velocity" Guid="aaf6f3cbd-9a93-4e7b-96f8-3d2b2b5391dda" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="32767" FullScaleRngMin="-32768" FuncRngMax="32767" FuncRngMin="-32768" LsbRes="1" ParameterSize="16" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="ft/min" />
+          <DP Name="SSM" Guid="a3119d790-0084-4415-8bdb-dc1d82da1e14a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a7d688e24-ad33-46b1-b057-7b66d63f30f2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L165_GNSS_Vert_Velocity" SrcGuid="a9c283759-75c4-4d61-b208-ffdfd17090eba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L165_GNSS_Vert_Velocity" DestGuid="a214b7352-5fe1-4eda-8a52-7e7db93bc134a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L165_GNSS_Vert_Velocity_L_GNSS_3" DestGuid="a07fbe243-8b28-4009-8683-10b59836e509a" />
+        </A429Word>
+      </DS>
+      <DS Name="L166_GNSS_NS_Velocity_T" Guid="aec311173-7d1f-4b71-a810-3df56eeae03fa" ByteOffsetFSF="87" ByteOffsetWithinMsg="100" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L166_GNSS_NS_Velocity_T" Guid="a1a0767a7-b5d0-4dbb-b762-0fa8c5c61993a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="abc5fccdc-ad51-44aa-ba19-ea5c3d572296a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="166" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a96640fea-217a-4552-9f30-ccd51e6d8f90a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="a0df5c237-580c-4706-8f4a-a9e5ed5688bea" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="GNSS_NS_Velocity" Guid="af0d0d073-639f-4ea1-9471-56e247dae174a" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-4096" FuncRngMax="4095" FuncRngMin="-8192" LsbRes="0.125" ParameterSize="16" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="knots" />
+          <DP Name="SSM" Guid="a1e1f7180-81d4-42ad-90d1-867ad30cba9aa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ab239cc5a-f752-436f-995c-1074e175f917a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L166_GNSS_NS_Velocity_T" SrcGuid="ad43b9289-a0de-45e0-930a-5d6e0713a16ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L166_GNSS_NS_Velocity_T" DestGuid="a9b0fc4d3-53a8-45fe-bfe3-0968cc1c598ba" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L166_GNSS_NS_Velocity_T_L_GNSS_3" DestGuid="a465d744e-13a0-4698-bc6d-78bbc328794fa" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS6" Guid="a22e57127-20d8-4f2e-8484-2c1723ce2f74a" ByteOffsetFSF="0" ByteOffsetWithinMsg="104" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB21" Guid="a065dd400-eb02-4e89-a676-4782d0e2534ea" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB22" Guid="aa408672d-aa61-4870-9aee-3a1fd1249948a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB23" Guid="a19e9f882-3383-45e5-952b-163f76d87525a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB24" Guid="aa0ceac32-ab5c-4d39-9676-a6f87adf605ca" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L174_GNSS_EW_Velocity_T" Guid="ad053592c-bc48-49d0-bdf9-da98611c58dea" ByteOffsetFSF="104" ByteOffsetWithinMsg="108" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L174_GNSS_EW_Velocity_T" Guid="aade8dbf9-5492-4130-8e09-c1b7b16521faa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a8b888441-3281-428e-9f17-b9f9cfdda8c6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="174" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a99e9bc5f-0194-40e9-a8f8-162a37c380eba" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PAD" Guid="aff96d66d-c820-4dd3-a95c-3fee42a849bca" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="3" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="GNSS_EW_Velocity_T" Guid="afb210efb-e7d8-4bfc-8eaa-43bd2186e81aa" BitOffsetWithinDS="13" DataFormatType="BNR" FullScaleRngMax="4095" FullScaleRngMin="-4096" FuncRngMax="4095" FuncRngMin="-8192" LsbRes="0.125" ParameterSize="16" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="knots" />
+          <DP Name="SSM" Guid="a5b84a602-46a6-4763-9be8-d90658d7416ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ae8a62309-6787-491c-889a-7a6fd93368a9a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L174_GNSS_EW_Velocity_T" SrcGuid="a3fb1c9a9-4441-44fe-af2e-2ebec8e7ee3fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L174_GNSS_EW_Velocity_T" DestGuid="aa52591c6-ea80-4ab0-ac93-8963e5213fd9a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L174_GNSS_EW_Velocity_T_L_GNSS_3" DestGuid="ae4b201af-8411-4754-9b91-bf55c1b6205aa" />
+        </A429Word>
+      </DS>
+      <DS Name="L247_Horz_Fig_of_Merit" Guid="a9d4cea10-1117-490c-9fbe-edb310a53ed6a" ByteOffsetFSF="105" ByteOffsetWithinMsg="112" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L247_Horz_Fig_of_Merit" Guid="a4ef2f18a-9fa3-414c-b8cb-29ad96ab12eaa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a7683dea5-7d22-49be-b295-b94f2fe4e022a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="247" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aaabc374e-5f23-4fda-93bc-8f7a1d8fd02ca" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Horz_Fig_of_Merit" Guid="afa3500af-1b25-4f91-b2ee-ef209b5f0330a" BitOffsetWithinDS="10" DataFormatType="BNR" FullScaleRngMax="15.999999" FullScaleRngMin="-21" FuncRngMax="15.999999" FuncRngMin="0" LsbRes="0.000061" ParameterSize="19" PublishedLatency="50" TransmissionIntervalMinimum="200" Units="nautical miles" />
+          <DP Name="SSM" Guid="a1b7ecef4-b183-4b65-aa1c-647350a7393ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a9db18fc4-a8bc-433c-b7f3-de21a045a98ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L247_Horz_Fig_of_Merit" SrcGuid="a6dfc16da-8e6b-44a0-8378-b48a2a53c72da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L247_Horz_Fig_of_Merit" DestGuid="a400c6186-c2e8-4641-afbf-9c4a96c4b342a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L247_Horz_Fig_of_Merit_L_GNSS_3" DestGuid="a195c9b35-e7f9-49ab-b890-d49328c292f4a" />
+        </A429Word>
+      </DS>
+      <DS Name="L260_Date" Guid="a6ddb4f43-00be-41c3-8e6a-7924af9962f4a" ByteOffsetFSF="106" ByteOffsetWithinMsg="116" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L260_Date" Guid="a59463bf2-b0da-4b70-b610-2d2110dac139a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a91ef84db-747c-4cca-ad51-868404571470a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="260" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a6c94767f-16b7-4c2a-8aed-90714b860c0da" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Date_Year_Ones_Digit" Guid="af4189a21-152e-4e19-84cb-80bfd0a8954aa" BitOffsetWithinDS="10" DataFormatType="BCD" ParameterSize="4" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Date_Year_Tens_Digit" Guid="a0d3d6407-7b0c-4f2c-99df-36fb2f9de7e2a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Month_Ones_Digit" Guid="aa9f1fac2-114c-4f47-9a3a-058178187936a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Month_Tens_Digit" Guid="a36acdca2-7a14-4b68-a231-1242f70aa098a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Day_Ones_Digit" Guid="a3231a2e5-4685-4d56-bbb0-3656754297e4a" BitOffsetWithinDS="23" DataFormatType="BCD" ParameterSize="4" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="Day_Tens_Digit" Guid="a7ecb5dab-fd84-466c-beb7-638a984a0c7ca" BitOffsetWithinDS="27" DataFormatType="BCD" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="a12afaad5-e65a-4886-be58-d5fc211189f9a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a267d12b2-d19e-4634-8ed1-61d3a1f0e2c7a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L260_Date" SrcGuid="acd31dd67-00f6-4eed-83f7-6e44833fec1ea" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.Date_A_2" DestGuid="ae45f7bf0-9f89-42c4-9fe9-a1047342a178a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.Date_A_2" DestGuid="acb9512cb-cdba-4913-b62a-aedfd3be92caa" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.Date_A_2" DestGuid="a977ac967-4516-4b63-94c4-e069352d03a9a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.Date_A_2" DestGuid="a0b858acc-5cdb-478c-a0b2-fb7a770fb533a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L260_Date" DestGuid="ad36c19de-ec7f-41d7-b69c-112c16ce1ca9a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L260_Date_L_GNSS_3" DestGuid="ab721f77a-9fcd-4bbf-8d5e-cbc4b7ab9bb5a" />
+        </A429Word>
+      </DS>
+      <DS Name="L273_GNSS_Sensor_Status" Guid="aa3ff0e66-5136-4eca-8a9f-d251d8fa1675a" ByteOffsetFSF="107" ByteOffsetWithinMsg="120" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L273_GNSS_Sensor_Status" Guid="a52da3fdb-9b78-4c38-8467-e7292a5c19f6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a677e62f4-558c-4cae-9d8c-9f636b3bb8f3a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="273" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a1a8aebd6-ad83-4983-a9f5-4e8dabf342d3a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="MSB_of_Satellites_Visible" Guid="a3dc94a56-d3ab-4964-8c3f-6916f9b99625a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=&gt; 15 Visible" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=&lt;= 15 Visible" />
+          <DP Name="DADC_OR_FMS_Status" Guid="a75739840-d9c0-4b0b-b8c7-f124270f3b71a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="DADC_OR_FMS_Status2" Guid="ab97fbddb-10e6-493d-8ce5-077d097bbc2aa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="IRS_OR_FMS_Status" Guid="a7cef4ef1-a9b2-4c44-a1a4-0cf9e7d6475ea" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="IRS_OR_FMS_Source" Guid="af7bc995e-9fea-4ad4-8c4c-4a3fe2157ce1a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=X-side" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=On-side" />
+          <DP Name="Satellites_Visible" Guid="a585646bb-24f5-4aaa-8b55-289f7aff31a5a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="NOT APPLICABLE" />
+          <DP Name="Satellites_Tracked" Guid="a684a6ec1-ff44-4938-bf49-4bb6f3b38775a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="NOT APPLICABLE" />
+          <DP Name="SDI2" Guid="a3e08eacc-40ab-4a69-b041-614d5c5d09d3a" BitOffsetWithinDS="23" CodedSet="0=Self Test;4=Initialization;8=Acquisition;12=Not Used;13=SBAS Nav;14=GBAS Nav (not used for -630);16=Altitude/Clock Aiding;20=Reserved;24=Direction/Speed Aiding;31=Fault" DataFormatType="COD" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="MSB_of_Satellites_Tracked" Guid="af0999067-e3a5-49d8-ae03-8a246854ea81a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=&gt; 15 Visible" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=&lt;= 15 Visible" />
+          <DP Name="SSM" Guid="a2cf43418-4409-41e9-a146-318414878f62a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a79b10fb3-71e2-4d01-a792-7e9d74d9a18aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L273_GNSS_Sensor_Status" SrcGuid="a3b91b55d-f598-423a-a719-03b5e125326da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L273_GNSS_Sensor_Status" DestGuid="a35008fa5-54a0-4977-a556-9ae3697fc732a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L273_GNSS_Sensor_Status_L_GNSS_3" DestGuid="ae052a594-f984-4903-94cd-416d41c1b14aa" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS7" Guid="acb9bb35f-3b83-442f-a5e7-a3df50980584a" ByteOffsetFSF="0" ByteOffsetWithinMsg="124" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB25" Guid="abbf08a49-d8c9-4527-9e70-2bf190b5c4b4a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB26" Guid="ab0ae320c-c73e-4827-8a7a-349d4562a9e1a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L274_GNSS_Monitor_Status" Guid="a75e201e1-e0d4-4d29-8f52-79484172a80fa" ByteOffsetFSF="124" ByteOffsetWithinMsg="128" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L274_GNSS_Monitor_Status" Guid="a916458cb-8e2f-4899-8f99-86948cf1db82a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a34be2aa1-5745-4419-b546-d587beaf38c4a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="274" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="ae42c47d4-35ef-444a-9931-3eb28ceebaa2a" BitOffsetWithinDS="8" CodedSet="0=Not Used;1=Left GPS;2=Right GPS;3=Not Used" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="MSB_of_Satellites_Visible" Guid="a257eca00-1709-482c-8394-d2126c68d0b5a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=&gt; 15 Visible" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=&lt;= 15 Visible" />
+          <DP Name="DADC_OR_FMS_Status" Guid="a5009f836-87db-4b30-a6fa-ffca9afb4492a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="DADC_OR_FMS_Status2" Guid="ad787bcbc-792d-4205-a1f1-63213618d2ada" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="IRS_OR_FMS_Status" Guid="a1e674763-80b5-42dc-8750-4ff44300c331a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Not Present" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Present" />
+          <DP Name="IRS_OR_FMS_Source" Guid="aead5a2c8-2cf4-456b-9f71-d1b6fc6536c9a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=X-side" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=On-side" />
+          <DP Name="Satellites_Visible" Guid="adc059b4e-3cbf-49f3-a378-ddbc80a68576a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="15" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="NOT APPLICABLE" />
+          <DP Name="Satellites_Tracked" Guid="a23687ffa-1cfc-47c9-a80c-6a100f5e260fa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="19" DataFormatType="BNR" FullScaleRngMax="15" FullScaleRngMin="0" FuncRngMax="15" FuncRngMin="0" LsbRes="1" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="NOT APPLICABLE" />
+          <DP Name="SDI2" Guid="abc8291c4-c1f2-445f-b60b-0e797c7b9277a" BitOffsetWithinDS="23" CodedSet="0=Self Test;4=Initialization;8=Acquisition;12=Not Used;13=SBAS Nav;14=GBAS Nav (not used for -630);16=Altitude/Clock Aiding;20=Reserved;24=Direction/Speed Aiding;31=Fault" DataFormatType="COD" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="MSB_of_Satellites_Tracked" Guid="a1cdd9909-13fd-4b9f-be18-aa31ff0f75f0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=&gt; 15 Visible" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=&lt;= 15 Visible" />
+          <DP Name="SSM" Guid="a1d04abfe-4d98-4fac-b718-a8ba0af29a17a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aeffea365-1aa6-4dea-9953-14d685373546a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L274_GNSS_Monitor_Status" SrcGuid="a825c8c02-c539-4a93-b9c9-dfd37e487d48a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L274_GNSS_Monitor_Status" DestGuid="a5359faff-d36a-4b81-8082-8b025ef7d771a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L274_GNSS_Monitor_Status_L_GNSS_3" DestGuid="a82019474-e290-4684-a9ff-281595a2e03da" />
+        </A429Word>
+      </DS>
+      <DS Name="L370_GNSS_Height" Guid="aecda75a3-1aad-48bd-88fd-ea06ad727d0aa" ByteOffsetFSF="125" ByteOffsetWithinMsg="132" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L370_GNSS_Height" Guid="a25c54e65-13ab-4588-a18a-4f7688b99949a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="acb948fb1-a313-40e8-9ea7-2ae9c3ade60da" Notes="Assumed TV: PL=0" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="370" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="GNSS_Height" Guid="adab0c214-2726-46d5-90f2-83d743068dc0a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="8" DataFormatType="BNR" FullScaleRngMax="131071" FullScaleRngMin="-131072" FuncRngMax="131071" FuncRngMin="-262144" LsbRes="0.125" ParameterSize="21" PublishedLatency="200" TransmissionIntervalMinimum="200" Units="ft" />
+          <DP Name="SSM" Guid="aaeb773ad-4d96-4647-95ea-0e2aaeb86870a" Notes="Assumed TV: PL=0" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a1152804f-13dd-4a8e-97ed-ec0b6085b57aa" Notes="Assumed TV: PL=0" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_GLU_925_L.po429_GNSS_3_Msg_200.L370_GNSS_Height" SrcGuid="addf69c1e-93a9-48e5-918e-27bd531be0bba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_GNSS_3_Msg_200_L370_GNSS_Height" DestGuid="a7499e7b1-68cc-4d01-94f8-2a1beadf4772a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L370_GNSS_Height_L_GNSS_3" DestGuid="a5bcf8236-3cf8-4b7b-94f7-6993e7fe1560a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_I_40005_HF_GLU_925_L.pi429_GNSS_3_200_HF_GLU_925_L" SrcGuid="abc5b4b29-7eb1-4894-86ad-69b1397add0da" />
+  </HFSamplingPort>
+</RemoteGateway>

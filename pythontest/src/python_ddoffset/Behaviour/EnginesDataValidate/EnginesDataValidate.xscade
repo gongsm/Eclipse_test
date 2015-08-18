@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Package name="EnginesDataValidate">
+			<declarations>
+				<Constant name="TOTAL_TEMP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-70.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d16a/11D0/284/5482a0e360f7"/>
+					</pragmas>
+				</Constant>
+				<Constant name="TOTAL_TEMP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="99.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d15c/11D0/284/5482a0e37368"/>
+					</pragmas>
+				</Constant>
+				<Constant name="STATIC_TEMP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-99.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d14e/11D0/284/5482a0e3a60"/>
+					</pragmas>
+				</Constant>
+				<Constant name="STATIC_TEMP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="60.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d140/11D0/284/5482a0e3449a"/>
+					</pragmas>
+				</Constant>
+				<Constant name="STAB_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-13.25"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d132/11D0/284/5482a0e326d0"/>
+					</pragmas>
+				</Constant>
+				<Constant name="STAB_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3.75"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d124/11D0/284/5482a0e330c3"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RUDDER_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-30.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d116/11D0/284/5482a0e319bd"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RUDDER_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="30.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/d108/11D0/284/5482a0e34abe"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_ALT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-3546.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/138e3/11D0/284/5482a3b85fa7"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_ALT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="41000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/138f1/11D0/284/5482a3c66aa7"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_ROC_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-10000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13926/11D0/284/5482a3e21519"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_ROC_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="10000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13918/11D0/284/5482a3e245d6"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_DELTAP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-0.7"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13942/11D0/284/5482a3e51454"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_DELTAP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="9.5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13934/11D0/284/5482a3e5a98"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_DEST_ALT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-2000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1395e/11D0/284/5482a3e87109"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CABIN_DEST_ALT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="15000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13950/11D0/284/5482a3e870be"/>
+					</pragmas>
+				</Constant>
+				<Constant name="COS_OXG_PRESS_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-200"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1397a/11D0/284/5482a3e9738f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>The voltage functional range shall be checked.System didn't has the data range.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="COS_OXG_PRESS_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="200"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1396c/11D0/284/5482a3e97ee5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>The voltage functional range shall be checked.System didn't has the data range.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="COS_OXG_TEMP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-200"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13996/11D0/284/5482a3ea3b6b" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>The voltage functional range shall be checked.System didn't has the data range.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="COS_OXG_TEMP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="200"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13988/11D0/284/5482a3ea5343" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>The voltage functional range shall be checked.System didn't has the data range.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="EGT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-70.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13a69/11D0/284/5482adba539b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="EGT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1280.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13a8f/11D0/284/5482adce5972"/>
+					</pragmas>
+				</Constant>
+				<Constant name="N1_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="130.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13d9a/11D0/284/5482b1943227"/>
+					</pragmas>
+				</Constant>
+				<Constant name="N1_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13da8/11D0/284/5482b1964682"/>
+					</pragmas>
+				</Constant>
+				<Constant name="N2_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3244/4092/118C/5483ca93563b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="N2_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="130.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3236/4092/118C/5483ca937ecb"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FF_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="35000.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/32a8/4092/118C/5483cb083c72"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FF_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/32be/4092/118C/5483cb231ea2"/>
+					</pragmas>
+				</Constant>
+				<Constant name="OT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-61.8"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/32fe/4092/118C/5483d9a87ecf" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="OT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="181.8"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/32f0/4092/118C/5483d9a83431" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="OQ_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1.36"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/33d0/4092/118C/5483da5364d3"/>
+					</pragmas>
+				</Constant>
+				<Constant name="OQ_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="24.25"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/33c2/4092/118C/5483da5377e"/>
+					</pragmas>
+				</Constant>
+				<Constant name="OP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-10.05"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/341e/4092/118C/5483dc017849"/>
+					</pragmas>
+				</Constant>
+				<Constant name="OP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="271.12"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/342c/4092/118C/5483dc024998"/>
+					</pragmas>
+				</Constant>
+				<Constant name="VIB_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="10.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3469/4092/118C/5483e0d94c3"/>
+					</pragmas>
+				</Constant>
+				<Constant name="VIB_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3490/4092/118C/5483e0f61be0"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LR_FUEL_MAX_LB">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="8000"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/352e/4092/118C/5483e38810c5"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FLAP_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="63.98"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3066/6B5A/1B8/5483f3de6555" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLAP_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-64.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3074/6B5A/1B8/5483f3df10f8" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="SLAT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="63.98"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/30a2/6B5A/1B8/5483f4ad3b32" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="SLAT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-64.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/30b0/6B5A/1B8/5483f4ae5a23" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="GND_SPOILET_STATUS_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/30be/6B5A/1B8/5483f53262be" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="GND_SPOILET_STATUS_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/30cc/6B5A/1B8/5483f53344aa" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>From ICD.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="SPOILER_POS_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/30d5/6B5A/1B8/5483f6145c08"/>
+					</pragmas>
+				</Constant>
+				<Constant name="SPOILER_POS_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-50.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3113/6B5A/1B8/5483f6354528"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RELIGHT_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/8f09/4C0B/840/548a90322517" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Initial value.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="RELIGHT_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/8f1f/4C0B/840/548a90484a3d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Initial value.</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="C_FUEL_MAX_LB">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="28900"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3019/3BF8/20E4/550a2da222be" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>LBS</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="C_FUEL_MAX_KG">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="13110"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3065/3BF8/20E4/550a2f95497"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FUEL_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3073/3BF8/20E4/550a2f96554e"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LR_FUEL_MAX_KG">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4000"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3081/3BF8/20E4/550a2fd56bc9"/>
+					</pragmas>
+				</Constant>
+				<Constant name="T_FUEL_MAX_KG">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="19905"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/308f/3BF8/20E4/550a2fe965e6"/>
+					</pragmas>
+				</Constant>
+				<Constant name="T_FUEL_MAX_LB">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="43880"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3007/65F5/1100/54a0bb5b72d8" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>LBS</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="N1_CMD_MIN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/60cb/6105/1CE4/55126bd231a2"/>
+					</pragmas>
+				</Constant>
+				<Constant name="N1_CMD_MAX">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="101.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/60d9/6105/1CE4/55126bdc7c5f"/>
+					</pragmas>
+				</Constant>
+				<Operator name="DataValidate" href="DataValidate.xscade"/>
+				<Operator name="StabRudHandle" href="StabRudHandle.xscade"/>
+				<Operator name="TempHandle" href="TempHandle.xscade"/>
+				<Operator name="EnvCtlHandle" href="EnvCtlHandle.xscade"/>
+				<Operator name="PrimaryHandle" href="PrimaryHandle.xscade"/>
+				<Operator name="SecondaryHandle" href="SecondaryHandle.xscade"/>
+				<Operator name="FSHandle" href="FSHandle.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/d034/11D0/284/54829fd15e50" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/d035/11D0/284/54829fd11fe2" blockKind="constants" columnsSize="0, 276, 150, 150, 404"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/d036/11D0/284/54829fd1591d" blockKind="types"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/d037/11D0/284/54829fd13507" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

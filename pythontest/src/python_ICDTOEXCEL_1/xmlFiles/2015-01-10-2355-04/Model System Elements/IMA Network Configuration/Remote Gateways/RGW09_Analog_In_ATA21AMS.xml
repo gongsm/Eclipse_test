@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW09_Analog_In_ATA21AMS" Guid="ae40f32a2-3354-42cd-823f-3e984ec54150a" XsdVersion="7.9" Hardware="RDIU_09">
+  <AnalogPort Name="piANALOG_U1_HF_FWD_CED1" Guid="a37eca9fe-c76a-4b5a-8ea2-864f967aa8afa" Direction="Destination" Physical="RDIU_09.40010_B01" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=5;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_FWD_CED1.poANALOG_U1" SrcGuid="ab1e79f89-250d-41fb-b694-a7c7e1d7b1fca" />
+  </AnalogPort>
+  <AnalogPort Name="piANALOG_U2_HF_FWD_CED1" Guid="a199fc22d-40b9-40b8-a589-836465f74273a" Direction="Destination" Physical="RDIU_09.40010_B02" RIUTemplate="40010" SamplePeriod="5" UDC="Hw /a type=5;Software filter constant=1">
+    <Dataflow_Ref SrcName="HF_FWD_CED1.poANALOG_U2" SrcGuid="af61f3dab-b147-4f96-827b-0f4597c0d051a" />
+  </AnalogPort>
+  <A429Port Name="po429_L022_ANALOG_U1_Voltage_HF_FWD_CED1" Guid="a0dc9cb82-87b1-43d4-ac98-fa80be5b3ecea" Direction="Source" Physical="RDIU_09.40006_A02" RefreshPeriod="640">
+    <A429Channel Name="A429_L022_ANALOG_U1_Voltage_HF_FWD_CED1" Guid="ac1a946ed-d09f-4bd8-a920-bab33f0599c2a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L022_ANALOG_U1_Voltage_HF_FWD_CED1" Guid="aaa802975-c82d-46c8-8584-e514283f00aba">
+        <DP Name="LABEL" Guid="ab69b198b-6c3e-4fd0-a428-83854e2c68b6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="22" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="a2deeb28e-5b50-44f4-bc83-25bf780d691aa" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Voltage" Guid="afc98d59e-a6ab-4f6b-9f9a-1a1fa76fb644a" BitOffsetWithinDS="13" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="640">
+          <Copy_Ref SrcName="HF_FWD_CED1.ANALOG_U1.Voltage" SrcGuid="a97648842-ba73-43ac-9fbb-75cc80deff89a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L22_A2_FWD_CED1_U1" DestGuid="a24d3bd52-1e70-4081-b2fb-1e6bd25d71b7a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L22_B2_FWD_CED1_U1" DestGuid="a026ef198-16e4-4f14-b45a-4d21137a0a36a" />
+        </DP>
+        <DP Name="SSM" Guid="a477e3f9e-bf22-418f-b82d-f6dffd000225a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="ac586b718-9d67-4c50-bcfc-e230e28c9b81a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW09_Analog_In_ATA21AMS.piANALOG_U1_HF_FWD_CED1" SrcGuid="a37eca9fe-c76a-4b5a-8ea2-864f967aa8afa" />
+  </A429Port>
+  <A429Port Name="po429_L023_ANALOG_U2_Voltage_HF_FWD_CED1" Guid="ae6582e48-3f09-47c9-8e58-3c77ce18023ba" Direction="Source" Physical="RDIU_09.40006_A02" RefreshPeriod="640">
+    <A429Channel Name="A429_L023_ANALOG_U2_Voltage_HF_FWD_CED1" Guid="acc1983bf-6c18-4a30-9a5c-d50a9e770403a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="640">
+      <A429Word Name="L023_ANALOG_U2_Voltage_HF_FWD_CED1" Guid="a869cf665-7be0-4f52-ba6e-457699785481a">
+        <DP Name="LABEL" Guid="a0b12502f-4056-435e-baf0-39cf04a77beea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="23" ParameterSize="8" TransmissionIntervalMinimum="640" />
+        <DP Name="SDI" Guid="abbe33c27-8f79-4d20-a8db-088291dbfe0fa" BitOffsetWithinDS="8" CodedSet="0=Not used;1= Left;2=Right;3=Not Used" DataFormatType="COD" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="Voltage" Guid="a35d0abc4-b45e-45e1-9152-660be23cae98a" BitOffsetWithinDS="13" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="640">
+          <Copy_Ref SrcName="HF_FWD_CED1.ANALOG_U2.Voltage" SrcGuid="a244e6449-549b-4d0a-9210-d76156069821a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L23_A2_FWD_CED1_U2" DestGuid="a5028a3d4-6ecb-4871-acea-43a355ba16a4a" />
+          <Gw_Pub_Ref DestName="HF_IASC2.L23_B2_FWD_CED1_U2" DestGuid="a75dcbd20-dc7d-4c85-959b-de6e2d70bc4aa" />
+        </DP>
+        <DP Name="SSM" Guid="ac98ccc1c-ccff-43ce-9a4c-53629dd79c29a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" TransmissionIntervalMinimum="640" />
+        <DP Name="PARITY" Guid="ae94a2fdc-2de1-43aa-824a-dee160ecb1d2a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" TransmissionIntervalMinimum="640" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW09_Analog_In_ATA21AMS.piANALOG_U2_HF_FWD_CED1" SrcGuid="a199fc22d-40b9-40b8-a589-836465f74273a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_40010_ATA21AMS" Guid="a5f772674-6d17-4c60-ba49-6c4e476d624fa" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40010_ATA21AMS_Msg" Guid="ab9e76a8f-c872-4aa9-b8bf-e8aef5a9a28da" EdeEnable="True" MessageOverhead="32" MessagePad="32" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33343">
+      <DS Name="FSS1" Guid="aee0f92cf-9ae8-4f6c-9080-e149c6c79239a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ace7de273-212e-49a0-86d9-2f7c5a6322bba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a2e46a723-cab7-4075-a84c-d84e4e939604a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="ANALOG_U1_HF_FWD_CED1" Guid="a74ddddb6-c16f-4190-921e-3394ea565979a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a996904cc-6ff1-43ad-b92c-12eab491adcda" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_FWD_CED1.ANALOG_U1.Voltage" SrcGuid="a97648842-ba73-43ac-9fbb-75cc80deff89a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltage_FWD_CED1_ANOLOG_U1" DestGuid="affcee3ac-d00a-4b24-aafe-892735ae1409a" />
+        </DP>
+      </DS>
+      <DS Name="ANALOG_U2_HF_FWD_CED1" Guid="a2610f6de-4189-4e08-be68-4d14c587f076a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Voltage" Guid="a87ba664b-02dc-47ca-b66c-ba48d760ebefa" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_FWD_CED1.ANALOG_U2.Voltage" SrcGuid="a244e6449-549b-4d0a-9210-d76156069821a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Voltage_FWD_CED1_ANOLOG_U2" DestGuid="a37545cd7-9547-44b7-9a01-da5c0ee9f457a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_Analog_In_ATA21AMS.piANALOG_U1_HF_FWD_CED1" SrcGuid="a37eca9fe-c76a-4b5a-8ea2-864f967aa8afa" />
+    <Gateway_Ref SrcName="RGW09_Analog_In_ATA21AMS.piANALOG_U2_HF_FWD_CED1" SrcGuid="a199fc22d-40b9-40b8-a589-836465f74273a" />
+  </HFSamplingPort>
+</RemoteGateway>

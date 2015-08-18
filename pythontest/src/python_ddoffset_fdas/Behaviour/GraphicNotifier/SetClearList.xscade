@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Operator kind="function" name="SetClearList">
+			<inputs>
+				<Variable name="Index">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8fc/16D7/BAC/5565386b722a"/>
+					</pragmas>
+				</Variable>
+				<Variable name="ActiveAlertNum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8fd/16D7/BAC/5565386b3d4c"/>
+					</pragmas>
+				</Variable>
+				<Variable name="ActiveAlert">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ActiveAlertType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8fe/16D7/BAC/5565386bf76"/>
+					</pragmas>
+				</Variable>
+				<Variable name="ClearListIn">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="AlertClearStatusType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8ff/16D7/BAC/5565386b19b8"/>
+					</pragmas>
+				</Variable>
+				<Variable name="SetValue">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e900/16D7/BAC/5565386b6663"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="Continue">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8fa/16D7/BAC/5565386b65f4"/>
+					</pragmas>
+				</Variable>
+				<Variable name="ClearListOut">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="AlertClearStatusType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/8e8fb/16D7/BAC/5565386b4879"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<data>
+				<IfBlock name="IfBlock1">
+					<block>
+						<IfNode>
+							<if>
+								<!-- Index = ActiveAlertNum -->
+								<BinaryOp name="5" operator="=">
+									<operands>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="Index"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="ActiveAlertNum"/>
+											</path>
+										</IdExpression>
+									</operands>
+								</BinaryOp>
+							</if>
+							<then>
+								<Action>
+									<locals>
+										<Variable name="_L4">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="bool"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/8e8f7/16D7/BAC/5565386b733e"/>
+											</pragmas>
+										</Variable>
+										<Variable name="_L5">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="AlertClearStatusType"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/8e8f8/16D7/BAC/5565386b13a"/>
+											</pragmas>
+										</Variable>
+									</locals>
+									<data>
+										<!-- _L4 = false; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L4"/>
+											</lefts>
+											<right>
+												<ConstValue value="false"/>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/8e8f3/16D7/BAC/5565386b491c"/>
+											</pragmas>
+										</Equation>
+										<!-- Continue = _L4; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="Continue"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L4"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/8e8f4/16D7/BAC/5565386b68c2"/>
+											</pragmas>
+										</Equation>
+										<!-- _L5 = ClearListIn; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L5"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="ClearListIn"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/8e8f5/16D7/BAC/5565386b537a"/>
+											</pragmas>
+										</Equation>
+										<!-- ClearListOut = _L5; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="ClearListOut"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L5"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/8e8f6/16D7/BAC/5565386b3485"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/8e8f2/16D7/BAC/5565386b2085"/>
+									</pragmas>
+								</Action>
+							</then>
+							<else>
+								<IfNode>
+									<if>
+										<!-- ActiveAlert.Severity = FdasCommon::Advisory or ActiveAlert.Severity = FdasCommon:... -->
+										<NAryOp name="3" operator="or">
+											<operands>
+												<!-- ActiveAlert.Severity = FdasCommon::Advisory -->
+												<BinaryOp name="6" operator="=">
+													<operands>
+														<!-- ActiveAlert.Severity -->
+														<PrjOp name="8">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="ActiveAlert"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="Severity"/>
+															</with>
+														</PrjOp>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="FdasCommon::Advisory"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</BinaryOp>
+												<!-- ActiveAlert.Severity = FdasCommon::Status -->
+												<BinaryOp name="7" operator="=">
+													<operands>
+														<!-- ActiveAlert.Severity -->
+														<PrjOp name="9">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="ActiveAlert"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="Severity"/>
+															</with>
+														</PrjOp>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="FdasCommon::Status"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</BinaryOp>
+											</operands>
+										</NAryOp>
+									</if>
+									<then>
+										<Action>
+											<locals>
+												<Variable name="_L4">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="AlertClearStatusType"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8ee/16D7/BAC/5565386b5f9b"/>
+													</pragmas>
+												</Variable>
+												<Variable name="_L3">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="int"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8ef/16D7/BAC/5565386b3952"/>
+													</pragmas>
+												</Variable>
+												<Variable name="_L2">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="bool"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8f0/16D7/BAC/5565386b6a7b"/>
+													</pragmas>
+												</Variable>
+												<Variable name="_L5">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="bool"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8f1/16D7/BAC/5565386b4705"/>
+													</pragmas>
+												</Variable>
+											</locals>
+											<data>
+												<!-- _L2 = SetValue; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L2"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="SetValue"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e8/16D7/BAC/5565386b489d"/>
+													</pragmas>
+												</Equation>
+												<!-- ClearListOut = _L4; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="ClearListOut"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L4"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e9/16D7/BAC/5565386b6aee"/>
+													</pragmas>
+												</Equation>
+												<!-- _L3 = ClearListIn.AlertID; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L3"/>
+													</lefts>
+													<right>
+														<!-- ClearListIn.AlertID -->
+														<PrjOp name="10">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="ClearListIn"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="AlertID"/>
+															</with>
+														</PrjOp>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8ea/16D7/BAC/5565386b2762"/>
+													</pragmas>
+												</Equation>
+												<!-- _L4 = (make AlertClearStatusType)(_L3, _L2); -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L4"/>
+													</lefts>
+													<right>
+														<!-- (make AlertClearStatusType)(_L3, _L2) -->
+														<CallExpression>
+															<operator>
+																<MakeOp name="4">
+																	<type>
+																		<TypeRef name="AlertClearStatusType"/>
+																	</type>
+																</MakeOp>
+															</operator>
+															<callParameters>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="_L3"/>
+																	</path>
+																</IdExpression>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="_L2"/>
+																	</path>
+																</IdExpression>
+															</callParameters>
+														</CallExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8eb/16D7/BAC/5565386b543e"/>
+													</pragmas>
+												</Equation>
+												<!-- _L5 = true; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L5"/>
+													</lefts>
+													<right>
+														<ConstValue value="true"/>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8ec/16D7/BAC/5565386b1b3"/>
+													</pragmas>
+												</Equation>
+												<!-- Continue = _L5; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="Continue"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L5"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8ed/16D7/BAC/5565386bd22"/>
+													</pragmas>
+												</Equation>
+											</data>
+											<pragmas>
+												<ed:Action oid="!ed/8e8e7/16D7/BAC/5565386b79a2"/>
+											</pragmas>
+										</Action>
+									</then>
+									<else>
+										<Action>
+											<locals>
+												<Variable name="_L2">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="bool"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8e5/16D7/BAC/5565386b553b"/>
+													</pragmas>
+												</Variable>
+												<Variable name="_L1">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="AlertClearStatusType"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/8e8e6/16D7/BAC/5565386b354"/>
+													</pragmas>
+												</Variable>
+											</locals>
+											<data>
+												<!-- ClearListOut = _L1; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="ClearListOut"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L1"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e1/16D7/BAC/5565386b132b"/>
+													</pragmas>
+												</Equation>
+												<!-- Continue = _L2; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="Continue"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L2"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e2/16D7/BAC/5565386b5cf8"/>
+													</pragmas>
+												</Equation>
+												<!-- _L1 = ClearListIn; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L1"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="ClearListIn"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e3/16D7/BAC/5565386b7016"/>
+													</pragmas>
+												</Equation>
+												<!-- _L2 = true; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L2"/>
+													</lefts>
+													<right>
+														<ConstValue value="true"/>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/8e8e4/16D7/BAC/5565386b21d6"/>
+													</pragmas>
+												</Equation>
+											</data>
+											<pragmas>
+												<ed:Action oid="!ed/8e8e0/16D7/BAC/5565386b1239"/>
+											</pragmas>
+										</Action>
+									</else>
+									<pragmas>
+										<ed:IfNode oid="!ed/8e8df/16D7/BAC/5565386b41cf"/>
+									</pragmas>
+								</IfNode>
+							</else>
+							<pragmas>
+								<ed:IfNode oid="!ed/8e8de/16D7/BAC/5565386b424f"/>
+							</pragmas>
+						</IfNode>
+					</block>
+					<pragmas>
+						<ed:IfBlock oid="!ed/8e8dd/16D7/BAC/5565386b4c0e"/>
+					</pragmas>
+				</IfBlock>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/8e8dc/16D7/BAC/5565386b76e6" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<NetDiagram name="SetClearList" landscape="true" format="A4 (210 297)" oid="!ed/8e8f9/16D7/BAC/5565386b69bf">
+							<presentationElements>
+								<IfBlockGE presentable="!ed/8e8dd/16D7/BAC/5565386b4c0e">
+									<position>
+										<Point x="661" y="688"/>
+									</position>
+									<size>
+										<Size width="16430" height="8467"/>
+									</size>
+								</IfBlockGE>
+								<IfNodeGE labelWidth="2646" presentable="!ed/8e8de/16D7/BAC/5565386b424f">
+									<position>
+										<Point x="1111" y="1402"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/8e8f2/16D7/BAC/5565386b2085">
+									<position>
+										<Point x="4577" y="1323"/>
+									</position>
+									<size>
+										<Size width="5345" height="1826"/>
+									</size>
+								</ActionGE>
+								<ActionGE presentable="!ed/8e8e7/16D7/BAC/5565386b79a2">
+									<position>
+										<Point x="7408" y="4180"/>
+									</position>
+									<size>
+										<Size width="9340" height="2540"/>
+									</size>
+								</ActionGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/8e8f3/16D7/BAC/5565386b491c">
+									<position>
+										<Point x="6059" y="2514"/>
+									</position>
+									<size>
+										<Size width="211" height="318"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8f4/16D7/BAC/5565386b68c2">
+									<position>
+										<Point x="7752" y="2408"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8f3/16D7/BAC/5565386b491c" dstEquation="!ed/8e8f4/16D7/BAC/5565386b68c2">
+									<positions>
+										<Point x="6271" y="2672"/>
+										<Point x="7038" y="2672"/>
+										<Point x="7038" y="2672"/>
+										<Point x="7805" y="2672"/>
+									</positions>
+								</Edge>
+								<IfNodeGE labelWidth="5636" presentable="!ed/8e8df/16D7/BAC/5565386b41cf">
+									<position>
+										<Point x="1111" y="4260"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/8e8e0/16D7/BAC/5565386b1239">
+									<position>
+										<Point x="4604" y="7064"/>
+									</position>
+									<size>
+										<Size width="5292" height="1747"/>
+									</size>
+								</ActionGE>
+								<EquationGE presentable="!ed/8e8f5/16D7/BAC/5565386b537a">
+									<position>
+										<Point x="6138" y="1640"/>
+									</position>
+									<size>
+										<Size width="264" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8f6/16D7/BAC/5565386b3485">
+									<position>
+										<Point x="7726" y="1640"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8f5/16D7/BAC/5565386b537a" dstEquation="!ed/8e8f6/16D7/BAC/5565386b3485">
+									<positions>
+										<Point x="6403" y="1905"/>
+										<Point x="7091" y="1905"/>
+										<Point x="7091" y="1905"/>
+										<Point x="7779" y="1905"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/8e8e8/16D7/BAC/5565386b489d">
+									<position>
+										<Point x="9790" y="5054"/>
+									</position>
+									<size>
+										<Size width="265" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8e9/16D7/BAC/5565386b6aee">
+									<position>
+										<Point x="13838" y="4842"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/8e8ea/16D7/BAC/5565386b2762">
+									<position>
+										<Point x="9816" y="4710"/>
+									</position>
+									<size>
+										<Size width="211" height="317"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8eb/16D7/BAC/5565386b543e">
+									<position>
+										<Point x="10980" y="4419"/>
+									</position>
+									<size>
+										<Size width="2302" height="1376"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8ea/16D7/BAC/5565386b2762" dstEquation="!ed/8e8eb/16D7/BAC/5565386b543e">
+									<positions>
+										<Point x="10028" y="4868"/>
+										<Point x="10504" y="4868"/>
+										<Point x="10504" y="4868"/>
+										<Point x="10980" y="4868"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8eb/16D7/BAC/5565386b543e" dstEquation="!ed/8e8e9/16D7/BAC/5565386b6aee">
+									<positions>
+										<Point x="13282" y="5106"/>
+										<Point x="13573" y="5106"/>
+										<Point x="13573" y="5106"/>
+										<Point x="13891" y="5106"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/8e8e8/16D7/BAC/5565386b489d" dstEquation="!ed/8e8eb/16D7/BAC/5565386b543e">
+									<positions>
+										<Point x="10054" y="5318"/>
+										<Point x="10504" y="5318"/>
+										<Point x="10504" y="5318"/>
+										<Point x="10980" y="5318"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/8e8ec/16D7/BAC/5565386b1b3">
+									<position>
+										<Point x="10795" y="6165"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8ed/16D7/BAC/5565386bd22">
+									<position>
+										<Point x="12488" y="6059"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8ec/16D7/BAC/5565386b1b3" dstEquation="!ed/8e8ed/16D7/BAC/5565386bd22">
+									<positions>
+										<Point x="11007" y="6324"/>
+										<Point x="11774" y="6324"/>
+										<Point x="11774" y="6324"/>
+										<Point x="12541" y="6324"/>
+									</positions>
+								</Edge>
+								<EquationGE presentable="!ed/8e8e1/16D7/BAC/5565386b132b">
+									<position>
+										<Point x="7726" y="7382"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8e2/16D7/BAC/5565386b5cf8">
+									<position>
+										<Point x="7752" y="8149"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/8e8e3/16D7/BAC/5565386b7016">
+									<position>
+										<Point x="6138" y="7382"/>
+									</position>
+									<size>
+										<Size width="265" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/8e8e4/16D7/BAC/5565386b21d6">
+									<position>
+										<Point x="6059" y="8255"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8e3/16D7/BAC/5565386b7016" dstEquation="!ed/8e8e1/16D7/BAC/5565386b132b">
+									<positions>
+										<Point x="6403" y="7646"/>
+										<Point x="7091" y="7646"/>
+										<Point x="7091" y="7646"/>
+										<Point x="7779" y="7646"/>
+									</positions>
+								</Edge>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/8e8e4/16D7/BAC/5565386b21d6" dstEquation="!ed/8e8e2/16D7/BAC/5565386b5cf8">
+									<positions>
+										<Point x="6271" y="8414"/>
+										<Point x="7038" y="8414"/>
+										<Point x="7038" y="8414"/>
+										<Point x="7805" y="8414"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

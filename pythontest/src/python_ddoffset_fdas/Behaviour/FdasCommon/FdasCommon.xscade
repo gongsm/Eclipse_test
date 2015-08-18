@@ -1,0 +1,5391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" xmlns:mtc="http://www.esterel-technologies.com/ns/scade/pragmas/mtc/1">
+	<declarations>
+		<Package name="FdasCommon">
+			<declarations>
+				<Constant name="MAX_ALERTS_NUM">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2000"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2664d/468F/1DBC/53be6dc2427c"/>
+					</pragmas>
+				</Constant>
+				<Constant name="MAX_LOGIC_LEN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="100"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2663f/468F/1DBC/53be6dc25bbb"/>
+					</pragmas>
+				</Constant>
+				<Constant name="MAX_STRING_SIZE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="32"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26631/468F/1DBC/53be6dc21ddb"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FDAS_TRUE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="true"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26623/468F/1DBC/53be6dc27a4c"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FDAS_FALSE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="false"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26615/468F/1DBC/53be6dc22613"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_TO">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26607/468F/1DBC/53be6dc2a31"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_GA">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="7"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265f9/468F/1DBC/53be6dc2635f"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_FLEX_TO">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265eb/468F/1DBC/53be6dc2e59"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_D_TO2">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265dd/468F/1DBC/53be6dc2e52"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_D_TO1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265cf/468F/1DBC/53be6dc21d54"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_CRZ">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="6"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265c1/468F/1DBC/53be6dc21a86"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_CON">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265b3/468F/1DBC/53be6dc2b2"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FADECEngineThrustMode_CLB">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/265a5/468F/1DBC/53be6dc2478f"/>
+					</pragmas>
+				</Constant>
+				<Constant name="ALERT_POSITIONS_SIZE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="500"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26597/468F/1DBC/53be6dc23c8d"/>
+					</pragmas>
+				</Constant>
+				<Constant name="ALERT_BUFFER_SIZE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="500"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26589/468F/1DBC/53be6dc2c35"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_9">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="9"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d83/2018/764/53c4c46e3d80" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>MissedApproach</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_8">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="8"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d75/2018/764/53c4c46e53cc" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Approach</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_7">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="7"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d67/2018/764/53c4c46e10f3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Descent</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_6">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="6"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d59/2018/764/53c4c46eb07" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Cruise</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_5">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d4b/2018/764/53c4c46e537e" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Climb</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_4">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d3d/2018/764/53c4c46e3e77" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>InitalClimb</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_3">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d2f/2018/764/53c4c46e9cb" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Takeoff</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_2">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d21/2018/764/53c4c46e2a10" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Taxi</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_12">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="12"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d13/2018/764/53c4c46e42fb"/>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_11">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d05/2018/764/53c4c46e79c5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>duplicate of phase 2</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_10">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="10"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3cf7/2018/764/53c4c46e3383" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Rollout</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_1">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ce9/2018/764/53c4c46e3e89" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Standing</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FLIGHT_PHASE_0">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3cdb/2018/764/53c4c46e2d54" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>due to input invalidity</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="GROUND_SPEED_UPPER_THRESHOLD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="100"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d83/6B68/2320/54461fb07d96" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>kts</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="GROUND_SPEED_LOWER_THRESHOLD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="50"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d75/6B68/2320/54461fb0d3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>kts</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="ALTITUDE_UPPER_THRESHOLD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="400"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d67/6B68/2320/54461fb071c3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>feets</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="ALTITUDE_LOWER_THRESHOLD">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1000"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3d59/6B68/2320/54461fb0a3d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>feets</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_UNFRESH">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/217d/5F38/1430/545b262225be" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_OUT_OF_RANGE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="6"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/216f/5F38/1430/545b26223af" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_NORMAL_OPERATION">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2161/5F38/1430/545b2622d66" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>valid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_NO_DATA">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2153/5F38/1430/545b262233e5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_NO_COMPUTED_DATA">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2145/5F38/1430/545b2622a8f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_FUNCTIONAL_TEST">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2137/5F38/1430/545b26225c80" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="DATA_STATUS_EMPTY">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2129/5F38/1430/545b26226cba" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>invalid status</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant name="FADEC_ENGINE_CLOSED_WAITTIME">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="100"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/13bc/69E3/C6C/54633db74d12"/>
+					</pragmas>
+				</Constant>
+				<Constant name="CAS_LIST_SIZE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="10"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/82f/7AA2/9B4/54641bfa7d3c"/>
+					</pragmas>
+				</Constant>
+				<Type name="Inputs_DD_Type">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipCOS">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsCOSType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d87/3951/1160/545adfed4a1f"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFlightPhase">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsFlightPhaseType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3e5d/3951/1160/545ae9986116"/>
+									</pragmas>
+								</Field>
+								<Field name="ipMWC">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsMWCType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ddd/3951/1160/545ae393488b"/>
+									</pragmas>
+								</Field>
+								<Field name="ipAural">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsAuralType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3e24/3951/1160/545ae494555c"/>
+									</pragmas>
+								</Field>
+								<Field name="ipCyber">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsCyberType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3dca/3951/1160/545ae2dc35b8"/>
+									</pragmas>
+								</Field>
+								<Field name="ipPeer">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsPeerType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4cc/3B7F/219C/557004eb5131"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/26730/468F/1DBC/53be6dc826e5"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertTypeType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="TimeCriticalWarning">
+									<pragmas>
+										<ed:Value oid="!ed/26705/468F/1DBC/53be6dc8bee"/>
+									</pragmas>
+								</Value>
+								<Value name="CAS">
+									<pragmas>
+										<ed:Value oid="!ed/26707/468F/1DBC/53be6dc8150a"/>
+									</pragmas>
+								</Value>
+								<Value name="CPAOnly">
+									<pragmas>
+										<ed:Value oid="!ed/26708/468F/1DBC/53be6dc82e81"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/26704/468F/1DBC/53be6dc85c50"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertStatesType">
+					<definition>
+						<Table>
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="AlertStateType"/>
+									</type>
+								</NamedType>
+							</type>
+							<size>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="MAX_ALERTS_NUM"/>
+									</path>
+								</IdExpression>
+							</size>
+						</Table>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/266f8/468F/1DBC/53be6dc81bb1"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertStateType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="AlertIndex">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266ed/468F/1DBC/53be6dc8543c"/>
+									</pragmas>
+								</Field>
+								<Field name="Active">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266ee/468F/1DBC/53be6dc8656e"/>
+									</pragmas>
+								</Field>
+								<Field name="Inhibited">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266ef/468F/1DBC/53be6dc84d66"/>
+									</pragmas>
+								</Field>
+								<Field name="Acknowledged">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266f0/468F/1DBC/53be6dc858c8"/>
+									</pragmas>
+								</Field>
+								<Field name="AlertFrameNumber">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266f1/468F/1DBC/53be6dc86af4"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/266ec/468F/1DBC/53be6dc82c10"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertClassificationType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="Warning">
+									<pragmas>
+										<ed:Value oid="!ed/79dd/1F14/17A0/53c4a214b1f"/>
+									</pragmas>
+								</Value>
+								<Value name="Caution">
+									<pragmas>
+										<ed:Value oid="!ed/266dd/468F/1DBC/53be6dc8415e"/>
+									</pragmas>
+								</Value>
+								<Value name="Advisory">
+									<pragmas>
+										<ed:Value oid="!ed/266de/468F/1DBC/53be6dc8545c"/>
+									</pragmas>
+								</Value>
+								<Value name="Status">
+									<pragmas>
+										<ed:Value oid="!ed/266df/468F/1DBC/53be6dc8209c"/>
+									</pragmas>
+								</Value>
+								<Value name="NA">
+									<pragmas>
+										<ed:Value oid="!ed/360c/3410/216C/546afef8296b"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/266db/468F/1DBC/53be6dc851a2"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertRiuMessageType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="NoneRiuMsg">
+									<pragmas>
+										<ed:Value oid="!ed/266ca/468F/1DBC/53be6dc812b5"/>
+									</pragmas>
+								</Value>
+								<Value name="EICAS1">
+									<pragmas>
+										<ed:Value oid="!ed/79dc/1F14/17A0/53c4a1f450a3"/>
+									</pragmas>
+								</Value>
+								<Value name="EICAS2">
+									<pragmas>
+										<ed:Value oid="!ed/266cb/468F/1DBC/53be6dc83124"/>
+									</pragmas>
+								</Value>
+								<Value name="TAWS">
+									<pragmas>
+										<ed:Value oid="!ed/266cc/468F/1DBC/53be6dc82891"/>
+									</pragmas>
+								</Value>
+								<Value name="WXR">
+									<pragmas>
+										<ed:Value oid="!ed/266cd/468F/1DBC/53be6dc85152"/>
+									</pragmas>
+								</Value>
+								<Value name="TCAS">
+									<pragmas>
+										<ed:Value oid="!ed/266ce/468F/1DBC/53be6dc85468"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/266c9/468F/1DBC/53be6dc815b7"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertDefinitionsType">
+					<definition>
+						<Table>
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="AlertDefinitionType"/>
+									</type>
+								</NamedType>
+							</type>
+							<size>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="MAX_ALERTS_NUM"/>
+									</path>
+								</IdExpression>
+							</size>
+						</Table>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/266ab/468F/1DBC/53be6dc82ad"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertDefinitionType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="AlertID">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/26696/468F/1DBC/53be6dc8d20"/>
+									</pragmas>
+								</Field>
+								<Field name="AlertType">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertTypeType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/26697/468F/1DBC/53be6dc86198"/>
+									</pragmas>
+								</Field>
+								<Field name="AlertClassification">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertClassificationType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/26698/468F/1DBC/53be6dc860dc"/>
+									</pragmas>
+								</Field>
+								<Field name="AlertPriority">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/26699/468F/1DBC/53be6dc8513d"/>
+									</pragmas>
+								</Field>
+								<Field name="FlightPhaseInhibit">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2669c/468F/1DBC/53be6dc86f75"/>
+									</pragmas>
+								</Field>
+								<Field name="CasTextLength">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/799d/65ED/329C/541ff909a53"/>
+									</pragmas>
+								</Field>
+								<Field name="CasText">
+									<type>
+										<Table>
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="char"/>
+													</type>
+												</NamedType>
+											</type>
+											<size>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="MAX_STRING_SIZE"/>
+													</path>
+												</IdExpression>
+											</size>
+										</Table>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2669d/468F/1DBC/53be6dc870a0"/>
+									</pragmas>
+								</Field>
+								<Field name="DisplayWindowEffect">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertDisplayWindowEffectType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2669e/468F/1DBC/53be6dc8178b"/>
+									</pragmas>
+								</Field>
+								<Field name="IsTcasAlert">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2669a/468F/1DBC/53be6dc848fe"/>
+									</pragmas>
+								</Field>
+								<Field name="Spare">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="char"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/79ae/65ED/329C/541ff9672a9e"/>
+									</pragmas>
+								</Field>
+								<Field name="Spare1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="char"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3614/3410/216C/546b01ad7b5"/>
+									</pragmas>
+								</Field>
+								<Field name="Spare2">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="char"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/361a/3410/216C/546b01af74cf"/>
+									</pragmas>
+								</Field>
+								<Field name="AuralType">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertAuralType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266a3/468F/1DBC/53be6dc84f8a"/>
+									</pragmas>
+								</Field>
+								<Field name="AssociatedSynopticsPage">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertAssociatedSynopticsType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266a0/468F/1DBC/53be6dc857d6"/>
+									</pragmas>
+								</Field>
+								<Field name="RiuMsgMapping">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertRiuMessageType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266a1/468F/1DBC/53be6dc87e39"/>
+									</pragmas>
+								</Field>
+								<Field name="AuralID">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/266a2/468F/1DBC/53be6dc81ccd"/>
+									</pragmas>
+								</Field>
+								<Field name="CpaEffect">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/79b7/65ED/329C/541ff9ab3edd"/>
+									</pragmas>
+								</Field>
+								<Field name="NumOfOperations">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/79c2/65ED/329C/541ffa22edc"/>
+									</pragmas>
+								</Field>
+								<Field name="OffsetOfFirstOperation">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/79cb/65ED/329C/541ffa53a75"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/26695/468F/1DBC/53be6dc83879"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertDisplayWindowEffectType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="NonePopLayer">
+									<pragmas>
+										<ed:Value oid="!ed/26679/468F/1DBC/53be6dc8d02"/>
+									</pragmas>
+								</Value>
+								<Value name="Terrain">
+									<pragmas>
+										<ed:Value oid="!ed/2667a/468F/1DBC/53be6dc8112"/>
+									</pragmas>
+								</Value>
+								<Value name="PredWndshr">
+									<pragmas>
+										<ed:Value oid="!ed/2667b/468F/1DBC/53be6dc885a"/>
+									</pragmas>
+								</Value>
+								<Value name="Collapse">
+									<pragmas>
+										<ed:Value oid="!ed/360d/3410/216C/546aff3575ac"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/26678/468F/1DBC/53be6dc8128f"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertAssociatedSynopticsType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="NoneSynopticsPage">
+									<pragmas>
+										<ed:Value oid="!ed/26662/468F/1DBC/53be6dc8575e"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticStatus">
+									<pragmas>
+										<ed:Value oid="!ed/26663/468F/1DBC/53be6dc8a2f"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticAir">
+									<pragmas>
+										<ed:Value oid="!ed/26664/468F/1DBC/53be6dc82de6"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticDoor">
+									<pragmas>
+										<ed:Value oid="!ed/26665/468F/1DBC/53be6dc87f70"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticElec">
+									<pragmas>
+										<ed:Value oid="!ed/26666/468F/1DBC/53be6dc84130"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticFltCtrl">
+									<pragmas>
+										<ed:Value oid="!ed/26667/468F/1DBC/53be6dc85384"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticFuel">
+									<pragmas>
+										<ed:Value oid="!ed/26668/468F/1DBC/53be6dc865c0"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticHyd">
+									<pragmas>
+										<ed:Value oid="!ed/26669/468F/1DBC/53be6dc82398"/>
+									</pragmas>
+								</Value>
+								<Value name="SynopticCBIC">
+									<pragmas>
+										<ed:Value oid="!ed/2666a/468F/1DBC/53be6dc85bd7"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/26661/468F/1DBC/53be6dc811ff"/>
+					</pragmas>
+				</Type>
+				<Type name="Outputs_DD_Type">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsLampType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2d6/76D6/14F0/545b19982c8a"/>
+									</pragmas>
+								</Field>
+								<Field name="opAural">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsAuralType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b7/1B94/1670/546321c9197b"/>
+									</pragmas>
+								</Field>
+								<Field name="opCyber">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsCyberType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b8/1B94/1670/546321d44300"/>
+									</pragmas>
+								</Field>
+								<Field name="opOMS">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsOMSType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/534/4247/1D98/556eae6820bb"/>
+									</pragmas>
+								</Field>
+								<Field name="opFlightPhase">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsFlightPhaseType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2c8/76D6/14F0/545b198b5584"/>
+									</pragmas>
+								</Field>
+								<Field name="opPeer">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsPeerType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4d6/3B7F/219C/557008a168c9"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/28b/76D6/14F0/545b179d51bf"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsCOSType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipOxygenCylinderPressure">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/257/1B94/1670/5463153f974"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenCylinderPressure_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/25d/1B94/1670/546315473b57"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenCylinderTemperature">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/263/1B94/1670/5463154a3900"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenCylinderTemperature_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/269/1B94/1670/5463154c45db"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenPressureOK">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/475/4247/1D98/556ea9965608"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenPressureOK_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/47b/4247/1D98/556ea9a7dd3"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenPressureLow">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/481/4247/1D98/556ea9ac2188"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOxygenPressureLow_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/487/4247/1D98/556ea9b467da"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/250/1B94/1670/54631520ab4"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsFlightPhaseType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipAircraftHasWeightOnWheels">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/27a/1B94/1670/546315c56f4"/>
+									</pragmas>
+								</Field>
+								<Field name="ipAircraftHasWeightOnWheels_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/280/1B94/1670/546315cc4fb0"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECLeftEngineRunning">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/286/1B94/1670/546315cfef7"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECLeftEngineRunning_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/28c/1B94/1670/546315d2774a"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECRightEngineRunning">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/292/1B94/1670/546315d95f21"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECRightEngineRunning_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/298/1B94/1670/546315db458c"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECEngineThrustMode">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/29e/1B94/1670/546315df267b"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFADECEngineThrustMode_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2a4/1B94/1670/546315e233d9"/>
+									</pragmas>
+								</Field>
+								<Field name="ipADSGroundSpeed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2aa/1B94/1670/546315e5200c"/>
+									</pragmas>
+								</Field>
+								<Field name="ipADSGroundSpeed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2b0/1B94/1670/546315e85b72"/>
+									</pragmas>
+								</Field>
+								<Field name="ipCOMMNAVRadioAltitude">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2b6/1B94/1670/546315ea49ea"/>
+									</pragmas>
+								</Field>
+								<Field name="ipCOMMNAVRadioAltitude_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2bc/1B94/1670/546315ed569f"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/273/1B94/1670/546315ad6f9"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsAuralType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipTcpAudioMute">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2ce/1B94/1670/5463166f2717"/>
+									</pragmas>
+								</Field>
+								<Field name="ipTcpAudioMute_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2d4/1B94/1670/5463167815d6"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu1AckLabel">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2da/1B94/1670/5463167e52b2"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu1AckLabel_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2e0/1B94/1670/546316821fad"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu1AckIndex">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2e6/1B94/1670/5463168b1407"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu1AckIndex_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2ec/1B94/1670/5463168f3cc"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu2AckLabel">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f2/1B94/1670/546316941bd6"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu2AckLabel_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2f8/1B94/1670/5463169776ff"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu2AckIndex">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2fe/1B94/1670/5463169c1c73"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFdasRiu2AckIndex_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/304/1B94/1670/546316a364"/>
+									</pragmas>
+								</Field>
+								<Field name="ipTawsAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/316/1B94/1670/546317275f49" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="ipTawsAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/31c/1B94/1670/5463172b7a93"/>
+									</pragmas>
+								</Field>
+								<Field name="ipWxrAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/322/1B94/1670/5463172f1674" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="ipWxrAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/328/1B94/1670/5463173430bb"/>
+									</pragmas>
+								</Field>
+								<Field name="ipTcasAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/32e/1B94/1670/5463173b3c29" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="ipTcasAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/334/1B94/1670/5463173f1e6"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/2c6/1B94/1670/5463164d5583"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsCyberType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipDMIDU1Available">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/345/1B94/1670/5463180d2da5"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU1Available_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/34b/1B94/1670/5463180f687d"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU2Available">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/351/1B94/1670/5463181140e3"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU2Available_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/357/1B94/1670/54631814a43"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU3Available">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/35d/1B94/1670/546318166e22"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU3Available_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/363/1B94/1670/546318197dda"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU4Available">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/369/1B94/1670/5463181b995"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU4Available_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/36f/1B94/1670/5463181de95"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU5Available">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/375/1B94/1670/5463181f4328"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDMIDU5Available_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/37b/1B94/1670/5463182210db"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/33e/1B94/1670/546317fa54d"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsPeerType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipGPMCabinetPosition">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3bd/1B94/1670/54631867237a"/>
+									</pragmas>
+								</Field>
+								<Field name="ipGPMCabinetPosition_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3be/1B94/1670/546318677a39"/>
+									</pragmas>
+								</Field>
+								<Field name="ipGPMModulePosition">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4ca/3C7B/2858/556fff18445a"/>
+									</pragmas>
+								</Field>
+								<Field name="ipGPMModulePosition_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4cb/3C7B/2858/556fff2237e0"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOMSFlightLeg">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3bf/1B94/1670/546318671cb7"/>
+									</pragmas>
+								</Field>
+								<Field name="ipOMSFlightLeg_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c0/1B94/1670/546318671fa"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAVersionNb">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c1/1B94/1670/546318676928"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAVersionNb_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c2/1B94/1670/546318673729"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAHealthScore">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c5/1B94/1670/546318671b25"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAHealthScore_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c6/1B94/1670/546318677667"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAInControl">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c9/1B94/1670/546318671dea"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAInControl_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ca/1B94/1670/546318671c53"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAPeerAXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cd/1B94/1670/546318673862"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAPeerAXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ce/1B94/1670/5463186776ff"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAPeerBXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cf/1B94/1670/54631867e7"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAPeerBXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d0/1B94/1670/546318671ee5"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAControlInhibited">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d5/1B94/1670/546318673d00"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerAControlInhibited_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d6/1B94/1670/54631867711d"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBVersionNb">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c3/1B94/1670/546318672938"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBVersionNb_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c4/1B94/1670/546318674ac4"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBHealthScore">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c7/1B94/1670/546318677d26"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBHealthScore_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3c8/1B94/1670/54631867664a"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBInControl">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cb/1B94/1670/5463186775eb"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBInControl_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3cc/1B94/1670/546318675c98"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBPeerAXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d1/1B94/1670/546318672afd"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBPeerAXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d2/1B94/1670/5463186748ef"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBPeerBXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d3/1B94/1670/54631867b1d"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBPeerBXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d4/1B94/1670/54631867873"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBControlInhibited">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d7/1B94/1670/54631867192c"/>
+									</pragmas>
+								</Field>
+								<Field name="ipFDASPeerBControlInhibited_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3d8/1B94/1670/5463186766b7"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/3b4/1B94/1670/546318675940"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsMWCType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipRDIUMW1APressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3e9/1B94/1670/546319a663df"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW1APressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ef/1B94/1670/546319a836a3"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW1BPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4d0/4F9E/17D8/5572797c7d88"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW1BPressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4d1/4F9E/17D8/55727990762e"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW2APressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4e2/4F9E/17D8/55727c3c58e3"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW2APressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4e3/4F9E/17D8/55727c4c5644"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW2BPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4f4/4F9E/17D8/55727c5f4db1"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMW2BPressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4fd/4F9E/17D8/55727c6a2d7a"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC1APressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3f5/1B94/1670/546319ab34b9"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC1APressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3fb/1B94/1670/546319ae70c3"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC1BPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/506/4F9E/17D8/55727c9933fc"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC1BPressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/50f/4F9E/17D8/55727d0e3b76"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC2APressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/518/4F9E/17D8/55727d1d4394"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC2APressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/521/4F9E/17D8/55727d2f4f82"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC2BPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/52a/4F9E/17D8/55727d63640"/>
+									</pragmas>
+								</Field>
+								<Field name="ipRDIUMC2BPressed_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/533/4F9E/17D8/55727d7e34b6"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/3e2/1B94/1670/5463197f1b40"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsGraphicType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipDCPPageKeyPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/406/1B94/1670/54631a1d18d"/>
+									</pragmas>
+								</Field>
+								<Field name="ipDCPCRKeyPressed">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/2e3/7AA2/9B4/5464169e23d"/>
+									</pragmas>
+								</Field>
+								<Field name="ipCDSNotify">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::CDSNotifyType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/770/7AA2/9B4/5464197b3889"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/405/1B94/1670/54631a024e42"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsCyberType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASMapFeatureRequest">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertDisplayWindowEffectType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/471/1B94/1670/54631aff14fc"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASMapFeatureRequest_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/472/1B94/1670/54631aff4380"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCollapseAndHoldMenus">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/473/1B94/1670/54631aff53b9"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCollapseAndHoldMenus_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/474/1B94/1670/54631aff5fb3"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCommandedSynopticPage">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="AlertAssociatedSynopticsType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/475/1B94/1670/54631aff1603"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCommandedSynopticPage_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/476/1B94/1670/54631aff73cc"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTCASIIInhibited">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/479/1B94/1670/54631aff42"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTCASIIInhibited_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/47a/1B94/1670/54631aff6f37"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAlertBuffer">
+									<type>
+										<Table>
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="char"/>
+													</type>
+												</NamedType>
+											</type>
+											<size>
+												<ConstValue value="500"/>
+											</size>
+										</Table>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4ba/1B94/1670/54631b746231"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAlertBuffer_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4c0/1B94/1670/54631b7a4b92"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/470/1B94/1670/54631aff210e"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsPeerType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASPeerAXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/532/1B94/1670/54631b857a3d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASPeerAXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/533/1B94/1670/54631b8569eb"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASPeerBXtalkReceived">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/536/1B94/1670/54631b8568a8"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASPeerBXtalkReceived_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/537/1B94/1670/54631b85773e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASInControl">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/53a/1B94/1670/54631b853030"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASInControl_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/53b/1B94/1670/54631b853bdb"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASHealthScore">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/53e/1B94/1670/54631b8544bb"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASHealthScore_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/53f/1B94/1670/54631b853fa7"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASControlInhibited">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/542/1B94/1670/54631b85508f"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASControlInhibited_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/543/1B94/1670/54631b8545d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASVersionNb">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/546/1B94/1670/54631b85775a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASVersionNb_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/547/1B94/1670/54631b854c82"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASVersionDisagree">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/54a/1B94/1670/54631b854a75"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASVersionDisagree_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/54b/1B94/1670/54631b854e9c"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/511/1B94/1670/54631b857368"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsAuralType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASCas1Audio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/571/1B94/1670/546321271c12" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCas1Audio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/572/1B94/1670/5463212720f4"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCas2Audio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/573/1B94/1670/54632127333f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCas2Audio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/574/1B94/1670/546321276975"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTawsAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/575/1B94/1670/546321274fc1" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTawsAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/576/1B94/1670/546321275186"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWxrAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/577/1B94/1670/546321277fed" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWxrAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/578/1B94/1670/546321272487"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTcasAudio">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/579/1B94/1670/5463212767e" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+											<comment>A429 Word</comment>
+										</ed:Field>
+									</pragmas>
+								</Field>
+								<Field name="opFDASTcasAudio_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57a/1B94/1670/5463212713b6"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCurrentAudioLabel">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57b/1B94/1670/546321272b63"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCurrentAudioLabel_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57c/1B94/1670/546321275c4e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCurrentAudioIndex">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57d/1B94/1670/546321277fe7"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASCurrentAudioIndex_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57e/1B94/1670/54632127577d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAudioMuted">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57f/1B94/1670/54632127194c"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAudioMuted_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/580/1B94/1670/54632127b20"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/56a/1B94/1670/5463212752a7"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsMWCType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASMWIndicator">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58f/1B94/1670/546321601a68"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASMWIndicator_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/590/1B94/1670/546321606f06"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASMCIndicator">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/591/1B94/1670/5463216030b2"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASMCIndicator_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/592/1B94/1670/54632160718a"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/58c/1B94/1670/546321604755"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsFlightPhaseType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASFlightPhase">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59f/1B94/1670/546321736265"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFlightPhase_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a0/1B94/1670/546321737156"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/59e/1B94/1670/546321732810"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsGraphicType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opAlertDisplay">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661AlertDisplayType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d6/1B94/1670/5463221d67fb"/>
+									</pragmas>
+								</Field>
+								<Field name="opAlertDisplay_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7b3/7AA2/9B4/54641ab6469"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/5d5/1B94/1670/5463220a6603"/>
+					</pragmas>
+				</Type>
+				<Type name="A661AlertDisplayType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="CDSRequest">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::UARequestType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a4/7AA2/9B4/54641aa65dd9"/>
+									</pragmas>
+								</Field>
+								<Field name="Watchdog">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661WatchdogType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a5/7AA2/9B4/54641aa65bf2"/>
+									</pragmas>
+								</Field>
+								<Field name="Page">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::BoolPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a6/7AA2/9B4/54641aa639d7"/>
+									</pragmas>
+								</Field>
+								<Field name="Pagination">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661PaginationType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a7/7AA2/9B4/54641aa6454a"/>
+									</pragmas>
+								</Field>
+								<Field name="MessageHidden">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661CheckType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a8/7AA2/9B4/54641aa66a7d"/>
+									</pragmas>
+								</Field>
+								<Field name="AlertMessage">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661AlertMessageCtrlsType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7a9/7AA2/9B4/54641aa63f6e"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7a3/7AA2/9B4/54641aa623f7"/>
+					</pragmas>
+				</Type>
+				<Type name="A661WatchdogType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="Refresh">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::IntPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7c6/7AA2/9B4/54641b151c4f"/>
+									</pragmas>
+								</Field>
+								<Field name="ShowFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::BoolPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7c7/7AA2/9B4/54641b151d05"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7c5/7AA2/9B4/54641b1521aa"/>
+					</pragmas>
+				</Type>
+				<Type name="A661PaginationType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="PaginationVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::BoolPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7d2/7AA2/9B4/54641b4827f3"/>
+									</pragmas>
+								</Field>
+								<Field name="PaginationString">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661PaginationStringType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7d3/7AA2/9B4/54641b481814"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7d1/7AA2/9B4/54641b481f51"/>
+					</pragmas>
+				</Type>
+				<Type name="A661PaginationStringType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="Emit">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7e5/7AA2/9B4/54641b563e99"/>
+									</pragmas>
+								</Field>
+								<Field name="Size">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7e6/7AA2/9B4/54641b566b61"/>
+									</pragmas>
+								</Field>
+								<Field name="String">
+									<type>
+										<Table>
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="char"/>
+													</type>
+												</NamedType>
+											</type>
+											<size>
+												<ConstValue value="8"/>
+											</size>
+										</Table>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7e7/7AA2/9B4/54641b565834"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7e4/7AA2/9B4/54641b561e22"/>
+					</pragmas>
+				</Type>
+				<Type name="A661CheckType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="CheckVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::BoolPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7f2/7AA2/9B4/54641b6c751d"/>
+									</pragmas>
+								</Field>
+								<Field name="CheckSymbolRefer">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::IntPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7f3/7AA2/9B4/54641b6c8b1"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7f1/7AA2/9B4/54641b6c1795"/>
+					</pragmas>
+				</Type>
+				<Type name="A661AlertMessageCtrlsType">
+					<definition>
+						<Table>
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="A661AlertMessageCtrlType"/>
+									</type>
+								</NamedType>
+							</type>
+							<size>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="CAS_LIST_SIZE"/>
+									</path>
+								</IdExpression>
+							</size>
+						</Table>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/7fa/7AA2/9B4/54641b8c738"/>
+					</pragmas>
+				</Type>
+				<Type name="A661AlertMessageCtrlType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="Message">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661MessageType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/805/7AA2/9B4/54641b9fb67"/>
+									</pragmas>
+								</Field>
+								<Field name="Check">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661CheckType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/806/7AA2/9B4/54641b9f3d14"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/804/7AA2/9B4/54641b9f213"/>
+					</pragmas>
+				</Type>
+				<Type name="A661MessageType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="MessageVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::BoolPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/81f/7AA2/9B4/54641bc62a07"/>
+									</pragmas>
+								</Field>
+								<Field name="MessageString">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::StringPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/820/7AA2/9B4/54641bc61895"/>
+									</pragmas>
+								</Field>
+								<Field name="MessageColorIndex">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="A661::IntPortType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/821/7AA2/9B4/54641bc655b7"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/81e/7AA2/9B4/54641bc61581"/>
+					</pragmas>
+				</Type>
+				<Type name="InputsNotifierManagerType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="ipGraphic">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsGraphicType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/850/7AA2/9B4/546424ea6e54"/>
+									</pragmas>
+								</Field>
+								<Field name="ipAural">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsAuralType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/851/7AA2/9B4/546424ea18e8"/>
+									</pragmas>
+								</Field>
+								<Field name="ipCyber">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="InputsCyberType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/852/7AA2/9B4/546424ea2886"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/84c/7AA2/9B4/546424ea6b5b"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsNotifierManagerType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opGraphic">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsGraphicType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/868/7AA2/9B4/5464251568bf"/>
+									</pragmas>
+								</Field>
+								<Field name="opLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsLampType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/86c/7AA2/9B4/546425ea46d4"/>
+									</pragmas>
+								</Field>
+								<Field name="opAural">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsAuralType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/869/7AA2/9B4/546425154f1b"/>
+									</pragmas>
+								</Field>
+								<Field name="opCyber">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsCyberType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/86a/7AA2/9B4/546425151f0f"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/865/7AA2/9B4/5464251543a0"/>
+					</pragmas>
+				</Type>
+				<Type name="AlertAuralType">
+					<definition>
+						<Enum>
+							<values>
+								<Value name="NoneAural">
+									<pragmas>
+										<ed:Value oid="!ed/361c/3410/216C/546b01d2370b"/>
+									</pragmas>
+								</Value>
+								<Value name="SinglePlay">
+									<pragmas>
+										<ed:Value oid="!ed/361d/3410/216C/546b01da7e55"/>
+									</pragmas>
+								</Value>
+								<Value name="ContinuousCancellable">
+									<pragmas>
+										<ed:Value oid="!ed/361e/3410/216C/546b01ee4061"/>
+									</pragmas>
+								</Value>
+								<Value name="ContinuousNonCancellable">
+									<pragmas>
+										<ed:Value oid="!ed/361f/3410/216C/546b020a1af"/>
+									</pragmas>
+								</Value>
+							</values>
+						</Enum>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/361b/3410/216C/546b01c61923"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsOMSType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opOxygenTemperatureFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/489/4247/1D98/556eaa135bc7"/>
+									</pragmas>
+								</Field>
+								<Field name="opOxygenTemperatureFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/492/4247/1D98/556eab814611"/>
+									</pragmas>
+								</Field>
+								<Field name="opOxygenPressureFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/49b/4247/1D98/556eab926e18"/>
+									</pragmas>
+								</Field>
+								<Field name="opOxygenPressureFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4a4/4247/1D98/556ead7b57ac"/>
+									</pragmas>
+								</Field>
+								<Field name="opOxygenLpsFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4ad/4247/1D98/556eadc63323"/>
+									</pragmas>
+								</Field>
+								<Field name="opOxygenLpsFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4b6/4247/1D98/556eadee6fb"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/488/4247/1D98/556eaa042067"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsLampType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opMWC">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsMWCType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4dd/64AC/1BF8/55752ef23aeb"/>
+									</pragmas>
+								</Field>
+								<Field name="opCPAAlertLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="OutputsCPAAlertLampType"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4e7/64AC/1BF8/55752f081922"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/4dc/64AC/1BF8/55752e321862"/>
+					</pragmas>
+				</Type>
+				<Type name="OutputsCPAAlertLampType">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="opFDASairConditionCPLBleedFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57d/64AC/1BF8/557530961915"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLBleedFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57e/64AC/1BF8/5575309677a3"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRBleedFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/57f/64AC/1BF8/557530963b08"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRBleedFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/580/64AC/1BF8/557530964f9d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLBleedOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/581/64AC/1BF8/5575309641bf"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLBleedOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/582/64AC/1BF8/55753096372a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRBleedOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/583/64AC/1BF8/557530962129"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRBleedOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/584/64AC/1BF8/557530963b59"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPAPUBleedON">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/585/64AC/1BF8/557530967f73"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPAPUBleedON_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/586/64AC/1BF8/557530966999"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLPackFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/587/64AC/1BF8/557530967c76"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLPackFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/588/64AC/1BF8/5575309631e0"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRPackFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/589/64AC/1BF8/5575309661d1"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRPackFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58a/64AC/1BF8/5575309652e5"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLPackOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58b/64AC/1BF8/5575309668a2"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPLPackOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58c/64AC/1BF8/55753096696d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRPackOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58d/64AC/1BF8/557530966a3a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRPackOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58e/64AC/1BF8/5575309642b6"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPTRIMairOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/58f/64AC/1BF8/557530963b44"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPTRIMairOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/590/64AC/1BF8/557530965386"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPEMERRAMairOpen">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/591/64AC/1BF8/557530962d2b"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPEMERRAMairOpen_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/592/64AC/1BF8/557530966b"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPPackFlowHI">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/593/64AC/1BF8/557530964fd0"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPPackFlowHI_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/594/64AC/1BF8/55753096925"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPCABINPressFail">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/595/64AC/1BF8/557530961dca"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPCABINPressFail_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/596/64AC/1BF8/55753096385e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPEmerDepressOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/597/64AC/1BF8/557530964fc6"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPEmerDepressOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/598/64AC/1BF8/557530964216"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPManualPressurisation">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/599/64AC/1BF8/5575309637bf"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPManualPressurisation_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59a/64AC/1BF8/557530964e69"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPLDGElevMan">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59b/64AC/1BF8/557530964b29"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASAIceCPLDGElevMan_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59c/64AC/1BF8/557530965ba0"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRecircOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59d/64AC/1BF8/557530967b45"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASairConditionCPRecircOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59e/64AC/1BF8/5575309639a9"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLGENFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/59f/64AC/1BF8/557530963533"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLGENFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a0/64AC/1BF8/557530963267"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLDISCFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a1/64AC/1BF8/557530966f81"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLDISCFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a2/64AC/1BF8/557530964d81"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRGENFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a3/64AC/1BF8/557530961947"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRGENFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a4/64AC/1BF8/557530965391"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRDISCFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a5/64AC/1BF8/557530961f12"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRDISCFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a6/64AC/1BF8/5575309613e2"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLDISCDISCLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a7/64AC/1BF8/557530961c27"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLDISCDISCLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a8/64AC/1BF8/557530964928"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRDISCDISCLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5a9/64AC/1BF8/5575309642e9"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRDISCDISCLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5aa/64AC/1BF8/557530961cca"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPETRUFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ab/64AC/1BF8/557530961d67"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPETRUFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ac/64AC/1BF8/557530965bf"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLGENOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ad/64AC/1BF8/55753096f5b"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPLGENOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ae/64AC/1BF8/55753096670b"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRGENOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5af/64AC/1BF8/55753096d22"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPRGENOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b0/64AC/1BF8/557530963359"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPMainBATTOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b1/64AC/1BF8/557530965774"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPMainBATTOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b2/64AC/1BF8/55753096464e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPAPUBATTOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b3/64AC/1BF8/5575309649eb"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPAPUBATTOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b4/64AC/1BF8/557530966986"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPNORMBusTieOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b5/64AC/1BF8/557530967a8f"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPNORMBusTieOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b6/64AC/1BF8/557530966a57"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPESSBusTieOffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b7/64AC/1BF8/557530961b06"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPESSBusTieOffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b8/64AC/1BF8/55753096ecf"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPCabinPWROffLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5b9/64AC/1BF8/557530965023"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPCabinPWROffLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ba/64AC/1BF8/557530966b8b"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5bb/64AC/1BF8/557530961ad9"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare1_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5bc/64AC/1BF8/557530966954"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPRatResetFaultLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5bd/64AC/1BF8/557530965e0"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPRatResetFaultLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5be/64AC/1BF8/55753096af"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPRatManualOnLamp">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5bf/64AC/1BF8/55753096259d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASRightOVHDCPRatManualOnLamp_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c0/64AC/1BF8/5575309622b4"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare2">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c1/64AC/1BF8/5575309623fb"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare2_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c2/64AC/1BF8/5575309641f2"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare3">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c3/64AC/1BF8/557530962059"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare3_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c4/64AC/1BF8/55753096432d"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare4">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c5/64AC/1BF8/557530962bc6"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare4_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c6/64AC/1BF8/557530961d2e"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare5">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c7/64AC/1BF8/557530962c11"/>
+									</pragmas>
+								</Field>
+								<Field name="opSpare5_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c8/64AC/1BF8/557530966805"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelXfeedFaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5c9/64AC/1BF8/55753096483"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelXfeedFaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ca/64AC/1BF8/557530965f6b"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL1FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5cb/64AC/1BF8/55753096193a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL1FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5cc/64AC/1BF8/557530963928"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL2FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5cd/64AC/1BF8/557530962a7a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL2FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ce/64AC/1BF8/5575309677a5"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR1FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5cf/64AC/1BF8/557530962f72"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR1FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d0/64AC/1BF8/557530966212"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR2FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d1/64AC/1BF8/557530965449"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR2FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d2/64AC/1BF8/5575309656cf"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC1FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d3/64AC/1BF8/557530961d6e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC1FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d4/64AC/1BF8/5575309611ef"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC2FaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d5/64AC/1BF8/5575309627c"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC2FaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d6/64AC/1BF8/557530961117"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelDCPumpFaultOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d7/64AC/1BF8/557530962534"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelDCPumpFaultOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d8/64AC/1BF8/557530964701"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL1OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5d9/64AC/1BF8/557530962d5d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL1OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5da/64AC/1BF8/55753096246c"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL2OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5db/64AC/1BF8/55753096588a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelL2OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5dc/64AC/1BF8/557530966943"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR1OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5dd/64AC/1BF8/5575309650d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR1OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5de/64AC/1BF8/5575309683d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR2OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5df/64AC/1BF8/5575309679ae"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelR2OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e0/64AC/1BF8/55753096784c"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC1OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e1/64AC/1BF8/5575309677d4"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC1OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e2/64AC/1BF8/557530966a84"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC2OffPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e3/64AC/1BF8/557530965447"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelC2OffPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e4/64AC/1BF8/557530965075"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelXfeedOpenPBAOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e5/64AC/1BF8/5575309672b6"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASFuelElecCPFuelXfeedOpenPBAOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e6/64AC/1BF8/557530963e04"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLFWDWindowHeatFault">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e7/64AC/1BF8/55753096229c"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLFWDWindowHeatFault_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e8/64AC/1BF8/557530964b3e"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLSideWindowHeatFault">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5e9/64AC/1BF8/557530961047"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLSideWindowHeatFault_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ea/64AC/1BF8/557530967dce"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRFWDWindowHeatFault">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5eb/64AC/1BF8/557530965304"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRFWDWindowHeatFault_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ec/64AC/1BF8/557530963eee"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRSideWindowHeatFault">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ed/64AC/1BF8/5575309629c0"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRSideWindowHeatFault_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ee/64AC/1BF8/557530964a0a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLFWDWindowHeatOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5ef/64AC/1BF8/55753096419d"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLFWDWindowHeatOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f0/64AC/1BF8/55753096217a"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLSideWindowHeatOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f1/64AC/1BF8/557530967e51"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPLSideWindowHeatOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f2/64AC/1BF8/5575309641f4"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRFWDWindowHeatOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f3/64AC/1BF8/557530963a41"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRFWDWindowHeatOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f4/64AC/1BF8/5575309652a8"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRSideWindowHeatOff">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f5/64AC/1BF8/5575309664b9"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPRSideWindowHeatOff_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f6/64AC/1BF8/557530963f25"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPPassOXYOn">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f7/64AC/1BF8/5575309656b6"/>
+									</pragmas>
+								</Field>
+								<Field name="opFDASWindowHeatCPPassOXYOn_status">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5f8/64AC/1BF8/557530965174"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/57c/64AC/1BF8/557530964edd"/>
+					</pragmas>
+				</Type>
+				<Operator name="CheckDataStatus" href="CheckDataStatus.xscade"/>
+				<Operator name="FallingEdge" href="FallingEdge.xscade"/>
+				<Operator name="RisingEdge" href="RisingEdge.xscade"/>
+				<Operator name="count_down" href="count_down.xscade"/>
+				<Operator name="FlipFlopReset" href="FlipFlopReset.xscade"/>
+				<Operator name="RisingEdgeRetrigger" href="RisingEdgeRetrigger.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/26578/468F/1DBC/53be6db76f52" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/26579/468F/1DBC/53be6db722b5" blockKind="constants" columnsSize="0, 351, 150, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/2657a/468F/1DBC/53be6db72c03" blockKind="types" columnsSize="0, 378, 393, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/2657b/468F/1DBC/53be6db77363" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

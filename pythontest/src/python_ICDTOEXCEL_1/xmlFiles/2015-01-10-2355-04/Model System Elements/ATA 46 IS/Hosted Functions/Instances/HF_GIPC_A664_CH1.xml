@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunction Name="HF_GIPC_A664_CH1" Guid="a097fde0c-fcdf-4929-b6bf-07717e850926a" NameDef="HF_GIPC_A664_CH1_CLASS" GuidDef="acb885ab9-fbf2-43d0-8589-e28171b0fb6fa" XsdVersion="7.9" Hardware="GIPC_A664_CH1" IpAddress="10.46.97.0">
+  <HFQueuingPort Name="HFQ_L_ID_RX" Guid="a202de2c2-f75d-45a7-a2fe-84376bfee5b6a" NameDef="HF_GIPC_A664_CH1_CLASS.HFQ_L_ID_RX" GuidDef="a56b8c45e-cded-4a2e-8303-b5f7dadc3a00a" PathName="VLPath27">
+    <RP Name="L_DISC_ID_ICE_Status" Guid="a50330874-dd57-4e29-9786-76d4ae75ad16a" NameDef="HF_GIPC_A664_CH1_CLASS.L_DISC_ID_ICE_Status" GuidDef="ac0ef0096-4da8-4463-9a6b-63e29e5a315da">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_ICE.Status" SrcGuid="ac0ac3722-2fce-4913-9bbd-f401887c8a15a" />
+    </RP>
+    <RP Name="L_DISC_ID_ICE_STATUS_Status" Guid="a39fe5c5b-2685-4067-bf4b-a7d69a7d7ae6a" NameDef="HF_GIPC_A664_CH1_CLASS.L_DISC_ID_ICE_STATUS_Status" GuidDef="a388d13a7-fdfa-4ca3-91fd-5c585644fbd9a">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_STATUS.Status" SrcGuid="a2a11a587-a1df-4c08-94fa-b6ab1234c4b6a" />
+    </RP>
+    <RP Name="L_ID_ICE_B" Guid="a00e6c87d-3a54-493a-8b2a-0c44c09126dba" NameDef="HF_GIPC_A664_CH1_CLASS.L_ID_ICE_B" GuidDef="ac8416923-abcc-429a-a996-b8801376b011a">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_ICE.Status" SrcGuid="ac0ac3722-2fce-4913-9bbd-f401887c8a15a" />
+    </RP>
+    <RP Name="L_ID_STATUS_B" Guid="a9a8b959e-cf9c-41a8-a077-515bcaeaf434a" NameDef="HF_GIPC_A664_CH1_CLASS.L_ID_STATUS_B" GuidDef="a359c3755-388f-482d-90d5-2d3ffb14246ea">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_STATUS.Status" SrcGuid="a2a11a587-a1df-4c08-94fa-b6ab1234c4b6a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW03_Analog_In_ATA27FCS.HFS1_O_40022_ATA30IDS" SrcGuid="af11b2a36-fa63-4f98-8843-9243c4f48f06a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ADS" Guid="ac5c85f83-2fc0-4a2a-957f-7e260a9779f3a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_ADS" GuidDef="af908640b-6291-4a81-9bf0-330d4244754ca" PathName="VLPath16">
+    <RP Name="BaroAlt_BaroSet1_Voted" Guid="ac2130c3b-248c-464c-a0df-1842d9fe5056a" NameDef="HF_GIPC_A664_CH1_CLASS.BaroAlt_BaroSet1_Voted" GuidDef="a6cc12d40-f404-4b59-b416-c199743fd34aa">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS44.L204_Baro_Corrected_Altitude_Voted_Baro_Set_1" SrcGuid="a5810f6e9-2378-4cb9-8268-5e5529cfd2aaa" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_FCM_1.HFQ_OUT_01_Port_ADA20" SrcGuid="a2d23b3da-9fa9-4041-ab7e-4e885f8056aca" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_011_GOB1" Guid="a5886258c-8e82-41c8-89cc-bceaddc9ada3a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_L_011_GOB1" GuidDef="ae309be44-c340-47ae-9a1c-6db5524d69b6a" PathName="VLPath38">
+    <RP Name="Date_L" Guid="a08694018-0b7e-4663-9b57-70d4b8edbf73a" NameDef="HF_GIPC_A664_CH1_CLASS.Date_L" GuidDef="a9580c87d-4ca5-4384-b82f-9691307f5a33a">
+      <Pub_Ref SrcName="APP_FMS_NAV_1.ARINC429_MIX_MSG_NAV.DS1_NAV.L260_Date" SrcGuid="a4aadaac5-e176-420a-9075-a58080832085a" />
+    </RP>
+    <RP Name="Present_position_latitude_L" Guid="a10185ef2-d524-494c-9d6b-9f05f0647d4ba" NameDef="HF_GIPC_A664_CH1_CLASS.Present_position_latitude_L" GuidDef="a61f95e40-da3b-44d7-970d-b00379ee7e2ba">
+      <Pub_Ref SrcName="APP_FMS_NAV_1.ARINC429_MIX_MSG_NAV.DS1_NAV.L310_Present_Positition_Latitude" SrcGuid="a826fd400-d4f6-4342-8870-83abbf582a8ea" />
+    </RP>
+    <RP Name="Present_position_longitude_L" Guid="aa8c14395-4c6f-45d3-b2aa-558d09099359a" NameDef="HF_GIPC_A664_CH1_CLASS.Present_position_longitude_L" GuidDef="adcf28036-e3a1-415c-9802-d2c5bd4f58e3a">
+      <Pub_Ref SrcName="APP_FMS_NAV_1.ARINC429_MIX_MSG_NAV.DS1_NAV.L311_Present_Positition_Longitude" SrcGuid="a9fd4b17c-8708-40a1-8183-6d1a16349361a" />
+    </RP>
+    <RP Name="UTC_GMT_L" Guid="aa66120c6-5094-4499-bc8e-826b04d8c41da" NameDef="HF_GIPC_A664_CH1_CLASS.UTC_GMT_L" GuidDef="aebd1d8f0-229b-41be-a3b4-ecb072412345a">
+      <Pub_Ref SrcName="APP_FMS_NAV_1.ARINC429_MIX_MSG_NAV.DS1_NAV.L150_UTC_Universal_Time_Coordinate" SrcGuid="aa36dc343-e825-4703-b3a0-7a17e6ebcafca" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_NAV_1.A653_OUT_NAV_OUTPUT" SrcGuid="ae068bfe8-c3ca-4da7-a475-f5c00c5e6515a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_Discrete" Guid="a8d4af7f8-cee3-4593-85ba-95d7819df11ea" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_PPS_Discrete" GuidDef="a7850c8e7-f2ac-4dc4-97aa-80c96d611fe6a" PathName="VLPath46">
+    <RP Name="Oil_Pressure_High_Amber_Exceedance" Guid="a7b9a0af0-a3f7-48ae-9b4e-440d3e1faf76a" NameDef="HF_GIPC_A664_CH1_CLASS.Oil_Pressure_High_Amber_Exceedance" GuidDef="a1b317db4-8514-4739-ab13-b589f864f434a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_Discrete.DS6.Oil_Pressure_High_Amber_Exceedance" SrcGuid="a97171a22-68e1-4ce9-a76d-41f8abf829a6a" />
+    </RP>
+    <RP Name="Oil_Pressure_Low_Amber_Exceedance" Guid="a08b436e5-43ec-4771-a494-0f91463aabf1a" NameDef="HF_GIPC_A664_CH1_CLASS.Oil_Pressure_Low_Amber_Exceedance" GuidDef="a797070ea-d44c-4e34-91af-cbc65dc64886a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_Discrete.DS6.Oil_Pressure_Low_Amber_Exceedance" SrcGuid="a22d6729e-1d11-4f38-867f-bb68d1b15416a" />
+    </RP>
+    <RP Name="Uncommanded_Engine_Shutdown" Guid="a36344485-7179-438e-976e-f2b2976fd69ba" NameDef="HF_GIPC_A664_CH1_CLASS.Uncommanded_Engine_Shutdown" GuidDef="a85e15135-6cbe-4550-bb54-ad1a1de0ff01a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_Discrete.DS1.Uncommanded_Engine_Shutdown" SrcGuid="a5be5cb4f-f432-414b-adfa-f65f078fd987a" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_FADEC_L_CHA.poHFQ_FADEC_Msg3_Discrete" SrcGuid="a41cd6451-8478-4361-bfc6-a6ea9ff05e68a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_FCSFMS" Guid="ad1a5ced2-7ab0-4465-bfcb-6b285dddc3e8a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_PPS_FCSFMS" GuidDef="a1eef72c6-93e0-4d3a-b1b6-5b8f8d3dcfcca" PathName="VLPath46">
+    <RP Name="Engine_Running" Guid="af0979e86-cd1b-497c-b304-a5984556962ca" NameDef="HF_GIPC_A664_CH1_CLASS.Engine_Running" GuidDef="a2da7c2ad-7bd2-4210-ac4e-a2660de5db60a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_FCSFMS.DS12.Engine_Running" SrcGuid="a9146dd2d-721f-4f11-85e9-58e17074a0a0a" />
+    </RP>
+    <RP Name="Selected_TRA" Guid="af0280aa5-3c2d-4fa2-b2e4-64a501218f35a" NameDef="HF_GIPC_A664_CH1_CLASS.Selected_TRA" GuidDef="a50d527c3-12fe-44a3-8e44-beae293f054ea">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_FCSFMS.DS3.Selected_TRA_Filtered" SrcGuid="a33a55423-bcf8-4673-8fbd-12c701bd056ca" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_FADEC_L_CHA.poHFQ_FADEC_Msg2_FCSFMS" SrcGuid="ada2282bc-59d3-46c1-84e2-0d4b39351e34a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS_TrendFDR" Guid="a0c211b26-8fb7-4867-a0ea-7c0698f87a03a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_PPS_TrendFDR" GuidDef="ad8150c8b-f4a1-4601-bb22-72268aeae034a" PathName="VLPath5">
+    <RP Name="Engine_Thrust_Rating" Guid="a0f3ea238-f948-4c6f-bd1a-d82015c2b7e9a" NameDef="HF_GIPC_A664_CH1_CLASS.Engine_Thrust_Rating" GuidDef="a16f4b52f-daa2-4932-bb17-6ad3aa658061a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_TrendFDR.DS14.Engine_Thrust_Rating" SrcGuid="a8cf05053-c4ac-45e3-88e3-cd733737866ea" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_FADEC_L_CHA.poHFQ_FADEC_Msg5_TrendFDR" SrcGuid="ab6104fe4-0a9c-41b9-b517-95d4564ad843a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L" Guid="a26234c00-6303-4e9d-a2c0-78bdc79b13eaa" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_L" GuidDef="a00e63156-961d-4f10-94a6-fc4f7451e01ba" PathName="VLPath22">
+    <RP Name="Active_Flight_Plan_L" Guid="a1ce2c3ff-d7e2-48e1-a6e3-c7b1e78bcafca" NameDef="HF_GIPC_A664_CH1_CLASS.Active_Flight_Plan_L" GuidDef="aadffc543-900e-44a6-8333-bb344c42ed8ca" />
+    <RP Name="Destination_Airport_ID_L" Guid="a2c037ab1-8aa8-46ac-bee0-99bebfc2234aa" NameDef="HF_GIPC_A664_CH1_CLASS.Destination_Airport_ID_L" GuidDef="a7d050865-6b4a-4553-a88e-f3dcc5871928a" />
+    <RP Name="FMS_Printing_Data_L" Guid="afcf2e341-c3db-43b4-8e1c-7a86febb0bfea" NameDef="HF_GIPC_A664_CH1_CLASS.FMS_Printing_Data_L" GuidDef="a8ef4630b-818d-4d6a-86db-d82c3463c08fa" />
+    <RP Name="Original_departure_Airport_ID_L" Guid="a536dc33a-a977-4ede-86e0-01ff4fefcc31a" NameDef="HF_GIPC_A664_CH1_CLASS.Original_departure_Airport_ID_L" GuidDef="a77cb23f1-907e-4b5a-a4ec-367cc8e22024a" />
+    <RP Name="Phase_of_Flight_L" Guid="a5fb9183f-b1bc-430c-8e69-0c7b22b6cc9da" NameDef="HF_GIPC_A664_CH1_CLASS.Phase_of_Flight_L" GuidDef="a69760f9d-46f1-4caf-977e-c5019b995a06a" />
+    <RP Name="RX_Destination_Char_1" Guid="abfb48cff-1cbb-4783-a99b-77786ba5d6b2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Char_1" GuidDef="aa2243ca6-2e21-46e3-8edb-419df653bc42a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L062_Origin_Destination_ID_2.Destination_Char_1" SrcGuid="a5803eb77-c5c9-4747-a0fa-29e91c8b0847a" />
+    </RP>
+    <RP Name="RX_Destination_Char_2" Guid="a9c7918f0-3bcd-4957-90b7-8442d7551ed8a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Char_2" GuidDef="ab31bca19-b6de-451c-b69a-5e58e23fe3baa">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L063_Origin_Destination_ID_3.Destination_Char_2" SrcGuid="adaf7cb70-18aa-4890-b310-8ccee4ff0c91a" />
+    </RP>
+    <RP Name="RX_Destination_Char_3" Guid="a6ac0202e-20b0-4639-b854-58af55d4acb1a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Char_3" GuidDef="ab3d6df76-8359-4fee-b667-79b231122035a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L063_Origin_Destination_ID_3.Destination_Char_3" SrcGuid="aa152a48b-945b-4721-b94c-83f578a434e8a" />
+    </RP>
+    <RP Name="RX_Destination_Char_4" Guid="aeb93f1f5-c7f6-449e-b326-b957dd4131f2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Char_4" GuidDef="a51e52e71-c7bc-4cbb-a4e8-3937a17f6f25a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L063_Origin_Destination_ID_3.Destination_Char_4" SrcGuid="a9fe96d19-0013-4e9e-80fa-a2047e5f0125a" />
+    </RP>
+    <RP Name="RX_Origin_Char_1" Guid="a393711ec-b5c0-41d6-be91-f680a8558eaca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Origin_Char_1" GuidDef="a7717186d-b296-4241-ab11-bae0b3dd711fa">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L061_Origin_Destination_ID_1.Origin_Char_1" SrcGuid="a5702f945-65e2-4c57-88b5-2a3bac2f01cba" />
+    </RP>
+    <RP Name="RX_Origin_Char_2" Guid="a54fbc5ed-ad12-4a7f-8c10-451406605b37a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Origin_Char_2" GuidDef="a5a602896-0bde-4eca-bbb6-704227d41623a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L061_Origin_Destination_ID_1.Origin_Char_2" SrcGuid="ad536bd4c-a794-407b-b957-c92b4eae5c21a" />
+    </RP>
+    <RP Name="RX_Origin_Char_3" Guid="a9a74ee9f-4082-4882-acd5-5580a620aa32a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Origin_Char_3" GuidDef="ab5a63314-0257-46ff-978d-476835d07635a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L061_Origin_Destination_ID_1.Origin_Char_3" SrcGuid="a4334b3c7-e95c-40bd-b0f0-00ad05ddd280a" />
+    </RP>
+    <RP Name="RX_Origin_Char_4" Guid="a020c05e2-1259-44f2-bc4a-6689b64e7b40a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Origin_Char_4" GuidDef="a4f9392f1-d475-4be4-b654-b00c3d231ab4a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L062_Origin_Destination_ID_2.Origin_Char_4" SrcGuid="a47336846-68b5-47e1-9881-7d40084ef861a" />
+    </RP>
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_011_GOB1_1" Guid="a20440a0f-eeb8-4e36-86cd-ce151c0c234da" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_L_011_GOB1_1" GuidDef="a9bd3cc54-70c4-40b4-b13c-65937a5a7a8ea" PathName="VLPath22">
+    <RP Name="Time_to_Go_TO_Waypoint_L" Guid="a2ede7cdc-a8d4-4d46-864f-0cff58fee9c6a" NameDef="HF_GIPC_A664_CH1_CLASS.Time_to_Go_TO_Waypoint_L" GuidDef="ab9cb4ff6-6ead-4e2a-b0df-ee38354972c9a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L002_Time_to_Go" SrcGuid="ac8af54a0-2be6-4b5b-9f84-b679e63e656aa" />
+    </RP>
+    <RP Name="ETA_Destination_L" Guid="a3702f500-7354-4036-8269-18d7daf2cc2ca" NameDef="HF_GIPC_A664_CH1_CLASS.ETA_Destination_L" GuidDef="aa2030c13-f7ee-4a65-8588-8cea91268c41a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L065_Destination_ETA" SrcGuid="ab87739ab-67a2-4ab7-8a27-a818a7293beaa" />
+    </RP>
+    <RP Name="ETA_TO_waypoint_L" Guid="a8bbec731-e78c-4e80-9f23-adec806c0105a" NameDef="HF_GIPC_A664_CH1_CLASS.ETA_TO_waypoint_L" GuidDef="a2f3bf16b-95b0-4106-b73f-29b2713802b6a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L056_ETA_To_Waypoint" SrcGuid="a1282fbc2-602c-4f4f-a935-a4712388e56ea" />
+    </RP>
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_L_2" Guid="ac0afddfb-b61d-4a98-8029-b8f49b3345afa" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_L_2" GuidDef="a932ef53e-7b01-44e5-837b-aedbf866b349a" PathName="VLPath18">
+    <RP Name="RX_L223_ACK_Word_Printer_L" Guid="a44f92faa-4ad8-4fdc-8b9d-81affb1204cea" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_ACK_Word_Printer_L" GuidDef="a00db6956-9baf-4f51-8d90-2ffd8f66dbd7a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_ACK_Word" SrcGuid="ac5716ae1-00c8-464a-b85d-04f721c28209a" />
+    </RP>
+    <RP Name="RX_L223_CTL1_Word_Printer_L" Guid="a55a4baef-c3ac-444a-89c9-4392d79cb2a0a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_CTL1_Word_Printer_L" GuidDef="a2ef1e236-92e1-4453-b051-bf8d799481e4a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_CTL1_Word" SrcGuid="a372124f2-a577-4674-9ad5-53a9ac8b9b11a" />
+    </RP>
+    <RP Name="RX_L223_CTL2_Word_Printer_L" Guid="a71233c98-5e4b-4926-98c3-0065a22a120aa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_CTL2_Word_Printer_L" GuidDef="a44605732-d1cc-46a9-bd4c-f5854ed81e86a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_CTL2_Word" SrcGuid="acb027716-1dfd-4b11-a6e9-f5b19c1a1a6ca" />
+    </RP>
+    <RP Name="RX_L223_Data_Word_Printer_L" Guid="ad645885b-2d96-41de-9641-3d3581bc0f10a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_Data_Word_Printer_L" GuidDef="afccd8989-0bcf-4922-98fa-dd1d07fe488da">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_Data_Word" SrcGuid="a4e32fa73-e7a5-4c74-b4e5-64e4ae26bb2fa" />
+    </RP>
+    <RP Name="RX_L223_EOT_Word_Printer_L" Guid="a4bd01e07-73df-443b-9f5c-e997b9edfda8a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_EOT_Word_Printer_L" GuidDef="ad21010ba-8164-4f53-b279-47ba079e2b96a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_EOT_Word" SrcGuid="a2e78b7ff-d740-44c4-8026-3dffad17051ba" />
+    </RP>
+    <RP Name="RX_L223_ETX_Word_Printer_L" Guid="adab75f57-54fe-4f15-9ede-738845dd1a0ca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_ETX_Word_Printer_L" GuidDef="acd11f539-413d-4023-86e9-f172b0b157dda">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_ETX_Word" SrcGuid="ac1cee791-96cf-4a49-95e1-0956140b18a3a" />
+    </RP>
+    <RP Name="RX_L223_RTS_Word_Printer_L" Guid="ac8cbac93-f393-4270-b8c5-12203611696ca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_RTS_Word_Printer_L" GuidDef="ace980333-fdb1-4752-83d6-806c3133e56ca">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_RTS_Word" SrcGuid="ad96782c9-2dfa-4828-821c-bcc23b4f41f0a" />
+    </RP>
+    <RP Name="RX_L223_STX_Word_Printer_L" Guid="ad38aa87e-5964-4bef-836b-f95f10c745cba" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_STX_Word_Printer_L" GuidDef="a86c8b998-8a6d-441d-bfa4-8449008bad97a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_STX_Word" SrcGuid="a63d4ae17-0ad0-4eda-8c17-3609f6e41f80a" />
+    </RP>
+    <RP Name="RX_LENGTH_Printer_L" Guid="ad988ad9c-6c68-4a17-bca6-3e750c70413fa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_LENGTH_Printer_L" GuidDef="ac34a5ea7-b83c-4f13-b7d2-cb4a26184fb4a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.LENGTH" SrcGuid="a83137d7b-4aba-4695-a8b1-59a64eefd75ea" />
+    </RP>
+    <RP Name="RX_PAD_Printer_L" Guid="afef9e1ea-2f1e-4518-bb90-044430c3f37ea" NameDef="HF_GIPC_A664_CH1_CLASS.RX_PAD_Printer_L" GuidDef="a2faa3d37-e3f1-487e-8f45-e88993b978d9a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.PAD" SrcGuid="a1e91bfea-d41b-45f8-9ac3-d39a01bfb47fa" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_1.A653_OUT_CORE_OUTPUT_PRINTER" SrcGuid="a1183b93d-feb3-474b-bf78-88dd830900c1a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R" Guid="a874c702a-ad3c-4d1c-88d3-d33eaa56954ba" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_R" GuidDef="ad629f9d6-2f5e-4314-b34e-bc03d77bc1b6a">
+    <RP Name="Active_Flight_Plan_R" Guid="af618cdb6-eeda-45f4-bf5e-5eb9f81bdb7da" NameDef="HF_GIPC_A664_CH1_CLASS.Active_Flight_Plan_R" GuidDef="ac495d367-eafa-425d-a910-88ea049ad1c0a" />
+    <RP Name="FMS_Printing_Data_R" Guid="a30c9149e-0785-4d51-ba76-f91e3632022fa" NameDef="HF_GIPC_A664_CH1_CLASS.FMS_Printing_Data_R" GuidDef="a132d9df7-b1a9-48d1-8130-68a37cdd731ca" />
+    <RP Name="Gross_Weight_lbs_R" Guid="af4b7dc85-f150-4a37-a64e-57488afe6ffda" NameDef="HF_GIPC_A664_CH1_CLASS.Gross_Weight_lbs_R" GuidDef="a4f9bae73-062a-4ebe-81b9-57099630f2e7a" />
+    <RP Name="Original_departure_Airport_ID_R" Guid="a40018db2-e358-4b39-8e65-9d9d25598b5ba" NameDef="HF_GIPC_A664_CH1_CLASS.Original_departure_Airport_ID_R" GuidDef="af4b38a7b-bca1-4ba2-ba81-0dc788ad9f2fa" />
+    <RP Name="Phase_of_Flight_R" Guid="afbd2da6c-5b87-4ed5-9d15-984ecd44c297a" NameDef="HF_GIPC_A664_CH1_CLASS.Phase_of_Flight_R" GuidDef="a2bd292c7-b7b4-4dc1-aebd-5d68037faff7a" />
+    <RP Name="Destination_Airport_ID_R" Guid="a2df47155-0666-4632-8b72-634aec61fbf8a" NameDef="HF_GIPC_A664_CH1_CLASS.Destination_Airport_ID_R" GuidDef="adfb10d57-f0ff-4b47-9b6c-d763d1174f89a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_1" Guid="aab62be4e-3e73-4d07-b7ca-6c2d4e2ecbd6a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_R_1" GuidDef="a0fcda7a9-bea4-44ec-ae02-1add5b534521a" PathName="VLPath24">
+    <RP Name="Date_R" Guid="a8af6b8d6-bd22-4e65-91fa-bc592968f0bda" NameDef="HF_GIPC_A664_CH1_CLASS.Date_R" GuidDef="af3ddb4b8-5f85-4635-acef-5700a6c2a65aa">
+      <Pub_Ref SrcName="APP_FMS_NAV.ARINC429_MIX_MSG_NAV.DS1_NAV.L260_Date" SrcGuid="a6cde0dbf-4dfe-4dca-9d7b-affb0d163251a" />
+    </RP>
+    <RP Name="Present_position_latitude_R" Guid="ad578f569-7f43-49d0-b371-39e6809fab9ea" NameDef="HF_GIPC_A664_CH1_CLASS.Present_position_latitude_R" GuidDef="a93871181-4d98-4315-b8cb-3c98e9846e4ba">
+      <Pub_Ref SrcName="APP_FMS_NAV_2.ARINC429_MIX_MSG_NAV.DS1_NAV.L310_Present_Positition_Latitude" SrcGuid="a2349f9c1-f407-4da2-8b0d-ac5be4ee0c26a" />
+    </RP>
+    <RP Name="Present_position_longitude_R" Guid="ad711159b-d3ed-4b6f-a22c-8b655c9c3d20a" NameDef="HF_GIPC_A664_CH1_CLASS.Present_position_longitude_R" GuidDef="aa1e99190-79aa-4a51-99d2-3e3418595328a">
+      <Pub_Ref SrcName="APP_FMS_NAV_2.ARINC429_MIX_MSG_NAV.DS1_NAV.L311_Present_Positition_Longitude" SrcGuid="ab0bf6ec7-7cdc-4f8f-b9b3-a16110f4c670a" />
+    </RP>
+    <RP Name="UTC_GMT_R" Guid="a6a94c5b0-f422-4deb-b5ac-f620514c6122a" NameDef="HF_GIPC_A664_CH1_CLASS.UTC_GMT_R" GuidDef="a11b08791-6a4c-4883-a0c0-e60dc01008e9a">
+      <Pub_Ref SrcName="APP_FMS_NAV_2.ARINC429_MIX_MSG_NAV.DS1_NAV.L150_UTC_Universal_Time_Coordinate" SrcGuid="a6565ccc9-e28c-42c2-ada2-7783658bd8d5a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_NAV_2.A653_OUT_NAV_OUTPUT" SrcGuid="a55124d84-09df-440c-869f-a07b0ef58844a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_2" Guid="a599910be-c6fa-41d3-bfda-12c15d14a4d9a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_R_2" GuidDef="a34f4a074-bd55-4277-bd02-cac1cb011038a" PathName="VLPath40">
+    <RP Name="ETA_Destination_R" Guid="abc73683e-f42d-4180-b05c-aeff35500e10a" NameDef="HF_GIPC_A664_CH1_CLASS.ETA_Destination_R" GuidDef="a51e2c16d-4fc7-446e-ad68-d6b8b281449ea">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARINC429_MIX_MSG_CORE.DS1_CORE.L065_Destination_ETA" SrcGuid="a790c4f65-4242-4729-a0ba-13cff6635d47a" />
+    </RP>
+    <RP Name="ETA_TO_waypoint_R" Guid="a7121bf2d-478c-480c-a36f-1ead78c724f9a" NameDef="HF_GIPC_A664_CH1_CLASS.ETA_TO_waypoint_R" GuidDef="a55f91937-5410-42de-856d-1a5bacff23d5a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARINC429_MIX_MSG_CORE.DS1_CORE.L056_ETA_To_Waypoint" SrcGuid="a33f371cc-b829-49f1-9052-bc3c0094655ba" />
+    </RP>
+    <RP Name="Time_to_Go_TO_Waypoint_R" Guid="aa1862e10-0c27-449b-b09d-dbf77c23da54a" NameDef="HF_GIPC_A664_CH1_CLASS.Time_to_Go_TO_Waypoint_R" GuidDef="af716ca76-3dbe-4e68-b8a3-ec366c546f4aa">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARINC429_MIX_MSG_CORE.DS1_CORE.L056_ETA_To_Waypoint" SrcGuid="a33f371cc-b829-49f1-9052-bc3c0094655ba" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_2.A653_OUT_CORE_OUTPUT" SrcGuid="a2b07204d-9466-4e85-9d39-babeb4c05f14a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FMS_R_3" Guid="acb484c91-6a44-4f3e-a1b6-e49817b4365ea" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FMS_R_3" GuidDef="a30cbf696-a93f-43cb-b2ab-c501d6b33c00a" PathName="VLPath3">
+    <RP Name="RX_L223_ACK_Word_Printer_R" Guid="a6aede095-5d8a-495b-ba06-1e8906dce7dea" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_ACK_Word_Printer_R" GuidDef="a5ec00c40-3415-4535-9541-3b14a54142caa">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_ACK_Word" SrcGuid="af49dc482-10b2-4380-839b-b1f6a7028900a" />
+    </RP>
+    <RP Name="RX_L223_CTL1_Word_Printer_R" Guid="ae92ae517-1e2e-4e33-bc0c-505776772939a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_CTL1_Word_Printer_R" GuidDef="a120288b3-3031-4d57-b3ea-b2623a2af3c0a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_CTL1_Word" SrcGuid="aa8206a82-01f2-4a17-8244-5b2885c54162a" />
+    </RP>
+    <RP Name="RX_L223_CTL2_Word_Printer_R" Guid="a4a004018-3aff-4ba7-b369-3dd15a174933a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_CTL2_Word_Printer_R" GuidDef="a746acc4e-c899-4af1-b14d-17c85f5a9b3ca">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_CTL2_Word" SrcGuid="a63c20b5b-60c2-4c62-a6cf-e66d02e20e01a" />
+    </RP>
+    <RP Name="RX_L223_Data_Word_Printer_R" Guid="acf1ede17-9e4b-4ebf-9356-139b5d0e0809a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_Data_Word_Printer_R" GuidDef="aa74bedf3-2b2e-4feb-8c39-8b4fb0fd057aa">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_Data_Word" SrcGuid="a3bd4cc60-9438-4b49-9d9c-ad621642d13ba" />
+    </RP>
+    <RP Name="RX_L223_EOT_Word_Printer_R" Guid="aafa7c711-b72a-43ab-83ac-a64d51d6db92a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_EOT_Word_Printer_R" GuidDef="acffa1f7e-edd7-46be-b610-71f2b587ab69a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_EOT_Word" SrcGuid="ac1460325-2419-47f7-ad87-9ad119d0ba5fa" />
+    </RP>
+    <RP Name="RX_L223_ETX_Word_Printer_R" Guid="a0fb53cd0-453c-4bee-b211-63e77d9545c2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_ETX_Word_Printer_R" GuidDef="a69a4b23e-7c1c-4ae5-9c97-437ce0657e37a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_ETX_Word" SrcGuid="af76b11a6-d400-4b57-830d-7cfa50d47f00a" />
+    </RP>
+    <RP Name="RX_L223_RTS_Word_Printer_R" Guid="a499ee6e2-cdc7-4181-a1e6-a5b1e32346c2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_RTS_Word_Printer_R" GuidDef="a98d84acf-5f85-4313-a652-814b5fa813ada">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_RTS_Word" SrcGuid="ae26881ea-9076-4ec9-be46-a21cfef38c30a" />
+    </RP>
+    <RP Name="RX_L223_STX_Word_Printer_R" Guid="aaef7e6c7-911e-427c-ac1a-1921cfc9ff5ea" NameDef="HF_GIPC_A664_CH1_CLASS.RX_L223_STX_Word_Printer_R" GuidDef="aae258040-b707-410e-9726-d8aa0e32e622a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.L223_STX_Word" SrcGuid="a83d6c110-2e1e-4e8c-bd93-81fa7c3dae4ea" />
+    </RP>
+    <RP Name="RX_LENGTH_Printer_R" Guid="ae629d869-cbbe-403e-82d4-533c678885bfa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_LENGTH_Printer_R" GuidDef="ad56d53dd-7e1c-41e9-8bc6-53a36f377314a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.LENGTH" SrcGuid="a44d3da16-d7a0-4f81-821f-377fa97f1fb4a" />
+    </RP>
+    <RP Name="RX_PAD_Printer_R" Guid="a25ad22eb-aa6c-4a96-a785-299ab704d5c2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_PAD_Printer_R" GuidDef="aa7c2c543-ffd9-472e-a3c0-0f692059a925a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARIN429_MSG_CORE_PRINTER.DS1_PRINTER.PAD" SrcGuid="a9732b2da-e980-46fd-a250-c3e61e8f5c22a" />
+    </RP>
+    <Dataflow_Ref SrcName="APP_FMS_CORE_2.A653_OUT_CORE_OUTPUT_PRINTER" SrcGuid="a6d92e40c-dbd8-46dc-bee9-20af9863205ca" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS" Guid="a1e1028cb-bb5a-4d41-8e68-aace708d9a3aa" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_IRS" GuidDef="a25d984b9-9888-436c-b91f-956d3789b539a" PathName="VLPath30">
+    <RP Name="Pitch_Rate_Body" Guid="a9df8fde9-c411-4e2a-b626-7ae8205dac81a" NameDef="HF_GIPC_A664_CH1_CLASS.Pitch_Rate_Body" GuidDef="a70a89bc2-c957-409a-bb51-afe95387a655a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg.L326_Body_Pitch_Rate.Body_Pitch_Rate" SrcGuid="a1650957d-58fd-4335-9639-447f5970b3c0a" />
+    </RP>
+    <RP Name="Roll_Rate_Body" Guid="adb00bd39-4b58-4d8a-baae-bc6950512db8a" NameDef="HF_GIPC_A664_CH1_CLASS.Roll_Rate_Body" GuidDef="aaae056f3-d0b2-490a-860b-4c4f48aa0d0ea">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg.L327_Body_Roll_Rate.Body_Roll_Rate" SrcGuid="adec0d7bc-b7fc-494e-99c5-f3db4423e034a" />
+    </RP>
+    <RP Name="Yaw_Rate_Body" Guid="a4212d249-991c-4b16-8ae0-acd7a5771b7aa" NameDef="HF_GIPC_A664_CH1_CLASS.Yaw_Rate_Body" GuidDef="a6ace7db4-ea63-4dea-8724-585af4d6a40ba">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg.L330_Body_Yaw_Rate.Body_Yaw_Rate" SrcGuid="a831da027-86e3-40bf-8473-8394fb2bd8c6a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_IRU_1.HFS9_O_A664_po429_01_Msg" SrcGuid="af36eb5ea-d000-41a3-baf7-e6406e9ed6f7a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ACPS" Guid="a975aa507-5a46-4763-8820-4bd6b868383ca" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_ACPS" GuidDef="a509566ed-09e4-4911-b3ae-2499020a3c51a" PathName="VLPath39">
+    <RP Name="Aircraft_Serial_Number" Guid="a1467c5cf-aa7f-42fe-bbdd-02126c23ff2aa" NameDef="HF_GIPC_A664_CH1_CLASS.Aircraft_Serial_Number" GuidDef="ae8658264-13d5-4892-abd4-a6522e65cae5a" />
+    <RP Name="Aircraft_Type" Guid="a646f58a6-9acc-4b38-807e-cdf2835bacf4a" NameDef="HF_GIPC_A664_CH1_CLASS.Aircraft_Type" GuidDef="a0f40cb1d-4597-48f2-bba1-57ec7c66fe66a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Airframe_Type_DS.Airframe_Type_Parameter_1" SrcGuid="ac598f3a1-66e0-4807-bd6d-69e76da517f2a" />
+    </RP>
+    <RP Name="RX_Airframe_Type_Parameter_1" Guid="a04de07a3-3dfa-4760-a3a3-b9e5bffd6027a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Airframe_Type_Parameter_1" GuidDef="a1e8a5040-1575-4088-b11a-c2a41631e902a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Airframe_Type_DS.Airframe_Type_Parameter_1" SrcGuid="ac598f3a1-66e0-4807-bd6d-69e76da517f2a" />
+    </RP>
+    <RP Name="RX_Airframe_Type_Parameter_2" Guid="aabba99b5-c2e1-4f3c-aa25-9e77a3233f5ca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Airframe_Type_Parameter_2" GuidDef="aa001a423-8584-41b1-ba70-90a4e86d03fea">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Airframe_Type_DS.Airframe_Type_Parameter_2" SrcGuid="a34ff7921-9b5c-462a-ac50-347d553d055ea" />
+    </RP>
+    <RP Name="RX_Airframe_Type_Parameter_3" Guid="a13f5b2ef-9cd8-4e5e-9e34-6e27123a9aaca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Airframe_Type_Parameter_3" GuidDef="a3a28d1f5-185c-4630-8531-0f55572998bea">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Airframe_Type_DS.Airframe_Type_Parameter_3" SrcGuid="a7894a02c-ffd9-4ad8-b257-95da9f4de8baa" />
+    </RP>
+    <RP Name="RX_Airframe_Type_Parameter_4" Guid="a0fc7e527-b3ad-4c0a-9f4c-e0e5b06d67b0a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Airframe_Type_Parameter_4" GuidDef="a62c1e584-625a-4962-95f0-eb5cf6666e60a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Airframe_Type_DS.Airframe_Type_Parameter_4" SrcGuid="adbf19fff-d7c1-4eb7-8116-754a8b14fd89a" />
+    </RP>
+    <RP Name="RX_Serial_Number_Parameter_1" Guid="ae0f9833e-372c-43b1-984a-5c230fc6066da" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Serial_Number_Parameter_1" GuidDef="a9f7b58e6-d54e-45fb-af1b-83a3594a8043a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Serial_Number_DS.Serial_Number_Parameter_1" SrcGuid="a1fc02cf9-5882-4d9a-8f1c-06fed9d06289a" />
+    </RP>
+    <RP Name="RX_Serial_Number_Parameter_2" Guid="a3e8b9a62-4343-4bc8-8586-8202f09c10aba" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Serial_Number_Parameter_2" GuidDef="ae5442d36-a4f3-41ac-8694-e01b872255b0a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Serial_Number_DS.Serial_Number_Parameter_2" SrcGuid="afc6919c3-18fd-4e6a-b938-89ba1cdc7121a" />
+    </RP>
+    <RP Name="RX_Serial_Number_Parameter_3" Guid="a02b6af98-c776-4fff-b260-378f8b12bf56a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Serial_Number_Parameter_3" GuidDef="a34a0469c-d4dd-4ac4-8237-419e351372c2a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Serial_Number_DS.Serial_Number_Parameter_3" SrcGuid="a18d5c5ea-cfe0-46ac-83af-dabe91bd78f6a" />
+    </RP>
+    <RP Name="RX_Serial_Number_Parameter_4" Guid="ada31eee0-4989-4ada-8b60-3649bd9977eaa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Serial_Number_Parameter_4" GuidDef="addd359d9-62f2-496f-b0e0-68f4c7aee8d6a">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_Platform_Airframe_Type_And_SN.IMA_Platform_Serial_Number_DS.Serial_Number_Parameter_4" SrcGuid="a361080af-62b4-4182-ae9d-a0c8fb16ae72a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.IMA_PLATFORM_AIRFRAME_SN_TX" SrcGuid="ae004597d-2a3d-498e-9dc4-1d3d955011fda" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_PPS" Guid="ab25270be-a6df-4332-a786-30d82f1023a5a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_PPS" GuidDef="a663cc7f6-1871-4023-9823-81a4115dc78da" PathName="VLPath5">
+    <RP Name="Selected_N1_Indicated" Guid="a8f9f1c7b-b22e-42d6-8aae-2d6ac2f4a817a" NameDef="HF_GIPC_A664_CH1_CLASS.Selected_N1_Indicated" GuidDef="a783ca9a9-061b-437d-a008-1ef989045cdfa">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_EICAS.DS1.Selected_N1_Indicated" SrcGuid="a644f283b-42cd-44e1-be51-46f8dc7eee14a" />
+    </RP>
+    <RP Name="Selected_N2_Actual" Guid="afd2da0e0-014d-4541-8fdd-5504259a331ca" NameDef="HF_GIPC_A664_CH1_CLASS.Selected_N2_Actual" GuidDef="a96497848-cfbe-4178-955c-2c2716e65a33a">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_EICAS.DS2.Selected_N2_Actual" SrcGuid="a4ef9e333-aeaa-454d-b71a-4b98433b104ea" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_FADEC_L_CHA.poHFQ_FADEC_Msg1_EICAS" SrcGuid="ab767bb1d-cd88-4877-8e8c-bd2c8ba2bccea" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_FUEL" Guid="ac1d46a56-4fc8-4c97-9dbb-799467786e9ca" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_FUEL" GuidDef="a9c4cae79-6eb7-43e4-8d3f-13dfe808aac9a" PathName="VLPath15">
+    <RP Name="Total_Fuel_Quantity_kgs" Guid="a506664bd-68ba-4e1a-857b-1d5a639ef30ea" NameDef="HF_GIPC_A664_CH1_CLASS.Total_Fuel_Quantity_kgs" GuidDef="a42dbb453-862d-4ea1-b3b0-e45927b14d47a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L250_TotalFuelQuantity_KGS.TotalFuelQuantity_KGS" SrcGuid="aef5279fb-484b-4b38-a850-7902f86e4e8fa" />
+    </RP>
+    <RP Name="Left_Wing_Tank_Fuel_Quantity_kgs" Guid="ab23df0d5-ee0f-4d8c-8fd3-c00b6ec435cca" NameDef="HF_GIPC_A664_CH1_CLASS.Left_Wing_Tank_Fuel_Quantity_kgs" GuidDef="af3e4a604-a1c7-4358-80d2-c3a4f96156a5a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L251_LWingTank_FuelQuantity_KGS.LWingTank_FuelQuantity_KGS" SrcGuid="aee6ca96f-f68d-4f4d-bd7b-012d2ccd04aca" />
+    </RP>
+    <RP Name="Right_Wing_Tank_Fuel_Quantity_kgs" Guid="add0ec1e3-5451-4488-a930-79db74f528f1a" NameDef="HF_GIPC_A664_CH1_CLASS.Right_Wing_Tank_Fuel_Quantity_kgs" GuidDef="a70c92459-da0d-45bb-8c2b-f571aa62010fa">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L252_RWingTank_FuelQuantity_KGS.RWingTank_FuelQuantity_KGS" SrcGuid="a9e4e4e64-0edc-42b7-9acb-b03bdcf71522a" />
+    </RP>
+    <RP Name="Center_Wing_Tank_Fuel_Quantity_kgs" Guid="ab60ea8c8-0346-4c65-92a4-5e8c1f8dc44aa" NameDef="HF_GIPC_A664_CH1_CLASS.Center_Wing_Tank_Fuel_Quantity_kgs" GuidDef="a6727b461-29ba-472f-90d4-56ae8d6ba857a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L253_CWingTank_FuelQuantity_KGS.CWingTank_FuelQuantity_KGS" SrcGuid="a830ccd1b-b872-4d9d-9da7-575a70f1d4d6a" />
+    </RP>
+    <RP Name="Total_Fuel_Quantity_lbs" Guid="acd730a78-6c4b-456d-b3cc-11fc4f6da342a" NameDef="HF_GIPC_A664_CH1_CLASS.Total_Fuel_Quantity_lbs" GuidDef="ae5138c41-12b7-4d3d-ad37-a024553cc032a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L254_TotalFuelQuantity_LBS.TotalFuelQuantity_LBS" SrcGuid="ae81222b6-7c79-43c4-a8bd-53ef80149043a" />
+    </RP>
+    <RP Name="Left_Wing_Tank_Fuel_Quantity_lbs" Guid="a4661d63f-cb80-48fe-b32f-fee1c444f872a" NameDef="HF_GIPC_A664_CH1_CLASS.Left_Wing_Tank_Fuel_Quantity_lbs" GuidDef="a66ee9aaf-acf9-4db5-a25f-35ac64a86a53a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L255_LWingTank_FuelQuantity_LBS.LWingTank_FuelQuantity_LBS" SrcGuid="ab7ce7762-b257-4a39-97ab-f62109c1d9eca" />
+    </RP>
+    <RP Name="Right_Wing_Tank_Fuel_Quantity_lbs" Guid="aa6ca8cc4-4190-4f1b-832e-89eb79bcee08a" NameDef="HF_GIPC_A664_CH1_CLASS.Right_Wing_Tank_Fuel_Quantity_lbs" GuidDef="a884201c7-3604-42c3-8a73-775303a74f4ea">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L256_RWingTank_FuelQuantity_LBS.R_Wing_Tank_FuelQuantity_LBS" SrcGuid="accfc07ed-e127-4e95-aabe-7fe9cb931090a" />
+    </RP>
+    <RP Name="Center_Wing_Tank_Fuel_Quantity_lbs" Guid="a8dda3f24-5c5a-4b49-9f58-e9988940b4e1a" NameDef="HF_GIPC_A664_CH1_CLASS.Center_Wing_Tank_Fuel_Quantity_lbs" GuidDef="a764ed4b9-b29c-42f3-9fe1-7c93e8dca62ea">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L257_CWingTank_FuelQuantity_LBS.C_Wing_Tank_FuelQuantity_LBS" SrcGuid="afdb16a94-3c4d-4747-aeb8-79c7e47249dca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_I_40005_HF_FUEL_LRM.HFS1_O_A664_po429_A1_Msg" SrcGuid="a31d80795-fa38-49b1-8838-5e576f7d8648a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_IDS_A" Guid="a309e3e27-2774-4cb5-85ac-78f99ef6685ca" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_IDS_A" GuidDef="a6ee37eca-c52a-4153-8278-ed7917caebf1a" PathName="VLPath2">
+    <RP Name="L_ID_ICE_A" Guid="af3525694-6b7e-4c4d-b034-a6f6d88864d7a" NameDef="HF_GIPC_A664_CH1_CLASS.L_ID_ICE_A" GuidDef="aa45c7aa4-d21d-4652-ae86-c9eaf48ea2d4a">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_ICE.Status" SrcGuid="ac0ac3722-2fce-4913-9bbd-f401887c8a15a" />
+    </RP>
+    <RP Name="L_ID_STATUS_A" Guid="af2c429fe-5b86-45b4-9725-5dd6c0e4cc33a" NameDef="HF_GIPC_A664_CH1_CLASS.L_ID_STATUS_A" GuidDef="a4ca0ff4a-413d-4e7d-816f-d5c95d75ab13a">
+      <Pub_Ref SrcName="HF_L_ID.DISC_ID_STATUS.Status" SrcGuid="a2a11a587-a1df-4c08-94fa-b6ab1234c4b6a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW05_Analog_In_ATA30IDS.HFS1_O_40022_ATA30IDS" SrcGuid="a853d025e-6832-494b-aded-6097a0e555e6a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_L_ID_RDIU_03" Guid="a0b4f5d58-c5b9-4f12-966c-3afdb2888344a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_L_ID_RDIU_03" GuidDef="a3681ff03-ed36-4bf4-9c74-ec1ad50c9cb3a">
+    <RP Name="DISC_ID_ICE_A_RDIU_03" Guid="a3b78c7fb-1878-4175-8b81-f03fccc7bcdaa" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_A_RDIU_03" GuidDef="a5e83dcb6-df0f-42db-8d05-e8492bfcb54aa" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_03" Guid="a5eb2ddb8-7e9a-4f03-8b42-1f16b28443e0a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_A_RDIU_03" GuidDef="aac7ce3a4-98e9-4b2a-999f-d955b8e2b039a" />
+    <RP Name="DISC_ID_ICE_B_RDIU_03" Guid="ad3ea1936-86cb-4514-8de7-adb8056b1ae4a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_B_RDIU_03" GuidDef="ab67c33f0-8433-44ed-bcf5-3a36416f2fd7a" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_03" Guid="ade8cbd29-ae43-4863-a694-4dd2d4fb27caa" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_B_RDIU_03" GuidDef="aea3abddf-8720-4737-80e7-c0acb90be8a6a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_R_ID_RDIU_04" Guid="a01e19cc4-047e-4e2f-914a-e630afc09894a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_R_ID_RDIU_04" GuidDef="afc320264-9d40-4f7c-9cb9-e5303f922178a">
+    <RP Name="DISC_ID_ICE_A_RDIU_04" Guid="aba5838bf-a41e-4aec-99e2-fbda36d16a74a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_A_RDIU_04" GuidDef="af1afbe33-3f8a-4d17-b640-7970fee1518ca" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_04" Guid="ae5970b77-ed4f-4758-a6e6-cd68899ebfb0a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_A_RDIU_04" GuidDef="ad0225634-0848-4fbd-a9df-1b417c4a831ba" />
+    <RP Name="DISC_ID_ICE_B_RDIU_04" Guid="a4fc2e966-94cc-4c3d-a41f-f0fc2c2c49fba" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_B_RDIU_04" GuidDef="aadbdee83-59f6-417b-b301-834bf2ad4356a" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_04" Guid="a9048a7b1-6307-486a-8075-9856dd9e5096a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_B_RDIU_04" GuidDef="aab8e40b8-3e0e-4a9b-9f97-7b3162da9647a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_L_ID_RDIU_05" Guid="a709a6a14-e738-451c-b52b-cbe72d62cd64a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_L_ID_RDIU_05" GuidDef="a798ebd4b-fd5f-46d3-bf4d-0323d0b8aa0ba">
+    <RP Name="DISC_ID_ICE_A_RDIU_05" Guid="a30521763-c518-468b-babb-98953d0da90ba" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_A_RDIU_05" GuidDef="a5d50765e-de7b-477a-948e-0c7c64c93fc1a" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_05" Guid="a8326a8ad-38be-4585-ae27-1e1b69c61cd5a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_A_RDIU_05" GuidDef="a69c1221e-a894-4e9e-8db6-85918e6799b3a" />
+    <RP Name="DISC_ID_ICE_B_RDIU_05" Guid="aabde8246-8414-4d98-9090-65d71b865c0ca" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_B_RDIU_05" GuidDef="af254683d-dd7a-4bc7-940b-7bc90ab18bd6a" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_05" Guid="a7425969b-0c95-49bd-9e08-688f4a5eb538a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_B_RDIU_05" GuidDef="ab0e7d84b-5222-4ac1-9325-bfccdfc93e92a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_R_ID_RDIU_06" Guid="a380892e6-5d15-439e-927f-492bea2a634ca" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_R_ID_RDIU_06" GuidDef="a5a9be28d-9380-4923-82ea-8587f1c8d044a">
+    <RP Name="DISC_ID_ICE_A_RDIU_06" Guid="a8b0117a3-b30b-47d6-8e2d-f98efec9ef3da" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_A_RDIU_06" GuidDef="a72a71965-e11f-44c1-b7c1-f129c71f24e0a" />
+    <RP Name="DISC_ID_STATUS_A_RDIU_06" Guid="af480087e-07cf-4e79-92b1-69238ffbbe3da" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_A_RDIU_06" GuidDef="aa25bae6c-8201-44b3-83c7-4758abe270a4a" />
+    <RP Name="DISC_ID_ICE_B_RDIU_06" Guid="ab48f5c78-b4c7-492d-92d9-972821d3a994a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_ICE_B_RDIU_06" GuidDef="ae0e888fc-4d84-42ce-be3e-24778653ea15a" />
+    <RP Name="DISC_ID_STATUS_B_RDIU_06" Guid="a5c837c7d-87a3-45be-96a4-6fc2efd6a510a" NameDef="HF_GIPC_A664_CH1_CLASS.DISC_ID_STATUS_B_RDIU_06" GuidDef="af61ad2ac-99d9-4072-a0fb-6904b1f5d31ca" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_HLS" Guid="a414692a6-36ba-4091-844a-6755edb596b2a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_HLS" GuidDef="a649ea071-59c8-46c5-9f2e-297ee9d32b9aa" PathName="VLPath45">
+    <RP Name="Slat_Position" Guid="adbb7b44c-8631-4571-ba75-e4492d668db1a" NameDef="HF_GIPC_A664_CH1_CLASS.Slat_Position" GuidDef="a18e11d37-f6ac-4e6a-8937-bbcd9daaef5ba">
+      <Pub_Ref SrcName="HF_FSECU_1.po429_CMD_Msg.L105_Slat_Position" SrcGuid="a411d586d-bfe7-4678-8d02-7bc25e082805a" />
+    </RP>
+    <RP Name="Flap_Position" Guid="a5fe5f38d-cfb2-4044-a717-b70804e6a360a" NameDef="HF_GIPC_A664_CH1_CLASS.Flap_Position" GuidDef="a92c41847-2f8b-4fd0-9a8a-544b74651ed0a">
+      <Pub_Ref SrcName="HF_FSECU_1.po429_CMD_Msg.L106_Flap_Position" SrcGuid="af97bbfd7-0d39-4240-9b43-0acd0f88149ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW15_I_40005_HF_FSECU_1.HFS3_O_A664_po429_CMD_Msg" SrcGuid="a7f8001ed-6761-4efb-92c9-86f6bfc7f0b1a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_Datalink" Guid="a91698477-812d-4b62-8c94-464166304d26a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_Datalink" GuidDef="aa777448b-cfc1-4ef5-8e1c-a172ca35dd59a" PathName="VLPath0">
+    <RP Name="Datalink_Printer_RIU_RX_L172_SubsystemID" Guid="a32da3ea9-65d2-4e80-8b15-5d528d47aa0fa" NameDef="HF_GIPC_A664_CH1_CLASS.Datalink_Printer_RIU_RX_L172_SubsystemID" GuidDef="adf847d76-5520-4629-82df-53eb3f1dcc26a">
+      <Pub_Ref SrcName="HF_RIU_1.po429_RIU_PRINTER_Msg.L172_SubsystemID" SrcGuid="a5ffb9ed3-2c94-46ba-9bcc-499011da2806a" />
+    </RP>
+    <RP Name="Datalink_Printer_RIU_RX_L223_PRINTER_SAL" Guid="a7868ed52-5beb-44d6-b3da-7711f49373b3a" NameDef="HF_GIPC_A664_CH1_CLASS.Datalink_Printer_RIU_RX_L223_PRINTER_SAL" GuidDef="a2557b61e-d712-4a71-81e6-6b4cd7ca787ca">
+      <Pub_Ref SrcName="HF_RIU_1.po429_RIU_PRINTER_Msg.L223_PRINTER_SAL" SrcGuid="ad8bbc0a9-33f1-4565-a134-1a384312ce8da" />
+    </RP>
+    <RP Name="Datalink_Printing_Data_IMA" Guid="a40815668-efcd-470e-99bf-2dd0f28af407a" NameDef="HF_GIPC_A664_CH1_CLASS.Datalink_Printing_Data_IMA" GuidDef="a712ffa31-c2dd-44c3-ba2b-a2822ef87a29a" />
+    <RP Name="Datalink_Printing_Data_RIU" Guid="a2ddacaad-2560-4402-95bb-da9e3d713735a" NameDef="HF_GIPC_A664_CH1_CLASS.Datalink_Printing_Data_RIU" GuidDef="a0cd07f64-0340-4e4c-b848-f17ccb3a47e4a" />
+    <RP Name="Weather_Forecast_Data" Guid="a011e1c55-8fd3-4eb0-8475-5bd0e0e7d29aa" NameDef="HF_GIPC_A664_CH1_CLASS.Weather_Forecast_Data" GuidDef="abfb88741-24ef-4335-be2c-cee32af059fba">
+      <Pub_Ref SrcName="HF_RIU_1.po429_RIU_EFB_Msg.L304_EFB" SrcGuid="a3c0b4eba-c6ea-42cb-9011-5b493ef3ba1ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW05_I_40005_HF_RIU_1.HFS1_O_A664_po429_RIU_EFB_Msg" SrcGuid="a95f7c372-1a6b-4986-87f2-3d84e48bde72a" />
+    <Dataflow_Ref SrcName="RGW05_I_40005_HF_RIU_1.HFS1_O_A664_po429_RIU_PRINTER_Msg" SrcGuid="a0c00cc56-3779-48f5-ab8b-01a7e7d60ca8a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_OMS" Guid="a33a457c8-8aed-4aa9-9962-768bff0c0f17a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_OMS" GuidDef="a70c5f74a-3ed8-4039-aa9e-dc812ed049b9a" PathName="VLPath15">
+    <RP Name="Current_Flight_Number" Guid="abba9288f-478f-44a0-925d-b2dfdf5f01d6a" NameDef="HF_GIPC_A664_CH1_CLASS.Current_Flight_Number" GuidDef="a5282d889-5906-4102-b2e6-ce6c5d496f84a" />
+    <RP Name="Departure_Airports" Guid="a0141a183-201c-43fe-8ce1-ccba9e86ba52a" NameDef="HF_GIPC_A664_CH1_CLASS.Departure_Airports" GuidDef="ad24c1057-71d3-40cb-9417-79ab89183810a" />
+    <RP Name="Destination_Airports" Guid="ac70077b2-2046-410e-8c93-7564a9195b9ba" NameDef="HF_GIPC_A664_CH1_CLASS.Destination_Airports" GuidDef="a8b2eedd1-6906-49ca-a8a2-0a1309b91fbda" />
+    <RP Name="Fault_History_Get_Command" Guid="a7d48fb81-9d37-4902-b480-a1f1e777bc83a" NameDef="HF_GIPC_A664_CH1_CLASS.Fault_History_Get_Command" GuidDef="a292f62d0-95ad-4857-a4b0-44d06b6fcc18a" />
+    <RP Name="Fault_History_Get_Next_Block_Command" Guid="a0e6fdc75-20ea-48b1-ba89-3118f3dbb4c9a" NameDef="HF_GIPC_A664_CH1_CLASS.Fault_History_Get_Next_Block_Command" GuidDef="a37465a8e-4692-4a75-83e0-a2966d7beb74a">
+      <Pub_Ref SrcName="HF_AHMUInstance.CMD_Command_Msg.DS_1.CMD_Command" SrcGuid="a00cf2cf4-99d7-483d-90bf-3c9177d57094a" />
+    </RP>
+    <RP Name="Fault_History_Get_Previous_Block_Command" Guid="a30fbc5da-70d7-4509-89be-0d36c662547fa" NameDef="HF_GIPC_A664_CH1_CLASS.Fault_History_Get_Previous_Block_Command" GuidDef="a583f4722-4e46-499e-b6e9-79482012f0b0a">
+      <Pub_Ref SrcName="HF_AHMUInstance.CMD_Command_Msg.DS_1.CMD_Command" SrcGuid="a00cf2cf4-99d7-483d-90bf-3c9177d57094a" />
+    </RP>
+    <RP Name="Fault_History_Reset_Command" Guid="a28b38b9a-9eee-4410-9d90-bc448cce67c4a" NameDef="HF_GIPC_A664_CH1_CLASS.Fault_History_Reset_Command" GuidDef="a0a7cde90-b891-4e24-8101-f428e324da0da">
+      <Pub_Ref SrcName="HF_AHMUInstance.CMD_Command_Msg.DS_1.CMD_Command" SrcGuid="a00cf2cf4-99d7-483d-90bf-3c9177d57094a" />
+    </RP>
+    <RP Name="Flight_Leg" Guid="afd307e4a-11d3-4da0-aca9-c16c14beaf0aa" NameDef="HF_GIPC_A664_CH1_CLASS.Flight_Leg" GuidDef="a8d4b8b61-a650-4743-b612-9d2e28013aa2a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_5.L126_OMS_Flight_Leg_Global_Abort_Flag.OMS_Flight_Leg" SrcGuid="a008139ee-b375-4c43-80f8-afa51bbb2f4aa" />
+    </RP>
+    <RP Name="Global_Abort_Flag" Guid="a1a251d74-40dc-4204-86c0-4c726633a65ca" NameDef="HF_GIPC_A664_CH1_CLASS.Global_Abort_Flag" GuidDef="ad4fdf58b-7886-49ee-8144-8f9d33d50f33a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_5.L126_OMS_Flight_Leg_Global_Abort_Flag.Global_Abort_Flag" SrcGuid="a60b74a67-b933-497c-9c48-0beb5f688039a" />
+    </RP>
+    <RP Name="ICAO_transponder_code" Guid="a9efa9300-09c5-47e0-81d8-8dc4130f5897a" NameDef="HF_GIPC_A664_CH1_CLASS.ICAO_transponder_code" GuidDef="a463f0cfc-022f-4a4e-ad04-256c34f594dda">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_4.ICAO_Code" SrcGuid="a75ef6b48-ee20-474d-aa96-d09af402086aa" />
+    </RP>
+    <RP Name="OMS_Flight_Phase" Guid="aa201fe3c-ef64-4cda-9f8d-613453a3191aa" NameDef="HF_GIPC_A664_CH1_CLASS.OMS_Flight_Phase" GuidDef="adf7419de-2bc8-44f2-9c53-71e716c5e997a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_6.L127_OMS_Flight_Phase" SrcGuid="ae8e304bc-85f9-4ea9-a98a-b230c7b45863a" />
+    </RP>
+    <RP Name="Registration_number" Guid="a24964dc5-e754-4305-866a-1041d600ed25a" NameDef="HF_GIPC_A664_CH1_CLASS.Registration_number" GuidDef="a5d8705ca-6c28-4e9d-9ac7-ef38d0b00ce0a" />
+    <RP Name="RX_Days_10s" Guid="a20351a5b-6916-468a-8670-2e07e9fa435aa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Days_10s" GuidDef="ae82d3767-2afc-49a6-904e-1d024095f292a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Days" SrcGuid="ad98f9107-0829-4f6c-8a79-e6abb843bdc3a" />
+    </RP>
+    <RP Name="RX_Days_1s" Guid="a4ef25fe3-8626-4867-af71-c5ead74aacb1a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Days_1s" GuidDef="aded70589-a669-4a7d-bfc3-57672ad819b3a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Days" SrcGuid="ad83b0eb3-01a2-4769-9552-dbf7be201c25a" />
+    </RP>
+    <RP Name="RX_Departure_Airport_Char_1" Guid="a687f61c2-0648-405b-8d40-e9551dbe15bda" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Departure_Airport_Char_1" GuidDef="a5cf7ea55-bcf7-40f5-b1a5-2249f0339bdda">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_1.L061_Departure_Airport_C1_C2_C3.Departure_Airport_Char_1" SrcGuid="ace9ac264-a35f-4a4c-864c-0977ec1d59f7a" />
+    </RP>
+    <RP Name="RX_Departure_Airport_Char_2" Guid="a29353bc4-7489-402a-9e48-3c6acef0168aa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Departure_Airport_Char_2" GuidDef="a42501cbd-c1ce-4220-bf94-ab48e0c69431a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_1.L061_Departure_Airport_C1_C2_C3.Departure_Airport_Char_2" SrcGuid="ac9d59bc3-bf1c-4f36-a9bd-46f175418791a" />
+    </RP>
+    <RP Name="RX_Departure_Airport_Char_3" Guid="ad0240c6a-38ae-4768-8299-f6310f48cd97a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Departure_Airport_Char_3" GuidDef="af1d40c34-9574-45d6-92f7-d056d6e10885a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_1.L061_Departure_Airport_C1_C2_C3.Departure_Airport_Char_3" SrcGuid="a94dfe0fd-6c20-46e3-84bd-c89eae59159ba" />
+    </RP>
+    <RP Name="RX_Departure_Airport_Char_4" Guid="a08022ddf-76cc-485c-bfc7-464430c9f16da" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Departure_Airport_Char_4" GuidDef="a3874eea9-b33a-4803-9105-89a3b964bd86a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_2.L062_Departure_C4_Destination_Airport_C1.Departure_Airport_Char_4" SrcGuid="aaf44bb8f-608e-43da-8f89-47ac1b60ca1aa" />
+    </RP>
+    <RP Name="RX_Destination_Airport_Char_1" Guid="a339131e2-6f0a-4eab-9a57-bd37208ed9aba" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Airport_Char_1" GuidDef="acc3b8acc-e8de-4f3f-a7ab-cd5656c3c952a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_2.L062_Departure_C4_Destination_Airport_C1.Destination_Airport_Char_1" SrcGuid="ad10ef53c-ffbc-4c29-8254-6823d61249e3a" />
+    </RP>
+    <RP Name="RX_Destination_Airport_Char_2" Guid="a15faa68b-2a12-48b3-89d6-df7747fac683a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Airport_Char_2" GuidDef="a6e82bee6-a9e7-4970-afb9-56dd5dc34d36a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_3.L063_Destination_Airport_C2_C3_C4.Destination_Airport_Char_2" SrcGuid="a16b4523d-8b3c-4f33-b374-27849a1d46d1a" />
+    </RP>
+    <RP Name="RX_Destination_Airport_Char_3" Guid="a956f6c05-75bb-4d3f-a200-7169103cd49da" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Airport_Char_3" GuidDef="a37ad39d2-9b13-4cef-b36b-bf62cace5db9a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_3.L063_Destination_Airport_C2_C3_C4.Destination_Airport_Char_3" SrcGuid="a917307c5-26cc-4389-a6a3-bf1102feb292a" />
+    </RP>
+    <RP Name="RX_Destination_Airport_Char_4" Guid="a98696fb9-3ae4-49b6-b32f-4f98acca1bc6a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Destination_Airport_Char_4" GuidDef="ad25d705f-5e26-4378-bae3-9e3b55e61bf0a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_3.L063_Destination_Airport_C2_C3_C4.Destination_Airport_Char_4" SrcGuid="ac9a0ab7b-f2a2-4a3f-8bc8-9148cd0e54fda" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_1" Guid="abf6a9e42-1633-4e72-b6cb-c52356202b4ca" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_1" GuidDef="a10b4c27b-2bd3-4bb7-b357-f9a371e1c8e3a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_10.L233_Flight_Number_C1_C2.Flight_Number_Char_1" SrcGuid="ae5a9564d-d52f-4f7f-a3d5-6e606b2595caa" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_2" Guid="a8707097a-e595-4cfe-96f4-165fd1505fe9a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_2" GuidDef="a50a21cd8-9665-4ce5-9f96-bd5631ca6b9ca">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_10.L233_Flight_Number_C1_C2.Flight_Number_Char_2" SrcGuid="a62bb19d3-2b06-400c-afd2-9bb128e753f1a" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_3" Guid="a80ac4f17-4b21-45f0-a308-85ffa9efa1c2a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_3" GuidDef="aac63021b-3e0a-4f8d-b322-92ca71c3bddaa">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_11.L234_Flight_Number_C3_C4.Flight_Number_Char_3" SrcGuid="aaf494cb3-42f8-4f77-952d-426a2f6e8084a" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_4" Guid="a0f85ec29-2198-44ed-b3e9-6f71de5cdfffa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_4" GuidDef="abbe00790-f75c-4b26-a62e-13bfd46e7bb0a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_11.L234_Flight_Number_C3_C4.Flight_Number_Char_4" SrcGuid="a6e246faa-294e-4155-8ca8-3c65e18ebef2a" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_5" Guid="ae55f936f-78f5-4935-8d57-bcf80d61790fa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_5" GuidDef="a223f03b7-db48-4889-9c92-867ffbdf8776a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_12.L235_Flight_Number_C5_C6.Flight_Number_Char_5" SrcGuid="a7c5de06b-e95a-43ac-bd86-4c995648435ca" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_6" Guid="a79e1e787-490b-440e-a11a-1c64f36068dda" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_6" GuidDef="a30c7de23-8715-473d-bbe4-88d82dad7a2ba">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_12.L235_Flight_Number_C5_C6.Flight_Number_Char_6" SrcGuid="abf20da11-2d19-454c-be5a-1fc719e26e41a" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_7" Guid="af0e6d6e9-fd43-4228-aeec-f8ddd3acfc0aa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_7" GuidDef="a1e0487d4-269c-4715-be02-b944e2dadc43a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_13.L236_Flight_Number_C7_C8.Flight_Number_Char_7" SrcGuid="a53263490-b6fe-4b30-b539-d7c3a54d17a6a" />
+    </RP>
+    <RP Name="RX_Flight_Num_Char_8" Guid="a1bad0fd5-d0f1-4145-b9aa-1aefc4512e44a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Flight_Num_Char_8" GuidDef="a38e51cc7-5b39-49c1-996f-62335920b542a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_13.L236_Flight_Number_C7_C8.Flight_Number_Char_8" SrcGuid="a14aa615d-9d2e-4ca8-841f-458650cc5d70a" />
+    </RP>
+    <RP Name="RX_Hours_10s" Guid="a49b1b95e-d59e-40c3-ad6f-d949e577f451a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Hours_10s" GuidDef="a4b21f8ab-e5cd-4381-91e3-2def40207716a" />
+    <RP Name="RX_Hours_1s" Guid="ad719fc7a-9bfc-4af0-b41b-eb60d851c2a4a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Hours_1s" GuidDef="a2e29a353-b23c-4e53-b84f-f1de3622d1c0a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_4.L150_UTC_Time.UTC_Hours" SrcGuid="a27312caa-5f7f-4bdb-a109-b38163b5d172a" />
+    </RP>
+    <RP Name="RX_Minutes_10s" Guid="a35bba9d3-baeb-4db3-bebe-d4cec158b55ba" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Minutes_10s" GuidDef="a294b0b95-d33d-4b07-97ee-72f4508d03d6a" />
+    <RP Name="RX_Minutes_1s" Guid="a26581318-5290-42fd-bd0b-93917020f5f0a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Minutes_1s" GuidDef="ab64c1e5f-00a5-4229-8966-221e486430a8a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_4.L150_UTC_Time.UTC_Minutes" SrcGuid="ac4d23307-c652-4b71-8b29-4c90b2763ecca" />
+    </RP>
+    <RP Name="RX_Months_10s" Guid="a5fc43841-8ec9-46ea-8a04-743c0e5d63b1a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Months_10s" GuidDef="a4b96bcaa-2157-43ec-aebb-6379a1a4fde4a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Months" SrcGuid="a9fcd89db-ec52-4bb6-ab18-2c828b4884ada" />
+    </RP>
+    <RP Name="RX_Months_1s" Guid="a28b51af6-4d93-45eb-a504-e8158063d1eda" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Months_1s" GuidDef="ad902285d-6436-4529-b4a3-875d9e5eade5a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Months" SrcGuid="a18fa1541-6d89-4cd2-8447-9764b69e7f10a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_1" Guid="a7db4ca32-16f8-418c-8dd7-3b9a46f0541ba" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_1" GuidDef="add062f8d-d071-47d1-be38-55da308dd51da">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_1" SrcGuid="ad952c6f6-41a9-4d43-86e4-8804a6fa9be9a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_2" Guid="a4382f8c3-9447-4292-92dc-d98528b6de01a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_2" GuidDef="a89a04ef1-3bdb-467c-aa77-fc6a003f72dea">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_2" SrcGuid="abb941ad7-aa74-4a98-a52d-e00f245c17fba" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_3" Guid="a2ac47439-7fa6-4a38-a508-5cf7110bed71a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_3" GuidDef="ac4a6cd30-0be4-48a5-bb13-4c2e0e4dac2fa">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_14.L301_Aircraft_Reg_Number_C1_C2_C3.Aircraft_Reg_Number_Char_3" SrcGuid="a2dd18980-d457-4075-b396-c7b2c587be84a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_4" Guid="a86181259-01e3-4184-89ba-62f975b8f7bfa" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_4" GuidDef="abff0d531-afec-4f49-98dc-a3fdb9c2a4fba">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_4" SrcGuid="ac163c2ed-2037-48df-b655-812c0aa7920ba" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_5" Guid="a6f7d3134-1f1f-43d6-9592-522705697d67a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_5" GuidDef="ab2253bc8-9bae-495f-ae28-33777d7c22eda">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_5" SrcGuid="a2af0ff96-acc0-4eb9-a13c-d0e11c7bb181a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_6" Guid="a1276004b-5276-4573-bf9c-3a6d239c1053a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_6" GuidDef="adf40e6a4-011e-4ed8-95e4-352aa86dacf3a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_15.L302_Aircraft_Reg_Number_C4_C5_C6.Aircraft_Reg_Number_Char_6" SrcGuid="a4001c055-bcb6-43ad-a5ee-ab7e0aefdaaba" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_7" Guid="a03d6da10-20fb-46e6-bd5a-8fa1b1c836e8a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_7" GuidDef="a90ff1b49-7a41-45ec-9b06-8fcca3b9a8f5a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_7" SrcGuid="a30cfb31b-6c3c-4f31-ab4d-cfc76ec7ecb2a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_8" Guid="a531dc07f-9a42-467a-a9de-4f70f235c7d7a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_8" GuidDef="a38bcb341-586a-4639-bab2-abef2ce04974a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_8" SrcGuid="a9ca77be1-d450-42ca-a5bb-fbdb70d90816a" />
+    </RP>
+    <RP Name="RX_Reg_Num_Char_9" Guid="acfd2c9e0-179a-4e14-8bad-0044fded8282a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Reg_Num_Char_9" GuidDef="a1fa533f2-ed0a-4aef-8f62-681e42d23253a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_16.L303_Aircraft_Reg_Number_C7_C8_C9.Aircraft_Reg_Number_Char_9" SrcGuid="a5e99db8a-7dd2-4c1c-8124-6d1ac462e301a" />
+    </RP>
+    <RP Name="RX_Seconds_10s" Guid="a92acc8d1-d876-4a7b-b673-b922029f4ef0a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Seconds_10s" GuidDef="a9a9af613-5683-4af6-b99d-634a1d3f42a6a" />
+    <RP Name="RX_Seconds_1s" Guid="a1f8a5c9c-090b-4cac-9b2b-4509ff9a1576a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Seconds_1s" GuidDef="a2770749b-f6b8-47e4-bd28-f6f17a6f0573a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_4.L150_UTC_Time.UTC_Seconds" SrcGuid="ac8ffa8d4-3471-411d-be8f-032dab1ff254a" />
+    </RP>
+    <RP Name="RX_String_Length_1" Guid="a0032895d-c134-483a-906d-ee6bad94dd4ea" NameDef="HF_GIPC_A664_CH1_CLASS.RX_String_Length_1" GuidDef="ad8eb6676-5b24-4cd5-8da1-9072a55b58b0a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.String_Length_1" SrcGuid="a4c730694-b550-4809-9525-670b8fd61d98a" />
+    </RP>
+    <RP Name="RX_Years_10s" Guid="a80964f4e-7a81-459a-a6d5-762cd9bea629a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Years_10s" GuidDef="a99e9d0f9-5ed5-4b82-b314-c4e6117df353a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Tens_of_Years" SrcGuid="accd68129-9020-4651-a8d5-e36e10f8b2c0a" />
+    </RP>
+    <RP Name="RX_Years_1s" Guid="afb190bd8-5300-44ef-8c56-143c7f1a4865a" NameDef="HF_GIPC_A664_CH1_CLASS.RX_Years_1s" GuidDef="a090eaf81-5027-43c1-9986-a9d7263da692a">
+      <Pub_Ref SrcName="HF_AHMUInstance.A429_Aircraft_Status_Msg.DS_7.L260_UTC_Date.Units_of_Years" SrcGuid="ad83bceb9-66cc-44ac-80bc-76f04968d039a" />
+    </RP>
+    <RP Name="Time_Cycle_Get_Command" Guid="ad57e46be-42c8-4359-b9fd-127526c806a8a" NameDef="HF_GIPC_A664_CH1_CLASS.Time_Cycle_Get_Command" GuidDef="a8d0e8ad2-2d78-48c8-8460-4361e33e574ba">
+      <Pub_Ref SrcName="HF_AHMUInstance.CMD_Command_Msg.DS_1.CMD_Command" SrcGuid="a00cf2cf4-99d7-483d-90bf-3c9177d57094a" />
+    </RP>
+    <RP Name="UTC_Date" Guid="a0178f08c-30c9-42a7-83c5-6b6a31305a7fa" NameDef="HF_GIPC_A664_CH1_CLASS.UTC_Date" GuidDef="a68b9339c-5ee8-4425-b27a-5716cad105dea" />
+    <RP Name="UTC_Time" Guid="a7bbbcada-0f8b-43eb-b4be-5669b4e7615ba" NameDef="HF_GIPC_A664_CH1_CLASS.UTC_Time" GuidDef="a121db855-b8f5-4aaf-8087-18b672a1ca08a" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poCMD_A664_Command" SrcGuid="a4c69bf36-823a-4437-8e27-f6ab9bdb0246a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s1" Guid="a1b890237-1e86-40cb-b55a-0b4d0964c509a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_IRS_s1" GuidDef="a2b81b9bd-458b-4184-bcda-aaec60ece0fba" PathName="VLPath39">
+    <RP Name="Pitch_Angle" Guid="ad8ed6768-ca94-4754-b12a-6a90bea9688aa" NameDef="HF_GIPC_A664_CH1_CLASS.Pitch_Angle" GuidDef="abb05242e-b2d3-4561-854f-bf26d47edb77a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_20.L324_Pitch_Angle.Pitch_Angle" SrcGuid="a83a3e386-f6cc-446e-9e10-5bbcac7d2ed4a" />
+    </RP>
+    <RP Name="Roll_Angle" Guid="ad36e0c5e-6c62-4171-839b-8129ddea3f6fa" NameDef="HF_GIPC_A664_CH1_CLASS.Roll_Angle" GuidDef="a1bb2ca26-c654-45af-a8c1-be4a70511aaaa">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_20.L325_Roll_Angle.Roll_Angle" SrcGuid="a98bfe201-a405-4fc5-9b8e-4da7d81089aba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_IRU_1.HFS8_O_A664_po429_01_Msg_20" SrcGuid="a3917be63-4b3b-4591-b9ab-1f6f1d8b1a5da" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s2" Guid="af31aa3bd-3686-4ef0-bc8c-cd9fc2c0bcbfa" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_IRS_s2" GuidDef="abb074e6b-744b-4657-8499-3a97d65487a6a" PathName="VLPath30">
+    <RP Name="Hybrid_True_Heading" Guid="a70bfe20c-f5f9-4eb8-81cc-71740faf3d61a" NameDef="HF_GIPC_A664_CH1_CLASS.Hybrid_True_Heading" GuidDef="a66ca984f-543a-4648-b26b-d642c5fe5ee6a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L132_Hyb_True_Heading.Hyb_True_Heading" SrcGuid="a6e5856a0-01e8-4b80-aaae-48a522b160e6a" />
+    </RP>
+    <RP Name="Hybrid_Ground_Speed" Guid="ad7041ec2-cbb2-460f-ab33-f9c1a7ceec41a" NameDef="HF_GIPC_A664_CH1_CLASS.Hybrid_Ground_Speed" GuidDef="ad92ab303-b583-49f4-88fe-4b41688d42efa">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L175_Hyb_Ground_Speed.Hyb_Ground_Speed" SrcGuid="aad315d91-e5a5-4e95-8ab9-8901f87aeb34a" />
+    </RP>
+    <RP Name="Ground_Speed" Guid="a5d49ea54-7406-4daa-b099-17ee50a849f5a" NameDef="HF_GIPC_A664_CH1_CLASS.Ground_Speed" GuidDef="a3d9c7433-ca18-49b9-a2cb-1db54066755ba">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L312_Ground_Speed.Ground_Speed" SrcGuid="a784cd834-0c36-4e10-9fe4-8f50fb7955aba" />
+    </RP>
+    <RP Name="Track_Angle_True" Guid="ab00e4429-0b75-46ce-845f-58a2f65fbc86a" NameDef="HF_GIPC_A664_CH1_CLASS.Track_Angle_True" GuidDef="ad721b657-8695-40a4-a8a9-2835560898e8a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L313_True_Trk_Angle.True_Trk_Angle" SrcGuid="a0ba7fe40-dcf5-41ba-8daf-e6730222c4a0a" />
+    </RP>
+    <RP Name="True_Heading" Guid="ae51a07bf-1a69-4dc7-a77f-99e7555dfd0ea" NameDef="HF_GIPC_A664_CH1_CLASS.True_Heading" GuidDef="a984b6cd1-8381-407f-a200-3433aa8dead6a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L314_True_Heading.True_Heading" SrcGuid="a0b29f396-c723-43b0-b84f-020860188991a" />
+    </RP>
+    <RP Name="Track_Angle_Magnetic" Guid="a1100e794-2147-408e-8a23-c300f0e45996a" NameDef="HF_GIPC_A664_CH1_CLASS.Track_Angle_Magnetic" GuidDef="a390f3e5a-098c-4c3d-a687-06674bc20043a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L317_Magnetic_Trk_Angle.Magnetic_Trk_Angle" SrcGuid="aee4079c4-fd77-432f-b428-b9319f85e0cda" />
+    </RP>
+    <RP Name="Magnetic_Heading" Guid="af96c7907-6dfe-4a53-995a-5b5052f9b1b4a" NameDef="HF_GIPC_A664_CH1_CLASS.Magnetic_Heading" GuidDef="adcb9931f-d4f8-4bad-b686-b4e895ed6a7ca">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L320_Magnetic_Heading.Magnetic_Heading" SrcGuid="a3e894fc0-edbc-41d3-9bab-2f9e475dd68fa" />
+    </RP>
+    <RP Name="Drift_Angle" Guid="a12814d66-a0d6-4781-9c3f-dc1a234727e7a" NameDef="HF_GIPC_A664_CH1_CLASS.Drift_Angle" GuidDef="a0353f9b5-bf8c-4b71-a792-18bf1837c6b5a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_40.L321_Drift_Angle.Drift_Angle" SrcGuid="a5759f2d9-9d4b-42b5-bd1d-c572e078bacaa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_IRU_1.HFS7_O_A664_po429_01_Msg_40" SrcGuid="acb01dc5d-3d06-407b-868a-8d744486f03fa" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_IRS_s3" Guid="a7191ff09-f9bb-466b-aba3-ca13374981cba" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_IRS_s3" GuidDef="aa1cf8a53-8656-4db9-9d60-164ac5199ae4a" PathName="VLPath30">
+    <RP Name="Hybrid_Present_Position_Latitude" Guid="ac19a56f6-c8fb-4865-beb3-90384987b204a" NameDef="HF_GIPC_A664_CH1_CLASS.Hybrid_Present_Position_Latitude" GuidDef="a182020f9-c634-41fa-9f5a-37d5e2595fd3a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_80.L254_Hyb_Position_Latitude.Hyb_Position_Latitude" SrcGuid="aafaff4d0-9630-4d03-92e0-7788ba6f31aca" />
+    </RP>
+    <RP Name="Hybrid_Present_Position_Longitude" Guid="a00cd20ab-6848-450b-ab15-63ba79028f93a" NameDef="HF_GIPC_A664_CH1_CLASS.Hybrid_Present_Position_Longitude" GuidDef="a28b726fc-75fa-4600-ad37-e88bdb175b58a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_80.L255_Hyb_Position_Longitude.Hyb_Position_Longitude" SrcGuid="a58941a98-1d38-47dc-9a09-eb242c1539f8a" />
+    </RP>
+    <RP Name="Wind_Speed" Guid="a8e83aae4-806b-443d-9323-c1b90449a8aaa" NameDef="HF_GIPC_A664_CH1_CLASS.Wind_Speed" GuidDef="ad3310a7e-fd58-4710-b697-aa1c502387c2a">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_80.L315_Wind_Speed.Wind_Speed" SrcGuid="a7d779b57-be1f-4584-a0c4-185b9f8a9cd1a" />
+    </RP>
+    <RP Name="Wind_Angle" Guid="a9c2a4bab-563a-4b55-aff6-f2cf1dc0ac66a" NameDef="HF_GIPC_A664_CH1_CLASS.Wind_Angle" GuidDef="a4e71a185-7e41-4c18-a7b3-55efebf3fe6ca">
+      <Pub_Ref SrcName="HF_IRU_1.po429_01_Msg_80.L316_True_Wind_Direction.True_Wind_Direction" SrcGuid="a7aff75f7-38d1-43e3-9544-4936eda15670a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW10_I_40005_HF_IRU_1.HFS6_O_A664_po429_01_Msg_80" SrcGuid="a1b846f7f-e0c9-4637-ad5c-41eb4727fcc7a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFS_IDS_B_s1" Guid="a5c9f36f7-b0e1-48a4-8f4c-01c0e5506283a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFS_IDS_B_s1" GuidDef="a75739249-7af2-4bd9-8273-83dbd6b237ffa" PathName="VLPath19">
+    <RP Name="R_ID_ICE_B" Guid="a8b7946d0-75b1-41e7-bb80-f897edeae5eba" NameDef="HF_GIPC_A664_CH1_CLASS.R_ID_ICE_B" GuidDef="ab4b65cf0-6e98-4048-8a0b-3702063742c8a">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_ICE.Status" SrcGuid="a14222fec-6dd5-4143-9ffa-44fb3e10a411a" />
+    </RP>
+    <RP Name="R_ID_STATUS_B" Guid="a215b124e-5620-4355-a1c4-827b1bb5bb84a" NameDef="HF_GIPC_A664_CH1_CLASS.R_ID_STATUS_B" GuidDef="a8e5ac9ff-1a61-4658-bed9-cbd56ad02928a">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_STATUS.Status" SrcGuid="a951c9758-846d-46db-b966-529d5195f358a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW06_Analog_In_ATA30IDS.HFS1_O_40022_ATA30IDS" SrcGuid="a3da8fd43-4cbe-4cf2-b1da-e76246002a04a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_ADS_s1" Guid="a289edfea-2799-4aee-b1ca-4cc44da32520a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_ADS_s1" GuidDef="aa3784627-b9a3-4f72-a960-42b351f3df1ca">
+    <RP Name="Press_Alt_Voted" Guid="a1160c604-47d4-4388-95e9-df1eadd43c1aa" NameDef="HF_GIPC_A664_CH1_CLASS.Press_Alt_Voted" GuidDef="a2b00fedb-11fc-43a7-aa87-ea826abb5f16a">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L203_Voted_Pressure_Altitude" SrcGuid="a2039e56d-5a9e-47fc-a377-75819ca29256a" />
+    </RP>
+    <RP Name="BaroAlt_BaroSet2_Voted" Guid="aa3f85b59-7490-49b4-9430-a3f474e7f407a" NameDef="HF_GIPC_A664_CH1_CLASS.BaroAlt_BaroSet2_Voted" GuidDef="a982bbd0a-65cc-4d83-a625-8043e44bce89a">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L220_Voted_Baro_Corrected_Altitude_Baro_Set_2" SrcGuid="a6c2c562a-81f5-4b84-8ebe-63f85bcaccd5a" />
+    </RP>
+    <RP Name="CAS_Voted" Guid="adebc0e29-010b-4459-b9d4-463668cc9b1da" NameDef="HF_GIPC_A664_CH1_CLASS.CAS_Voted" GuidDef="a3db87ca0-c9e4-4697-8377-f805252201b3a">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L206_Voted_Calibrated_Airspeed" SrcGuid="aba20eecc-ed30-452a-aa34-666c0da137f0a" />
+    </RP>
+    <RP Name="TAS_Voted" Guid="a900a5396-824f-403f-ae40-52eab159719fa" NameDef="HF_GIPC_A664_CH1_CLASS.TAS_Voted" GuidDef="af9f58e75-43be-4408-9092-ec91e3f060dea">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L210_Voted_True_Airspeed" SrcGuid="a4936cbfa-67a5-4140-9c18-bb8672bb0711a" />
+    </RP>
+    <RP Name="SAT_Voted" Guid="ae1af79c2-7315-4194-b65f-a6efd2a0e945a" NameDef="HF_GIPC_A664_CH1_CLASS.SAT_Voted" GuidDef="ab5bf40e3-6ed0-4084-ac5e-6b2c6239e68ea">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L213_Voted_Static_Air_Temperature" SrcGuid="a80912c03-3957-4f81-850a-8fedb8a418d2a" />
+    </RP>
+    <RP Name="TAT_Voted" Guid="a798c6fee-2110-47f8-87ec-2b3fad53fd70a" NameDef="HF_GIPC_A664_CH1_CLASS.TAT_Voted" GuidDef="a26092d99-5d96-4eac-b92a-2634b2e4749ca">
+      <Pub_Ref SrcName="HF_FCM_1.A429_OUT_FCS_TO_HeadsDownDisplay.L211_Voted_Total_Air_Temperature" SrcGuid="a99699d22-4380-4b52-abf4-25c58866ca09a" />
+    </RP>
+  </HFQueuingPort>
+  <HFQueuingPort Name="piHFQ_R_ID_RX" Guid="a2eaa0c47-d9e7-479b-a0bd-8bf4c4088450a" NameDef="HF_GIPC_A664_CH1_CLASS.piHFQ_R_ID_RX" GuidDef="a123ab82f-6b5f-4c26-96c7-dfb7feff6208a" PathName="VLPath34">
+    <RP Name="R_DISC_ID_ICE_Status" Guid="ae7da9f9f-00d3-4e2a-9cb9-d76b38eb6731a" NameDef="HF_GIPC_A664_CH1_CLASS.R_DISC_ID_ICE_Status" GuidDef="a7583c74b-0f03-4f1e-8e30-ed0ea8306d01a">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_ICE.Status" SrcGuid="a14222fec-6dd5-4143-9ffa-44fb3e10a411a" />
+    </RP>
+    <RP Name="R_DISC_ID_ICE_STATUS_Status" Guid="aae3bcad6-a5b6-4fc0-8f32-efbacdbbd958a" NameDef="HF_GIPC_A664_CH1_CLASS.R_DISC_ID_ICE_STATUS_Status" GuidDef="a88e48672-8943-4b3b-a310-bbc68c008590a">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_STATUS.Status" SrcGuid="a951c9758-846d-46db-b966-529d5195f358a" />
+    </RP>
+    <RP Name="R_ID_ICE_A" Guid="a9894406a-3ad7-4bab-8ec2-e2971c76b4eaa" NameDef="HF_GIPC_A664_CH1_CLASS.R_ID_ICE_A" GuidDef="ade3d95e5-39fa-49d8-a55a-19fcd2eb240ca">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_ICE.Status" SrcGuid="a14222fec-6dd5-4143-9ffa-44fb3e10a411a" />
+    </RP>
+    <RP Name="R_ID_STATUS_A" Guid="aacad5ac6-0b4d-4285-a97a-751d1c9737f7a" NameDef="HF_GIPC_A664_CH1_CLASS.R_ID_STATUS_A" GuidDef="abf9cc02f-1d92-4f88-ba87-d94fe328d106a">
+      <Pub_Ref SrcName="HF_R_ID.DISC_ID_STATUS.Status" SrcGuid="a951c9758-846d-46db-b966-529d5195f358a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW04_Analog_In_ATA27FCS.HFS1_O_40022_ATA30IDS" SrcGuid="ae3b1e77c-31fa-427a-bb23-0257226473e6a" />
+  </HFQueuingPort>
+</HostedFunction>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE" Guid="a36e6415c-9d5e-4c9c-aff7-0f38ffbf6e44a" XsdVersion="7.9" ChangeAuthority="UnknownOwner" Hardware="RDIU_05" UpdatePeriod="320">
+  <DataInPort Name="IMA_Platform_Current_RU_State_L1" Guid="ad940e713-53fd-4f3e-bf20-1fbf83f8bff5a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a6e6cb207-770b-45ea-a672-0baaef914cb6a" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_Current_RU_State_L4" Guid="ab328914d-4da6-4095-91e3-c927aaac6ca3a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a8271883c-b688-4677-b3bc-a06f4efd3b53a" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_Current_RU_State_R1" Guid="af0224a9a-63a3-4772-bfdf-d080e9f1256ba" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="ada4d4fde-d506-4419-9952-45be8867c803a" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_Current_RU_State_R4" Guid="ab09fd2c9-130b-4777-8210-85d06d622aa3a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a3489560e-cb56-41cd-8d3b-26d540e401f9a" />
+  </DataInPort>
+  <DataOutPort Name="RDIU_UNRESTRICTED_STATE" Guid="ad5fb2628-539e-476f-ab03-88942ef109b4a" DataFormatType="DIS" ParameterSize="1">
+    <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Set_Output_To_RU_Bit_Only_if_Valid.Output" SrcGuid="af3afa27a-cc41-47b8-93c2-3d5629d53fa8a" />
+  </DataOutPort>
+  <DataOutPort Name="IMA_State_Unavailable" Guid="a533508c9-b467-4a7b-82eb-bf445993cb2ba" DataFormatType="DIS" ParameterSize="1">
+    <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Inverted_RU_State_Validity.Output" SrcGuid="a73a11b23-85e3-448f-b496-e72101700f24a" />
+  </DataOutPort>
+  <TransFcn Name="Select_Current_RU_State_bit" Guid="a0d456efa-7556-4c8a-bc60-83a282216e5ca" Implementable="True" RIUTemplate="41071" SequenceNumber="1" TemplateInstance="41071_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="a6e9693a1-a628-465f-8f1b-3bdd9c03f6b2a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.IMA_Platform_Current_RU_State_L1" SrcGuid="ad940e713-53fd-4f3e-bf20-1fbf83f8bff5a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="af40d8a44-5e09-45fa-bcc0-b5dc1af2a907a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.IMA_Platform_Current_RU_State_L4" SrcGuid="ab328914d-4da6-4095-91e3-c927aaac6ca3a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="aa01ed191-c35d-437d-9b39-5de406d65ee8a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.IMA_Platform_Current_RU_State_R1" SrcGuid="af0224a9a-63a3-4772-bfdf-d080e9f1256ba" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a8b790fff-49b0-42d6-a104-7167ff9c7874a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.IMA_Platform_Current_RU_State_R4" SrcGuid="ab09fd2c9-130b-4777-8210-85d06d622aa3a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="abd20b877-47de-4f67-8682-7076af5b365fa" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="Evaulate_Selected_RU_State_Validity" Guid="a878cbdfe-8a72-4e78-ba72-52148e4cb23da" Implementable="True" RIUTemplate="41039" SequenceNumber="2" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a8d1ac717-2b8b-4547-8681-eb146d821cdea" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Select_Current_RU_State_bit.Output" SrcGuid="abd20b877-47de-4f67-8682-7076af5b365fa" />
+    </DataInPort>
+    <DataOutPort Name="Validity_Parameter" Guid="a30affaec-7c3a-4efb-8a52-e56eb3696ab6a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="Inverted_RU_State_Validity" Guid="a11cd2747-69f2-4bcf-97f8-e9c528561c2ba" Implementable="True" RIUTemplate="41004" SequenceNumber="3" TemplateInstance="41004_T01" UDC="Output Inversion=2;">
+    <DataInPort Name="Input" Guid="a547735f3-9e4e-474f-81fa-e4ac269b8f80a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Evaulate_Selected_RU_State_Validity.Validity_Parameter" SrcGuid="a30affaec-7c3a-4efb-8a52-e56eb3696ab6a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a73a11b23-85e3-448f-b496-e72101700f24a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="Set_Output_To_RU_Bit_Only_if_Valid" Guid="a1ad17642-2da6-4800-b330-36c938a3def4a" Implementable="True" RIUTemplate="41065" SequenceNumber="4" TemplateInstance="41065_T01" UDC="Logic=2;Acknowledge Time=0;Hold Time=0;">
+    <DataInPort Name="Input_1" Guid="a22dd8eb6-1cd5-435a-bf83-51d12ce461b6a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Select_Current_RU_State_bit.Output" SrcGuid="abd20b877-47de-4f67-8682-7076af5b365fa" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a121c1ca1-cb0f-4851-9d8b-c61bbf4c0c86a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_C919_IOS005_RDIU_05_RESTRICTED_STATE_MANAGEMENT_SERVICE.Evaulate_Selected_RU_State_Validity.Validity_Parameter" SrcGuid="a30affaec-7c3a-4efb-8a52-e56eb3696ab6a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="af3afa27a-cc41-47b8-93c2-3d5629d53fa8a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+</EmbFcn>

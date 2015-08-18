@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" kind="function" visibility="private" name="TempHandle">
+	<inputs>
+		<Variable name="ipTempData">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipTemperatureIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f9/11D0/284/5482a0083d09"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="opTempData">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipTemperatureIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f8/11D0/284/5482a0082d08"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L11">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0ed/11D0/284/5482a0082c64"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L10">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0ee/11D0/284/5482a0084860"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L9">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0ef/11D0/284/5482a0082463"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L8">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f0/11D0/284/5482a0084e24"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L7">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f1/11D0/284/5482a0086e75"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L6">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f2/11D0/284/5482a0086ff3"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L5">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f3/11D0/284/5482a0085296"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L4">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipTemperatureIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f4/11D0/284/5482a008a07"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L3">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f5/11D0/284/5482a008479c"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f6/11D0/284/5482a0081d54"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="real"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/d0f7/11D0/284/5482a00823b"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = TOTAL_TEMP_MIN; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="TOTAL_TEMP_MIN"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e0/11D0/284/5482a00849f5"/>
+			</pragmas>
+		</Equation>
+		<!-- _L2 = Global::LIB_FLOAT_STATUS(_L8, _L5, _L7, _L10); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L2"/>
+			</lefts>
+			<right>
+				<!-- Global::LIB_FLOAT_STATUS(_L8, _L5, _L7, _L10) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="Global::LIB_FLOAT_STATUS"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L8"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L5"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L7"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L10"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e1/11D0/284/5482a00854d2"/>
+			</pragmas>
+		</Equation>
+		<!-- _L3 = Global::LIB_FLOAT_STATUS(_L6, _L11, _L9, _L1); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L3"/>
+			</lefts>
+			<right>
+				<!-- Global::LIB_FLOAT_STATUS(_L6, _L11, _L9, _L1) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="2">
+							<operator>
+								<OperatorRef name="Global::LIB_FLOAT_STATUS"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L6"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L11"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L9"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e2/11D0/284/5482a0085a71"/>
+			</pragmas>
+		</Equation>
+		<!-- _L4 = (make EnginesDataDictionary::ipTemperatureIndicationData)(_L6, _L3, _L8, _L... -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L4"/>
+			</lefts>
+			<right>
+				<!-- (make EnginesDataDictionary::ipTemperatureIndicationData)(_L6, _L3, _L8, _L2) -->
+				<CallExpression>
+					<operator>
+						<MakeOp name="1">
+							<type>
+								<TypeRef name="EnginesDataDictionary::ipTemperatureIndicationData"/>
+							</type>
+						</MakeOp>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L6"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L3"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L8"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L2"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e3/11D0/284/5482a0083962"/>
+			</pragmas>
+		</Equation>
+		<!-- _L5 = ipTempData.ipADCStaticAirTemperature_Status; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L5"/>
+			</lefts>
+			<right>
+				<!-- ipTempData.ipADCStaticAirTemperature_Status -->
+				<PrjOp name="1">
+					<flow>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="ipTempData"/>
+							</path>
+						</IdExpression>
+					</flow>
+					<with>
+						<Label name="ipADCStaticAirTemperature_Status"/>
+					</with>
+				</PrjOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e4/11D0/284/5482a00865d2"/>
+			</pragmas>
+		</Equation>
+		<!-- _L6 = ipTempData.ipADCTotalAirTemperature; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L6"/>
+			</lefts>
+			<right>
+				<!-- ipTempData.ipADCTotalAirTemperature -->
+				<PrjOp name="2">
+					<flow>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="ipTempData"/>
+							</path>
+						</IdExpression>
+					</flow>
+					<with>
+						<Label name="ipADCTotalAirTemperature"/>
+					</with>
+				</PrjOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e5/11D0/284/5482a0087aa5"/>
+			</pragmas>
+		</Equation>
+		<!-- _L7 = STATIC_TEMP_MAX; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L7"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="STATIC_TEMP_MAX"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e6/11D0/284/5482a0084bf7"/>
+			</pragmas>
+		</Equation>
+		<!-- opTempData = _L4; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="opTempData"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L4"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e7/11D0/284/5482a0084e11"/>
+			</pragmas>
+		</Equation>
+		<!-- _L8 = ipTempData.ipADCStaticAirTemperature; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L8"/>
+			</lefts>
+			<right>
+				<!-- ipTempData.ipADCStaticAirTemperature -->
+				<PrjOp name="3">
+					<flow>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="ipTempData"/>
+							</path>
+						</IdExpression>
+					</flow>
+					<with>
+						<Label name="ipADCStaticAirTemperature"/>
+					</with>
+				</PrjOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e8/11D0/284/5482a0083542"/>
+			</pragmas>
+		</Equation>
+		<!-- _L9 = TOTAL_TEMP_MAX; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L9"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="TOTAL_TEMP_MAX"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0e9/11D0/284/5482a008820"/>
+			</pragmas>
+		</Equation>
+		<!-- _L10 = STATIC_TEMP_MIN; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L10"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="STATIC_TEMP_MIN"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0ea/11D0/284/5482a0084364"/>
+			</pragmas>
+		</Equation>
+		<!-- _L11 = ipTempData.ipADCTotalAirTemperature_Status; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L11"/>
+			</lefts>
+			<right>
+				<!-- ipTempData.ipADCTotalAirTemperature_Status -->
+				<PrjOp name="4">
+					<flow>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="ipTempData"/>
+							</path>
+						</IdExpression>
+					</flow>
+					<with>
+						<Label name="ipADCTotalAirTemperature_Status"/>
+					</with>
+				</PrjOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/d0eb/11D0/284/5482a0084e76"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/d0df/11D0/284/5482a00873f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<NetDiagram name="diagram_TempHandle_1" landscape="true" format="A4 (210 297)" oid="!ed/d0ec/11D0/284/5482a0082d55">
+					<presentationElements>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e0/11D0/284/5482a00849f5">
+							<position>
+								<Point x="6752" y="5355"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/d0e1/11D0/284/5482a00854d2">
+							<position>
+								<Point x="10054" y="7705"/>
+							</position>
+							<size>
+								<Size width="3175" height="1609"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/d0e2/11D0/284/5482a0085a71">
+							<position>
+								<Point x="10012" y="4233"/>
+							</position>
+							<size>
+								<Size width="3175" height="1608"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/d0e3/11D0/284/5482a0083962">
+							<position>
+								<Point x="15494" y="1566"/>
+							</position>
+							<size>
+								<Size width="1291" height="8678"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e4/11D0/284/5482a00865d2">
+							<position>
+								<Point x="6752" y="8192"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e5/11D0/284/5482a0087aa5">
+							<position>
+								<Point x="6773" y="4403"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e6/11D0/284/5482a0084bf7">
+							<position>
+								<Point x="6752" y="8509"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/d0e7/11D0/284/5482a0084e11">
+							<position>
+								<Point x="18923" y="5652"/>
+							</position>
+							<size>
+								<Size width="338" height="508"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e8/11D0/284/5482a0083542">
+							<position>
+								<Point x="6752" y="7874"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0e9/11D0/284/5482a008820">
+							<position>
+								<Point x="6752" y="5038"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0ea/11D0/284/5482a0084364">
+							<position>
+								<Point x="6752" y="8827"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/d0eb/11D0/284/5482a0084e76">
+							<position>
+								<Point x="6752" y="4720"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/d0e9/11D0/284/5482a008820" dstEquation="!ed/d0e2/11D0/284/5482a0085a71">
+							<positions>
+								<Point x="6922" y="5186"/>
+								<Point x="7535" y="5186"/>
+								<Point x="7535" y="5186"/>
+								<Point x="10012" y="5186"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/d0eb/11D0/284/5482a0084e76" dstEquation="!ed/d0e2/11D0/284/5482a0085a71">
+							<positions>
+								<Point x="6922" y="4868"/>
+								<Point x="7535" y="4868"/>
+								<Point x="7535" y="4868"/>
+								<Point x="10012" y="4868"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/d0e6/11D0/284/5482a0084bf7" dstEquation="!ed/d0e1/11D0/284/5482a00854d2">
+							<positions>
+								<Point x="6922" y="8657"/>
+								<Point x="7662" y="8657"/>
+								<Point x="7662" y="8657"/>
+								<Point x="10054" y="8657"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/d0e4/11D0/284/5482a00865d2" dstEquation="!ed/d0e1/11D0/284/5482a00854d2">
+							<positions>
+								<Point x="6922" y="8340"/>
+								<Point x="8488" y="8340"/>
+								<Point x="8488" y="8340"/>
+								<Point x="10054" y="8340"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/d0e2/11D0/284/5482a0085a71" dstEquation="!ed/d0e3/11D0/284/5482a0083962">
+							<positions>
+								<Point x="13187" y="5038"/>
+								<Point x="14330" y="5038"/>
+								<Point x="14330" y="5038"/>
+								<Point x="15494" y="5038"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/d0e5/11D0/284/5482a0087aa5" dstEquation="!ed/d0e3/11D0/284/5482a0083962">
+							<positions>
+								<Point x="6943" y="4551"/>
+								<Point x="8551" y="4551"/>
+								<Point x="8551" y="3302"/>
+								<Point x="15494" y="3302"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/d0e3/11D0/284/5482a0083962" dstEquation="!ed/d0e7/11D0/284/5482a0084e11">
+							<positions>
+								<Point x="16785" y="5906"/>
+								<Point x="17865" y="5906"/>
+								<Point x="17865" y="5906"/>
+								<Point x="18965" y="5906"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/d0e0/11D0/284/5482a00849f5" dstEquation="!ed/d0e2/11D0/284/5482a0085a71">
+							<positions>
+								<Point x="6922" y="5503"/>
+								<Point x="7535" y="5503"/>
+								<Point x="7535" y="5503"/>
+								<Point x="10012" y="5503"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/d0e5/11D0/284/5482a0087aa5" dstEquation="!ed/d0e2/11D0/284/5482a0085a71">
+							<positions>
+								<Point x="6943" y="4551"/>
+								<Point x="7535" y="4551"/>
+								<Point x="7535" y="4551"/>
+								<Point x="10012" y="4551"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/d0ea/11D0/284/5482a0084364" dstEquation="!ed/d0e1/11D0/284/5482a00854d2">
+							<positions>
+								<Point x="6922" y="8975"/>
+								<Point x="7726" y="8975"/>
+								<Point x="7726" y="8975"/>
+								<Point x="10054" y="8975"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/d0e8/11D0/284/5482a0083542" dstEquation="!ed/d0e1/11D0/284/5482a00854d2">
+							<positions>
+								<Point x="6922" y="8022"/>
+								<Point x="7980" y="8022"/>
+								<Point x="7980" y="8022"/>
+								<Point x="10054" y="8022"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="4" srcEquation="!ed/d0e1/11D0/284/5482a00854d2" dstEquation="!ed/d0e3/11D0/284/5482a0083962">
+							<positions>
+								<Point x="13229" y="8509"/>
+								<Point x="14351" y="8509"/>
+								<Point x="14351" y="8509"/>
+								<Point x="15494" y="8509"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/d0e8/11D0/284/5482a0083542" dstEquation="!ed/d0e3/11D0/284/5482a0083962">
+							<positions>
+								<Point x="6922" y="8022"/>
+								<Point x="8657" y="8022"/>
+								<Point x="8657" y="6773"/>
+								<Point x="15494" y="6773"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

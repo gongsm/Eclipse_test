@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW09_I_40005_HF_IASC2" Guid="a8084d94f-1050-4193-bb63-565e59f269d5a" XsdVersion="7.9" Hardware="RDIU_09">
+  <A429Port Name="pi429_OA_1000_HF_IASC2" Guid="af67613a3-eacb-4d97-a7c6-a6894661d96ea" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_09.40005_A02" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OA_1000" SrcGuid="a31423899-3abe-4fdb-bc10-145f5819108aa" />
+  </A429Port>
+  <A429Port Name="pi429_OB_1000_HF_IASC2" Guid="a2853738e-a1e5-4890-9a01-f49cdacdb017a" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_09.40005_A03" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OB_1000" SrcGuid="ab976db5d-1eb9-43db-87c1-0aee1c3fa3e8a" />
+  </A429Port>
+  <A429Port Name="pi429_OA_500_HF_IASC2" Guid="a42a8c8a7-aa4d-4ff6-afa8-40a62aa061d0a" ActivityTimeout="1600" Direction="Destination" Physical="RDIU_09.40005_A02" SamplePeriod="320">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OA_500" SrcGuid="a5947c1a6-eefe-428d-9546-555bb3e01b3aa" />
+  </A429Port>
+  <A429Port Name="pi429_OB_500_HF_IASC2" Guid="a6ac457a7-ecf8-4d7d-be20-c1f284724355a" ActivityTimeout="1600" Direction="Destination" Physical="RDIU_09.40005_A03" SamplePeriod="320">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OB_500" SrcGuid="a8bf49520-5e94-4029-b914-d42994ec0b9ea" />
+  </A429Port>
+  <A429Port Name="pi429_OA_50_HF_IASC2" Guid="a8b7a7052-721c-4d25-afb1-6480ed32971fa" ActivityTimeout="200" Direction="Destination" Physical="RDIU_09.40005_A02" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OA_50" SrcGuid="adc5b6676-109b-47ad-a384-8c59810983b1a" />
+  </A429Port>
+  <A429Port Name="pi429_OB_50_HF_IASC2" Guid="a96a006ba-43df-45ca-9fb1-2d50cb27c6e8a" ActivityTimeout="200" Direction="Destination" Physical="RDIU_09.40005_A03" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_IASC2.po429_OB_50" SrcGuid="a595f9b82-920d-4dd3-a515-98cc1a92beafa" />
+  </A429Port>
+  <HFSamplingPort Name="HFS2_O_A664_po429_OA_Msg" Guid="a15b92695-34d5-4c74-9dc0-fb0d0dbd1dfaa" Direction="Source" MessageSize="36" Networks="Both" RefreshPeriod="640">
+    <A664Message Name="po429_OA_Msg_S_2" Guid="a4fc42bfa-4539-49d3-86be-2260439bd725a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="36" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1000" VLID="33287">
+      <DS Name="FSS1" Guid="ab60c867d-57d1-487a-81ac-86fd94e5719ba" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a05e6b000-f714-4a8f-b636-8a41266a94c8a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a5572f36b-6259-4ef4-bc6b-c14e44cd4376a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="aa2da63a9-e27d-4a82-b181-62dfa4dcff09a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a55c2fdd6-2046-4446-a9bc-c2786db04f48a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L270_CPCS_Status_Word" Guid="ac12012e0-3250-4c4b-ba53-ea0579db0523a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L270_CPCS_Status_Word" Guid="acfc83706-cd5e-4a34-b862-eba642e74a2ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1b2e62fc-1159-48f8-b0c8-3daf25abce18a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="270" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="adfb102d9-0669-4cef-ab47-4ef96763bef1a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="AUTO_CHANNEL_ACTIVE" Guid="abf5918ea-86f8-4d66-b081-1d9f19d7ddb9a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Active" />
+          <DP Name="MAN_PRESS_ON" Guid="ad0e22801-db51-4315-9920-972ca65d908fa" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_MAN_PRESS_ON_2" DestGuid="ad9966c9b-732d-42b0-bcec-f1defbd48818a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_MAN_PRESS_ON_2" DestGuid="aafef97ad-d77f-4394-9c89-feb7097eeb73a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_MAN_PRESS_ON_2" DestGuid="a53c0d30d-55e9-4717-9230-2e7e30854df2a" />
+          </DP>
+          <DP Name="CABIN_PRESS_FAULT" Guid="a71d5e1e1-b63f-4652-be22-3cafba5a287fa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CABIN_PRESS_FAULT_2" DestGuid="abd74642c-6f83-4f2d-a96b-dc1bcbc87f70a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CABIN_PRESS_FAULT_2" DestGuid="afb532539-edfe-4267-83ff-ef8c4c96c7aaa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CABIN_PRESS_FAULT_2" DestGuid="ad51ec30a-2ebb-403c-a2b0-a12d0bc72582a" />
+          </DP>
+          <DP Name="MAN_PRESS_FAIL" Guid="a8e78c2f5-5e7f-4a96-a502-376650004120a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CABIN_NEG_DIFF_PRESS_W" Guid="ad02383c8-cf44-4708-a351-e2828ca203dfa" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="a7061e2ba-fe31-4dd1-94a8-eb48897a677ea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="a1d4767b7-32cd-4e8f-ad1a-e35eee43d7b3a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="a303f84d7-5073-4c85-80ac-d1886550f416a" />
+          </DP>
+          <DP Name="CAB_ALT_W" Guid="abac735d4-d831-4783-974d-8aa9197bbb4da" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CAB_ALT_W_2" DestGuid="a26255021-95ff-4837-81d1-e35a754c083da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CAB_ALT_W_2" DestGuid="a630d09f9-5c2d-4cde-90f6-35934185a2cba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CAB_ALT_W_2" DestGuid="af6f374d8-17ee-476d-b961-b9f6821f4528a" />
+          </DP>
+          <DP Name="CABIN_HI_DIFF_PRESS_W" Guid="ab42931e4-7c87-4c6c-9673-7e72364a2b91a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CABIN_HI_DIFF_PRESS_W_2" DestGuid="a6467bece-1cd4-4be5-8f8e-d0110f7a7fc2a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CABIN_HI_DIFF_PRESS_W_2" DestGuid="a126faad1-4735-4169-8d31-f745c18c0b39a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CABIN_HI_DIFF_PRESS_W_2" DestGuid="a9544fb6e-1452-4688-b154-3d2834af90cfa" />
+          </DP>
+          <DP Name="ALT_LIMITATION_FAULT" Guid="a7d10a1d0-7255-4072-817e-c271fee1076ea" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="EMER_DEPRESS_ON" Guid="aaeec7efd-c0e5-48e9-b445-6e9b067a1a13a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_EMER_DEPRESS_ON_2" DestGuid="ada445fac-2217-43d3-843a-b5410e157d65a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_EMER_DEPRESS_ON_2" DestGuid="a8d5f7508-23a4-4de7-a230-b15e2aa99a69a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_EMER_DEPRESS_ON_2" DestGuid="ae0eca7ad-45f6-4b2d-909d-e9f5f711141aa" />
+          </DP>
+          <DP Name="CAB_ALT_C" Guid="ab47dbb55-83fd-4065-8ba3-53cc300b4292a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Cabin Altitude caution " ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Cabin Altitude caution ">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CAB_ALT_C_2" DestGuid="ad05b6f24-fac1-402b-be60-02b93158d966a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CAB_ALT_C_2" DestGuid="a3cbf53b0-13f8-47d4-b2ab-e521af606064a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CAB_ALT_C_2" DestGuid="ae0c0b578-94ea-428d-9916-3ed3e8637dbba" />
+          </DP>
+          <DP Name="DITCHING_ON" Guid="a2137288c-8099-4977-93df-ea03794f115aa" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Ditching On " ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Ditching On" />
+          <DP Name="LDG_ALT_MAN" Guid="a7708dc33-5b23-4847-90f2-fa65c31cb1f3a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=MAN" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not MAN">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_LDG_ALT_MAN_2" DestGuid="af02d1ae6-b915-4720-bf97-3e36ed436327a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_LDG_ALT_MAN_2" DestGuid="a9b4ac404-d8b7-46ed-b0f8-74fc99ef2067a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_LDG_ALT_MAN_2" DestGuid="afc065e2c-9989-47b8-8eb5-c172e73bb68ea" />
+          </DP>
+          <DP Name="HAAO_MODE_ON" Guid="a690cfe45-fb61-4dde-9684-b1af92964c6ba" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=High airport altitude Operation mode ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=High airport altitude Operation mode OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_HAAO_MODE_ON_2" DestGuid="a263d4663-f7f3-4a22-b48e-9f8c6b143c02a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_HAAO_MODE_ON_2" DestGuid="a5171ffb1-b5fe-44a8-8535-f2d0e9f4af54a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_HAAO_MODE_ON_2" DestGuid="a3cbb484e-5c0d-4d79-b5e3-c1f62f12a6e1a" />
+          </DP>
+          <DP Name="CABIN_PRESS_DEGRADED" Guid="a53dc697e-7534-44a9-92b9-b1769ee21eb7a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CABIN_PRESS_DEGRADED_2" DestGuid="a461cc163-e38f-4c0f-90a8-005fd5c6eb03a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CABIN_PRESS_DEGRADED_2" DestGuid="ac7475fdf-d941-40bc-9908-b7be4391bc6fa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CABIN_PRESS_DEGRADED_2" DestGuid="a72411ad7-85e2-4fdd-ba4f-895335134d18a" />
+          </DP>
+          <DP Name="OFV_FO" Guid="ab45e6a34-58a9-47ea-a7a4-e8a90ee74545a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Full Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Full Open" />
+          <DP Name="OFV_FC" Guid="a6107cc14-776a-4461-8256-ec7a18ad9a00a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Full Closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Full Closed" />
+          <DP Name="SSM" Guid="a3b6b54de-57aa-446b-bb45-6cae751589e2a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a899bc4fc-9c99-47c5-bc7c-6efe441db648a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L270_CPCS_Status_Word" SrcGuid="abf0240b3-379d-4eab-912b-cc2eadfc8578a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L270_CPCS_Status_Word_IASC2_OA_2" DestGuid="a5c1ebd56-2f23-4b85-9fad-1697f0fc83aba" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L270_CPCS_Status_Word_IASC2_OA_2" DestGuid="a5bb6f0a9-4aff-4bb0-8db3-15e052d02461a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L270_CPCS_Status_Word_IASC2_OA_2" DestGuid="a22f92e2c-9bc7-49bb-a8bc-d01929ff1075a" />
+        </A429Word>
+      </DS>
+      <DS Name="L271_BAS_Status_Word" Guid="af1ce8de3-1833-458a-85d9-e06456cae77fa" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L271_BAS_Status_Word" Guid="ac3d086d8-4aef-443d-9192-c5654c1b7624a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0e28dae1-d5ca-43a0-ab7e-f47e02b075d6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a566d7c7d-edb7-4a97-85a9-87d9cb41f8a2a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="HPV_OPEN" Guid="a216f770c-3a8d-4e00-afc1-587c036748c1a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=HPV Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=HPV Not open" />
+          <DP Name="SINGLE_BLEED_OPERATION" Guid="ae4b1bcb1-77d1-4dea-ad77-03f5f2159488a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Single bleed operation" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not single bleed operation" />
+          <DP Name="CBV_FC" Guid="a87a58432-93a6-4be8-a9a8-71b24125b239a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=CBV Full Closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=CBV Not Full Closed" />
+          <DP Name="CBV_FO" Guid="ac09916ca-e4ce-4525-b18a-4e7cfea7f4b2a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=CBV Full Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=CBV Not Full Open" />
+          <DP Name="BLEED_DEGRADED" Guid="a4c889a97-ef40-40c4-b16a-3438eea8a4f0a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_BLEED_DEGRADED_2" DestGuid="ac9473801-33b2-4511-b872-fbd266e9f7fba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_BLEED_DEGRADED_2" DestGuid="a9aa507b0-7e84-412e-b08b-b0b008876398a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_BLEED_DEGRADED_2" DestGuid="a40addb57-b30f-4414-95aa-dfc7c9d967c1a" />
+          </DP>
+          <DP Name="BLEED_FAULT" Guid="aec1d55db-a497-4780-b1eb-737e52011704a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_BLEED_FAULT_2" DestGuid="ad9a7dc3e-c107-42ab-82ee-0b84bf9a8ee3a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_BLEED_FAULT_2" DestGuid="adb32df25-aff7-4c42-8d96-f210596deaf2a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_BLEED_FAULT_2" DestGuid="a7819c5d4-ab26-4b51-a418-61f2e40b9b5fa" />
+          </DP>
+          <DP Name="BLEED_OFF" Guid="ab615d7aa-695f-4b1c-80fa-9211cb158269a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_BLEED_OFF_2" DestGuid="aaeafea2a-158d-4b84-8216-89cf7989305da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_BLEED_OFF_2" DestGuid="aa081e4d5-d4ea-4580-85f1-f7327e1a1f50a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_BLEED_OFF_2" DestGuid="a0ae2d904-bc6f-46e4-ab2d-3ac398e00687a" />
+          </DP>
+          <DP Name="XBLEED_FAIL_IN_POSITION" Guid="a9c86c2aa-be3f-4433-945e-8be2fcdb435ca" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="XBLEED_MAN_CLSD" Guid="a30a9fdac-f408-435f-acad-3e4789d0ac4ba" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Manually closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manually closed" />
+          <DP Name="APU_BLEED_ON" Guid="acf3fcf11-a49e-450c-bdd4-8438c1095426a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selected ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected ON">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_APU_BLEED_ON_2" DestGuid="ae94a1eed-21e4-4c92-a85a-8ce5dffb1926a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_APU_BLEED_ON_2" DestGuid="a560dafb3-4719-4c67-b32c-0aa649229568a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_APU_BLEED_ON_2" DestGuid="ac9383b81-b24a-4871-8617-4eee526eb57aa" />
+          </DP>
+          <DP Name="BLEED_LOW_PRESS" Guid="ae4c985fe-cb0c-45a1-98a8-198966b4b3eaa" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Low pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not low pressure" />
+          <DP Name="BLEED_HIGH_PRESS" Guid="a6013b8f0-67fe-4683-a3e9-104ed9ccf555a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=High pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not high pressure" />
+          <DP Name="PRSOV_FAIL_IN_POSITION" Guid="ab7dc8fdb-f12a-4133-8be1-2d31a53bca68a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="XBLEED_MAN_OPEN" Guid="ac6897c65-1638-4e49-8f12-a0304dda8957a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Manually open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manually open" />
+          <DP Name="CBV_FAIL_OPEN" Guid="a69e889a6-d3e5-4127-8beb-7f2ed2fbd50ca" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CBV_FAIL_CLOSED" Guid="a79d7fbe0-1ca4-4d15-8d74-06fb9c2f4f56a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="BLEED_LOW_TEMP" Guid="ac3a64c9e-ec04-413d-a273-4b05eeddd404a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Low Temperature" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No low temperature" />
+          <DP Name="BLEED_HIGH_TEMP" Guid="a14f30e80-86c3-463d-89d5-2614f2c3d80ca" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=High Temperature" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No high temperature" />
+          <DP Name="PRSOV_OPEN" Guid="a2baa17e6-08de-44cc-9b79-9759c4e113c2a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="SSM" Guid="a0027f536-9f20-4e18-93db-679a6e1426c7a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aee4bb789-6e74-47c6-81f7-69077dd9b81da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L271_BAS_Status_Word" SrcGuid="a62553449-833e-4591-8705-19ece5a5d041a" />
+        </A429Word>
+      </DS>
+      <DS Name="L276_DSHS_Status_Word" Guid="afd1f15f8-5b83-41b7-a2e5-205cd675d82ba" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L276_DSHS_Status_Word" Guid="a07b80e42-abb4-4469-a8bd-1555487998d8a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a1c5f298d-3f9b-4214-97e0-017b012ba4b3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="276" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a7cfa41e3-7383-48dc-b96a-384c3b3690cba" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="BBSOV2_OPEN" Guid="a6732e3aa-08f3-4650-aefe-d719f01c4d6ea" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="BBSOV1_OPEN" Guid="aebb3ebdd-8493-4fea-910f-4aba530ffa95a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="RECIRC_OFF" Guid="a0d372854-72d6-4241-a19d-de2b2e87796ca" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_RECIRC_OFF_2" DestGuid="a9d61cc45-4482-4517-8e98-74cb32fb500ba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_RECIRC_OFF_2" DestGuid="a4d1fa5a9-f79d-4e56-99b2-88d23bfc38fea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_RECIRC_OFF_2" DestGuid="ae6ed1bfd-5a54-49dc-a8f7-359a40119bfea" />
+          </DP>
+          <DP Name="BBSOV_FAIL_OPEN" Guid="ab2dc720e-edc6-4781-b5c4-edbe32a3bb85a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed" />
+          <DP Name="BBSOV_FAIL_CLOSED" Guid="a2bf13802-99c6-446e-9c8d-98800b2f464ea" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_BBSOV_FAIL_CLOSED_2" DestGuid="a2e27b173-f4ee-464a-b73d-d2f6163579c2a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_BBSOV_FAIL_CLOSED_2" DestGuid="a922bdf46-d743-44a6-a95c-c7d88b22e48ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_BBSOV_FAIL_CLOSED_2" DestGuid="ace86912a-04d3-4a31-add9-bda1e75361a1a" />
+          </DP>
+          <DP Name="CARGO_HEAT_FAULT" Guid="aec5db0b8-9d67-4bb1-81be-d29b8e22e409a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="CARGO_VENT_ON" Guid="a4243177e-5fd5-450b-876b-c62bd0906c16a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not ON" />
+          <DP Name="RECIRC_FAULT" Guid="aaf40a21f-15a8-45ae-8cb7-57e84b44cf4fa" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_RECIRC_FAULT_2" DestGuid="aff023d42-39cb-44e4-ab22-697fd3d6fe15a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_RECIRC_FAULT_2" DestGuid="ae4bd8b9c-2fd3-4140-821a-751a0c962dfea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_RECIRC_FAULT_2" DestGuid="a2860489d-cca3-4f3a-8c07-199d5cb8d374a" />
+          </DP>
+          <DP Name="RECIRC_DEGRADED" Guid="a9d65924f-e143-44ce-a527-4a662d78721fa" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_RECIRC_DEGRADED_2" DestGuid="a917acdc3-53eb-48ea-abd1-925ea37864daa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_RECIRC_DEGRADED_2" DestGuid="a87ec4349-7200-4972-bc79-5e2898cfc17da" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_RECIRC_DEGRADED_2" DestGuid="a2764b651-9c88-4188-a666-a369ab289043a" />
+          </DP>
+          <DP Name="CARGO_LO_TEMP" Guid="a8fce9903-fe88-4a95-9238-3cfb9cf65f34a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Low Temp" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Low Temp" />
+          <DP Name="GALLEY_HEATER_FAIL" Guid="ab72f0309-1a05-468e-a0f4-4d7622f32252a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed" />
+          <DP Name="SSM" Guid="a7a257dd5-34e6-483d-965e-1dba3999e4dba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a5feae880-8649-4af5-8e6f-27ce7d75e9fea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L276_DSHS_Status_Word" SrcGuid="a5ec0252f-d0a8-472e-9dcc-b9418a41745fa" />
+        </A429Word>
+      </DS>
+      <DS Name="L360_IASC_Diagnostic_Word" Guid="a2e488a72-4923-4151-ae6d-40e7db27727aa" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L360_IASC_Diagnostic_Word" Guid="a236b4aae-8251-4591-85c5-c46251484ac9a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a4a7daa6b-cecb-42a8-b0d1-374cedb4c65aa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="360" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a64dc08af-f576-4a47-a443-ee434014d320a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PIN_PROG_DISAGREE" Guid="ae6c0b023-4f5e-4f27-8cf1-a5d6e5833e4aa" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="CH_INOP" Guid="adce924bd-9323-4d2f-9d41-bb11a667d086a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_CH_INOP_2" DestGuid="aff8ce318-7fc6-43b9-b29c-9d4484104f45a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_CH_INOP_2" DestGuid="ae73c1ec2-6ed6-4da2-9053-001adcfe97d5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_CH_INOP_2" DestGuid="a5863c95b-c972-42d0-b682-ffd0afdee9c9a" />
+          </DP>
+          <DP Name="CH_FAULT" Guid="a71a8f88b-9b76-46bf-a1ee-b6c36f9da127a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="ADJ_CH_INOP" Guid="a0711a3f8-e153-445f-b2e2-b5f75631d403a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative" />
+          <DP Name="ADJ_CH_FAULT" Guid="a3d7d7058-e5b2-4ee3-8ac1-7ab67ef8ef78a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="OPP_CH_INOP" Guid="ad1fa8007-32dd-4648-a854-370dbf8a76c1a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative" />
+          <DP Name="OPP_CH_FAULT" Guid="acbd7fde3-62d3-4d5c-b43f-2ae2b1c32115a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="DISCRETE_INPUT_DISAGREE" Guid="ad0c78c82-f66d-4f9f-8cb3-f0cc4dc42beda" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="CAB_PRESS_SNSR_DISAGREE" Guid="a86a95e24-df57-4bed-9c59-b37f58b753c7a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="ADJ_CAB_PRESS_SNSR_DISAGREE" Guid="a573843ac-7f1f-41ed-a51d-f48df12372f4a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="OPP_CAB_PRESS_SNSR_DISAGREE" Guid="a1372a24b-e120-46ba-82d3-14f4621c43daa" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="ADJ_CH_RDIU1_INPUT_FAIL" Guid="ad8f83576-edf3-4369-a176-a1b030453a5da" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="ADJ_CH_RDIU2_INPUT_FAIL" Guid="ac162872d-6500-4aec-b9b9-f955cb082972a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CH_RDIU1_INPUT_FAIL" Guid="aceeb901b-3651-4105-9c22-ffa9ce308457a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CH_RDIU2_INPUT_FAIL" Guid="ab058714b-2923-4c5b-ae45-aff8f9cb19e8a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="OPP_CH_RDIU1_INPUT_FAIL" Guid="a5f9f9f86-3fed-4d15-b104-8c99fa9d2960a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="OPP_CH_RDIU2_INPUT_FAIL" Guid="a089bcb0c-08a6-4a3d-9878-a4ac0f854579a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="SSM" Guid="a8edbc97f-8e1b-4522-851c-4d13df31f449a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ac5211944-55e0-44a5-9408-d57ffe7a4d58a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L360_IASC_Diagnostic_Word" SrcGuid="ab855ba5f-048f-41e3-86a4-809f4d4f295aa" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a92b5475e-6572-4e9b-ad9c-eeff19cdc3b1a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="a1f25a311-c92b-4911-b298-dc8ddd2fb226a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="a42f604cb-bbe9-4482-bd27-64d5e0d77d81a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L272_ACS_Status_Word1" Guid="a39bb60fd-cf67-403b-8103-b9cca54fec8aa" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L272_ACS_Status_Word1" Guid="abcba7f9a-8589-45e6-b296-098fc04077efa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a9c640ad6-2d49-467e-9bc9-8ab4ec459320a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="afb6666ff-3fa3-4c9b-9a8e-5ef3ee74e51da" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="TAV1_FAIL_IN_POSITION" Guid="a869d71cc-ff8e-4fb7-b91e-aecc25a7e6afa" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="TAV2_FAIL_IN_POSITION" Guid="a692e3526-dc95-4546-8e5e-9fdf48d6b69ea" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="FCV_FAIL_IN_POSITION" Guid="a7605e81f-d381-4f7b-8f33-3639cb11e452a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="TAPRV_FAIL_IN_POSITION" Guid="a72a94940-d0df-4126-b687-bd2aa6efc06da" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="L_AND_R_PACK_NOT_ON_ADV" Guid="a3886efb8-44ef-412b-8e31-eafb1f64c4f3a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Packs Not ON Advisory" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Packs Not ON advisory condition">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="ad2a653f2-b8a9-4374-a3d6-a7052e802579a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="a4d1229b7-4c1f-4be1-90b3-8dc19bd97678a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="acee58477-9570-442b-bd55-b126e0bc1618a" />
+          </DP>
+          <DP Name="L_AND_R_PACK_NOT_ON_CAU" Guid="ab872c365-84b9-48b7-bdc8-ad6e20dbdbd0a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Packs Not ON Caution" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Packs Not ON Caution condition">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="a3db69444-8939-4dab-8cef-bcb4ea1f4839a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="a75ff936e-89cb-4b89-8238-250e0cb9ce6da" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="a34e08220-ea9b-4d8b-aeb3-b048d6e93533a" />
+          </DP>
+          <DP Name="PACK_DEGRADED" Guid="a5a76042a-b183-450f-b9c6-b74b3cab2042a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_PACK_DEGRADED_2" DestGuid="ab5e4815c-67ca-42cb-8cb8-4de97609f938a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_PACK_DEGRADED_2" DestGuid="a0103f31f-f1e3-4723-937d-3c3f3dafb6a5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_PACK_DEGRADED_2" DestGuid="ab8fb426c-6bf8-48c5-a6ae-f2f5ac4fcf40a" />
+          </DP>
+          <DP Name="PACK_FAULT" Guid="a6c1214be-3440-4e98-97bf-34d5d4ecc78da" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_PACK_FAULT_2" DestGuid="ad08132f7-9f1b-48ec-b49a-6a7bbbf1e286a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_PACK_FAULT_2" DestGuid="a4591db43-974e-4835-b3a3-33cce8eb69dda" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_PACK_FAULT_2" DestGuid="ab0dfd9dc-e1a0-471c-9d8c-1d212b3197e0a" />
+          </DP>
+          <DP Name="PACK_OVHT" Guid="a9e6c5107-6fa8-46f5-992e-4089dfe54937a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_PACK_OVHT_2" DestGuid="abae2b124-b760-422a-8343-e62740c5af31a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_PACK_OVHT_2" DestGuid="ab8fb10dc-be1a-4c2b-bc03-34c35ad91adca" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_PACK_OVHT_2" DestGuid="aae589c0e-cf50-4837-b711-54c2fcbcab57a" />
+          </DP>
+          <DP Name="PACK_OFF" Guid="a4f6d4b67-c5e7-4dfa-8084-8eb80b0764d2a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_PACK_OFF_2" DestGuid="ad2e5b85a-4217-41c7-bdbe-7a456b119bb2a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_PACK_OFF_2" DestGuid="a5a3b4f0c-dec5-4b05-8e14-41dd3399a99ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_PACK_OFF_2" DestGuid="a95ca499f-f4ea-4b2b-988c-d22cb127ad54a" />
+          </DP>
+          <DP Name="TRIM_AIR_DEGRADED" Guid="a31d922b3-9c62-4c1e-ae4b-bd444a333f21a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_TRIM_AIR_DEGRADED_2" DestGuid="aaba50f71-b405-4077-b78a-dc50bb9d91d0a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_TRIM_AIR_DEGRADED_2" DestGuid="ac5078864-2d99-4075-98e8-bd440563abb5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_TRIM_AIR_DEGRADED_2" DestGuid="a85f347e6-15e1-4f02-8d8d-2a90f248f577a" />
+          </DP>
+          <DP Name="TRIM_AIR_FAULT" Guid="a6eee18a2-ca23-4276-8021-704cb4ae3a65a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_TRIM_AIR_FAULT_2" DestGuid="ad544fbc9-8215-4efa-8004-f3d883d709b5a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_TRIM_AIR_FAULT_2" DestGuid="a39d08b90-8375-4efc-8bb6-a3c8f4f850dca" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_TRIM_AIR_FAULT_2" DestGuid="a54702a9d-15b6-4d97-9189-620911de00c7a" />
+          </DP>
+          <DP Name="TRIM_AIR_OFF" Guid="ac587b048-2a4b-443d-beff-7d4da1e260d5a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_TRIM_AIR_OFF_2" DestGuid="aa27e5de8-af45-4c05-bd08-348845d01435a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_TRIM_AIR_OFF_2" DestGuid="a9ede67e5-1bdb-4f8b-ab3e-61e7819a79a0a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_TRIM_AIR_OFF_2" DestGuid="a0cc3369b-2ada-492d-bb60-d095bd4b8b65a" />
+          </DP>
+          <DP Name="RAM_AIR_FAULT" Guid="acf343050-f06d-49d9-8544-f85c3d419004a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="PACK_FLOW_HI" Guid="aa70684e2-5f49-4c2a-bcbd-4864c8743ed2a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=High Flow" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not High Flow">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_PACK_FLOW_HI_2" DestGuid="a5394c8ec-5647-4bb0-85c7-48fe2cf343bea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_PACK_FLOW_HI_2" DestGuid="a1e34b50b-3339-4b43-939d-1b2612778a03a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_PACK_FLOW_HI_2" DestGuid="a225ca07f-6838-494c-83ac-bdbc5ba2a597a" />
+          </DP>
+          <DP Name="MANUAL_TEMP_CONTROL" Guid="a9363f9bc-e6c8-450d-80bf-0106e0a7fa4ca" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manual" />
+          <DP Name="ZONE_DUCT_OVHT" Guid="a63b12c1f-9b9b-4e8b-b705-b3a2f0710d24a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat" />
+          <DP Name="ADJ_ZONE_DUCT_OVHT" Guid="a6d244f6a-8d9f-4793-b9a0-e856346db476a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat" />
+          <DP Name="TAPRV_OPEN" Guid="a31a858e7-fb9e-4287-8408-52b27d7ca86fa" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=not open" />
+          <DP Name="SSM" Guid="a7bbbc729-4451-4bd0-9c03-9e90a2b1c661a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a0d34563b-23f6-4a0f-acff-bab6d57875dba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L272_ACS_Status_Word1" SrcGuid="a8cbf719c-fa93-4d23-a8d7-73c8d0e8973ca" />
+        </A429Word>
+      </DS>
+      <DS Name="L274_WAIS_Status_Word" Guid="a38e8ee98-4770-4667-a036-6e973b1591aaa" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L274_WAIS_Status_Word" Guid="a87f358ed-0ea8-4c51-a409-c4167aa3b2baa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aa9b7e08f-a2fb-45f0-9f32-b86cc749f4f1a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="274" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a65f4fbf0-e591-4dc8-8b20-33085e77101ea" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="WAIV_FAIL_OPEN" Guid="a88e1576c-28b6-4561-922b-c5dfbd45cee1a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed Open" />
+          <DP Name="WAIV_OPEN" Guid="a2e04159e-3a4e-4688-a0a0-e67fdab31beca" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="WAI_MAN_ON" Guid="ace52d44e-fa0a-4026-bf32-6397db5f60f3a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Selected ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected ON">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAI_MAN_ON_2" DestGuid="a8df8258c-221b-4a07-b822-0a6a684f4699a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAI_MAN_ON_2" DestGuid="a709b7926-4e49-4771-be6a-6b54774a4d60a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAI_MAN_ON_2" DestGuid="a0db648b8-afc6-4cc7-b7ce-c9c3ca5e34f8a" />
+          </DP>
+          <DP Name="WAIS_HIGH_PRESS" Guid="a9eddf05d-11d2-4f91-87cd-1e66c6e6e741a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=High pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not high pressure">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAIS_HIGH_PRESS_2" DestGuid="adcb096c4-a708-4fa0-be5a-a14afebd2e0da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAIS_HIGH_PRESS_2" DestGuid="afddae59b-cb72-4fe6-a30f-bbc49b45305ea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAIS_HIGH_PRESS_2" DestGuid="a508da5e5-bd5a-48ef-a076-b839645d0bfda" />
+          </DP>
+          <DP Name="WAI_MAN_OFF" Guid="a830f5083-26eb-4867-ba57-85a3822cf1bda" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAI_MAN_OFF_2" DestGuid="abcbba108-4f7b-4d4e-8bcb-cf333ffe837ea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAI_MAN_OFF_2" DestGuid="a97875f82-349b-4df8-bb47-ac05769f4fffa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAI_MAN_OFF_2" DestGuid="abc9f8c7e-5369-40bb-9a1b-d6b1182bc30da" />
+          </DP>
+          <DP Name="WAI_AUTO_FAULT" Guid="a598f99f5-9f45-4a7d-ad36-1ffded175c1da" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAI_AUTO_FAULT_2" DestGuid="a4c29b7a4-439d-4180-90cf-498c6ba33b2ba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAI_AUTO_FAULT_2" DestGuid="ad501d586-5243-42fd-b379-a026e32d3142a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAI_AUTO_FAULT_2" DestGuid="a9dd57d67-c968-41ab-ade8-85ed9edb7671a" />
+          </DP>
+          <DP Name="WAI_FAULT" Guid="af20bb068-5d17-445e-985c-9ee7f10b1bc7a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAI_FAULT_2" DestGuid="a93e4fd6e-a7b5-4a49-89eb-276fe47bcc41a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAI_FAULT_2" DestGuid="a5410195e-7664-42ec-b07d-2f9f5b4121ada" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAI_FAULT_2" DestGuid="afc8661cd-3c19-46b1-8a6b-903ee76d4e96a" />
+          </DP>
+          <DP Name="WAI_DEGRADED" Guid="ab975cc61-f95e-4255-a18f-572c70f50a0ba" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_WAI_DEGRADED_2" DestGuid="a8dd9542e-9d96-4d65-8d75-bc8cf4ea7e67a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_WAI_DEGRADED_2" DestGuid="a3f4c9558-3eb7-498c-8e37-51f49f7618cea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_WAI_DEGRADED_2" DestGuid="a207239cb-707a-4182-a386-5ffa6e4d8999a" />
+          </DP>
+          <DP Name="WAIV_FAIL_IN_POSITION" Guid="a89a4acdb-6869-4a22-a137-a5e40a73ecc5a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="SSM" Guid="ab36d61d1-2020-494b-93f7-567e54693b23a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="ac1ee19c9-f1b5-4723-86f8-42b7c6bf7fb3a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg.L274_WAIS_Status_Word" SrcGuid="af5c677b0-ce60-4239-b059-f2b2e910e72ea" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OA_1000_HF_IASC2" SrcGuid="af67613a3-eacb-4d97-a7c6-a6894661d96ea" />
+  </HFSamplingPort>
+  <A429Port Name="po429_CA_DB2_RX_304_ss1_HF_CIU_320ms" Guid="ae3a36fea-bf9f-448b-bbe2-4f0e9bc4de6da" Direction="Source" Physical="RDIU_09.40006_A01" RefreshPeriod="1280">
+    <A429Channel Name="A429_CA_DB2_RX_304_ss1_HF_CIU_320ms" Guid="a1bd29c1e-274f-4b77-9ce5-08e71c4d864fa" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="500">
+      <A429Word Name="L304_External_Command_Word" Guid="a7dc99e00-c4ea-4a53-94fd-f88c28f7e131a">
+        <DP Name="LABEL" Guid="adf88ed0a-e039-42c8-9fd2-0642f14cc302a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+        <DP Name="SDI" Guid="acb5c50c2-c313-47a1-9b41-c400e18b8898a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+        <DP Name="APU_BLEED_REQUEST" Guid="aafeeed96-f5e6-4537-ad67-3bf86cff89eaa" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=APU Bleed Request" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No APU Bleed Request" />
+        <DP Name="PACK_CLOSE_CMD" Guid="a1f3fee06-5579-4d53-9b61-48a90f9fea8fa" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=PACK Close Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No PACK Close Command" />
+        <DP Name="BBSOV_RELAY_CMD" Guid="a3ffa4df6-c087-4553-b214-52e755ba313aa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=BBSOV Relay Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No BBSOV Relay Command" />
+        <DP Name="FTIS_INHIBIT_DMD" Guid="a0a3238a8-ce29-4f58-9e2e-b47496f6a139a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inhibit demand" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No inhibit demand" />
+        <DP Name="GHEAT_ON" Guid="af575d0a4-f458-4d38-beaf-6b866c253b89a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF">
+          <Gw_Pub_Ref DestName="HF_CIU.L304_2_IASC2B_GHEAT_ON" DestGuid="a6df90f2c-fb62-48a8-a6e6-a8bb21b1a591a" />
+        </DP>
+        <DP Name="GHEAT_UNAVAILABLE" Guid="a5b9dac26-57df-413b-9484-a643b72aedb9a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Available">
+          <Gw_Pub_Ref DestName="HF_CIU.L304_2_IASC2B_GHEAT_UNAVAILABLE" DestGuid="afb6f33fc-baa5-4420-8648-b46d6d949edba" />
+        </DP>
+        <DP Name="TRIM_SELECTION_UNAVAILABLE" Guid="adf7a40a5-5fcd-415d-a720-616a7bdbca30a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selection not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Selection available" />
+        <DP Name="GALLEY_HEATER_UNAVAILABLE" Guid="a45d5eeaa-0e76-4146-8055-277b0eb10521a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Function not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Function available" />
+        <DP Name="AFT_BFAN_LOW_SPEED_CMD" Guid="ac581c615-a68c-4b10-af31-2bf5727f2949a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Low Speed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Low Speed" />
+        <DP Name="IMA_BLOWING_FAN_STATUS" Guid="a004cc775-2b61-4df9-b79d-dcf7f8f3555ca" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=IMA Blowing Fan Running" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=IMA Blowing Fan Not Running" />
+        <DP Name="WAIS_ON" Guid="a307d12c3-fad6-4652-9c9b-aea6b38c49e8a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+        <DP Name="SSM" Guid="ae267add3-b05a-4196-82b8-5b46e7887da0a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+        <DP Name="PARITY" Guid="ac4719b94-34c9-4ec6-93dc-0db9829ba730a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+        <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="a79020a36-6bc8-4b4f-9c9a-092daff18809a" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OB_500_HF_IASC2" SrcGuid="a6ac457a7-ecf8-4d7d-be20-c1f284724355a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS3_O_A664_po429_OA_Msg_500" Guid="a49b4c12b-b010-4e4f-8212-4dd0aaae4280a" Direction="Source" MessageSize="24" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_OA_Msg_500_S_3" Guid="a109859dd-31c1-4bac-bc17-344bf1898a9ba" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="24" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="500" VLID="33287">
+      <DS Name="FSS1" Guid="a6362013a-ba12-49d9-ac29-d8cb16f5d323a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ab5fec16e-eecf-42d6-b0b4-6c55328c36cca" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ab07f7c81-d400-4111-b365-5cb275f5f297a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a863b6f35-b06c-480a-bc0d-5d0bd95fb32da" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a95b32922-8c3b-48b7-8b52-c3ead4de3c74a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L304_External_Command_Word" Guid="aaf4007ed-7eea-452d-a58e-82f128155b34a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L304_External_Command_Word" Guid="a722db630-2dca-4953-b53a-e78d00db6ccea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae424d0aa-be6c-46c7-b21a-05517e1779fba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="a06e43664-c40e-4fce-85e7-503121353e81a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="APU_BLEED_REQUEST" Guid="a0c1209f7-a303-480f-948c-e2d9708399b8a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=APU Bleed Request" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No APU Bleed Request" />
+          <DP Name="PACK_CLOSE_CMD" Guid="a4800f4f2-cee0-4f1e-bf27-21e70b293ce2a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=PACK Close Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No PACK Close Command" />
+          <DP Name="BBSOV_RELAY_CMD" Guid="a4755570d-e8d3-4fd3-8159-dbd591dfad10a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=BBSOV Relay Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No BBSOV Relay Command" />
+          <DP Name="FTIS_INHIBIT_DMD" Guid="adeb8952a-3b74-44aa-aa98-6cbe26cc87bca" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inhibit demand" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No inhibit demand" />
+          <DP Name="GHEAT_ON" Guid="a7f8bcb62-bec0-4d10-8a7b-f6e89fdf15aba" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="GHEAT_UNAVAILABLE" Guid="ab0f69af3-bef6-41e9-a6b7-a83aee4adde4a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Available" />
+          <DP Name="TRIM_SELECTION_UNAVAILABLE" Guid="ad7efc688-388a-4db8-96b7-ea8c6e7ab3afa" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selection not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Selection available" />
+          <DP Name="GALLEY_HEATER_UNAVAILABLE" Guid="acb328c74-0331-4e1e-a6ee-4db0fc3b12d2a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Function not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Function available" />
+          <DP Name="AFT_BFAN_LOW_SPEED_CMD" Guid="aaa359ca6-1679-4e42-94fa-d969341a8821a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Low Speed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Low Speed" />
+          <DP Name="IMA_BLOWING_FAN_STATUS" Guid="ac6755d99-1686-4d04-9493-84c638f8bcf7a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=IMA Blowing Fan Running" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=IMA Blowing Fan Not Running" />
+          <DP Name="WAIS_ON" Guid="a9f53104c-e233-4541-9e1f-351abf3859d5a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="SSM" Guid="a9e577111-758d-4301-8fe4-0e26e93042a1a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="a9cba3a2b-72d4-4e53-b3eb-ca0bba1cfb46a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L304_External_Command_Word" SrcGuid="a2a2aa71d-0bc0-43ab-ba53-eb04fb29484ba" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L304_External_Command_Word_IASC2_OA_500_2" DestGuid="a02bff77e-498f-4fe1-8d71-016f9928a8d6a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L304_External_Command_Word_IASC2_OA_500_2" DestGuid="a38919d38-65ff-4e89-848d-c9804eca90d7a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L304_External_Command_Word_IASC2_OA_500_2" DestGuid="a4533968c-419e-45b2-ae28-ada241ccf8ada" />
+        </A429Word>
+      </DS>
+      <DS Name="L113_BAS_Bleed_Temp" Guid="a7dfd0780-0e82-4c3b-b6fa-e0bd48749996a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L113_BAS_Bleed_Temp" Guid="a19b657a8-03c9-4171-a090-ec3248e557d3a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aaee7c799-de4f-4117-8f18-4de78822aa6ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="113" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="aa1704049-5814-4193-b3e4-c9602b020c71a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="BAS_BLEED_TEMP" Guid="aeff16a46-6a90-4192-8798-79d2fd156c3aa" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="511.875" FullScaleRngMin="-512" FuncRngMax="511" FuncRngMin="-512" LsbRes="0.125" ParameterSize="13" PublishedLatency="1000" TransmissionIntervalMinimum="500" Units="degrees C" />
+          <DP Name="SSM" Guid="a80cc9b8b-7810-409b-8204-044750985626a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="a3724a07b-89f4-4f34-a1eb-b42eff387424a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L113_BAS_Bleed_Temp" SrcGuid="a73aee95b-c3ed-4d7a-a426-5dd7d32f47e5a" />
+        </A429Word>
+      </DS>
+      <DS Name="L275_ACES_Status_Word" Guid="aaad1f221-a621-49e4-a3d2-0b1b255a32f4a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L275_ACES_Status_Word" Guid="aef09448b-bf06-4feb-ba09-4b24f21ce307a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0658a804-685a-4104-b66a-ba85c0b39c7ba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="ae0fcfe07-59fa-4f15-9eb1-30acfb2600fba" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="EFAN_CH_ACTIVE" Guid="a2f7c1555-64eb-4818-ac47-1c1355d2c1b3a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="EQUIP_BAY_OVHT" Guid="afb701e68-3ace-4583-be77-deb9ed1d7a9aa" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Overheat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_EQUIP_BAY_OVHT_2" DestGuid="a1df696eb-015a-4f26-8e01-4060eb59bfc3a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_EQUIP_BAY_OVHT_2" DestGuid="a09f0d248-dc66-45a3-97fe-6a3cf6ca4581a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_EQUIP_BAY_OVHT_2" DestGuid="a057ed60f-2aeb-4ca4-b629-d710eccd7fc4a" />
+          </DP>
+          <DP Name="EQUIP_BAY_BLOWING_FAULT" Guid="a430da72f-20d1-407e-9f44-ebf960a55ad0a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a47f66dd4-75af-4652-93a5-845938715560a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a29b3c725-fb56-4316-8993-e8349143854ea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a3677f065-7496-4884-b345-f04cd26e867ba" />
+          </DP>
+          <DP Name="EFAN_ON" Guid="a796ab37d-e6dd-4cc0-b48a-b738558a46ffa" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="FWD_EXTRACTION_FAULT" Guid="a4c1afa3b-ed07-4e5d-9671-3609a07ac0e5a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_FWD_EXTRACTION_FAULT_2" DestGuid="ad7f13756-deac-4bd9-8770-8591a181efe0a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_FWD_EXTRACTION_FAULT_2" DestGuid="a6fd08483-5f3c-4856-9590-7ec5960824f9a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_FWD_EXTRACTION_FAULT_2" DestGuid="af4bb4029-a0fb-4350-9551-5ce6d0b31a57a" />
+          </DP>
+          <DP Name="MID_EXTRACTION_FAULT" Guid="a3f9098ae-6c9d-4aa7-bba1-3a7e06f7e3c2a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_MID_EXTRACTION_FAULT_2" DestGuid="add1d7734-fcb5-4746-b317-347080d3ddcba" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_MID_EXTRACTION_FAULT_2" DestGuid="a2b92a573-6878-4fcd-bb7f-9731f11124c0a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_MID_EXTRACTION_FAULT_2" DestGuid="a2faf9092-2fa4-4853-bf2d-dd00d66b3057a" />
+          </DP>
+          <DP Name="EQUIP_BAY_VENT_DEGRADED" Guid="aa41ad806-f758-42aa-b0c5-fc1c9e4b91cfa" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OA_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="aa8740103-7a3e-4b06-9059-4f767e619860a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OA_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="ac73e5a53-6f9a-4a38-82fa-65be170fdf25a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OA_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="a514c8aa0-16de-44c0-9f2e-c78b781ae8f1a" />
+          </DP>
+          <DP Name="BFAN_CH_ACTIVE" Guid="a23b611cf-8439-483e-9d86-5365d1e4eedaa" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="BFAN_ON" Guid="a502dd23f-86da-4973-9330-58913f292c99a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="AVV_CH_ACTIVE" Guid="a71153aea-638c-47a3-b070-9cc870d67d35a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="AVV_FAULT" Guid="a8c581c43-7bab-4f0d-a15e-cc7020415242a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not fault" />
+          <DP Name="AVV_OPEN" Guid="afca68e46-fe67-4637-955c-b66a3b8c7194a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not open" />
+          <DP Name="SSM" Guid="a57948e8d-d0d8-4b6e-a3a0-820f13991d7fa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="acedd7d99-3338-443c-8953-1a6b63293d37a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L275_ACES_Status_Word" SrcGuid="a804237a3-15b5-49f3-bff6-d280cc1544f4a" />
+        </A429Word>
+      </DS>
+      <DS Name="L200_CPCS_Cabin_Altitude" Guid="a1e8f52ed-4be7-443b-b33c-89835a32416da" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L200_CPCS_Cabin_Altitude" Guid="a349d0647-f126-4bd0-a373-f27b73029411a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="add00d332-1773-4371-9c6e-0685b0ce98bda" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="200" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="a60154742-d9f3-4b42-a1c9-85cff30917eea" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="CPCS_CABIN_ALTITUDE" Guid="ad459030d-eee4-4c3c-926d-414acfa36ef7a" BitOffsetWithinDS="12" DataFormatType="BNR" FullScaleRngMax="131070" FullScaleRngMin="-131072" FuncRngMax="41000" FuncRngMin="-3546" LsbRes="2" ParameterSize="17" PublishedLatency="1000" TransmissionIntervalMinimum="500" Units="ft" />
+          <DP Name="SSM" Guid="a0c7bb573-e1b3-4cbf-a51c-fff0d20c3e45a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="a37713e35-6949-45aa-8930-b36ed5192e13a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L200_CPCS_Cabin_Altitude" SrcGuid="a6dbd31bc-978b-4dd1-9c58-f18770cdb788a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OA_500_HF_IASC2" SrcGuid="a42a8c8a7-aa4d-4ff6-afa8-40a62aa061d0a" />
+  </HFSamplingPort>
+  <A429Port Name="po429_CA_DB2_RX_210_HF_CIU_40ms" Guid="a95615e27-9d57-4e74-93d9-1e7cff33ee7aa" Direction="Source" Physical="RDIU_09.40006_A01" RefreshPeriod="1280">
+    <A429Channel Name="A429_CA_DB2_RX_210_HF_CIU_40ms" Guid="afef27234-3025-4e9f-bdd5-bd0dc9b70420a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="50">
+      <A429Word Name="L210_ACS_Zone_Selected_Temperature" Guid="aa889b017-3b60-48b8-9023-17e3560c093ca">
+        <DP Name="LABEL" Guid="ae0a1c901-946c-4715-ba7e-cf53473c399ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="210" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="SDI" Guid="a1d45e5c0-53bf-41f9-8975-a67121981c01a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="ACS_ASS_ZONE_SELECTED_TEMPERATURE" Guid="a3356318d-2bc6-479a-a7d5-36d2d99bbfa7a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="511.875" FullScaleRngMin="-512" FuncRngMax="30" FuncRngMin="16" LsbRes="0.125" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="50" Units="degrees C">
+          <Gw_Pub_Ref DestName="HF_CIU.L210_2_IASC2B_ASS_ZONE_SELECTED_TEMP" DestGuid="a970a9030-3185-4575-8f04-cbdef8f89de8a" />
+        </DP>
+        <DP Name="SSM" Guid="afa4d763f-9a44-4089-a60c-0e42b39fee23a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="PARITY" Guid="a7ca4d3a7-ae89-49eb-b9f6-d35fa5689f13a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_50.L210_ACS_Zone_Selected_Temperature" SrcGuid="a7071fa5d-07a9-49b5-97d4-b6221f0a417ca" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OB_50_HF_IASC2" SrcGuid="a96a006ba-43df-45ca-9fb1-2d50cb27c6e8a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS6_O_A664_po429_OA_Msg_50" Guid="ad9e43b16-2947-4e93-a73a-ccc408a7a555a" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="40">
+    <A664Message Name="po429_OA_Msg_50_S_6" Guid="a6a7302e8-f345-4352-b22a-ddaaa5ce7b52a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="NA" TransmissionIntervalMinimum="50">
+      <DS Name="FSS1" Guid="a6426df88-7017-447f-a235-9ec8a9aedfa8a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a9ab912d9-39c3-4b21-bb19-5d69bf98d150a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L213_ACS_Zone_Actual_Temperature" Guid="a1f9e0fec-8149-44eb-8669-2bf1acda24aba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L213_ACS_Zone_Actual_Temperature" Guid="a0ba16d17-d246-4853-a6bf-50784e9e63eea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="af94de11b-5d0f-4ad4-ac38-fcdeb20768dfa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="213" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+          <DP Name="SDI" Guid="a8316f578-4f03-448a-9a94-d78da684b57ca" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+          <DP Name="ACS_ASS_ZONE_ACTUAL_TEMPERATURE" Guid="a43dea693-1478-4dfc-b4e8-7d64486fc20fa" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="511.875" FullScaleRngMin="-512" FuncRngMax="120" FuncRngMin="-55" LsbRes="0.125" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="50" Units="degrees C" />
+          <DP Name="SSM" Guid="aef2a8793-fb7d-4df7-87b8-39a570e0b902a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+          <DP Name="PARITY" Guid="a8521ee5e-15a5-4701-8c82-451cb0bbccc7a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OA_Msg_50.L213_ACS_Zone_Actual_Temperature" SrcGuid="ad184fdb6-cefe-43b3-a21b-754bdcb9738aa" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OA_50_HF_IASC2" SrcGuid="a8b7a7052-721c-4d25-afb1-6480ed32971fa" />
+  </HFSamplingPort>
+  <A429Port Name="po429_CA_DB2_RX_213_HF_CIU_40ms" Guid="ad8e1d845-c585-49ef-b19b-1ee637b8bb2ba" Direction="Source" Physical="RDIU_09.40006_A01" RefreshPeriod="1280">
+    <A429Channel Name="A429_CA_DB2_RX_213_HF_CIU_40ms" Guid="a47ea9688-3de4-4ea4-8f5b-c8619aa7e34aa" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="50">
+      <A429Word Name="L213_ACS_Zone_Actual_Temperature" Guid="ac1f3a577-9e40-4a95-a7a1-224df820ea11a">
+        <DP Name="LABEL" Guid="a1aa54c06-da4b-45e2-8aff-7c335f0bdb33a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="213" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="SDI" Guid="ab856cde5-6898-4888-abe5-3a633a21d1b6a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="ACS_ASS_ZONE_ACTUAL_TEMPERATURE" Guid="a82eebe90-ba1a-4982-b20d-36b4663e19efa" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="511.875" FullScaleRngMin="-512" FuncRngMax="120" FuncRngMin="-55" LsbRes="0.125" ParameterSize="13" PublishedLatency="100" TransmissionIntervalMinimum="50" Units="degrees C">
+          <Gw_Pub_Ref DestName="HF_CIU.L213_2_IASC2B_ASS_ZONE_ACTUAL_TEMP" DestGuid="a40dc75cf-a74d-4aae-9b6c-307e1ad8ff26a" />
+        </DP>
+        <DP Name="SSM" Guid="a8954370f-86aa-4633-955c-8c78726a60bfa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <DP Name="PARITY" Guid="af136566a-0805-40b3-9830-118830d7bc20a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="50" />
+        <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_50.L213_ACS_Zone_Actual_Temperature" SrcGuid="a00969a78-b444-4a63-aa10-0dcbc1ee0b8aa" />
+      </A429Word>
+    </A429Channel>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OB_50_HF_IASC2" SrcGuid="a96a006ba-43df-45ca-9fb1-2d50cb27c6e8a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_po429_OB_Msg" Guid="a8c48ed98-be80-4792-8a03-fd60ee388a98a" Direction="Source" MessageSize="36" Networks="Both" RefreshPeriod="640">
+    <A664Message Name="po429_OB_Msg_S_1" Guid="a7517ca48-a798-4284-919b-be15f8fe4973a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="36" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="1000" VLID="33384">
+      <DS Name="FSS1" Guid="a34afa379-8503-4f5c-b6ff-a077bb6bb6e5a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a6f31bbc8-f0d4-46e7-9f43-10ca74d14998a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="aaa0a8da3-f466-438e-b967-a42f6e9d0f81a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a8cf5b4ae-47cf-4172-a607-1547d8a3d72aa" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="afebb2b4e-81e6-4489-8678-43ab568d5e2fa" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L270_CPCS_Status_Word" Guid="a62284506-19f1-4152-ab12-91e48587b50da" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L270_CPCS_Status_Word" Guid="a77c0964f-6943-46f7-b2ed-d4f3411bba4ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a52319fba-ba3b-4cf4-8a68-a732e1cadb60a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="270" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a5f37c79d-0386-411d-a1b5-a19f1417366fa" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="AUTO_CHANNEL_ACTIVE" Guid="a6bf1dd2c-7e95-4895-aee9-c8ca2b0c6a10a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Active" />
+          <DP Name="MAN_PRESS_ON" Guid="ab9e90a51-9247-4fe1-bb33-e7831e179a21a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_MAN_PRESS_ON_2" DestGuid="ac9efd48a-09a7-4976-8bb8-5315699a1c03a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_MAN_PRESS_ON_2" DestGuid="a45cdf7b9-39ec-41a7-9361-3b2a23130ad3a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_MAN_PRESS_ON_2" DestGuid="af02fac39-7f16-46e8-8fb2-665febfc8ea0a" />
+          </DP>
+          <DP Name="CABIN_PRESS_FAULT" Guid="aa09acbf1-1d4c-4e99-93ee-fec03cef0719a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="MAN_PRESS_FAIL" Guid="af4e3575b-018e-4e4c-a9a6-05301d6ff83ea" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CABIN_NEG_DIFF_PRESS_W" Guid="a3ced4f37-bb8a-4caf-a327-2625ad638faaa" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="a64bf0986-5148-47fb-99d4-9ae50052662aa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="a55102d3d-d2c1-4b8c-8567-654c8ef0e82aa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CABIN_NEG_DIFF_PRESS_W_2" DestGuid="acae583c7-b3e2-4c96-a7fe-c2d3eeb501c1a" />
+          </DP>
+          <DP Name="CAB_ALT_W" Guid="aeb47e810-b9d4-4546-9908-3a0fde0a2347a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CAB_ALT_W_2" DestGuid="a3b65003c-1d62-4a4e-ad89-cac3b192aab5a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CAB_ALT_W_2" DestGuid="acc8fdf89-bfae-43f1-b720-5d82ac6db85fa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CAB_ALT_W_2" DestGuid="a629b2c2e-a53a-47f0-8973-60e5d9263853a" />
+          </DP>
+          <DP Name="CABIN_HI_DIFF_PRESS_W" Guid="a1b476746-caf2-4fe3-b0ad-7e3ff4779bada" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Warning">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CABIN_HI_DIFF_PRESS_W_2" DestGuid="a3729815a-b33a-41cd-9019-8adf1c0bd9a4a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CABIN_HI_DIFF_PRESS_W_2" DestGuid="ac0168265-651e-4162-8d49-a3f18f949026a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CABIN_HI_DIFF_PRESS_W_2" DestGuid="a7cb4da4a-29f7-42d9-b896-8daabafa175ba" />
+          </DP>
+          <DP Name="ALT_LIMITATION_FAULT" Guid="ac31424db-f891-406d-bd4a-187b9728c53da" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="EMER_DEPRESS_ON" Guid="a8d3f0ab3-0a78-4d89-b6b9-a7e4cf97bd4ca" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_EMER_DEPRESS_ON_2" DestGuid="a4a3bb487-fc46-4200-94ce-8c2d0032e478a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_EMER_DEPRESS_ON_2" DestGuid="a343aab25-75cf-4f9d-b743-8b466726fda2a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_EMER_DEPRESS_ON_2" DestGuid="a22c042b2-d23b-421d-ab56-f6e890f6310da" />
+          </DP>
+          <DP Name="CAB_ALT_C" Guid="abf7f22a2-6bda-4d64-8ee0-68b5ae2edf4ba" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Cabin Altitude caution " ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Cabin Altitude caution ">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CAB_ALT_C_2" DestGuid="aa0acf9f6-8eae-427f-b868-8be3124d29cda" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CAB_ALT_C_2" DestGuid="a7416ca8e-1cd4-4416-81aa-fa2e4cfaa458a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CAB_ALT_C_2" DestGuid="a8e75e06d-138d-4a01-882e-2bae2feff8eda" />
+          </DP>
+          <DP Name="DITCHING_ON" Guid="a4ca2f232-460a-41a2-91b3-810e64dc9a42a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Ditching On " ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Ditching On" />
+          <DP Name="LDG_ALT_MAN" Guid="a0cc42357-02f8-4d62-8c4b-29670571d798a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=MAN" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not MAN">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_LDG_ALT_MAN_2" DestGuid="a0a48fa26-c96b-43cb-8fe2-1195ebb49087a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_LDG_ALT_MAN_2" DestGuid="a72bddd36-7f3f-44c6-b9a8-2d4654bbf314a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_LDG_ALT_MAN_2" DestGuid="a233b95d7-30ab-41d7-a396-0c64da056853a" />
+          </DP>
+          <DP Name="HAAO_MODE_ON" Guid="a44ad9402-ffff-4756-921a-7de420b9fbcda" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=High airport altitude Operation mode ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=High airport altitude Operation mode OFF" />
+          <DP Name="CABIN_PRESS_DEGRADED" Guid="a2f815afe-67a8-42bc-82f1-f042e6e74b5ca" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded" />
+          <DP Name="OFV_FO" Guid="a4debaa80-2308-428b-803c-5278e0fb43d7a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Full Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Full Open" />
+          <DP Name="OFV_FC" Guid="a7a10a344-2a03-49b5-b578-53c27dc21f40a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Full Closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Full Closed" />
+          <DP Name="SSM" Guid="aa93a6c4d-d015-42a2-b0a4-c21fb157cb92a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="aa991b6f9-a842-47eb-bfa5-634231d5efaca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L270_CPCS_Status_Word" SrcGuid="ab504b938-8b2c-4f42-b680-f1cbef52dd88a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L270_CPCS_Status_Word_IASC2_OB_2" DestGuid="a11878467-82a0-4681-8f2d-195ad122c6d5a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L270_CPCS_Status_Word_IASC2_OB_2" DestGuid="aea038b96-a4bd-47c7-b9d7-b954e042d565a" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L270_CPCS_Status_Word_IASC2_OB_2" DestGuid="ab247ed9f-14c9-4d92-b53d-776d760566aca" />
+        </A429Word>
+      </DS>
+      <DS Name="L271_BAS_Status_Word" Guid="aca782dd6-de10-466a-8e89-fc30e6f41218a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L271_BAS_Status_Word" Guid="a21fc94da-aa84-4482-a0c4-538425e2f578a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac19824e8-dd3d-466c-b8e1-c2c1c7a5e6c8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a8c170cec-ccdd-40be-a580-f880f8f35a68a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="HPV_OPEN" Guid="ab6e6f075-10bd-4978-869f-8525ca2fd48da" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=HPV Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=HPV Not open" />
+          <DP Name="SINGLE_BLEED_OPERATION" Guid="afa3d1196-9c8a-4cc1-99c4-03ae0a0c3e15a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Single bleed operation" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not single bleed operation" />
+          <DP Name="CBV_FC" Guid="aa51bed08-fcda-4067-86c9-2d3f22a0c097a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=CBV Full Closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=CBV Not Full Closed" />
+          <DP Name="CBV_FO" Guid="a3d692742-9946-4084-a628-d83d3bce94f7a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=CBV Full Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=CBV Not Full Open" />
+          <DP Name="BLEED_DEGRADED" Guid="ac3462a8e-c31f-42be-88f0-04183fd9badba" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_BLEED_DEGRADED_2" DestGuid="a37ec4b06-5621-4004-b064-7c54d1b0df40a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_BLEED_DEGRADED_2" DestGuid="a0ea034b5-6bf5-4094-9fe2-e14604807dd1a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_BLEED_DEGRADED_2" DestGuid="af5ef6f21-a747-4ec8-91b8-5a7ada82b03ca" />
+          </DP>
+          <DP Name="BLEED_FAULT" Guid="a64ad055b-99ee-4f78-8643-dadcfe4f15e1a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_BLEED_FAULT_2" DestGuid="a3b1c8f48-8433-40be-a2f0-618c6461120da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_BLEED_FAULT_2" DestGuid="a30b0f335-20cb-453d-ab66-358ca67ae0daa" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_BLEED_FAULT_2" DestGuid="a6d8b68bb-d9f2-4861-8f36-ff046f47b9d1a" />
+          </DP>
+          <DP Name="BLEED_OFF" Guid="a383e683e-be14-45b5-812f-dbd1b18d828ea" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_BLEED_OFF_2" DestGuid="a8c845aef-465b-4af6-a83e-d834164299fca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_BLEED_OFF_2" DestGuid="ae682ee1a-7d50-4767-a59e-740923c25d28a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_BLEED_OFF_2" DestGuid="a4c722102-45fd-4807-a0a3-0aa2077905eba" />
+          </DP>
+          <DP Name="XBLEED_FAIL_IN_POSITION" Guid="a83945591-d400-4c97-a61b-cf3986c88ac5a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="XBLEED_MAN_CLSD" Guid="ac47b329b-d273-49f3-b884-f0a4dd1af5e2a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Manually closed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manually closed">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_XBLEED_MAN_CLSD_2" DestGuid="a5245ea39-bbc1-496b-911a-0531ccb94859a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_XBLEED_MAN_CLSD_2" DestGuid="aaac8321b-5930-4635-8e11-4b788bfb7908a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_XBLEED_MAN_CLSD_2" DestGuid="aa5ff2354-aa0d-4285-856d-ae6af79c0919a" />
+          </DP>
+          <DP Name="APU_BLEED_ON" Guid="a48ebd0fc-67ba-41d3-a7c9-66d68f1d0ad0a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selected ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected ON">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_APU_BLEED_ON_2" DestGuid="ae89b687f-622b-4eed-99e7-7ed3dbe0dcf9a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_APU_BLEED_ON_2" DestGuid="a0d4b5882-46b8-4e26-b926-f1058f9fc278a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_APU_BLEED_ON_2" DestGuid="a14b2e7e1-f522-489d-9601-3ceec9239f52a" />
+          </DP>
+          <DP Name="BLEED_LOW_PRESS" Guid="a7a5d8b3f-2399-4779-b251-11c3643f5aeba" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Low pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not low pressure" />
+          <DP Name="BLEED_HIGH_PRESS" Guid="a263dfdab-24df-4b5d-a959-b8c6e30058bea" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=High pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not high pressure" />
+          <DP Name="PRSOV_FAIL_IN_POSITION" Guid="a5deaf6f4-7a8f-40e9-8808-383988f299dfa" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="XBLEED_MAN_OPEN" Guid="a96d5bc00-2f6e-46ff-bd10-3e8e38477008a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Manually open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manually open" />
+          <DP Name="CBV_FAIL_OPEN" Guid="a145896df-7e2a-4b11-8233-c9512599081ea" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CBV_FAIL_OPEN_2" DestGuid="a08c4f2a5-5fc7-47cd-8723-9637f4303572a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CBV_FAIL_OPEN_2" DestGuid="a31a03cb0-3fbe-45db-9a41-0b41a02b58f5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CBV_FAIL_OPEN_2" DestGuid="aa4c9fb3a-75f8-4f75-802d-654868467529a" />
+          </DP>
+          <DP Name="CBV_FAIL_CLOSED" Guid="a6991094a-16dd-4ebf-885c-6cba6ca5b659a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CBV_FAIL_CLOSED_2" DestGuid="a0fd102ab-f09a-4e1c-a64f-2cea5dd4d692a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CBV_FAIL_CLOSED_2" DestGuid="ad59aea48-eb19-4c8f-b459-058d6645815ba" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CBV_FAIL_CLOSED_2" DestGuid="a5de3a5e8-c583-4779-8a03-939f1475a8e1a" />
+          </DP>
+          <DP Name="BLEED_LOW_TEMP" Guid="a505d45f4-00fa-4522-b82e-5f160837e079a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Low Temperature" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No low temperature" />
+          <DP Name="BLEED_HIGH_TEMP" Guid="a56c606fc-4c0e-4fb8-b287-50900394af4ea" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=High Temperature" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No high temperature" />
+          <DP Name="PRSOV_OPEN" Guid="a2533cb09-6357-4ca6-9f76-a27ffe2553aea" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="SSM" Guid="aaf34ba3e-7ae3-45a5-820f-8067508621d0a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a37aa71b6-9a1a-4340-af48-cb7b8b302a6aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L271_BAS_Status_Word" SrcGuid="afd4e2449-b3b1-4e38-b5d5-394e878b1fb6a" />
+        </A429Word>
+      </DS>
+      <DS Name="L276_DSHS_Status_Word" Guid="adae4f4b6-25c9-4b63-a465-3145614ffd99a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L276_DSHS_Status_Word" Guid="aab6d4e3d-19af-4af0-92e3-1ae9449b6f1ba" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3ed24a09-7231-40c4-8536-d0ae8d9181baa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="276" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="aa2f1139d-1e9e-4862-9e63-22d7f78f031ba" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="BBSOV2_OPEN" Guid="a82351521-f5eb-4f3e-9a7f-5d9e948989c6a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="BBSOV1_OPEN" Guid="af6e511ac-4ace-4582-beb4-f2e80365aca6a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="RECIRC_OFF" Guid="a4cc14352-bc3e-47ef-b8fd-47c443ba5f29a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_RECIRC_OFF_2" DestGuid="a3689c9c5-483f-4928-b58d-1e2fc3e6e4b9a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_RECIRC_OFF_2" DestGuid="a4e2fcf9c-c863-4283-a6ca-ecc32ad78ca1a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_RECIRC_OFF_2" DestGuid="a4d9dd035-93e9-413c-9922-9d53db11ae90a" />
+          </DP>
+          <DP Name="BBSOV_FAIL_OPEN" Guid="a569393de-6c17-4b21-a32b-f10355dbce34a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed" />
+          <DP Name="BBSOV_FAIL_CLOSED" Guid="a3c124312-3f63-45fb-96e4-be34f9cbe0cea" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_BBSOV_FAIL_CLOSED_2" DestGuid="a9a7abac6-5abe-42fd-9d76-8d22ad38d982a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_BBSOV_FAIL_CLOSED_2" DestGuid="af3cca248-87dc-4b8f-9614-4351da1d9546a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_BBSOV_FAIL_CLOSED_2" DestGuid="ab21ffd98-d33c-4741-a115-568ed9df7a2da" />
+          </DP>
+          <DP Name="CARGO_HEAT_FAULT" Guid="a586df469-37ea-4545-a4b1-0c7ae471ee33a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="CARGO_VENT_ON" Guid="a64e3f360-a198-4eab-b879-511039aa41dba" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not ON" />
+          <DP Name="RECIRC_FAULT" Guid="a3bef559e-ed0b-46f8-9823-8e28e92bb0a7a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_RECIRC_FAULT_2" DestGuid="aa9809a70-1188-43ed-ab03-9159bb12088fa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_RECIRC_FAULT_2" DestGuid="aa7785ed6-b258-42f5-bb69-efb442220711a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_RECIRC_FAULT_2" DestGuid="a4245726d-82e9-4c54-b5da-f45412a078f1a" />
+          </DP>
+          <DP Name="RECIRC_DEGRADED" Guid="a56846196-d06e-4576-8c33-a61de1ac0940a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_RECIRC_DEGRADED_2" DestGuid="ad7c5482b-2977-42e5-a1c9-3a82585575aca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_RECIRC_DEGRADED_2" DestGuid="a68e0eb23-58be-46c4-9791-ab6aa2cc01e4a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_RECIRC_DEGRADED_2" DestGuid="a86d14bf0-7500-4f31-801e-aab36298ebeea" />
+          </DP>
+          <DP Name="CARGO_LO_TEMP" Guid="a724f1721-d284-4603-a6c1-f5f68cb58b7fa" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Low Temp" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Low Temp" />
+          <DP Name="GALLEY_HEATER_FAIL" Guid="a5b5efbc8-a5fc-4607-b93e-a802ede6732aa" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not failed" />
+          <DP Name="SSM" Guid="aa53b724b-1ddd-47fa-9406-ab8643d0faeca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a302d4505-8b89-41ae-83dd-c0a8ac7866e5a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L276_DSHS_Status_Word" SrcGuid="a59080e2f-671b-41b0-b85d-856b8e3ba37ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L360_IASC_Diagnostic_Word" Guid="a9d453173-b9f1-43a1-8afe-7f1166ac9de3a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L360_IASC_Diagnostic_Word" Guid="a8154f6b3-19b1-4f5f-b595-6b0f6c8ae7f2a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ab5106411-d6f2-4070-91ef-346e8b52be32a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="360" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a3f7736fd-720a-4224-9304-b648cd3161dca" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PIN_PROG_DISAGREE" Guid="aeffabe48-f53e-4dc6-b8a9-2be78e553f53a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="CH_INOP" Guid="aab579f43-94c6-4802-a2b2-a8de8d845306a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_CH_INOP_2" DestGuid="af2bd44d4-78d3-42d6-9ce9-fa3dea61c2e0a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_CH_INOP_2" DestGuid="aa3893299-b4a9-49d6-814c-e7d2f2c98912a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_CH_INOP_2" DestGuid="a3af9e9a4-123e-45c4-a6ff-b2fa4c2fc07da" />
+          </DP>
+          <DP Name="CH_FAULT" Guid="a662b4775-dbc2-4b4a-b783-3ce777adec4aa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="ADJ_CH_INOP" Guid="a2f5ebeff-75dd-49aa-89b8-d1f6c255f900a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative" />
+          <DP Name="ADJ_CH_FAULT" Guid="aed61fe46-5654-41fa-af26-f8621a040fb7a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="OPP_CH_INOP" Guid="afb6848e7-b83e-4c84-8585-eba9714674e1a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not inoperative" />
+          <DP Name="OPP_CH_FAULT" Guid="abd7800c2-e536-463b-a50f-f2cd9ed0b7c2a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No fault" />
+          <DP Name="DISCRETE_INPUT_DISAGREE" Guid="a761a31d8-86dd-4b3c-a8af-a505a271aa11a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="CAB_PRESS_SNSR_DISAGREE" Guid="a7f659783-91ed-45a8-bf54-6ce7f4be4a31a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="ADJ_CAB_PRESS_SNSR_DISAGREE" Guid="a984487fd-8b65-489f-9eb9-6112a3025e04a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="OPP_CAB_PRESS_SNSR_DISAGREE" Guid="aae38232d-d2bf-4e80-a8c3-62c6dd378a69a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Disagree" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No disagree" />
+          <DP Name="ADJ_CH_RDIU1_INPUT_FAIL" Guid="a217e132e-8054-4d67-aa5f-9293e7bab5f7a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="ADJ_CH_RDIU2_INPUT_FAIL" Guid="af09e855e-0cfc-49f4-a3be-1dd51a3f392ba" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CH_RDIU1_INPUT_FAIL" Guid="a7b3379d8-25c2-4779-a739-c47bda8ee559a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="CH_RDIU2_INPUT_FAIL" Guid="a87fe252c-2d1e-4f45-b8a1-292d06a88b79a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="OPP_CH_RDIU1_INPUT_FAIL" Guid="ad8e830be-82d2-473b-ae10-bb45efad880aa" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="OPP_CH_RDIU2_INPUT_FAIL" Guid="ad4518655-90d0-4ec2-9378-2b0abe00a6faa" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="SSM" Guid="acd050011-ece4-4971-96de-043168bb5eeca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a29e1b288-d698-4de0-8ab4-d16c2b885c50a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L360_IASC_Diagnostic_Word" SrcGuid="a4d91f433-f034-4109-b988-57155ac13c1da" />
+        </A429Word>
+      </DS>
+      <DS Name="FSS2" Guid="a612579db-2078-4c64-b4a0-1291f5551967a" ByteOffsetFSF="0" ByteOffsetWithinMsg="24" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB5" Guid="ac6b9974c-031f-439d-bcdd-89413ddb7b66a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB6" Guid="a913b7aac-b7d4-424e-a02d-5483b5c9c237a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L272_ACS_Status_Word1" Guid="ac90c6c77-fd57-4203-9c6e-87d7a5b9c6a8a" ByteOffsetFSF="24" ByteOffsetWithinMsg="28" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L272_ACS_Status_Word1" Guid="a4d6f4b85-e56d-4fd3-9a22-44317827ae96a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="adfa5547e-8477-44c8-b8f7-95eb16f79e5ca" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="a299bea2c-68b7-4d3a-9d7d-467351fefe08a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="TAV1_FAIL_IN_POSITION" Guid="a452183fd-f467-4279-b8dd-5b2114b6e58ca" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="TAV2_FAIL_IN_POSITION" Guid="a4515b1d2-6705-4dca-931a-e13f6cd31b19a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="FCV_FAIL_IN_POSITION" Guid="a69a2a3fe-507d-44aa-8292-d013badd979aa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="TAPRV_FAIL_IN_POSITION" Guid="aff424b1e-dc21-4ee9-af44-e081103226e7a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="L_AND_R_PACK_NOT_ON_ADV" Guid="a07700d17-f0f4-4e6d-aef4-21c45b12c761a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Packs Not ON Advisory" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Packs Not ON advisory condition">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="a14827a51-4465-4d42-b118-1ef8f0a76d03a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="a5d0bc761-4c3e-4b3e-a72a-7e3047f30b38a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_L_AND_R_PACK_NOT_ON_ADV_2" DestGuid="a0174f982-09b4-45ac-ad8f-09448f119881a" />
+          </DP>
+          <DP Name="L_AND_R_PACK_NOT_ON_CAU" Guid="a3304bd18-fec1-4964-995a-3f8c48b1bd56a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Packs Not ON Caution" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Packs Not ON Caution condition">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="aa57a6a8e-0f4b-490a-bf90-6aa07d603a58a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="a2c6fc0dd-31f4-44a5-89ea-fc64a5067493a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_L_AND_R_PACK_NOT_ON_CAU_2" DestGuid="aee584b1e-c455-4c8c-a057-6ac74cac8367a" />
+          </DP>
+          <DP Name="PACK_DEGRADED" Guid="a9735f42c-f028-4119-95cf-1832ab86e8dda" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_PACK_DEGRADED_2" DestGuid="a4669609c-8c1a-4a57-8185-4761a2a735d9a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_PACK_DEGRADED_2" DestGuid="a6fa71642-c3ad-429f-8cd2-01787f41f7d5a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_PACK_DEGRADED_2" DestGuid="a75217701-5f09-482c-8411-6f9c20b275c0a" />
+          </DP>
+          <DP Name="PACK_FAULT" Guid="a48b4f6f3-0f75-42bb-81eb-840ac4877e3ea" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_PACK_FAULT_2" DestGuid="ad450f401-45d7-4305-9df0-2bb7cc000461a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_PACK_FAULT_2" DestGuid="ae3811386-8ef5-47f7-9f13-da90848b1ed7a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_PACK_FAULT_2" DestGuid="a4f70152e-555e-4b91-ac9d-e6317e7cfd6aa" />
+          </DP>
+          <DP Name="PACK_OVHT" Guid="a69df729c-d687-4b30-9a9d-38a17841a334a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_PACK_OVHT_2" DestGuid="a1d4ad7fc-efde-46df-a973-86a4b271e9b4a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_PACK_OVHT_2" DestGuid="a9fcd81af-1112-4f97-8075-8dfa69058cb2a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_PACK_OVHT_2" DestGuid="aee972e64-705a-40f8-968c-1a350b62d081a" />
+          </DP>
+          <DP Name="PACK_OFF" Guid="ae84d99bd-b320-4b8d-9636-cd2cb2378adba" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_PACK_OFF_2" DestGuid="ad9f697eb-766b-4594-a188-4de464a7e42ca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_PACK_OFF_2" DestGuid="ae223bfc3-2c53-4b54-ad23-f7fda4451f55a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_PACK_OFF_2" DestGuid="a18e54e65-76e6-4cbf-9bb4-0755e47003d3a" />
+          </DP>
+          <DP Name="TRIM_AIR_DEGRADED" Guid="aa1b94e14-6f13-440e-83cd-e71d802826f4a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_TRIM_AIR_DEGRADED_2" DestGuid="a28490647-a594-42b4-b63d-fb960588c9cea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_TRIM_AIR_DEGRADED_2" DestGuid="a0d4ab27c-07da-4e7c-81cb-f832727533bca" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_TRIM_AIR_DEGRADED_2" DestGuid="a8908b6a5-12d4-4f75-9f2a-c63efd4b94f6a" />
+          </DP>
+          <DP Name="TRIM_AIR_FAULT" Guid="ad67d5973-aea9-4410-a859-2f83cfec704ca" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_TRIM_AIR_FAULT_2" DestGuid="a10326b6f-81d2-4a60-a767-f96743cc9a31a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_TRIM_AIR_FAULT_2" DestGuid="a34acfd3d-e616-45c6-902a-f74cd2bd0486a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_TRIM_AIR_FAULT_2" DestGuid="afc43709c-22f9-44e5-a363-423a5b838a83a" />
+          </DP>
+          <DP Name="TRIM_AIR_OFF" Guid="a03da83fb-b609-4398-857a-979b4ec4eb87a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_TRIM_AIR_OFF_2" DestGuid="ad0c67c4f-624d-4bee-bf38-1eaf2f7b7afaa" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_TRIM_AIR_OFF_2" DestGuid="af400df57-363f-48fe-a735-27678a1c9d8ea" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_TRIM_AIR_OFF_2" DestGuid="a4ac59dd1-ac39-4378-bb05-d9ed396a49fba" />
+          </DP>
+          <DP Name="RAM_AIR_FAULT" Guid="a4ce5652a-6935-4bf0-91ba-9b2d2f785d9ba" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+          <DP Name="PACK_FLOW_HI" Guid="afd0beaae-a47a-4e8f-8591-bd4bf56e0af6a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=High Flow" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not High Flow">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_PACK_FLOW_HI_2" DestGuid="a3325063f-3afa-43e3-a321-7218d11fd6c0a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_PACK_FLOW_HI_2" DestGuid="a7d9eff5f-e186-4964-babc-096cceeef605a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_PACK_FLOW_HI_2" DestGuid="a4e9e78b0-068d-4dbc-b0e9-03cf39677e73a" />
+          </DP>
+          <DP Name="MANUAL_TEMP_CONTROL" Guid="a4f2ee847-823c-43b3-8cda-21cc8145aa99a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Manual" />
+          <DP Name="ZONE_DUCT_OVHT" Guid="a97667e06-de3d-4fc0-891b-a740ad1f67dda" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat" />
+          <DP Name="ADJ_ZONE_DUCT_OVHT" Guid="a9ee0c665-7619-48ee-ba2b-6c175a02de61a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Overheat" />
+          <DP Name="TAPRV_OPEN" Guid="a9eb35b92-625d-43ff-9627-f1528d4e67cda" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=not open" />
+          <DP Name="SSM" Guid="a5e6ebd06-9437-49d6-b11b-cbf0e09cea96a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="afd10a809-0ec4-4d21-bdd3-b11965d73560a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L272_ACS_Status_Word1" SrcGuid="abe2e18cd-1da9-4d68-8fa0-d0a0517f7224a" />
+        </A429Word>
+      </DS>
+      <DS Name="L274_WAIS_Status_Word" Guid="a056ce662-da3b-4a43-9e4c-3ea30f45b19ea" ByteOffsetFSF="25" ByteOffsetWithinMsg="32" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L274_WAIS_Status_Word" Guid="afcabaddb-2235-4836-a653-7b35b2f0383da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae6f0dc89-f5ab-4f64-8d49-837b9b2b3291a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="274" ParameterSize="8" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="SDI" Guid="ae45fed34-eea6-404f-bfe0-34d7803114aea" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="WAIV_FAIL_OPEN" Guid="a9090ca2f-015a-42e9-8dd9-eda0244f5580a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Failed Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed Open" />
+          <DP Name="WAIV_OPEN" Guid="a1932ebdf-ef6e-4458-af86-de89c6ccd9c8a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not open" />
+          <DP Name="WAI_MAN_ON" Guid="a7f1aba1f-607c-46ba-b52d-3980bccb0a51a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Selected ON" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected ON">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAI_MAN_ON_2" DestGuid="a11257d62-d13f-4b52-8a93-834732a9be5ea" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAI_MAN_ON_2" DestGuid="aa4591306-d8fd-4fc0-8b1a-4493de911cf8a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAI_MAN_ON_2" DestGuid="ab1bb195d-19dd-4cde-b037-72d59716b357a" />
+          </DP>
+          <DP Name="WAIS_HIGH_PRESS" Guid="ad2247145-2212-405a-81c8-85402a5247dba" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=High pressure" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not high pressure">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAIS_HIGH_PRESS_2" DestGuid="ac01cacbd-e673-4b42-bfcd-57549dd188f3a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAIS_HIGH_PRESS_2" DestGuid="a0670484a-1563-4a54-9e3c-b7877387b8c9a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAIS_HIGH_PRESS_2" DestGuid="aefa093a4-c1a8-4b65-adcc-2ba086b63c6da" />
+          </DP>
+          <DP Name="WAI_MAN_OFF" Guid="a0cfe64a9-bec1-48ea-8fc5-2b7df67d18e1a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Selected OFF" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Selected OFF">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAI_MAN_OFF_2" DestGuid="af1ed78d6-a8f2-44d1-994a-38c94c58edbca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAI_MAN_OFF_2" DestGuid="a88bba18f-0bc4-4821-89df-bca3628ddb83a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAI_MAN_OFF_2" DestGuid="a777f88c1-62e1-4dfe-b536-332d7257796ca" />
+          </DP>
+          <DP Name="WAI_AUTO_FAULT" Guid="accaa80bd-3b22-4361-ad66-436cc7d51b4ba" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAI_AUTO_FAULT_2" DestGuid="a9f8b786e-4e75-4a94-b4a9-decc67c8055da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAI_AUTO_FAULT_2" DestGuid="a5278e4fc-7e7a-42be-a46e-3e58b942b809a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAI_AUTO_FAULT_2" DestGuid="ab2dc75ea-eff9-4020-b935-ada0e9388220a" />
+          </DP>
+          <DP Name="WAI_FAULT" Guid="a5d264678-eaec-4df4-97b6-0822aee60a29a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAI_FAULT_2" DestGuid="add65831a-6072-4037-a6c5-07e161014411a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAI_FAULT_2" DestGuid="a38121b92-d74f-4959-8f9e-dcf843c90290a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAI_FAULT_2" DestGuid="a68e72631-c3a3-433d-bdfb-993626a2e423a" />
+          </DP>
+          <DP Name="WAI_DEGRADED" Guid="aa4c05c54-5b89-4d8d-88da-0ffec9237daca" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_WAI_DEGRADED_2" DestGuid="a2170ef85-af4e-4e3e-b7eb-4bce381fb30da" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_WAI_DEGRADED_2" DestGuid="a3eb02968-530e-4726-8b69-2eac5c90d308a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_WAI_DEGRADED_2" DestGuid="a5993d3db-3ee6-462d-ba9b-7cafc0fc98afa" />
+          </DP>
+          <DP Name="WAIV_FAIL_IN_POSITION" Guid="ae8ecedc8-cf04-4009-b762-4c331d36a0d7a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Failed" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Failed" />
+          <DP Name="SSM" Guid="a4e932d70-5413-41f1-a9ea-d16da1e02fcaa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <DP Name="PARITY" Guid="a9013e0ba-dfbb-452f-a180-b6709fa161a8a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="2000" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg.L274_WAIS_Status_Word" SrcGuid="aa542e372-5866-4e02-8482-e4f34c2b33b5a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OB_1000_HF_IASC2" SrcGuid="a2853738e-a1e5-4890-9a01-f49cdacdb017a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_OB_Msg_500" Guid="ac6317211-9647-4e4d-9105-e3cc4b3b7dfda" Direction="Source" MessageSize="24" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_OB_Msg_500_S_2" Guid="a187620c4-10cb-459b-bca2-2acf18e0bd7da" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="24" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="500" VLID="33384">
+      <DS Name="FSS1" Guid="ab6dc42f5-3f60-40f4-8d5c-6b0d396c0cfaa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a01c9bf91-7b2d-4e28-aaaa-19ac044b15c7a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a802caaaf-d89d-4ac3-ae20-6871934cf7d5a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a06a97b85-fd1e-44dc-9535-a62ba92a10fea" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB4" Guid="a49756530-d700-421c-9ce9-59d443915581a" BitOffsetWithinDS="0" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L304_External_Command_Word" Guid="a43f00c9d-43b4-46d0-9e16-b75b66837e1ba" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L304_External_Command_Word" Guid="aa70a4e40-9d29-4395-9a6a-d3c0e302a39fa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae7c42a02-f2c4-4121-943d-ba0bd365ceb6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="304" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="a6a9254dd-505e-4dc9-ac38-ae7ae1847857a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="APU_BLEED_REQUEST" Guid="a5acb6727-0bff-468f-be2a-fe8d342393cea" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=APU Bleed Request" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No APU Bleed Request" />
+          <DP Name="PACK_CLOSE_CMD" Guid="a90262ca9-f975-4863-b81e-46c909359eeea" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=PACK Close Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No PACK Close Command" />
+          <DP Name="BBSOV_RELAY_CMD" Guid="a79dafe04-fffe-4599-8e7a-91fe9466ab91a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=BBSOV Relay Command" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No BBSOV Relay Command" />
+          <DP Name="FTIS_INHIBIT_DMD" Guid="aebbb2b9a-ed64-41c9-a3c8-de68a118c044a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inhibit demand" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No inhibit demand" />
+          <DP Name="GHEAT_ON" Guid="a6ad6a078-54b5-4be3-9458-2486ff173530a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="GHEAT_UNAVAILABLE" Guid="a943382b8-e08e-48b9-96b2-8aaccd5a2e06a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Available" />
+          <DP Name="TRIM_SELECTION_UNAVAILABLE" Guid="aaebbed09-d7c5-406e-8eb3-81fe02d3c62ea" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Selection not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Selection available" />
+          <DP Name="GALLEY_HEATER_UNAVAILABLE" Guid="abb636e0e-36a2-45e8-9d63-20a856a93020a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Function not available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Function available" />
+          <DP Name="AFT_BFAN_LOW_SPEED_CMD" Guid="a3179b336-3223-4c7a-ade8-786ca8170734a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Low Speed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Low Speed" />
+          <DP Name="IMA_BLOWING_FAN_STATUS" Guid="aacbb22bb-305c-4b4f-932f-0d24a14cbf15a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=IMA Blowing Fan Running" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=IMA Blowing Fan Not Running" />
+          <DP Name="WAIS_ON" Guid="ab4b31a89-7348-4926-821d-7aac6f3fc065a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="SSM" Guid="aed25a99e-13ad-4e4b-bcf3-40c67ec9e331a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="ab0560f8b-73a7-4592-a72c-25249cffceaca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="a79020a36-6bc8-4b4f-9c9a-092daff18809a" />
+          <Gw_Pub_Ref DestName="HF_FCM_1.L304_External_Command_Word_IASC2_OB_500_2" DestGuid="ad145ebd1-d6dc-488f-9015-49badea96e19a" />
+          <Gw_Pub_Ref DestName="HF_FCM_2.L304_External_Command_Word_IASC2_OB_500_2" DestGuid="a6ba3f3df-ccb9-449a-abf2-e4821ac43cbda" />
+          <Gw_Pub_Ref DestName="HF_FCM_3.L304_External_Command_Word_IASC2_OB_500_2" DestGuid="a20ab5be7-ac4d-4e23-9405-c2c705e0de68a" />
+        </A429Word>
+      </DS>
+      <DS Name="L275_ACES_Status_Word" Guid="af8e90017-c6d9-425a-813a-81067e3a50e7a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L275_ACES_Status_Word" Guid="a1a9bdf85-6626-46ff-8944-ad5cf3212adfa" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a55e4f45d-6cf5-428d-bc90-b894bfd82264a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="275" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="a5458a0f0-576f-4fe5-ae4c-7ba1ab21d435a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="EFAN_CH_ACTIVE" Guid="a25f5eebf-9979-4822-88f9-e1959dba9392a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="EQUIP_BAY_OVHT" Guid="a80935f30-dce2-4d91-8e77-25d3e5bda00ea" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Overheat" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Overheat">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_EQUIP_BAY_OVHT_2" DestGuid="a40abfbb4-785c-471a-8147-c13306955acca" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_EQUIP_BAY_OVHT_2" DestGuid="a238f5a39-04b2-4430-8c64-b9e1b22a2d36a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_EQUIP_BAY_OVHT_2" DestGuid="a8ecaba47-9414-433c-afe2-68c252227cf8a" />
+          </DP>
+          <DP Name="EQUIP_BAY_BLOWING_FAULT" Guid="a4b12deeb-c241-4a9a-bef6-00983479becfa" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a6b3e3845-df0d-4638-825a-a5dc5d2df7d7a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a79fc15a7-1417-44fb-bd16-ab5508f66b90a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_EQUIP_BAY_BLOWING_FAULT_2" DestGuid="a7baf9bfb-1a0a-4749-b591-41f5489ae540a" />
+          </DP>
+          <DP Name="EFAN_ON" Guid="ac8727d27-2f9a-4caf-826c-228963c18e70a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="FWD_EXTRACTION_FAULT" Guid="a37696e32-02fd-4c2d-ae5c-f4dd4fa38a46a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault" />
+          <DP Name="MID_EXTRACTION_FAULT" Guid="a36279b11-6bff-456f-b43e-7bfa0edc0cfaa" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=No Fault" />
+          <DP Name="EQUIP_BAY_VENT_DEGRADED" Guid="a8f52744f-0a20-47ea-8127-2d17e325b803a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Degraded" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not Degraded">
+            <Gw_Pub_Ref DestName="FDAS_L1.IASC2_OB_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="a395aa27d-db88-4080-923b-a6db8b0f1ad1a" />
+            <Gw_Pub_Ref DestName="FDAS_L3.IASC2_OB_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="a48e6a4ed-1950-4055-bcab-57815728fd55a" />
+            <Gw_Pub_Ref DestName="FDAS_R3.IASC2_OB_EQUIP_BAY_VENT_DEGRADED_2" DestGuid="af992eeda-03a5-4f94-ad43-d88239cb8a3ba" />
+          </DP>
+          <DP Name="BFAN_CH_ACTIVE" Guid="a3f11c909-716c-4570-9878-ed5adc688f36a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="BFAN_ON" Guid="ac49ce7c9-c5b6-47bf-9dd4-c34906a87ba7a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=OFF" />
+          <DP Name="AVV_CH_ACTIVE" Guid="af162426e-ebe5-4c4d-9de6-77cebe4db597a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Active" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not active" />
+          <DP Name="AVV_FAULT" Guid="a970c09b6-361c-46ff-a651-fa3e144a6f6da" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not fault" />
+          <DP Name="AVV_OPEN" Guid="ac5033d7d-1a51-419c-bc14-121f3e419782a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" ZeroState="0=Not open" />
+          <DP Name="SSM" Guid="aaffc3eda-dbc2-4f23-8f9d-21ae7b279e0da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="ab70017fb-1102-41fd-8edd-6ffa78778500a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L275_ACES_Status_Word" SrcGuid="aa352d0bd-dd99-4e0a-b98e-003f7f847297a" />
+        </A429Word>
+      </DS>
+      <DS Name="L200_CPCS_Cabin_Altitude" Guid="a7f68bf62-acf3-4afa-b69b-c1c4086d4083a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L200_CPCS_Cabin_Altitude" Guid="af5167227-76f6-4c15-aead-eb928ebb8bb3a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a3302bd13-4d1d-40e5-8b18-4382b73e62b8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="200" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="ac7630b15-fcfe-4b63-9263-6a6313151eafa" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="CPCS_CABIN_ALTITUDE" Guid="a1cc6fc88-4bee-48c5-a796-79b1efebc3d0a" BitOffsetWithinDS="12" DataFormatType="BNR" FullScaleRngMax="131070" FullScaleRngMin="-131072" FuncRngMax="41000" FuncRngMin="-3546" LsbRes="2" ParameterSize="17" PublishedLatency="1000" TransmissionIntervalMinimum="500" Units="ft" />
+          <DP Name="SSM" Guid="a77df18f1-5cba-41d5-822b-db52cd282e59a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="aaa2726fd-7335-4bd8-8555-a15186ba3e9ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L200_CPCS_Cabin_Altitude" SrcGuid="aa2a35853-a5df-4be1-baff-b962dc8263bda" />
+        </A429Word>
+      </DS>
+      <DS Name="L113_BAS_Bleed_Temp" Guid="a28fe620a-f534-4b2d-822a-f91bff8a1103a" ByteOffsetFSF="7" ByteOffsetWithinMsg="20" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L113_BAS_Bleed_Temp" Guid="a971d509c-0569-47ec-b5dc-6de77f9ed096a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="abd7b7c53-5f4f-43d3-9a2e-11f44fae988ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="113" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="SDI" Guid="a71edec60-2f61-41e6-a13c-b53841c275b1a" BitOffsetWithinDS="8" CodedSet="0=IASC1A;1=IASC1B;2=IASC2A;3=IASC2B" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="BAS_BLEED_TEMP" Guid="a780ac762-412c-4c2e-9ff6-7fad0e18c8cda" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="511.875" FullScaleRngMin="-512" FuncRngMax="511" FuncRngMin="-512" LsbRes="0.125" ParameterSize="13" PublishedLatency="1000" TransmissionIntervalMinimum="500" Units="degrees C" />
+          <DP Name="SSM" Guid="af8d22355-8eed-4319-b7bd-6085ca21757fa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <DP Name="PARITY" Guid="a54314c4b-7d35-4890-973e-e7f36356c217a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="500" />
+          <Copy_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L113_BAS_Bleed_Temp" SrcGuid="a1c77cf43-1be8-45b6-90a9-797c9a14bd87a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_IASC2.pi429_OB_500_HF_IASC2" SrcGuid="a6ac457a7-ecf8-4d7d-be20-c1f284724355a" />
+  </HFSamplingPort>
+</RemoteGateway>

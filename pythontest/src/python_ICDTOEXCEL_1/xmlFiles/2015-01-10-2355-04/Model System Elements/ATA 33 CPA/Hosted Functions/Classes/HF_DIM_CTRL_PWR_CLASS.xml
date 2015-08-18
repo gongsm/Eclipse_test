@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_DIM_CTRL_PWR_CLASS" Guid="a50c0c613-2384-400a-8bca-3f6fcd2a2b4da" XsdVersion="7.9" ATA="331300">
+  <CANPort Name="po825_1_PDCM_429" Guid="a050a41df-7dc4-4528-ae02-d32814e02392a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_1_PDCM_429_Msg" Guid="a90f8022a-4a61-4278-94cf-2b90e598a46fa" MessageSize="4" TransmissionIntervalMinimum="100">
+      <A429Word Name="DCP_PDCM_429" Guid="add455b7a-dc5b-49bc-86c3-2d089840e11ca" BitOffsetWithinDS="0">
+        <DP Name="Label" Guid="a1af5c083-3970-456b-a006-f736ec437025a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="7" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a493035d2-14fd-4535-a246-321104953fd5a" BitOffsetWithinDS="8" CodedSet="0=Message Transmitted by Both CAN1 and CAN2;1=Message Transmitted by CAN1;2=Message Transmitted by CAN2" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_PED_DIM" Guid="ae464ad87-367e-4240-99b3-de1595898637a" BitOffsetWithinDS="10" DataFormatType="UBNR" LsbRes="1" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_TSW9" Guid="a706e5b56-76b9-4f11-9f6e-70f5bd7823f3a" BitOffsetWithinDS="18" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SPARE2" Guid="aad9345bf-4856-468d-b584-560852774c3da" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="add752c9c-0606-4680-9d2b-dc4e276cd0afa" BitOffsetWithinDS="29" CodedSet="0=NO;1=NCD;2=FT;3=FW" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="ab0422b4b-3af6-4ab5-bd57-f5c560fd60cfa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_ODCM" Guid="a5edac299-4a3e-43e7-b617-4fce6eb7923fa" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_1_ODCM_Msg" Guid="a032b3303-ae95-441a-80ba-c962f01fd7aea" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_OVHD_DIM" Guid="aacf881a4-5127-460d-811c-341b8fc4f376a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="a8b53b33f-b772-455e-91b0-cb54516cffc0a" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE1" Guid="a209f20a3-76c7-45ef-a000-16be4fd19d16a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_IDCM" Guid="a45af38a6-8a3d-4ae7-8eb9-59641cd9677ca" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_1_IDCM_Msg" Guid="a238a3a54-897c-4c59-982b-707961acf5c6a" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_INT_DIM" Guid="a64550301-408a-43ce-9ec9-38c49f588098a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="a41e47979-010f-4a39-87d8-924edbcfc6cda" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE2" Guid="ab814c0fb-8884-4357-9b96-17a4bbf6a0c4a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_PDCM" Guid="adba2a462-be83-4df3-9f6d-d8233540c07fa" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_1_PDCM_Msg" Guid="ad772606b-0416-4b1b-950e-46a346e6b4cea" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_PED_DIM" Guid="a098d2cf4-7213-42a3-9da8-10103c1bd666a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="a480608fb-2db0-4a67-a1d0-80ba2e4f3249a" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE3" Guid="a4c487f3c-e633-46c8-add8-0918659cc16da" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_PDCM_429" Guid="a4b023e91-54b3-4c80-a4fe-483e52da4960a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_2_PDCM_429_Msg" Guid="a97c6c1d5-a7b9-4516-bd27-fd950f53655aa" MessageSize="4" TransmissionIntervalMinimum="100">
+      <A429Word Name="DCP_PDCM_429" Guid="ad8413525-08c2-4797-adf2-5169f1b2ae1ca" BitOffsetWithinDS="0">
+        <DP Name="Label" Guid="a95e739d4-61b7-4cce-9a37-95cf74228e8fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="7" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a26462f20-acba-4912-ac06-48a629755daea" BitOffsetWithinDS="8" CodedSet="0=Message Transmitted by Both CAN1 and CAN2;1=Message Transmitted by CAN1;2=Message Transmitted by CAN2" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_PED_DIM" Guid="a3bfed3d2-756d-4e7d-89fe-962974ece925a" BitOffsetWithinDS="10" DataFormatType="UBNR" LsbRes="1" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="A429Payload_TSW9" Guid="ab746fd95-30fa-464c-801d-299926cd2035a" BitOffsetWithinDS="18" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED;REST=INVALID" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SPARE2" Guid="aac22dd90-3342-4fbd-b46e-b146a41b7a94a" BitOffsetWithinDS="22" DataFormatType="SPAR" ParameterSize="7" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="af704cd68-e165-4f45-9cce-31bba3968f7aa" BitOffsetWithinDS="29" CodedSet="0=NO;1=NCD;2=FT;3=FW" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a6a0a9f09-7ba2-482f-8e32-96eef0a66465a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_ODCM" Guid="a21137dd4-fa67-46fe-86c8-e2f4445d71d0a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_2_ODCM_Msg" Guid="a761e8f83-7ebd-48ea-9271-43c47c7756d4a" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_OVHD_DIM" Guid="a61eca0b7-d4ef-4b51-9645-11481aed850da" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="aa340eaf1-b794-4d12-a0ae-808c15db7670a" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE1" Guid="a46d554e1-6266-419c-af01-305f6a10994ea" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_IDCM" Guid="a909d1c4c-92bf-4325-9f71-f54e4fdcaecfa" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_2_IDCM_Msg" Guid="a09ca8e17-ac5b-49fc-9436-b5aa2a184686a" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_INT_DIM" Guid="aa2d0d155-0e0f-4e00-8cbc-c1ad1162cd4ba" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="a2f06e692-f33c-4e2c-a476-faff7ea6e197a" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE2" Guid="aea354e0a-6eaf-428d-9a8a-1d363e928430a" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_PDCM" Guid="a47ffebb6-ae04-4344-89e7-b1aa5ad38d26a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="100">
+    <CANMessage Name="po825_2_PDCM_Msg" Guid="a721f7d0d-62b6-465f-9271-d2f0a2697cc1a" MessageSize="2" TransmissionIntervalMinimum="100">
+      <DP Name="DCP_PED_DIM" Guid="a42896e33-37c2-467c-ab26-71216a351924a" BitOffsetWithinDS="0" DataFormatType="UINT" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="TSW9" Guid="a1cee5b51-bce2-4348-9980-b985dd3a60b7a" BitOffsetWithinDS="8" CodedSet="7=LAMP TEST SELECTED;11=LAMP BRT SELECTED;13=LAMP DIM SELECTED" DataFormatType="COD" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      <DP Name="SPARE3" Guid="a1170ce8a-6c20-4508-adf4-9d894c1b4acea" BitOffsetWithinDS="12" DataFormatType="SPAR" ParameterSize="4" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_PBIT_Fault_13" Guid="a45d30d97-35b6-4cf2-afc5-862c63e98715a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="2000">
+    <CANMessage Name="po825_1_PBIT_Fault_Msg" Guid="a4c4ff267-6d1a-4214-a710-2076fc17f5f8a" MessageSize="1" TransmissionIntervalMinimum="2000">
+      <DP Name="Test_Complete" Guid="a5c91a20c-8645-4741-b9be-01ee5416c356a" BitOffsetWithinDS="0" CodedSet="1=Test_Complete;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Able_to_Test" Guid="a29a254de-2bdd-4992-aefd-e6050df3a245a" BitOffsetWithinDS="1" CodedSet="1=Able to Test;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_1" Guid="a81de48e5-b4a5-4f23-a742-d15a7c569aefa" BitOffsetWithinDS="2" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_2" Guid="a912b9a76-16f4-426b-9a18-af6f713932c5a" BitOffsetWithinDS="3" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="P_Fault1" Guid="aa2fc63c0-f389-4cf4-add3-3eb7f94cdcf0a" BitOffsetWithinDS="4" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Padding" Guid="a179a45a3-8ebd-421f-9421-81a1098c6126a" BitOffsetWithinDS="5" CodedSet="0=Padding" DataFormatType="PAD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_CBIT_Fault_13" Guid="a50d2a450-db75-42fa-9698-67b121824fe7a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="2000">
+    <CANMessage Name="po825_1_CBIT_Fault_Msg" Guid="a3d2cd8d7-1b11-40c2-a2d5-bb74efc0c1b3a" MessageSize="4" TransmissionIntervalMinimum="2000">
+      <DP Name="Test_Complete" Guid="ad5751908-596c-4196-9ec0-b64159205f65a" BitOffsetWithinDS="0" CodedSet="1=Test_Complete;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Able_to_Test" Guid="a57f5ba16-1698-40a4-86ff-e9afd0b08c92a" BitOffsetWithinDS="1" CodedSet="1=Able to Test;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_1" Guid="a28c8d38a-212f-403a-95ff-347fbc34f476a" BitOffsetWithinDS="2" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_2" Guid="a85be0aca-2e23-4153-a676-0764932441dfa" BitOffsetWithinDS="3" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault1" Guid="ac1b8c66d-d64e-4c96-b0ed-1fb1289d6d03a" BitOffsetWithinDS="4" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault2" Guid="ae79378a3-084b-4eba-819c-875dde1cf56ba" BitOffsetWithinDS="5" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault3" Guid="ad8c2a18c-88b8-42b5-abe8-bf913da3ad1fa" BitOffsetWithinDS="6" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault4" Guid="a0b7202ce-8d52-4685-8708-85c2a81a0e8aa" BitOffsetWithinDS="7" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault5" Guid="a099de2ad-9f5b-4d2c-8536-ee5999002163a" BitOffsetWithinDS="8" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault6" Guid="a16ddb160-fa05-434a-9665-bc39a53e5db2a" BitOffsetWithinDS="9" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault7" Guid="aad2bfbfe-925b-4186-9bda-fb56ad88487ea" BitOffsetWithinDS="10" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault8" Guid="a01f8e93f-8b16-434a-8b95-459843488199a" BitOffsetWithinDS="11" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault9" Guid="acac89e07-d80a-4bd0-9fb9-472af3d87176a" BitOffsetWithinDS="12" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault10" Guid="a61ff3b29-a3e0-4539-946f-e5b0147e5460a" BitOffsetWithinDS="13" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault11" Guid="a5c17f1a1-2574-44fb-b0ea-0d5f32181ea2a" BitOffsetWithinDS="14" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault12" Guid="afe9ed76a-6d07-4183-9637-895e93557ab6a" BitOffsetWithinDS="15" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault13" Guid="a94af88bd-ad1f-4d51-b5a7-3df0cb150daea" BitOffsetWithinDS="16" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault14" Guid="a99e9fef6-7b3f-4072-9248-6c5155fbc9d9a" BitOffsetWithinDS="17" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault15" Guid="a185831cb-0268-412a-b022-5c84483d27b4a" BitOffsetWithinDS="18" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault16" Guid="a92fa5211-1d8a-4b35-b1ce-de37fd23d44ba" BitOffsetWithinDS="19" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault17" Guid="a1c58f9bd-ca92-4252-b434-d46d10d7b84fa" BitOffsetWithinDS="20" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault18" Guid="a6b8beb43-5e84-4e1e-acee-3158ae887936a" BitOffsetWithinDS="21" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault19" Guid="a342a36d5-20d2-4331-badb-60526201838ca" BitOffsetWithinDS="22" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault20" Guid="a6512e99b-bfae-4f4b-a23d-3896c805e500a" BitOffsetWithinDS="23" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault21" Guid="ad38b28e9-3c5e-4dcf-a778-556bb3c50bd8a" BitOffsetWithinDS="24" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault22" Guid="a3bddab9c-5c2b-43ed-b72f-80d2dfa3243da" BitOffsetWithinDS="25" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault23" Guid="aecbc8048-3d57-426a-828d-7f61b884a850a" BitOffsetWithinDS="26" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault24" Guid="a62976960-f50c-4d6d-94fb-b0d23717e4eaa" BitOffsetWithinDS="27" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault25" Guid="a972fc8fe-beec-4a2b-bcac-44a0f9f6341fa" BitOffsetWithinDS="28" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault26" Guid="a6fa0d379-55a0-4193-bb01-582d8913d3e0a" BitOffsetWithinDS="29" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault27" Guid="a30adafbf-0b75-424e-89c1-4a149b9eac26a" BitOffsetWithinDS="30" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault28" Guid="a2d82e8ec-be9d-405d-a293-aef95a33cdc1a" BitOffsetWithinDS="31" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_1_Config_Report_13" Guid="af4b86790-90e8-4289-a8b7-ba248143a4c2a" ActivityTimeout="1000" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="4000">
+    <CANMessage Name="po825_1_Config_Report_Msg" Guid="a175452b9-5d76-4795-bf7d-041f50f80afda" MessageSize="8" TransmissionIntervalMinimum="4000">
+      <DP Name="Config_Report_DIM_CTRL_PWR" Guid="a3b719062-1d36-4ddc-b610-b852f905efb0a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="64" PublishedLatency="100" TransmissionIntervalMinimum="4000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_PBIT_Fault_13" Guid="ae686b7bb-4165-4f03-aec6-d77cd95b2915a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="2000">
+    <CANMessage Name="po825_2_PBIT_Fault_Msg" Guid="a7b98bd9c-5a37-4fe0-b0bb-7f7162eff937a" MessageSize="1" TransmissionIntervalMinimum="2000">
+      <DP Name="Test_Complete" Guid="a6f404451-afa0-4229-9d76-d63429ce3a5ca" BitOffsetWithinDS="0" CodedSet="1=Test_Complete;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Able_to_Test" Guid="a0ca7ed89-091d-46f2-938b-31a23f4b0e07a" BitOffsetWithinDS="1" CodedSet="1=Able to Test;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_1" Guid="a4248eea0-1e18-4fac-89ec-5c4dc7b9420ca" BitOffsetWithinDS="2" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_2" Guid="a84f362c8-4c57-4a88-bb4b-b9d6dd3c242ca" BitOffsetWithinDS="3" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="P_Fault1" Guid="a9d3b932b-3089-47bc-a70e-c88ab15af7b6a" BitOffsetWithinDS="4" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Padding" Guid="a90ae4e80-a6f2-4eaf-90f8-c6adca09eee7a" BitOffsetWithinDS="5" CodedSet="0=Padding" DataFormatType="PAD" ParameterSize="3" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_CBIT_Fault_13" Guid="a2e02619a-c55b-4296-ae7a-4dc43cd3d564a" ActivityTimeout="80" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="2000">
+    <CANMessage Name="po825_2_CBIT_Fault_Msg" Guid="ab4b69960-50bd-4c49-af8d-f6db2a0d8a62a" MessageSize="4" TransmissionIntervalMinimum="2000">
+      <DP Name="Test_Complete" Guid="ab3c37849-6d92-4f0f-b09d-7b3ad9ea8266a" BitOffsetWithinDS="0" CodedSet="1=Test_Complete;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Able_to_Test" Guid="ad7ab54cb-2526-4409-b80d-00a8a38cb567a" BitOffsetWithinDS="1" CodedSet="1=Able to Test;0=INVALID" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_1" Guid="aaa7685f7-84bf-4b54-af32-33613eb0b00aa" BitOffsetWithinDS="2" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="Inhibit_Condition_2" Guid="aaeca8678-9cc7-40bb-98eb-682da3a06cb3a" BitOffsetWithinDS="3" CodedSet="0=Padding" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault1" Guid="a061fc02e-0ef0-4249-89dd-87533f536050a" BitOffsetWithinDS="4" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault2" Guid="a5df36801-edbd-440d-b21d-b8e180266dc3a" BitOffsetWithinDS="5" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault3" Guid="a7cc30c4a-8618-4e4e-819a-c2a9d9434b69a" BitOffsetWithinDS="6" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault4" Guid="a1618f94f-67ca-4f37-b0f9-e78c3991b7ffa" BitOffsetWithinDS="7" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault5" Guid="a5cd37775-5af2-4bfa-94a3-564aa5cb8f92a" BitOffsetWithinDS="8" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault6" Guid="a44479362-f6b9-44c7-8071-284f8f74c500a" BitOffsetWithinDS="9" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault7" Guid="a6516373d-50c1-45c5-9da0-cc629f9097b6a" BitOffsetWithinDS="10" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault8" Guid="aa9ffd002-67ed-4c8e-a738-45d354d42608a" BitOffsetWithinDS="11" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault9" Guid="a009f9588-44fd-489d-aede-23a1dca02f27a" BitOffsetWithinDS="12" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault10" Guid="ae684e261-b9cd-4945-8569-c923f6e9900ba" BitOffsetWithinDS="13" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault11" Guid="a72c614de-5fb8-4880-a7a6-46db5e279ea8a" BitOffsetWithinDS="14" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault12" Guid="ad244c958-8aae-43c7-a7b4-77e5545d40dfa" BitOffsetWithinDS="15" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault13" Guid="a6d3e76ee-ad5f-41bd-9b57-1073fc8a714ea" BitOffsetWithinDS="16" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault14" Guid="a8d788e2e-e046-42b8-bc23-6bca676199f8a" BitOffsetWithinDS="17" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault15" Guid="aa1538fb5-1330-47e7-9f4b-7fd6b654985da" BitOffsetWithinDS="18" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault16" Guid="a20cf18f2-6127-4e20-90ba-05aa6acac5e2a" BitOffsetWithinDS="19" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault17" Guid="a3490695b-c97a-4e78-aa44-ca6051b3cdaaa" BitOffsetWithinDS="20" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault18" Guid="a575d5d7d-2d58-44b9-b4de-6a54ea5e68bca" BitOffsetWithinDS="21" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault19" Guid="aad66199f-1a83-4dfe-9ac1-62fed253a578a" BitOffsetWithinDS="22" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault20" Guid="af1056f27-c1ff-4054-8ae5-f983ddeae81fa" BitOffsetWithinDS="23" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault21" Guid="a394414c2-973a-4da2-a2ec-3243477c2d18a" BitOffsetWithinDS="24" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault22" Guid="a49037982-d08e-4e2e-81a5-6739eedc5729a" BitOffsetWithinDS="25" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault23" Guid="a8db650e1-4a06-436d-ab48-1c82c4c172b4a" BitOffsetWithinDS="26" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault24" Guid="adaa981b9-0fd3-437e-86d7-5b329d70220ea" BitOffsetWithinDS="27" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault25" Guid="aba5b55c8-f07e-4fc1-bd96-044eae0bd442a" BitOffsetWithinDS="28" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault26" Guid="a4dda4049-18e3-439c-bbcd-906df142079ca" BitOffsetWithinDS="29" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault27" Guid="a2166d1c3-cb58-4cd5-9a99-8044ec10461fa" BitOffsetWithinDS="30" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+      <DP Name="C_Fault28" Guid="ab4a8a2a2-7f81-4e04-931f-a0ea117e197fa" BitOffsetWithinDS="31" CodedSet="1=Fault Active;0=Fault no Active" DataFormatType="COD" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="2000" />
+    </CANMessage>
+  </CANPort>
+  <CANPort Name="po825_2_Config_Report_13" Guid="a095779e1-7505-4421-b8e3-ab60c4b2c498a" ActivityTimeout="1000" CANMessageProtocolType="Parametric" Direction="Source" RefreshPeriod="4000">
+    <CANMessage Name="po825_2_Config_Report_Msg" Guid="a67b55297-a5e8-4135-b065-bbc59e59957ea" MessageSize="8" TransmissionIntervalMinimum="4000">
+      <DP Name="Config_Report_DIM_CTRL_PWR" Guid="a7909d96a-b1df-47b0-8beb-d556b6f88ef4a" BitOffsetWithinDS="0" DataFormatType="BLK" ParameterSize="64" PublishedLatency="100" TransmissionIntervalMinimum="4000" />
+    </CANMessage>
+  </CANPort>
+</HostedFunctionClass>

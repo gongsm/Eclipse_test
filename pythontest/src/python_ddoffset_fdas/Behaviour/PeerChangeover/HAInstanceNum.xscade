@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Operator kind="function" name="HAInstanceNum">
+			<inputs>
+				<Variable name="HAType">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/dad/5E8E/E68/5562e1f8444e"/>
+					</pragmas>
+				</Variable>
+				<Variable name="Inputs">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="InputsPeerType"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/e8d/5E8E/E68/5562e3761fc8"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="HAInstanceNum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/dc9/5E8E/E68/5562e2616d7f"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<data>
+				<IfBlock name="IfBlock1">
+					<block>
+						<IfNode>
+							<if>
+								<!-- HAType = 1 -->
+								<BinaryOp name="1" operator="=">
+									<operands>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="HAType"/>
+											</path>
+										</IdExpression>
+										<ConstValue value="1"/>
+									</operands>
+								</BinaryOp>
+							</if>
+							<then>
+								<IfNode>
+									<if>
+										<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+										<NAryOp name="3" operator="and">
+											<operands>
+												<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+												<BinaryOp name="12" operator="=">
+													<operands>
+														<!-- Inputs.ipGPMCabinetPosition_status -->
+														<PrjOp name="9">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="Inputs"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="ipGPMCabinetPosition_status"/>
+															</with>
+														</PrjOp>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</BinaryOp>
+												<!-- Inputs.ipGPMCabinetPosition = 1 -->
+												<BinaryOp name="13" operator="=">
+													<operands>
+														<!-- Inputs.ipGPMCabinetPosition -->
+														<PrjOp name="10">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="Inputs"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="ipGPMCabinetPosition"/>
+															</with>
+														</PrjOp>
+														<ConstValue value="1"/>
+													</operands>
+												</BinaryOp>
+												<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+												<BinaryOp name="14" operator="=">
+													<operands>
+														<!-- Inputs.ipGPMModulePosition_status -->
+														<PrjOp name="11">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="Inputs"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="ipGPMModulePosition_status"/>
+															</with>
+														</PrjOp>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+															</path>
+														</IdExpression>
+													</operands>
+												</BinaryOp>
+												<!-- Inputs.ipGPMModulePosition = 9 -->
+												<BinaryOp name="15" operator="=">
+													<operands>
+														<!-- Inputs.ipGPMModulePosition -->
+														<PrjOp name="12">
+															<flow>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="Inputs"/>
+																	</path>
+																</IdExpression>
+															</flow>
+															<with>
+																<Label name="ipGPMModulePosition"/>
+															</with>
+														</PrjOp>
+														<ConstValue value="9"/>
+													</operands>
+												</BinaryOp>
+											</operands>
+										</NAryOp>
+									</if>
+									<then>
+										<Action>
+											<locals>
+												<Variable name="_L1">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="int"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/e3b/5E8E/E68/5562e32e5cc5"/>
+													</pragmas>
+												</Variable>
+											</locals>
+											<data>
+												<!-- HAInstanceNum = _L1; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="HAInstanceNum"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L1"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/e26/5E8E/E68/5562e328677c"/>
+													</pragmas>
+												</Equation>
+												<!-- _L1 = 1; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L1"/>
+													</lefts>
+													<right>
+														<ConstValue value="1"/>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/e3a/5E8E/E68/5562e32e4b72"/>
+													</pragmas>
+												</Equation>
+											</data>
+											<pragmas>
+												<ed:Action oid="!ed/ddd/5E8E/E68/5562e2a61f5b"/>
+											</pragmas>
+										</Action>
+									</then>
+									<else>
+										<IfNode>
+											<if>
+												<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+												<NAryOp name="4" operator="and">
+													<operands>
+														<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+														<BinaryOp name="16" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition_status -->
+																<PrjOp name="13">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMCabinetPosition_status"/>
+																	</with>
+																</PrjOp>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMCabinetPosition = 2 -->
+														<BinaryOp name="17" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition -->
+																<PrjOp name="14">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMCabinetPosition"/>
+																	</with>
+																</PrjOp>
+																<ConstValue value="2"/>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+														<BinaryOp name="18" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMModulePosition_status -->
+																<PrjOp name="15">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMModulePosition_status"/>
+																	</with>
+																</PrjOp>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMModulePosition = 11 -->
+														<BinaryOp name="19" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMModulePosition -->
+																<PrjOp name="16">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMModulePosition"/>
+																	</with>
+																</PrjOp>
+																<ConstValue value="11"/>
+															</operands>
+														</BinaryOp>
+													</operands>
+												</NAryOp>
+											</if>
+											<then>
+												<Action>
+													<locals>
+														<Variable name="_L1">
+															<type>
+																<NamedType>
+																	<type>
+																		<TypeRef name="int"/>
+																	</type>
+																</NamedType>
+															</type>
+															<pragmas>
+																<ed:Variable oid="!ed/e56/5E8E/E68/5562e335720a"/>
+															</pragmas>
+														</Variable>
+													</locals>
+													<data>
+														<!-- HAInstanceNum = _L1; -->
+														<Equation>
+															<lefts>
+																<VariableRef name="HAInstanceNum"/>
+															</lefts>
+															<right>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="_L1"/>
+																	</path>
+																</IdExpression>
+															</right>
+															<pragmas>
+																<ed:Equation oid="!ed/e31/5E8E/E68/5562e32c3e90"/>
+															</pragmas>
+														</Equation>
+														<!-- _L1 = 2; -->
+														<Equation>
+															<lefts>
+																<VariableRef name="_L1"/>
+															</lefts>
+															<right>
+																<ConstValue value="2"/>
+															</right>
+															<pragmas>
+																<ed:Equation oid="!ed/e55/5E8E/E68/5562e33552a7"/>
+															</pragmas>
+														</Equation>
+													</data>
+													<pragmas>
+														<ed:Action oid="!ed/e25/5E8E/E68/5562e31d638c"/>
+													</pragmas>
+												</Action>
+											</then>
+											<else>
+												<IfNode>
+													<if>
+														<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+														<NAryOp name="6" operator="and">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																<BinaryOp name="24" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMCabinetPosition_status -->
+																		<PrjOp name="21">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMCabinetPosition_status"/>
+																			</with>
+																		</PrjOp>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																			</path>
+																		</IdExpression>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMCabinetPosition = 1 -->
+																<BinaryOp name="25" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMCabinetPosition -->
+																		<PrjOp name="22">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMCabinetPosition"/>
+																			</with>
+																		</PrjOp>
+																		<ConstValue value="1"/>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																<BinaryOp name="26" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMModulePosition_status -->
+																		<PrjOp name="23">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMModulePosition_status"/>
+																			</with>
+																		</PrjOp>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																			</path>
+																		</IdExpression>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMModulePosition = 12 -->
+																<BinaryOp name="27" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMModulePosition -->
+																		<PrjOp name="24">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMModulePosition"/>
+																			</with>
+																		</PrjOp>
+																		<ConstValue value="12"/>
+																	</operands>
+																</BinaryOp>
+															</operands>
+														</NAryOp>
+													</if>
+													<then>
+														<Action>
+															<locals>
+																<Variable name="_L1">
+																	<type>
+																		<NamedType>
+																			<type>
+																				<TypeRef name="int"/>
+																			</type>
+																		</NamedType>
+																	</type>
+																	<pragmas>
+																		<ed:Variable oid="!ed/14a5/D06/1724/55655888595b"/>
+																	</pragmas>
+																</Variable>
+															</locals>
+															<data>
+																<!-- HAInstanceNum = _L1; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="HAInstanceNum"/>
+																	</lefts>
+																	<right>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="_L1"/>
+																			</path>
+																		</IdExpression>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/14a6/D06/1724/5565588840b3"/>
+																	</pragmas>
+																</Equation>
+																<!-- _L1 = 3; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="_L1"/>
+																	</lefts>
+																	<right>
+																		<ConstValue value="3"/>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/14a4/D06/1724/5565588866f7"/>
+																	</pragmas>
+																</Equation>
+															</data>
+															<pragmas>
+																<ed:Action oid="!ed/145c/D06/1724/556427701055"/>
+															</pragmas>
+														</Action>
+													</then>
+													<else>
+														<Action>
+															<locals>
+																<Variable name="_L2">
+																	<type>
+																		<NamedType>
+																			<type>
+																				<TypeRef name="int"/>
+																			</type>
+																		</NamedType>
+																	</type>
+																	<pragmas>
+																		<ed:Variable oid="!ed/14d2/D06/1724/556558995d51"/>
+																	</pragmas>
+																</Variable>
+															</locals>
+															<data>
+																<!-- HAInstanceNum = _L2; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="HAInstanceNum"/>
+																	</lefts>
+																	<right>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="_L2"/>
+																			</path>
+																		</IdExpression>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/14d0/D06/1724/556558997031"/>
+																	</pragmas>
+																</Equation>
+																<!-- _L2 = 0; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="_L2"/>
+																	</lefts>
+																	<right>
+																		<ConstValue value="0"/>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/14d1/D06/1724/55655899789f"/>
+																	</pragmas>
+																</Equation>
+															</data>
+															<pragmas>
+																<ed:Action oid="!ed/1494/D06/1724/5565585653"/>
+															</pragmas>
+														</Action>
+													</else>
+													<pragmas>
+														<ed:IfNode oid="!ed/1488/D06/1724/55655855232b"/>
+													</pragmas>
+												</IfNode>
+											</else>
+											<pragmas>
+												<ed:IfNode oid="!ed/1450/D06/1724/5564276f6149"/>
+											</pragmas>
+										</IfNode>
+									</else>
+									<pragmas>
+										<ed:IfNode oid="!ed/e20/5E8E/E68/5562e31b3fd1"/>
+									</pragmas>
+								</IfNode>
+							</then>
+							<else>
+								<IfNode>
+									<if>
+										<!-- HAType = 2 -->
+										<BinaryOp name="3" operator="=">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="HAType"/>
+													</path>
+												</IdExpression>
+												<ConstValue value="2"/>
+											</operands>
+										</BinaryOp>
+									</if>
+									<then>
+										<IfNode>
+											<if>
+												<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+												<NAryOp name="1" operator="and">
+													<operands>
+														<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+														<BinaryOp name="4" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition_status -->
+																<PrjOp name="1">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMCabinetPosition_status"/>
+																	</with>
+																</PrjOp>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMCabinetPosition = 1 -->
+														<BinaryOp name="5" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition -->
+																<PrjOp name="2">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMCabinetPosition"/>
+																	</with>
+																</PrjOp>
+																<ConstValue value="1"/>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+														<BinaryOp name="6" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMModulePosition_status -->
+																<PrjOp name="3">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMModulePosition_status"/>
+																	</with>
+																</PrjOp>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																	</path>
+																</IdExpression>
+															</operands>
+														</BinaryOp>
+														<!-- Inputs.ipGPMModulePosition = 12 -->
+														<BinaryOp name="7" operator="=">
+															<operands>
+																<!-- Inputs.ipGPMModulePosition -->
+																<PrjOp name="4">
+																	<flow>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="Inputs"/>
+																			</path>
+																		</IdExpression>
+																	</flow>
+																	<with>
+																		<Label name="ipGPMModulePosition"/>
+																	</with>
+																</PrjOp>
+																<ConstValue value="12"/>
+															</operands>
+														</BinaryOp>
+													</operands>
+												</NAryOp>
+											</if>
+											<then>
+												<Action>
+													<locals>
+														<Variable name="_L1">
+															<type>
+																<NamedType>
+																	<type>
+																		<TypeRef name="int"/>
+																	</type>
+																</NamedType>
+															</type>
+															<pragmas>
+																<ed:Variable oid="!ed/e79/5E8E/E68/5562e34d5e89"/>
+															</pragmas>
+														</Variable>
+													</locals>
+													<data>
+														<!-- _L1 = 1; -->
+														<Equation>
+															<lefts>
+																<VariableRef name="_L1"/>
+															</lefts>
+															<right>
+																<ConstValue value="1"/>
+															</right>
+															<pragmas>
+																<ed:Equation oid="!ed/e78/5E8E/E68/5562e34d5b13"/>
+															</pragmas>
+														</Equation>
+														<!-- HAInstanceNum = _L1; -->
+														<Equation>
+															<lefts>
+																<VariableRef name="HAInstanceNum"/>
+															</lefts>
+															<right>
+																<IdExpression>
+																	<path>
+																		<ConstVarRef name="_L1"/>
+																	</path>
+																</IdExpression>
+															</right>
+															<pragmas>
+																<ed:Equation oid="!ed/e7a/5E8E/E68/5562e34d6d59"/>
+															</pragmas>
+														</Equation>
+													</data>
+													<pragmas>
+														<ed:Action oid="!ed/dde/5E8E/E68/5562e2a624d8"/>
+													</pragmas>
+												</Action>
+											</then>
+											<else>
+												<IfNode>
+													<if>
+														<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+														<NAryOp name="8" operator="and">
+															<operands>
+																<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																<BinaryOp name="32" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMCabinetPosition_status -->
+																		<PrjOp name="29">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMCabinetPosition_status"/>
+																			</with>
+																		</PrjOp>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																			</path>
+																		</IdExpression>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMCabinetPosition = 2 -->
+																<BinaryOp name="33" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMCabinetPosition -->
+																		<PrjOp name="30">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMCabinetPosition"/>
+																			</with>
+																		</PrjOp>
+																		<ConstValue value="2"/>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																<BinaryOp name="34" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMModulePosition_status -->
+																		<PrjOp name="31">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMModulePosition_status"/>
+																			</with>
+																		</PrjOp>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																			</path>
+																		</IdExpression>
+																	</operands>
+																</BinaryOp>
+																<!-- Inputs.ipGPMModulePosition = 9 -->
+																<BinaryOp name="35" operator="=">
+																	<operands>
+																		<!-- Inputs.ipGPMModulePosition -->
+																		<PrjOp name="32">
+																			<flow>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="Inputs"/>
+																					</path>
+																				</IdExpression>
+																			</flow>
+																			<with>
+																				<Label name="ipGPMModulePosition"/>
+																			</with>
+																		</PrjOp>
+																		<ConstValue value="9"/>
+																	</operands>
+																</BinaryOp>
+															</operands>
+														</NAryOp>
+													</if>
+													<then>
+														<Action>
+															<locals>
+																<Variable name="_L1">
+																	<type>
+																		<NamedType>
+																			<type>
+																				<TypeRef name="int"/>
+																			</type>
+																		</NamedType>
+																	</type>
+																	<pragmas>
+																		<ed:Variable oid="!ed/e8b/5E8E/E68/5562e3503363"/>
+																	</pragmas>
+																</Variable>
+															</locals>
+															<data>
+																<!-- _L1 = 2; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="_L1"/>
+																	</lefts>
+																	<right>
+																		<ConstValue value="2"/>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/e8a/5E8E/E68/5562e35011e6"/>
+																	</pragmas>
+																</Equation>
+																<!-- HAInstanceNum = _L1; -->
+																<Equation>
+																	<lefts>
+																		<VariableRef name="HAInstanceNum"/>
+																	</lefts>
+																	<right>
+																		<IdExpression>
+																			<path>
+																				<ConstVarRef name="_L1"/>
+																			</path>
+																		</IdExpression>
+																	</right>
+																	<pragmas>
+																		<ed:Equation oid="!ed/e8c/5E8E/E68/5562e3507751"/>
+																	</pragmas>
+																</Equation>
+															</data>
+															<pragmas>
+																<ed:Action oid="!ed/e68/5E8E/E68/5562e3445044"/>
+															</pragmas>
+														</Action>
+													</then>
+													<else>
+														<IfNode>
+															<if>
+																<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION and Inputs.ipGP... -->
+																<NAryOp name="10" operator="and">
+																	<operands>
+																		<!-- Inputs.ipGPMCabinetPosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																		<BinaryOp name="40" operator="=">
+																			<operands>
+																				<!-- Inputs.ipGPMCabinetPosition_status -->
+																				<PrjOp name="37">
+																					<flow>
+																						<IdExpression>
+																							<path>
+																								<ConstVarRef name="Inputs"/>
+																							</path>
+																						</IdExpression>
+																					</flow>
+																					<with>
+																						<Label name="ipGPMCabinetPosition_status"/>
+																					</with>
+																				</PrjOp>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																					</path>
+																				</IdExpression>
+																			</operands>
+																		</BinaryOp>
+																		<!-- Inputs.ipGPMCabinetPosition = 1 -->
+																		<BinaryOp name="41" operator="=">
+																			<operands>
+																				<!-- Inputs.ipGPMCabinetPosition -->
+																				<PrjOp name="38">
+																					<flow>
+																						<IdExpression>
+																							<path>
+																								<ConstVarRef name="Inputs"/>
+																							</path>
+																						</IdExpression>
+																					</flow>
+																					<with>
+																						<Label name="ipGPMCabinetPosition"/>
+																					</with>
+																				</PrjOp>
+																				<ConstValue value="1"/>
+																			</operands>
+																		</BinaryOp>
+																		<!-- Inputs.ipGPMModulePosition_status = DATA_STATUS_NORMAL_OPERATION -->
+																		<BinaryOp name="42" operator="=">
+																			<operands>
+																				<!-- Inputs.ipGPMModulePosition_status -->
+																				<PrjOp name="39">
+																					<flow>
+																						<IdExpression>
+																							<path>
+																								<ConstVarRef name="Inputs"/>
+																							</path>
+																						</IdExpression>
+																					</flow>
+																					<with>
+																						<Label name="ipGPMModulePosition_status"/>
+																					</with>
+																				</PrjOp>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="DATA_STATUS_NORMAL_OPERATION"/>
+																					</path>
+																				</IdExpression>
+																			</operands>
+																		</BinaryOp>
+																		<!-- Inputs.ipGPMModulePosition = 10 -->
+																		<BinaryOp name="43" operator="=">
+																			<operands>
+																				<!-- Inputs.ipGPMModulePosition -->
+																				<PrjOp name="40">
+																					<flow>
+																						<IdExpression>
+																							<path>
+																								<ConstVarRef name="Inputs"/>
+																							</path>
+																						</IdExpression>
+																					</flow>
+																					<with>
+																						<Label name="ipGPMModulePosition"/>
+																					</with>
+																				</PrjOp>
+																				<ConstValue value="10"/>
+																			</operands>
+																		</BinaryOp>
+																	</operands>
+																</NAryOp>
+															</if>
+															<then>
+																<Action>
+																	<locals>
+																		<Variable name="_L1">
+																			<type>
+																				<NamedType>
+																					<type>
+																						<TypeRef name="int"/>
+																					</type>
+																				</NamedType>
+																			</type>
+																			<pragmas>
+																				<ed:Variable oid="!ed/152e/D06/1724/5565593e2293"/>
+																			</pragmas>
+																		</Variable>
+																	</locals>
+																	<data>
+																		<!-- HAInstanceNum = _L1; -->
+																		<Equation>
+																			<lefts>
+																				<VariableRef name="HAInstanceNum"/>
+																			</lefts>
+																			<right>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="_L1"/>
+																					</path>
+																				</IdExpression>
+																			</right>
+																			<pragmas>
+																				<ed:Equation oid="!ed/152c/D06/1724/5565593e3916"/>
+																			</pragmas>
+																		</Equation>
+																		<!-- _L1 = 3; -->
+																		<Equation>
+																			<lefts>
+																				<VariableRef name="_L1"/>
+																			</lefts>
+																			<right>
+																				<ConstValue value="3"/>
+																			</right>
+																			<pragmas>
+																				<ed:Equation oid="!ed/152d/D06/1724/5565593e4e0d"/>
+																			</pragmas>
+																		</Equation>
+																	</data>
+																	<pragmas>
+																		<ed:Action oid="!ed/150f/D06/1724/5565590d7faa"/>
+																	</pragmas>
+																</Action>
+															</then>
+															<else>
+																<Action>
+																	<locals>
+																		<Variable name="_L1">
+																			<type>
+																				<NamedType>
+																					<type>
+																						<TypeRef name="int"/>
+																					</type>
+																				</NamedType>
+																			</type>
+																			<pragmas>
+																				<ed:Variable oid="!ed/1547/D06/1724/5565594b40fc"/>
+																			</pragmas>
+																		</Variable>
+																	</locals>
+																	<data>
+																		<!-- _L1 = 0; -->
+																		<Equation>
+																			<lefts>
+																				<VariableRef name="_L1"/>
+																			</lefts>
+																			<right>
+																				<ConstValue value="0"/>
+																			</right>
+																			<pragmas>
+																				<ed:Equation oid="!ed/1546/D06/1724/5565594b7c8d"/>
+																			</pragmas>
+																		</Equation>
+																		<!-- HAInstanceNum = _L1; -->
+																		<Equation>
+																			<lefts>
+																				<VariableRef name="HAInstanceNum"/>
+																			</lefts>
+																			<right>
+																				<IdExpression>
+																					<path>
+																						<ConstVarRef name="_L1"/>
+																					</path>
+																				</IdExpression>
+																			</right>
+																			<pragmas>
+																				<ed:Equation oid="!ed/1548/D06/1724/5565594b2da7"/>
+																			</pragmas>
+																		</Equation>
+																	</data>
+																	<pragmas>
+																		<ed:Action oid="!ed/151c/D06/1724/556559213d6e"/>
+																	</pragmas>
+																</Action>
+															</else>
+															<pragmas>
+																<ed:IfNode oid="!ed/1510/D06/1724/556559202c2c"/>
+															</pragmas>
+														</IfNode>
+													</else>
+													<pragmas>
+														<ed:IfNode oid="!ed/1503/D06/1724/5565590c25ee"/>
+													</pragmas>
+												</IfNode>
+											</else>
+											<pragmas>
+												<ed:IfNode oid="!ed/e63/5E8E/E68/5562e342d0b"/>
+											</pragmas>
+										</IfNode>
+									</then>
+									<else>
+										<Action>
+											<locals>
+												<Variable name="_L1">
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="int"/>
+															</type>
+														</NamedType>
+													</type>
+													<pragmas>
+														<ed:Variable oid="!ed/e0f/5E8E/E68/5562e2e13d60"/>
+													</pragmas>
+												</Variable>
+											</locals>
+											<data>
+												<!-- HAInstanceNum = _L1; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="HAInstanceNum"/>
+													</lefts>
+													<right>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L1"/>
+															</path>
+														</IdExpression>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/e01/5E8E/E68/5562e2de3f90"/>
+													</pragmas>
+												</Equation>
+												<!-- _L1 = 0; -->
+												<Equation>
+													<lefts>
+														<VariableRef name="_L1"/>
+													</lefts>
+													<right>
+														<ConstValue value="0"/>
+													</right>
+													<pragmas>
+														<ed:Equation oid="!ed/e0e/5E8E/E68/5562e2e14b4d"/>
+													</pragmas>
+												</Equation>
+											</data>
+											<pragmas>
+												<ed:Action oid="!ed/df0/5E8E/E68/5562e2ca198f"/>
+											</pragmas>
+										</Action>
+									</else>
+									<pragmas>
+										<ed:IfNode oid="!ed/deb/5E8E/E68/5562e2c8773b"/>
+									</pragmas>
+								</IfNode>
+							</else>
+							<pragmas>
+								<ed:IfNode oid="!ed/ddc/5E8E/E68/5562e2a62260"/>
+							</pragmas>
+						</IfNode>
+					</block>
+					<pragmas>
+						<ed:IfBlock oid="!ed/dd7/5E8E/E68/5562e2a53720"/>
+					</pragmas>
+				</IfBlock>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/da6/5E8E/E68/5562e0c31902" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<NetDiagram name="HAInstanceNum" landscape="true" format="A4 (210 297)" oid="!ed/da7/5E8E/E68/5562e0c32430">
+							<presentationElements>
+								<IfBlockGE presentable="!ed/dd7/5E8E/E68/5562e2a53720">
+									<position>
+										<Point x="582" y="582"/>
+									</position>
+									<size>
+										<Size width="17992" height="18019"/>
+									</size>
+								</IfBlockGE>
+								<ActionGE presentable="!ed/ddd/5E8E/E68/5562e2a61f5b">
+									<position>
+										<Point x="13441" y="1826"/>
+									</position>
+									<size>
+										<Size width="4895" height="1084"/>
+									</size>
+								</ActionGE>
+								<ActionGE presentable="!ed/dde/5E8E/E68/5562e2a624d8">
+									<position>
+										<Point x="13467" y="9155"/>
+									</position>
+									<size>
+										<Size width="4815" height="1084"/>
+									</size>
+								</ActionGE>
+								<IfNodeGE labelWidth="1323" presentable="!ed/ddc/5E8E/E68/5562e2a62260">
+									<position>
+										<Point x="1058" y="1905"/>
+									</position>
+								</IfNodeGE>
+								<IfNodeGE labelWidth="1323" presentable="!ed/deb/5E8E/E68/5562e2c8773b">
+									<position>
+										<Point x="1058" y="9234"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/df0/5E8E/E68/5562e2ca198f">
+									<position>
+										<Point x="3598" y="15319"/>
+									</position>
+									<size>
+										<Size width="4816" height="1058"/>
+									</size>
+								</ActionGE>
+								<EquationGE presentable="!ed/e01/5E8E/E68/5562e2de3f90">
+									<position>
+										<Point x="5847" y="15610"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/e0e/5E8E/E68/5562e2e14b4d">
+									<position>
+										<Point x="4180" y="15716"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e0e/5E8E/E68/5562e2e14b4d" dstEquation="!ed/e01/5E8E/E68/5562e2de3f90">
+									<positions>
+										<Point x="4392" y="15875"/>
+										<Point x="5133" y="15875"/>
+										<Point x="5133" y="15875"/>
+										<Point x="5900" y="15875"/>
+									</positions>
+								</Edge>
+								<IfNodeGE labelWidth="8811" presentable="!ed/e20/5E8E/E68/5562e31b3fd1">
+									<position>
+										<Point x="3651" y="1905"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/e25/5E8E/E68/5562e31d638c">
+									<position>
+										<Point x="13441" y="3387"/>
+									</position>
+									<size>
+										<Size width="4869" height="1111"/>
+									</size>
+								</ActionGE>
+								<EquationGE presentable="!ed/e26/5E8E/E68/5562e328677c">
+									<position>
+										<Point x="15769" y="2143"/>
+									</position>
+									<size>
+										<Size width="317" height="502"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/e31/5E8E/E68/5562e32c3e90">
+									<position>
+										<Point x="15849" y="3757"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/e3a/5E8E/E68/5562e32e4b72">
+									<position>
+										<Point x="13944" y="2249"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e3a/5E8E/E68/5562e32e4b72" dstEquation="!ed/e26/5E8E/E68/5562e328677c">
+									<positions>
+										<Point x="14155" y="2408"/>
+										<Point x="14975" y="2408"/>
+										<Point x="14975" y="2408"/>
+										<Point x="15822" y="2408"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/e55/5E8E/E68/5562e33552a7">
+									<position>
+										<Point x="13864" y="3863"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e55/5E8E/E68/5562e33552a7" dstEquation="!ed/e31/5E8E/E68/5562e32c3e90">
+									<positions>
+										<Point x="14076" y="4022"/>
+										<Point x="14975" y="4022"/>
+										<Point x="14975" y="4022"/>
+										<Point x="15901" y="4022"/>
+									</positions>
+								</Edge>
+								<IfNodeGE labelWidth="8890" presentable="!ed/e63/5E8E/E68/5562e342d0b">
+									<position>
+										<Point x="3572" y="9234"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/e68/5E8E/E68/5562e3445044">
+									<position>
+										<Point x="13467" y="10663"/>
+									</position>
+									<size>
+										<Size width="4815" height="1032"/>
+									</size>
+								</ActionGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/e78/5E8E/E68/5562e34d5b13">
+									<position>
+										<Point x="13970" y="9604"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/e7a/5E8E/E68/5562e34d6d59">
+									<position>
+										<Point x="15716" y="9499"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e78/5E8E/E68/5562e34d5b13" dstEquation="!ed/e7a/5E8E/E68/5562e34d6d59">
+									<positions>
+										<Point x="14182" y="9763"/>
+										<Point x="14896" y="9763"/>
+										<Point x="14896" y="9763"/>
+										<Point x="15769" y="9763"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/e8a/5E8E/E68/5562e35011e6">
+									<position>
+										<Point x="14102" y="11060"/>
+									</position>
+									<size>
+										<Size width="211" height="318"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/e8c/5E8E/E68/5562e3507751">
+									<position>
+										<Point x="15796" y="10954"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/e8a/5E8E/E68/5562e35011e6" dstEquation="!ed/e8c/5E8E/E68/5562e3507751">
+									<positions>
+										<Point x="14314" y="11218"/>
+										<Point x="15081" y="11218"/>
+										<Point x="15081" y="11218"/>
+										<Point x="15849" y="11218"/>
+									</positions>
+								</Edge>
+								<IfNodeGE labelWidth="8890" presentable="!ed/1450/D06/1724/5564276f6149">
+									<position>
+										<Point x="3651" y="3466"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/145c/D06/1724/556427701055">
+									<position>
+										<Point x="13441" y="4974"/>
+									</position>
+									<size>
+										<Size width="4895" height="1137"/>
+									</size>
+								</ActionGE>
+								<IfNodeGE labelWidth="8890" presentable="!ed/1488/D06/1724/55655855232b">
+									<position>
+										<Point x="3651" y="5054"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/1494/D06/1724/5565585653">
+									<position>
+										<Point x="13467" y="6562"/>
+									</position>
+									<size>
+										<Size width="4842" height="1111"/>
+									</size>
+								</ActionGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/14a4/D06/1724/5565588866f7" dstEquation="!ed/14a6/D06/1724/5565588840b3">
+									<positions>
+										<Point x="14049" y="5583"/>
+										<Point x="14949" y="5583"/>
+										<Point x="14949" y="5583"/>
+										<Point x="15875" y="5583"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/14a4/D06/1724/5565588866f7">
+									<position>
+										<Point x="13838" y="5424"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/14a6/D06/1724/5565588840b3">
+									<position>
+										<Point x="15822" y="5318"/>
+									</position>
+									<size>
+										<Size width="318" height="502"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/14d0/D06/1724/556558997031">
+									<position>
+										<Point x="15875" y="6906"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/14d1/D06/1724/55655899789f">
+									<position>
+										<Point x="13891" y="7011"/>
+									</position>
+									<size>
+										<Size width="212" height="317"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/14d1/D06/1724/55655899789f" dstEquation="!ed/14d0/D06/1724/556558997031">
+									<positions>
+										<Point x="14102" y="7170"/>
+										<Point x="15002" y="7170"/>
+										<Point x="15002" y="7170"/>
+										<Point x="15928" y="7170"/>
+									</positions>
+								</Edge>
+								<IfNodeGE labelWidth="8890" presentable="!ed/1503/D06/1724/5565590c25ee">
+									<position>
+										<Point x="3572" y="10742"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/150f/D06/1724/5565590d7faa">
+									<position>
+										<Point x="13467" y="12091"/>
+									</position>
+									<size>
+										<Size width="4842" height="1032"/>
+									</size>
+								</ActionGE>
+								<IfNodeGE labelWidth="8890" presentable="!ed/1510/D06/1724/556559202c2c">
+									<position>
+										<Point x="3572" y="12171"/>
+									</position>
+								</IfNodeGE>
+								<ActionGE presentable="!ed/151c/D06/1724/556559213d6e">
+									<position>
+										<Point x="13467" y="13573"/>
+									</position>
+									<size>
+										<Size width="4842" height="1058"/>
+									</size>
+								</ActionGE>
+								<EquationGE presentable="!ed/152c/D06/1724/5565593e3916">
+									<position>
+										<Point x="15769" y="12409"/>
+									</position>
+									<size>
+										<Size width="317" height="503"/>
+									</size>
+								</EquationGE>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/152d/D06/1724/5565593e4e0d">
+									<position>
+										<Point x="14076" y="12515"/>
+									</position>
+									<size>
+										<Size width="212" height="318"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/152d/D06/1724/5565593e4e0d" dstEquation="!ed/152c/D06/1724/5565593e3916">
+									<positions>
+										<Point x="14288" y="12674"/>
+										<Point x="15055" y="12674"/>
+										<Point x="15055" y="12674"/>
+										<Point x="15822" y="12674"/>
+									</positions>
+								</Edge>
+								<EquationGE kind="OBJ_LIT" presentable="!ed/1546/D06/1724/5565594b7c8d">
+									<position>
+										<Point x="14129" y="13996"/>
+									</position>
+									<size>
+										<Size width="211" height="317"/>
+									</size>
+								</EquationGE>
+								<EquationGE presentable="!ed/1548/D06/1724/5565594b2da7">
+									<position>
+										<Point x="15822" y="13891"/>
+									</position>
+									<size>
+										<Size width="318" height="503"/>
+									</size>
+								</EquationGE>
+								<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1546/D06/1724/5565594b7c8d" dstEquation="!ed/1548/D06/1724/5565594b2da7">
+									<positions>
+										<Point x="14340" y="14155"/>
+										<Point x="15108" y="14155"/>
+										<Point x="15108" y="14155"/>
+										<Point x="15875" y="14155"/>
+									</positions>
+								</Edge>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>

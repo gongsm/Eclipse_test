@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Package name="StabRudderIndications">
+			<declarations>
+				<Constant name="StabMinimum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-13.5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5047/3DB7/19B0/53d62bca6043"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabMaximum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/506d/3DB7/19B0/53d62c0f3dd5"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabTakeoffRangeMinimum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5076/3DB7/19B0/53d62c2c3edb"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabTakeoffRangeMaximum">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-8.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/50c4/3DB7/19B0/53d62c6f1441"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabNUValue">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="-2.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/50e5/3DB7/19B0/53d62ca05b8"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabStateNormalGreen">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5495/3DB7/19B0/53d63b452761"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabStateNormalWhite">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/54b3/3DB7/19B0/53d63b606a63"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabStateInvalid">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/54c1/3DB7/19B0/53d63b605303"/>
+					</pragmas>
+				</Constant>
+				<Constant name="StabStateFailed">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/54cf/3DB7/19B0/53d63b611172"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RudderStateNormal">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/c863/6206/1BDC/53d8988f3fb7"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RudderStateFail">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/224b/1021/146C/53d9a9dc2f89"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RudderStateInvalid">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2259/1021/146C/53d9a9dc66e6"/>
+					</pragmas>
+				</Constant>
+				<Type name="popStabRudderData">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popStabTrimPos">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3eb4/3C1F/181C/53d6158c6cad"/>
+									</pragmas>
+								</Field>
+								<Field name="popIsTakeoffRangeVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ebd/3C1F/181C/53d61864603e"/>
+									</pragmas>
+								</Field>
+								<Field name="popStabilizerState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ec3/3C1F/181C/53d6186a6084"/>
+									</pragmas>
+								</Field>
+								<Field name="popRudderTrimPos">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="real"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3ecf/3C1F/181C/53d6186a7c32"/>
+									</pragmas>
+								</Field>
+								<Field name="popRudderState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3edb/3C1F/181C/53d6186b4cc4"/>
+									</pragmas>
+								</Field>
+								<Field name="popIsNUAndNDVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/ab8f/71D6/13B0/5513b8b93f67"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/3eb3/3C1F/181C/53d6153726ba"/>
+					</pragmas>
+				</Type>
+				<Operator name="StabRudderIndications" href="StabRudderIndications.xscade"/>
+				<Operator name="GetStabState" href="GetStabState.xscade"/>
+				<Operator name="IsStabInTakeoffRange" href="IsStabInTakeoffRange.xscade"/>
+				<Operator name="GetRudderState" href="GetRudderState.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/2031/4108/14BC/53d61a22477b" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/2032/4108/14BC/53d61a227b14" blockKind="constants" columnsSize="0, 260, 150, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/2033/4108/14BC/53d61a226aec" blockKind="types" columnsSize="0, 330, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/2034/4108/14BC/53d61a225eed" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

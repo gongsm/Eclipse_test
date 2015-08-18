@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HostedFunctionClass Name="HF_DME_CLASS" Guid="a4743d4b3-320f-401b-a030-df20029646faa" XsdVersion="7.9" ATA="34xxxx">
+  <A429Port Name="po429_OUT_Ch1" Guid="a014df4e4-1461-499b-87b0-bee564647f4fa" Direction="Source" RefreshPeriod="100">
+    <A429Channel Name="po429_OUT_Ch1_Msg" Guid="ae703529f-4e04-4e06-8d5a-d1a14994f0bfa" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="100">
+      <A429Word Name="L035_DME_FREQUENCY" Guid="a119b49fc-d453-4e50-be33-c7d02abc20e1a">
+        <DP Name="LABEL" Guid="ad3dd4972-ada1-4e98-bc08-05c7582e2d30a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="35" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a783fe443-31ea-45af-8db8-7eb61350127ca" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_Mode" Guid="a91d1a7f7-a740-40d5-a025-84ce125cb993a" BitOffsetWithinDS="10" CodedSet="0=Standby Mode;1=Channel 1;2=Channel 2;3=Chanel 3;4=Channel 1 Hold;5=Channel 2 Hold;6=Invalid;7=Invalid" DataFormatType="COD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_FREQUENCY_PAIRING" Guid="af2ba5490-0aaa-4a3c-b00e-985525c5be0ba" BitOffsetWithinDS="13" CodedSet="0=VOR; 1=ILS; 2=MLS;3=Invalid" DataFormatType="COD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="Display" Guid="a629f2c21-2566-4b1f-8b72-78e4e049cbf0a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Enable BCD Data Display" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" ZeroState="0=Disable" />
+        <DP Name="Reserved" Guid="a081a13e4-c641-4e82-b64e-1ce9aa13031ba" BitOffsetWithinDS="16" DataFormatType="RESV" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_FREQ_MHz_0_05" Guid="a40768a83-26c4-453d-911d-edf834de6f9ea" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=0.05MegaHZ" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" ZeroState="0=0" />
+        <DP Name="DME_FREQ_MHz_0_1" Guid="acdc4432d-b521-410b-b4ee-d3f5210ee7cea" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_FREQ_MHz_1" Guid="a98cad837-637d-4cae-aec4-d41c62975ff3a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_FREQ_MHz_10" Guid="abb3e9c21-f616-4384-aa67-a4a9a8f46522a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="a49abd87a-7952-445a-8e24-ca41e9d99db9a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a1e4810a6-a32d-437b-b3b1-fe1245478b5ba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+      </A429Word>
+      <A429Word Name="L201_DME_DISTANCE" Guid="a74a0af66-7bbd-4c97-968a-c9f108a4fcf0a">
+        <DP Name="LABEL" Guid="a5405cfb4-d67f-464b-88e6-df4e412409f8a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="201" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a7f27435b-7410-4cf0-98e5-043260c4468fa" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DIST_NM_0_01" Guid="a4ac4bade-348d-4e48-80e5-6133fb16154ba" BitOffsetWithinDS="10" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DIST_NM_0_1" Guid="a6da87ed9-3f64-4d22-b70d-dfad1c0e32b9a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DIST_NM_1" Guid="a40a5b7c5-0eaf-416f-957f-28e65262d493a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DIST_NM_10" Guid="a326c4dc5-bf5e-4f3e-8454-f04e27c6114fa" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DIST_NM_100" Guid="a35a4591d-e3cd-4ae8-9baf-a64b5510de18a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="SSM" Guid="a9c59ea97-19af-4448-a64d-a67576e6c499a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="ab307f3aa-d4a9-46bd-8abb-6dc02f3216f4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+      </A429Word>
+      <A429Word Name="L202_DME_DISTANCE_BNR" Guid="a99f3fca4-0405-4e3e-9f4d-ffa5a282ec24a">
+        <DP Name="LABEL" Guid="a5cc955d8-1cf2-414a-97f5-55458135b876a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="202" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="SDI" Guid="a55cbd38c-c859-403d-b43e-201e79c4dd67a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="PAD" Guid="afb40e6a2-07f2-401d-8535-ac11cebb6be1a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="DME_DISTANCE" Guid="a7e60f362-065c-4549-b968-ccfb4c35765aa" BitOffsetWithinDS="12" DataFormatType="BNR" FullScaleRngMax="511.9921875" FullScaleRngMin="-512" FuncRngMax="511.9921875" FuncRngMin="0" LsbRes="0.0008" ParameterSize="17" PublishedLatency="200" TransmissionIntervalMinimum="100" Units="nautical miles" />
+        <DP Name="SSM" Guid="adbfa0fff-f11d-43f9-aa92-c33214ec4731a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="aee76dae8-b051-405e-ac3a-556380f57693a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <AnalogPort Name="piDISC_WOW" Guid="a30a6e011-d900-47d6-8b22-9a1d29e4c60da" Direction="Destination" RIUTemplate="40012" SamplePeriod="10" UDC="Command inversion=1">
+    <RP Name="DISC_WOW" Guid="afe361b77-db0e-4b2b-9bea-4f0da20b21b1a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="0" />
+  </AnalogPort>
+  <A429Port Name="po429_OUT_Ch1_200" Guid="adfb27030-dd7d-4f02-a12d-7b93612b0901a" Direction="Source" RefreshPeriod="200">
+    <A429Channel Name="po429_OUT_Ch1_Msg_200" Guid="a209f57f0-77ab-41f3-8e55-4614adbea606a" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="200">
+      <A429Word Name="L002_DME_TIME_TO_GO" Guid="a90644136-14fc-4d84-b82b-5ee57f790389a">
+        <DP Name="LABEL" Guid="a7ea07b67-8baf-4eb6-b49c-cac5e8c8e715a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="2" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="aff3fa574-0868-4dce-bc8d-ddfa758863d7a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD1" Guid="ab3afea00-91c3-46d2-8eac-2d260dc2c1e5a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_TIME_TO_GO_Min_0_1" Guid="a3f2130b7-3e07-445c-a06a-fd125e8135bda" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_TIME_TO_GO_Min_1" Guid="ada752433-9a72-4ac8-8d82-d3dfa388cd06a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_TIME_TO_GO_Min_10" Guid="add7b04f4-433f-4493-9e7e-0bddbd724795a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_TIME_TO_GO_Min_100" Guid="a3034fa3f-0f29-4969-9372-6224762e3689a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD2" Guid="ac5b2c3d0-5113-4f72-94a0-63800b542454a" BitOffsetWithinDS="28" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a000b9d1d-b358-4b2f-9611-894893ec1150a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a7cfbee10-0790-4755-985b-0c04fb257388a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+      <A429Word Name="L012_DME_GROUND_SPEED" Guid="a43211e1b-4269-4d37-816a-52c3857fcae9a">
+        <DP Name="LABEL" Guid="a6222c76e-401e-4dd0-84ac-558db58f272da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="12" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="aca508e2b-606d-455c-87b7-42055d8e8e77a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD1" Guid="a15e5fa67-cefa-4919-a987-59a5ecc6568ca" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_GROUND_SPEED_Knots_1" Guid="a3d496886-540b-40bf-ab40-f87e657cd49fa" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_GROUND_SPEED_Knots_10" Guid="a67b2914f-57bf-4a95-9e40-637e767d0f2fa" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_GROUND_SPEED_Knots_100" Guid="aed1e42c5-2f44-4625-8f1f-674b31f03adea" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="DME_GROUND_SPEED_1000" Guid="aa3174223-5b39-4906-990d-45dcd975e736a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PAD2" Guid="ac7f24f62-7fa6-4911-b37c-f9fb3ead1b7ea" BitOffsetWithinDS="28" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a82d1f0c8-7be5-443e-bc65-f5e2c4d94e50a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a480221ae-cd7f-4334-a7e9-6ac0d882e9c1a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+      <A429Word Name="L300_DME_IDENTIFIER_WD_1" Guid="a895c5985-94ca-40f7-b9a0-1cc699af7d7fa">
+        <DP Name="LABEL" Guid="a4c2af7e0-a22a-4c17-a223-5f2879a0e428a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="300" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="a866fd417-b2a6-4a4f-b887-7f5e708c02d3a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="FIRST_CHARACTER" Guid="a9fcfed59-217a-4c17-8c27-0f3f1097b01aa" BitOffsetWithinDS="10" DataFormatType="CHAR" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="CHARACTER_SELECT_1" Guid="a7d4449bf-0a53-48c5-8ee1-0b4cd8f863a0a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=3rd Character" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=1st Character" />
+        <DP Name="SECOND_CHARACTER" Guid="a1569be60-9936-4e47-ab26-af2416884d9ba" BitOffsetWithinDS="18" DataFormatType="CHAR" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="CHARACTER_SELECT_2" Guid="ad7fff598-a298-4afb-b64c-f887cf72501aa" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=4th Character" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=2nd Character" />
+        <DP Name="Pad" Guid="a7b1e82b5-34b8-493a-8a85-e070e991a4f6a" BitOffsetWithinDS="26" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a6a0308ba-7eb1-457c-a24e-270cc516eb03a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="ad9eeb933-7dc8-44df-82d7-188fe9397484a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+      <A429Word Name="L300_DME_IDENTIFIER_WD_2" Guid="ac7c57780-909e-49d2-9f78-a88503fbc72aa">
+        <DP Name="LABEL" Guid="aded5dee7-2db8-407b-82f1-a743e34584d6a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="301" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="a1b227696-62c0-47f3-9e4d-b3cc20c64f06a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="THIRD_CHARACTER" Guid="adb9f6432-c663-4460-89bf-b677b4bef5c3a" BitOffsetWithinDS="10" DataFormatType="CHAR" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="CHARACTER_SELECT_3" Guid="a8ccbe626-268b-4b48-93a8-8f39cd7a9a1ea" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=3rd Character" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=1st Character" />
+        <DP Name="FOURTH_CHARACTER" Guid="ad838415c-141f-44bf-9ba8-15a2e8574797a" BitOffsetWithinDS="18" DataFormatType="CHAR" ParameterSize="7" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="CHARACTER_SELECT_4" Guid="ac4e72669-64de-4fbb-8376-875edc20052ba" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=4th Character" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=2nd Character" />
+        <DP Name="Pad" Guid="a21f179f7-a889-48f1-b345-cc52ee373abca" BitOffsetWithinDS="26" DataFormatType="PAD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a9910e5d3-511c-46da-b46d-4c5d932d4374a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a9a58b786-df20-46bb-b020-9356655ba074a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+      <A429Word Name="L350_DME_DIAGNOSTICS" Guid="a8a113587-db4d-478c-92b4-3397ab010e0fa">
+        <DP Name="LABEL" Guid="a6a7f7662-fa20-4348-808e-b87ce4ff98dba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="aa7261127-e4ff-4714-aaca-a5988232e164a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="Pad" Guid="ad9dc095a-529a-4dac-b73a-88f259fa9952a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="VIDEO_PROCESSOR" Guid="a451dce48-295c-4142-b465-639aa28142cda" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="RECEIVER" Guid="a1b5c1623-40d0-416f-a338-4790a6e5836ea" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="DISTANCE_PROCESSOR" Guid="ab8196f04-1036-48b2-91ea-2da3fdfca005a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="PROCESSOR_ROM" Guid="ac9ed30b4-7a65-48f7-931a-5be1f7b72017a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="PROCESSOR_RAM" Guid="adff8a278-9dc3-4738-a342-ac16a30a91a8a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="LSC_BCD_FAIL_CODE" Guid="a765c2712-f669-4b76-8225-5ea852981feba" BitOffsetWithinDS="16" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="MSC_BCD_FAIL_CODE" Guid="a6db9ac45-dfe1-4a27-8bd1-422ec9c9d68ba" BitOffsetWithinDS="20" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="POWER_SUPPLY" Guid="a5945aa7a-7aa9-49c0-bb6e-b68c646a8f61a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="SYNTHESIZER" Guid="a4489cef1-c065-4026-bc09-719508f82490a" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="TRANSMITTER" Guid="a83542c0c-7559-4b1b-9f6f-9ae4dc8e2365a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="CONTROL_PORT_B" Guid="a389dacb4-525a-4528-880d-845836396812a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="CONTROL_PORT_A" Guid="aaef4a881-9910-4f2a-9449-468faca01133a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Fault" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Fault" />
+        <DP Name="SSM" Guid="aeb739f8a-7390-4595-97a0-80b16c8a6481a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a9160beb8-88a8-4d1d-846d-ef7e7c710b25a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+      <A429Word Name="L371_DME_EQUIPMENT_ID" Guid="a36814d92-e991-49b2-bfee-da36ccfe9d4ca">
+        <DP Name="LABEL" Guid="a467e107c-7c9c-4c42-a700-579fe0d42d19a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="371" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SDI" Guid="a3612c910-9d1b-4ad8-a251-1f96c3f0b9e8a" BitOffsetWithinDS="8" CodedSet="0=All Call;1=Left DME;2=Right DME;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="Equipment_Code" Guid="ad5c18dfb-7d92-4931-91ab-2b87d3cc820fa" BitOffsetWithinDS="10" CodedSet="9=Valid" DataFormatType="COD" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="Company_ID_Code" Guid="a4a0db238-d78b-4aea-aedf-648cd786206da" BitOffsetWithinDS="18" CodedSet="6=Rockwell Collins" DataFormatType="COD" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="Spare" Guid="abc591e2f-07af-4fd5-af22-70c87175538ba" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="SSM" Guid="a0babe4e6-0403-411a-bf1b-2b64fbb8929da" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+        <DP Name="PARITY" Guid="a0098f63a-7562-4712-abc6-f0a36064e8a4a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+</HostedFunctionClass>

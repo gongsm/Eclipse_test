@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW09_I_40005_HF_NAV_4000_L" Guid="ade9d7820-80f5-4dbf-b101-3a4d87892512a" XsdVersion="7.9" Hardware="RDIU_09">
+  <A429Port Name="pi429_ADF_LS_Out_1_A_B_HF_NAV_4000_L" Guid="a5ef9c5b9-cc51-4a5e-8f6d-d6ed475a9ccaa" ActivityTimeout="800" Direction="Destination" Physical="RDIU_09.40005_C03" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B" SrcGuid="a013b6b3c-19ce-49ec-b908-f46f63608200a" />
+  </A429Port>
+  <A429Port Name="pi429_VIR_LS_OUT_1_A_B_HF_NAV_4000_L" Guid="a4ebf65ff-6b77-4abb-ad33-7f46962584daa" ActivityTimeout="3200" Direction="Destination" Physical="RDIU_09.40005_C04" SamplePeriod="640">
+    <Dataflow_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B" SrcGuid="a65a213d1-f070-49ac-90d9-bd7fc58d320aa" />
+  </A429Port>
+  <A429Port Name="pi429_ADF_LS_Out_1_A_B_50_HF_NAV_4000_L" Guid="a306ff3c6-e546-4c9b-b7dc-5efc2c473c05a" ActivityTimeout="200" Direction="Destination" Physical="RDIU_09.40005_C03" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_50" SrcGuid="aa50d35b9-7a20-474e-b49a-77ce8e049185a" />
+  </A429Port>
+  <A429Port Name="pi429_VIR_LS_OUT_1_A_B_200_HF_NAV_4000_L" Guid="a681e516b-0a78-42ca-b438-ed05aad40599a" ActivityTimeout="800" Direction="Destination" Physical="RDIU_09.40005_C04" SamplePeriod="160">
+    <Dataflow_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_200" SrcGuid="aee6aafb4-f6ff-4de1-9b6e-0fd750b4edd5a" />
+  </A429Port>
+  <HFSamplingPort Name="HFS1_O_A664_po429_ADF_LS_Out_1_A_B_Msg" Guid="a3622d958-4dde-4d45-a2e3-62b5e3acf17ea" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_ADF_LS_Out_1_A_B_Msg_S_1" Guid="ab3f77bec-4e9e-4fe1-91f4-46284db13b81a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="200" VLID="33466">
+      <DS Name="FSS1" Guid="ade82d226-4e3a-401f-b535-9e2b0d126d18a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a3d30ba43-2aca-47f0-95b6-3b7bff8e88b6a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a2a86256f-9b88-4b52-a66a-3fb0ac56ded5a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="af3b83521-9cbc-43ca-937a-5428d470c4e9a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L371_ADF_Equipment_ID" Guid="ae7ec20ed-5d17-4a8b-8337-4fb0f56e8c2ea" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L371_ADF_Equipment_ID" Guid="a5fe29a1a-291a-467d-bca7-0f1a3e9f633da" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a74fb89ba-e877-4423-837b-aabcba4217f1a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="371" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aa9695207-a9b2-4a87-bb83-2aa3488f9b3ba" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Equipment_ID" Guid="ab55d6e3a-dd85-4c82-8810-ebc3a62337c0a" BitOffsetWithinDS="10" CodedSet="16=ILS;17=VOR;18=ADF" DataFormatType="COD" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L371_Equipment_ID" DestGuid="a09fd0160-b0f3-41e0-a553-664fd339d085a" />
+          </DP>
+          <DP Name="Company_ID" Guid="a17e24cee-945b-479f-9abc-5e02e6a0676da" BitOffsetWithinDS="18" CodedSet="6=Rockwell Collins" DataFormatType="COD" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L371_Company_ID" DestGuid="a511da55f-d340-49ad-ab3a-6ea022e1ae2aa" />
+          </DP>
+          <DP Name="Equipment_Status" Guid="a2f412177-fb1c-427d-a8fc-f5a9eb05f19ca" BitOffsetWithinDS="24" CodedSet="0=Valid" DataFormatType="COD" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L371_Equipment_Status" DestGuid="a58532e99-4405-473a-af4d-9e76738e01c8a" />
+          </DP>
+          <DP Name="SSM" Guid="ab74a7f72-2b53-42cc-b155-83d88ccb4e1ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="acb99ed9c-8fa6-4a90-81a9-ceeabb2cf759a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_Msg.L371_ADF_Equipment_ID" SrcGuid="adee6b380-41f8-494f-957a-127a3e498712a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L371_ADF_Equipment_ID" DestGuid="a1bf97aeb-e29a-47fd-b6a0-17b7fc60d83aa" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.L371_ADF_Equipment_ID_NAV_4000_L" DestGuid="a78c5a20b-b940-4f88-91fb-0a132cfc3450a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.L371_ADF_Equipment_ID_NAV_4000_L" DestGuid="a9127eee1-8a23-4ee9-be99-83fb00626926a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.L371_ADF_Equipment_ID_NAV_4000_L" DestGuid="a3df09393-9969-479d-8d48-0243a6db3f28a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.L371_ADF_Equipment_ID_NAV_4000_L" DestGuid="a271939c6-3620-4766-af7b-fc9ca1b54091a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.L371_ADF_Equipment_ID_NAV_4000_L" DestGuid="a7f06d551-2a22-4ac2-90f4-e9135f5611fda" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L371_ADF_Equipment_ID_L" DestGuid="ac8adadcf-6288-4cba-a134-4bf1e422955ea" />
+        </A429Word>
+      </DS>
+      <DS Name="L032_ADF_Frequency_Echo" Guid="a759da44d-b5dc-4312-a975-1e43e8561798a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L032_ADF_Frequency_Echo" Guid="a068cf566-d865-44f4-a726-1efb09459b86a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="aafaabaea-0438-45a4-a8c5-437d80146d78a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="32" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aa313b249-8007-4744-9d17-56a71483b58aa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=ADF1;2=ADF2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="BFO" Guid="afe04004a-a984-4427-9f1d-11c2aafd261ea" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=BFO on" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=BFO off">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_BFO" DestGuid="a4fa17eb0-2ddd-484a-a766-e5fa48d851d2a" />
+          </DP>
+          <DP Name="ANT" Guid="a52f5643b-54b2-4bd8-be27-666a612d9098a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=ANT Mode" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=ADF Mode">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_ANT" DestGuid="aef1b0c8f-d98c-4fda-ba21-06f2ea8029bfa" />
+          </DP>
+          <DP Name="HalfOfKHz" Guid="abd6373ae-645d-4381-a8fe-c2f3d26cda5ba" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=0.5kHz" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=0kHz">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_HalfOfKHz" DestGuid="af639f99e-edab-41d3-8ae2-6cb90a530b3ba" />
+          </DP>
+          <DP Name="OnesOfKHz" Guid="a3e174fce-50ed-44f6-b29e-650ccc50b5f4a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_OnesOfKHz" DestGuid="a7037c116-deb6-4493-9d13-6c00575dcb1ba" />
+          </DP>
+          <DP Name="TensOfKHz" Guid="a0bb8494c-96f5-48f2-94ca-d7d91269739aa" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_TensOfKHz" DestGuid="ab8b254a8-667e-4951-8cff-e78dcbac1528a" />
+          </DP>
+          <DP Name="HundredsOfKHz" Guid="a69039ee3-59de-4b97-bbfb-809a709df07ea" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_HundredsOfKHz" DestGuid="a5d2527fb-e501-4499-8bc8-823d8bf134f0a" />
+          </DP>
+          <DP Name="ThousandsOfKHz" Guid="a84f34199-2578-4678-a89f-90fd4851ea73a" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_ThousandsOfKHz" DestGuid="a440b502a-2a4a-4c43-ab10-89f99a8a210da" />
+          </DP>
+          <DP Name="Reserved" Guid="aa16a270e-f2e0-43af-95d3-45bfd595cc97a" BitOffsetWithinDS="28" DataFormatType="RESV" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo_Reserved" DestGuid="a397bb7fe-f2a2-4c33-a4fa-70e81ccecb99a" />
+          </DP>
+          <DP Name="SSM" Guid="a80a53b76-a337-4c08-87f2-a269ed4b5a70a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="a3568da0e-15e4-4d2c-8d6d-a8ad454a654aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_Msg.L032_ADF_Frequency_Echo" SrcGuid="a4ad6633d-c9fa-4d5b-a413-a656c2b53869a" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_1.L032_ADF_Frequency_VOR1" DestGuid="a1a77b6f5-df91-489e-8157-8d0026a1f27ba" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_2.L032_ADF_Frequency_VOR1" DestGuid="aeb4b8185-43cc-4588-8cd4-9a33b54f976fa" />
+          <Gw_Pub_Ref DestName="HF_AFTEAFR.ADF_Frequency_Echo_NAV_NAV_4000_L" DestGuid="a773ede45-990f-426e-a553-7e76b5c84d37a" />
+          <Gw_Pub_Ref DestName="HF_FWDEAFR.ADF_Frequency_Echo_NAV_NAV_4000_L" DestGuid="a525a4d07-b5b0-4b9e-a32c-6023d0cc427fa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH2.po429_ADF_LS_Out_1_A_B_Msg_L032_Echo" DestGuid="a3f45a8ea-9d6b-4e2f-a6a7-423c385b70c9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L032_ADF_Frequency_Echo" DestGuid="a80b5d96b-b98c-4245-86b9-4a6c7985e6fba" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.L032_ADF_Frequency_Echo_NAV_4000_L" DestGuid="a5643d9ee-4da8-45db-b0d4-ef30c0ccab09a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.L032_ADF_Frequency_Echo_NAV_4000_L" DestGuid="a11cbb9f0-e1c7-4092-9c3d-05dba6a864efa" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.L032_ADF_Frequency_Echo_NAV_4000_L" DestGuid="aeb59bd3d-6daa-4819-82ab-040828fbb884a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.L032_ADF_Frequency_Echo_NAV_4000_L" DestGuid="a61e4355a-4019-44ca-923e-eb2caa557a82a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.L032_ADF_Frequency_Echo_NAV_4000_L" DestGuid="ac15a18a4-4bce-468b-9b32-8825edfe6701a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L032_ADF_Frequency_Echo_L" DestGuid="aa032bfd1-1f92-4468-84fa-71b1b061190ca" />
+        </A429Word>
+      </DS>
+      <DS Name="L350_ADF_Diagnostics" Guid="a444c1b25-e6e4-422e-b715-53fafc44a2c6a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L350_ADF_Diagnostics" Guid="a9de7b187-5d69-470f-b346-25d05620eb0ea" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0fa562c0-d013-40e4-80f3-a9199f87aac7a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a7527e3b9-f163-43cd-bc65-d5bf897ff340a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Spare1" Guid="a692c8918-a6b5-41d2-8429-6ad9f56aced6a" BitOffsetWithinDS="10" DataFormatType="SPAR" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Fault_Code_LSC" Guid="a948b52bd-4df1-4e0e-b631-735625338712a" BitOffsetWithinDS="16" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Fault_Code_MSC" Guid="a07b8ba91-3780-4868-8a43-28000a7bd637a" BitOffsetWithinDS="20" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Spare2" Guid="a38b0ab81-f8c3-4669-85f2-a6ed0efb9e7fa" BitOffsetWithinDS="24" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SSM" Guid="ac51d046b-883e-4b43-84a6-cfb7221d083fa" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ac8380e00-21ad-41dd-9bad-fa2d980f6c72a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_Msg.L350_ADF_Diagnostics" SrcGuid="ab7d2c4d8-dae0-427b-8512-1d49fededf5ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L350_ADF_Diagnostics" DestGuid="a5057f326-a720-4b66-9a61-0fed602dba0ea" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L350_ADF_Diagnostics_L" DestGuid="a8f072bae-11e9-4034-8a5d-c1ab5370bc0aa" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.pi429_ADF_LS_Out_1_A_B_HF_NAV_4000_L" SrcGuid="a5ef9c5b9-cc51-4a5e-8f6d-d6ed475a9ccaa" />
+  </HFSamplingPort>
+  <A429Port Name="pi429_VIR_LS_OUT_1_A_B_50_HF_NAV_4000_L" Guid="a919e0361-dde3-4d93-a9ef-922d9b2d2b96a" ActivityTimeout="200" Direction="Destination" Physical="RDIU_09.40005_C04" SamplePeriod="40">
+    <Dataflow_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_50" SrcGuid="af8350def-44fa-4c20-8043-dcb8884aa1f2a" />
+  </A429Port>
+  <HFQueuingPort Name="HFQ1_O_A664_po429_VIR_LS_OUT_1_A_B_msg" Guid="a760cc7fb-f930-45ea-b139-fc90fc04e053a" Direction="Source" MessageSize="16" Networks="Both" QueueLength="2" RefreshPeriod="80">
+    <A664Message Name="po429_VIR_LS_OUT_1_A_B_msg_Q_1" Guid="a75a05ecb-ca4f-4c9b-bcd8-918699a02fb0a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="16" MsgDataProtocolType="A429 Block" SubVLID="3" TransmissionIntervalMinimum="1000" VLID="33379">
+      <DS Name="FSS1" Guid="a023d6ff6-09e4-464b-8b9c-ff321eddb1ffa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a7ce03b67-1f9a-4fc3-bbd2-41ad44e91c33a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="af1e35220-5ba2-4721-8889-b3ff9b131e46a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L173_Reserved" Guid="ad981a914-ceae-4261-b449-03cb84875451a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L173_Reserved" Guid="af7c88cb9-49d2-4ffd-a948-f90daa9c4dfda" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ac1b584bb-eb8e-405b-bd99-b186ce4312faa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="173" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+          <DP Name="Reserved" Guid="af18f799c-c7ef-4af6-a075-473dfd6f2357a" BitOffsetWithinDS="8" DataFormatType="RESV" ParameterSize="23" PublishedLatency="0" TransmissionIntervalMinimum="1000">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_L173_Reserved_Reserved" DestGuid="a0d307ee3-09c1-4994-89f0-864c1f48dee2a" />
+          </DP>
+          <DP Name="PARITY" Guid="ad6a8fff1-65c3-4fcc-8bc7-2eccb4a7717fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg.L173_Reserved" SrcGuid="aac3da62d-43b1-49bd-837f-35096f30baf5a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L173_Reserved" DestGuid="a814c5db5-41c2-4317-a61a-36cfb9198944a" />
+        </A429Word>
+      </DS>
+      <DS Name="L174_Reserved" Guid="a779c2d0f-cd5d-4e9a-9d6c-1e18da42e9faa" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L174_Reserved" Guid="a35730c0b-3cfa-4957-b627-f781eb8e87b4a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a14ef73dc-0b5d-4975-9ee9-256f0aaa8a71a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="174" ParameterSize="8" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+          <DP Name="Reserved" Guid="a9a889bc5-210f-40be-aa74-f308b91e26c5a" BitOffsetWithinDS="8" DataFormatType="RESV" ParameterSize="23" PublishedLatency="0" TransmissionIntervalMinimum="1000">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_L174_Reserved_Reserved" DestGuid="ae4c2879b-c4d4-4266-abbf-9290f04f9bc4a" />
+          </DP>
+          <DP Name="PARITY" Guid="ae8a887c0-d57a-4b66-b44b-8d240093361aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="0" TransmissionIntervalMinimum="1000" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg.L174_Reserved" SrcGuid="a589e9848-779b-411c-abba-ef4a0e5dc6bda" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L174_Reserved" DestGuid="af3cb3d16-594e-48da-b28f-d10281a87624a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.pi429_VIR_LS_OUT_1_A_B_HF_NAV_4000_L" SrcGuid="a4ebf65ff-6b77-4abb-ad33-7f46962584daa" />
+  </HFQueuingPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_ADF_LS_Out_1_A_B_Msg_50" Guid="a14fece8f-9c2d-49a8-9d2e-cf38a48224bea" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="40">
+    <A664Message Name="po429_ADF_LS_Out_1_A_B_Msg_50_S_2" Guid="a15e77521-6fc6-48d7-b1c8-ce4fe919a67da" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="3" TransmissionIntervalMinimum="50" VLID="33466">
+      <DS Name="FSS1" Guid="ac75a4ef0-b580-4963-9bad-0dcd42ede26ea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a5e5d7b79-83c6-4088-9bbd-251ea98589dba" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L162_ADF_Bearing" Guid="afd65f95b-df04-4bc0-83ce-ddfb6cb85462a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L162_ADF_Bearing" Guid="ae1b9ba17-72bb-4963-a446-c53e9540a751a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a0cc2d9e2-33b0-4d19-84f7-1eb9e681db2aa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="162" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="SDI" Guid="a079e1382-6000-498b-81f8-3db6953e2851a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="Pad" Guid="ae54ec732-332b-4ce7-8a48-30e94245c495a" BitOffsetWithinDS="10" DataFormatType="PAD" ParameterSize="6" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="ADF_Bearing" Guid="a7dc1317b-121c-4633-849f-7183234bc6a1a" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="180" FullScaleRngMin="-180" FuncRngMax="179" FuncRngMin="-180" LsbRes="0.05" ParameterSize="13" PublishedLatency="50" TransmissionIntervalMinimum="50" Units="degrees">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_ADF_LS_Out_1_A_B_Msg_50_L162_ADF_Bearing" DestGuid="a90e19957-9903-451a-9e30-0adb4279bea2a" />
+          </DP>
+          <DP Name="SSM" Guid="a32cef39d-b2f8-473c-9774-6613d4006485a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="PARITY" Guid="a4bd05c74-1993-4857-813d-f83bff28a22ca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_ADF_LS_Out_1_A_B_Msg_50.L162_ADF_Bearing" SrcGuid="adec104c9-cbb7-4df5-bdbe-c2d5795d6a1ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L162_ADF_Bearing" DestGuid="a54fb8c06-2d17-455b-a09f-ba8cab02e167a" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.L162_ADF_Bearing_4000_L" DestGuid="a16f791ad-fb10-4b4f-915c-4b45bf46996ea" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.L162_ADF_Bearing_4000_L" DestGuid="a214aa552-8fa1-4a8f-8cf7-be8101fe6dbba" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.L162_ADF_Bearing_4000_L" DestGuid="a0d05ba00-5839-4d70-bcbe-676774825e50a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.L162_ADF_Bearing_4000_L" DestGuid="a64fd80ec-4bec-4a91-9696-75b36702d465a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.L162_ADF_Bearing_4000_L" DestGuid="a536b6db5-9a81-4e92-86a5-8cc10021e4c0a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L162_ADF_Bearing_L" DestGuid="a1c9d2afa-78c2-4914-baa1-d9807654b498a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.pi429_ADF_LS_Out_1_A_B_50_HF_NAV_4000_L" SrcGuid="a306ff3c6-e546-4c9b-b7dc-5efc2c473c05a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS2_O_A664_po429_VIR_LS_OUT_1_A_B_msg_200" Guid="adf61c27d-8c1f-476e-86d7-5af2970860e3a" Direction="Source" MessageSize="20" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="po429_VIR_LS_OUT_1_A_B_msg_200_S_2" Guid="a9f3aa943-b4ed-4665-8134-3e6cc7aad1a6a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="20" MsgDataProtocolType="Parametric data" SubVLID="1" TransmissionIntervalMinimum="200" VLID="33379">
+      <DS Name="FSS1" Guid="a0272c1b3-43d9-49f0-8248-32fbab00255ca" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="ae467cd56-82bb-4049-88a4-60f061c3c030a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a808151e4-92bc-4931-aac2-d5fc5b31a402a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB3" Guid="a8b3b90c7-9d30-4c48-8155-8845dde96125a" BitOffsetWithinDS="8" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L034_VOR_Frequency_Echo" Guid="a65472756-7a71-4894-ae28-e268beb37f35a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L034_VOR_Frequency_Echo" Guid="a46b655f2-c425-441e-a04f-73a21d64f3c6a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a4cae6f86-0de4-4692-ae40-16e742450deba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="34" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a4f14390d-1dce-4081-80e7-50672cca504da" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="MB_Sensitivity" Guid="a676d28ca-8f91-4031-8997-a884fd14200ba" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=HIGH" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=LOW">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_MB_Sensitivity" DestGuid="abbafb30e-82e5-4156-a9ef-31aad89a62e8a" />
+          </DP>
+          <DP Name="Tuning_Source" Guid="af1ebd4ca-9038-4bb2-9632-3a1e180c40cfa" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Auto_FMS" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=Manual">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_Tuning_Source" DestGuid="a510d6299-0029-4366-8852-5c736a43a7b3a" />
+          </DP>
+          <DP Name="Pad" Guid="a43ab8e4a-61eb-4450-bd5e-af72ad9b69eda" BitOffsetWithinDS="12" DataFormatType="PAD" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="ILS_VOR" Guid="a813ab107-cd8f-4ace-8257-8131d5270e85a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=ILS Frequencies" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=VOR Frequencies">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_ILS_VOR" DestGuid="a7469ca0b-37bb-4faa-87d3-8af4ed262865a" />
+          </DP>
+          <DP Name="HundredsOfMHz" Guid="aa20baad9-4572-47fd-97f3-45a9ae780281a" BitOffsetWithinDS="14" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_HundredsOfMHz" DestGuid="a3e96c744-1444-44bb-90ee-62f10be61616a" />
+          </DP>
+          <DP Name="TenthOfMHz" Guid="a8a9fe70b-772c-4c30-be64-be0cc2c6e656a" BitOffsetWithinDS="18" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_TenthOfMHz" DestGuid="a62375f3c-e9ac-428b-be15-715da9fc9e20a" />
+          </DP>
+          <DP Name="OnesOfMHz" Guid="a5da4c63e-9d17-4df5-a6c4-b6bda1218082a" BitOffsetWithinDS="22" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_OnesOfMHz" DestGuid="aadd7bb5b-3756-4b32-beda-c4e8fc633cb1a" />
+          </DP>
+          <DP Name="TensOfMHz" Guid="afe1f2e5c-d473-41de-abd6-b7c01ac9c49ea" BitOffsetWithinDS="26" DataFormatType="BCD" ParameterSize="3" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_TensOfMHz" DestGuid="a4673af10-69cc-4264-8a28-5545d2ea8bd0a" />
+          </DP>
+          <DP Name="SSM" Guid="a0f8dd27a-3831-4150-995e-d196b2813371a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BCD" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="aa1c568de-fbd1-4a83-906b-8b25f68d379ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_200.L034_VOR_Frequency_Echo" SrcGuid="af76f41aa-1dd7-494e-bfb6-8857f1b986f9a" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_1.L034_VOR_Freq_VOR1" DestGuid="a5c5bced7-24eb-4067-a90e-f88dfd36dfeca" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_2.L034_VOR_Freq_VOR1" DestGuid="ac8afbdfa-6736-48a8-8109-05c78ecd958ea" />
+          <Gw_Pub_Ref DestName="HF_AFTEAFR.VOR_ILS_Frequency_Echo_NAV_NAV4000_L" DestGuid="a4f2cf1d4-735a-4b5e-bd85-0604107cf910a" />
+          <Gw_Pub_Ref DestName="HF_FWDEAFR.VOR_ILS_Frequency_Echo_NAV_NAV4000_L" DestGuid="aa5008626-599e-4e83-a0ef-7249d2375a64a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L034_VOR_Frequency_Echo" DestGuid="a9997edf3-d319-43a8-9052-d249fcf6966ba" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L034_VOR_Frequency_Echo" DestGuid="a05a64697-8534-49a1-a865-a24a41b5b523a" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.L034_VOR_Frequency_Echo_NAV_4000_L" DestGuid="acb1d571c-9afb-486e-aa91-ed24fbcc13d3a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.L034_VOR_Frequency_Echo_NAV_4000_L" DestGuid="adc21f03c-06c3-4b25-adce-d7ea6c16bb33a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.L034_VOR_Frequency_Echo_NAV_4000_L" DestGuid="a433b9635-b9b7-4f8d-b538-02791cde2590a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.L034_VOR_Frequency_Echo_NAV_4000_L" DestGuid="abb9ab8a6-23f0-4eca-b4b9-27394292e566a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.L034_VOR_Frequency_Echo_NAV_4000_L" DestGuid="a9e33d0cb-6e84-49e0-8a50-ca6504ea1c70a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L034_VOR_Frequency_Echo_L" DestGuid="a6cac3c8f-03b2-4454-8b3c-7c5538d19327a" />
+        </A429Word>
+      </DS>
+      <DS Name="L350_Diagnostics" Guid="a68cb2764-4a06-49d6-9590-2ecf009b3d50a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L350_Diagnostics" Guid="a3835de97-5d11-424b-ae45-5f528e04bf14a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a64c3aa21-c5a9-4f0e-b2f3-e74f0f9ad17ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="aadfcf21f-b4df-435e-b02c-9dee0636750da" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Marker_Beacon_Fault_Warning" Guid="ab7861707-0303-4f54-89fb-8a03b4190620a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Warning" />
+          <DP Name="Spare" Guid="ad2b13c43-724b-4fda-b0ec-05afcbdf34b6a" BitOffsetWithinDS="11" DataFormatType="SPAR" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Fault_Code_LSC" Guid="a3ebb0727-8357-4b34-98ea-30317902d8a6a" BitOffsetWithinDS="16" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Fault_Code_MSC" Guid="abcd86adc-5354-43cc-9676-cd5020e19b56a" BitOffsetWithinDS="20" DataFormatType="BCD" ParameterSize="4" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="VOR_Fault_Warning" Guid="a50828ed3-29d2-405e-8fff-f783e051fdd0a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Warning" />
+          <DP Name="Reserved2" Guid="a5b3c5079-473c-44ee-98f9-ade554d2e1f5a" BitOffsetWithinDS="25" DataFormatType="RESV" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Frequency_Fault_Warning" Guid="a07caa8d6-74ea-4da9-8b09-69c743348d4ea" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Warning" />
+          <DP Name="Radio_Fault_Warning" Guid="a26695c73-7464-4623-a6cc-405521f6526ea" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=Warning" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" ZeroState="0=No Warning" />
+          <DP Name="SSM" Guid="a26852f9a-7239-46df-aeb3-ce631770c564a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="abaec1564-ae2f-4d84-b224-5dbc67d350dba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_200.L350_Diagnostics" SrcGuid="ace133d2a-389b-478c-a1a6-7356ce8aa127a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L350_Diagnostics" DestGuid="af0c22d24-5d51-4d83-823f-383ed2566667a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L350_Diagnostics_L" DestGuid="a5ccbfc83-3e7c-4e2d-8fca-441b78e59723a" />
+        </A429Word>
+      </DS>
+      <DS Name="L371_Equipment_Identifier" Guid="ae596216e-a8f0-4285-b41a-36204fc2b616a" ByteOffsetFSF="6" ByteOffsetWithinMsg="16" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L371_Equipment_Identifier" Guid="a983d8606-4620-4ef9-9f74-a6d992c1b179a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="a6d427cc1-863a-4a70-b83f-ba9d36599119a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="371" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="SDI" Guid="a69fbb6f3-6675-44b5-bf99-4e984acf012ea" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="Equipment_ID" Guid="ada43044f-a1b5-4559-9eee-479613d4ff9fa" BitOffsetWithinDS="10" CodedSet="16=ILS;17=VOR;18=ADF" DataFormatType="COD" ParameterSize="8" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L371_Equipment_Id_Equipment_ID" DestGuid="a1947952b-a2ca-49f7-b060-34735f258751a" />
+          </DP>
+          <DP Name="Company_ID" Guid="ad00e5df3-759e-4a19-927b-3c2eb1363a67a" BitOffsetWithinDS="18" CodedSet="6=Rockwell Collins" DataFormatType="COD" ParameterSize="6" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L371_Equipment_Id_Comp_ID" DestGuid="a2c025006-bcf5-4415-a8d9-7fcec6802a1aa" />
+          </DP>
+          <DP Name="Company_Private" Guid="adf50b33a-7a86-49e1-ba25-bb68fd69ed78a" BitOffsetWithinDS="24" CodedSet="0=Valid" DataFormatType="COD" ParameterSize="5" PublishedLatency="200" TransmissionIntervalMinimum="200">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_200_L371_Equipment_Id_Comp_Private" DestGuid="a492f0c95-1cf5-4227-9436-bc735a1c1102a" />
+          </DP>
+          <DP Name="SSM" Guid="a9a836a71-11a4-43c9-a5ee-3db2851fdc10a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <DP Name="PARITY" Guid="ae5cffcbd-919c-4cb0-8fbf-afeabe5175bda" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="200" TransmissionIntervalMinimum="200" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_200.L371_Equipment_Identifier" SrcGuid="a595b7b26-1557-42f2-93a8-3e5e9af84da8a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L371_Equipment_Identifier" DestGuid="a003cbf2a-8516-4f1e-9e50-452287c99e4ba" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L371_Equipment_Identifier_L" DestGuid="a841eec5e-7f1a-4a13-8c29-708e6da06935a" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.pi429_VIR_LS_OUT_1_A_B_200_HF_NAV_4000_L" SrcGuid="a681e516b-0a78-42ca-b438-ed05aad40599a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="HFS3_O_A664_po429_VIR_LS_OUT_1_A_B_msg_50" Guid="a0b6419cc-4054-422a-8c3d-9624afd1149fa" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="40">
+    <A664Message Name="po429_VIR_LS_OUT_1_A_B_msg_50_S_3" Guid="a7fe19dfa-26d6-48ae-a836-b49c9d4e0223a" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="50" VLID="33379">
+      <DS Name="FSS1" Guid="a9a3aa1b8-43f8-4609-b144-fceb6d29289ea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a0c800d31-d0f1-473a-9b58-97c23ab2c99da" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="L222_VOR_Bearing" Guid="a82733134-1a4f-42a8-b29e-ac628d3fd420a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <A429Word Name="L222_VOR_Bearing" Guid="a3b3c8f3c-e194-4df7-b5be-7a416d0e3466a" BitOffsetWithinDS="0">
+          <DP Name="LABEL" Guid="ae2e9f798-773a-44cc-b0ec-33a345d0a174a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="222" ParameterSize="8" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="SDI" Guid="a36dd0b43-a63b-4d6d-a884-4b2bf2a433b1a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=NAV 1;2=NAV 2;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="Outer_Marker_Present" Guid="ae7eec8f4-b0a9-47ad-88de-d2d6127d7c5ca" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=Outer Marker Present" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="50" ZeroState="0=Not Present">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_50_L222_Out_Mark_Present" DestGuid="a374aee26-476f-4621-a7ce-5d3a3c21115fa" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.ipCOMMNAVMarkerBeacon_OM_L" DestGuid="aed93db1c-2a2c-4ade-b314-e27c3ab5bc16a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.ipCOMMNAVMarkerBeacon_OM_L" DestGuid="a07681bdc-71dd-4cb7-a583-5f9be67fed59a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.ipCOMMNAVMarkerBeacon_OM_L" DestGuid="a7326a61b-b60f-4fd5-a74d-84f3c0c30765a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.ipCOMMNAVMarkerBeacon_OM_L" DestGuid="a38cc4101-3213-4f87-ab7f-3fbb98691007a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.ipCOMMNAVMarkerBeacon_OM_L" DestGuid="ae8df28ec-2ccf-43f2-b4e2-e6841cddef8aa" />
+          </DP>
+          <DP Name="Middle_Marker_Present" Guid="a8234b849-488e-4757-84b4-e43faa3073efa" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=Middle Marker Present" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="50" ZeroState="0=Not Present">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_50_L222_Mid_Mark_Present" DestGuid="a001d7591-d871-443f-86ec-bebeb19574e4a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.ipCOMMNAVMarkerBeacon_MM_L" DestGuid="a338f44a5-def3-4fbe-a18a-516df130a7c4a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.ipCOMMNAVMarkerBeacon_MM_L" DestGuid="a3b5eb8e6-6095-4737-8db0-fa41516dccaca" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.ipCOMMNAVMarkerBeacon_MM_L" DestGuid="a72a42ce4-666a-47e3-9274-583752227cdfa" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.ipCOMMNAVMarkerBeacon_MM_L" DestGuid="afeca049a-ebc5-4efd-b005-27b93c3642e3a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.ipCOMMNAVMarkerBeacon_MM_L" DestGuid="ae736af23-4b9b-4dd0-9f06-9ca75ff9d9dda" />
+          </DP>
+          <DP Name="Inner_Marker_Present" Guid="a27cb99bb-911e-4f28-9db5-c6efb52ba952a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Inner Marker Present" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="50" ZeroState="0=Not Present">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_50_L222_Inner_Marker_Present" DestGuid="a19295969-a5f5-4403-ad27-1f9165c51245a" />
+            <Gw_Pub_Ref DestName="HF_IDUCENTER.ipCOMMNAVMarkerBeacon_IM_L" DestGuid="ab089a7f4-bd51-478a-85f9-dafe53a1e84ea" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.ipCOMMNAVMarkerBeacon_IM_L" DestGuid="a024ce4a7-d79f-4b15-b763-daa15a0fb965a" />
+            <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.ipCOMMNAVMarkerBeacon_IM_L" DestGuid="a34a7a600-17bc-4dfd-81cb-8b5db3984a46a" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.ipCOMMNAVMarkerBeacon_IM_L" DestGuid="a70970195-e3b0-4c50-9412-f1dfeb5eea0ea" />
+            <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.ipCOMMNAVMarkerBeacon_IM_L" DestGuid="aa5898070-9180-40f5-80af-76ef2daccc18a" />
+          </DP>
+          <DP Name="Pad" Guid="a542f74fe-bfb2-42ef-9cf3-fdffd6c43681a" BitOffsetWithinDS="13" DataFormatType="PAD" ParameterSize="3" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="VOR_Bearing" Guid="a5d6ac82b-07f4-4378-87e5-5c6ff6d4b7bfa" BitOffsetWithinDS="16" DataFormatType="BNR" FullScaleRngMax="180" FullScaleRngMin="-180" FuncRngMax="179" FuncRngMin="-180" LsbRes="0.087890625" ParameterSize="13" PublishedLatency="50" TransmissionIntervalMinimum="50" Units="degrees">
+            <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_50_L222_VOR_Bearing_1" DestGuid="a3073ed7f-5e76-49ca-bad1-4ec69cc48970a" />
+          </DP>
+          <DP Name="SSM" Guid="a1410a4c4-d57f-444d-8b7a-b4e6d356c0e3a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <DP Name="PARITY" Guid="a9790341d-feec-4a2e-a8ba-d1e19f5bd18da" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="50" TransmissionIntervalMinimum="50" />
+          <Copy_Ref SrcName="HF_NAV_4000_L.po429_VIR_LS_OUT_1_A_B_msg_50.L222_VOR_Bearing" SrcGuid="a0ff7a905-6472-478a-a94e-ea40f040042da" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_1.L222_VOR_Omnibearing_VOR1" DestGuid="a27d6a804-a263-47fa-8865-5621821ee99aa" />
+          <Gw_Pub_Ref DestName="APP_FMS_TUNE_2.L222_VOR_Omnibearing_VOR1" DestGuid="a104663bc-70d0-4046-82e2-7d8cfcb6e14ca" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.po429_VIR_LS_OUT_1_A_B_msg_50_L222_VOR_Bearing" DestGuid="ab4902fa9-2c76-4949-81bb-32ffe4079c62a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_NAV1_GIPC_L222_VOR_Bearing" DestGuid="ae20b1b76-ad95-4da6-bc27-0dc1f354fb57a" />
+          <Gw_Pub_Ref DestName="HF_IDUCENTER.L222_VOR_Bearing_NAV_4000_L" DestGuid="a5440c18d-6a6c-458f-97aa-059431a97368a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTINBOARD.L222_VOR_Bearing_NAV_4000_L" DestGuid="a7afc0969-54d9-4c70-96a1-7efc23c41715a" />
+          <Gw_Pub_Ref DestName="HF_IDULEFTOUTBOARD.L222_VOR_Bearing_NAV_4000_L" DestGuid="a431ab750-803a-45c6-9059-d54fbc44b381a" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTINBOARD.L222_VOR_Bearing_NAV_4000_L" DestGuid="a3e9010ba-9d77-4095-8ab8-170593289a7ca" />
+          <Gw_Pub_Ref DestName="HF_IDURIGHTOUTBOARD.L222_VOR_Bearing_NAV_4000_L" DestGuid="a3b27d03b-ebcc-45e9-824b-28bc4a5382b8a" />
+          <Gw_Pub_Ref DestName="PAA_R1Instance.L222_VOR_Bearing_L" DestGuid="ac467b7a7-1df1-4b03-8a9a-89726d8fdc6ea" />
+        </A429Word>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW09_I_40005_HF_NAV_4000_L.pi429_VIR_LS_OUT_1_A_B_50_HF_NAV_4000_L" SrcGuid="a919e0361-dde3-4d93-a9ef-922d9b2d2b96a" />
+  </HFSamplingPort>
+</RemoteGateway>

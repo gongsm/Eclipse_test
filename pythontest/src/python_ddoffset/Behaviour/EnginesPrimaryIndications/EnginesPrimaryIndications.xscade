@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Type name="ipPrimaryIndicationType">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="N1Type">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="N1Type"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/3cf1/21A5/944/535f14726bf7"/>
+							</pragmas>
+						</Field>
+						<Field name="EGTType">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="EGTType"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/3cf2/21A5/944/535f14884a2f"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/3cf0/21A5/944/535f145114a0"/>
+			</pragmas>
+		</Type>
+		<Type name="popPrimaryIndicationPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="popEGT">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="EGT::popEGTPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/2d5a7/21A5/944/535f2b1870b4"/>
+							</pragmas>
+						</Field>
+						<Field name="popN1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="N1::popN1Plugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c654/50DE/214/535f40b470c9"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/2d5a6/21A5/944/535f1f186458"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="EGTType">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="ipFADECExhaustGasTemperature">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/976d/3F78/1194/53605f2a2d6f"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECExhaustGasTempCaution">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/99d3/3F78/1194/536062422e90"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECExhaustGasTempWarn">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/99d9/3F78/1194/5360624664fe"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECExhaustGasTemperature_Status">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/99da/3F78/1194/5360624c767"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECExhaustGasTempCaution_Status">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/99e8/3F78/1194/5360625276f3"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECExhaustGasTempWarn_Status">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/99ee/3F78/1194/536062522063"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/976b/3F78/1194/53605f103c2d"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="N1Type">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="ipFADECEngineThrustL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/976e/3F78/1194/53605f2d75b7"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustL1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/984f/3F78/1194/536061912203"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/977c/3F78/1194/53605f595978"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustR1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9855/3F78/1194/53606193674a"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustMaximum">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9782/3F78/1194/53605f5d1ae6"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustMaximum1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/985b/3F78/1194/53606195560e"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustReference">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9788/3F78/1194/53605f5f25e4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustReference1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9861/3F78/1194/5360619624c7"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineManualThrottleCmd">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/978e/3F78/1194/53605f624857"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineManualThrottleCmd1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9867/3F78/1194/5360619814c3"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCaution">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9794/3F78/1194/53605f636620"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCaution1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/986d/3F78/1194/536061996180"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustWarning">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/979a/3F78/1194/53605f643d8a"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustWarning1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9873/3F78/1194/5360619a532a"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCommandL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97a0/3F78/1194/53605f65265b"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCommandL1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9879/3F78/1194/5360619c68e4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCommandR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97a6/3F78/1194/53605f655663"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineThrustCommandR1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/987f/3F78/1194/5360619d5fa1"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineIgnitionL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97ac/3F78/1194/53605f667166"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineIgnitionL1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9885/3F78/1194/5360619f60b3"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineIgnitionR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97b2/3F78/1194/53605f6763a6"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineIgnitionR1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/988b/3F78/1194/536061a56f5e"/>
+							</pragmas>
+						</Field>
+						<Field name="ipAMSLeftWingAIVlvPos">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97b8/3F78/1194/53605f6bd82"/>
+							</pragmas>
+						</Field>
+						<Field name="ipAMSLeftWingAIVlvPos1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9891/3F78/1194/536061a64f14"/>
+							</pragmas>
+						</Field>
+						<Field name="ipAMSRightWingAIVlvPos">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97be/3F78/1194/53605f6c6be4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipAMSRightWingAIVlvPos1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9897/3F78/1194/536061a82423"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECThrustReverserFullyDeployed">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97c4/3F78/1194/53605f6d7c6d"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECThrustReverserFullyDeployed1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/989d/3F78/1194/536061a9ef7"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFireL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97f6/3F78/1194/5360602d79c4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFireL1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98a3/3F78/1194/536061aa642"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFireR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/97fc/3F78/1194/5360602e46cb"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFireR1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98a9/3F78/1194/536061ac4eac"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineTO1DerateSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9802/3F78/1194/5360602e7f17"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineTO1DerateSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98af/3F78/1194/536061ad2ed4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineTO2DerateSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9808/3F78/1194/5360602e4b99"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineTO2DerateSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98b5/3F78/1194/536061ae74c4"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECThrustReverserInTransition">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/980e/3F78/1194/5360602f69a0"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECThrustReverserInTransition1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98bb/3F78/1194/536061b11e34"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineNormalTOSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9814/3F78/1194/5360602f6cc3"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineNormalTOSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98c1/3F78/1194/536061ba727"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFlexTOSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/981a/3F78/1194/5360602f1004"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineFlexTOSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98c7/3F78/1194/536061bf7ac2"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineNormalCLBSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9820/3F78/1194/5360603043af"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineNormalCLBSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98cd/3F78/1194/536061c27076"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineCruiseSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9826/3F78/1194/53606142329f"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineCruiseSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98d3/3F78/1194/536061c633d5"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineGASelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/982c/3F78/1194/5360614334e9"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineGASelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98d9/3F78/1194/536061c83fa3"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineMCTSelected">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9832/3F78/1194/536061435f2b"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECEngineMCTSelected1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98df/3F78/1194/536061cd4501"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECFlexTemperature">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9838/3F78/1194/5360614464e9"/>
+							</pragmas>
+						</Field>
+						<Field name="ipFADECFlexTemperature1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/98e5/3F78/1194/536061cf3dcd"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/976c/3F78/1194/53605f133b38"/>
+			</pragmas>
+		</Type>
+	</declarations>
+</File>

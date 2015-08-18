@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW08_Analog_In_ATA71PropulsionDiscretes" Guid="aec153a53-cec5-4d0f-a7ba-62d342938460a" XsdVersion="7.9" Hardware="RDIU_08">
+  <AnalogPort Name="piDISC_ETRAS_Relay_HF_ETRASRELAY_R" Guid="a6066d6f2-14a5-48a9-af20-95de7f96df4fa" Direction="Destination" Physical="RDIU_08.40022_B01" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_ETRASRELAY_R.poDISC_ETRAS_Relay" SrcGuid="a7F3D851A-7B15-414e-B85F-5F7A9890C376a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA71PropulsionDiscretes" Guid="a766d2584-c954-417e-b011-4968cc6f3f8fa" Direction="Source" MessageSize="12" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA71PropulsionDiscretes_Msg" Guid="a54f94d4e-f361-4446-845d-f5e8d4bae60ba" EdeEnable="True" MessageOverhead="32" MessagePad="31" MessageSize="12" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33314">
+      <DS Name="FSS1" Guid="a25b1226e-90f9-4cf2-8063-5a1022761194a" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="a6a515283-e981-4b23-9ae9-88472bb017e4a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="DISC_ETRAS_Relay_HF_ETRASRELAY_R" Guid="a097e223a-973f-41bb-a06c-5f085e770979a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ad254ce6b-bdb3-406b-bb03-db19690449f5a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_ETRASRELAY_R.DISC_ETRAS_Relay.Status" SrcGuid="aa29622b2-afac-4b74-a0e3-1c232825d858a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHA.R_TRCU_Contactor_Single_Phase_Power_Status" DestGuid="af5354821-673c-4ff6-9fc4-a232a228a1c1a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_L_CHB.R_TRCU_Contactor_Single_Phase_Power_Status" DestGuid="ae9b933bc-6e85-4856-a67a-419fca6d1753a" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHA.R_TRCU_Contactor_Single_Phase_Power_Status" DestGuid="a49932c47-3ded-4cad-ba80-90056d3af65ca" />
+          <Gw_Pub_Ref DestName="HF_FADEC_R_CHB.R_TRCU_Contactor_Single_Phase_Power_Status" DestGuid="aa2c38fcc-4d7f-48cb-8e96-4111c5e91b1aa" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW08_Analog_In_ATA71PropulsionDiscretes.piDISC_ETRAS_Relay_HF_ETRASRELAY_R" SrcGuid="a6066d6f2-14a5-48a9-af20-95de7f96df4fa" />
+  </HFSamplingPort>
+</RemoteGateway>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmbFcn Name="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE" Guid="a76c854da-2014-4b88-8a3d-e1dc56e0bc82a" XsdVersion="7.9" ChangeAuthority="UnknownOwner" Hardware="RDIU_06" UpdatePeriod="320">
+  <DataInPort Name="IMA_Platform_DL_PA_State_L1" Guid="a659af28f-b537-40c6-a44c-803286af54f6a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a125287eb-2764-463e-87fb-b8366fc74741a" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_DL_PA_State_L4" Guid="aa770ce55-e2f9-4754-be28-2dfa087468e3a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a0264020f-be70-46e6-9fe3-a763b640f9afa" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_DL_PA_State_R1" Guid="a9fbb5ef6-e8fc-435f-8316-15ad794a70cda" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a77bee5e7-0d3c-4fd1-aa5a-390aeff52c76a" />
+  </DataInPort>
+  <DataInPort Name="IMA_Platform_DL_PA_State_R4" Guid="a296d518c-050b-4970-8bb7-d7e5d22e7e01a" DataFormatType="DIS" ParameterSize="1">
+    <Emb_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="abad8ed64-3948-41dd-9b6d-4e0885e8be17a" />
+  </DataInPort>
+  <DataOutPort Name="RDIU_DL_ALLOWED_STATE" Guid="a17f9b02e-ef67-4a04-9fa1-d04a4e062cb5a" DataFormatType="DIS" ParameterSize="1">
+    <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.Set_Output_to_DL_PA_Bit_if_Valid_Else_0.Output" SrcGuid="a4d6a2822-df3f-4760-a4b2-30c5536eddb0a" />
+  </DataOutPort>
+  <TransFcn Name="Select_DL_PA_Bit" Guid="a683e1e30-0066-4626-81ec-a93348b07c16a" Implementable="True" RIUTemplate="41071" SequenceNumber="1" TemplateInstance="41071_T01" UDC="Mode=1;">
+    <DataInPort Name="Input_1" Guid="a61c100bb-54cf-4820-aafb-69002ac44c9fa" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.IMA_Platform_DL_PA_State_L1" SrcGuid="a659af28f-b537-40c6-a44c-803286af54f6a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a7c410c68-66df-4836-82fe-d2020b001752a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.IMA_Platform_DL_PA_State_L4" SrcGuid="aa770ce55-e2f9-4754-be28-2dfa087468e3a" />
+    </DataInPort>
+    <DataInPort Name="Input_3" Guid="a556424a7-278b-4ebb-8d83-e8bf002257a0a" DataFormatType="DIS" ParameterSize="1" RIULabel="c">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.IMA_Platform_DL_PA_State_R1" SrcGuid="a9fbb5ef6-e8fc-435f-8316-15ad794a70cda" />
+    </DataInPort>
+    <DataInPort Name="Input_4" Guid="a37e28ef8-ea9c-4dd1-8b8b-29a59679ee25a" DataFormatType="DIS" ParameterSize="1" RIULabel="d">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.IMA_Platform_DL_PA_State_R4" SrcGuid="a296d518c-050b-4970-8bb7-d7e5d22e7e01a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a15f3ce67-c058-435d-b707-b09bb067ed72a" DataFormatType="DIS" ParameterSize="1" RIULabel="e" />
+  </TransFcn>
+  <TransFcn Name="Get_DL_PA_Bit_Validity" Guid="a1c31ab0a-8f89-4c11-b2cc-e5dd73f53dc9a" Implementable="True" RIUTemplate="41039" SequenceNumber="2" TemplateInstance="41039_T01" UDC="FT Treatment=0;">
+    <DataInPort Name="Input" Guid="a25f2b02a-5f66-42c6-85e8-82fb2087e665a" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.Select_DL_PA_Bit.Output" SrcGuid="a15f3ce67-c058-435d-b707-b09bb067ed72a" />
+    </DataInPort>
+    <DataOutPort Name="Validity_Parameter" Guid="a0930205c-7489-473f-bed4-f77dd26ae765a" DataFormatType="DIS" ParameterSize="1" RIULabel="b" />
+  </TransFcn>
+  <TransFcn Name="Set_Output_to_DL_PA_Bit_if_Valid_Else_0" Guid="a74e73f9b-6fb1-4eb7-82e9-77d34fd157e6a" Implementable="True" RIUTemplate="41065" SequenceNumber="3" TemplateInstance="41065_T01" UDC="Logic=2;Acknowledge Time=0;Hold Time=0;">
+    <DataInPort Name="Input_1" Guid="a6185fdd6-fb87-4dcc-9621-cfc8230e855ba" DataFormatType="DIS" ParameterSize="1" RIULabel="a">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.Select_DL_PA_Bit.Output" SrcGuid="a15f3ce67-c058-435d-b707-b09bb067ed72a" />
+    </DataInPort>
+    <DataInPort Name="Input_2" Guid="a57584686-1621-4a71-9c29-307efbcfe271a" DataFormatType="DIS" ParameterSize="1" RIULabel="b">
+      <Trans_Ref SrcName="EF_C919_IOS006_RDIU_06_DLOAD_STATE_MANAGEMENT_SERVICE.Get_DL_PA_Bit_Validity.Validity_Parameter" SrcGuid="a0930205c-7489-473f-bed4-f77dd26ae765a" />
+    </DataInPort>
+    <DataOutPort Name="Output" Guid="a4d6a2822-df3f-4760-a4b2-30c5536eddb0a" DataFormatType="DIS" ParameterSize="1" RIULabel="c" />
+  </TransFcn>
+</EmbFcn>

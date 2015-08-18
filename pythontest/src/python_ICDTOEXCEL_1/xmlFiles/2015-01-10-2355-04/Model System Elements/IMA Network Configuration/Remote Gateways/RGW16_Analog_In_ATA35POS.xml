@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW16_Analog_In_ATA35POS" Guid="a648c6a60-9f6e-4209-be04-048691474ba1a" XsdVersion="7.9" Hardware="RDIU_16">
+  <AnalogPort Name="piDISC_Status1_HF_APS2" Guid="a72b32c97-b936-48ac-aef3-981adf75fad9a" Direction="Destination" Physical="RDIU_16.40022_A10" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_APS2.poDISC_APS_Pressure14500" SrcGuid="a7B2726B8-C9CF-4188-B56E-7F5FCE62E041a" />
+  </AnalogPort>
+  <AnalogPort Name="piDISC_Status2_HF_APS2" Guid="a7b428ba9-2dce-496d-a211-3ac5e98e251ba" Direction="Destination" Physical="RDIU_16.40022_A11" RIUTemplate="40022" SamplePeriod="5" UDC="Confirmation period=1;Status inversion=1">
+    <Dataflow_Ref SrcName="HF_APS2.poDISC_APS_AltPress16500" SrcGuid="aB37F0C19-F697-4512-BD0E-F96BC2580B42a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40022_ATA35POS" Guid="aebdf85c5-ae3c-44b9-9230-c5c75bd448eea" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="80">
+    <A664Message Name="A664_O1_40022_ATA35POS_Msg" Guid="aeea34312-a5d0-4086-b355-f480f322d6bca" EdeEnable="True" MessageOverhead="32" MessagePad="62" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33376">
+      <DS Name="FSS1" Guid="ae24f45d1-58b3-4637-bd62-d0d2d8650ffea" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="afe9ca9ad-cc78-415c-b56c-9e87857e168aa" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="ab172b2c4-3ae1-4e65-bc1f-305ed5c3ffc6a" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="AltitudePressure14500_HF_APS2" Guid="a4f9cf0ef-be6f-4efb-bae7-9c6369243c2da" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="a5166b786-6d38-4936-9dfe-a0e2c85be981a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_APS2.AltitudePressure14500.Status" SrcGuid="a1472AB91-9A14-4d1d-BF5C-6936C621011Da" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_APS2_AltPress14500" DestGuid="a7427b21a-43ad-4c73-a567-a32f32714913a" />
+        </DP>
+      </DS>
+      <DS Name="AltitudePressure16500_HF_APS2" Guid="a6d114da8-f8c0-4ed8-9a78-679f626c1d60a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Status" Guid="ad42a4401-eca5-41e0-9d99-09dda1676082a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" PublishedLatency="0" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_APS2.AltitudePressure16500.Status" SrcGuid="aE54AC234-D384-4db2-A502-EA5EDF43ABBBa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.RX_Status_APS2_AltPress16500" DestGuid="abbba1376-103a-4074-878d-a41cd8ca5c7ca" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA35POS.piDISC_Status1_HF_APS2" SrcGuid="a72b32c97-b936-48ac-aef3-981adf75fad9a" />
+    <Gateway_Ref SrcName="RGW16_Analog_In_ATA35POS.piDISC_Status2_HF_APS2" SrcGuid="a7b428ba9-2dce-496d-a211-3ac5e98e251ba" />
+  </HFSamplingPort>
+</RemoteGateway>

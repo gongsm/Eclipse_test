@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RemoteGateway Name="RGW07_Analog_In_ATA38WWS" Guid="ae2fe5a98-ed1c-4d1d-8dc0-9d297e2e8390a" XsdVersion="7.9" Hardware="RDIU_07">
+  <AnalogPort Name="piANA_TempTD5A_HF_FWDINLINEHTRTEMPSENSOR" Guid="a09ef8588-6a91-4470-9790-1dd378ef1e03a" Direction="Destination" Physical="RDIU_07.40062_A01" RIUTemplate="40062" SamplePeriod="160" UDC="Cable resistance=0">
+    <Dataflow_Ref SrcName="HF_FWDINLINEHTRTEMPSENSOR.poANA_Temp_Sensor" SrcGuid="a16feec93-3ebd-4ce4-b319-c486832c66d6a" />
+  </AnalogPort>
+  <AnalogPort Name="piANA_TempTD5A_HF_WASTEDRAINLINEHTRTEMPSENSOR" Guid="ad24365d6-272c-4ebe-b569-224e19dbaffda" Direction="Destination" Physical="RDIU_07.40062_B01" RIUTemplate="40062" SamplePeriod="160" UDC="Cable resistance=0">
+    <Dataflow_Ref SrcName="HF_WASTEDRAINLINEHTRTEMPSENSOR.poANA_Temp_Sensor" SrcGuid="a92e9cdeb-4881-43a6-ac4d-f54722c07978a" />
+  </AnalogPort>
+  <HFSamplingPort Name="HFS1_O_40062_ATA38WWS" Guid="a5cfc0186-144a-49af-80db-f42005deefdca" Direction="Source" MessageSize="16" Networks="Both" RefreshPeriod="160">
+    <A664Message Name="A664_O1_40062_ATA38WWS_Msg" Guid="a8ad91c57-20df-46ef-b8e8-00c69ccceb6aa" EdeEnable="True" MessageOverhead="32" MessagePad="0" MessageSize="16" MsgDataProtocolType="Parametric data" SubVLID="2" TransmissionIntervalMinimum="1280" VLID="33331">
+      <DS Name="FSS1" Guid="a913ef615-3597-4dd9-b7b5-3686077a4dcaa" ByteOffsetFSF="0" ByteOffsetWithinMsg="4" DataSetSize="4" DsDataProtocolType="A664_FSS">
+        <DP Name="FSB1" Guid="aac318797-a2ea-43d5-9abb-f28b6087d4c6a" BitOffsetWithinDS="24" DataFormatType="A664_FSB" ParameterSize="8" />
+        <DP Name="FSB2" Guid="a42234c33-0582-4f61-a0cf-fb86eaf1735da" BitOffsetWithinDS="16" DataFormatType="A664_FSB" ParameterSize="8" />
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_FWDINLINEHTRTEMPSENSOR" Guid="ac502abf7-1e88-4c51-bad6-f8c25e3f4e70a" ByteOffsetFSF="4" ByteOffsetWithinMsg="8" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="a4971781c-b8bf-4c97-8352-e829333974eda" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_FWDINLINEHTRTEMPSENSOR.Temp_Sensor_Signal.Resistance" SrcGuid="ac9ed0b04-19ba-412a-938f-f8b418f90253a" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_IH_1_Resistance" DestGuid="a69d5ab08-9618-497d-a79c-625b0f79aadfa" />
+        </DP>
+        <DP Name="Temperature" Guid="a8633cda0-5388-46dd-ae56-eabb4d6f854fa" BitOffsetWithinDS="16" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_FWDINLINEHTRTEMPSENSOR.Temp_Sensor_Signal.Temperature" SrcGuid="acb5fcdb9-e5e6-424f-9bc6-8b9998f1c00aa" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Heater_Temp_IH_1" DestGuid="a9ad96d06-b7da-4cbc-8870-222a5b4f650ca" />
+          <Gw_Pub_Ref DestName="WWAPP.Heater_Temp_IH_1" DestGuid="a4b6826ca-5b85-4fbe-b0f8-6d825e69949da" />
+        </DP>
+      </DS>
+      <DS Name="Temp_Sensor_Signal_HF_WASTEDRAINLINEHTRTEMPSENSOR" Guid="ae9e83c7f-75c5-49bc-99ab-e8eb677c8382a" ByteOffsetFSF="5" ByteOffsetWithinMsg="12" DataSetSize="4" DsDataProtocolType="Parametric data">
+        <DP Name="Resistance" Guid="a15c5dcd5-83c0-4826-966c-b1ec7589b60ba" BitOffsetWithinDS="0" DataFormatType="SINT" ParameterSize="16" RIULabel="a" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_WASTEDRAINLINEHTRTEMPSENSOR.Temp_Sensor_Signal.Resistance" SrcGuid="a979cc7d3-1762-449a-a4e6-26e8e413a7b7a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.poANA_Temp_Sensor_Temp_Sensor_Signal_Resistance" DestGuid="a7e1c4909-9ed9-4bb3-84aa-85760385e6d3a" />
+        </DP>
+        <DP Name="Temperature" Guid="a3766496c-3236-4e2b-84e1-68c5a83261fea" BitOffsetWithinDS="16" DataFormatType="SINT" ParameterSize="16" RIULabel="b" TransmissionIntervalMinimum="1280">
+          <Copy_Ref SrcName="HF_WASTEDRAINLINEHTRTEMPSENSOR.Temp_Sensor_Signal.Temperature" SrcGuid="a33d5ccaf-c1f6-4e8d-b7c9-0d666d06312ea" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH3.poANA_Temp_Sensor_Temp_Sensor_Signal_Temperature" DestGuid="aece74b60-484e-4c94-878a-2440e54395c9a" />
+          <Gw_Pub_Ref DestName="HF_GIPC_A664_CH4.Heater_Temp_Hose_Tank_OR_Drain_VLV" DestGuid="a3ca38597-e5b0-40b6-a4dc-241737c688a9a" />
+        </DP>
+      </DS>
+    </A664Message>
+    <Gateway_Ref SrcName="RGW07_Analog_In_ATA38WWS.piANA_TempTD5A_HF_FWDINLINEHTRTEMPSENSOR" SrcGuid="a09ef8588-6a91-4470-9790-1dd378ef1e03a" />
+    <Gateway_Ref SrcName="RGW07_Analog_In_ATA38WWS.piANA_TempTD5A_HF_WASTEDRAINLINEHTRTEMPSENSOR" SrcGuid="ad24365d6-272c-4ebe-b569-224e19dbaffda" />
+  </HFSamplingPort>
+</RemoteGateway>

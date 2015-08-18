@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SwitchApplication Name="ARS_1B_APP" Guid="a2d24b14d-e06f-49d3-93e2-c2fa033685c4a" NameDef="SWITCH_APP_B_NETWORK_CLASS" GuidDef="a2dc98eb0-7a66-46f7-9c00-339354ac75c6a" XsdVersion="7.9" Hardware="ARS_1B" IpAddress="10.42.194.0">
+  <HFQueuingPort Name="HM_1_COMMAND_REQUEST_RX" Guid="ab79254a4-5066-4e9c-b803-d85d69d7ed2ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.HM_1_COMMAND_REQUEST_RX" GuidDef="a3b8e0114-e760-47f5-99d1-847797572f51a" PathName="VLPath65">
+    <RP Name="IMA_Platform_1_LRU_Command_Action" Guid="acebadf22-c905-4ab3-b533-c034db633654a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_1_LRU_Command_Action" GuidDef="aac1cab0d-04ad-4f40-9df4-711d28f55ed2a">
+      <Pub_Ref SrcName="HM_L1.IMA_LRU_Aperiodic_Command_Action.IMA_LRU_Aperiodic_Command_Action.IMA_LRU_Aperiodic_Command_Action" SrcGuid="a2a8db481-b3eb-4230-8305-b85d329b1e56a" />
+    </RP>
+    <Dataflow_Ref SrcName="HM_L1.HM_LRU_APERIODIC_CMD_ACTION_TX" SrcGuid="a5fd2e652-a058-4355-840f-d040b1c3b673a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="HM_2_COMMAND_REQUEST_RX" Guid="a597594df-286e-48e4-9c49-4596059f2fd5a" NameDef="SWITCH_APP_B_NETWORK_CLASS.HM_2_COMMAND_REQUEST_RX" GuidDef="a3748d7ea-7215-4d19-9af9-898622e6868fa" PathName="VLPath50">
+    <RP Name="IMA_Platform_2_LRU_Command_Action" Guid="a0b0a79ff-7462-4b63-88f2-daca1adec204a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_2_LRU_Command_Action" GuidDef="a8a1760e2-013c-4e19-8efa-6aa4d65535e2a">
+      <Pub_Ref SrcName="HM_R1.IMA_LRU_Aperiodic_Command_Action.IMA_LRU_Aperiodic_Command_Action.IMA_LRU_Aperiodic_Command_Action" SrcGuid="a63549da1-66b8-4a00-b5e3-f18ec5316e19a" />
+    </RP>
+    <Dataflow_Ref SrcName="HM_R1.HM_LRU_APERIODIC_CMD_ACTION_TX" SrcGuid="a0ce248e0-f970-4202-b072-b70b8e5fc59ba" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_HM_COMMAND_RESPONSE_TX" Guid="abdfbb2fb-0649-4e6d-a4da-2684bd1c2adfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.SWITCH_HM_COMMAND_RESPONSE_TX" GuidDef="a57be2239-22d1-4b4c-9a03-6dc699026dd0a">
+    <A664Message Name="Switch_Aperiodic_Command_Response_Message" Guid="a53c42e8e-65f0-4984-a916-246af03c2041a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Aperiodic_Command_Response_Message" GuidDef="a9732c596-b577-4097-a390-8d1fdae97d99a" SubVLID="2" VLID="33252">
+      <DS Name="Switch_Aperiodic_Command_Response_Dataset" Guid="a84d9528e-04de-4b47-b216-dc3a28b8d460a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Aperiodic_Command_Response_Message.Switch_Aperiodic_Command_Response_Dataset" GuidDef="aafe5c2fc-0237-4cbe-878f-6044f11b5bc5a">
+        <DP Name="Switch_Aperiodic_Command_Response_PAR" Guid="a1479577f-c632-4744-aa14-4c2880c31566a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Aperiodic_Command_Response_Message.Switch_Aperiodic_Command_Response_Dataset.Switch_Aperiodic_Command_Response_PAR" GuidDef="a8893182c-30b5-4b4a-aed4-dd0db8f46b58a" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="SWITCH_MONITOR_TX" Guid="a89805371-9c79-4423-a095-393dfd550d2da" NameDef="SWITCH_APP_B_NETWORK_CLASS.SWITCH_MONITOR_TX" GuidDef="aa0833018-91cb-40d9-aa90-06aa5bab7945a">
+    <A664Message Name="Switch_Periodic_Monitor_Report" Guid="a6e24fd54-8ccf-48f4-8753-a7610f3f71a8a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report" GuidDef="a6208915a-38a0-42fa-952d-18e85f350fdea" SubVLID="1" VLID="225">
+      <DS Name="FSS" Guid="a4f203aa5-b000-4ae6-92de-872737f38a84a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.FSS" GuidDef="ae05ad85a-442e-4737-9404-b7100d438668a">
+        <DP Name="FSB1" Guid="a85ac0ea0-77f9-4997-b95b-d2794ac1855ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.FSS.FSB1" GuidDef="a4409b175-fba4-4ae1-b76a-170be9958dc0a" />
+        <DP Name="FSB2" Guid="a718391cf-b494-46ab-bc8a-839feb90ff92a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.FSS.FSB2" GuidDef="a8f3e02e9-5746-4b25-bba7-173c2f27a47fa" />
+        <DP Name="FSB3" Guid="a930b43db-808a-47b4-8da3-bb7f1338310aa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.FSS.FSB3" GuidDef="ae9dc40b9-7acd-465f-aa08-1094c6a62be9a" />
+        <DP Name="FSB4" Guid="aec078a00-9af6-40f8-ac5a-468bd63794cba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.FSS.FSB4" GuidDef="a8ff70518-0151-4226-83a0-486ee51c7277a" />
+      </DS>
+      <DS Name="Switch_Core_Monitors_Dataset" Guid="a13d63e54-e211-4a3f-aed7-0010ed24fea0a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset" GuidDef="a659d26bc-6cf4-42e1-af3b-e0d0b898610da">
+        <DP Name="DS1_Reserved_Hardware_Faults" Guid="a959c636c-ab9e-44e2-9f24-ba7ef63ca792a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.DS1_Reserved_Hardware_Faults" GuidDef="af9e7bac2-10aa-4fdd-b15f-d83bf95135cba" />
+        <DP Name="Switch_Power_Input_2_Unavailable" Guid="a9d15c0b5-2c73-4797-9641-96d16d8ed804a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Power_Input_2_Unavailable" GuidDef="aa68c2782-695e-4b14-9667-4e6c36c02147a" />
+        <DP Name="Switch_Power_Input_1_Unavailable" Guid="ac1eaf25e-d1d1-486f-baa0-f146abd59d74a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Power_Input_1_Unavailable" GuidDef="a43ca1bb0-17b4-4bed-a2ac-d6ce75ce18c0a" />
+        <DP Name="Switch_High_Temperature_Fault" Guid="a385c6806-aa94-4caf-adfb-27d0bd941c56a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_High_Temperature_Fault" GuidDef="a8a0ba36c-5b69-48e0-93b2-7cc81128280ca" />
+        <DP Name="Switch_Temp_Sensor_Fault" Guid="a9422a0ce-07fe-444c-b721-5d1a7a577e2ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Temp_Sensor_Fault" GuidDef="a79f17188-8d4a-41e7-a946-cf59ec9083f5a" />
+        <DP Name="DS1_Reserved_Latched_Hardware_Faults" Guid="a05747185-604b-4bf2-a1e7-b8436f6e7f41a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.DS1_Reserved_Latched_Hardware_Faults" GuidDef="af51bca70-b400-494a-b99b-96739ef305c1a" />
+        <DP Name="Switch_Position_Discretes_Fault" Guid="a56aa9ac9-6490-42ad-ba4d-6532c23c9848a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Position_Discretes_Fault" GuidDef="abd75f597-769f-4428-8459-1321235473c1a" />
+        <DP Name="Switch_Power_Hold_Up_Fault" Guid="af12cbb74-9010-4c0e-a11a-68dac5664e7fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Power_Hold_Up_Fault" GuidDef="a67992d26-17d3-4c8b-afd3-5e29413325b2a" />
+        <DP Name="Switch_Power_Supply_2_Fault" Guid="a4e4108ec-c0d2-4899-a8ef-100f67466edfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Power_Supply_2_Fault" GuidDef="a28b85f26-4a2e-4eeb-bb3c-e009ad12dea5a" />
+        <DP Name="Switch_Power_Supply_1_Fault" Guid="a0be6ff8f-0b43-4bf2-8863-a4022df761c2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Power_Supply_1_Fault" GuidDef="a9964d1e0-4419-49ff-9fee-9c9432cb5d71a" />
+        <DP Name="Switch_Core_Fault" Guid="a860d2ea3-cdfe-44cc-aa9d-498470f89b55a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Core_Fault" GuidDef="ab27a29a9-2e18-4ade-96ef-a1a23e99e30ca" />
+        <DP Name="DS1_Reserved_Software_Faults" Guid="a3b8f0fdb-1325-46af-8d33-f54be51dab53a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.DS1_Reserved_Software_Faults" GuidDef="a8a7cfef7-4d53-41ce-81c3-d0a48e930013a" />
+        <DP Name="Switch_Configuration_Fault" Guid="af2ff4fb1-d783-447f-9de6-a40949d4fc5fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Configuration_Fault" GuidDef="a12d4855b-289f-4794-b293-5b4943fe058ba" />
+        <DP Name="IMA_Manifest_Unavailable_Fault" Guid="a3a2053ec-2c62-4cb4-acca-f918e033d18da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.IMA_Manifest_Unavailable_Fault" GuidDef="a7e1f8cf3-8ee2-4de3-b7ec-a68aa76c4620a" />
+        <DP Name="Switch_Software_Compatibility_Fault" Guid="a90a01560-d481-45fa-acdf-bd161c326d43a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_Core_Monitors_Dataset.Switch_Software_Compatibility_Fault" GuidDef="a94457500-2e11-41db-af03-758c23a80164a" />
+      </DS>
+      <DS Name="ADN_Port_Monitors_Dataset" Guid="a86fc4f4d-d64a-4e3c-8ff1-1c69f69aa589a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset" GuidDef="a022af5b5-4942-4912-9c79-a9548fbc8b66a">
+        <DP Name="MACPortStatus15" Guid="a558e615a-e7dc-4b54-a139-3dadb591900ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus15" GuidDef="a74951fc9-00ae-4ff6-ba3f-6476807d71a9a" />
+        <DP Name="MACPortStatus14" Guid="a6993233b-8778-49d2-8ee7-69c5eeae5a85a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus14" GuidDef="ae680ea29-3dd6-4e6b-bdb8-e054a0737808a" />
+        <DP Name="MACPortStatus13" Guid="a8a078bf6-fbee-431f-a234-f9748b968329a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus13" GuidDef="a58d3d6c9-3031-4083-98e8-45f6de7280fca" />
+        <DP Name="MACPortStatus12" Guid="ae34091c3-fbcf-41b9-81b0-6f4a13f53e3ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus12" GuidDef="a0c26dbed-d3e2-471a-b4cd-ab5b6a7c816ba" />
+        <DP Name="MACPortStatus11" Guid="a28cad7be-22ca-4917-bd54-1eb104987aaba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus11" GuidDef="a5f04f3e7-e3ec-4026-b450-008bf81b2827a" />
+        <DP Name="MACPortStatus10" Guid="a61a116cd-716a-48cd-9ef4-d7fb6dcc74a1a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus10" GuidDef="ab49b5aec-f4a4-4601-b429-bbe3ea53b1f3a" />
+        <DP Name="MACPortStatus09" Guid="a5f44744a-77ea-4406-8fef-7f027f72d1e5a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus09" GuidDef="a29ea61ed-2981-43e0-8182-96e103607cfea" />
+        <DP Name="MACPortStatus08" Guid="a46826fe0-212e-430d-9e59-48db3f230845a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus08" GuidDef="a3a10dbf5-f596-4448-bb2c-dd38193ff14ca" />
+        <DP Name="MACPortStatus07" Guid="ac229ca2c-dd96-4389-b945-ebdcb3e7254da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus07" GuidDef="af2bb93dc-26e1-4019-91c3-90fb2c5c2069a" />
+        <DP Name="MACPortStatus06" Guid="ae4f11fdd-b1e1-4b08-9950-afbca2a96031a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus06" GuidDef="a6dab85d0-89ea-482e-bd0f-10fe30fc9d72a" />
+        <DP Name="MACPortStatus05" Guid="a1c8f3da8-fbbf-4cb1-9483-abf3f03780eda" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus05" GuidDef="a10cf80d8-9c06-45e1-b990-6a764fd23c89a" />
+        <DP Name="MACPortStatus04" Guid="aec67ee9b-186d-4596-b54a-9191af196e0aa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus04" GuidDef="a3fc5bc38-5cde-424a-a592-3542a6897f81a" />
+        <DP Name="MACPortStatus03" Guid="a74a37e92-460e-41f9-bf26-11c57177294ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus03" GuidDef="ac528c8c3-7d0d-4c60-acf2-211c96b26e00a" />
+        <DP Name="MACPortStatus02" Guid="ae106b3a3-9593-4d4d-81fd-8ba7f1d2a39ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus02" GuidDef="add266d8f-9452-402f-be98-2d09307b56d3a" />
+        <DP Name="MACPortStatus01" Guid="aef26686f-5b9d-404f-a8e6-b44503f78162a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus01" GuidDef="a206bbf44-ea70-4a5d-ace7-99303169d2c1a" />
+        <DP Name="MACPortStatus00" Guid="a21993977-a617-4bfb-84f8-7f2ebc6d0a89a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus00" GuidDef="aef0cd693-eb69-45c2-a363-301dce43262ea" />
+        <DP Name="Pad" Guid="aadcd448c-3290-4984-bedb-a0f09212e8caa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.Pad" GuidDef="a833fd109-92f3-4d73-8558-264520a52e2da" />
+        <DP Name="MACPortStatus24" Guid="a2dcc591d-14b1-43d9-841d-7febde9fb220a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus24" GuidDef="a8bc73d0c-44f2-483f-9734-e6179e4e6f61a" />
+        <DP Name="MACPortStatus23" Guid="af28420f1-2941-421b-abf9-bb33abbf6c77a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus23" GuidDef="afadbd234-7f51-4fa9-a184-f988adb3cc7fa" />
+        <DP Name="MACPortStatus22" Guid="a0563f009-a680-43f4-aeb2-cdd29cfb4adca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus22" GuidDef="af07f26d7-5e61-441e-ba66-f02977265ddba" />
+        <DP Name="MACPortStatus21" Guid="a48e1e769-70bc-48e7-9a12-40c4b71910d5a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus21" GuidDef="abe47fce6-c6ec-4d00-bafb-24f7c3194caca" />
+        <DP Name="MACPortStatus20" Guid="a1c658d40-2a89-4944-84b7-e98c1db810baa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus20" GuidDef="aab0bab9b-e3bd-4473-8bc3-d2ffe9785c83a" />
+        <DP Name="MACPortStatus19" Guid="a299b533a-2e7b-4840-9791-eb689753a252a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus19" GuidDef="ab01d5f60-d9a2-4be7-9f73-facc2a431753a" />
+        <DP Name="MACPortStatus18" Guid="a6407a51a-6a24-4b2e-ba96-c4f7273874a6a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus18" GuidDef="ad9ba9cbd-4e0f-4931-bfb3-bd6ea95466ffa" />
+        <DP Name="MACPortStatus17" Guid="a1c888f81-365a-4e57-ba36-a688a1f87916a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus17" GuidDef="a4c728aac-271f-4f47-a0b1-2358603f6891a" />
+        <DP Name="MACPortStatus16" Guid="a7d67aeb8-a3b5-4e50-9fcd-9c67a7cc61e2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.ADN_Port_Monitors_Dataset.MACPortStatus16" GuidDef="a577444a8-5398-429c-a527-364f22993733a" />
+      </DS>
+      <DS Name="Switch_State_Variable_Dataset" Guid="a27a35196-053f-4b3f-809b-4e4cf48a1953a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset" GuidDef="a22ae47d2-726b-4c0a-a82d-b60bce490e0fa">
+        <DP Name="Pad" Guid="ae61dd448-c185-4aaf-a90b-b3fdcea76f63a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Pad" GuidDef="a85f587be-710a-4d34-a19f-c45f864de667a" />
+        <DP Name="Switch_Init_Test_Test_Complete" Guid="a6e3fd4c2-ba24-445a-89ff-55ee03e16eb7a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Switch_Init_Test_Test_Complete" GuidDef="af675ea0f-1648-4861-bcc3-7635f94c3744a" />
+        <DP Name="Switch_Dataload_Rejected" Guid="adc3c22f0-ce27-4acc-a318-ddf24f280ccaa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Switch_Dataload_Rejected" GuidDef="a41b5da50-3680-427a-822c-a2fb3b68fa3ea" />
+        <DP Name="Dataload_Transfer_In_Progress" Guid="a4b428fff-bce2-48dc-af46-1adb61348498a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Dataload_Transfer_In_Progress" GuidDef="a73a7032d-9e66-4beb-8a87-d66dba54336aa" />
+        <DP Name="Switch_DL_PA_State" Guid="a59c53792-3b7f-46c0-b09f-1bdcaeb59dcca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Switch_DL_PA_State" GuidDef="a41060ec8-da9f-40d2-b356-d97bff548172a" />
+        <DP Name="Switch_Current_RU_State" Guid="a2e3de441-d674-4ac5-9fb1-e8a2d65c77b6a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Switch_Current_RU_State" GuidDef="ac45c6eda-4ee3-48a0-89eb-b96c95b86ec8a" />
+        <DP Name="Switch_Internal_State" Guid="a52b18747-d67d-4465-b31a-26e6919914b9a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Switch_State_Variable_Dataset.Switch_Internal_State" GuidDef="a1be109e3-a3d1-413b-9996-3a173d269f2ea" />
+      </DS>
+      <DS Name="Time_Cycle_Dataset" Guid="ac0dc4608-f277-4ce0-ae85-677633f91c0fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Time_Cycle_Dataset" GuidDef="a99239725-5f48-44ee-8ddd-68a1d8f5eadea">
+        <DP Name="Switch_Elapsed_Time" Guid="a4f0c4a74-10b4-4f3c-80fc-b9826a9ece1ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Time_Cycle_Dataset.Switch_Elapsed_Time" GuidDef="a703bd790-d527-40a8-96de-e1f7189adcd0a" />
+        <DP Name="Switch_Power_Cycles" Guid="a7b013855-8e89-4ed7-ac79-7966e971d151a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Periodic_Monitor_Report.Time_Cycle_Dataset.Switch_Power_Cycles" GuidDef="a43be6a2f-5304-42ff-996c-22c79fbf3a74a" />
+      </DS>
+    </A664Message>
+  </HFSamplingPort>
+  <HFQueuingPort Name="SW_LOOPBACK_TX" Guid="aad71eadb-e808-4351-afc5-f22f9eacc097a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SW_LOOPBACK_TX" GuidDef="aab058445-6ac3-4132-bed4-47dfb9ea194ba">
+    <A664Message Name="Switch_Loopback_Msg" Guid="a431b1689-6c8b-4bf8-a82b-fbcc7ba65669a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Loopback_Msg" GuidDef="ace77e8f9-1afd-41c9-b035-096385a4001aa" SubVLID="2" VLID="33254">
+      <DS Name="Switch_Loopback_DS" Guid="a387626ef-c980-4d05-bed1-cdd179936db9a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Loopback_Msg.Switch_Loopback_DS" GuidDef="ab7922dae-2e48-4aae-8242-e8138ca3d94ca">
+        <DP Name="Switch_Loopback_Par" Guid="afbba2831-5ae6-4963-8702-63621ebf3f7da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Loopback_Msg.Switch_Loopback_DS.Switch_Loopback_Par" GuidDef="a8cc93908-87b1-4ae1-b93f-4e98888a7a40a" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFQueuingPort Name="SW_LOOPBACK_RX" Guid="adcd56013-4bae-40df-aa03-3e70c3f9c158a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SW_LOOPBACK_RX" GuidDef="a75ab585f-491b-438a-98ef-76d46a9cdc5da" PathName="VLPath0">
+    <RP Name="Switch_Loopback_Par" Guid="af3d27a23-9bf8-4244-a96b-d935a91bcf3ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Loopback_Par" GuidDef="a4c61e690-4ffe-4679-94e2-c43a4b513a34a">
+      <Pub_Ref SrcName="ARS_1B_APP.Switch_Loopback_Msg.Switch_Loopback_DS.Switch_Loopback_Par" SrcGuid="afbba2831-5ae6-4963-8702-63621ebf3f7da" />
+    </RP>
+    <Dataflow_Ref SrcName="ARS_1B_APP.SW_LOOPBACK_TX" SrcGuid="aad71eadb-e808-4351-afc5-f22f9eacc097a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SW_CONFIG_RPT_TX" Guid="a2dd782c0-7572-4913-8840-621846db1b90a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SW_CONFIG_RPT_TX" GuidDef="ab6123a9c-c26b-4ee6-b752-2aeb2a671c18a">
+    <A664Message Name="Switch_Config_Report_Message" Guid="a6e6089d4-fc4d-4c02-a11a-096e66d42252a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Config_Report_Message" GuidDef="a14b8f570-59e9-4662-9a16-46beff2b33a8a" SubVLID="3" VLID="225">
+      <DS Name="Switch_Config_Report_Dataset" Guid="a42a49e61-8a68-44bb-9b0e-b8e89ca9319fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Config_Report_Message.Switch_Config_Report_Dataset" GuidDef="ab1e7a70b-2e34-4ee7-a77a-649adcb6813ca">
+        <DP Name="Switch_Config_Report" Guid="aad54365f-1f2a-4a6a-8576-f830be775f0ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Config_Report_Message.Switch_Config_Report_Dataset.Switch_Config_Report" GuidDef="a70b5aeaa-17fc-4ad5-97c0-987bad671fada" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_1_RX" Guid="ad554b553-aeb4-4247-8e84-2f376d257472a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DIST_IMA_MANIFEST_1_RX" GuidDef="ab44b693b-fcbb-48b1-9d47-36b99ac9edb5a" PathName="VLPath79">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_1" Guid="ab0d74c30-fee3-460c-861b-8dc9688e7fc8a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_CM_IMA_Platform_MANIFEST_1" GuidDef="ac8a0250a-ea3a-4f97-b5d1-f0196506c12da">
+      <Pub_Ref SrcName="SM_I2C_L1.Distributed_CM_IMA_Platform_Manifest.Dist_CM_IMA_Platform_MANIFEST_DS.CM_IMA_Platform_Manifest" SrcGuid="a182f219d-c2a6-40fa-ab05-4918372eaaeba" />
+    </RP>
+    <RP Name="Dist_Load_Type_IDs_1" Guid="a997814d8-ce0c-443f-88bd-8e94f5358dcba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_Load_Type_IDs_1" GuidDef="a7f2b3c05-0666-4049-862c-018a1c9953b8a">
+      <Pub_Ref SrcName="SM_I2C_L1.Distributed_CM_IMA_Platform_Manifest.Dist_Load_Type_IDs_DS.Load_Type_IDs" SrcGuid="a4b6d98fb-ef7e-4243-aed5-b653bfbdc5f6a" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_1" Guid="ae285444d-65ed-403f-88a6-abd339916d0da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Flags_1" GuidDef="aad6ae002-ea4e-4744-a068-f63f3fe97eaea">
+      <Pub_Ref SrcName="SM_I2C_L1.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Flags_DS.IMA_Platform_Manifest_Flags" SrcGuid="ad1161e20-0268-4c44-b2f0-d55bd755944aa" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Header_1" Guid="aef33ebfa-841c-409c-9ca1-4d993f5302c2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Header_1" GuidDef="a5d268d58-5b16-4d60-9f71-747676c9d93ba">
+      <Pub_Ref SrcName="SM_I2C_L1.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Header_DS.IMA_Platform_Manifest_Header" SrcGuid="a526fb353-8c55-4bbe-8eeb-2b729134be65a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.DISTRIBUTED_MANIFEST_TX" SrcGuid="aaced5878-00e1-4b35-a347-48bc6102b1e1a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_2_RX" Guid="a8554f699-6580-482c-aeb5-d407788710ffa" NameDef="SWITCH_APP_B_NETWORK_CLASS.DIST_IMA_MANIFEST_2_RX" GuidDef="ab3e7cf37-8a62-41ff-8db7-8d37c2390403a" PathName="VLPath10">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_2" Guid="a2ecdced1-175c-4db9-8676-e917bd1d871ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_CM_IMA_Platform_MANIFEST_2" GuidDef="aeafca1c0-bdf2-441c-b76b-05980182e9e5a">
+      <Pub_Ref SrcName="SM_I2C_L4.Distributed_CM_IMA_Platform_Manifest.Dist_CM_IMA_Platform_MANIFEST_DS.CM_IMA_Platform_Manifest" SrcGuid="a4db6edbd-141a-4bfb-a26b-5a1a504985b8a" />
+    </RP>
+    <RP Name="Dist_Load_Type_IDs_2" Guid="a9250705d-b82f-487a-8363-3ceadab96bd0a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_Load_Type_IDs_2" GuidDef="aea07bb89-77ea-4775-9b20-ce9b4de4b697a">
+      <Pub_Ref SrcName="SM_I2C_L4.Distributed_CM_IMA_Platform_Manifest.Dist_Load_Type_IDs_DS.Load_Type_IDs" SrcGuid="a7111bf2e-dc3b-4017-892c-33acbf29325aa" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_2" Guid="aa347d7c4-d205-428b-bdc1-2afc75c8e4dfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Flags_2" GuidDef="a18e40ebf-b9cb-4adb-a84f-307505b60f6fa">
+      <Pub_Ref SrcName="SM_I2C_L4.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Flags_DS.IMA_Platform_Manifest_Flags" SrcGuid="aaed5a146-821b-4458-8fb9-38bc798ef5b8a" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Header_2" Guid="a366cb071-ea0e-4cc9-9766-cae7690c5adaa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Header_2" GuidDef="a9f175f61-4d6d-4a0e-b32a-67e4b1e8fb3ba">
+      <Pub_Ref SrcName="SM_I2C_L4.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Header_DS.IMA_Platform_Manifest_Header" SrcGuid="a33be8d77-192f-40f0-a7c4-7afde4555dcca" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L4.DISTRIBUTED_MANIFEST_TX" SrcGuid="af52608c7-e3d4-46d3-8c1c-44808cdfb97fa" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_3_RX" Guid="a8b7f7890-728d-493c-bed8-0b4813abe367a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DIST_IMA_MANIFEST_3_RX" GuidDef="a69ee50de-7121-49d2-a7ed-57b856f84e6ea" PathName="VLPath62">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_3" Guid="aa8be682f-c006-4779-9d18-d45b37cba3efa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_CM_IMA_Platform_MANIFEST_3" GuidDef="aa94134fd-c7c3-45ed-bb7d-f29734eff1a8a">
+      <Pub_Ref SrcName="SM_I2C_R1.Distributed_CM_IMA_Platform_Manifest.Dist_CM_IMA_Platform_MANIFEST_DS.CM_IMA_Platform_Manifest" SrcGuid="ab800e76e-b2a5-43e8-9977-11173117303ba" />
+    </RP>
+    <RP Name="Dist_Load_Type_IDs_3" Guid="aec5fd44b-9f60-4fed-9dc2-d2047c460089a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_Load_Type_IDs_3" GuidDef="a832e649b-9b0b-4d98-a65f-3271f5acc2e6a">
+      <Pub_Ref SrcName="SM_I2C_R1.Distributed_CM_IMA_Platform_Manifest.Dist_Load_Type_IDs_DS.Load_Type_IDs" SrcGuid="af3f26a36-185d-40cf-8ef3-f9026f3bb90da" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_3" Guid="a66ebbfca-64b4-41ea-89d1-95ce999c9c78a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Flags_3" GuidDef="abb07bd18-4d23-46e3-a095-ca8f749f20eaa">
+      <Pub_Ref SrcName="SM_I2C_R1.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Flags_DS.IMA_Platform_Manifest_Flags" SrcGuid="ae098a5f7-6081-4fa5-9782-17fd79e878d6a" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Header_3" Guid="abd1576f3-828e-499f-ad0c-07aa80b0a2bfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Header_3" GuidDef="ac7249224-70f3-4d6e-af98-e7c0680a8d72a">
+      <Pub_Ref SrcName="SM_I2C_R1.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Header_DS.IMA_Platform_Manifest_Header" SrcGuid="a21e97386-edc3-439b-8a41-2a2a7992442ba" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_R1.DISTRIBUTED_MANIFEST_TX" SrcGuid="aab4e9a5e-7d36-4476-8137-354308aee5aea" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="DIST_IMA_MANIFEST_4_RX" Guid="a3c81880f-7605-48e9-8d73-1d57b44782a5a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DIST_IMA_MANIFEST_4_RX" GuidDef="a4727a42a-cb4c-43d3-8594-5a9f7894e84aa" PathName="VLPath26">
+    <RP Name="Dist_CM_IMA_Platform_MANIFEST_4" Guid="adefe4478-1b6b-45b6-b532-6de0f688f76fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_CM_IMA_Platform_MANIFEST_4" GuidDef="a4515dcf7-e2e4-4b1d-88a3-35a66e4d0565a">
+      <Pub_Ref SrcName="SM_I2C_R4.Distributed_CM_IMA_Platform_Manifest.Dist_CM_IMA_Platform_MANIFEST_DS.CM_IMA_Platform_Manifest" SrcGuid="a26de51e3-ff2a-461a-b1bf-98d86919cb0ca" />
+    </RP>
+    <RP Name="Dist_Load_Type_IDs_4" Guid="ae5eefdab-ea28-4dc9-85b4-c95f56d79285a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_Load_Type_IDs_4" GuidDef="ae36d7012-d1a2-49c9-b06a-1bfe0ba1b816a">
+      <Pub_Ref SrcName="SM_I2C_R4.Distributed_CM_IMA_Platform_Manifest.Dist_Load_Type_IDs_DS.Load_Type_IDs" SrcGuid="ade847eb9-9625-4952-952d-2faca1702df8a" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Flags_4" Guid="a8f07bc85-e8b6-4cf3-968a-14fa7e216e6ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Flags_4" GuidDef="ae61a2895-5582-4301-8bef-f12a4b9ffeb9a">
+      <Pub_Ref SrcName="SM_I2C_R4.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Flags_DS.IMA_Platform_Manifest_Flags" SrcGuid="a3537c4bc-7e32-4480-9cf8-b7a7e3d11e7aa" />
+    </RP>
+    <RP Name="Dist_IMA_Platform_Manifest_Header_4" Guid="a0c189af5-ee13-4073-ac69-3c224f155b24a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Dist_IMA_Platform_Manifest_Header_4" GuidDef="adb6e331a-ac0d-48e8-b96c-6e1f91dbe33ca">
+      <Pub_Ref SrcName="SM_I2C_R4.Distributed_CM_IMA_Platform_Manifest.Dist_IMA_Platform_Manifest_Header_DS.IMA_Platform_Manifest_Header" SrcGuid="a65ca4505-86e5-4a2c-9b6e-c0d2fcdb6c02a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_R4.DISTRIBUTED_MANIFEST_TX" SrcGuid="a4c42b432-e6c1-4021-a894-f0b57badf55ea" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="SWITCH_DL_SW_TX" Guid="aab8a9e8d-f028-4efd-baf8-65e6ed98e7b8a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SWITCH_DL_SW_TX" GuidDef="ae5665eb0-e215-4f0a-868a-f37fb48110f1a">
+    <A664Message Name="Switch_Data_Load_SW_Tx1_Message" Guid="a62feee7e-fbe1-45f5-82d8-25d9a2d1e48fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_SW_Tx1_Message" GuidDef="a71422977-45b2-4bb9-888b-ec5b81c72c75a" SubVLID="2" VLID="205">
+      <DS Name="Switch_Data_Load_SW_Tx1_Dataset" Guid="a8a3c4168-e34f-4452-8b67-12621fe7fda2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_SW_Tx1_Message.Switch_Data_Load_SW_Tx1_Dataset" GuidDef="aadabf05e-9395-4481-9dd8-c8c8bcd2de67a">
+        <DP Name="Switch_Data_Load_SW_Tx1" Guid="a6cfffd59-227f-4150-bf38-77fa3dc2c936a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_SW_Tx1_Message.Switch_Data_Load_SW_Tx1_Dataset.Switch_Data_Load_SW_Tx1" GuidDef="a879c31e4-d377-4a5a-a880-dd591967bb43a" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_DL_STAT_TX" Guid="aead246d7-7118-4e12-88e0-b85272d2fd65a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SWITCH_DL_STAT_TX" GuidDef="af4e58aa7-4ce3-4819-9cc2-c3d8f8e4f694a">
+    <A664Message Name="Switch_Data_Load_STAT_Tx2_Message" Guid="adb1b5cc8-9bda-490d-ad37-33284b5287cba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_STAT_Tx2_Message" GuidDef="ac2bbee9c-a85f-4505-a120-4f0bccceef3da" SubVLID="0" VLID="205">
+      <DS Name="Switch_Data_Load_STAT_Tx2_Dataset" Guid="a61d6eb0f-5fac-4777-b5f3-0bfefe3ad24ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_STAT_Tx2_Message.Switch_Data_Load_STAT_Tx2_Dataset" GuidDef="afad96dba-2bce-4ca1-a215-551ec594bc28a">
+        <DP Name="Switch_Data_Load_STAT_Tx2_Parameter" Guid="a79ce45a3-1057-4696-86af-722981707f07a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Data_Load_STAT_Tx2_Message.Switch_Data_Load_STAT_Tx2_Dataset.Switch_Data_Load_STAT_Tx2_Parameter" GuidDef="abe179078-531b-42e6-8744-d2ebe5c1ef51a" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="IMA_STATE_L1_RX" Guid="aef0344aa-c575-4583-bbf9-5906bc1328e1a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_STATE_L1_RX" GuidDef="ad70b3e74-9999-493e-96ed-552ae946c80ba" PathName="VLPath79">
+    <RP Name="IMA_Platform_L1_Current_RU_State" Guid="ac8ad0c2e-d1d4-47db-8cdc-758dd53a10d6a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L1_Current_RU_State" GuidDef="af34bad99-c193-40c0-8950-05bf3323908ca">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a6e6cb207-770b-45ea-a672-0baaef914cb6a" />
+    </RP>
+    <RP Name="IMA_Platform_L1_DL_PA_State" Guid="ad4652189-91a0-496e-8b30-e4834eb167dfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L1_DL_PA_State" GuidDef="a8063110f-c69c-4d30-aaf8-d96e92b5d00da">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a125287eb-2764-463e-87fb-b8366fc74741a" />
+    </RP>
+    <RP Name="IMA_Platform_L1_Current_DN_State" Guid="a4083a05f-e454-4422-985e-bb6931236595a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L1_Current_DN_State" GuidDef="a01dab7d0-aed0-4c6e-8403-3f34e0ac223da">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_DN_State" SrcGuid="afe75e486-3ff9-46e4-a7fb-3c10e82250e6a" />
+    </RP>
+    <RP Name="Reserved_L1" Guid="a367bf982-39e5-48dd-9a70-e752f752235aa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reserved_L1" GuidDef="a6521b42b-bf4f-4ee0-bdaa-975fab894eefa">
+      <Pub_Ref SrcName="SM_I2C_L1.IMA_State.IMA_Platform_Current_State.Reserved" SrcGuid="ab0b1f298-dda8-4b5d-a1b2-ede522a98db1a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.IMA_STATE_TX" SrcGuid="ab074f1db-409a-4d34-8ae5-e9cb6e49ff24a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_L2_RX" Guid="a5f6d4f92-64fd-4e53-b22f-13f0099ac440a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_STATE_L2_RX" GuidDef="ad7fe1cab-dfdc-4420-82e6-87b748945171a" PathName="VLPath10">
+    <RP Name="IMA_Platform_L2_Current_RU_State" Guid="a75e71e99-9051-4142-9148-f03811355f75a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L2_Current_RU_State" GuidDef="aaff69d24-99c4-4cff-a51f-24e84534d0b5a">
+      <Pub_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a8271883c-b688-4677-b3bc-a06f4efd3b53a" />
+    </RP>
+    <RP Name="IMA_Platform_L2_DL_PA_State" Guid="a96356a17-727e-4e7b-b98f-bd88f3366953a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L2_DL_PA_State" GuidDef="a99d97432-9ba3-4659-bfba-2eb2456188c9a">
+      <Pub_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a0264020f-be70-46e6-9fe3-a763b640f9afa" />
+    </RP>
+    <RP Name="IMA_Platform_L2_Current_DN_State" Guid="a5bdba7b5-8ab4-4fe2-86ef-611c70d11941a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_L2_Current_DN_State" GuidDef="adab283bb-92d3-474f-b7b5-4875aa8d78dba">
+      <Pub_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_DN_State" SrcGuid="a2a6c0516-a6b8-4005-a5f6-1d5547312424a" />
+    </RP>
+    <RP Name="Reserved_L2" Guid="aaebf0585-f19b-4793-a4f0-8135e9cf4338a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reserved_L2" GuidDef="a85b4f849-2165-495e-9b8d-118a0174c70da">
+      <Pub_Ref SrcName="SM_I2C_L4.IMA_State.IMA_Platform_Current_State.Reserved" SrcGuid="a07ef8c19-66ed-404b-b53c-720f3817cf0da" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L4.IMA_STATE_TX" SrcGuid="aa0c3cb46-a574-4316-89c8-d66e4c32448ca" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_R1_RX" Guid="ad9c2e8b0-bb11-43d3-aad3-17249c382082a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_STATE_R1_RX" GuidDef="adb3cf880-5906-4160-882f-b6619ac20471a" PathName="VLPath62">
+    <RP Name="IMA_Platform_R1_Current_RU_State" Guid="a894883bb-6e44-4f85-bb04-a41aaa79d3c2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R1_Current_RU_State" GuidDef="a99898460-d77a-4557-84b9-771e52ea238ca">
+      <Pub_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="ada4d4fde-d506-4419-9952-45be8867c803a" />
+    </RP>
+    <RP Name="IMA_Platform_R1_DL_PA_State" Guid="a7b07ebf0-d899-4fea-a89b-c177ee382bdba" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R1_DL_PA_State" GuidDef="a3c938780-6fef-4812-9682-c46713fcc16ba">
+      <Pub_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="a77bee5e7-0d3c-4fd1-aa5a-390aeff52c76a" />
+    </RP>
+    <RP Name="IMA_Platform_R1_Current_DN_State" Guid="a8a1d8618-a30f-43f4-9bf7-3589dcb11214a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R1_Current_DN_State" GuidDef="a3e4ae6f5-60b0-4123-89e3-c80870a6e6dda">
+      <Pub_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_DN_State" SrcGuid="ab9f15d7c-c643-4890-8278-618547b448f7a" />
+    </RP>
+    <RP Name="Reserved_R1" Guid="a05704dee-58a1-4d6f-a26e-7b4419201c90a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reserved_R1" GuidDef="af1c16254-4fd6-4cd1-b3ed-e2229af0b383a">
+      <Pub_Ref SrcName="SM_I2C_R1.IMA_State.IMA_Platform_Current_State.Reserved" SrcGuid="ab5ea0767-b68f-4414-aea9-4701925df1dda" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_R1.IMA_STATE_TX" SrcGuid="add6fd136-4712-4094-919d-99c70e868449a" />
+  </HFSamplingPort>
+  <HFSamplingPort Name="IMA_STATE_R2_RX" Guid="a03420d28-e3a7-481d-9974-72349c880763a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_STATE_R2_RX" GuidDef="ac1c14edb-c85f-4d6d-b5d7-b0b9a0accd1aa" PathName="VLPath26">
+    <RP Name="IMA_Platform_R2_Current_RU_State" Guid="a1b263081-27d0-4ce3-903e-11975c3db4b6a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R2_Current_RU_State" GuidDef="aac136840-aeb0-4916-b9b4-bd56de36f76ba">
+      <Pub_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_RU_State" SrcGuid="a3489560e-cb56-41cd-8d3b-26d540e401f9a" />
+    </RP>
+    <RP Name="IMA_Platform_R2_DL_PA_State" Guid="a9b6627f2-22f2-4db4-8c8f-a75ec11db34ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R2_DL_PA_State" GuidDef="a51dc588a-60d3-4b1c-b984-4d48767d7bdca">
+      <Pub_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.IMA_Platform_DL_PA_State" SrcGuid="abad8ed64-3948-41dd-9b6d-4e0885e8be17a" />
+    </RP>
+    <RP Name="IMA_Platform_R2_Current_DN_State" Guid="a76c5287c-c584-4964-9d86-212176894a41a" NameDef="SWITCH_APP_B_NETWORK_CLASS.IMA_Platform_R2_Current_DN_State" GuidDef="a61dec949-e3c1-4cb8-8e12-473486570064a">
+      <Pub_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.IMA_Platform_Current_DN_State" SrcGuid="a719b5993-1c76-444a-8473-5228450de252a" />
+    </RP>
+    <RP Name="Reserved_R2" Guid="af01f2810-1914-4808-94c9-76d004a494eea" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reserved_R2" GuidDef="a97bf750a-8c7c-4b6d-976e-dde98694e28fa">
+      <Pub_Ref SrcName="SM_I2C_R4.IMA_State.IMA_Platform_Current_State.Reserved" SrcGuid="a56dd9206-87fb-4f54-8a1e-5cd9c605d091a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_R4.IMA_STATE_TX" SrcGuid="a2b663567-1cfc-4c72-9cdf-24b6e8e0f3eda" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="ICMP_ECHO_REQUEST_RX" Guid="aaebf974d-052d-43d1-aa47-0cb921d60073a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ICMP_ECHO_REQUEST_RX" GuidDef="ac09b9061-a476-4f01-8359-01ca4309af9ca" PathName="VLPath26">
+    <RP Name="ICMP_Echo_Request_PAR" Guid="a7d281c15-ab7b-4cea-a501-b8c82fe340dda" NameDef="SWITCH_APP_B_NETWORK_CLASS.ICMP_Echo_Request_PAR" GuidDef="abdd1b059-1f0a-4993-abde-b377352ec59ba">
+      <Pub_Ref SrcName="HF_IMAP_TEST_PORT.ATE_ICMP_REQUEST_Msg.ATE_ICMP_REQUEST_DS.ATE_ICMP_REQUEST_Par" SrcGuid="aC5EF917C-3340-4685-91EE-071F81DEDB26a" />
+    </RP>
+    <Ep_Ref SrcName="ARS_1B_APP.ICMP_ECHO_RESPONSE_TX" SrcGuid="afdff8408-286c-49e2-b271-c0396d29d179a" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_IMAP_TEST_PORT.ATE_ICMP_REQUEST_TX" SrcGuid="a7F9A58D7-7B9B-4D76-96DC-49687A179166a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ICMP_ECHO_RESPONSE_TX" Guid="afdff8408-286c-49e2-b271-c0396d29d179a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ICMP_ECHO_RESPONSE_TX" GuidDef="a8d273319-3612-4c19-a294-dfc14988cc21a">
+    <A664Message Name="Switch_Echo_Response_Message" Guid="a6c754217-6eda-4fec-b65b-c48d7fbd58e7a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Echo_Response_Message" GuidDef="a8fd99bcb-97b4-4c95-9d7e-7b4287e8743ba" SubVLID="2" VLID="33251">
+      <DS Name="Echo_Response_DS" Guid="a7ea935e2-b8e6-431c-b12f-9d42458af959a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Echo_Response_Message.Echo_Response_DS" GuidDef="a66e4fbb5-8333-45ae-bacb-e2f60e545d16a">
+        <DP Name="ICMP_Echo_Response_Parameter" Guid="a08155b72-7890-48ad-8d1f-ca869c7bbeaaa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_Echo_Response_Message.Echo_Response_DS.ICMP_Echo_Response_Parameter" GuidDef="a406edbf2-e641-44b7-9103-08e472aeb0dea" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+  <HFSamplingPort Name="OMS_AIRCRAFT_STATUS_RX" Guid="a503347fe-2e48-4209-9a42-665020b8b56ba" NameDef="SWITCH_APP_B_NETWORK_CLASS.OMS_AIRCRAFT_STATUS_RX" GuidDef="a6cd42573-1a79-4784-bb31-74c1b82c64d2a" PathName="VLPath55">
+    <RP Name="FSB4" Guid="af99801bc-479a-4727-a3ec-7afc8213870ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB4" GuidDef="a071d9b6e-d93b-401f-b353-e5ef8e8f9efca">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_1.FSB_4" SrcGuid="a08097e76-ee73-462d-8aad-5a71be64deb3a" />
+    </RP>
+    <RP Name="FSB3" Guid="a6a4628bf-0994-46a1-b1da-73ca4a843c03a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB3" GuidDef="a5bbc3d59-c53c-42cc-ba78-90b253d92c21a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_1.FSB_3" SrcGuid="a9625bd17-61aa-4d15-9af4-4a6773489c2da" />
+    </RP>
+    <RP Name="FSB2" Guid="ab8510d43-1883-4bc5-b0d4-ec54d7382c5ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB2" GuidDef="a200783cf-36a9-4087-b198-f29fc0e068eda">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_1.FSB_2" SrcGuid="a166ead52-1366-4bb1-87b6-5de141897af7a" />
+    </RP>
+    <RP Name="FSB1" Guid="af7ab5191-10c3-4f1e-b804-f065a5bc3a13a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB1" GuidDef="a3b5bd86f-b669-40d4-9605-35d3f1300a67a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_1.FSB_1" SrcGuid="aad9072d5-e7ac-41e1-aad0-81b2b5416f5da" />
+    </RP>
+    <RP Name="OMS_Flight_Leg" Guid="a86d475fc-dbc6-43b8-aba5-7003ac0108b2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.OMS_Flight_Leg" GuidDef="a4d5722b6-3343-45c8-8e99-db9ed3cb3eb6a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_1.Flight_Leg" SrcGuid="a985013dd-92da-4317-a55e-c9a596370eeda" />
+    </RP>
+    <RP Name="Pad_1" Guid="ab616f6f9-7c3d-4efb-9df9-5c7a25374cd7a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_1" GuidDef="a507e498d-3e44-47a3-b9ba-2a860aa9d74fa" />
+    <RP Name="OMS_Flight_Phase" Guid="aebbb9897-a209-41f8-8143-094823d99461a" NameDef="SWITCH_APP_B_NETWORK_CLASS.OMS_Flight_Phase" GuidDef="ac02d531b-fefa-4ad8-9d62-8d22270b2b9da">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_2.Flight_Phase" SrcGuid="a6a536eda-725e-4d61-91b2-9e7973d18840a" />
+    </RP>
+    <RP Name="Pad_2" Guid="a977f09e9-b162-4d44-b8e6-297dbda15783a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_2" GuidDef="a70e3e0a4-296c-41d7-b0a5-fcba4fc7d3afa" />
+    <RP Name="DS3_UTC_Days" Guid="ac64f057b-81d6-4da5-b50a-facb7445b7a0a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Days" GuidDef="afc5ffcc9-c38d-420e-a6ac-f8944f889280a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Days" SrcGuid="a0319e51b-e646-41ff-a6d7-a2b086c7ac8fa" />
+    </RP>
+    <RP Name="DS3_UTC_Months" Guid="ab8ae67dd-aa85-410d-87ce-e54544610908a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Months" GuidDef="ad00db520-ea24-455f-9dc1-7cc18940c033a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Months" SrcGuid="acb34dd10-4845-43ec-a190-cf6a83683b9da" />
+    </RP>
+    <RP Name="DS3_UTC_Years" Guid="a4b8a5d79-4fe4-4b20-a3dd-b89fb020e06aa" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Years" GuidDef="a974bfefc-e25f-4587-9616-4757d1245745a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Years" SrcGuid="a5ace6dc0-2a7b-43d4-aa06-9197a63c662fa" />
+    </RP>
+    <RP Name="DS3_PAD_1" Guid="a64d42482-82ae-4e14-9c8a-05043230e4eba" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_PAD_1" GuidDef="ad4ed397f-fac1-4be2-9fe3-3a56efbfdbb5a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.PAD_1" SrcGuid="aaceead87-97b3-4586-84fe-d2a8d0480811a" />
+    </RP>
+    <RP Name="DS3_UTC_Seconds" Guid="a0e9a50b5-9b90-449b-8a08-019e6279634da" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Seconds" GuidDef="ae68b87b0-e0a6-46db-8406-0958518a39e1a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Seconds" SrcGuid="a24555414-c416-4dc9-ab8c-5d455839136fa" />
+    </RP>
+    <RP Name="DS3_UTC_Minutes" Guid="aedcf83e5-4dc8-4ca7-9c87-b0cfda87670ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Minutes" GuidDef="a61ec880e-09fe-4519-b4c1-17f36b283f6ba">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Minutes" SrcGuid="a9a59106f-503e-4977-868d-8e7644d48221a" />
+    </RP>
+    <RP Name="DS3_UTC_Hours" Guid="a7e3be28d-8106-46ab-b9e5-ab921a7e6a59a" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_UTC_Hours" GuidDef="a287af369-0a95-4a06-baaf-da01b83877c9a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.UTC_Hours" SrcGuid="a3d98037e-937a-4c75-83fd-732a0a5aa29da" />
+    </RP>
+    <RP Name="DS3_PAD_2" Guid="acc9f67b9-a0ae-446d-b910-58b442ab856ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.DS3_PAD_2" GuidDef="ad1c99863-eac1-4fe0-a851-16b3a3073cf8a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_3.PAD_2" SrcGuid="acfc87ece-d889-4483-8853-03f39bdee58ba" />
+    </RP>
+    <RP Name="ICAO_Code" Guid="ad397ce93-881e-424d-aa20-4b7d016ba446a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ICAO_Code" GuidDef="ad1dbcf79-e5dd-4d8a-98a0-ae36092af42aa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_4.ICAO_Code" SrcGuid="a75ef6b48-ee20-474d-aa96-d09af402086aa" />
+    </RP>
+    <RP Name="Pad_4" Guid="a1dbfde86-8f1a-41b5-8f5e-51944989e22fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_4" GuidDef="a4732ef53-2eaf-4a2a-818c-cd8e6b884d39a" />
+    <RP Name="FSB8" Guid="a63080279-115d-4a49-a229-a37465c736d4a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB8" GuidDef="a62831365-3988-4c8d-b6c4-c525dd7e000da" />
+    <RP Name="FSB7" Guid="a87f942fc-5289-43ff-bbe1-e33e48b30fe4a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB7" GuidDef="a3e814c3f-26c6-4a74-b4f1-2d6f061e33cda">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_2.FSB_7" SrcGuid="adfeaac3c-2b17-4da1-89c2-ff2b6ff20c3ea" />
+    </RP>
+    <RP Name="FSB6" Guid="a28f62e3f-fdfd-425a-80c7-9a46cc7997f6a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB6" GuidDef="a912ac3cc-7040-4921-b2b0-0ad68a5b9e3fa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_2.FSB_6" SrcGuid="af56fec4a-6861-4003-98d6-8a2a0824c767a" />
+    </RP>
+    <RP Name="FSB5" Guid="a42d4d861-8e89-44a3-9b73-b91738a072e2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.FSB5" GuidDef="a076c60c2-9fe1-4d38-b5a8-026325a73e4ea">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.FSS_2.FSB_5" SrcGuid="a4d7ac95e-0960-4044-8ff5-ce7d706dff88a" />
+    </RP>
+    <RP Name="Reg_Number_Char_2" Guid="a74647f9f-eff5-4e0b-a319-1c97cff0f721a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_2" GuidDef="a8fced7b2-060b-4f5f-8b32-e9ef212d9a5ea">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_2" SrcGuid="a5b51d846-c357-48be-84b6-a541d66184b4a" />
+    </RP>
+    <RP Name="Reg_Number_Char_1" Guid="adc44cf7c-3e96-4cf9-bfcf-b470e1442313a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_1" GuidDef="a686f83f3-4e74-4aac-9a5d-06a6d9ea79fca">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_1" SrcGuid="a9c7e37b6-7880-43b1-81dd-9b685c7e5508a" />
+    </RP>
+    <RP Name="String_Length_1" Guid="aaba6e985-3648-446c-8916-be09890ba8d1a" NameDef="SWITCH_APP_B_NETWORK_CLASS.String_Length_1" GuidDef="a6184ed73-98c6-4dee-b767-c74f43929388a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.String_Length_1" SrcGuid="a4c730694-b550-4809-9525-670b8fd61d98a" />
+    </RP>
+    <RP Name="Reg_Number_Char_6" Guid="a06a7740e-a847-4cea-bee0-7139b6a9bb64a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_6" GuidDef="a8ee26628-8d3e-4f42-aa93-e1362766b50ea">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_6" SrcGuid="aea0f1676-13f0-4f16-b61d-fd208561159ba" />
+    </RP>
+    <RP Name="Reg_Number_Char_5" Guid="aca6441dd-c77b-4972-bbd6-de9237ef4b9da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_5" GuidDef="ab4dec80d-0a76-4c8e-b302-3e0e16ec31daa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_5" SrcGuid="a30908877-f71c-425e-86ac-359645c1010aa" />
+    </RP>
+    <RP Name="Reg_Number_Char_4" Guid="aad908b52-03db-4183-9da9-0d36c5f31f94a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_4" GuidDef="a9b60cfa5-6e0b-4f5c-9e9d-defc79a012d2a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_4" SrcGuid="aeb26cad1-2297-4176-b228-7dbdb4c16c5ea" />
+    </RP>
+    <RP Name="Reg_Number_Char_3" Guid="ae308cde5-c2cd-4e71-90e4-52fcd87083f7a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_3" GuidDef="a4b84619b-a6a3-4a1f-ba0c-51733ddb08c5a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_3" SrcGuid="a5a0206f2-e4b3-4395-a9d1-4f9b287c814ca" />
+    </RP>
+    <RP Name="Pad_5" Guid="a54be23e4-120f-43a9-aba5-7048d6513643a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_5" GuidDef="afb76eb06-0bc1-4ef7-ad56-d0a0bc14715fa" />
+    <RP Name="Reg_Number_Char_9" Guid="ab6dc801a-6903-4d95-8b7c-752b2e25c3f8a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_9" GuidDef="aa95c7ff8-a557-48f8-8d02-62cb22d88783a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_9" SrcGuid="ae793a0d8-d5f6-43ee-b4f4-27fcebfdf7dda" />
+    </RP>
+    <RP Name="Reg_Number_Char_8" Guid="ab4ba9f8f-2ffb-4268-a4c2-6df79494dc40a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_8" GuidDef="a6bf57b63-25b4-40a2-b2e3-621d794f4ee1a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_8" SrcGuid="a110d0fd7-9278-4cf5-b7cc-663323341ccda" />
+    </RP>
+    <RP Name="Reg_Number_Char_7" Guid="a9e112c0d-c7d5-4494-a8d0-01f4b80114d9a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Reg_Number_Char_7" GuidDef="a37174676-4427-4c64-8994-43ec59ae7d87a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_5.Reg_Num_Char_7" SrcGuid="ad40aae6a-884f-4513-9913-a05fe4cf0df2a" />
+    </RP>
+    <RP Name="Flight_Number_Char_2" Guid="acf4426f0-c64f-4b0c-85d2-7deb3772d8cfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_2" GuidDef="a2151f9e9-ad77-4afb-be15-f56c13a10664a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_2" SrcGuid="ae24a3687-9040-46bf-9582-20314cac1af4a" />
+    </RP>
+    <RP Name="Flight_Number_Char_1" Guid="a72e4c217-69d7-4cdc-bd85-d4fb59a643cda" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_1" GuidDef="aeef4646c-e614-47b5-9500-dd554fee927da">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_1" SrcGuid="a792c2775-228d-444c-bf30-7f24846c6737a" />
+    </RP>
+    <RP Name="String_Length_2" Guid="a56c1667c-16f9-4bcf-88d6-03f48743d528a" NameDef="SWITCH_APP_B_NETWORK_CLASS.String_Length_2" GuidDef="a11da251c-3208-49b9-96f2-9de79242decfa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.String_Length_2" SrcGuid="ad9a4a6f9-d910-45ba-8dfb-36af4300061ca" />
+    </RP>
+    <RP Name="Flight_Number_Char_6" Guid="a3ed4017f-d404-4c05-a586-a059e6cce311a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_6" GuidDef="a63ac87b8-ae57-49c7-acc1-c2d43173d5cba">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_6" SrcGuid="a09ead6fa-daa1-4ece-a32e-0b0e262427b9a" />
+    </RP>
+    <RP Name="Flight_Number_Char_5" Guid="a49927863-436d-49e2-8f0c-5ae6eeb49affa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_5" GuidDef="a252e42be-1bd1-4e45-afee-d079d7806948a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_5" SrcGuid="a9c422930-efe3-444f-b211-26a33a6f0c53a" />
+    </RP>
+    <RP Name="Flight_Number_Char_4" Guid="a91de8cc3-1309-4e02-af84-aa787c88e3f7a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_4" GuidDef="af979c7ac-9d47-4aa5-867f-fadc42bfb732a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_4" SrcGuid="a1f507e02-80e9-4692-8774-a9612c9afea0a" />
+    </RP>
+    <RP Name="Flight_Number_Char_3" Guid="a429e916c-59e4-4ef9-9fba-91756b8130e9a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_3" GuidDef="afb7c42cd-2314-4788-85ae-e22c05a5f72aa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_3" SrcGuid="ad44693f3-08a8-4024-9de9-ebd588399ad2a" />
+    </RP>
+    <RP Name="Destination_Airport_Char_2" Guid="a6c6185cd-1c07-476d-9a41-81c98e44fb28a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Destination_Airport_Char_2" GuidDef="ab08a7eb1-28fe-484c-9390-07592c18a355a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Destination_Airport_Char_2" SrcGuid="a7f9fbd83-b14a-4f7f-b4ed-e2a981bb996ba" />
+    </RP>
+    <RP Name="Destination_Airport_Char_1" Guid="a43c9990a-2b7b-4c46-a82c-dafb83f293cfa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Destination_Airport_Char_1" GuidDef="abf449567-644b-4709-88d1-adc36d98df3ea">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Destination_Airport_Char_1" SrcGuid="a957804ce-d867-4971-906d-ba2e85175f6fa" />
+    </RP>
+    <RP Name="Flight_Number_Char_8" Guid="a9e58784e-720c-4609-9f38-3c82e21b6ae9a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_8" GuidDef="a37e47ba5-dcf5-43c5-aba7-b439d2ce5796a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_8" SrcGuid="a8e58ba47-fa50-4fd2-ada5-2d5e1a853fcda" />
+    </RP>
+    <RP Name="Flight_Number_Char_7" Guid="a142ecd6e-ed28-42bc-af1a-f8a2a9bb84c1a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Flight_Number_Char_7" GuidDef="a0c0f5521-0e8f-48f5-b47a-36806524c275a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Flight_Num_Char_7" SrcGuid="a0bbb0964-b7eb-4807-b604-5c80df8a0d88a" />
+    </RP>
+    <RP Name="Departure_Airport_Char_2" Guid="ab579116d-dd14-42c0-9fc1-01d24d14cbf5a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Departure_Airport_Char_2" GuidDef="a8ec77388-2a7c-4003-ad58-5e9e766eb19ea">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Departure_Airport_Char_2" SrcGuid="ac1a173f5-2853-4963-9717-d2c1e74016a2a" />
+    </RP>
+    <RP Name="Departure_Airport_Char_1" Guid="a4f191175-3481-4d45-82a3-0d65f0f176fba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Departure_Airport_Char_1" GuidDef="ae4beb578-a065-4106-86b5-a10864f3f67ca">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Departure_Airport_Char_1" SrcGuid="acf1e8781-7c1c-4131-a52f-e49a55295690a" />
+    </RP>
+    <RP Name="Destination_Airport_Char_4" Guid="aea45c907-371e-4c3d-bbf1-33ab2a4e2c32a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Destination_Airport_Char_4" GuidDef="a8273c501-36db-4d71-aeec-14683f1df973a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Destination_Airport_Char_4" SrcGuid="a932795af-5a47-4d7b-bdba-74364d679d09a" />
+    </RP>
+    <RP Name="Destination_Airport_Char_3" Guid="a503e2aff-2014-4e60-9db5-66f8e59a3d68a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Destination_Airport_Char_3" GuidDef="ab1aa0565-929d-4548-bbdf-60568534181fa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Destination_Airport_Char_3" SrcGuid="afb858fdb-7c94-4ffb-b4cc-2df4eac379caa" />
+    </RP>
+    <RP Name="Pad_6" Guid="ad4685d05-f832-4f30-963c-014d4fdae5cba" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_6" GuidDef="a427f9e1c-2d2c-49b1-b13c-463c5bdf510aa" />
+    <RP Name="Departure_Airport_Char_4" Guid="a774a2068-cf7c-4c26-810c-2226fb480b23a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Departure_Airport_Char_4" GuidDef="a14dc551b-c47a-4e52-bd87-92eaa3a89fb5a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Departure_Airport_Char_4" SrcGuid="a9c7a2c65-8bb2-47bf-b609-e8c16b0591efa" />
+    </RP>
+    <RP Name="Departure_Airport_Char_3" Guid="a963b5716-4650-4647-9472-625bccb61eb4a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Departure_Airport_Char_3" GuidDef="a30297dfa-f394-4220-a47b-7d1c4bffbf8aa">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_6.Departure_Airport_Char_3" SrcGuid="a26162064-53b8-489c-bf2f-a9558f0b41dda" />
+    </RP>
+    <RP Name="OMS_Global_Abort_flag" Guid="a1016ebbe-65c9-404a-92c3-041a937c5b3ea" NameDef="SWITCH_APP_B_NETWORK_CLASS.OMS_Global_Abort_flag" GuidDef="a798b6313-bf83-4de7-bc57-66820881f2c1a">
+      <Pub_Ref SrcName="HF_AHMUInstance.Aircraft_Status_Msg.DS_7.Global_Abort_Flag" SrcGuid="aab7323bb-8200-4a1f-afe1-47b1a7c59250a" />
+    </RP>
+    <RP Name="Pad_7" Guid="a2cac39b8-2187-457b-b061-af847c43cd29a" NameDef="SWITCH_APP_B_NETWORK_CLASS.Pad_7" GuidDef="add77f7c0-e06b-4fad-83e7-357aa3d8c353a" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poAIRCRAFT_STATUS_A664" SrcGuid="afd9ecc16-1d35-4666-8780-6fbd7f564a1aa" />
+  </HFSamplingPort>
+  <HFQueuingPort Name="ODLF_STATUS_RX" Guid="a31d08458-6109-4769-8867-01da201d6386a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ODLF_STATUS_RX" GuidDef="ad40e117a-021b-424a-aa0c-0bb38b6366f6a" PathName="VLPath3">
+    <RP Name="ODLF_DATA_LOAD_Status" Guid="a5d7d833a-af50-4ae7-9362-32651bc9c6f2a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ODLF_DATA_LOAD_Status" GuidDef="af6e6fe24-5dce-476a-b704-3185acd1c4b9a">
+      <Pub_Ref SrcName="HF_AHMUInstance.DL_Status_2H_Tx2.DL_Status_2H_Tx2_DS.DL_Status_2H_Tx2_Data" SrcGuid="aed68b184-7085-4c20-825b-bc1e535266eaa" />
+    </RP>
+    <Ep_Ref SrcName="ARS_1B_APP.SWITCH_DL_STAT_TX" SrcGuid="aead246d7-7118-4e12-88e0-b85272d2fd65a" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Status_2H_Tx2_Port" SrcGuid="a41878e65-19f0-468f-8fcc-26225a3987ada" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="SWITCH_DL_WKS_RX" Guid="a41b8cddc-f23b-4fb1-aa92-f9331cb9c221a" NameDef="SWITCH_APP_B_NETWORK_CLASS.SWITCH_DL_WKS_RX" GuidDef="ad2d7c769-7ed7-43e7-8668-d073a306e9fba" PathName="VLPath3">
+    <RP Name="ODLF_DATA_LOAD_Init" Guid="a2cabca4f-dd9b-4de1-aa42-a45a08b56e18a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ODLF_DATA_LOAD_Init" GuidDef="af6ff1ad4-070d-4e7b-bf1e-8d2323e0b027a">
+      <Pub_Ref SrcName="HF_AHMUInstance.DL_Session_2H_Tx1.DL_Session_2H_Tx1_DS.DL_Session_2H_Tx1_Data" SrcGuid="a38853cec-dc40-4f4d-99e7-440a474fc702a" />
+      <Pub_Ref SrcName="HF_AHMUInstance.DL_Status_2H_Tx2.DL_Status_2H_Tx2_DS.DL_Status_2H_Tx2_Data" SrcGuid="aed68b184-7085-4c20-825b-bc1e535266eaa" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Session_2H_Tx1_Port" SrcGuid="ae621059c-162c-4d05-af51-f37e3b51e737a" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Status_2H_Tx2_Port" SrcGuid="a41878e65-19f0-468f-8fcc-26225a3987ada" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ODLF_SW_RX" Guid="a016c6888-b9ba-446e-934c-d27776aab8fba" NameDef="SWITCH_APP_B_NETWORK_CLASS.ODLF_SW_RX" GuidDef="a4e340c0e-95a3-49ee-99df-744866e62222a" PathName="VLPath3">
+    <RP Name="ODLF_DATA_LOAD_SESSION" Guid="a5daaae76-c77b-4d9f-a995-b0e7a42fdf5fa" NameDef="SWITCH_APP_B_NETWORK_CLASS.ODLF_DATA_LOAD_SESSION" GuidDef="abf14230e-5f54-49e5-a54a-f0fd10738ab4a">
+      <Pub_Ref SrcName="HF_AHMUInstance.DL_Session_2H_Tx1.DL_Session_2H_Tx1_DS.DL_Session_2H_Tx1_Data" SrcGuid="a38853cec-dc40-4f4d-99e7-440a474fc702a" />
+    </RP>
+    <Ep_Ref SrcName="ARS_1B_APP.SWITCH_DL_SW_TX" SrcGuid="aab8a9e8d-f028-4efd-baf8-65e6ed98e7b8a" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Session_2H_Tx1_Port" SrcGuid="ae621059c-162c-4d05-af51-f37e3b51e737a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ATE_MIB_REQUEST_RX" Guid="a84cfe890-ce07-4eb0-a906-87e12863de52a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ATE_MIB_REQUEST_RX" GuidDef="a98dca604-cf46-4a43-922e-7fef489a6501a" PathName="VLPath26">
+    <RP Name="ATE_MIB_Request_Par" Guid="ae940a638-1b72-4893-858f-c4959ae82365a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ATE_MIB_Request_Par" GuidDef="adb111de2-f6e8-484c-b431-741265f6fbe1a">
+      <Pub_Ref SrcName="HF_IMAP_TEST_PORT.ATE_MIB_REQUEST_SWITCH_CH1_Msg.ATE_MIB_REQUEST_SWITCH_CH1_DS.ATE_MIB_REQUEST_SWITCH_CH1_Par" SrcGuid="a52B655DE-C652-45D6-AD11-1A0701C13A50a" />
+    </RP>
+    <Ep_Ref SrcName="ARS_1B_APP.ATE_MIB_RESPONSE_TX" SrcGuid="ae54a7b29-088f-43fa-a549-cb77a3d9d6f8a" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_IMAP_TEST_PORT.ATE_MIB_REQUEST_SWITCH_CH1_TX" SrcGuid="a5573A8BE-8513-49AC-9E79-6C5C99D811A6a" />
+  </HFQueuingPort>
+  <HFQueuingPort Name="ATE_MIB_RESPONSE_TX" Guid="ae54a7b29-088f-43fa-a549-cb77a3d9d6f8a" NameDef="SWITCH_APP_B_NETWORK_CLASS.ATE_MIB_RESPONSE_TX" GuidDef="add35ba95-2635-429b-b195-daabab7bcee3a">
+    <A664Message Name="Switch_MIB_Response_Msg" Guid="a7f9e13df-839f-4c15-95a0-414e1cb0c76da" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_MIB_Response_Msg" GuidDef="ac9c5d324-d734-472a-8010-8ca29e57b39aa" SubVLID="2" VLID="33253">
+      <DS Name="Switch_MIB_Response_DS" Guid="af46eedd4-bb11-4726-8987-391d5de2f2aaa" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_MIB_Response_Msg.Switch_MIB_Response_DS" GuidDef="adec44192-cc29-4208-b4e7-e3b7ad361097a">
+        <DP Name="Switch_MIB_Response_Par" Guid="aeec5a469-1adb-4928-bb44-3680b046bf2ca" NameDef="SWITCH_APP_B_NETWORK_CLASS.Switch_MIB_Response_Msg.Switch_MIB_Response_DS.Switch_MIB_Response_Par" GuidDef="a259589a4-1c37-4136-967d-5296fa5b5b9fa" />
+      </DS>
+    </A664Message>
+  </HFQueuingPort>
+</SwitchApplication>

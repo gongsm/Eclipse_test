@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<A653ApplicationComponent Name="DLC_L1" Guid="aebf3e245-6dbe-4eac-879a-d5b5b83088d7a" NameDef="APP-DATA_LOAD" GuidDef="ae1294986-a334-464e-b2cd-6d522ae50cbba" XsdVersion="7.9" Hardware="CCR_LEFT.GPM_L1" IpAddress="10.42.40.19" TotalTime="10">
+  <A653QueuingPort Name="DLP_SESSION_MANAGER_RX" Guid="acca173c9-db73-4ef1-ae5e-926a5acc171ea" NameDef="APP-DATA_LOAD.DLP_SESSION_MANAGER_RX" GuidDef="aa439f03f-b546-4184-b9d5-9b16b9705467a" PathName="VLPath2">
+    <RP Name="ODLF_Data_Load_Rx0" Guid="aac7132f4-b388-4a91-aa77-d13b1408f01ca" NameDef="APP-DATA_LOAD.ODLF_Data_Load_Rx0" GuidDef="a4142570a-4243-4b0a-99cb-2f37e36a2898a">
+      <Pub_Ref SrcName="HF_AHMUInstance.HiSpeed_Session_Message.HiSpeed_Session_DS.HiSpeed_Session_Data" SrcGuid="ab4d7060f-4adc-4b9b-8a52-5652c21f97f0a" />
+      <Pub_Ref SrcName="HF_AHMUInstance.HiSpeed_Status_Message.HiSpeed_Status_DS.HiSpeed_Status_Data" SrcGuid="a8815abbd-6ef2-4c44-85a1-9e899094ffeba" />
+    </RP>
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Session_1H_Tx1_Port" SrcGuid="a4fff7ddb-9682-4aa1-bb24-aa7591bbed8aa" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Status_1H_Tx2_Port" SrcGuid="ab12a4db3-90db-4230-b144-4ae187ccaca9a" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="DLP_MANAGED_SERVER_RX" Guid="a09613cac-50bf-4f5d-96a3-d5759ba95faba" NameDef="APP-DATA_LOAD.DLP_MANAGED_SERVER_RX" GuidDef="a684b3e93-4492-431c-a59d-2e542ec89ca3a" PathName="VLPath2">
+    <RP Name="ODLF_Data_Load_100Mb_Session" Guid="aad4c85f3-6a34-4b11-8696-0126d40c6ca7a" NameDef="APP-DATA_LOAD.ODLF_Data_Load_100Mb_Session" GuidDef="a9e2c326c-2bf1-46bc-be58-bf5b277a940ba">
+      <Pub_Ref SrcName="HF_AHMUInstance.HiSpeed_Session_Message.HiSpeed_Session_DS.HiSpeed_Session_Data" SrcGuid="ab4d7060f-4adc-4b9b-8a52-5652c21f97f0a" />
+    </RP>
+    <Ep_Ref SrcName="DLC_L1.DLP_MANAGED_SERVER_TX" SrcGuid="acc5ff124-80c5-403d-a85a-1325bb5c1e6ea" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Session_1H_Tx1_Port" SrcGuid="a4fff7ddb-9682-4aa1-bb24-aa7591bbed8aa" />
+  </A653QueuingPort>
+  <A653QueuingPort Name="DLP_MANAGED_SERVER_TX" Guid="acc5ff124-80c5-403d-a85a-1325bb5c1e6ea" NameDef="APP-DATA_LOAD.DLP_MANAGED_SERVER_TX" GuidDef="a97a17a8a-ca28-4829-8e11-dc71a6e8dc8ba">
+    <A664Message Name="GPM_Data_Load_SW_Tx1_Message" Guid="a5ea7e059-ae65-43f4-a765-b26faada2c6ea" NameDef="APP-DATA_LOAD.GPM_Data_Load_SW_Tx1_Message" GuidDef="a31b5e573-efd6-4cfb-927b-24b064ba6d77a" SubVLID="0" VLID="64521">
+      <DS Name="GPM_Data_Load_SW_Tx1_Dataset" Guid="aba76873e-e272-4824-b158-436b76ca2fcfa" NameDef="APP-DATA_LOAD.GPM_Data_Load_SW_Tx1_Message.GPM_Data_Load_SW_Tx1_Dataset" GuidDef="a0f7f0a73-796b-49f3-8793-95e38a2f7f53a">
+        <DP Name="GPM_Data_Load_SW_Tx1_Parameter" Guid="a2218db28-ea1c-4b2c-aabf-fcd1a5399f0fa" NameDef="APP-DATA_LOAD.GPM_Data_Load_SW_Tx1_Message.GPM_Data_Load_SW_Tx1_Dataset.GPM_Data_Load_SW_Tx1_Parameter" GuidDef="a57c17300-f4a2-4b9c-84f7-04c53a7c07dda" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="DLP_STATUS_CLIENT_TX" Guid="a2d7492d9-b87a-4f0f-8149-14e08e714845a" NameDef="APP-DATA_LOAD.DLP_STATUS_CLIENT_TX" GuidDef="a4fe76119-dea9-4dea-9a85-1ba1db32c23da">
+    <A664Message Name="GPM_Data_Load_STAT_Tx2_Message" Guid="aede5159f-3880-4cbd-a556-f4a4d9831435a" NameDef="APP-DATA_LOAD.GPM_Data_Load_STAT_Tx2_Message" GuidDef="ac5359cd4-d39c-44c7-aca2-93f18e565d6fa" SubVLID="0" VLID="64521">
+      <DS Name="GPM_Data_Load_STAT_Tx2_Dataset" Guid="a623e16b9-7b7d-4202-ac62-5b6ec7665d3da" NameDef="APP-DATA_LOAD.GPM_Data_Load_STAT_Tx2_Message.GPM_Data_Load_STAT_Tx2_Dataset" GuidDef="a96d4f6f9-f43d-4757-89da-e61a4615496ba">
+        <DP Name="GPM_Data_Load_STAT_Tx2_Parameter" Guid="add06b15f-3b41-4756-a181-bd1dd0d83596a" NameDef="APP-DATA_LOAD.GPM_Data_Load_STAT_Tx2_Message.GPM_Data_Load_STAT_Tx2_Dataset.GPM_Data_Load_STAT_Tx2_Parameter" GuidDef="aeb9b2273-1deb-4b77-bfa6-eef1d062f5e2a" />
+      </DS>
+    </A664Message>
+  </A653QueuingPort>
+  <A653QueuingPort Name="DLP_STATUS_CLIENT_RX" Guid="a5ed30719-7dd3-4e65-818b-5431de64cacaa" NameDef="APP-DATA_LOAD.DLP_STATUS_CLIENT_RX" GuidDef="a555985d5-27c2-4179-90d1-cdbbca3b325ea" PathName="VLPath2">
+    <RP Name="ODLF_Data_Load_100Mb_Status" Guid="a4b82a3a4-165a-4604-ad0b-a44096a28cc4a" NameDef="APP-DATA_LOAD.ODLF_Data_Load_100Mb_Status" GuidDef="a8a29748e-240d-4a78-b6c5-a10ff6678763a">
+      <Pub_Ref SrcName="HF_AHMUInstance.HiSpeed_Status_Message.HiSpeed_Status_DS.HiSpeed_Status_Data" SrcGuid="a8815abbd-6ef2-4c44-85a1-9e899094ffeba" />
+    </RP>
+    <Ep_Ref SrcName="DLC_L1.DLP_STATUS_CLIENT_TX" SrcGuid="a2d7492d9-b87a-4f0f-8149-14e08e714845a" Validated="-1" />
+    <Dataflow_Ref SrcName="HF_AHMUInstance.poDL_Status_1H_Tx2_Port" SrcGuid="ab12a4db3-90db-4230-b144-4ae187ccaca9a" />
+  </A653QueuingPort>
+  <A653SamplingPort Name="DLP_TO_DLS_STATUS_TX" Guid="a73edc0ba-5bb4-4434-9cc3-988b3388807da" NameDef="APP-DATA_LOAD.DLP_TO_DLS_STATUS_TX" GuidDef="ac05c323f-5796-4c29-a878-8f626a6f9481a">
+    <A664Message Name="DLP_to_DLS_Status_Message" Guid="a7193be49-6c7e-4935-a802-2736b58062b8a" NameDef="APP-DATA_LOAD.DLP_to_DLS_Status_Message" GuidDef="a8719435b-cd56-4ef2-ad6b-52617bdb186ba" SubVLID="2" VLID="1052">
+      <DS Name="DLP_to_DLS_Status_Dataset" Guid="a9f4e0029-3c81-448a-924b-7d91e5d19057a" NameDef="APP-DATA_LOAD.DLP_to_DLS_Status_Message.DLP_to_DLS_Status_Dataset" GuidDef="a6ac1975e-42a0-4df4-8ae0-8f09b6ac7a43a">
+        <DP Name="DLP_to_DLS_Status_Parameter" Guid="a7545ddcb-5cfa-4a53-b08e-71dca0f6165da" NameDef="APP-DATA_LOAD.DLP_to_DLS_Status_Message.DLP_to_DLS_Status_Dataset.DLP_to_DLS_Status_Parameter" GuidDef="abbbb68ac-5ade-4d6d-819c-23c6f06697eba" />
+      </DS>
+    </A664Message>
+  </A653SamplingPort>
+  <A653SamplingPort Name="DLS_TO_DLP_CONTROL_RX" Guid="a7ae4f312-0b8f-4ea8-a252-6a6ef25c3264a" NameDef="APP-DATA_LOAD.DLS_TO_DLP_CONTROL_RX" GuidDef="ab175c269-0b19-456b-974e-50827c70bb9aa" PathName="VLPath14">
+    <RP Name="DLS_to_DLP_Control_Parameter" Guid="a4d285fef-47ac-40ad-a30c-337fd6243109a" NameDef="APP-DATA_LOAD.DLS_to_DLP_Control_Parameter" GuidDef="a6672c7a7-5605-45b2-91e9-c2859c6786cea">
+      <Pub_Ref SrcName="SM_I2C_L1.DLS_to_DLP_Control_Message.DLS_to_DLP_Control_Dataset.DLS_to_DLP_Control_Parameter" SrcGuid="a1633c281-602c-40a3-8fff-c4e49b1f39c7a" />
+    </RP>
+    <Dataflow_Ref SrcName="SM_I2C_L1.DLS_TO_DLP_CONTROL_TX" SrcGuid="a482499a8-09a4-4c3b-a7b9-e3ccb3661297a" />
+  </A653SamplingPort>
+</A653ApplicationComponent>
