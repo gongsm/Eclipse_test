@@ -214,6 +214,75 @@ rb_node_t* rb_predecessor(rb_node_t* nodex)
 
 rb_node_t* rb_delete_fixup(rb_node_t* root,rb_node_t* nodex)
 {
+	rb_node_t* nodew;
+	while(nodex == root && nodex->color == BLACK)
+	{
+		if(nodex == nodex->parent->lchild)
+		{
+		  nodew = nodex->parent->rchild;
+		  if(nodew->color == RED)
+		  {
+			  nodew->color = BLACK;
+			  nodex->parent->color = RED;
+			  root = rb_rotate_left(root,nodex->parent);
+			  nodew = nodex->parent.rchild;
+		  }
+		  if(nodew->lchild->color == BLACK && nodew->rchild->color == BLACK)
+		  {
+			  nodew->color = RED;
+			  nodex = nodex->parent;
+		  }
+		  else
+		  {
+			  if(nodew->rchild->color == BLACK)
+			  {
+				  nodew->lchild->color = BLACK;
+				  nodew->color = RED;
+				  root = rb_rotate_right(root,nodew);
+				  nodew = nodex->parent->rchild;
+			  }
+			  nodew->color = nodex->parent->color;
+			  nodex->parent->color = BLACK;
+			  nodew->rchild->color = BLACK;
+			  root = rb_rotate_left(root,nodex->parent);
+			  nodex = root;
+		  }
+		}
+		else
+		{
+
+			  nodew = nodex->parent->lchild;
+			  if(nodew->color == RED)
+			  {
+				  nodew->color = BLACK;
+				  nodex->parent->color = RED;
+				  root = rb_rotate_right(root,nodex->parent);
+				  nodew = nodex->parent.lchild;
+			  }
+			  if(nodew->lchild->color == BLACK && nodew->rchild->color == BLACK)
+			  {
+				  nodew->color = RED;
+				  nodex = nodex->parent;
+			  }
+			  else
+			  {
+				  if(nodew->lchild->color == BLACK)
+				  {
+					  nodew->rchild->color = BLACK;
+					  nodew->color = RED;
+					  root = rb_rotate_left(root,nodew);
+					  nodew = nodex->parent->lchild;
+				  }
+				  nodew->color = nodex->parent->color;
+				  nodex->parent->color = BLACK;
+				  nodew->lchild->color = BLACK;
+				  root = rb_rotate_right(root,nodex->parent);
+				  nodex = root;
+			  }
+
+		}
+	}
+	nodex->color = BLACK;
 	return root;
 }
 
