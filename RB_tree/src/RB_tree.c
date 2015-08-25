@@ -162,6 +162,116 @@ rb_node_t* rb_insert(rb_node_t* root, int key)
 	return root;
 }
 
+rb_node_t* rb_minimum(rb_node_t* nodex)
+{
+	while(nodex->lchild != &nil)
+		nodex = nodex->lchild;
+	return nodex;
+}
+
+rb_node_t* rb_maximum(rb_node_t* nodex)
+{
+	while(nodex->rchild != &nil)
+		nodex = nodex->rchild;
+	return nodex;
+}
+
+rb_node_t* rb_successor(rb_node_t* nodex)
+{
+	rb_node_t* nodey;
+
+	if(nodex->rchild != &nil)
+	{
+		return rb_minimum(nodex->rchild);
+	}
+
+	nodey = nodex->parent;
+	while (nodey != &nil && nodex == nodey->rchild)
+	{
+		nodex = nodey;
+		nodey = nodey->parent;
+	}
+	return nodey;
+}
+
+rb_node_t* rb_predecessor(rb_node_t* nodex)
+{
+	rb_node_t* nodey;
+
+	if(nodex->lchild != &nil)
+	{
+		return rb_maximum(nodex->rchild);
+	}
+
+	nodey = nodex->parent;
+	while (nodey != &nil && nodex == nodey->lchild)
+	{
+		nodex = nodey;
+		nodey = nodey->parent;
+	}
+	return nodey;
+}
+
+rb_node_t* rb_delete_fixup(rb_node_t* root,rb_node_t* nodex)
+{
+	return root;
+}
+
+rb_node_t* rb_delete(rb_node_t* root,rb_node_t* nodez)
+{
+	rb_node_t* nodey;
+	rb_node_t* nodex;
+    if(nodez->lchild == &nil || nodez->rchild == &nil)
+    {
+    	nodey = nodez;
+    }
+    else
+    	nodey = rb_successor(nodez);
+    if(nodez->lchild != &nil)
+    	nodex = nodey->lchild;
+    else
+    	nodex = nodey->rchild;
+
+    nodex->parent = nodey->parent;
+    if(nodey->parent == &nil)
+    	root = nodex;
+    else
+    {
+      if(nodey == nodey->parent->lchild)
+    	  nodey->parent->lchild = nodex;
+      else
+    	  nodey->parent->rchild = nodex;
+    }
+    if(nodey != nodez)
+    {
+    	nodez->key = nodey->key;
+    }
+    if(nodey->color == BLACK)
+    {
+    	root = rb_delete_fixup(root,nodex);
+    }
+    free(nodey);
+	return root;
+}
+void preordertraverse(rb_node_t* root)
+{
+	if(root != &nil)
+		{
+			printf("%d  ",root->key);
+			preordertraverse(root->lchild);
+			preordertraverse(root->rchild);
+		}
+}
+void inordertraverse(rb_node_t* root)
+{
+	if(root != &nil)
+	{
+
+		inordertraverse(root->lchild);
+		printf("%d  ",root->key);
+		inordertraverse(root->rchild);
+	}
+}
 rb_node_t* rb_create(int n, int arr[])
 {
 	rb_node_t* root;
@@ -173,11 +283,30 @@ rb_node_t* rb_create(int n, int arr[])
 	}
   return root;
 }
+rb_node_t* rb_search(rb_node_t* root,int key)
+{
+	rb_node_t* nodes = NULL;
+	if(root == &nil) return nodes;
+	if(key == root->key)
+		return root;
+	if(key<root->key)
+		nodes = rb_search(root->lchild,key);
+	else
+		nodes = rb_search(root->rchild,key);
+	return nodes;
+}
 int main(void) {
 	nil.color = BLACK;
     int arr[10] = {2,3,4,1,6,5,7,9,8};
     rb_node_t* root1 = rb_create(9,arr);
-    printf("%d",root1->lchild->key);
-
+    inordertraverse(root1);
+//    printf("%d",root1->lchild->key);
+    printf("\n");
+    rb_node_t* nodedele = rb_search(root1,4);
+    if(nodedele!=NULL)
+    {
+    	root1 = rb_delete(root1,nodedele);
+    }
+    inordertraverse(root1);
 	return EXIT_SUCCESS;
 }
