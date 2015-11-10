@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Package name="EnginesLDGIndications">
+			<declarations>
+				<Constant visibility="private" name="GEAR_LEVER_POSITON_DOWN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3efd/6EE6/42C/53b10e97212"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_LEVER_POSITON_UP">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ee7/6EE6/42C/53b10e787b73"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_POSITION_DOWN">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ea1/6EE6/42C/53b0fc1268c1"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_POSITION_TRANS">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3eb7/6EE6/42C/53b0fc2f3e0e"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_POSITION_UP">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ec5/6EE6/42C/53b0fc2f270e"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_STATE_DOWN_LOCKED">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e1f/6EE6/42C/53b0f7e578d0"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_STATE_INVALID">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="4"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e78/6EE6/42C/53b0f98c4a1b"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_STATE_TRANS">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="1"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e35/6EE6/42C/53b0f903626c"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_STATE_UP_LOCKED">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="2"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e43/6EE6/42C/53b0f9041b7b"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_STATE_WARNING">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e5f/6EE6/42C/53b0f9045100"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="GEAR_TRANS_TIMEOUT">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="20000"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ed6/6EE6/42C/53b0fc6f2b3e"/>
+					</pragmas>
+				</Constant>
+				<Constant name="GEAR_STATE_EMPTY">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/294a/482B/1A70/5472e18f667c"/>
+					</pragmas>
+				</Constant>
+				<Type name="LDGState">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popLeftGearState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3dd7/4AD/AB8/53ad28c36882"/>
+									</pragmas>
+								</Field>
+								<Field name="popNoseGearState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3deb/4AD/AB8/53ad290d7119"/>
+									</pragmas>
+								</Field>
+								<Field name="popRightGearState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3de5/4AD/AB8/53ad290d799d"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/9/4498/1B44/53a90bc8645f"/>
+					</pragmas>
+				</Type>
+				<Operator name="Engines_LDG" href="Engines_LDG.xscade"/>
+				<Operator name="Engines_LDG_IsTimeOut" href="Engines_LDG_IsTimeOut.xscade"/>
+				<Operator name="Engines_LDG_StateHandle" href="Engines_LDG_StateHandle.xscade"/>
+				<Operator name="Engines_LDG_IsUpOrDnNormal" href="Engines_LDG_IsUpOrDnNormal.xscade"/>
+				<Operator name="Engines_LDG_IsInTransitNormal" href="Engines_LDG_IsInTransitNormal.xscade"/>
+				<Operator name="Engines_LDG_IsUpOrDnWarning" href="Engines_LDG_IsUpOrDnWarning.xscade"/>
+				<Operator name="Engines_LDG_IsCurrentPosValid" href="Engines_LDG_IsCurrentPosValid.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/4259/53DC/138C/53b26ef2643" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/425a/53DC/138C/53b26ef21b3f" blockKind="constants" columnsSize="0, 301, 150, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/425b/53DC/138C/53b26ef27514" blockKind="types" columnsSize="0, 255, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/425c/53DC/138C/53b26ef23fea" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

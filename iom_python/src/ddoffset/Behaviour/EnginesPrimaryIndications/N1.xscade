@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" visibility="private" name="N1">
+	<declarations>
+		<Constant name="EnginesThrustMode_TO">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="0"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2726f/7288/1630/53747b0e6876"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_Flex_TO">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/27285/7288/1630/53747b693eff"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_TO1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/27293/7288/1630/53747b696d1c"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_TO2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="3"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/272a1/7288/1630/53747b6a3b76"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_CLB">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="4"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/272af/7288/1630/53747b6a1786"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_CON">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="5"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/272bd/7288/1630/53747b6b228d"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_CRZ">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="6"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/272cb/7288/1630/53747b6b2ee3"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustMode_GA">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="7"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/272d9/7288/1630/53747b6b474d"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesWingAIVlvPosOpen">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="0"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/9af6/242E/1788/5375a0197bb"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustRevCmdNormalDeployed">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/9b18/242E/1788/5375a0f31645"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustRevCmdDeployTrans">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/9b36/242E/1788/5375a188645f"/>
+			</pragmas>
+		</Constant>
+		<Constant name="EnginesThrustRevCmdStowTrans">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="3"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/9b44/242E/1788/5375a1895916"/>
+			</pragmas>
+		</Constant>
+		<Type name="popN1Plugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="Command">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popCommandPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9739/50DE/214/535f2d0d79eb"/>
+							</pragmas>
+						</Field>
+						<Field name="ReducedTakeOff">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popReducedTakeOffPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c673/50DE/214/535f4436191f"/>
+							</pragmas>
+						</Field>
+						<Field name="Referenced">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popReferncedPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c674/50DE/214/535f4438498e"/>
+							</pragmas>
+						</Field>
+						<Field name="Texual">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popTextualPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c675/50DE/214/535f443b6c8e"/>
+							</pragmas>
+						</Field>
+						<Field name="Thrust">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popThrustPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c676/50DE/214/535f443d6d12"/>
+							</pragmas>
+						</Field>
+						<Field name="Threshold">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popThresholdPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c677/50DE/214/535f443f5bac"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/972d/50DE/214/535f2cb73fd3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<comment>popN1Plugs_t is a structure contains parameters used for Display as inputs.</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popCommandPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="Engines_PrimaryIndication_L_Command">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66c/50DE/214/535f42dc7b7c"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_R_Command">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77d/7288/1630/53746f135126"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_L_Command_IsVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77e/7288/1630/53746f5c5d39"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_L_Command_State">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77f/7288/1630/53746f62645c"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_R_Command_IsVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d792/7288/1630/53746f9a497c"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_R_Command_State">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d791/7288/1630/53746f971058"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c651/50DE/214/535f40635531"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popTextualPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="Engines_PrimaryIndication_IsLeftEngineEAIVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66a/50DE/214/535f42d45e9d"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsRightEngineEAIVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e8b/4E06/15AC/537812584d2f"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsLeftEngineIGNVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e91/4E06/15AC/53781274476a"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsRightEngineIGNVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e97/4E06/15AC/537812757c8"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsRevEngineNormalVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e9d/4E06/15AC/53781275650"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsRevEngineCautionVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9ea3/4E06/15AC/537812763870"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsLeftEngineFireVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9ea9/4E06/15AC/537812771b1f"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_IsRightEngineFireVisible">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9eaf/4E06/15AC/537812773e95"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c668/50DE/214/535f427373e9"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popThresholdPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="label1">
+							<type>
+								<NamedType>
+									<type>
+										<NullRef/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66b/50DE/214/535f42d77ae1"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c669/50DE/214/535f42aecfa"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popReferncedPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="label1">
+							<type>
+								<NamedType>
+									<type>
+										<NullRef/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66e/50DE/214/535f434516ae"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c66d/50DE/214/535f43241ea5"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popReducedTakeOffPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="label1">
+							<type>
+								<NamedType>
+									<type>
+										<NullRef/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c670/50DE/214/535f43876821"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c66f/50DE/214/535f436f58b6"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popThrustPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="Engines_PrimaryIndication_N1_ThrustL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c672/50DE/214/535f441565d5"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_N1_ThrustR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c36/2D0D/B6C/53757d446d43"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_N1_ThrustStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c47/2D0D/B6C/53757dfa23"/>
+							</pragmas>
+						</Field>
+						<Field name="Engines_PrimaryIndication_N1_ThrustStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c48/2D0D/B6C/53757e1e679f"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c671/50DE/214/535f44077d86"/>
+			</pragmas>
+		</Type>
+		<Operator name="PrimaryIndication_N1" href="PrimaryIndications_N1.xscade"/>
+		<Operator name="PrimaryIndication_N1_Thrust" href="PrimaryIndication_N1_Thrust.xscade"/>
+		<Operator name="PrimaryIndication_N1_ReducedTakeoff" href="PrimaryIndication_N1_ReducedTakeoff.xscade"/>
+		<Operator name="PrimaryIndication_N1_ReducedTakeoff_AssumedTemp" href="PrimaryIndication_N1_ReducedTakeoff_AssumedTemp.xscade"/>
+		<Operator name="PrimaryIndication_N1_ReducedTakeoff_TakeoffSelected" href="PrimaryIndication_N1_ReducedTakeoff_TakeoffSelected.xscade"/>
+		<Operator name="PrimaryIndication_N1_ReducedTakeoff_ThrustMode" href="PrimaryIndication_N1_ReducedTakeoff_ThrustMode.xscade"/>
+		<Operator name="PrimaryIndication_N1_Reference" href="PrimaryIndication_N1_Reference.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual" href="PrimaryIndication_N1_Textual.xscade"/>
+		<Operator name="PrimaryIndication_N1_Command_CommandSector" href="PrimaryIndication_N1_Command_CommandSector.xscade"/>
+		<Operator name="PrimaryIndication_N1_Command" href="PrimaryIndication_N1_Command.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_EAI" href="PrimaryIndication_N1_Textual_EAI.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_Fire" href="PrimaryIndication_N1_Textual_Fire.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_IGN" href="PrimaryIndication_N1_Textual_IGN.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_Rev" href="PrimaryIndication_N1_Textual_Rev.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold" href="PrimaryIndication_N1_Threshold.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold_Caution" href="PrimaryIndication_N1_Threshold_Caution.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold_Maximum" href="PrimaryIndication_N1_Threshold_Maximum.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold_Warning" href="PrimaryIndication_N1_Threshold_Warning.xscade"/>
+	</declarations>
+	<pragmas>
+		<ed:Package oid="!ed/9725/50DE/214/535f2c867ac4" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9726/50DE/214/535f2c864793" blockKind="constants" columnsSize="0, 309, 150, 150, 300"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9727/50DE/214/535f2c864755" blockKind="types" columnsSize="0, 389, 150, 300"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9728/50DE/214/535f2c866530" blockKind="sensors"/>
+			</diagrams>
+		</ed:Package>
+	</pragmas>
+</Package>

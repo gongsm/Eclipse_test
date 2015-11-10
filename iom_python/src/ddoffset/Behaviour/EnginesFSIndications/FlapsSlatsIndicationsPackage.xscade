@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2">
+	<declarations>
+		<Package name="FlapsSlatsIndications">
+			<declarations>
+				<Constant visibility="private" name="TakeOff">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="3"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/16945/759C/AF0/53c780b2368a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Flight Phase</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="Cruise">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="6"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/16964/759C/AF0/53c7812fc1e" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Flight Phase</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="Descent">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="7"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/16972/759C/AF0/53c7812f60e7" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Flight Phase</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="ApproachLanding">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="8"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/16980/759C/AF0/53c7812f68bb" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+							<comment>Flight Phase</comment>
+						</ed:Constant>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmd0Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/26ee/6F64/1288/54769030521d"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmd1Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2704/6F64/1288/5476905642e4"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmd1FPos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="10.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2712/6F64/1288/54769056456"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmd2Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="19.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2720/6F64/1288/5476905662e1"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmd3Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="25.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/272e/6F64/1288/54769057541e"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="FlapCmdFullPos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="34.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/273c/6F64/1288/54769057bf1"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="SlatCmdFullPos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="26.5"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/2792/6F64/1288/547690db6436"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="SlatCmdOutPos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="21.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/27b0/6F64/1288/547690ec76b1"/>
+					</pragmas>
+				</Constant>
+				<Constant visibility="private" name="SlatCmdInPos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/27be/6F64/1288/547690ed458b"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LeftSpoiler2Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/51b3/7D1C/BEC/547bdc78459d"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LeftSpoiler3Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/51e1/7D1C/BEC/547bdca7966"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LeftSpoiler4Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/51ef/7D1C/BEC/547bdca74126"/>
+					</pragmas>
+				</Constant>
+				<Constant name="LeftSpoiler5Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/51fd/7D1C/BEC/547bdca7b26"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RightSpoiler2Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5219/7D1C/BEC/547bdcc32f27"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RightSpoiler3Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5227/7D1C/BEC/547bdcd7602d"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RightSpoiler4Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5235/7D1C/BEC/547bdcd726b1"/>
+					</pragmas>
+				</Constant>
+				<Constant name="RightSpoiler5Pos">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="real"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="0.0"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/5243/7D1C/BEC/547bdcd73d5a"/>
+					</pragmas>
+				</Constant>
+				<Type name="popEnginesFSData">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="popSlatsState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3e72/22BA/14B0/53c870d877e4"/>
+									</pragmas>
+								</Field>
+								<Field name="popFlapsState">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/c5d3/33C8/176C/53be43864bed"/>
+									</pragmas>
+								</Field>
+								<Field name="popIsFSVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/4ca0/752D/2A0/53f597184d8"/>
+									</pragmas>
+								</Field>
+								<Field name="popFSCLDetentCommand">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/3e84/22BA/14B0/53c870da5611"/>
+									</pragmas>
+								</Field>
+								<Field name="popIsSpoilerOut">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/5889/7D1C/BEC/547c01bd4a7b"/>
+									</pragmas>
+								</Field>
+								<Field name="popIsSlatsNormalReadoutVisible">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/7f64/14/1958/559de9711e16"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/c5d2/33C8/176C/53be435b48f9"/>
+					</pragmas>
+				</Type>
+				<Operator name="EnginesFS" href="EnginesFS.xscade"/>
+				<Operator name="EnginesFS_IsFSVisible" href="EnginesFS_IsFSVisible.xscade"/>
+				<Operator name="EnginesFS_GetPosState" href="EnginesFS_GetPosState.xscade"/>
+				<Operator name="EnginesFS_GetFSState" href="EnginesFS_GetFSState.xscade"/>
+				<Operator name="EnginesFS_IsSpoilerOut" href="EnginesFS_IsSpoilerOut.xscade"/>
+				<Operator name="EnginesFS_IsSpoilerOut_PreHandle" href="EnginesFS_IsSpoilerOut_PreHandle.xscade"/>
+				<Operator name="EnginesFS_PosSettled" href="EnginesFS_PosSettled.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/c5d4/33C8/176C/53be438f9a7" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/c5d5/33C8/176C/53be438f1b2a" blockKind="constants" columnsSize="0, 285, 150, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/c5d6/33C8/176C/53be438f6b3e" blockKind="types" columnsSize="0, 358, 150, 300"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/c5d7/33C8/176C/53be438f7f1f" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

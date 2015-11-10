@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" visibility="private" name="N1">
+	<declarations>
+		<Constant name="RevStateDeployed">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="4"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/7827/7DF7/15BC/5462c15d44cd"/>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateStowed">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="6"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/7853/7DF7/15BC/5462c1dca0d"/>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateFailed">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/7861/7DF7/15BC/5462c1dc316f"/>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateTimeOut">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="100"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/788b/7DF7/15BC/5462c2534bff" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<comment>Initial Value for REV timeout.</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateInvalid">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/7b17/7DF7/15BC/546317213c74"/>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateEmpty">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="7"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/af66/5955/A4C/547c239b62d6"/>
+			</pragmas>
+		</Constant>
+		<Constant name="RevStateTranstion">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="5"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/7845/7DF7/15BC/5462c1dc1089"/>
+			</pragmas>
+		</Constant>
+		<Type name="popN1Plugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="Command">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popCommandPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9739/50DE/214/535f2d0d79eb"/>
+							</pragmas>
+						</Field>
+						<Field name="Texual">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popTextualPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c675/50DE/214/535f443b6c8e"/>
+							</pragmas>
+						</Field>
+						<Field name="Thrust">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popThrustPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c676/50DE/214/535f443d6d12"/>
+							</pragmas>
+						</Field>
+						<Field name="Threshold">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="popThresholdPlugs_t"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c677/50DE/214/535f443f5bac"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/972d/50DE/214/535f2cb73fd3" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+					<comment>popN1Plugs_t is a structure contains parameters used for Display as inputs.</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popCommandPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="CommandValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66c/50DE/214/535f42dc7b7c"/>
+							</pragmas>
+						</Field>
+						<Field name="commandValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77d/7288/1630/53746f135126"/>
+							</pragmas>
+						</Field>
+						<Field name="CommandSectorVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77e/7288/1630/53746f5c5d39"/>
+							</pragmas>
+						</Field>
+						<Field name="MovingStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d77f/7288/1630/53746f62645c"/>
+							</pragmas>
+						</Field>
+						<Field name="CommandSectorVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d792/7288/1630/53746f9a497c"/>
+							</pragmas>
+						</Field>
+						<Field name="MovingStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1d791/7288/1630/53746f971058"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c651/50DE/214/535f40635531"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popTextualPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="IsNAIStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c66a/50DE/214/535f42d45e9d"/>
+							</pragmas>
+						</Field>
+						<Field name="IsNAIStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e8b/4E06/15AC/537812584d2f"/>
+							</pragmas>
+						</Field>
+						<Field name="IsIGNStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e91/4E06/15AC/53781274476a"/>
+							</pragmas>
+						</Field>
+						<Field name="IsIGNStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e97/4E06/15AC/537812757c8"/>
+							</pragmas>
+						</Field>
+						<Field name="ReverserStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9e9d/4E06/15AC/53781275650"/>
+							</pragmas>
+						</Field>
+						<Field name="ReverserStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9ea3/4E06/15AC/537812763870"/>
+							</pragmas>
+						</Field>
+						<Field name="IsFireStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9ea9/4E06/15AC/537812771b1f"/>
+							</pragmas>
+						</Field>
+						<Field name="IsFireStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9eaf/4E06/15AC/537812773e95"/>
+							</pragmas>
+						</Field>
+						<Field name="StartStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e341/5955/A4C/547d25f759e5"/>
+							</pragmas>
+						</Field>
+						<Field name="StartStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e34f/5955/A4C/547d26123f4a"/>
+							</pragmas>
+						</Field>
+						<Field name="RelightStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e355/5955/A4C/547d261e5ba0"/>
+							</pragmas>
+						</Field>
+						<Field name="RelightStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e35b/5955/A4C/547d26284dc5"/>
+							</pragmas>
+						</Field>
+						<Field name="IsEngineStatusVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e35c/5955/A4C/547d263377f"/>
+							</pragmas>
+						</Field>
+						<Field name="IsEngineStatusVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/e36a/5955/A4C/547d264529ba"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c668/50DE/214/535f427373e9"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popThresholdPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="ThresholdWarningMarkValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a5e5/4E06/15AC/537826b01015"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdWarningMarkVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a5f1/4E06/15AC/537826c174f7"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdWarningMarkValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/5096/5D8A/47C/5461a80a137e"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdWarningMarkVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/509c/5D8A/47C/5461a80b1841"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdMaximumMarkValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a5eb/4E06/15AC/537826b97a76"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdMaximumMarkVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a5f7/4E06/15AC/537826c3137b"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdMaximumMarkValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/50a2/5D8A/47C/5461a814ce2"/>
+							</pragmas>
+						</Field>
+						<Field name="ThresholdMaximumMarkVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/50a8/5D8A/47C/5461a8155deb"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c669/50DE/214/535f42aecfa"/>
+			</pragmas>
+		</Type>
+		<Type visibility="private" name="popThrustPlugs_t">
+			<definition>
+				<Struct>
+					<fields>
+						<Field name="ThrustValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1c672/50DE/214/535f441565d5"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c36/2D0D/B6C/53757d446d43"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c47/2D0D/B6C/53757dfa23"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/9c48/2D0D/B6C/53757e1e679f"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustWarningArcVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a083/2020/1304/5387e3ea7af8"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustWarningArcVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/a091/2020/1304/5387e40954ca"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustActiveStateL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/4d62/5D8A/47C/5461a1997bb9"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustActiveStateR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/4d70/5D8A/47C/5461a1af60c5"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustExtendArcVisibleL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/bd5e/7E23/DD8/546c2e6b5e4c"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustExtendArcVisibleR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="bool"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/bd6c/7E23/DD8/546c2e804eaf"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustExtendEndValueL">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/3308/B7C/1AB8/547e7e9568b6"/>
+							</pragmas>
+						</Field>
+						<Field name="ThrustExtendEndValueR">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="real"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/3316/B7C/1AB8/547e7eae2490"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1c671/50DE/214/535f44077d86"/>
+			</pragmas>
+		</Type>
+		<Operator name="PrimaryIndication_N1" href="PrimaryIndications_N1.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual" href="PrimaryIndication_N1_Textual.xscade"/>
+		<Operator name="PrimaryIndication_N1_Command_CommandSector" href="PrimaryIndication_N1_Command_CommandSector.xscade"/>
+		<Operator name="PrimaryIndication_N1_Command" href="PrimaryIndication_N1_Command.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_Rev" href="PrimaryIndication_N1_Textual_Rev.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold" href="PrimaryIndication_N1_Threshold.xscade"/>
+		<Operator name="PrimaryIndication_N1_ThrustStateRangeCalculation" href="PrimaryIndication_N1_ThrustStateRangeCalculation.xscade"/>
+		<Operator name="PrimaryIndication_N1_Threshold_Visibility" href="PrimaryIndication_N1_Threshold_Visibility.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_EngStatus" href="PrimaryIndication_N1_Textual_Status.xscade"/>
+		<Operator name="PrimaryIndication_N1_Thrust" href="PrimaryIndication_N1_Thrust.xscade"/>
+		<Operator name="PrimaryIndication_N1_Textual_State" href="PrimaryIndication_N1_Textual_State.xscade"/>
+		<Operator name="PrimaryIndication_N1_Thrust_ArcHandle" href="PrimaryIndication_N1_Thrust_ArcHandle.xscade"/>
+		<Operator name="PrimaryIndication_N1_Thrust_Arc" href="PrimaryIndication_N1_Thrust_Arc.xscade"/>
+	</declarations>
+	<pragmas>
+		<ed:Package oid="!ed/9725/50DE/214/535f2c867ac4" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9726/50DE/214/535f2c864793" blockKind="constants" columnsSize="0, 442, 150, 150, 300"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9727/50DE/214/535f2c864755" blockKind="types" columnsSize="0, 720, 150, 300"/>
+				<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/9728/50DE/214/535f2c866530" blockKind="sensors"/>
+			</diagrams>
+		</ed:Package>
+	</pragmas>
+</Package>

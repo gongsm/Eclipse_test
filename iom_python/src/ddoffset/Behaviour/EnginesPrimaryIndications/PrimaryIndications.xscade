@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" kind="node" name="PrimaryIndications">
+	<inputs>
+		<Variable name="Engines_PrimaryIndication_Inputs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipPrimaryIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e553/15F2/15F4/53784dff1f72"/>
+			</pragmas>
+		</Variable>
+		<Variable name="Engines_GeneralParameters_Inputs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipGeneralParametrics"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e554/15F2/15F4/53784e027e5"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="popPrimaryIndicationPlugs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="popPrimaryIndicationPlugs_t"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e57f/15F2/15F4/53784e3b356"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EGT::popEGTPlugs_t"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e531/15F2/15F4/53784da04c6e"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="N1::popN1Plugs_t"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e537/15F2/15F4/53784da42f1"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L5">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="popPrimaryIndicationPlugs_t"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e54e/15F2/15F4/53784dbf2dce"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L8">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipGeneralParametrics"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e574/15F2/15F4/53784e2e2f69"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L6">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipPrimaryIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e568/15F2/15F4/53784e2235e6"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L7">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="EnginesDataDictionary::ipPrimaryIndicationData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e56e/15F2/15F4/53784e291477"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = EGT::PrimaryIndication_EGT(_L6); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<!-- EGT::PrimaryIndication_EGT(_L6) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="EGT::PrimaryIndication_EGT"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L6"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e530/15F2/15F4/53784da06338"/>
+			</pragmas>
+		</Equation>
+		<!-- _L2 = N1::PrimaryIndication_N1(_L7, _L8); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L2"/>
+			</lefts>
+			<right>
+				<!-- N1::PrimaryIndication_N1(_L7, _L8) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="N1::PrimaryIndication_N1"/>
+							</operator>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L7"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L8"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e536/15F2/15F4/53784da4727c"/>
+			</pragmas>
+		</Equation>
+		<!-- _L5 = (make popPrimaryIndicationPlugs_t)(_L1, _L2); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L5"/>
+			</lefts>
+			<right>
+				<!-- (make popPrimaryIndicationPlugs_t)(_L1, _L2) -->
+				<CallExpression>
+					<operator>
+						<MakeOp name="1">
+							<type>
+								<TypeRef name="popPrimaryIndicationPlugs_t"/>
+							</type>
+						</MakeOp>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L2"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e54d/15F2/15F4/53784dbf79bc"/>
+			</pragmas>
+		</Equation>
+		<!-- _L8 = Engines_GeneralParameters_Inputs; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L8"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="Engines_GeneralParameters_Inputs"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e573/15F2/15F4/53784e2e5178"/>
+			</pragmas>
+		</Equation>
+		<!-- popPrimaryIndicationPlugs = _L5; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="popPrimaryIndicationPlugs"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L5"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e580/15F2/15F4/53784e3b7184"/>
+			</pragmas>
+		</Equation>
+		<!-- _L6 = Engines_PrimaryIndication_Inputs; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L6"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="Engines_PrimaryIndication_Inputs"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e567/15F2/15F4/53784e228ac"/>
+			</pragmas>
+		</Equation>
+		<!-- _L7 = Engines_PrimaryIndication_Inputs; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L7"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="Engines_PrimaryIndication_Inputs"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e56d/15F2/15F4/53784e29426e"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1c652/50DE/214/535f408d5535" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<NetDiagram name="diagram_PrimaryIndications_1" landscape="true" format="A4 (210 297)" oid="!ed/1c653/50DE/214/535f408d4dda">
+					<presentationElements>
+						<EquationGE presentable="!ed/1e530/15F2/15F4/53784da06338">
+							<position>
+								<Point x="7303" y="2519"/>
+							</position>
+							<size>
+								<Size width="6662" height="1815"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e536/15F2/15F4/53784da4727c">
+							<position>
+								<Point x="7408" y="4911"/>
+							</position>
+							<size>
+								<Size width="6663" height="1815"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e54d/15F2/15F4/53784dbf79bc">
+							<position>
+								<Point x="16404" y="1016"/>
+							</position>
+							<size>
+								<Size width="1964" height="7234"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e573/15F2/15F4/53784e2e5178">
+							<position>
+								<Point x="4466" y="5863"/>
+							</position>
+							<size>
+								<Size width="264" height="502"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1e573/15F2/15F4/53784e2e5178" dstEquation="!ed/1e536/15F2/15F4/53784da4727c">
+							<positions>
+								<Point x="4720" y="6117"/>
+								<Point x="6054" y="6117"/>
+								<Point x="6054" y="6117"/>
+								<Point x="7408" y="6117"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1e580/15F2/15F4/53784e3b7184">
+							<position>
+								<Point x="20913" y="4382"/>
+							</position>
+							<size>
+								<Size width="317" height="502"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e54d/15F2/15F4/53784dbf79bc" dstEquation="!ed/1e580/15F2/15F4/53784e3b7184">
+							<positions>
+								<Point x="18352" y="4636"/>
+								<Point x="19643" y="4636"/>
+								<Point x="19643" y="4636"/>
+								<Point x="20955" y="4636"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e530/15F2/15F4/53784da06338" dstEquation="!ed/1e54d/15F2/15F4/53784dbf79bc">
+							<positions>
+								<Point x="13949" y="3429"/>
+								<Point x="15473" y="3429"/>
+								<Point x="15473" y="3429"/>
+								<Point x="16404" y="3429"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1e536/15F2/15F4/53784da4727c" dstEquation="!ed/1e54d/15F2/15F4/53784dbf79bc">
+							<positions>
+								<Point x="14055" y="5821"/>
+								<Point x="15473" y="5821"/>
+								<Point x="15473" y="5821"/>
+								<Point x="16404" y="5821"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1e56d/15F2/15F4/53784e29426e">
+							<position>
+								<Point x="4466" y="5249"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e567/15F2/15F4/53784e228ac">
+							<position>
+								<Point x="4466" y="3175"/>
+							</position>
+							<size>
+								<Size width="265" height="502"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e56d/15F2/15F4/53784e29426e" dstEquation="!ed/1e536/15F2/15F4/53784da4727c">
+							<positions>
+								<Point x="4720" y="5503"/>
+								<Point x="6054" y="5503"/>
+								<Point x="6054" y="5503"/>
+								<Point x="7408" y="5503"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e567/15F2/15F4/53784e228ac" dstEquation="!ed/1e530/15F2/15F4/53784da06338">
+							<positions>
+								<Point x="4720" y="3429"/>
+								<Point x="6011" y="3429"/>
+								<Point x="6011" y="3429"/>
+								<Point x="7303" y="3429"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

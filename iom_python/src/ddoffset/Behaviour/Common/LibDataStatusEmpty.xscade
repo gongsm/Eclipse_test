@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/4" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/2" kind="function" name="LibDataStatusEmpty">
+	<inputs>
+		<Variable name="InputVariableStatus">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1f44/4163/13CC/546162426b5a"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="StatusEmptyFlag">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1f4a/4163/13CC/546162426a81"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1f51/4163/13CC/5461625b3b5c"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1f53/4163/13CC/5461625d3d04"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L3">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1f59/4163/13CC/546162687d94"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = _L2 = _L3; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<!-- _L2 = _L3 -->
+				<BinaryOp name="1" operator="=">
+					<operands>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L2"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L3"/>
+							</path>
+						</IdExpression>
+					</operands>
+				</BinaryOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1f50/4163/13CC/5461625b65d"/>
+			</pragmas>
+		</Equation>
+		<!-- _L2 = InputVariableStatus; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L2"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="InputVariableStatus"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1f52/4163/13CC/5461625d5bfc"/>
+			</pragmas>
+		</Equation>
+		<!-- _L3 = CommonTypes::GLOB_DATA_UNFRESH; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L3"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="CommonTypes::GLOB_DATA_UNFRESH"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1f58/4163/13CC/546162683c7a"/>
+			</pragmas>
+		</Equation>
+		<!-- StatusEmptyFlag = _L1; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="StatusEmptyFlag"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L1"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1f5e/4163/13CC/5461627f30fa"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1f3d/4163/13CC/5461621675a8" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/4">
+			<diagrams>
+				<NetDiagram name="diagram_LibDataStatusEmpty_1" landscape="true" format="A4 (210 297)" oid="!ed/1f3e/4163/13CC/5461621653bd">
+					<presentationElements>
+						<EquationGE presentable="!ed/1f50/4163/13CC/5461625b65d">
+							<position>
+								<Point x="8932" y="5630"/>
+							</position>
+							<size>
+								<Size width="2603" height="1397"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1f52/4163/13CC/5461625d5bfc">
+							<position>
+								<Point x="6287" y="5207"/>
+							</position>
+							<size>
+								<Size width="254" height="508"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/1f58/4163/13CC/546162683c7a">
+							<position>
+								<Point x="6371" y="7070"/>
+							</position>
+							<size>
+								<Size width="170" height="297"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f52/4163/13CC/5461625d5bfc" dstEquation="!ed/1f50/4163/13CC/5461625b65d">
+							<positions>
+								<Point x="6541" y="5461"/>
+								<Point x="7726" y="5461"/>
+								<Point x="7726" y="6096"/>
+								<Point x="8932" y="6096"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1f58/4163/13CC/546162683c7a" dstEquation="!ed/1f50/4163/13CC/5461625b65d">
+							<positions>
+								<Point x="6541" y="7218"/>
+								<Point x="7726" y="7218"/>
+								<Point x="7726" y="6562"/>
+								<Point x="8932" y="6562"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1f5e/4163/13CC/5461627f30fa">
+							<position>
+								<Point x="15452" y="6075"/>
+							</position>
+							<size>
+								<Size width="338" height="508"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f50/4163/13CC/5461625b65d" dstEquation="!ed/1f5e/4163/13CC/5461627f30fa">
+							<positions>
+								<Point x="11536" y="6329"/>
+								<Point x="13504" y="6329"/>
+								<Point x="13504" y="6329"/>
+								<Point x="15494" y="6329"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>
